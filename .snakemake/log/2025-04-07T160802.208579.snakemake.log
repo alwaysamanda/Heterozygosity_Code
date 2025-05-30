@@ -1,0 +1,908 @@
+host: login-q-3
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 76
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+ALNtoPAF                      1
+FASTGA                        1
+FAtoGDB_ALT                   1
+FAtoGDB_REF                   1
+FILTER_PAF_CHR_ONLY           1
+GET_ALN_ONLY_PER_CHROM       40
+GET_VAR_ONLY_PER_CHROM       40
+GET_WHOLE_VAR                 1
+GIXmake_ALT                   1
+GIXmake_REF                   1
+PAF_CS                        1
+SORT_PAF                      1
+all                           1
+total                        91
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon Apr  7 16:08:55 2025]
+localrule FAtoGDB_REF:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/reference/sharks/GCA_035084275.1.fa.gz
+    output: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084275.1.1gdb
+    jobid: 7
+    reason: Missing output files: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084275.1.1gdb
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:08:55 2025]
+localrule FAtoGDB_ALT:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/alternate/sharks/GCA_035084065.1.fa.gz
+    output: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084065.1.1gdb
+    jobid: 9
+    reason: Missing output files: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084065.1.1gdb
+    resources: tmpdir=/tmp
+
+[Mon Apr  7 16:09:02 2025]
+Finished job 7.
+1 of 91 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr  7 16:09:02 2025]
+localrule GIXmake_REF:
+    input: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084275.1.1gdb
+    output: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084275.1.gix
+    jobid: 6
+    reason: Missing output files: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084275.1.gix; Input files updated by another job: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084275.1.1gdb
+    resources: tmpdir=/tmp
+
+[Mon Apr  7 16:09:03 2025]
+Finished job 9.
+2 of 91 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr  7 16:09:03 2025]
+localrule GIXmake_ALT:
+    input: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084065.1.1gdb
+    output: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084065.1.gix
+    jobid: 8
+    reason: Missing output files: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084065.1.gix; Input files updated by another job: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084065.1.1gdb
+    resources: tmpdir=/tmp
+
+[Mon Apr  7 16:09:22 2025]
+Finished job 6.
+3 of 91 steps (3%) done
+[Mon Apr  7 16:09:23 2025]
+Finished job 8.
+4 of 91 steps (4%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr  7 16:09:23 2025]
+localrule FASTGA:
+    input: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084275.1.gix, sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084065.1.gix
+    output: sharks/HydCol_Test2/HydCol_Test2_ALN.1aln
+    jobid: 5
+    reason: Missing output files: sharks/HydCol_Test2/HydCol_Test2_ALN.1aln; Input files updated by another job: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084275.1.gix, sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084065.1.gix
+    resources: tmpdir=/tmp
+
+[Mon Apr  7 16:12:51 2025]
+Finished job 5.
+5 of 91 steps (5%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr  7 16:12:51 2025]
+localrule ALNtoPAF:
+    input: sharks/HydCol_Test2/HydCol_Test2_ALN.1aln
+    output: sharks/HydCol_Test2/HydCol_Test2_FASTGA.paf
+    jobid: 4
+    reason: Missing output files: sharks/HydCol_Test2/HydCol_Test2_FASTGA.paf; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_ALN.1aln
+    resources: tmpdir=/tmp
+
+[Mon Apr  7 16:13:19 2025]
+Finished job 4.
+6 of 91 steps (7%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr  7 16:13:19 2025]
+localrule SORT_PAF:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA.paf
+    output: sharks/HydCol_Test2/HydCol_Test2_FASTGA.srt.paf
+    jobid: 3
+    reason: Missing output files: sharks/HydCol_Test2/HydCol_Test2_FASTGA.srt.paf; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA.paf
+    resources: tmpdir=/tmp
+
+[Mon Apr  7 16:14:18 2025]
+Finished job 3.
+7 of 91 steps (8%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr  7 16:14:18 2025]
+localrule FILTER_PAF_CHR_ONLY:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA.srt.paf
+    output: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Filtered_Chr_Only.paf
+    jobid: 2
+    reason: Missing output files: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Filtered_Chr_Only.paf; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA.srt.paf
+    resources: tmpdir=/tmp
+
+[Mon Apr  7 16:14:20 2025]
+Finished job 2.
+8 of 91 steps (9%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr  7 16:14:20 2025]
+localrule PAF_CS:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Filtered_Chr_Only.paf
+    output: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    jobid: 1
+    reason: Missing output files: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Filtered_Chr_Only.paf
+    resources: tmpdir=/tmp
+
+[Mon Apr  7 16:15:00 2025]
+Finished job 1.
+9 of 91 steps (10%) done
+Select jobs to execute...
+Execute 76 jobs...
+
+[Mon Apr  7 16:15:05 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068780.1_Aln_Only.txt
+    jobid: 49
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068780.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068780.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:05 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068773.1_Aln_Only.txt
+    jobid: 42
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068773.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068773.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:05 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068766.1_Aln_Only.txt
+    jobid: 35
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068766.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068766.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:05 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068760.1_Aln_Only.txt
+    jobid: 29
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068760.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068760.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:05 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068776.1_Var_Only.txt
+    jobid: 85
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068776.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068776.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:05 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068753.1_Aln_Only.txt
+    jobid: 22
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068753.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068753.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:05 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068769.1_Var_Only.txt
+    jobid: 78
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068769.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068769.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:05 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068745.1_Aln_Only.txt
+    jobid: 14
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068745.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068745.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:05 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068762.1_Var_Only.txt
+    jobid: 71
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068762.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068762.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:05 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068755.1_Var_Only.txt
+    jobid: 64
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068755.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068755.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:05 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068775.1_Var_Only.txt
+    jobid: 84
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068775.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068775.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:05 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068748.1_Var_Only.txt
+    jobid: 57
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068748.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068748.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:05 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068781.1_Aln_Only.txt
+    jobid: 50
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068781.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068781.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:05 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068774.1_Aln_Only.txt
+    jobid: 43
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068774.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068774.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:05 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068768.1_Var_Only.txt
+    jobid: 77
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068768.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068768.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:05 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068767.1_Aln_Only.txt
+    jobid: 36
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068767.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068767.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:05 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068761.1_Var_Only.txt
+    jobid: 70
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068761.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068761.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:05 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068761.1_Aln_Only.txt
+    jobid: 30
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068761.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068761.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:05 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068754.1_Aln_Only.txt
+    jobid: 23
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068754.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068754.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:05 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068770.1_Var_Only.txt
+    jobid: 79
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068770.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068770.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:05 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068751.1_Aln_Only.txt
+    jobid: 20
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068751.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068751.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:05 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068763.1_Var_Only.txt
+    jobid: 72
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068763.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068763.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:05 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068777.1_Var_Only.txt
+    jobid: 86
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068777.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068777.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:05 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068749.1_Var_Only.txt
+    jobid: 58
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068749.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068749.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:05 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068742.1_Var_Only.txt
+    jobid: 51
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068742.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068742.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068775.1_Aln_Only.txt
+    jobid: 44
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068775.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068775.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068768.1_Aln_Only.txt
+    jobid: 37
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068768.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068768.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068762.1_Aln_Only.txt
+    jobid: 31
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068762.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068762.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068778.1_Var_Only.txt
+    jobid: 87
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068778.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068778.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068755.1_Aln_Only.txt
+    jobid: 24
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068755.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068755.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068771.1_Var_Only.txt
+    jobid: 80
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068771.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068771.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068746.1_Aln_Only.txt
+    jobid: 15
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068746.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068746.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068764.1_Var_Only.txt
+    jobid: 73
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068764.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068764.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_WHOLE_VAR:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/HydCol_Test2_Var_Only.txt
+    jobid: 10
+    reason: Missing output files: sharks/HydCol_Test2/temp/HydCol_Test2_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068757.1_Var_Only.txt
+    jobid: 66
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068757.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068757.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068750.1_Var_Only.txt
+    jobid: 59
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068750.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068750.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068743.1_Var_Only.txt
+    jobid: 52
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068743.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068743.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068769.1_Aln_Only.txt
+    jobid: 38
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068769.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068769.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068763.1_Aln_Only.txt
+    jobid: 32
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068763.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068763.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068779.1_Var_Only.txt
+    jobid: 88
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068779.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068779.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068756.1_Aln_Only.txt
+    jobid: 25
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068756.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068756.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068772.1_Var_Only.txt
+    jobid: 81
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068772.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068772.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068742.1_Aln_Only.txt
+    jobid: 11
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068742.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068742.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068758.1_Var_Only.txt
+    jobid: 67
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068758.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068758.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068751.1_Var_Only.txt
+    jobid: 60
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068751.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068751.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068744.1_Var_Only.txt
+    jobid: 53
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068744.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068744.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068770.1_Aln_Only.txt
+    jobid: 39
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068770.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068770.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068764.1_Aln_Only.txt
+    jobid: 33
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068764.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068764.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068780.1_Var_Only.txt
+    jobid: 89
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068780.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068780.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068757.1_Aln_Only.txt
+    jobid: 26
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068757.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068757.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068773.1_Var_Only.txt
+    jobid: 82
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068773.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068773.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068748.1_Aln_Only.txt
+    jobid: 17
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068748.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068748.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068766.1_Var_Only.txt
+    jobid: 75
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068766.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068766.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068743.1_Aln_Only.txt
+    jobid: 12
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068743.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068743.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068759.1_Var_Only.txt
+    jobid: 68
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068759.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068759.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068752.1_Var_Only.txt
+    jobid: 61
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068752.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068752.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068745.1_Var_Only.txt
+    jobid: 54
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068745.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068745.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068778.1_Aln_Only.txt
+    jobid: 47
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068778.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068778.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068771.1_Aln_Only.txt
+    jobid: 40
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068771.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068771.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068765.1_Aln_Only.txt
+    jobid: 34
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068765.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068765.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068781.1_Var_Only.txt
+    jobid: 90
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068781.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068781.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068758.1_Aln_Only.txt
+    jobid: 27
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068758.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068758.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068774.1_Var_Only.txt
+    jobid: 83
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068774.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068774.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068749.1_Aln_Only.txt
+    jobid: 18
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068749.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068749.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068767.1_Var_Only.txt
+    jobid: 76
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068767.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068767.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068744.1_Aln_Only.txt
+    jobid: 13
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068744.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068744.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068760.1_Var_Only.txt
+    jobid: 69
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068760.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068760.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068753.1_Var_Only.txt
+    jobid: 62
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068753.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068753.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068746.1_Var_Only.txt
+    jobid: 55
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068746.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068746.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068779.1_Aln_Only.txt
+    jobid: 48
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068779.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068779.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068772.1_Aln_Only.txt
+    jobid: 41
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068772.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068772.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068759.1_Aln_Only.txt
+    jobid: 28
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068759.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068759.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068752.1_Aln_Only.txt
+    jobid: 21
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068752.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068752.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068750.1_Aln_Only.txt
+    jobid: 19
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068750.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068750.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068754.1_Var_Only.txt
+    jobid: 63
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068754.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068754.1
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 16:15:06 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250331_CM068747.1_Var_Only.txt
+    jobid: 56
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250331_CM068747.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250331, CHR=CM068747.1
+    resources: tmpdir=/tmp
+

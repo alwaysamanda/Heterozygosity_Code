@@ -1,0 +1,72 @@
+host: login-p-2
+Building DAG of jobs...
+SLURM run ID: 0d076a32-c22a-4ead-80ea-bd9080e9321f
+Using shell: /usr/bin/bash
+Provided remote nodes: 50
+Job stats:
+job                            count
+---------------------------  -------
+BAM_CALLER_BED                    14
+BGZIP_VCF                         14
+BOOTSTRAPPING_MULTIHET_FILE      420
+CALL_PLOIDY                       14
+GENERATE_MASK                     14
+GENERATE_MULTIHETSEP              14
+INDEL_MASKER                      14
+MAIN_MULTIHETSEP                  14
+MAKE_BAM                           1
+MAKE_SAM                           1
+PILEUP_VARIANTS                   14
+REMOVE_INDELS                     14
+RESTRUCTURE                       14
+SEPARATE_BAM_BY_CHR               14
+all                                1
+total                            577
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue May 20 16:12:04 2025]
+rule MAKE_SAM:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_036971175.1.fa.gz, /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/sharks/GCA_036971445.1.fa.gz
+    output: sharks/NarBan/NarBan.sam
+    jobid: 108
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=3763, disk_mib=3589, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=720
+
+Job 108 has been submitted with SLURM jobid 9625461 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAKE_SAM/sharks_NarBan/9625461.log).
+[Tue May 20 22:08:28 2025]
+Finished job 108.
+1 of 577 steps (0.2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue May 20 22:08:28 2025]
+rule MAKE_BAM:
+    input: sharks/NarBan/NarBan.sam
+    output: sharks/NarBan/NarBan.bam
+    jobid: 107
+    reason: Missing output files: sharks/NarBan/NarBan.bam; Input files updated by another job: sharks/NarBan/NarBan.sam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=31896, disk_mib=30419, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 107 has been submitted with SLURM jobid 9637866 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAKE_BAM/sharks_NarBan/9637866.log).
+[Tue May 20 22:22:40 2025]
+Error in rule MAKE_BAM:
+    message: SLURM-job '9637866' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 107
+    input: sharks/NarBan/NarBan.sam
+    output: sharks/NarBan/NarBan.bam
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAKE_BAM/sharks_NarBan/9637866.log (check log file(s) for error details)
+    shell:
+        
+        samtools sort sharks/NarBan/NarBan.sam -o sharks/NarBan/NarBan.bam
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9637866
+
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-05-20T161204.023178.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -1,0 +1,94 @@
+host: cpu-p-198
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu May 29 10:54:27 2025]
+rule PLOT_MSMC:
+    input: sharks/HydCol/20250410_HydCol.msmc2.final.txt
+    output: sharks/HydCol/20250410_HydCol_MSMC2_test.svg
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, TODAY_DATE=20250410
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+host: cpu-p-198
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu May 29 10:54:29 2025]
+localrule PLOT_MSMC:
+    input: sharks/HydCol/20250410_HydCol.msmc2.final.txt
+    output: sharks/HydCol/20250410_HydCol_MSMC2_test.svg
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, TODAY_DATE=20250410
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=/tmp, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Warning message:
+In xy.coords(x, y, xlabel, ylabel, log) :
+  1 x value <= 0 omitted from logarithmic plot
+Error in file(file, "rt") : cannot open the connection
+Calls: read.table -> file
+In addition: Warning message:
+In file(file, "rt") :
+  cannot open file 'sharks/HydCol/20250410_HydCol_Bootstrapping_0.msmc2.final.txt': No such file or directory
+Execution halted
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 645:
+Command 'set -euo pipefail;  
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250508_Plot_MSMC.R sharks 20250410 HydCol 1.25e-08 18.6 sharks/HydCol/20250410_HydCol_MSMC2_test.svg sharks/HydCol/20250410_HydCol.msmc2.final.txt' returned non-zero exit status 1.
+[Thu May 29 10:54:30 2025]
+Error in rule PLOT_MSMC:
+    jobid: 0
+    input: sharks/HydCol/20250410_HydCol.msmc2.final.txt
+    output: sharks/HydCol/20250410_HydCol_MSMC2_test.svg
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250508_Plot_MSMC.R sharks 20250410 HydCol 1.25e-08 18.6 sharks/HydCol/20250410_HydCol_MSMC2_test.svg sharks/HydCol/20250410_HydCol.msmc2.final.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job PLOT_MSMC since they might be corrupted:
+sharks/HydCol/20250410_HydCol_MSMC2_test.svg
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.
+srun: error: cpu-p-198: task 0: Exited with exit code 1
+[Thu May 29 10:54:31 2025]
+Error in rule PLOT_MSMC:
+    jobid: 0
+    input: sharks/HydCol/20250410_HydCol.msmc2.final.txt
+    output: sharks/HydCol/20250410_HydCol_MSMC2_test.svg
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250508_Plot_MSMC.R sharks 20250410 HydCol 1.25e-08 18.6 sharks/HydCol/20250410_HydCol_MSMC2_test.svg sharks/HydCol/20250410_HydCol.msmc2.final.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.

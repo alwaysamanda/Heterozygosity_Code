@@ -1,0 +1,90 @@
+host: login-q-1
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 76
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+COMPILE_ROH                   1
+GET_ALN_ONLY_PER_CHROM        1
+GET_VAR_ALN_FILE              1
+GET_VAR_ONLY_PER_CHROM        1
+GET_WHOLE_VAR                 1
+ROH_CALC                      5
+all                           1
+total                        11
+
+Select jobs to execute...
+Execute 6 jobs...
+
+[Fri Apr  4 10:05:29 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068762.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068762.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068762.1_ROH_Results.txt
+    jobid: 190
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068762.1_ROH_Results.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068762.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 10:05:29 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068747.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068747.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068747.1_ROH_Results.txt
+    jobid: 175
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068747.1_ROH_Results.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068747.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 10:05:29 2025]
+localrule GET_VAR_ALN_FILE:
+    input: sharks/HydCol_Test2/20250403_CM068756.1_filtered.paf
+    output: sharks/HydCol_Test2/temp/20250403_CM068756.1_Aln_Var.txt
+    jobid: 78
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068756.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 10:05:29 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068764.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068764.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068764.1_ROH_Results.txt
+    jobid: 192
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068764.1_ROH_Results.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068764.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 10:05:29 2025]
+localrule GET_WHOLE_VAR:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/HydCol_Test2_Var_Only.txt
+    jobid: 48
+    reason: Missing output files: sharks/HydCol_Test2/temp/HydCol_Test2_Var_Only.txt
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 10:05:29 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068763.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068763.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068763.1_ROH_Results.txt
+    jobid: 191
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068763.1_ROH_Results.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068763.1
+    resources: tmpdir=/tmp
+
+[Fri Apr  4 10:05:32 2025]
+Finished job 191.
+1 of 11 steps (9%) done
+[Fri Apr  4 10:05:34 2025]
+Finished job 175.
+2 of 11 steps (18%) done
+[Fri Apr  4 10:05:35 2025]
+Finished job 190.
+3 of 11 steps (27%) done
+[Fri Apr  4 10:05:38 2025]
+Finished job 192.
+4 of 11 steps (36%) done

@@ -1,0 +1,41 @@
+host: login-p-1
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+GET_ALN_ONLY_PER_CHROM        6
+GET_VAR_ONLY_PER_CHROM        5
+ROH_CALC                      6
+all                           1
+total                        18
+
+Select jobs to execute...
+Execute 11 jobs...
+
+[Wed Mar 26 14:19:38 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: amphibians/EleCoq_TEST/20250325_CM069422.1_Aln_Var.txt
+    output: amphibians/EleCoq_TEST/20250325_CM069422.1_Var_Only.txt
+    jobid: 33
+    reason: Missing output files: amphibians/EleCoq_TEST/20250325_CM069422.1_Var_Only.txt
+    wildcards: CLADE=amphibians, SPEC_NAME=EleCoq_TEST, TODAY_DATE=20250325, CHR=CM069422.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 14:19:38 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: amphibians/EleCoq_TEST/20250325_CM069423.1_Aln_Var.txt
+    output: amphibians/EleCoq_TEST/20250325_CM069423.1_Aln_Only.txt
+    jobid: 35
+    reason: Missing output files: amphibians/EleCoq_TEST/20250325_CM069423.1_Aln_Only.txt; Code has changed since last execution
+    wildcards: CLADE=amphibians, SPEC_NAME=EleCoq_TEST, TODAY_DATE=20250325, CHR=CM069423.1
+    resources: tmpdir=/tmp
+
+RuleException in rule GET_ALN_ONLY_PER_CHROM in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 236:
+ValueError: unexpected '{' in field name, when formatting the following:
+
+        awk -v var='R' '{if ($1 == var) {print $0}}' {input.chr_aln_var} > {output.chr_aln_only}
+        

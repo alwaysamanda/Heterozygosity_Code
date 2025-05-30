@@ -1,0 +1,42 @@
+host: login-p-1
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count
+----------  -------
+FILTER_PAF        1
+total             1
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 12:36:26 2025]
+localrule FILTER_PAF:
+    input: amphibians/EleCoq_TEST/EleCoq_TEST_FASTGA.paf
+    output: amphibians/EleCoq_TEST/20250325_['CM069418.1', 'CM069419.1', 'CM069420.1', 'CM069421.1', 'CM069422.1', 'CM069423.1', 'CM069424.1', 'CM069425.1', 'CM069426.1', 'CM069427.1', 'CM069428.1', 'CM069429.1', 'CM069430.1', 'CM069431.1']_filtered.paf
+    jobid: 0
+    reason: Missing output files: amphibians/EleCoq_TEST/20250325_['CM069418.1', 'CM069419.1', 'CM069420.1', 'CM069421.1', 'CM069422.1', 'CM069423.1', 'CM069424.1', 'CM069425.1', 'CM069426.1', 'CM069427.1', 'CM069428.1', 'CM069429.1', 'CM069430.1', 'CM069431.1']_filtered.paf
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 224:
+Command 'set -euo pipefail;  
+        awk -v var='CM069418.1 CM069419.1 CM069420.1 CM069421.1 CM069422.1 CM069423.1 CM069424.1 CM069425.1 CM069426.1 CM069427.1 CM069428.1 CM069429.1 CM069430.1 CM069431.1' '{if ($6 == var && $12 >= 60) {print $0}}' amphibians/EleCoq_TEST/EleCoq_TEST_FASTGA.paf > amphibians/EleCoq_TEST/20250325_['CM069418.1', 'CM069419.1', 'CM069420.1', 'CM069421.1', 'CM069422.1', 'CM069423.1', 'CM069424.1', 'CM069425.1', 'CM069426.1', 'CM069427.1', 'CM069428.1', 'CM069429.1', 'CM069430.1', 'CM069431.1']_filtered.paf' returned non-zero exit status 2.
+[Wed Mar 26 12:36:30 2025]
+Error in rule FILTER_PAF:
+    jobid: 0
+    input: amphibians/EleCoq_TEST/EleCoq_TEST_FASTGA.paf
+    output: amphibians/EleCoq_TEST/20250325_['CM069418.1', 'CM069419.1', 'CM069420.1', 'CM069421.1', 'CM069422.1', 'CM069423.1', 'CM069424.1', 'CM069425.1', 'CM069426.1', 'CM069427.1', 'CM069428.1', 'CM069429.1', 'CM069430.1', 'CM069431.1']_filtered.paf
+    shell:
+        
+        awk -v var='CM069418.1 CM069419.1 CM069420.1 CM069421.1 CM069422.1 CM069423.1 CM069424.1 CM069425.1 CM069426.1 CM069427.1 CM069428.1 CM069429.1 CM069430.1 CM069431.1' '{if ($6 == var && $12 >= 60) {print $0}}' amphibians/EleCoq_TEST/EleCoq_TEST_FASTGA.paf > amphibians/EleCoq_TEST/20250325_['CM069418.1', 'CM069419.1', 'CM069420.1', 'CM069421.1', 'CM069422.1', 'CM069423.1', 'CM069424.1', 'CM069425.1', 'CM069426.1', 'CM069427.1', 'CM069428.1', 'CM069429.1', 'CM069430.1', 'CM069431.1']_filtered.paf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-26T123626.703938.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

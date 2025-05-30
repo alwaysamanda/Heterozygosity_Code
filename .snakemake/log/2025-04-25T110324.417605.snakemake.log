@@ -1,0 +1,737 @@
+host: login-p-3
+Migrating .snakemake folder to new format...
+Migration complete
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count
+---------------------  -------
+CALC_HET_WHOLE_GENOME        1
+COMPILE_HET                  1
+PLOT_HET_PER_CHR            51
+PLOT_WHOLE_HET               1
+all                          1
+total                       55
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Fri Apr 25 11:04:26 2025]
+localrule CALC_HET_WHOLE_GENOME:
+    input: sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt, sharks/HetFra/20250411_CM070962.1_het.txt, sharks/HetFra/20250411_CM070963.1_het.txt, sharks/HetFra/20250411_CM070964.1_het.txt, sharks/HetFra/20250411_CM070965.1_het.txt, sharks/HetFra/20250411_CM070966.1_het.txt, sharks/HetFra/20250411_CM070967.1_het.txt, sharks/HetFra/20250411_CM070968.1_het.txt, sharks/HetFra/20250411_CM070969.1_het.txt, sharks/HetFra/20250411_CM070970.1_het.txt, sharks/HetFra/20250411_CM070971.1_het.txt, sharks/HetFra/20250411_CM070972.1_het.txt, sharks/HetFra/20250411_CM070973.1_het.txt, sharks/HetFra/20250411_CM070974.1_het.txt, sharks/HetFra/20250411_CM070975.1_het.txt, sharks/HetFra/20250411_CM070976.1_het.txt, sharks/HetFra/20250411_CM070977.1_het.txt, sharks/HetFra/20250411_CM070978.1_het.txt, sharks/HetFra/20250411_CM070979.1_het.txt, sharks/HetFra/20250411_CM070980.1_het.txt, sharks/HetFra/20250411_CM070981.1_het.txt, sharks/HetFra/20250411_CM070982.1_het.txt, sharks/HetFra/20250411_CM070983.1_het.txt, sharks/HetFra/20250411_CM070984.1_het.txt, sharks/HetFra/20250411_CM070985.1_het.txt, sharks/HetFra/20250411_CM070986.1_het.txt, sharks/HetFra/20250411_CM070987.1_het.txt, sharks/HetFra/20250411_CM070988.1_het.txt, sharks/HetFra/20250411_CM070989.1_het.txt, sharks/HetFra/20250411_CM070990.1_het.txt, sharks/HetFra/20250411_CM070991.1_het.txt, sharks/HetFra/20250411_CM070992.1_het.txt, sharks/HetFra/20250411_CM070993.1_het.txt, sharks/HetFra/20250411_CM070994.1_het.txt, sharks/HetFra/20250411_CM070995.1_het.txt, sharks/HetFra/20250411_CM070996.1_het.txt, sharks/HetFra/20250411_CM070997.1_het.txt, sharks/HetFra/20250411_CM070998.1_het.txt, sharks/HetFra/20250411_CM070999.1_het.txt, sharks/HetFra/20250411_CM071000.1_het.txt, sharks/HetFra/20250411_CM071001.1_het.txt, sharks/HetFra/20250411_CM071002.1_het.txt, sharks/HetFra/20250411_CM071003.1_het.txt, sharks/HetFra/20250411_CM071004.1_het.txt, sharks/HetFra/20250411_CM071005.1_het.txt, sharks/HetFra/20250411_CM071006.1_het.txt, sharks/HetFra/20250411_CM071007.1_het.txt, sharks/HetFra/20250411_CM071008.1_het.txt, sharks/HetFra/20250411_CM071009.1_het.txt, sharks/HetFra/20250411_CM071010.1_het.txt, sharks/HetFra/20250411_CM071011.1_het.txt, sharks/HetFra/20250411_CM071012.1_het.txt
+    output: sharks/HetFra/20250411_HetFra_per_chr_mean_heterozygosity.txt, sharks/HetFra/20250411_HetFra_whole_genome_mean_heterozygosity.txt
+    jobid: 272
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_whole_genome_mean_heterozygosity.txt, sharks/HetFra/20250411_HetFra_per_chr_mean_heterozygosity.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:26 2025]
+localrule COMPILE_HET:
+    input: sharks/HetFra/20250411_CM070962.1_het.txt, sharks/HetFra/20250411_CM070963.1_het.txt, sharks/HetFra/20250411_CM070964.1_het.txt, sharks/HetFra/20250411_CM070965.1_het.txt, sharks/HetFra/20250411_CM070966.1_het.txt, sharks/HetFra/20250411_CM070967.1_het.txt, sharks/HetFra/20250411_CM070968.1_het.txt, sharks/HetFra/20250411_CM070969.1_het.txt, sharks/HetFra/20250411_CM070970.1_het.txt, sharks/HetFra/20250411_CM070971.1_het.txt, sharks/HetFra/20250411_CM070972.1_het.txt, sharks/HetFra/20250411_CM070973.1_het.txt, sharks/HetFra/20250411_CM070974.1_het.txt, sharks/HetFra/20250411_CM070975.1_het.txt, sharks/HetFra/20250411_CM070976.1_het.txt, sharks/HetFra/20250411_CM070977.1_het.txt, sharks/HetFra/20250411_CM070978.1_het.txt, sharks/HetFra/20250411_CM070979.1_het.txt, sharks/HetFra/20250411_CM070980.1_het.txt, sharks/HetFra/20250411_CM070981.1_het.txt, sharks/HetFra/20250411_CM070982.1_het.txt, sharks/HetFra/20250411_CM070983.1_het.txt, sharks/HetFra/20250411_CM070984.1_het.txt, sharks/HetFra/20250411_CM070985.1_het.txt, sharks/HetFra/20250411_CM070986.1_het.txt, sharks/HetFra/20250411_CM070987.1_het.txt, sharks/HetFra/20250411_CM070988.1_het.txt, sharks/HetFra/20250411_CM070989.1_het.txt, sharks/HetFra/20250411_CM070990.1_het.txt, sharks/HetFra/20250411_CM070991.1_het.txt, sharks/HetFra/20250411_CM070992.1_het.txt, sharks/HetFra/20250411_CM070993.1_het.txt, sharks/HetFra/20250411_CM070994.1_het.txt, sharks/HetFra/20250411_CM070995.1_het.txt, sharks/HetFra/20250411_CM070996.1_het.txt, sharks/HetFra/20250411_CM070997.1_het.txt, sharks/HetFra/20250411_CM070998.1_het.txt, sharks/HetFra/20250411_CM070999.1_het.txt, sharks/HetFra/20250411_CM071000.1_het.txt, sharks/HetFra/20250411_CM071001.1_het.txt, sharks/HetFra/20250411_CM071002.1_het.txt, sharks/HetFra/20250411_CM071003.1_het.txt, sharks/HetFra/20250411_CM071004.1_het.txt, sharks/HetFra/20250411_CM071005.1_het.txt, sharks/HetFra/20250411_CM071006.1_het.txt, sharks/HetFra/20250411_CM071007.1_het.txt, sharks/HetFra/20250411_CM071008.1_het.txt, sharks/HetFra/20250411_CM071009.1_het.txt, sharks/HetFra/20250411_CM071010.1_het.txt, sharks/HetFra/20250411_CM071011.1_het.txt, sharks/HetFra/20250411_CM071012.1_het.txt
+    output: sharks/HetFra/HetFra_Het_Compiled.tsv
+    jobid: 273
+    reason: Missing output files: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 11:04:26 2025]
+Finished job 273.
+1 of 55 steps (2%) done
+Select jobs to execute...
+Execute 52 jobs...
+
+[Fri Apr 25 11:04:27 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071012.1_Het_Map.svg
+    jobid: 324
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM071012.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071012.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:27 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071005.1_Het_Map.svg
+    jobid: 317
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM071005.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071005.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:27 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070998.1_Het_Map.svg
+    jobid: 310
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070998.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070998.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:27 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070992.1_Het_Map.svg
+    jobid: 304
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070992.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070992.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:27 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070985.1_Het_Map.svg
+    jobid: 297
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070985.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070985.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:27 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070978.1_Het_Map.svg
+    jobid: 290
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070978.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070978.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:27 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070971.1_Het_Map.svg
+    jobid: 283
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070971.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070971.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:27 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070964.1_Het_Map.svg
+    jobid: 276
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070964.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070964.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:27 2025]
+localrule PLOT_WHOLE_HET:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_Het_Whole_Genome_Map.svg
+    jobid: 325
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_Het_Whole_Genome_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:27 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071006.1_Het_Map.svg
+    jobid: 318
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM071006.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071006.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:27 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070999.1_Het_Map.svg
+    jobid: 311
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070999.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070999.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:27 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070993.1_Het_Map.svg
+    jobid: 305
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070993.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070993.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:27 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070986.1_Het_Map.svg
+    jobid: 298
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070986.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070986.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:27 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070979.1_Het_Map.svg
+    jobid: 291
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070979.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070979.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:27 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070972.1_Het_Map.svg
+    jobid: 284
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070972.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070972.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:27 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070965.1_Het_Map.svg
+    jobid: 277
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070965.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070965.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:27 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071007.1_Het_Map.svg
+    jobid: 319
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM071007.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071007.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:27 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071000.1_Het_Map.svg
+    jobid: 312
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM071000.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071000.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:27 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070994.1_Het_Map.svg
+    jobid: 306
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070994.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070994.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:27 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070987.1_Het_Map.svg
+    jobid: 299
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070987.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070987.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:27 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070980.1_Het_Map.svg
+    jobid: 292
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070980.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070980.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:27 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070973.1_Het_Map.svg
+    jobid: 285
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070973.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070973.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:28 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070966.1_Het_Map.svg
+    jobid: 278
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070966.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070966.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:28 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071008.1_Het_Map.svg
+    jobid: 320
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM071008.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071008.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:28 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071001.1_Het_Map.svg
+    jobid: 313
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM071001.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071001.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:28 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070995.1_Het_Map.svg
+    jobid: 307
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070995.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070995.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:28 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070988.1_Het_Map.svg
+    jobid: 300
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070988.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070988.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:28 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070981.1_Het_Map.svg
+    jobid: 293
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070981.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070981.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:28 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070974.1_Het_Map.svg
+    jobid: 286
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070974.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070974.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:28 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070967.1_Het_Map.svg
+    jobid: 279
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070967.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070967.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:28 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071009.1_Het_Map.svg
+    jobid: 321
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM071009.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071009.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:28 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071002.1_Het_Map.svg
+    jobid: 314
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM071002.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071002.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:28 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070996.1_Het_Map.svg
+    jobid: 308
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070996.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070996.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:34 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070989.1_Het_Map.svg
+    jobid: 301
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070989.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070989.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:34 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070982.1_Het_Map.svg
+    jobid: 294
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070982.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070982.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:36 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070975.1_Het_Map.svg
+    jobid: 287
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070975.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070975.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:36 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070968.1_Het_Map.svg
+    jobid: 280
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070968.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070968.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:36 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071010.1_Het_Map.svg
+    jobid: 322
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM071010.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071010.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:36 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071003.1_Het_Map.svg
+    jobid: 315
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM071003.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071003.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:36 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070997.1_Het_Map.svg
+    jobid: 309
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070997.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070997.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:36 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070990.1_Het_Map.svg
+    jobid: 302
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070990.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070990.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:36 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070983.1_Het_Map.svg
+    jobid: 295
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070983.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070983.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:36 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070976.1_Het_Map.svg
+    jobid: 288
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070976.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070976.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:37 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070969.1_Het_Map.svg
+    jobid: 281
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070969.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070969.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:37 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070962.1_Het_Map.svg
+    jobid: 274
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070962.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070962.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:37 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071011.1_Het_Map.svg
+    jobid: 323
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM071011.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071011.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:37 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071004.1_Het_Map.svg
+    jobid: 316
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM071004.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071004.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:37 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070991.1_Het_Map.svg
+    jobid: 303
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070991.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070991.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:37 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070984.1_Het_Map.svg
+    jobid: 296
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070984.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070984.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:37 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070977.1_Het_Map.svg
+    jobid: 289
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070977.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070977.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:39 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070970.1_Het_Map.svg
+    jobid: 282
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070970.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070970.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:04:40 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070963.1_Het_Map.svg
+    jobid: 275
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_CM070963.1_Het_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070963.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 11:04:41 2025]
+Finished job 272.
+2 of 55 steps (4%) done
+[Fri Apr 25 11:08:58 2025]
+Finished job 325.
+3 of 55 steps (5%) done
+[Fri Apr 25 11:09:06 2025]
+Finished job 298.
+4 of 55 steps (7%) done
+[Fri Apr 25 11:09:08 2025]
+Finished job 317.
+5 of 55 steps (9%) done
+[Fri Apr 25 11:09:08 2025]
+Finished job 283.
+6 of 55 steps (11%) done
+[Fri Apr 25 11:09:10 2025]
+Finished job 276.
+7 of 55 steps (13%) done
+[Fri Apr 25 11:09:13 2025]
+Finished job 324.
+8 of 55 steps (15%) done
+[Fri Apr 25 11:09:16 2025]
+Finished job 318.
+9 of 55 steps (16%) done
+[Fri Apr 25 11:09:17 2025]
+Finished job 310.
+10 of 55 steps (18%) done
+[Fri Apr 25 11:09:17 2025]
+Finished job 311.
+11 of 55 steps (20%) done
+[Fri Apr 25 11:09:18 2025]
+Finished job 286.
+12 of 55 steps (22%) done
+[Fri Apr 25 11:09:20 2025]
+Finished job 277.
+13 of 55 steps (24%) done
+[Fri Apr 25 11:09:24 2025]
+Finished job 297.
+14 of 55 steps (25%) done
+[Fri Apr 25 11:09:26 2025]
+Finished job 304.
+15 of 55 steps (27%) done
+[Fri Apr 25 11:09:27 2025]
+Finished job 305.
+16 of 55 steps (29%) done
+[Fri Apr 25 11:09:28 2025]
+Finished job 291.
+17 of 55 steps (31%) done
+[Fri Apr 25 11:09:29 2025]
+Finished job 284.
+18 of 55 steps (33%) done
+[Fri Apr 25 11:09:29 2025]
+Finished job 309.
+19 of 55 steps (35%) done
+[Fri Apr 25 11:09:31 2025]
+Finished job 294.
+20 of 55 steps (36%) done
+[Fri Apr 25 11:09:32 2025]
+Finished job 319.
+21 of 55 steps (38%) done
+[Fri Apr 25 11:09:32 2025]
+Finished job 320.
+22 of 55 steps (40%) done
+[Fri Apr 25 11:09:33 2025]
+Finished job 312.
+23 of 55 steps (42%) done
+[Fri Apr 25 11:09:33 2025]
+Finished job 300.
+24 of 55 steps (44%) done
+[Fri Apr 25 11:09:33 2025]
+Finished job 274.
+25 of 55 steps (45%) done
+[Fri Apr 25 11:09:33 2025]
+Finished job 278.
+26 of 55 steps (47%) done
+[Fri Apr 25 11:09:33 2025]
+Finished job 313.
+27 of 55 steps (49%) done
+[Fri Apr 25 11:09:34 2025]
+Finished job 321.
+28 of 55 steps (51%) done
+[Fri Apr 25 11:09:34 2025]
+Finished job 302.
+29 of 55 steps (53%) done
+[Fri Apr 25 11:09:34 2025]
+Finished job 316.
+30 of 55 steps (55%) done
+[Fri Apr 25 11:09:34 2025]
+Finished job 280.
+31 of 55 steps (56%) done
+[Fri Apr 25 11:09:34 2025]
+Finished job 281.
+32 of 55 steps (58%) done
+[Fri Apr 25 11:09:35 2025]
+Finished job 289.
+33 of 55 steps (60%) done
+[Fri Apr 25 11:09:35 2025]
+Finished job 279.
+34 of 55 steps (62%) done
+[Fri Apr 25 11:09:35 2025]
+Finished job 307.
+35 of 55 steps (64%) done
+[Fri Apr 25 11:09:35 2025]
+Finished job 314.
+36 of 55 steps (65%) done
+[Fri Apr 25 11:09:36 2025]
+Finished job 287.
+37 of 55 steps (67%) done
+[Fri Apr 25 11:09:36 2025]
+Finished job 315.
+38 of 55 steps (69%) done
+[Fri Apr 25 11:09:36 2025]
+Finished job 275.
+39 of 55 steps (71%) done
+[Fri Apr 25 11:09:36 2025]
+Finished job 323.
+40 of 55 steps (73%) done
+[Fri Apr 25 11:09:36 2025]
+Finished job 296.
+41 of 55 steps (75%) done
+[Fri Apr 25 11:09:36 2025]
+Finished job 306.
+42 of 55 steps (76%) done
+[Fri Apr 25 11:09:36 2025]
+Finished job 303.
+43 of 55 steps (78%) done
+[Fri Apr 25 11:09:36 2025]
+Finished job 299.
+44 of 55 steps (80%) done
+[Fri Apr 25 11:09:36 2025]
+Finished job 288.
+45 of 55 steps (82%) done
+[Fri Apr 25 11:09:36 2025]
+Finished job 293.
+46 of 55 steps (84%) done
+[Fri Apr 25 11:09:36 2025]
+Finished job 308.
+47 of 55 steps (85%) done
+[Fri Apr 25 11:09:36 2025]
+Finished job 301.
+48 of 55 steps (87%) done
+[Fri Apr 25 11:09:36 2025]
+Finished job 292.
+49 of 55 steps (89%) done
+[Fri Apr 25 11:09:36 2025]
+Finished job 285.
+50 of 55 steps (91%) done
+[Fri Apr 25 11:09:36 2025]
+Finished job 282.
+51 of 55 steps (93%) done
+[Fri Apr 25 11:09:36 2025]
+Finished job 322.
+52 of 55 steps (95%) done
+[Fri Apr 25 11:09:36 2025]
+Finished job 290.
+53 of 55 steps (96%) done
+[Fri Apr 25 11:09:37 2025]
+Finished job 295.
+54 of 55 steps (98%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 11:09:37 2025]
+localrule all:
+    input: sharks/HetFra/HetFra_FASTGA.chain.fltr.srt.paf, sharks/HetFra/temp/HetFra_Var_Only.txt, sharks/HetFra/temp/HetFra_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070962.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070963.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070964.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070965.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070966.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070967.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070968.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070969.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070970.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070971.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070972.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070973.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070974.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070975.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070976.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070977.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070978.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070979.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070980.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070981.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070982.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070983.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070984.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070985.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070986.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070987.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070988.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070989.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070990.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070991.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070992.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070993.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070994.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070995.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070996.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070997.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070998.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070999.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071000.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071001.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071002.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071003.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071004.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071005.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071006.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071007.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071008.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071009.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071010.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071011.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071012.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070962.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070963.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070964.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070965.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070966.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070967.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070968.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070969.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070970.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070971.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070972.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070973.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070974.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070975.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070976.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070977.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070978.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070979.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070980.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070981.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070982.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070983.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070984.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070985.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070986.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070987.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070988.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070989.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070990.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070991.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070992.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070993.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070994.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070995.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070996.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070997.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070998.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070999.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM071000.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM071001.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM071002.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM071003.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM071004.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM071005.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM071006.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM071007.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM071008.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM071009.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM071010.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM071011.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM071012.1_Var_Only.txt, sharks/HetFra/20250411_CM070962.1_ROH_Results.txt, sharks/HetFra/20250411_CM070963.1_ROH_Results.txt, sharks/HetFra/20250411_CM070964.1_ROH_Results.txt, sharks/HetFra/20250411_CM070965.1_ROH_Results.txt, sharks/HetFra/20250411_CM070966.1_ROH_Results.txt, sharks/HetFra/20250411_CM070967.1_ROH_Results.txt, sharks/HetFra/20250411_CM070968.1_ROH_Results.txt, sharks/HetFra/20250411_CM070969.1_ROH_Results.txt, sharks/HetFra/20250411_CM070970.1_ROH_Results.txt, sharks/HetFra/20250411_CM070971.1_ROH_Results.txt, sharks/HetFra/20250411_CM070972.1_ROH_Results.txt, sharks/HetFra/20250411_CM070973.1_ROH_Results.txt, sharks/HetFra/20250411_CM070974.1_ROH_Results.txt, sharks/HetFra/20250411_CM070975.1_ROH_Results.txt, sharks/HetFra/20250411_CM070976.1_ROH_Results.txt, sharks/HetFra/20250411_CM070977.1_ROH_Results.txt, sharks/HetFra/20250411_CM070978.1_ROH_Results.txt, sharks/HetFra/20250411_CM070979.1_ROH_Results.txt, sharks/HetFra/20250411_CM070980.1_ROH_Results.txt, sharks/HetFra/20250411_CM070981.1_ROH_Results.txt, sharks/HetFra/20250411_CM070982.1_ROH_Results.txt, sharks/HetFra/20250411_CM070983.1_ROH_Results.txt, sharks/HetFra/20250411_CM070984.1_ROH_Results.txt, sharks/HetFra/20250411_CM070985.1_ROH_Results.txt, sharks/HetFra/20250411_CM070986.1_ROH_Results.txt, sharks/HetFra/20250411_CM070987.1_ROH_Results.txt, sharks/HetFra/20250411_CM070988.1_ROH_Results.txt, sharks/HetFra/20250411_CM070989.1_ROH_Results.txt, sharks/HetFra/20250411_CM070990.1_ROH_Results.txt, sharks/HetFra/20250411_CM070991.1_ROH_Results.txt, sharks/HetFra/20250411_CM070992.1_ROH_Results.txt, sharks/HetFra/20250411_CM070993.1_ROH_Results.txt, sharks/HetFra/20250411_CM070994.1_ROH_Results.txt, sharks/HetFra/20250411_CM070995.1_ROH_Results.txt, sharks/HetFra/20250411_CM070996.1_ROH_Results.txt, sharks/HetFra/20250411_CM070997.1_ROH_Results.txt, sharks/HetFra/20250411_CM070998.1_ROH_Results.txt, sharks/HetFra/20250411_CM070999.1_ROH_Results.txt, sharks/HetFra/20250411_CM071000.1_ROH_Results.txt, sharks/HetFra/20250411_CM071001.1_ROH_Results.txt, sharks/HetFra/20250411_CM071002.1_ROH_Results.txt, sharks/HetFra/20250411_CM071003.1_ROH_Results.txt, sharks/HetFra/20250411_CM071004.1_ROH_Results.txt, sharks/HetFra/20250411_CM071005.1_ROH_Results.txt, sharks/HetFra/20250411_CM071006.1_ROH_Results.txt, sharks/HetFra/20250411_CM071007.1_ROH_Results.txt, sharks/HetFra/20250411_CM071008.1_ROH_Results.txt, sharks/HetFra/20250411_CM071009.1_ROH_Results.txt, sharks/HetFra/20250411_CM071010.1_ROH_Results.txt, sharks/HetFra/20250411_CM071011.1_ROH_Results.txt, sharks/HetFra/20250411_CM071012.1_ROH_Results.txt, sharks/HetFra/HetFra_ROH_Results.csv, sharks/HetFra/20250411_HetFra_ROH_Map.pdf, sharks/HetFra/20250411_CM070962.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070963.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070964.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070965.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070966.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070967.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070968.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070969.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070970.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070971.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070972.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070973.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070974.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070975.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070976.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070977.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070978.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070979.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070980.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070981.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070982.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070983.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070984.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070985.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070986.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070987.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070988.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070989.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070990.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070991.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070992.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070993.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070994.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070995.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070996.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070997.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070998.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM070999.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM071000.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM071001.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM071002.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM071003.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM071004.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM071005.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM071006.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM071007.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM071008.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM071009.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM071010.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM071011.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_CM071012.1_GCA_036365495.1_FROH.txt, sharks/HetFra/20250411_HetFra_FROH.txt, sharks/HetFra/20250411_CM070962.1_het.txt, sharks/HetFra/20250411_CM070963.1_het.txt, sharks/HetFra/20250411_CM070964.1_het.txt, sharks/HetFra/20250411_CM070965.1_het.txt, sharks/HetFra/20250411_CM070966.1_het.txt, sharks/HetFra/20250411_CM070967.1_het.txt, sharks/HetFra/20250411_CM070968.1_het.txt, sharks/HetFra/20250411_CM070969.1_het.txt, sharks/HetFra/20250411_CM070970.1_het.txt, sharks/HetFra/20250411_CM070971.1_het.txt, sharks/HetFra/20250411_CM070972.1_het.txt, sharks/HetFra/20250411_CM070973.1_het.txt, sharks/HetFra/20250411_CM070974.1_het.txt, sharks/HetFra/20250411_CM070975.1_het.txt, sharks/HetFra/20250411_CM070976.1_het.txt, sharks/HetFra/20250411_CM070977.1_het.txt, sharks/HetFra/20250411_CM070978.1_het.txt, sharks/HetFra/20250411_CM070979.1_het.txt, sharks/HetFra/20250411_CM070980.1_het.txt, sharks/HetFra/20250411_CM070981.1_het.txt, sharks/HetFra/20250411_CM070982.1_het.txt, sharks/HetFra/20250411_CM070983.1_het.txt, sharks/HetFra/20250411_CM070984.1_het.txt, sharks/HetFra/20250411_CM070985.1_het.txt, sharks/HetFra/20250411_CM070986.1_het.txt, sharks/HetFra/20250411_CM070987.1_het.txt, sharks/HetFra/20250411_CM070988.1_het.txt, sharks/HetFra/20250411_CM070989.1_het.txt, sharks/HetFra/20250411_CM070990.1_het.txt, sharks/HetFra/20250411_CM070991.1_het.txt, sharks/HetFra/20250411_CM070992.1_het.txt, sharks/HetFra/20250411_CM070993.1_het.txt, sharks/HetFra/20250411_CM070994.1_het.txt, sharks/HetFra/20250411_CM070995.1_het.txt, sharks/HetFra/20250411_CM070996.1_het.txt, sharks/HetFra/20250411_CM070997.1_het.txt, sharks/HetFra/20250411_CM070998.1_het.txt, sharks/HetFra/20250411_CM070999.1_het.txt, sharks/HetFra/20250411_CM071000.1_het.txt, sharks/HetFra/20250411_CM071001.1_het.txt, sharks/HetFra/20250411_CM071002.1_het.txt, sharks/HetFra/20250411_CM071003.1_het.txt, sharks/HetFra/20250411_CM071004.1_het.txt, sharks/HetFra/20250411_CM071005.1_het.txt, sharks/HetFra/20250411_CM071006.1_het.txt, sharks/HetFra/20250411_CM071007.1_het.txt, sharks/HetFra/20250411_CM071008.1_het.txt, sharks/HetFra/20250411_CM071009.1_het.txt, sharks/HetFra/20250411_CM071010.1_het.txt, sharks/HetFra/20250411_CM071011.1_het.txt, sharks/HetFra/20250411_CM071012.1_het.txt, sharks/HetFra/20250411_HetFra_per_chr_mean_heterozygosity.txt, sharks/HetFra/20250411_HetFra_whole_genome_mean_heterozygosity.txt, sharks/HetFra/HetFra_Het_Compiled.tsv, sharks/HetFra/20250411_HetFra_CM070962.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070963.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070964.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070965.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070966.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070967.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070968.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070969.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070970.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070971.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070972.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070973.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070974.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070975.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070976.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070977.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070978.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070979.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070980.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070981.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070982.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070983.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070984.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070985.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070986.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070987.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070988.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070989.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070990.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070991.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070992.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070993.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070994.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070995.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070996.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070997.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070998.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070999.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM071000.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM071001.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM071002.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM071003.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM071004.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM071005.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM071006.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM071007.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM071008.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM071009.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM071010.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM071011.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM071012.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_Het_Whole_Genome_Map.svg
+    jobid: 0
+    reason: Input files updated by another job: sharks/HetFra/20250411_HetFra_whole_genome_mean_heterozygosity.txt, sharks/HetFra/20250411_HetFra_CM070990.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070965.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM071006.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM071008.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_per_chr_mean_heterozygosity.txt, sharks/HetFra/20250411_HetFra_CM070971.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070972.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM071004.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070970.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM071009.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM071000.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070968.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070983.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM071005.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070991.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070977.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070984.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070976.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070962.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070980.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM071002.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070969.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070967.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070966.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070997.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070963.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070974.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070993.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070996.1_Het_Map.svg, sharks/HetFra/HetFra_Het_Compiled.tsv, sharks/HetFra/20250411_HetFra_CM071001.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070978.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070973.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070985.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_Het_Whole_Genome_Map.svg, sharks/HetFra/20250411_HetFra_CM070982.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070988.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM071011.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070986.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070975.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070994.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070999.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070979.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070989.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM071012.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070998.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM071007.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070992.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070981.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070964.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070995.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM071010.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM070987.1_Het_Map.svg, sharks/HetFra/20250411_HetFra_CM071003.1_Het_Map.svg
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 11:09:37 2025]
+Finished job 0.
+55 of 55 steps (100%) done
+Complete log: .snakemake/log/2025-04-25T110324.417605.snakemake.log

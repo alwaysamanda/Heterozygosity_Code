@@ -1,0 +1,73 @@
+host: login-p-4
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job             count
+------------  -------
+BAM_COVERAGE        1
+MAKE_BAM            1
+MAKE_SAM            1
+all                 1
+total               4
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 22:37:25 2025]
+localrule MAKE_SAM:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/reference/sharks/GCA_035084275.1.fa.gz, /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/alternate/sharks/GCA_035084065.1.fa.gz
+    output: sharks/HydCol_Test/20250326_HydCol_Test.sam
+    jobid: 55
+    reason: Missing output files: sharks/HydCol_Test/20250326_HydCol_Test.sam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326
+    resources: tmpdir=/tmp
+
+[Wed Mar 26 22:45:39 2025]
+Finished job 55.
+1 of 4 steps (25%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 22:45:39 2025]
+localrule MAKE_BAM:
+    input: sharks/HydCol_Test/20250326_HydCol_Test.sam
+    output: sharks/HydCol_Test/20250326_HydCol_Test.bam
+    jobid: 54
+    reason: Missing output files: sharks/HydCol_Test/20250326_HydCol_Test.bam; Input files updated by another job: sharks/HydCol_Test/20250326_HydCol_Test.sam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326
+    resources: tmpdir=/tmp
+
+[Wed Mar 26 22:46:22 2025]
+Finished job 54.
+2 of 4 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 22:46:22 2025]
+localrule BAM_COVERAGE:
+    input: sharks/HydCol_Test/20250326_HydCol_Test.bam
+    output: sharks/HydCol_Test/20250326_HydCol_Test_BAM_Coverage.txt
+    jobid: 53
+    reason: Missing output files: sharks/HydCol_Test/20250326_HydCol_Test_BAM_Coverage.txt; Input files updated by another job: sharks/HydCol_Test/20250326_HydCol_Test.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326
+    resources: tmpdir=/tmp
+
+[Wed Mar 26 22:47:07 2025]
+Finished job 53.
+3 of 4 steps (75%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 22:47:07 2025]
+localrule all:
+    input: sharks/HydCol_Test/HydCol_Test_FASTGA.paf, sharks/HydCol_Test/20250326_CM068742.1_filtered.paf, sharks/HydCol_Test/20250326_CM068743.1_filtered.paf, sharks/HydCol_Test/20250326_CM068744.1_filtered.paf, sharks/HydCol_Test/20250326_CM068745.1_filtered.paf, sharks/HydCol_Test/20250326_CM068746.1_filtered.paf, sharks/HydCol_Test/temp/20250326_CM068742.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068743.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068744.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068745.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068746.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068742.1_Var_Only.txt, sharks/HydCol_Test/temp/20250326_CM068743.1_Var_Only.txt, sharks/HydCol_Test/temp/20250326_CM068744.1_Var_Only.txt, sharks/HydCol_Test/temp/20250326_CM068745.1_Var_Only.txt, sharks/HydCol_Test/temp/20250326_CM068746.1_Var_Only.txt, sharks/HydCol_Test/20250326_CM068742.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068743.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068744.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068745.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068746.1_ROH_Results.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/20250326_CM068742.1_GCA_035084275.1_FROH.txt, sharks/HydCol_Test/20250326_CM068743.1_GCA_035084275.1_FROH.txt, sharks/HydCol_Test/20250326_CM068744.1_GCA_035084275.1_FROH.txt, sharks/HydCol_Test/20250326_CM068745.1_GCA_035084275.1_FROH.txt, sharks/HydCol_Test/20250326_CM068746.1_GCA_035084275.1_FROH.txt, sharks/HydCol_Test/20250326_CM068742.1_het.txt, sharks/HydCol_Test/20250326_CM068743.1_het.txt, sharks/HydCol_Test/20250326_CM068744.1_het.txt, sharks/HydCol_Test/20250326_CM068745.1_het.txt, sharks/HydCol_Test/20250326_CM068746.1_het.txt, sharks/HydCol_Test/20250326_HydCol_Test_per_chr_mean_heterozygosity.txt, sharks/HydCol_Test/20250326_HydCol_Test_whole_genome_mean_heterozygosity.txt, sharks/HydCol_Test/HydCol_Test_Het_Compiled.tsv, sharks/HydCol_Test/20250326_HydCol_Test_CM068742.1_Het_Map.svg, sharks/HydCol_Test/20250326_HydCol_Test_CM068743.1_Het_Map.svg, sharks/HydCol_Test/20250326_HydCol_Test_CM068744.1_Het_Map.svg, sharks/HydCol_Test/20250326_HydCol_Test_CM068745.1_Het_Map.svg, sharks/HydCol_Test/20250326_HydCol_Test_CM068746.1_Het_Map.svg, sharks/HydCol_Test/20250326_HydCol_Test_Het_Whole_Genome_Map.svg, sharks/HydCol_Test/20250326_HydCol_Test_BAM_Coverage.txt
+    jobid: 0
+    reason: Input files updated by another job: sharks/HydCol_Test/20250326_HydCol_Test_BAM_Coverage.txt
+    resources: tmpdir=/tmp
+
+[Wed Mar 26 22:47:07 2025]
+Finished job 0.
+4 of 4 steps (100%) done
+Complete log: .snakemake/log/2025-03-26T223723.931685.snakemake.log

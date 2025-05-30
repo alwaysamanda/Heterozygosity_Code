@@ -1,0 +1,1835 @@
+host: login-q-1
+Building DAG of jobs...
+SLURM run ID: 435818b8-b1d6-4d2a-861e-a8114fdd3552
+Using shell: /usr/bin/bash
+Provided remote nodes: 50
+Job stats:
+job                            count
+---------------------------  -------
+BGZIP_VCF                         32
+BOOTSTRAPPING_MULTIHET_FILE      960
+CALC_HET_PER_CHR                  33
+CALC_HET_WHOLE_GENOME              1
+COMPILE_HET                        1
+GENERATE_MASK                     32
+GENERATE_MULTIHETSEP              32
+MAIN_MULTIHETSEP                  32
+PLOT_HET_PER_CHR                  32
+PLOT_WHOLE_HET                     1
+REMOVE_INDELS                     32
+all                                1
+total                           1189
+
+Select jobs to execute...
+Execute 50 jobs...
+
+[Wed May 21 08:46:09 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057571.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057571.1.recode.vcf
+    jobid: 412
+    reason: Missing output files: sharks/MobBir/CM057571.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057571.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 412 has been submitted with SLURM jobid 9663316 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057571.1/9663316.log).
+
+[Wed May 21 08:46:10 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057584.1_het.txt
+    jobid: 176
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057584.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 176 has been submitted with SLURM jobid 9663318 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057584.1/9663318.log).
+
+[Wed May 21 08:46:12 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057564.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057564.1.recode.vcf
+    jobid: 398
+    reason: Missing output files: sharks/MobBir/CM057564.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057564.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 398 has been submitted with SLURM jobid 9663320 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057564.1/9663320.log).
+
+[Wed May 21 08:46:13 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057577.1_het.txt
+    jobid: 169
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057577.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 169 has been submitted with SLURM jobid 9663324 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057577.1/9663324.log).
+
+[Wed May 21 08:46:15 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057571.1_het.txt
+    jobid: 163
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057571.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 163 has been submitted with SLURM jobid 9663327 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057571.1/9663327.log).
+
+[Wed May 21 08:46:15 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057564.1_het.txt
+    jobid: 156
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057564.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 156 has been submitted with SLURM jobid 9663328 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057564.1/9663328.log).
+
+[Wed May 21 08:46:18 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057557.1_het.txt
+    jobid: 149
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057557.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 149 has been submitted with SLURM jobid 9663332 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057557.1/9663332.log).
+
+[Wed May 21 08:46:22 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057586.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057586.1.recode.vcf
+    jobid: 442
+    reason: Missing output files: sharks/MobBir/CM057586.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057586.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 442 has been submitted with SLURM jobid 9663334 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057586.1/9663334.log).
+
+[Wed May 21 08:46:23 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057579.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057579.1.recode.vcf
+    jobid: 428
+    reason: Missing output files: sharks/MobBir/CM057579.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057579.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 428 has been submitted with SLURM jobid 9663336 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057579.1/9663336.log).
+
+[Wed May 21 08:46:25 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057572.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057572.1.recode.vcf
+    jobid: 414
+    reason: Missing output files: sharks/MobBir/CM057572.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057572.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 414 has been submitted with SLURM jobid 9663337 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057572.1/9663337.log).
+
+[Wed May 21 08:46:25 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057585.1_het.txt
+    jobid: 177
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057585.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 177 has been submitted with SLURM jobid 9663339 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057585.1/9663339.log).
+
+[Wed May 21 08:46:28 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057565.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057565.1.recode.vcf
+    jobid: 400
+    reason: Missing output files: sharks/MobBir/CM057565.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057565.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 400 has been submitted with SLURM jobid 9663340 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057565.1/9663340.log).
+
+[Wed May 21 08:46:28 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057578.1_het.txt
+    jobid: 170
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057578.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 170 has been submitted with SLURM jobid 9663341 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057578.1/9663341.log).
+
+[Wed May 21 08:46:28 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057558.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057558.1.recode.vcf
+    jobid: 386
+    reason: Missing output files: sharks/MobBir/CM057558.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057558.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 386 has been submitted with SLURM jobid 9663342 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057558.1/9663342.log).
+
+[Wed May 21 08:46:30 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057572.1_het.txt
+    jobid: 164
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057572.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 164 has been submitted with SLURM jobid 9663343 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057572.1/9663343.log).
+
+[Wed May 21 08:46:30 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057565.1_het.txt
+    jobid: 157
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057565.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 157 has been submitted with SLURM jobid 9663344 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057565.1/9663344.log).
+
+[Wed May 21 08:46:30 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057558.1_het.txt
+    jobid: 150
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057558.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 150 has been submitted with SLURM jobid 9663345 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057558.1/9663345.log).
+
+[Wed May 21 08:46:30 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057587.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057587.1.recode.vcf
+    jobid: 444
+    reason: Missing output files: sharks/MobBir/CM057587.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057587.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 444 has been submitted with SLURM jobid 9663346 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057587.1/9663346.log).
+
+[Wed May 21 08:46:33 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057580.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057580.1.recode.vcf
+    jobid: 430
+    reason: Missing output files: sharks/MobBir/CM057580.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057580.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 430 has been submitted with SLURM jobid 9663347 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057580.1/9663347.log).
+
+[Wed May 21 08:46:33 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057573.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057573.1.recode.vcf
+    jobid: 416
+    reason: Missing output files: sharks/MobBir/CM057573.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057573.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 416 has been submitted with SLURM jobid 9663348 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057573.1/9663348.log).
+
+[Wed May 21 08:46:33 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057586.1_het.txt
+    jobid: 178
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057586.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 178 has been submitted with SLURM jobid 9663349 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057586.1/9663349.log).
+
+[Wed May 21 08:46:35 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057566.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057566.1.recode.vcf
+    jobid: 402
+    reason: Missing output files: sharks/MobBir/CM057566.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057566.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 402 has been submitted with SLURM jobid 9663350 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057566.1/9663350.log).
+
+[Wed May 21 08:46:35 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057579.1_het.txt
+    jobid: 171
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057579.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 171 has been submitted with SLURM jobid 9663351 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057579.1/9663351.log).
+
+[Wed May 21 08:46:36 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057582.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057582.1.recode.vcf
+    jobid: 434
+    reason: Missing output files: sharks/MobBir/CM057582.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057582.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 434 has been submitted with SLURM jobid 9663352 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057582.1/9663352.log).
+
+[Wed May 21 08:46:38 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057575.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057575.1.recode.vcf
+    jobid: 420
+    reason: Missing output files: sharks/MobBir/CM057575.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057575.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 420 has been submitted with SLURM jobid 9663353 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057575.1/9663353.log).
+
+[Wed May 21 08:46:38 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057568.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057568.1.recode.vcf
+    jobid: 406
+    reason: Missing output files: sharks/MobBir/CM057568.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057568.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 406 has been submitted with SLURM jobid 9663354 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057568.1/9663354.log).
+
+[Wed May 21 08:46:38 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057581.1_het.txt
+    jobid: 173
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057581.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 173 has been submitted with SLURM jobid 9663355 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057581.1/9663355.log).
+
+[Wed May 21 08:46:40 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057561.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057561.1.recode.vcf
+    jobid: 392
+    reason: Missing output files: sharks/MobBir/CM057561.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057561.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 392 has been submitted with SLURM jobid 9663356 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057561.1/9663356.log).
+
+[Wed May 21 08:46:41 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057575.1_het.txt
+    jobid: 167
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057575.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 167 has been submitted with SLURM jobid 9663357 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057575.1/9663357.log).
+
+[Wed May 21 08:46:41 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057568.1_het.txt
+    jobid: 160
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057568.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 160 has been submitted with SLURM jobid 9663358 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057568.1/9663358.log).
+
+[Wed May 21 08:46:43 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057561.1_het.txt
+    jobid: 153
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057561.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 153 has been submitted with SLURM jobid 9663359 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057561.1/9663359.log).
+
+[Wed May 21 08:46:43 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057583.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057583.1.recode.vcf
+    jobid: 436
+    reason: Missing output files: sharks/MobBir/CM057583.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057583.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 436 has been submitted with SLURM jobid 9663360 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057583.1/9663360.log).
+
+[Wed May 21 08:46:43 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057576.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057576.1.recode.vcf
+    jobid: 422
+    reason: Missing output files: sharks/MobBir/CM057576.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057576.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 422 has been submitted with SLURM jobid 9663361 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057576.1/9663361.log).
+
+[Wed May 21 08:46:45 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057569.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057569.1.recode.vcf
+    jobid: 408
+    reason: Missing output files: sharks/MobBir/CM057569.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057569.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 408 has been submitted with SLURM jobid 9663362 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057569.1/9663362.log).
+
+[Wed May 21 08:46:46 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057582.1_het.txt
+    jobid: 174
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057582.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 174 has been submitted with SLURM jobid 9663363 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057582.1/9663363.log).
+
+[Wed May 21 08:46:46 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057562.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057562.1.recode.vcf
+    jobid: 394
+    reason: Missing output files: sharks/MobBir/CM057562.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057562.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 394 has been submitted with SLURM jobid 9663376 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057562.1/9663376.log).
+
+[Wed May 21 08:46:48 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057576.1_het.txt
+    jobid: 168
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057576.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 168 has been submitted with SLURM jobid 9663377 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057576.1/9663377.log).
+
+[Wed May 21 08:46:48 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057556.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057556.1.recode.vcf
+    jobid: 382
+    reason: Missing output files: sharks/MobBir/CM057556.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057556.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 382 has been submitted with SLURM jobid 9663378 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057556.1/9663378.log).
+
+[Wed May 21 08:46:48 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057569.1_het.txt
+    jobid: 161
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057569.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 161 has been submitted with SLURM jobid 9663379 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057569.1/9663379.log).
+
+[Wed May 21 08:46:49 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057562.1_het.txt
+    jobid: 154
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057562.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 154 has been submitted with SLURM jobid 9663384 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057562.1/9663384.log).
+
+[Wed May 21 08:46:53 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057584.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057584.1.recode.vcf
+    jobid: 438
+    reason: Missing output files: sharks/MobBir/CM057584.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057584.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 438 has been submitted with SLURM jobid 9663385 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057584.1/9663385.log).
+
+[Wed May 21 08:46:53 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057577.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057577.1.recode.vcf
+    jobid: 424
+    reason: Missing output files: sharks/MobBir/CM057577.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057577.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 424 has been submitted with SLURM jobid 9663386 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057577.1/9663386.log).
+
+[Wed May 21 08:46:54 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057570.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057570.1.recode.vcf
+    jobid: 410
+    reason: Missing output files: sharks/MobBir/CM057570.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057570.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 410 has been submitted with SLURM jobid 9663387 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057570.1/9663387.log).
+
+[Wed May 21 08:46:56 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057583.1_het.txt
+    jobid: 175
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057583.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 175 has been submitted with SLURM jobid 9663388 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057583.1/9663388.log).
+
+[Wed May 21 08:46:56 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057563.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057563.1.recode.vcf
+    jobid: 396
+    reason: Missing output files: sharks/MobBir/CM057563.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057563.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 396 has been submitted with SLURM jobid 9663389 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057563.1/9663389.log).
+
+[Wed May 21 08:46:56 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057570.1_het.txt
+    jobid: 162
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057570.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 162 has been submitted with SLURM jobid 9663390 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057570.1/9663390.log).
+
+[Wed May 21 08:46:58 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057563.1_het.txt
+    jobid: 155
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057563.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 155 has been submitted with SLURM jobid 9663391 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057563.1/9663391.log).
+
+[Wed May 21 08:46:58 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057556.1_het.txt
+    jobid: 148
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057556.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 148 has been submitted with SLURM jobid 9663392 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057556.1/9663392.log).
+
+[Wed May 21 08:46:59 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057585.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057585.1.recode.vcf
+    jobid: 440
+    reason: Missing output files: sharks/MobBir/CM057585.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057585.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 440 has been submitted with SLURM jobid 9663393 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057585.1/9663393.log).
+
+[Wed May 21 08:46:59 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057578.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057578.1.recode.vcf
+    jobid: 426
+    reason: Missing output files: sharks/MobBir/CM057578.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057578.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 426 has been submitted with SLURM jobid 9663394 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057578.1/9663394.log).
+[Wed May 21 09:45:15 2025]
+Finished job 412.
+1 of 1189 steps (0.1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 21 09:45:15 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057567.1_het.txt
+    jobid: 159
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057567.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 159 has been submitted with SLURM jobid 9665339 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057567.1/9665339.log).
+[Wed May 21 09:45:15 2025]
+Finished job 176.
+2 of 1189 steps (0.2%) done
+[Wed May 21 09:45:15 2025]
+Finished job 398.
+3 of 1189 steps (0.3%) done
+[Wed May 21 09:45:15 2025]
+Finished job 169.
+4 of 1189 steps (0.3%) done
+[Wed May 21 09:45:15 2025]
+Finished job 163.
+5 of 1189 steps (0.4%) done
+[Wed May 21 09:45:15 2025]
+Finished job 156.
+6 of 1189 steps (1%) done
+[Wed May 21 09:45:15 2025]
+Finished job 149.
+7 of 1189 steps (1%) done
+[Wed May 21 09:45:15 2025]
+Finished job 442.
+8 of 1189 steps (1%) done
+[Wed May 21 09:45:16 2025]
+Finished job 428.
+9 of 1189 steps (1%) done
+[Wed May 21 09:45:16 2025]
+Finished job 414.
+10 of 1189 steps (1%) done
+[Wed May 21 09:45:16 2025]
+Finished job 177.
+11 of 1189 steps (1%) done
+[Wed May 21 09:45:16 2025]
+Finished job 400.
+12 of 1189 steps (1%) done
+[Wed May 21 09:45:16 2025]
+Finished job 170.
+13 of 1189 steps (1%) done
+[Wed May 21 09:45:16 2025]
+Finished job 386.
+14 of 1189 steps (1%) done
+[Wed May 21 09:45:16 2025]
+Finished job 164.
+15 of 1189 steps (1%) done
+[Wed May 21 09:45:16 2025]
+Finished job 157.
+16 of 1189 steps (1%) done
+[Wed May 21 09:45:16 2025]
+Finished job 150.
+17 of 1189 steps (1%) done
+[Wed May 21 09:45:16 2025]
+Finished job 444.
+18 of 1189 steps (2%) done
+[Wed May 21 09:45:16 2025]
+Finished job 430.
+19 of 1189 steps (2%) done
+[Wed May 21 09:45:16 2025]
+Finished job 416.
+20 of 1189 steps (2%) done
+[Wed May 21 09:45:16 2025]
+Finished job 178.
+21 of 1189 steps (2%) done
+[Wed May 21 09:45:16 2025]
+Finished job 402.
+22 of 1189 steps (2%) done
+[Wed May 21 09:45:16 2025]
+Finished job 171.
+23 of 1189 steps (2%) done
+[Wed May 21 09:45:16 2025]
+Finished job 434.
+24 of 1189 steps (2%) done
+[Wed May 21 09:45:16 2025]
+Finished job 420.
+25 of 1189 steps (2%) done
+[Wed May 21 09:45:16 2025]
+Finished job 406.
+26 of 1189 steps (2%) done
+[Wed May 21 09:45:16 2025]
+Finished job 173.
+27 of 1189 steps (2%) done
+[Wed May 21 09:45:16 2025]
+Finished job 392.
+28 of 1189 steps (2%) done
+[Wed May 21 09:45:16 2025]
+Finished job 167.
+29 of 1189 steps (2%) done
+[Wed May 21 09:45:16 2025]
+Finished job 160.
+30 of 1189 steps (3%) done
+Select jobs to execute...
+Execute 29 jobs...
+
+[Wed May 21 09:45:16 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057557.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057557.1.recode.vcf
+    jobid: 384
+    reason: Missing output files: sharks/MobBir/CM057557.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057557.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 384 has been submitted with SLURM jobid 9665341 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057557.1/9665341.log).
+
+[Wed May 21 09:45:16 2025]
+rule BGZIP_VCF:
+    input: sharks/MobBir/CM057575.1.recode.vcf
+    output: sharks/MobBir/CM057575.1.recode.vcf.gz
+    jobid: 465
+    reason: Input files updated by another job: sharks/MobBir/CM057575.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057575.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 465 has been submitted with SLURM jobid 9665342 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057575.1/9665342.log).
+
+[Wed May 21 09:45:16 2025]
+rule BGZIP_VCF:
+    input: sharks/MobBir/CM057568.1.recode.vcf
+    output: sharks/MobBir/CM057568.1.recode.vcf.gz
+    jobid: 458
+    reason: Input files updated by another job: sharks/MobBir/CM057568.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057568.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 458 has been submitted with SLURM jobid 9665343 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057568.1/9665343.log).
+
+[Wed May 21 09:45:17 2025]
+rule BGZIP_VCF:
+    input: sharks/MobBir/CM057561.1.recode.vcf
+    output: sharks/MobBir/CM057561.1.recode.vcf.gz
+    jobid: 451
+    reason: Input files updated by another job: sharks/MobBir/CM057561.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057561.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 451 has been submitted with SLURM jobid 9665344 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057561.1/9665344.log).
+
+[Wed May 21 09:45:17 2025]
+rule BGZIP_VCF:
+    input: sharks/MobBir/CM057582.1.recode.vcf
+    output: sharks/MobBir/CM057582.1.recode.vcf.gz
+    jobid: 472
+    reason: Input files updated by another job: sharks/MobBir/CM057582.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057582.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 472 has been submitted with SLURM jobid 9665345 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057582.1/9665345.log).
+
+[Wed May 21 09:45:17 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057559.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057559.1.recode.vcf
+    jobid: 388
+    reason: Missing output files: sharks/MobBir/CM057559.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057559.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 388 has been submitted with SLURM jobid 9665346 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057559.1/9665346.log).
+
+[Wed May 21 09:45:17 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057573.1_het.txt
+    jobid: 165
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057573.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 165 has been submitted with SLURM jobid 9665347 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057573.1/9665347.log).
+
+[Wed May 21 09:45:17 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057566.1_het.txt
+    jobid: 158
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057566.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 158 has been submitted with SLURM jobid 9665348 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057566.1/9665348.log).
+
+[Wed May 21 09:45:17 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057559.1_het.txt
+    jobid: 151
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057559.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 151 has been submitted with SLURM jobid 9665349 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057559.1/9665349.log).
+
+[Wed May 21 09:45:17 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057581.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057581.1.recode.vcf
+    jobid: 432
+    reason: Missing output files: sharks/MobBir/CM057581.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057581.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 432 has been submitted with SLURM jobid 9665350 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057581.1/9665350.log).
+
+[Wed May 21 09:45:18 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057574.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057574.1.recode.vcf
+    jobid: 418
+    reason: Missing output files: sharks/MobBir/CM057574.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057574.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 418 has been submitted with SLURM jobid 9665351 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057574.1/9665351.log).
+
+[Wed May 21 09:45:18 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057587.1_het.txt
+    jobid: 179
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057587.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 179 has been submitted with SLURM jobid 9665352 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057587.1/9665352.log).
+
+[Wed May 21 09:45:18 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057588.1_het.txt
+    jobid: 181
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057588.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 181 has been submitted with SLURM jobid 9665353 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057588.1/9665353.log).
+
+[Wed May 21 09:45:18 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057580.1_het.txt
+    jobid: 172
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057580.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 172 has been submitted with SLURM jobid 9665354 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057580.1/9665354.log).
+
+[Wed May 21 09:45:18 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057567.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057567.1.recode.vcf
+    jobid: 404
+    reason: Missing output files: sharks/MobBir/CM057567.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057567.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 404 has been submitted with SLURM jobid 9665355 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057567.1/9665355.log).
+
+[Wed May 21 09:45:18 2025]
+rule REMOVE_INDELS:
+    input: sharks/MobBir/temp/CM057560.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057560.1.recode.vcf
+    jobid: 390
+    reason: Missing output files: sharks/MobBir/CM057560.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057560.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 390 has been submitted with SLURM jobid 9665356 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057560.1/9665356.log).
+
+[Wed May 21 09:45:19 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057574.1_het.txt
+    jobid: 166
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057574.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 166 has been submitted with SLURM jobid 9665357 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057574.1/9665357.log).
+
+[Wed May 21 09:45:19 2025]
+rule BGZIP_VCF:
+    input: sharks/MobBir/CM057571.1.recode.vcf
+    output: sharks/MobBir/CM057571.1.recode.vcf.gz
+    jobid: 461
+    reason: Input files updated by another job: sharks/MobBir/CM057571.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057571.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 461 has been submitted with SLURM jobid 9665358 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057571.1/9665358.log).
+
+[Wed May 21 09:45:19 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057560.1_het.txt
+    jobid: 152
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250411, CHR=CM057560.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 152 has been submitted with SLURM jobid 9665359 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057560.1/9665359.log).
+
+[Wed May 21 09:45:19 2025]
+rule BGZIP_VCF:
+    input: sharks/MobBir/CM057564.1.recode.vcf
+    output: sharks/MobBir/CM057564.1.recode.vcf.gz
+    jobid: 454
+    reason: Input files updated by another job: sharks/MobBir/CM057564.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057564.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 454 has been submitted with SLURM jobid 9665360 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057564.1/9665360.log).
+
+[Wed May 21 09:45:19 2025]
+rule BGZIP_VCF:
+    input: sharks/MobBir/CM057579.1.recode.vcf
+    output: sharks/MobBir/CM057579.1.recode.vcf.gz
+    jobid: 469
+    reason: Input files updated by another job: sharks/MobBir/CM057579.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057579.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 469 has been submitted with SLURM jobid 9665361 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057579.1/9665361.log).
+
+[Wed May 21 09:45:19 2025]
+rule BGZIP_VCF:
+    input: sharks/MobBir/CM057572.1.recode.vcf
+    output: sharks/MobBir/CM057572.1.recode.vcf.gz
+    jobid: 462
+    reason: Input files updated by another job: sharks/MobBir/CM057572.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057572.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 462 has been submitted with SLURM jobid 9665362 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057572.1/9665362.log).
+
+[Wed May 21 09:45:20 2025]
+rule BGZIP_VCF:
+    input: sharks/MobBir/CM057565.1.recode.vcf
+    output: sharks/MobBir/CM057565.1.recode.vcf.gz
+    jobid: 455
+    reason: Input files updated by another job: sharks/MobBir/CM057565.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057565.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 455 has been submitted with SLURM jobid 9665363 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057565.1/9665363.log).
+
+[Wed May 21 09:45:20 2025]
+rule BGZIP_VCF:
+    input: sharks/MobBir/CM057558.1.recode.vcf
+    output: sharks/MobBir/CM057558.1.recode.vcf.gz
+    jobid: 448
+    reason: Input files updated by another job: sharks/MobBir/CM057558.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057558.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 448 has been submitted with SLURM jobid 9665364 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057558.1/9665364.log).
+
+[Wed May 21 09:45:20 2025]
+rule BGZIP_VCF:
+    input: sharks/MobBir/CM057586.1.recode.vcf
+    output: sharks/MobBir/CM057586.1.recode.vcf.gz
+    jobid: 476
+    reason: Input files updated by another job: sharks/MobBir/CM057586.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057586.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 476 has been submitted with SLURM jobid 9665365 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057586.1/9665365.log).
+
+[Wed May 21 09:45:20 2025]
+rule BGZIP_VCF:
+    input: sharks/MobBir/CM057580.1.recode.vcf
+    output: sharks/MobBir/CM057580.1.recode.vcf.gz
+    jobid: 470
+    reason: Input files updated by another job: sharks/MobBir/CM057580.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057580.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 470 has been submitted with SLURM jobid 9665366 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057580.1/9665366.log).
+
+[Wed May 21 09:45:20 2025]
+rule BGZIP_VCF:
+    input: sharks/MobBir/CM057573.1.recode.vcf
+    output: sharks/MobBir/CM057573.1.recode.vcf.gz
+    jobid: 463
+    reason: Input files updated by another job: sharks/MobBir/CM057573.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057573.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 463 has been submitted with SLURM jobid 9665367 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057573.1/9665367.log).
+
+[Wed May 21 09:45:20 2025]
+rule BGZIP_VCF:
+    input: sharks/MobBir/CM057566.1.recode.vcf
+    output: sharks/MobBir/CM057566.1.recode.vcf.gz
+    jobid: 456
+    reason: Input files updated by another job: sharks/MobBir/CM057566.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057566.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 456 has been submitted with SLURM jobid 9665368 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057566.1/9665368.log).
+
+[Wed May 21 09:45:20 2025]
+rule BGZIP_VCF:
+    input: sharks/MobBir/CM057587.1.recode.vcf
+    output: sharks/MobBir/CM057587.1.recode.vcf.gz
+    jobid: 477
+    reason: Input files updated by another job: sharks/MobBir/CM057587.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057587.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 477 has been submitted with SLURM jobid 9665369 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057587.1/9665369.log).
+[Wed May 21 09:45:55 2025]
+Finished job 153.
+31 of 1189 steps (3%) done
+[Wed May 21 09:45:55 2025]
+Finished job 436.
+32 of 1189 steps (3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 21 09:45:55 2025]
+rule BGZIP_VCF:
+    input: sharks/MobBir/CM057583.1.recode.vcf
+    output: sharks/MobBir/CM057583.1.recode.vcf.gz
+    jobid: 473
+    reason: Input files updated by another job: sharks/MobBir/CM057583.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057583.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 473 has been submitted with SLURM jobid 9665370 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057583.1/9665370.log).
+[Wed May 21 09:45:55 2025]
+Finished job 422.
+33 of 1189 steps (3%) done
+[Wed May 21 09:45:56 2025]
+Finished job 408.
+34 of 1189 steps (3%) done
+[Wed May 21 09:45:56 2025]
+Finished job 174.
+35 of 1189 steps (3%) done
+[Wed May 21 09:45:56 2025]
+Finished job 394.
+36 of 1189 steps (3%) done
+[Wed May 21 09:45:56 2025]
+Finished job 168.
+37 of 1189 steps (3%) done
+[Wed May 21 09:45:56 2025]
+Finished job 382.
+38 of 1189 steps (3%) done
+[Wed May 21 09:45:56 2025]
+Finished job 161.
+39 of 1189 steps (3%) done
+[Wed May 21 09:45:56 2025]
+Finished job 438.
+40 of 1189 steps (3%) done
+[Wed May 21 09:45:56 2025]
+Finished job 424.
+41 of 1189 steps (3%) done
+[Wed May 21 09:45:56 2025]
+Finished job 410.
+42 of 1189 steps (4%) done
+[Wed May 21 09:45:56 2025]
+Finished job 396.
+43 of 1189 steps (4%) done
+Select jobs to execute...
+Execute 8 jobs...
+
+[Wed May 21 09:45:56 2025]
+rule BGZIP_VCF:
+    input: sharks/MobBir/CM057584.1.recode.vcf
+    output: sharks/MobBir/CM057584.1.recode.vcf.gz
+    jobid: 474
+    reason: Input files updated by another job: sharks/MobBir/CM057584.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057584.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 474 has been submitted with SLURM jobid 9665371 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057584.1/9665371.log).
+
+[Wed May 21 09:45:56 2025]
+rule BGZIP_VCF:
+    input: sharks/MobBir/CM057577.1.recode.vcf
+    output: sharks/MobBir/CM057577.1.recode.vcf.gz
+    jobid: 467
+    reason: Input files updated by another job: sharks/MobBir/CM057577.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057577.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 467 has been submitted with SLURM jobid 9665372 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057577.1/9665372.log).
+
+[Wed May 21 09:45:56 2025]
+rule BGZIP_VCF:
+    input: sharks/MobBir/CM057570.1.recode.vcf
+    output: sharks/MobBir/CM057570.1.recode.vcf.gz
+    jobid: 460
+    reason: Input files updated by another job: sharks/MobBir/CM057570.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057570.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 460 has been submitted with SLURM jobid 9665373 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057570.1/9665373.log).
+
+[Wed May 21 09:45:56 2025]
+rule BGZIP_VCF:
+    input: sharks/MobBir/CM057563.1.recode.vcf
+    output: sharks/MobBir/CM057563.1.recode.vcf.gz
+    jobid: 453
+    reason: Input files updated by another job: sharks/MobBir/CM057563.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057563.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 453 has been submitted with SLURM jobid 9665374 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057563.1/9665374.log).
+
+[Wed May 21 09:45:57 2025]
+rule BGZIP_VCF:
+    input: sharks/MobBir/CM057556.1.recode.vcf
+    output: sharks/MobBir/CM057556.1.recode.vcf.gz
+    jobid: 446
+    reason: Input files updated by another job: sharks/MobBir/CM057556.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057556.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 446 has been submitted with SLURM jobid 9665375 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057556.1/9665375.log).
+
+[Wed May 21 09:45:57 2025]
+rule BGZIP_VCF:
+    input: sharks/MobBir/CM057576.1.recode.vcf
+    output: sharks/MobBir/CM057576.1.recode.vcf.gz
+    jobid: 466
+    reason: Input files updated by another job: sharks/MobBir/CM057576.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057576.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 466 has been submitted with SLURM jobid 9665376 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057576.1/9665376.log).
+
+[Wed May 21 09:45:57 2025]
+rule BGZIP_VCF:
+    input: sharks/MobBir/CM057569.1.recode.vcf
+    output: sharks/MobBir/CM057569.1.recode.vcf.gz
+    jobid: 459
+    reason: Input files updated by another job: sharks/MobBir/CM057569.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057569.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 459 has been submitted with SLURM jobid 9665377 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057569.1/9665377.log).
+
+[Wed May 21 09:45:57 2025]
+rule BGZIP_VCF:
+    input: sharks/MobBir/CM057562.1.recode.vcf
+    output: sharks/MobBir/CM057562.1.recode.vcf.gz
+    jobid: 452
+    reason: Input files updated by another job: sharks/MobBir/CM057562.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057562.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 452 has been submitted with SLURM jobid 9665378 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057562.1/9665378.log).
+[Wed May 21 09:46:36 2025]
+Finished job 154.
+44 of 1189 steps (4%) done
+[Wed May 21 09:46:36 2025]
+Finished job 175.
+45 of 1189 steps (4%) done
+[Wed May 21 09:46:36 2025]
+Finished job 162.
+46 of 1189 steps (4%) done
+[Wed May 21 09:46:36 2025]
+Finished job 155.
+47 of 1189 steps (4%) done
+[Wed May 21 09:46:36 2025]
+Finished job 148.
+48 of 1189 steps (4%) done
+[Wed May 21 09:46:36 2025]
+Finished job 440.
+49 of 1189 steps (4%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 21 09:46:36 2025]
+rule BGZIP_VCF:
+    input: sharks/MobBir/CM057585.1.recode.vcf
+    output: sharks/MobBir/CM057585.1.recode.vcf.gz
+    jobid: 475
+    reason: Input files updated by another job: sharks/MobBir/CM057585.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057585.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 475 has been submitted with SLURM jobid 9665382 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057585.1/9665382.log).
+[Wed May 21 09:46:36 2025]
+Finished job 426.
+50 of 1189 steps (4%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 21 09:46:36 2025]
+rule BGZIP_VCF:
+    input: sharks/MobBir/CM057578.1.recode.vcf
+    output: sharks/MobBir/CM057578.1.recode.vcf.gz
+    jobid: 468
+    reason: Input files updated by another job: sharks/MobBir/CM057578.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHR=CM057578.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 468 has been submitted with SLURM jobid 9665383 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057578.1/9665383.log).
+[Wed May 21 10:03:08 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9665339' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 159
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057567.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057567.1/9665339.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250520_find_het_per_chr_V4.py sharks/MobBir/temp/MobBir_Var_Only.txt sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt sharks MobBir 20250411 1000000 500000 CM057567.1 sharks/MobBir/MobBir_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665339
+
+[Wed May 21 10:03:08 2025]
+Error in rule REMOVE_INDELS:
+    message: SLURM-job '9665341' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 384
+    input: sharks/MobBir/temp/CM057557.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057557.1.recode.vcf
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057557.1/9665341.log (check log file(s) for error details)
+    shell:
+        
+        vcftools --gzvcf sharks/MobBir/temp/CM057557.1_restructured.vcf.gz          --remove-indels          --recode          --out sharks/MobBir/CM057557.1
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665341
+
+Removing output files of failed job CALC_HET_PER_CHR since they might be corrupted:
+sharks/MobBir/20250411_CM057567.1_het.txt
+[Wed May 21 10:03:08 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9665342' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 465
+    input: sharks/MobBir/CM057575.1.recode.vcf
+    output: sharks/MobBir/CM057575.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057575.1/9665342.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/MobBir/CM057575.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665342
+
+[Wed May 21 10:03:08 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9665343' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 458
+    input: sharks/MobBir/CM057568.1.recode.vcf
+    output: sharks/MobBir/CM057568.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057568.1/9665343.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/MobBir/CM057568.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665343
+
+Removing output files of failed job BGZIP_VCF since they might be corrupted:
+sharks/MobBir/CM057575.1.recode.vcf.gz
+[Wed May 21 10:03:08 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9665344' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 451
+    input: sharks/MobBir/CM057561.1.recode.vcf
+    output: sharks/MobBir/CM057561.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057561.1/9665344.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/MobBir/CM057561.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665344
+
+Removing output files of failed job BGZIP_VCF since they might be corrupted:
+sharks/MobBir/CM057568.1.recode.vcf.gz
+[Wed May 21 10:03:08 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9665345' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 472
+    input: sharks/MobBir/CM057582.1.recode.vcf
+    output: sharks/MobBir/CM057582.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057582.1/9665345.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/MobBir/CM057582.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665345
+
+Removing output files of failed job BGZIP_VCF since they might be corrupted:
+sharks/MobBir/CM057561.1.recode.vcf.gz
+[Wed May 21 10:03:08 2025]
+Error in rule REMOVE_INDELS:
+    message: SLURM-job '9665346' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 388
+    input: sharks/MobBir/temp/CM057559.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057559.1.recode.vcf
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057559.1/9665346.log (check log file(s) for error details)
+    shell:
+        
+        vcftools --gzvcf sharks/MobBir/temp/CM057559.1_restructured.vcf.gz          --remove-indels          --recode          --out sharks/MobBir/CM057559.1
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665346
+
+Removing output files of failed job BGZIP_VCF since they might be corrupted:
+sharks/MobBir/CM057582.1.recode.vcf.gz
+[Wed May 21 10:03:08 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9665347' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 165
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057573.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057573.1/9665347.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250520_find_het_per_chr_V4.py sharks/MobBir/temp/MobBir_Var_Only.txt sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt sharks MobBir 20250411 1000000 500000 CM057573.1 sharks/MobBir/MobBir_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665347
+
+[Wed May 21 10:03:08 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9665348' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 158
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057566.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057566.1/9665348.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250520_find_het_per_chr_V4.py sharks/MobBir/temp/MobBir_Var_Only.txt sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt sharks MobBir 20250411 1000000 500000 CM057566.1 sharks/MobBir/MobBir_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665348
+
+Removing output files of failed job CALC_HET_PER_CHR since they might be corrupted:
+sharks/MobBir/20250411_CM057573.1_het.txt
+Removing output files of failed job CALC_HET_PER_CHR since they might be corrupted:
+sharks/MobBir/20250411_CM057566.1_het.txt
+[Wed May 21 10:05:39 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9665349' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 151
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057559.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057559.1/9665349.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250520_find_het_per_chr_V4.py sharks/MobBir/temp/MobBir_Var_Only.txt sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt sharks MobBir 20250411 1000000 500000 CM057559.1 sharks/MobBir/MobBir_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665349
+
+[Wed May 21 10:05:39 2025]
+Error in rule REMOVE_INDELS:
+    message: SLURM-job '9665350' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 432
+    input: sharks/MobBir/temp/CM057581.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057581.1.recode.vcf
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057581.1/9665350.log (check log file(s) for error details)
+    shell:
+        
+        vcftools --gzvcf sharks/MobBir/temp/CM057581.1_restructured.vcf.gz          --remove-indels          --recode          --out sharks/MobBir/CM057581.1
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665350
+
+Removing output files of failed job CALC_HET_PER_CHR since they might be corrupted:
+sharks/MobBir/20250411_CM057559.1_het.txt
+[Wed May 21 10:05:39 2025]
+Error in rule REMOVE_INDELS:
+    message: SLURM-job '9665351' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 418
+    input: sharks/MobBir/temp/CM057574.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057574.1.recode.vcf
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057574.1/9665351.log (check log file(s) for error details)
+    shell:
+        
+        vcftools --gzvcf sharks/MobBir/temp/CM057574.1_restructured.vcf.gz          --remove-indels          --recode          --out sharks/MobBir/CM057574.1
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665351
+
+[Wed May 21 10:05:39 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9665352' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 179
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057587.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057587.1/9665352.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250520_find_het_per_chr_V4.py sharks/MobBir/temp/MobBir_Var_Only.txt sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt sharks MobBir 20250411 1000000 500000 CM057587.1 sharks/MobBir/MobBir_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665352
+
+[Wed May 21 10:05:39 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9665353' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 181
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057588.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057588.1/9665353.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250520_find_het_per_chr_V4.py sharks/MobBir/temp/MobBir_Var_Only.txt sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt sharks MobBir 20250411 1000000 500000 CM057588.1 sharks/MobBir/MobBir_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665353
+
+Removing output files of failed job CALC_HET_PER_CHR since they might be corrupted:
+sharks/MobBir/20250411_CM057587.1_het.txt
+[Wed May 21 10:05:39 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9665354' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 172
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057580.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057580.1/9665354.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250520_find_het_per_chr_V4.py sharks/MobBir/temp/MobBir_Var_Only.txt sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt sharks MobBir 20250411 1000000 500000 CM057580.1 sharks/MobBir/MobBir_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665354
+
+Removing output files of failed job CALC_HET_PER_CHR since they might be corrupted:
+sharks/MobBir/20250411_CM057588.1_het.txt
+[Wed May 21 10:05:39 2025]
+Error in rule REMOVE_INDELS:
+    message: SLURM-job '9665355' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 404
+    input: sharks/MobBir/temp/CM057567.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057567.1.recode.vcf
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057567.1/9665355.log (check log file(s) for error details)
+    shell:
+        
+        vcftools --gzvcf sharks/MobBir/temp/CM057567.1_restructured.vcf.gz          --remove-indels          --recode          --out sharks/MobBir/CM057567.1
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665355
+
+Removing output files of failed job CALC_HET_PER_CHR since they might be corrupted:
+sharks/MobBir/20250411_CM057580.1_het.txt
+[Wed May 21 10:05:39 2025]
+Error in rule REMOVE_INDELS:
+    message: SLURM-job '9665356' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 390
+    input: sharks/MobBir/temp/CM057560.1_restructured.vcf.gz
+    output: sharks/MobBir/CM057560.1.recode.vcf
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_MobBir_CM057560.1/9665356.log (check log file(s) for error details)
+    shell:
+        
+        vcftools --gzvcf sharks/MobBir/temp/CM057560.1_restructured.vcf.gz          --remove-indels          --recode          --out sharks/MobBir/CM057560.1
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665356
+
+[Wed May 21 10:05:39 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9665357' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 166
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057574.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057574.1/9665357.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250520_find_het_per_chr_V4.py sharks/MobBir/temp/MobBir_Var_Only.txt sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt sharks MobBir 20250411 1000000 500000 CM057574.1 sharks/MobBir/MobBir_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665357
+
+[Wed May 21 10:05:39 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9665358' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 461
+    input: sharks/MobBir/CM057571.1.recode.vcf
+    output: sharks/MobBir/CM057571.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057571.1/9665358.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/MobBir/CM057571.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665358
+
+Removing output files of failed job CALC_HET_PER_CHR since they might be corrupted:
+sharks/MobBir/20250411_CM057574.1_het.txt
+[Wed May 21 10:05:39 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9665359' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 152
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt, sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt, sharks/MobBir/MobBir_ROH_Results.csv
+    output: sharks/MobBir/20250411_CM057560.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_MobBir_20250411_CM057560.1/9665359.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250520_find_het_per_chr_V4.py sharks/MobBir/temp/MobBir_Var_Only.txt sharks/MobBir/Reference_MobBir_Chroms_Lengths.txt sharks MobBir 20250411 1000000 500000 CM057560.1 sharks/MobBir/MobBir_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665359
+
+Removing output files of failed job BGZIP_VCF since they might be corrupted:
+sharks/MobBir/CM057571.1.recode.vcf.gz
+[Wed May 21 10:05:39 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9665360' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 454
+    input: sharks/MobBir/CM057564.1.recode.vcf
+    output: sharks/MobBir/CM057564.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057564.1/9665360.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/MobBir/CM057564.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665360
+
+Removing output files of failed job CALC_HET_PER_CHR since they might be corrupted:
+sharks/MobBir/20250411_CM057560.1_het.txt
+[Wed May 21 10:05:39 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9665361' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 469
+    input: sharks/MobBir/CM057579.1.recode.vcf
+    output: sharks/MobBir/CM057579.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057579.1/9665361.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/MobBir/CM057579.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665361
+
+Removing output files of failed job BGZIP_VCF since they might be corrupted:
+sharks/MobBir/CM057564.1.recode.vcf.gz
+[Wed May 21 10:05:39 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9665362' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 462
+    input: sharks/MobBir/CM057572.1.recode.vcf
+    output: sharks/MobBir/CM057572.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057572.1/9665362.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/MobBir/CM057572.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665362
+
+Removing output files of failed job BGZIP_VCF since they might be corrupted:
+sharks/MobBir/CM057579.1.recode.vcf.gz
+[Wed May 21 10:05:39 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9665363' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 455
+    input: sharks/MobBir/CM057565.1.recode.vcf
+    output: sharks/MobBir/CM057565.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057565.1/9665363.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/MobBir/CM057565.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665363
+
+Removing output files of failed job BGZIP_VCF since they might be corrupted:
+sharks/MobBir/CM057572.1.recode.vcf.gz
+[Wed May 21 10:05:39 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9665364' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 448
+    input: sharks/MobBir/CM057558.1.recode.vcf
+    output: sharks/MobBir/CM057558.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057558.1/9665364.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/MobBir/CM057558.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665364
+
+Removing output files of failed job BGZIP_VCF since they might be corrupted:
+sharks/MobBir/CM057565.1.recode.vcf.gz
+[Wed May 21 10:05:39 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9665365' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 476
+    input: sharks/MobBir/CM057586.1.recode.vcf
+    output: sharks/MobBir/CM057586.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057586.1/9665365.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/MobBir/CM057586.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665365
+
+Removing output files of failed job BGZIP_VCF since they might be corrupted:
+sharks/MobBir/CM057558.1.recode.vcf.gz
+[Wed May 21 10:05:39 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9665366' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 470
+    input: sharks/MobBir/CM057580.1.recode.vcf
+    output: sharks/MobBir/CM057580.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057580.1/9665366.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/MobBir/CM057580.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665366
+
+Removing output files of failed job BGZIP_VCF since they might be corrupted:
+sharks/MobBir/CM057586.1.recode.vcf.gz
+[Wed May 21 10:05:39 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9665367' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 463
+    input: sharks/MobBir/CM057573.1.recode.vcf
+    output: sharks/MobBir/CM057573.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057573.1/9665367.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/MobBir/CM057573.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665367
+
+Removing output files of failed job BGZIP_VCF since they might be corrupted:
+sharks/MobBir/CM057580.1.recode.vcf.gz
+[Wed May 21 10:05:39 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9665368' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 456
+    input: sharks/MobBir/CM057566.1.recode.vcf
+    output: sharks/MobBir/CM057566.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057566.1/9665368.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/MobBir/CM057566.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665368
+
+Removing output files of failed job BGZIP_VCF since they might be corrupted:
+sharks/MobBir/CM057573.1.recode.vcf.gz
+[Wed May 21 10:05:39 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9665369' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 477
+    input: sharks/MobBir/CM057587.1.recode.vcf
+    output: sharks/MobBir/CM057587.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057587.1/9665369.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/MobBir/CM057587.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665369
+
+Removing output files of failed job BGZIP_VCF since they might be corrupted:
+sharks/MobBir/CM057566.1.recode.vcf.gz
+[Wed May 21 10:05:40 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9665370' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 473
+    input: sharks/MobBir/CM057583.1.recode.vcf
+    output: sharks/MobBir/CM057583.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057583.1/9665370.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/MobBir/CM057583.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665370
+
+Removing output files of failed job BGZIP_VCF since they might be corrupted:
+sharks/MobBir/CM057587.1.recode.vcf.gz
+[Wed May 21 10:05:40 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9665371' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 474
+    input: sharks/MobBir/CM057584.1.recode.vcf
+    output: sharks/MobBir/CM057584.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057584.1/9665371.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/MobBir/CM057584.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665371
+
+Removing output files of failed job BGZIP_VCF since they might be corrupted:
+sharks/MobBir/CM057583.1.recode.vcf.gz
+[Wed May 21 10:05:40 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9665372' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 467
+    input: sharks/MobBir/CM057577.1.recode.vcf
+    output: sharks/MobBir/CM057577.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057577.1/9665372.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/MobBir/CM057577.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665372
+
+Removing output files of failed job BGZIP_VCF since they might be corrupted:
+sharks/MobBir/CM057584.1.recode.vcf.gz
+[Wed May 21 10:05:40 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9665373' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 460
+    input: sharks/MobBir/CM057570.1.recode.vcf
+    output: sharks/MobBir/CM057570.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057570.1/9665373.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/MobBir/CM057570.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665373
+
+Removing output files of failed job BGZIP_VCF since they might be corrupted:
+sharks/MobBir/CM057577.1.recode.vcf.gz
+[Wed May 21 10:05:40 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9665374' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 453
+    input: sharks/MobBir/CM057563.1.recode.vcf
+    output: sharks/MobBir/CM057563.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057563.1/9665374.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/MobBir/CM057563.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665374
+
+Removing output files of failed job BGZIP_VCF since they might be corrupted:
+sharks/MobBir/CM057570.1.recode.vcf.gz
+[Wed May 21 10:05:40 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9665375' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 446
+    input: sharks/MobBir/CM057556.1.recode.vcf
+    output: sharks/MobBir/CM057556.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057556.1/9665375.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/MobBir/CM057556.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665375
+
+Removing output files of failed job BGZIP_VCF since they might be corrupted:
+sharks/MobBir/CM057563.1.recode.vcf.gz
+[Wed May 21 10:05:40 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9665376' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 466
+    input: sharks/MobBir/CM057576.1.recode.vcf
+    output: sharks/MobBir/CM057576.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057576.1/9665376.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/MobBir/CM057576.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665376
+
+Removing output files of failed job BGZIP_VCF since they might be corrupted:
+sharks/MobBir/CM057556.1.recode.vcf.gz
+[Wed May 21 10:05:40 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9665377' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 459
+    input: sharks/MobBir/CM057569.1.recode.vcf
+    output: sharks/MobBir/CM057569.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057569.1/9665377.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/MobBir/CM057569.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665377
+
+Removing output files of failed job BGZIP_VCF since they might be corrupted:
+sharks/MobBir/CM057576.1.recode.vcf.gz
+[Wed May 21 10:05:40 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9665378' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 452
+    input: sharks/MobBir/CM057562.1.recode.vcf
+    output: sharks/MobBir/CM057562.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057562.1/9665378.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/MobBir/CM057562.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665378
+
+Removing output files of failed job BGZIP_VCF since they might be corrupted:
+sharks/MobBir/CM057569.1.recode.vcf.gz
+Removing output files of failed job BGZIP_VCF since they might be corrupted:
+sharks/MobBir/CM057562.1.recode.vcf.gz
+[Wed May 21 10:08:20 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9665382' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 475
+    input: sharks/MobBir/CM057585.1.recode.vcf
+    output: sharks/MobBir/CM057585.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057585.1/9665382.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/MobBir/CM057585.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665382
+
+[Wed May 21 10:08:20 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9665383' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 468
+    input: sharks/MobBir/CM057578.1.recode.vcf
+    output: sharks/MobBir/CM057578.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_MobBir_CM057578.1/9665383.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/MobBir/CM057578.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665383
+
+Removing output files of failed job BGZIP_VCF since they might be corrupted:
+sharks/MobBir/CM057585.1.recode.vcf.gz
+Removing output files of failed job BGZIP_VCF since they might be corrupted:
+sharks/MobBir/CM057578.1.recode.vcf.gz
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-05-21T084446.897198.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

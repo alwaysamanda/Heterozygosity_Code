@@ -1,0 +1,33 @@
+host: login-p-3
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+GET_WHOLE_ALN        1
+GET_WHOLE_VAR        1
+all                  1
+total                3
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Fri Apr 11 17:43:54 2025]
+localrule GET_WHOLE_VAR:
+    input: sharks/NarBan/NarBan_FASTGA.fltr.srt.paf
+    output: sharks/NarBan/temp/NarBan_Var_Only.txt
+    jobid: 9
+    reason: Missing output files: sharks/NarBan/temp/NarBan_Var_Only.txt
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 11 17:43:54 2025]
+localrule GET_WHOLE_ALN:
+    input: sharks/NarBan/NarBan_FASTGA.fltr.srt.paf
+    output: sharks/NarBan/temp/NarBan_Aln_Only.txt
+    jobid: 10
+    reason: Missing output files: sharks/NarBan/temp/NarBan_Aln_Only.txt
+    resources: tmpdir=/tmp
+

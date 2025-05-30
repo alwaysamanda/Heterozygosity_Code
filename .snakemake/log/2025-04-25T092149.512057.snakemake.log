@@ -1,0 +1,2566 @@
+host: login-p-4
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+CALC_HET_PER_CHR             51
+CALC_HET_WHOLE_GENOME         1
+COMPILE_HET                   1
+COMPILE_ROH                   1
+FILTER_PAF_CHR_ONLY           1
+FROH_PER_AUT_CHR             51
+GET_ALN_ONLY_PER_CHROM       51
+GET_VAR_ONLY_PER_CHROM       51
+GET_WHOLE_ALN                 1
+GET_WHOLE_VAR                 1
+PLOT_HET_PER_CHR             51
+PLOT_WHOLE_HET                1
+Plot_ROH                      1
+ROH_CALC                     51
+WHOLE_FROH                    1
+all                           1
+total                       316
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 09:21:49 2025]
+localrule FILTER_PAF_CHR_ONLY:
+    input: sharks/HetFra/HetFra_FASTGA.chain.fltr.srt.paf, sharks/chrom_lists/GCA_036365495.1_chroms.txt
+    output: sharks/HetFra/HetFra_FASTGA.chain.chr.fltr.srt.paf
+    jobid: 11
+    reason: Missing output files: sharks/HetFra/HetFra_FASTGA.chain.chr.fltr.srt.paf; Code has changed since last execution
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:21:51 2025]
+Finished job 11.
+1 of 316 steps (0.3%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Fri Apr 25 09:21:51 2025]
+localrule GET_WHOLE_ALN:
+    input: sharks/HetFra/HetFra_FASTGA.chain.chr.fltr.srt.paf
+    output: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    jobid: 12
+    reason: Missing output files: sharks/HetFra/temp/HetFra_Aln_Only.txt; Input files updated by another job: sharks/HetFra/HetFra_FASTGA.chain.chr.fltr.srt.paf
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:21:51 2025]
+localrule GET_WHOLE_VAR:
+    input: sharks/HetFra/HetFra_FASTGA.chain.chr.fltr.srt.paf
+    output: sharks/HetFra/temp/HetFra_Var_Only.txt
+    jobid: 10
+    reason: Missing output files: sharks/HetFra/temp/HetFra_Var_Only.txt; Input files updated by another job: sharks/HetFra/HetFra_FASTGA.chain.chr.fltr.srt.paf
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:28:27 2025]
+Finished job 12.
+2 of 316 steps (1%) done
+Select jobs to execute...
+Execute 51 jobs...
+
+[Fri Apr 25 09:28:27 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070993.1_Aln_Only.txt
+    jobid: 44
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070993.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070993.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:27 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070986.1_Aln_Only.txt
+    jobid: 37
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070986.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070986.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:27 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070979.1_Aln_Only.txt
+    jobid: 30
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070979.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070979.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:27 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070973.1_Aln_Only.txt
+    jobid: 24
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070973.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070973.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:27 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070970.1_Aln_Only.txt
+    jobid: 21
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070970.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070970.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:27 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM071008.1_Aln_Only.txt
+    jobid: 59
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM071008.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071008.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:27 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM071001.1_Aln_Only.txt
+    jobid: 52
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM071001.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071001.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:27 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070994.1_Aln_Only.txt
+    jobid: 45
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070994.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070994.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:27 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070987.1_Aln_Only.txt
+    jobid: 38
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070987.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070987.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:27 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070980.1_Aln_Only.txt
+    jobid: 31
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070980.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070980.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:27 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070974.1_Aln_Only.txt
+    jobid: 25
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070974.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070974.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070965.1_Aln_Only.txt
+    jobid: 16
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070965.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070965.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM071009.1_Aln_Only.txt
+    jobid: 60
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM071009.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071009.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM071002.1_Aln_Only.txt
+    jobid: 53
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM071002.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071002.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070995.1_Aln_Only.txt
+    jobid: 46
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070995.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070995.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070988.1_Aln_Only.txt
+    jobid: 39
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070988.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070988.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070981.1_Aln_Only.txt
+    jobid: 32
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070981.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070981.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070975.1_Aln_Only.txt
+    jobid: 26
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070975.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070975.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070966.1_Aln_Only.txt
+    jobid: 17
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070966.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070966.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM071010.1_Aln_Only.txt
+    jobid: 61
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM071010.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071010.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM071003.1_Aln_Only.txt
+    jobid: 54
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM071003.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071003.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070996.1_Aln_Only.txt
+    jobid: 47
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070996.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070996.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070989.1_Aln_Only.txt
+    jobid: 40
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070989.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070989.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070982.1_Aln_Only.txt
+    jobid: 33
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070982.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070982.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070976.1_Aln_Only.txt
+    jobid: 27
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070976.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070976.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070967.1_Aln_Only.txt
+    jobid: 18
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070967.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070967.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070962.1_Aln_Only.txt
+    jobid: 13
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070962.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070962.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM071011.1_Aln_Only.txt
+    jobid: 62
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM071011.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071011.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM071004.1_Aln_Only.txt
+    jobid: 55
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM071004.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071004.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070997.1_Aln_Only.txt
+    jobid: 48
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070997.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070997.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070990.1_Aln_Only.txt
+    jobid: 41
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070990.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070990.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070983.1_Aln_Only.txt
+    jobid: 34
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070983.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070983.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070977.1_Aln_Only.txt
+    jobid: 28
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070977.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070977.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070968.1_Aln_Only.txt
+    jobid: 19
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070968.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070968.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070963.1_Aln_Only.txt
+    jobid: 14
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070963.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070963.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM071012.1_Aln_Only.txt
+    jobid: 63
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM071012.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071012.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM071005.1_Aln_Only.txt
+    jobid: 56
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM071005.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071005.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070998.1_Aln_Only.txt
+    jobid: 49
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070998.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070998.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070991.1_Aln_Only.txt
+    jobid: 42
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070991.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070991.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070984.1_Aln_Only.txt
+    jobid: 35
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070984.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070984.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070978.1_Aln_Only.txt
+    jobid: 29
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070978.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070978.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070971.1_Aln_Only.txt
+    jobid: 22
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070971.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070971.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070969.1_Aln_Only.txt
+    jobid: 20
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070969.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070969.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM071006.1_Aln_Only.txt
+    jobid: 57
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM071006.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071006.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070999.1_Aln_Only.txt
+    jobid: 50
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070999.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070999.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070992.1_Aln_Only.txt
+    jobid: 43
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070992.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070992.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070985.1_Aln_Only.txt
+    jobid: 36
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070985.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070985.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070972.1_Aln_Only.txt
+    jobid: 23
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070972.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070972.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070964.1_Aln_Only.txt
+    jobid: 15
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070964.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070964.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM071007.1_Aln_Only.txt
+    jobid: 58
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM071007.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071007.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:28 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    output: sharks/HetFra/temp/20250411_CM071000.1_Aln_Only.txt
+    jobid: 51
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM071000.1_Aln_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071000.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:28:28 2025]
+Finished job 44.
+3 of 316 steps (1%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 37.
+4 of 316 steps (1%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 30.
+5 of 316 steps (2%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 24.
+6 of 316 steps (2%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 21.
+7 of 316 steps (2%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 59.
+8 of 316 steps (3%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 52.
+9 of 316 steps (3%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 38.
+10 of 316 steps (3%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 45.
+11 of 316 steps (3%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 31.
+12 of 316 steps (4%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 25.
+13 of 316 steps (4%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 16.
+14 of 316 steps (4%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 60.
+15 of 316 steps (5%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 53.
+16 of 316 steps (5%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 46.
+17 of 316 steps (5%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 39.
+18 of 316 steps (6%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 32.
+19 of 316 steps (6%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 26.
+20 of 316 steps (6%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 17.
+21 of 316 steps (7%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 61.
+22 of 316 steps (7%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 54.
+23 of 316 steps (7%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 40.
+24 of 316 steps (8%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 47.
+25 of 316 steps (8%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 33.
+26 of 316 steps (8%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 27.
+27 of 316 steps (9%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 18.
+28 of 316 steps (9%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 62.
+29 of 316 steps (9%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 55.
+30 of 316 steps (9%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 13.
+31 of 316 steps (10%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 48.
+32 of 316 steps (10%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 41.
+33 of 316 steps (10%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 28.
+34 of 316 steps (11%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 34.
+35 of 316 steps (11%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 19.
+36 of 316 steps (11%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 14.
+37 of 316 steps (12%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 63.
+38 of 316 steps (12%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 49.
+39 of 316 steps (12%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 56.
+40 of 316 steps (13%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 42.
+41 of 316 steps (13%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 35.
+42 of 316 steps (13%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 29.
+43 of 316 steps (14%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 22.
+44 of 316 steps (14%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 20.
+45 of 316 steps (14%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 57.
+46 of 316 steps (15%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 43.
+47 of 316 steps (15%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 50.
+48 of 316 steps (15%) done
+[Fri Apr 25 09:28:28 2025]
+Finished job 23.
+49 of 316 steps (16%) done
+[Fri Apr 25 09:28:29 2025]
+Finished job 36.
+50 of 316 steps (16%) done
+[Fri Apr 25 09:28:29 2025]
+Finished job 58.
+51 of 316 steps (16%) done
+[Fri Apr 25 09:28:29 2025]
+Finished job 15.
+52 of 316 steps (16%) done
+[Fri Apr 25 09:28:29 2025]
+Finished job 51.
+53 of 316 steps (17%) done
+[Fri Apr 25 09:28:33 2025]
+Finished job 10.
+54 of 316 steps (17%) done
+Select jobs to execute...
+Execute 51 jobs...
+
+[Fri Apr 25 09:28:33 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070998.1_Var_Only.txt
+    jobid: 100
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070998.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070998.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:33 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070991.1_Var_Only.txt
+    jobid: 93
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070991.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070991.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:33 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070984.1_Var_Only.txt
+    jobid: 86
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070984.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070984.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:33 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070978.1_Var_Only.txt
+    jobid: 80
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070978.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070978.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:33 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070971.1_Var_Only.txt
+    jobid: 73
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070971.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070971.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:33 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070964.1_Var_Only.txt
+    jobid: 66
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070964.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070964.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:33 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM071006.1_Var_Only.txt
+    jobid: 108
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM071006.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071006.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:34 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070999.1_Var_Only.txt
+    jobid: 101
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070999.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070999.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:34 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070992.1_Var_Only.txt
+    jobid: 94
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070992.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070992.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:34 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070985.1_Var_Only.txt
+    jobid: 87
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070985.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070985.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:34 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070979.1_Var_Only.txt
+    jobid: 81
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070979.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070979.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:34 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070972.1_Var_Only.txt
+    jobid: 74
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070972.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070972.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:34 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070965.1_Var_Only.txt
+    jobid: 67
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070965.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070965.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:34 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM071007.1_Var_Only.txt
+    jobid: 109
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM071007.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071007.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:34 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM071000.1_Var_Only.txt
+    jobid: 102
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM071000.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071000.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:34 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070993.1_Var_Only.txt
+    jobid: 95
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070993.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070993.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:34 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070986.1_Var_Only.txt
+    jobid: 88
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070986.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070986.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:34 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070980.1_Var_Only.txt
+    jobid: 82
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070980.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070980.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:34 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070973.1_Var_Only.txt
+    jobid: 75
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070973.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070973.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:34 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070966.1_Var_Only.txt
+    jobid: 68
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070966.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070966.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:34 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM071008.1_Var_Only.txt
+    jobid: 110
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM071008.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071008.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:34 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM071001.1_Var_Only.txt
+    jobid: 103
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM071001.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071001.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:34 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070994.1_Var_Only.txt
+    jobid: 96
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070994.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070994.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:34 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070987.1_Var_Only.txt
+    jobid: 89
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070987.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070987.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:34 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070981.1_Var_Only.txt
+    jobid: 83
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070981.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070981.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:34 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070974.1_Var_Only.txt
+    jobid: 76
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070974.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070974.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:34 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070967.1_Var_Only.txt
+    jobid: 69
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070967.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070967.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:34 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM071009.1_Var_Only.txt
+    jobid: 111
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM071009.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071009.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:34 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM071002.1_Var_Only.txt
+    jobid: 104
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM071002.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071002.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:34 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070995.1_Var_Only.txt
+    jobid: 97
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070995.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070995.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:35 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070988.1_Var_Only.txt
+    jobid: 90
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070988.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070988.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:35 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070982.1_Var_Only.txt
+    jobid: 84
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070982.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070982.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:35 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070975.1_Var_Only.txt
+    jobid: 77
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070975.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070975.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:35 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070968.1_Var_Only.txt
+    jobid: 70
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070968.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070968.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:35 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM071010.1_Var_Only.txt
+    jobid: 112
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM071010.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071010.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:35 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM071003.1_Var_Only.txt
+    jobid: 105
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM071003.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071003.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:35 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070996.1_Var_Only.txt
+    jobid: 98
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070996.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070996.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:35 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070989.1_Var_Only.txt
+    jobid: 91
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070989.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070989.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:35 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070983.1_Var_Only.txt
+    jobid: 85
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070983.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070983.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:35 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070976.1_Var_Only.txt
+    jobid: 78
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070976.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070976.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:35 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070969.1_Var_Only.txt
+    jobid: 71
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070969.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070969.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:36 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070962.1_Var_Only.txt
+    jobid: 64
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070962.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070962.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:36 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM071011.1_Var_Only.txt
+    jobid: 113
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM071011.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071011.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:36 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM071004.1_Var_Only.txt
+    jobid: 106
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM071004.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071004.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:36 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070997.1_Var_Only.txt
+    jobid: 99
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070997.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070997.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:36 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070990.1_Var_Only.txt
+    jobid: 92
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070990.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070990.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:36 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070977.1_Var_Only.txt
+    jobid: 79
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070977.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070977.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:36 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070970.1_Var_Only.txt
+    jobid: 72
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070970.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070970.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:36 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM070963.1_Var_Only.txt
+    jobid: 65
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM070963.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070963.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:36 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM071012.1_Var_Only.txt
+    jobid: 114
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM071012.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071012.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:28:36 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt
+    output: sharks/HetFra/temp/20250411_CM071005.1_Var_Only.txt
+    jobid: 107
+    reason: Missing output files: sharks/HetFra/temp/20250411_CM071005.1_Var_Only.txt; Input files updated by another job: sharks/HetFra/temp/HetFra_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071005.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:32 2025]
+Finished job 100.
+55 of 316 steps (17%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 09:33:32 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070998.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070998.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070998.1_ROH_Results.txt
+    jobid: 152
+    reason: Missing output files: sharks/HetFra/20250411_CM070998.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070998.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070998.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070998.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:33 2025]
+Finished job 110.
+56 of 316 steps (18%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 09:33:33 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM071008.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071008.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM071008.1_ROH_Results.txt
+    jobid: 162
+    reason: Missing output files: sharks/HetFra/20250411_CM071008.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM071008.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071008.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071008.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:34 2025]
+Finished job 101.
+57 of 316 steps (18%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 09:33:34 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070999.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070999.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070999.1_ROH_Results.txt
+    jobid: 153
+    reason: Missing output files: sharks/HetFra/20250411_CM070999.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070999.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070999.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070999.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:34 2025]
+Finished job 96.
+58 of 316 steps (18%) done
+[Fri Apr 25 09:33:34 2025]
+Finished job 81.
+59 of 316 steps (19%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Fri Apr 25 09:33:35 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070979.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070979.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070979.1_ROH_Results.txt
+    jobid: 133
+    reason: Missing output files: sharks/HetFra/20250411_CM070979.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070979.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070979.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070979.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:33:35 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070994.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070994.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070994.1_ROH_Results.txt
+    jobid: 148
+    reason: Missing output files: sharks/HetFra/20250411_CM070994.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070994.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070994.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070994.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:35 2025]
+Finished job 83.
+60 of 316 steps (19%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 09:33:35 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070981.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070981.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070981.1_ROH_Results.txt
+    jobid: 135
+    reason: Missing output files: sharks/HetFra/20250411_CM070981.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070981.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070981.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070981.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:36 2025]
+Finished job 76.
+61 of 316 steps (19%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 09:33:36 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070974.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070974.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070974.1_ROH_Results.txt
+    jobid: 128
+    reason: Missing output files: sharks/HetFra/20250411_CM070974.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070974.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070974.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070974.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:36 2025]
+Finished job 93.
+62 of 316 steps (20%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 09:33:36 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070991.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070991.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070991.1_ROH_Results.txt
+    jobid: 145
+    reason: Missing output files: sharks/HetFra/20250411_CM070991.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070991.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070991.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070991.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:36 2025]
+Finished job 105.
+63 of 316 steps (20%) done
+[Fri Apr 25 09:33:36 2025]
+Finished job 113.
+64 of 316 steps (20%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Fri Apr 25 09:33:37 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM071003.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071003.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM071003.1_ROH_Results.txt
+    jobid: 157
+    reason: Missing output files: sharks/HetFra/20250411_CM071003.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM071003.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071003.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071003.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:33:37 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM071011.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071011.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM071011.1_ROH_Results.txt
+    jobid: 165
+    reason: Missing output files: sharks/HetFra/20250411_CM071011.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM071011.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM071011.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071011.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:37 2025]
+Finished job 109.
+65 of 316 steps (21%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 09:33:37 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM071007.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071007.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM071007.1_ROH_Results.txt
+    jobid: 161
+    reason: Missing output files: sharks/HetFra/20250411_CM071007.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM071007.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071007.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071007.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:37 2025]
+Finished job 87.
+66 of 316 steps (21%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 09:33:37 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070985.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070985.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070985.1_ROH_Results.txt
+    jobid: 139
+    reason: Missing output files: sharks/HetFra/20250411_CM070985.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070985.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070985.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070985.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:38 2025]
+Finished job 114.
+67 of 316 steps (21%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 09:33:38 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM071012.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071012.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM071012.1_ROH_Results.txt
+    jobid: 166
+    reason: Missing output files: sharks/HetFra/20250411_CM071012.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM071012.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071012.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071012.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:38 2025]
+Finished job 97.
+68 of 316 steps (22%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 09:33:38 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070995.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070995.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070995.1_ROH_Results.txt
+    jobid: 149
+    reason: Missing output files: sharks/HetFra/20250411_CM070995.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070995.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070995.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070995.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:39 2025]
+Finished job 104.
+69 of 316 steps (22%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 09:33:39 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM071002.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071002.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM071002.1_ROH_Results.txt
+    jobid: 156
+    reason: Missing output files: sharks/HetFra/20250411_CM071002.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM071002.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071002.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071002.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:39 2025]
+Finished job 94.
+70 of 316 steps (22%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 09:33:39 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070992.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070992.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070992.1_ROH_Results.txt
+    jobid: 146
+    reason: Missing output files: sharks/HetFra/20250411_CM070992.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070992.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070992.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070992.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:39 2025]
+Finished job 75.
+71 of 316 steps (22%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 09:33:39 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070973.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070973.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070973.1_ROH_Results.txt
+    jobid: 127
+    reason: Missing output files: sharks/HetFra/20250411_CM070973.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070973.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070973.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070973.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:40 2025]
+Finished job 90.
+72 of 316 steps (23%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 09:33:40 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070988.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070988.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070988.1_ROH_Results.txt
+    jobid: 142
+    reason: Missing output files: sharks/HetFra/20250411_CM070988.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070988.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070988.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070988.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:40 2025]
+Finished job 71.
+73 of 316 steps (23%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 09:33:40 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070969.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070969.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070969.1_ROH_Results.txt
+    jobid: 123
+    reason: Missing output files: sharks/HetFra/20250411_CM070969.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070969.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070969.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070969.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:40 2025]
+Finished job 88.
+74 of 316 steps (23%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 09:33:40 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070986.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070986.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070986.1_ROH_Results.txt
+    jobid: 140
+    reason: Missing output files: sharks/HetFra/20250411_CM070986.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070986.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070986.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070986.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:40 2025]
+Finished job 74.
+75 of 316 steps (24%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 09:33:40 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070972.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070972.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070972.1_ROH_Results.txt
+    jobid: 126
+    reason: Missing output files: sharks/HetFra/20250411_CM070972.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070972.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070972.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070972.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:40 2025]
+Finished job 107.
+76 of 316 steps (24%) done
+[Fri Apr 25 09:33:41 2025]
+Finished job 73.
+77 of 316 steps (24%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Fri Apr 25 09:33:41 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070971.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070971.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070971.1_ROH_Results.txt
+    jobid: 125
+    reason: Missing output files: sharks/HetFra/20250411_CM070971.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070971.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070971.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070971.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:33:41 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM071005.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071005.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM071005.1_ROH_Results.txt
+    jobid: 159
+    reason: Missing output files: sharks/HetFra/20250411_CM071005.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM071005.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM071005.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071005.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:41 2025]
+Finished job 111.
+78 of 316 steps (25%) done
+[Fri Apr 25 09:33:41 2025]
+Finished job 95.
+79 of 316 steps (25%) done
+[Fri Apr 25 09:33:41 2025]
+Finished job 80.
+80 of 316 steps (25%) done
+[Fri Apr 25 09:33:41 2025]
+Finished job 69.
+81 of 316 steps (26%) done
+[Fri Apr 25 09:33:41 2025]
+Finished job 86.
+82 of 316 steps (26%) done
+[Fri Apr 25 09:33:42 2025]
+Finished job 85.
+83 of 316 steps (26%) done
+Select jobs to execute...
+Execute 6 jobs...
+
+[Fri Apr 25 09:33:42 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070967.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070967.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070967.1_ROH_Results.txt
+    jobid: 121
+    reason: Missing output files: sharks/HetFra/20250411_CM070967.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070967.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070967.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070967.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:33:42 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070983.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070983.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070983.1_ROH_Results.txt
+    jobid: 137
+    reason: Missing output files: sharks/HetFra/20250411_CM070983.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070983.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070983.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070983.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:33:42 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070993.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070993.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070993.1_ROH_Results.txt
+    jobid: 147
+    reason: Missing output files: sharks/HetFra/20250411_CM070993.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070993.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070993.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070993.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:33:42 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM071009.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071009.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM071009.1_ROH_Results.txt
+    jobid: 163
+    reason: Missing output files: sharks/HetFra/20250411_CM071009.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM071009.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM071009.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071009.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:33:42 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070978.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070978.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070978.1_ROH_Results.txt
+    jobid: 132
+    reason: Missing output files: sharks/HetFra/20250411_CM070978.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070978.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070978.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070978.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:33:42 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070984.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070984.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070984.1_ROH_Results.txt
+    jobid: 138
+    reason: Missing output files: sharks/HetFra/20250411_CM070984.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070984.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070984.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070984.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:43 2025]
+Finished job 89.
+84 of 316 steps (27%) done
+[Fri Apr 25 09:33:43 2025]
+Finished job 82.
+85 of 316 steps (27%) done
+[Fri Apr 25 09:33:43 2025]
+Finished job 92.
+86 of 316 steps (27%) done
+[Fri Apr 25 09:33:43 2025]
+Finished job 102.
+87 of 316 steps (28%) done
+[Fri Apr 25 09:33:43 2025]
+Finished job 98.
+88 of 316 steps (28%) done
+[Fri Apr 25 09:33:43 2025]
+Finished job 67.
+89 of 316 steps (28%) done
+[Fri Apr 25 09:33:43 2025]
+Finished job 91.
+90 of 316 steps (28%) done
+[Fri Apr 25 09:33:43 2025]
+Finished job 106.
+91 of 316 steps (29%) done
+Select jobs to execute...
+Execute 8 jobs...
+
+[Fri Apr 25 09:33:44 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070996.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070996.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070996.1_ROH_Results.txt
+    jobid: 150
+    reason: Missing output files: sharks/HetFra/20250411_CM070996.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070996.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070996.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070996.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:33:44 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070965.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070965.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070965.1_ROH_Results.txt
+    jobid: 119
+    reason: Missing output files: sharks/HetFra/20250411_CM070965.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070965.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070965.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070965.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:33:44 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070989.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070989.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070989.1_ROH_Results.txt
+    jobid: 143
+    reason: Missing output files: sharks/HetFra/20250411_CM070989.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070989.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070989.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070989.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:33:44 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM071000.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071000.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM071000.1_ROH_Results.txt
+    jobid: 154
+    reason: Missing output files: sharks/HetFra/20250411_CM071000.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM071000.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071000.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071000.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:33:44 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070987.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070987.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070987.1_ROH_Results.txt
+    jobid: 141
+    reason: Missing output files: sharks/HetFra/20250411_CM070987.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070987.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070987.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070987.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:33:44 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070980.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070980.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070980.1_ROH_Results.txt
+    jobid: 134
+    reason: Missing output files: sharks/HetFra/20250411_CM070980.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070980.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070980.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070980.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:33:44 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM071004.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071004.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM071004.1_ROH_Results.txt
+    jobid: 158
+    reason: Missing output files: sharks/HetFra/20250411_CM071004.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM071004.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM071004.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071004.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:33:44 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070990.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070990.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070990.1_ROH_Results.txt
+    jobid: 144
+    reason: Missing output files: sharks/HetFra/20250411_CM070990.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070990.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070990.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070990.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:44 2025]
+Finished job 103.
+92 of 316 steps (29%) done
+[Fri Apr 25 09:33:44 2025]
+Finished job 78.
+93 of 316 steps (29%) done
+[Fri Apr 25 09:33:44 2025]
+Finished job 108.
+94 of 316 steps (30%) done
+[Fri Apr 25 09:33:44 2025]
+Finished job 112.
+95 of 316 steps (30%) done
+[Fri Apr 25 09:33:44 2025]
+Finished job 70.
+96 of 316 steps (30%) done
+[Fri Apr 25 09:33:44 2025]
+Finished job 66.
+97 of 316 steps (31%) done
+Select jobs to execute...
+Execute 6 jobs...
+
+[Fri Apr 25 09:33:45 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070976.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070976.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070976.1_ROH_Results.txt
+    jobid: 130
+    reason: Missing output files: sharks/HetFra/20250411_CM070976.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070976.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070976.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070976.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:33:45 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070964.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070964.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070964.1_ROH_Results.txt
+    jobid: 118
+    reason: Missing output files: sharks/HetFra/20250411_CM070964.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070964.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070964.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070964.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:33:45 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM071006.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071006.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM071006.1_ROH_Results.txt
+    jobid: 160
+    reason: Missing output files: sharks/HetFra/20250411_CM071006.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM071006.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071006.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071006.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:33:45 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070968.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070968.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070968.1_ROH_Results.txt
+    jobid: 122
+    reason: Missing output files: sharks/HetFra/20250411_CM070968.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070968.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070968.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070968.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:33:45 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM071001.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071001.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM071001.1_ROH_Results.txt
+    jobid: 155
+    reason: Missing output files: sharks/HetFra/20250411_CM071001.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM071001.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071001.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071001.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:33:45 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM071010.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071010.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM071010.1_ROH_Results.txt
+    jobid: 164
+    reason: Missing output files: sharks/HetFra/20250411_CM071010.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM071010.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071010.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071010.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:45 2025]
+Finished job 72.
+98 of 316 steps (31%) done
+[Fri Apr 25 09:33:46 2025]
+Finished job 68.
+99 of 316 steps (31%) done
+[Fri Apr 25 09:33:46 2025]
+Finished job 64.
+100 of 316 steps (32%) done
+Select jobs to execute...
+Execute 3 jobs...
+
+[Fri Apr 25 09:33:46 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070962.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070962.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070962.1_ROH_Results.txt
+    jobid: 115
+    reason: Missing output files: sharks/HetFra/20250411_CM070962.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070962.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070962.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070962.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:33:46 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070966.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070966.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070966.1_ROH_Results.txt
+    jobid: 120
+    reason: Missing output files: sharks/HetFra/20250411_CM070966.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070966.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070966.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070966.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:33:46 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070970.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070970.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070970.1_ROH_Results.txt
+    jobid: 124
+    reason: Missing output files: sharks/HetFra/20250411_CM070970.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070970.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070970.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070970.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:46 2025]
+Finished job 84.
+101 of 316 steps (32%) done
+[Fri Apr 25 09:33:46 2025]
+Finished job 99.
+102 of 316 steps (32%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Fri Apr 25 09:33:47 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070997.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070997.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070997.1_ROH_Results.txt
+    jobid: 151
+    reason: Missing output files: sharks/HetFra/20250411_CM070997.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070997.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070997.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070997.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 09:33:47 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070982.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070982.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070982.1_ROH_Results.txt
+    jobid: 136
+    reason: Missing output files: sharks/HetFra/20250411_CM070982.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070982.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070982.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070982.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:47 2025]
+Finished job 79.
+103 of 316 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 09:33:47 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070977.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070977.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070977.1_ROH_Results.txt
+    jobid: 131
+    reason: Missing output files: sharks/HetFra/20250411_CM070977.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070977.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070977.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070977.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:47 2025]
+Finished job 65.
+104 of 316 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 09:33:47 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070963.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070963.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070963.1_ROH_Results.txt
+    jobid: 117
+    reason: Missing output files: sharks/HetFra/20250411_CM070963.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070963.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070963.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070963.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:33:50 2025]
+Finished job 77.
+105 of 316 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 09:33:50 2025]
+localrule ROH_CALC:
+    input: sharks/HetFra/temp/20250411_CM070975.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070975.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070975.1_ROH_Results.txt
+    jobid: 129
+    reason: Missing output files: sharks/HetFra/20250411_CM070975.1_ROH_Results.txt; Input files updated by another job: sharks/HetFra/temp/20250411_CM070975.1_Var_Only.txt, sharks/HetFra/temp/20250411_CM070975.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070975.1
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 09:34:02 2025]
+Finished job 162.
+106 of 316 steps (34%) done
+[Fri Apr 25 09:34:02 2025]
+Finished job 165.
+107 of 316 steps (34%) done
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070994.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070994.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070994.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070994.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:36:15 2025]
+Error in rule ROH_CALC:
+    jobid: 148
+    input: sharks/HetFra/temp/20250411_CM070994.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070994.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070994.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070994.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070994.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070994.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070994.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070999.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070999.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070999.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070999.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:38:22 2025]
+Error in rule ROH_CALC:
+    jobid: 153
+    input: sharks/HetFra/temp/20250411_CM070999.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070999.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070999.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070999.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070999.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070999.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070999.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070998.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070998.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070998.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070998.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:38:23 2025]
+Error in rule ROH_CALC:
+    jobid: 152
+    input: sharks/HetFra/temp/20250411_CM070998.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070998.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070998.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070998.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070998.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070998.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070998.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070979.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070979.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070979.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070979.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:39:52 2025]
+Error in rule ROH_CALC:
+    jobid: 133
+    input: sharks/HetFra/temp/20250411_CM070979.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070979.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070979.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070979.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070979.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070979.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070979.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070981.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070981.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070981.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070981.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:40:31 2025]
+Error in rule ROH_CALC:
+    jobid: 135
+    input: sharks/HetFra/temp/20250411_CM070981.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070981.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070981.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070981.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070981.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070981.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070981.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070991.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070991.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070991.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070991.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:41:53 2025]
+Error in rule ROH_CALC:
+    jobid: 145
+    input: sharks/HetFra/temp/20250411_CM070991.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070991.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070991.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070991.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070991.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070991.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070991.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM071003.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM071003.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM071003.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM071003.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:42:00 2025]
+Error in rule ROH_CALC:
+    jobid: 157
+    input: sharks/HetFra/temp/20250411_CM071003.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071003.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM071003.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM071003.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM071003.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM071003.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM071003.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070962.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070962.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070962.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070962.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:43:11 2025]
+Error in rule ROH_CALC:
+    jobid: 115
+    input: sharks/HetFra/temp/20250411_CM070962.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070962.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070962.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070962.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070962.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070962.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070962.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070964.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070964.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070964.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070964.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:43:15 2025]
+Error in rule ROH_CALC:
+    jobid: 118
+    input: sharks/HetFra/temp/20250411_CM070964.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070964.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070964.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070964.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070964.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070964.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070964.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job ROH_CALC since they might be corrupted:
+sharks/HetFra/20250411_CM070964.1_ROH_Results.txt
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070963.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070963.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070963.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070963.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:44:34 2025]
+Error in rule ROH_CALC:
+    jobid: 117
+    input: sharks/HetFra/temp/20250411_CM070963.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070963.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070963.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070963.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070963.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070963.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070963.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070993.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070993.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070993.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070993.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:45:15 2025]
+Error in rule ROH_CALC:
+    jobid: 147
+    input: sharks/HetFra/temp/20250411_CM070993.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070993.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070993.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070993.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070993.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070993.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070993.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job ROH_CALC since they might be corrupted:
+sharks/HetFra/20250411_CM070993.1_ROH_Results.txt
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070974.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070974.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070974.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070974.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:45:16 2025]
+Error in rule ROH_CALC:
+    jobid: 128
+    input: sharks/HetFra/temp/20250411_CM070974.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070974.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070974.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070974.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070974.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070974.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070974.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job ROH_CALC since they might be corrupted:
+sharks/HetFra/20250411_CM070974.1_ROH_Results.txt
+[Fri Apr 25 09:45:16 2025]
+Finished job 161.
+108 of 316 steps (34%) done
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070984.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070984.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070984.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070984.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:45:44 2025]
+Error in rule ROH_CALC:
+    jobid: 138
+    input: sharks/HetFra/temp/20250411_CM070984.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070984.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070984.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070984.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070984.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070984.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070984.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job ROH_CALC since they might be corrupted:
+sharks/HetFra/20250411_CM070984.1_ROH_Results.txt
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070978.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070978.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070978.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070978.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:46:42 2025]
+Error in rule ROH_CALC:
+    jobid: 132
+    input: sharks/HetFra/temp/20250411_CM070978.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070978.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070978.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070978.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070978.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070978.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070978.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job ROH_CALC since they might be corrupted:
+sharks/HetFra/20250411_CM070978.1_ROH_Results.txt
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070966.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070966.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070966.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070966.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:47:32 2025]
+Error in rule ROH_CALC:
+    jobid: 120
+    input: sharks/HetFra/temp/20250411_CM070966.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070966.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070966.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070966.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070966.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070966.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070966.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job ROH_CALC since they might be corrupted:
+sharks/HetFra/20250411_CM070966.1_ROH_Results.txt
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070968.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070968.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070968.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070968.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:48:21 2025]
+Error in rule ROH_CALC:
+    jobid: 122
+    input: sharks/HetFra/temp/20250411_CM070968.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070968.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070968.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070968.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070968.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070968.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070968.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job ROH_CALC since they might be corrupted:
+sharks/HetFra/20250411_CM070968.1_ROH_Results.txt
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070965.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070965.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070965.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070965.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:48:27 2025]
+Error in rule ROH_CALC:
+    jobid: 119
+    input: sharks/HetFra/temp/20250411_CM070965.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070965.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070965.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070965.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070965.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070965.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070965.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job ROH_CALC since they might be corrupted:
+sharks/HetFra/20250411_CM070965.1_ROH_Results.txt
+[Fri Apr 25 09:51:13 2025]
+Finished job 163.
+109 of 316 steps (34%) done
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070980.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070980.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070980.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070980.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:51:15 2025]
+Error in rule ROH_CALC:
+    jobid: 134
+    input: sharks/HetFra/temp/20250411_CM070980.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070980.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070980.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070980.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070980.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070980.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070980.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job ROH_CALC since they might be corrupted:
+sharks/HetFra/20250411_CM070980.1_ROH_Results.txt
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070985.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070985.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070985.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070985.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:52:31 2025]
+Error in rule ROH_CALC:
+    jobid: 139
+    input: sharks/HetFra/temp/20250411_CM070985.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070985.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070985.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070985.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070985.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070985.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070985.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job ROH_CALC since they might be corrupted:
+sharks/HetFra/20250411_CM070985.1_ROH_Results.txt
+[Fri Apr 25 09:53:10 2025]
+Finished job 166.
+110 of 316 steps (35%) done
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070967.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070967.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070967.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070967.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:54:02 2025]
+Error in rule ROH_CALC:
+    jobid: 121
+    input: sharks/HetFra/temp/20250411_CM070967.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070967.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070967.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070967.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070967.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070967.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070967.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job ROH_CALC since they might be corrupted:
+sharks/HetFra/20250411_CM070967.1_ROH_Results.txt
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070997.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070997.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070997.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070997.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:55:05 2025]
+Error in rule ROH_CALC:
+    jobid: 151
+    input: sharks/HetFra/temp/20250411_CM070997.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070997.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070997.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070997.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070997.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070997.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070997.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job ROH_CALC since they might be corrupted:
+sharks/HetFra/20250411_CM070997.1_ROH_Results.txt
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070986.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070986.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070986.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070986.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:55:15 2025]
+Error in rule ROH_CALC:
+    jobid: 140
+    input: sharks/HetFra/temp/20250411_CM070986.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070986.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070986.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070986.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070986.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070986.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070986.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job ROH_CALC since they might be corrupted:
+sharks/HetFra/20250411_CM070986.1_ROH_Results.txt
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM071004.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM071004.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM071004.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM071004.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:56:26 2025]
+Error in rule ROH_CALC:
+    jobid: 158
+    input: sharks/HetFra/temp/20250411_CM071004.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM071004.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM071004.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM071004.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM071004.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM071004.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM071004.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job ROH_CALC since they might be corrupted:
+sharks/HetFra/20250411_CM071004.1_ROH_Results.txt
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070976.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070976.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070976.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070976.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:56:31 2025]
+Error in rule ROH_CALC:
+    jobid: 130
+    input: sharks/HetFra/temp/20250411_CM070976.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070976.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070976.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070976.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070976.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070976.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070976.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job ROH_CALC since they might be corrupted:
+sharks/HetFra/20250411_CM070976.1_ROH_Results.txt
+[Fri Apr 25 09:56:49 2025]
+Finished job 160.
+111 of 316 steps (35%) done
+[Fri Apr 25 09:56:51 2025]
+Finished job 164.
+112 of 316 steps (35%) done
+[Fri Apr 25 09:57:34 2025]
+Finished job 159.
+113 of 316 steps (36%) done
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070975.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070975.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070975.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070975.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:58:18 2025]
+Error in rule ROH_CALC:
+    jobid: 129
+    input: sharks/HetFra/temp/20250411_CM070975.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070975.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070975.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070975.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070975.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070975.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070975.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job ROH_CALC since they might be corrupted:
+sharks/HetFra/20250411_CM070975.1_ROH_Results.txt
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070969.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070969.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070969.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070969.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:58:28 2025]
+Error in rule ROH_CALC:
+    jobid: 123
+    input: sharks/HetFra/temp/20250411_CM070969.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070969.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070969.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070969.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070969.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070969.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070969.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job ROH_CALC since they might be corrupted:
+sharks/HetFra/20250411_CM070969.1_ROH_Results.txt
+[Fri Apr 25 09:59:07 2025]
+Finished job 155.
+114 of 316 steps (36%) done
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070970.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070970.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070970.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070970.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 09:59:15 2025]
+Error in rule ROH_CALC:
+    jobid: 124
+    input: sharks/HetFra/temp/20250411_CM070970.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070970.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070970.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070970.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070970.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070970.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070970.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job ROH_CALC since they might be corrupted:
+sharks/HetFra/20250411_CM070970.1_ROH_Results.txt
+[Fri Apr 25 10:00:31 2025]
+Finished job 149.
+115 of 316 steps (36%) done
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070972.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070972.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070972.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070972.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 10:00:48 2025]
+Error in rule ROH_CALC:
+    jobid: 126
+    input: sharks/HetFra/temp/20250411_CM070972.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070972.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070972.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070972.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070972.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070972.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070972.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job ROH_CALC since they might be corrupted:
+sharks/HetFra/20250411_CM070972.1_ROH_Results.txt
+[Fri Apr 25 10:01:28 2025]
+Finished job 156.
+116 of 316 steps (37%) done
+[Fri Apr 25 10:02:14 2025]
+Finished job 154.
+117 of 316 steps (37%) done
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM070973.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070973.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070973.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070973.1_Var_Only.txt HetFra' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 10:05:08 2025]
+Error in rule ROH_CALC:
+    jobid: 127
+    input: sharks/HetFra/temp/20250411_CM070973.1_Aln_Only.txt, sharks/HetFra/temp/20250411_CM070973.1_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_CM070973.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM070973.1' '$1 == var {print $2; exit}' sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM070973.1 $CHROM_LENGTH 20250411 GCA_036365495.1 sharks sharks/HetFra/temp/20250411_CM070973.1_Aln_Only.txt sharks/HetFra/temp/20250411_CM070973.1_Var_Only.txt HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job ROH_CALC since they might be corrupted:
+sharks/HetFra/20250411_CM070973.1_ROH_Results.txt
+[Fri Apr 25 10:06:21 2025]
+Finished job 150.
+118 of 316 steps (37%) done
+[Fri Apr 25 10:06:37 2025]
+Finished job 143.
+119 of 316 steps (38%) done
+[Fri Apr 25 10:06:39 2025]
+Finished job 146.
+120 of 316 steps (38%) done
+[Fri Apr 25 10:06:40 2025]
+Finished job 141.
+121 of 316 steps (38%) done
+[Fri Apr 25 10:06:42 2025]
+Finished job 137.
+122 of 316 steps (39%) done
+[Fri Apr 25 10:06:44 2025]
+Finished job 142.
+123 of 316 steps (39%) done
+[Fri Apr 25 10:06:44 2025]
+Finished job 136.
+124 of 316 steps (39%) done
+[Fri Apr 25 10:06:46 2025]
+Finished job 144.
+125 of 316 steps (40%) done
+[Fri Apr 25 10:06:47 2025]
+Finished job 131.
+126 of 316 steps (40%) done
+[Fri Apr 25 10:06:52 2025]
+Finished job 125.
+127 of 316 steps (40%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-04-25T092149.512057.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -1,0 +1,45 @@
+host: login-p-1
+Building DAG of jobs...
+SLURM run ID: 9196cdb3-ebe4-4e83-9319-46e8ddbd55a3
+Using shell: /usr/bin/bash
+Provided remote nodes: 10
+Job stats:
+job                       count
+----------------------  -------
+ALNCHAIN                      1
+ALNtoPAF                      1
+CALC_HET_PER_CHR             33
+CALC_HET_WHOLE_GENOME         1
+COMPILE_HET                   1
+COMPILE_ROH                   1
+FASTGA                        1
+FILTER_PAF_CHR_ONLY           1
+FILTER_PAF_VARIANCE           1
+FROH_PER_AUT_CHR             33
+GET_ALN_ONLY_PER_CHROM       33
+GET_VAR_ONLY_PER_CHROM       33
+GET_WHOLE_ALN                 1
+GET_WHOLE_VAR                 1
+PLOT_HET_PER_CHR             33
+PLOT_WHOLE_HET                1
+Plot_ROH                      1
+ROH_CALC                     33
+SORT_PAF                      1
+WHOLE_FROH                    1
+all                           1
+total                       213
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 12:55:44 2025]
+rule FASTGA:
+    input: sharks/MobBir/temp/MobBir_GCA_030028105.1.gix, sharks/MobBir/temp/MobBir_GCA_030035685.1.gix
+    output: sharks/MobBir/MobBir_ALN.1aln
+    jobid: 5
+    reason: Missing output files: sharks/MobBir/MobBir_ALN.1aln
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake, runtime=720
+
+WorkflowError:
+SLURM sbatch failed. The error message was sbatch: error: Batch job submission failed: Unable to contact slurm controller (connect failure)
+

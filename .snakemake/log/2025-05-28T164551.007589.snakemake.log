@@ -1,0 +1,14 @@
+host: login-q-1
+Building DAG of jobs...
+AmbiguousRuleException:
+Rules GEN_CHROM_VCF and GEN_INPUT_MASK_VCF are ambiguous for the file sharks/HydCol/MSMC/vcf_files/HydCol_CM068742.1_only_snps.vcf.gz.
+Consider starting rule output with a unique prefix, constrain your wildcards, or use the ruleorder directive.
+Wildcards:
+	GEN_CHROM_VCF: CHROM=CM068742.1_only_snps,CLADE=sharks,SPEC_NAME=HydCol
+	GEN_INPUT_MASK_VCF: CHROM=CM068742.1,CLADE=sharks,SPEC_NAME=HydCol
+Expected input files:
+	GEN_CHROM_VCF: sharks/HydCol/MSMC/paf_files/HydCol_CM068742.1_only_snps.paf /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084275.1.fa.gz
+	GEN_INPUT_MASK_VCF: sharks/HydCol/MSMC/vcf_files/HydCol_CM068742.1.vcf.gz
+Expected output files:
+	GEN_CHROM_VCF: sharks/HydCol/MSMC/vcf_files/HydCol_CM068742.1_only_snps.vcf.gz
+	GEN_INPUT_MASK_VCF: sharks/HydCol/MSMC/Output_Mask/HydCol_CM068742.1.bed.gz sharks/HydCol/MSMC/vcf_files/HydCol_CM068742.1_only_snps.vcf.gz

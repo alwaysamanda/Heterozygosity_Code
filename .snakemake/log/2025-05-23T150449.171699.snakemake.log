@@ -1,0 +1,96 @@
+host: login-q-4
+Building DAG of jobs...
+SLURM run ID: f596f586-6620-4e52-8886-ff211439cd04
+Using shell: /usr/bin/bash
+Provided remote nodes: 30
+Job stats:
+job                    count
+-------------------  -------
+BAM_CALLER_BED            52
+BGZIP_VCF                 52
+CALL_PLOIDY               52
+INDEL_MASKER              52
+INDEX_BAM_FILE            52
+MAKE_BAM                   1
+PILEUP_VARIANTS           52
+PLOT_MSMC                  1
+REMOVE_INDELS             52
+RESTRUCTURE               52
+RUN_PRIMARY_MSMC           1
+SEPARATE_BAM_BY_CHR       52
+TABIX                     52
+all                        1
+total                    524
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Fri May 23 15:05:22 2025]
+rule RUN_PRIMARY_MSMC:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083401.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083402.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083403.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083404.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083405.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083406.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083407.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083408.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083409.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083410.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083411.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083412.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083413.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083414.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083415.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083416.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083417.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083418.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083419.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083420.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083421.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083422.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083423.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083424.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083425.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083426.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083427.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083428.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083429.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083430.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083431.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083432.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083433.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083435.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083436.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083437.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083438.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083439.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083440.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083441.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083442.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083443.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083444.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083445.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083446.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083447.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083448.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083449.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083450.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083451.1_multihet.txt, sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083452.1_multihet.txt
+    output: sharks/HemOce/20250428_HemOce.msmc2.loop.txt, sharks/HemOce/20250428_HemOce.msmc2.log, sharks/HemOce/20250428_HemOce.msmc2.final.txt
+    jobid: 860
+    reason: Missing output files: sharks/HemOce/20250428_HemOce.msmc2.final.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 860 has been submitted with SLURM jobid 9807411 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_RUN_PRIMARY_MSMC/sharks_HemOce_20250428/9807411.log).
+
+[Fri May 23 15:05:24 2025]
+rule MAKE_BAM:
+    input: sharks/HemOce/HemOce.sam
+    output: sharks/HemOce/HemOce.bam
+    jobid: 340
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1165, disk_mib=1112, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 340 has been submitted with SLURM jobid 9807414 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAKE_BAM/sharks_HemOce/9807414.log).
+[Fri May 23 15:49:27 2025]
+Error in rule MAKE_BAM:
+    message: SLURM-job '9807414' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 340
+    input: sharks/HemOce/HemOce.sam
+    output: sharks/HemOce/HemOce.bam
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAKE_BAM/sharks_HemOce/9807414.log (check log file(s) for error details)
+    shell:
+        
+        samtools sort sharks/HemOce/HemOce.sam -o sharks/HemOce/HemOce.bam
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9807414
+
+[Fri May 23 16:22:30 2025]
+Finished job 860.
+1 of 524 steps (0.2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri May 23 16:22:30 2025]
+rule PLOT_MSMC:
+    input: sharks/HemOce/20250428_HemOce.msmc2.final.txt
+    output: sharks/HemOce/20250428_HemOce_MSMC2.svg
+    jobid: 861
+    reason: Missing output files: sharks/HemOce/20250428_HemOce_MSMC2.svg; Input files updated by another job: sharks/HemOce/20250428_HemOce.msmc2.final.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 861 has been submitted with SLURM jobid 9808279 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_MSMC/sharks_HemOce_20250428/9808279.log).
+[Fri May 23 16:56:03 2025]
+Error in rule PLOT_MSMC:
+    message: SLURM-job '9808279' failed, SLURM status is: 'CANCELLED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 861
+    input: sharks/HemOce/20250428_HemOce.msmc2.final.txt
+    output: sharks/HemOce/20250428_HemOce_MSMC2.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_MSMC/sharks_HemOce_20250428/9808279.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250508_Plot_MSMC.R sharks 20250428 HemOce 1.25e-08 6 sharks/HemOce/20250428_HemOce_MSMC2.svg sharks/HemOce/20250428_HemOce.msmc2.final.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9808279
+
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-05-23T150449.171699.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

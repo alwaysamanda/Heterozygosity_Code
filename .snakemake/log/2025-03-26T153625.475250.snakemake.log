@@ -1,0 +1,51 @@
+host: login-p-1
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count
+-----------  -------
+COMPILE_ROH        1
+all                1
+total              2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 15:36:25 2025]
+localrule COMPILE_ROH:
+    input: sharks/chrom_lists/GCA_035084275.1_chroms.txt
+    output: sharks/HydCol_Test/GCA_035084275.1_ROH_Results.tsv
+    jobid: 33
+    reason: Missing output files: sharks/HydCol_Test/GCA_035084275.1_ROH_Results.tsv
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 296:
+Command 'set -euo pipefail;  
+        while read -r line; do
+            FILE_NAME=sharks/HydCol_Test/"$line"_ROH_Results.txt
+            awk -v var="$line" -F',' '{ print var, $1, $2, $3, $5 }' "$FILE_NAME" >> sharks/HydCol_Test/GCA_035084275.1_ROH_Results.tsv
+        done < sharks/chrom_lists/GCA_035084275.1_chroms.txt' returned non-zero exit status 2.
+[Wed Mar 26 15:36:25 2025]
+Error in rule COMPILE_ROH:
+    jobid: 33
+    input: sharks/chrom_lists/GCA_035084275.1_chroms.txt
+    output: sharks/HydCol_Test/GCA_035084275.1_ROH_Results.tsv
+    shell:
+        
+        while read -r line; do
+            FILE_NAME=sharks/HydCol_Test/"$line"_ROH_Results.txt
+            awk -v var="$line" -F',' '{ print var, $1, $2, $3, $5 }' "$FILE_NAME" >> sharks/HydCol_Test/GCA_035084275.1_ROH_Results.tsv
+        done < sharks/chrom_lists/GCA_035084275.1_chroms.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job COMPILE_ROH since they might be corrupted:
+sharks/HydCol_Test/GCA_035084275.1_ROH_Results.tsv
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-26T153625.475250.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

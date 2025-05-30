@@ -1,0 +1,758 @@
+host: login-q-2
+Building DAG of jobs...
+SLURM run ID: fd4ef022-86fb-4b19-a544-2dad1b719149
+Using shell: /usr/bin/bash
+Provided remote nodes: 25
+Job stats:
+job                            count
+---------------------------  -------
+BAM_CALLER_BED                    52
+BGZIP_VCF                         52
+BOOTSTRAPPING_MULTIHET_FILE     1560
+CALC_HET_PER_CHR                   2
+CALC_HET_WHOLE_GENOME              1
+CALL_PLOIDY                       52
+COMPILE_HET                        1
+GENERATE_MASK                     52
+GENERATE_MULTIHETSEP              52
+INDEL_MASKER                      50
+MAIN_MULTIHETSEP                  52
+PILEUP_VARIANTS                   32
+PLOT_HET_PER_CHR                  52
+PLOT_WHOLE_HET                     1
+REMOVE_INDELS                     52
+RESTRUCTURE                       52
+SEPARATE_BAM_BY_CHR               15
+all                                1
+total                           2131
+
+Select jobs to execute...
+Execute 25 jobs...
+
+[Mon May 19 14:22:51 2025]
+rule INDEL_MASKER:
+    input: sharks/HemOce/temp/NC_083424.1_pileup.vcf.gz
+    output: sharks/HemOce/MSMC/Output_indel_BED_file/NC_083424.1_indel_bed.txt
+    jobid: 787
+    reason: Missing output files: sharks/HemOce/MSMC/Output_indel_BED_file/NC_083424.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083424.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 787 has been submitted with SLURM jobid 9549029 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HemOce_NC_083424.1/9549029.log).
+
+[Mon May 19 14:22:51 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HemOce/HemOce.bam
+    output: sharks/HemOce/HemOce_NC_083402.1.bam
+    jobid: 347
+    reason: Updated input files: sharks/HemOce/HemOce.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083402.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=4184, disk_mib=3991, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 347 has been submitted with SLURM jobid 9549030 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HemOce_NC_083402.1/9549030.log).
+
+[Mon May 19 14:22:51 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HemOce/HemOce.bam
+    output: sharks/HemOce/HemOce_NC_083430.1.bam
+    jobid: 431
+    reason: Updated input files: sharks/HemOce/HemOce.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083430.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=4184, disk_mib=3991, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 431 has been submitted with SLURM jobid 9549031 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HemOce_NC_083430.1/9549031.log).
+
+[Mon May 19 14:22:52 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HemOce/HemOce.bam
+    output: sharks/HemOce/HemOce_NC_083423.1.bam
+    jobid: 410
+    reason: Updated input files: sharks/HemOce/HemOce.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083423.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=4184, disk_mib=3991, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 410 has been submitted with SLURM jobid 9549032 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HemOce_NC_083423.1/9549032.log).
+
+[Mon May 19 14:22:52 2025]
+rule CALL_PLOIDY:
+    input: sharks/HemOce/temp/NC_083434.1_pileup.vcf.gz
+    output: sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083434.1_unmodified_bed.txt.gz, sharks/HemOce/temp/NC_083434.1_only_snps.vcf.bgz
+    jobid: 571
+    reason: Updated input files: sharks/HemOce/temp/NC_083434.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083434.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 571 has been submitted with SLURM jobid 9549033 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HemOce_NC_083434.1/9549033.log).
+
+[Mon May 19 14:22:53 2025]
+rule INDEL_MASKER:
+    input: sharks/HemOce/temp/NC_083442.1_pileup.vcf.gz
+    output: sharks/HemOce/MSMC/Output_indel_BED_file/NC_083442.1_indel_bed.txt
+    jobid: 805
+    reason: Updated input files: sharks/HemOce/temp/NC_083442.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083442.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 805 has been submitted with SLURM jobid 9549034 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HemOce_NC_083442.1/9549034.log).
+
+[Mon May 19 14:22:53 2025]
+rule CALL_PLOIDY:
+    input: sharks/HemOce/temp/NC_083431.1_pileup.vcf.gz
+    output: sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083431.1_unmodified_bed.txt.gz, sharks/HemOce/temp/NC_083431.1_only_snps.vcf.bgz
+    jobid: 565
+    reason: Updated input files: sharks/HemOce/temp/NC_083431.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083431.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 565 has been submitted with SLURM jobid 9549035 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HemOce_NC_083431.1/9549035.log).
+
+[Mon May 19 14:22:53 2025]
+rule INDEL_MASKER:
+    input: sharks/HemOce/temp/NC_083435.1_pileup.vcf.gz
+    output: sharks/HemOce/MSMC/Output_indel_BED_file/NC_083435.1_indel_bed.txt
+    jobid: 798
+    reason: Updated input files: sharks/HemOce/temp/NC_083435.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083435.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 798 has been submitted with SLURM jobid 9549036 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HemOce_NC_083435.1/9549036.log).
+
+[Mon May 19 14:22:53 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HemOce/temp/NC_083410.1.fasta, sharks/HemOce/HemOce_NC_083410.1.bam
+    output: sharks/HemOce/temp/NC_083410.1_pileup.vcf.gz
+    jobid: 369
+    reason: Updated input files: sharks/HemOce/HemOce_NC_083410.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083410.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 369 has been submitted with SLURM jobid 9549037 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HemOce_NC_083410.1/9549037.log).
+
+[Mon May 19 14:22:54 2025]
+rule CALL_PLOIDY:
+    input: sharks/HemOce/temp/NC_083424.1_pileup.vcf.gz
+    output: sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083424.1_unmodified_bed.txt.gz, sharks/HemOce/temp/NC_083424.1_only_snps.vcf.bgz
+    jobid: 551
+    reason: Missing output files: sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083424.1_unmodified_bed.txt.gz, sharks/HemOce/temp/NC_083424.1_only_snps.vcf.bgz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083424.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 551 has been submitted with SLURM jobid 9549038 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HemOce_NC_083424.1/9549038.log).
+
+[Mon May 19 14:22:54 2025]
+rule CALL_PLOIDY:
+    input: sharks/HemOce/temp/NC_083417.1_pileup.vcf.gz
+    output: sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083417.1_unmodified_bed.txt.gz, sharks/HemOce/temp/NC_083417.1_only_snps.vcf.bgz
+    jobid: 537
+    reason: Updated input files: sharks/HemOce/temp/NC_083417.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083417.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 537 has been submitted with SLURM jobid 9549039 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HemOce_NC_083417.1/9549039.log).
+
+[Mon May 19 14:22:54 2025]
+rule INDEL_MASKER:
+    input: sharks/HemOce/temp/NC_083421.1_pileup.vcf.gz
+    output: sharks/HemOce/MSMC/Output_indel_BED_file/NC_083421.1_indel_bed.txt
+    jobid: 784
+    reason: Updated input files: sharks/HemOce/temp/NC_083421.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083421.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 784 has been submitted with SLURM jobid 9549040 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HemOce_NC_083421.1/9549040.log).
+
+[Mon May 19 14:22:54 2025]
+rule INDEL_MASKER:
+    input: sharks/HemOce/temp/NC_083428.1_pileup.vcf.gz
+    output: sharks/HemOce/MSMC/Output_indel_BED_file/NC_083428.1_indel_bed.txt
+    jobid: 791
+    reason: Updated input files: sharks/HemOce/temp/NC_083428.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083428.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 791 has been submitted with SLURM jobid 9549041 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HemOce_NC_083428.1/9549041.log).
+
+[Mon May 19 14:22:54 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HemOce/temp/NC_083453.1.fasta, sharks/HemOce/HemOce_NC_083453.1.bam
+    output: sharks/HemOce/temp/NC_083453.1_pileup.vcf.gz
+    jobid: 498
+    reason: Updated input files: sharks/HemOce/HemOce_NC_083453.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083453.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 498 has been submitted with SLURM jobid 9549042 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HemOce_NC_083453.1/9549042.log).
+
+[Mon May 19 14:22:55 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HemOce/temp/NC_083446.1.fasta, sharks/HemOce/HemOce_NC_083446.1.bam
+    output: sharks/HemOce/temp/NC_083446.1_pileup.vcf.gz
+    jobid: 477
+    reason: Updated input files: sharks/HemOce/HemOce_NC_083446.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083446.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 477 has been submitted with SLURM jobid 9549043 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HemOce_NC_083446.1/9549043.log).
+
+[Mon May 19 14:22:55 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HemOce/HemOce.bam
+    output: sharks/HemOce/HemOce_NC_083404.1.bam
+    jobid: 353
+    reason: Updated input files: sharks/HemOce/HemOce.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083404.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=4184, disk_mib=3991, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 353 has been submitted with SLURM jobid 9549044 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HemOce_NC_083404.1/9549044.log).
+
+[Mon May 19 14:22:55 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HemOce/temp/NC_083432.1.fasta, sharks/HemOce/HemOce_NC_083432.1.bam
+    output: sharks/HemOce/temp/NC_083432.1_pileup.vcf.gz
+    jobid: 435
+    reason: Updated input files: sharks/HemOce/HemOce_NC_083432.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083432.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 435 has been submitted with SLURM jobid 9549045 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HemOce_NC_083432.1/9549045.log).
+
+[Mon May 19 14:22:55 2025]
+rule INDEL_MASKER:
+    input: sharks/HemOce/temp/NC_083450.1_pileup.vcf.gz
+    output: sharks/HemOce/MSMC/Output_indel_BED_file/NC_083450.1_indel_bed.txt
+    jobid: 813
+    reason: Updated input files: sharks/HemOce/temp/NC_083450.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083450.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 813 has been submitted with SLURM jobid 9549046 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HemOce_NC_083450.1/9549046.log).
+
+[Mon May 19 14:22:56 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HemOce/temp/NC_083425.1.fasta, sharks/HemOce/HemOce_NC_083425.1.bam
+    output: sharks/HemOce/temp/NC_083425.1_pileup.vcf.gz
+    jobid: 414
+    reason: Updated input files: sharks/HemOce/HemOce_NC_083425.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083425.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 414 has been submitted with SLURM jobid 9549047 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HemOce_NC_083425.1/9549047.log).
+
+[Mon May 19 14:22:56 2025]
+rule CALL_PLOIDY:
+    input: sharks/HemOce/temp/NC_083439.1_pileup.vcf.gz
+    output: sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083439.1_unmodified_bed.txt.gz, sharks/HemOce/temp/NC_083439.1_only_snps.vcf.bgz
+    jobid: 581
+    reason: Missing output files: sharks/HemOce/temp/NC_083439.1_only_snps.vcf.bgz, sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083439.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083439.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 581 has been submitted with SLURM jobid 9549048 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HemOce_NC_083439.1/9549048.log).
+
+[Mon May 19 14:22:56 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HemOce/HemOce.bam
+    output: sharks/HemOce/HemOce_NC_083418.1.bam
+    jobid: 395
+    reason: Updated input files: sharks/HemOce/HemOce.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083418.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=4184, disk_mib=3991, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 395 has been submitted with SLURM jobid 9549049 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HemOce_NC_083418.1/9549049.log).
+
+[Mon May 19 14:22:56 2025]
+rule CALL_PLOIDY:
+    input: sharks/HemOce/temp/NC_083406.1_pileup.vcf.gz
+    output: sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083406.1_unmodified_bed.txt.gz, sharks/HemOce/temp/NC_083406.1_only_snps.vcf.bgz
+    jobid: 515
+    reason: Updated input files: sharks/HemOce/temp/NC_083406.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083406.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 515 has been submitted with SLURM jobid 9549050 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HemOce_NC_083406.1/9549050.log).
+
+[Mon May 19 14:22:57 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HemOce/temp/NC_083441.1.fasta, sharks/HemOce/HemOce_NC_083441.1.bam
+    output: sharks/HemOce/temp/NC_083441.1_pileup.vcf.gz
+    jobid: 462
+    reason: Updated input files: sharks/HemOce/HemOce_NC_083441.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083441.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 462 has been submitted with SLURM jobid 9549051 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HemOce_NC_083441.1/9549051.log).
+
+[Mon May 19 14:22:57 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083453.1_het.txt
+    jobid: 283
+    reason: Missing output files: sharks/HemOce/20250428_NC_083453.1_het.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083453.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 283 has been submitted with SLURM jobid 9549052 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083453.1/9549052.log).
+
+[Mon May 19 14:22:57 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HemOce/temp/NC_083420.1.fasta, sharks/HemOce/HemOce_NC_083420.1.bam
+    output: sharks/HemOce/temp/NC_083420.1_pileup.vcf.gz
+    jobid: 399
+    reason: Updated input files: sharks/HemOce/HemOce_NC_083420.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083420.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 399 has been submitted with SLURM jobid 9549053 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HemOce_NC_083420.1/9549053.log).
+[Mon May 19 15:09:56 2025]
+Finished job 787.
+1 of 2131 steps (0.0%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:09:56 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HemOce/temp/NC_083409.1.fasta, sharks/HemOce/HemOce_NC_083409.1.bam
+    output: sharks/HemOce/temp/NC_083409.1_pileup.vcf.gz
+    jobid: 366
+    reason: Updated input files: sharks/HemOce/HemOce_NC_083409.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083409.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 366 has been submitted with SLURM jobid 9550673 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HemOce_NC_083409.1/9550673.log).
+[Mon May 19 15:09:57 2025]
+Finished job 347.
+2 of 2131 steps (0.1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:09:57 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HemOce/temp/NC_083402.1.fasta, sharks/HemOce/HemOce_NC_083402.1.bam
+    output: sharks/HemOce/temp/NC_083402.1_pileup.vcf.gz
+    jobid: 345
+    reason: Input files updated by another job: sharks/HemOce/HemOce_NC_083402.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083402.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 345 has been submitted with SLURM jobid 9550674 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HemOce_NC_083402.1/9550674.log).
+[Mon May 19 15:18:08 2025]
+Finished job 431.
+3 of 2131 steps (0.1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:18:08 2025]
+rule INDEL_MASKER:
+    input: sharks/HemOce/temp/NC_083434.1_pileup.vcf.gz
+    output: sharks/HemOce/MSMC/Output_indel_BED_file/NC_083434.1_indel_bed.txt
+    jobid: 797
+    reason: Missing output files: sharks/HemOce/MSMC/Output_indel_BED_file/NC_083434.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083434.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 797 has been submitted with SLURM jobid 9550847 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HemOce_NC_083434.1/9550847.log).
+[Mon May 19 15:18:08 2025]
+Finished job 410.
+4 of 2131 steps (0.2%) done
+[Mon May 19 15:18:08 2025]
+Finished job 805.
+5 of 2131 steps (0.2%) done
+[Mon May 19 15:18:08 2025]
+Finished job 498.
+6 of 2131 steps (0.3%) done
+[Mon May 19 15:18:08 2025]
+Finished job 477.
+7 of 2131 steps (0.3%) done
+[Mon May 19 15:18:08 2025]
+Finished job 353.
+8 of 2131 steps (0.4%) done
+Select jobs to execute...
+Execute 5 jobs...
+
+[Mon May 19 15:18:08 2025]
+rule INDEL_MASKER:
+    input: sharks/HemOce/temp/NC_083407.1_pileup.vcf.gz
+    output: sharks/HemOce/MSMC/Output_indel_BED_file/NC_083407.1_indel_bed.txt
+    jobid: 770
+    reason: Updated input files: sharks/HemOce/temp/NC_083407.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083407.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 770 has been submitted with SLURM jobid 9550848 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HemOce_NC_083407.1/9550848.log).
+
+[Mon May 19 15:18:10 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HemOce/temp/NC_083445.1.fasta, sharks/HemOce/HemOce_NC_083445.1.bam
+    output: sharks/HemOce/temp/NC_083445.1_pileup.vcf.gz
+    jobid: 474
+    reason: Missing output files: sharks/HemOce/temp/NC_083445.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083445.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 474 has been submitted with SLURM jobid 9550849 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HemOce_NC_083445.1/9550849.log).
+
+[Mon May 19 15:18:11 2025]
+rule CALL_PLOIDY:
+    input: sharks/HemOce/temp/NC_083403.1_pileup.vcf.gz
+    output: sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083403.1_unmodified_bed.txt.gz, sharks/HemOce/temp/NC_083403.1_only_snps.vcf.bgz
+    jobid: 509
+    reason: Missing output files: sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083403.1_unmodified_bed.txt.gz, sharks/HemOce/temp/NC_083403.1_only_snps.vcf.bgz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083403.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 509 has been submitted with SLURM jobid 9550850 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HemOce_NC_083403.1/9550850.log).
+
+[Mon May 19 15:18:13 2025]
+rule CALL_PLOIDY:
+    input: sharks/HemOce/temp/NC_083412.1_pileup.vcf.gz
+    output: sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083412.1_unmodified_bed.txt.gz, sharks/HemOce/temp/NC_083412.1_only_snps.vcf.bgz
+    jobid: 527
+    reason: Updated input files: sharks/HemOce/temp/NC_083412.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083412.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 527 has been submitted with SLURM jobid 9550851 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HemOce_NC_083412.1/9550851.log).
+
+[Mon May 19 15:18:13 2025]
+rule INDEL_MASKER:
+    input: sharks/HemOce/temp/NC_083414.1_pileup.vcf.gz
+    output: sharks/HemOce/MSMC/Output_indel_BED_file/NC_083414.1_indel_bed.txt
+    jobid: 777
+    reason: Updated input files: sharks/HemOce/temp/NC_083414.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083414.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 777 has been submitted with SLURM jobid 9550852 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HemOce_NC_083414.1/9550852.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Mon May 19 15:18:49 2025]
+Finished job 798.
+9 of 2131 steps (0.4%) done
+Execute 1 jobs...
+
+[Mon May 19 15:18:49 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HemOce/HemOce.bam
+    output: sharks/HemOce/HemOce_NC_083411.1.bam
+    jobid: 374
+    reason: Updated input files: sharks/HemOce/HemOce.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083411.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=4184, disk_mib=3991, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 374 has been submitted with SLURM jobid 9550961 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HemOce_NC_083411.1/9550961.log).
+[Mon May 19 15:18:50 2025]
+Finished job 784.
+10 of 2131 steps (0.5%) done
+[Mon May 19 15:18:51 2025]
+Finished job 791.
+11 of 2131 steps (1%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon May 19 15:18:51 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HemOce/temp/NC_083430.1.fasta, sharks/HemOce/HemOce_NC_083430.1.bam
+    output: sharks/HemOce/temp/NC_083430.1_pileup.vcf.gz
+    jobid: 429
+    reason: Input files updated by another job: sharks/HemOce/HemOce_NC_083430.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083430.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 429 has been submitted with SLURM jobid 9550962 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HemOce_NC_083430.1/9550962.log).
+
+[Mon May 19 15:18:53 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HemOce/temp/NC_083426.1.fasta, sharks/HemOce/HemOce_NC_083426.1.bam
+    output: sharks/HemOce/temp/NC_083426.1_pileup.vcf.gz
+    jobid: 417
+    reason: Updated input files: sharks/HemOce/HemOce_NC_083426.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083426.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 417 has been submitted with SLURM jobid 9550963 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HemOce_NC_083426.1/9550963.log).
+Select jobs to execute...
+Waiting for more resources.
+[Mon May 19 15:21:20 2025]
+Finished job 369.
+12 of 2131 steps (1%) done
+Execute 1 jobs...
+
+[Mon May 19 15:21:20 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HemOce/temp/NC_083401.1.fasta, sharks/HemOce/HemOce_NC_083401.1.bam
+    output: sharks/HemOce/temp/NC_083401.1_pileup.vcf.gz
+    jobid: 339
+    reason: Updated input files: sharks/HemOce/HemOce_NC_083401.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083401.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 339 has been submitted with SLURM jobid 9551094 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HemOce_NC_083401.1/9551094.log).
+[Mon May 19 15:22:50 2025]
+Finished job 571.
+13 of 2131 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:22:50 2025]
+rule INDEL_MASKER:
+    input: sharks/HemOce/temp/NC_083439.1_pileup.vcf.gz
+    output: sharks/HemOce/MSMC/Output_indel_BED_file/NC_083439.1_indel_bed.txt
+    jobid: 802
+    reason: Updated input files: sharks/HemOce/temp/NC_083439.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083439.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 802 has been submitted with SLURM jobid 9551145 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HemOce_NC_083439.1/9551145.log).
+[Mon May 19 15:22:51 2025]
+Finished job 565.
+14 of 2131 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:22:51 2025]
+rule INDEL_MASKER:
+    input: sharks/HemOce/temp/NC_083417.1_pileup.vcf.gz
+    output: sharks/HemOce/MSMC/Output_indel_BED_file/NC_083417.1_indel_bed.txt
+    jobid: 780
+    reason: Updated input files: sharks/HemOce/temp/NC_083417.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083417.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 780 has been submitted with SLURM jobid 9551146 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HemOce_NC_083417.1/9551146.log).
+[Mon May 19 15:23:31 2025]
+Finished job 551.
+15 of 2131 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:23:31 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HemOce/temp/NC_083423.1.fasta, sharks/HemOce/HemOce_NC_083423.1.bam
+    output: sharks/HemOce/temp/NC_083423.1_pileup.vcf.gz
+    jobid: 408
+    reason: Input files updated by another job: sharks/HemOce/HemOce_NC_083423.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083423.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 408 has been submitted with SLURM jobid 9551147 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HemOce_NC_083423.1/9551147.log).
+[Mon May 19 15:26:01 2025]
+Finished job 537.
+16 of 2131 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:26:01 2025]
+rule RESTRUCTURE:
+    input: sharks/HemOce/temp/NC_083417.1_only_snps.vcf.bgz
+    output: sharks/HemOce/temp/NC_083417.1_restructured.vcf.gz
+    jobid: 641
+    reason: Missing output files: sharks/HemOce/temp/NC_083417.1_restructured.vcf.gz; Input files updated by another job: sharks/HemOce/temp/NC_083417.1_only_snps.vcf.bgz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083417.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 641 has been submitted with SLURM jobid 9551202 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_RESTRUCTURE/sharks_HemOce_NC_083417.1/9551202.log).
+[Mon May 19 15:26:01 2025]
+Finished job 813.
+17 of 2131 steps (1%) done
+[Mon May 19 15:26:01 2025]
+Finished job 462.
+18 of 2131 steps (1%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon May 19 15:26:02 2025]
+rule RESTRUCTURE:
+    input: sharks/HemOce/temp/NC_083431.1_only_snps.vcf.bgz
+    output: sharks/HemOce/temp/NC_083431.1_restructured.vcf.gz
+    jobid: 669
+    reason: Input files updated by another job: sharks/HemOce/temp/NC_083431.1_only_snps.vcf.bgz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083431.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 669 has been submitted with SLURM jobid 9551203 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_RESTRUCTURE/sharks_HemOce_NC_083431.1/9551203.log).
+
+[Mon May 19 15:26:04 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HemOce/temp/NC_083447.1.fasta, sharks/HemOce/HemOce_NC_083447.1.bam
+    output: sharks/HemOce/temp/NC_083447.1_pileup.vcf.gz
+    jobid: 480
+    reason: Updated input files: sharks/HemOce/HemOce_NC_083447.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083447.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 480 has been submitted with SLURM jobid 9551204 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HemOce_NC_083447.1/9551204.log).
+Select jobs to execute...
+Waiting for more resources.
+[Mon May 19 15:26:41 2025]
+Finished job 395.
+19 of 2131 steps (1%) done
+Execute 1 jobs...
+
+[Mon May 19 15:26:41 2025]
+rule INDEL_MASKER:
+    input: sharks/HemOce/temp/NC_083406.1_pileup.vcf.gz
+    output: sharks/HemOce/MSMC/Output_indel_BED_file/NC_083406.1_indel_bed.txt
+    jobid: 769
+    reason: Updated input files: sharks/HemOce/temp/NC_083406.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083406.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 769 has been submitted with SLURM jobid 9551288 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HemOce_NC_083406.1/9551288.log).
+[Mon May 19 15:27:22 2025]
+Finished job 435.
+20 of 2131 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:27:22 2025]
+rule INDEL_MASKER:
+    input: sharks/HemOce/temp/NC_083441.1_pileup.vcf.gz
+    output: sharks/HemOce/MSMC/Output_indel_BED_file/NC_083441.1_indel_bed.txt
+    jobid: 804
+    reason: Input files updated by another job: sharks/HemOce/temp/NC_083441.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083441.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 804 has been submitted with SLURM jobid 9551339 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HemOce_NC_083441.1/9551339.log).
+[Mon May 19 15:28:02 2025]
+Finished job 414.
+21 of 2131 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:28:02 2025]
+rule BAM_CALLER_BED:
+    input: sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083424.1_unmodified_bed.txt.gz
+    output: sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083424.1_modified_bed.txt.gz
+    jobid: 550
+    reason: Missing output files: sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083424.1_modified_bed.txt.gz; Input files updated by another job: sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083424.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083424.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 550 has been submitted with SLURM jobid 9551345 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BAM_CALLER_BED/sharks_HemOce_NC_083424.1/9551345.log).
+[Mon May 19 15:28:04 2025]
+Finished job 399.
+22 of 2131 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:28:04 2025]
+rule INDEL_MASKER:
+    input: sharks/HemOce/temp/NC_083420.1_pileup.vcf.gz
+    output: sharks/HemOce/MSMC/Output_indel_BED_file/NC_083420.1_indel_bed.txt
+    jobid: 783
+    reason: Input files updated by another job: sharks/HemOce/temp/NC_083420.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083420.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 783 has been submitted with SLURM jobid 9551346 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HemOce_NC_083420.1/9551346.log).
+[Mon May 19 15:30:32 2025]
+Finished job 581.
+23 of 2131 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:30:32 2025]
+rule BAM_CALLER_BED:
+    input: sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083439.1_unmodified_bed.txt.gz
+    output: sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083439.1_modified_bed.txt.gz
+    jobid: 580
+    reason: Missing output files: sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083439.1_modified_bed.txt.gz; Input files updated by another job: sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083439.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083439.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 580 has been submitted with SLURM jobid 9551375 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BAM_CALLER_BED/sharks_HemOce_NC_083439.1/9551375.log).
+[Mon May 19 15:33:03 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9549052' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 283
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083453.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083453.1/9549052.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_per_chr_V3.py sharks/HemOce/temp/HemOce_Var_Only.txt sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt sharks HemOce 20250428 1000000 500000 52 sharks/HemOce/HemOce_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9549052
+
+[Mon May 19 15:38:43 2025]
+Finished job 515.
+24 of 2131 steps (1%) done
+[Mon May 19 15:50:45 2025]
+Finished job 797.
+25 of 2131 steps (1%) done
+[Mon May 19 15:50:45 2025]
+Finished job 474.
+26 of 2131 steps (1%) done
+[Mon May 19 15:52:15 2025]
+Finished job 366.
+27 of 2131 steps (1%) done
+[Mon May 19 15:52:15 2025]
+Finished job 770.
+28 of 2131 steps (1%) done
+[Mon May 19 15:53:45 2025]
+Finished job 345.
+29 of 2131 steps (1%) done
+[Mon May 19 15:57:26 2025]
+Finished job 802.
+30 of 2131 steps (1%) done
+[Mon May 19 15:57:26 2025]
+Finished job 641.
+31 of 2131 steps (1%) done
+[Mon May 19 15:57:26 2025]
+Finished job 669.
+32 of 2131 steps (2%) done
+[Mon May 19 15:58:06 2025]
+Finished job 374.
+33 of 2131 steps (2%) done
+[Mon May 19 15:58:47 2025]
+Finished job 777.
+34 of 2131 steps (2%) done
+[Mon May 19 15:58:47 2025]
+Finished job 429.
+35 of 2131 steps (2%) done
+[Mon May 19 15:58:47 2025]
+Finished job 417.
+36 of 2131 steps (2%) done
+[Mon May 19 15:58:47 2025]
+Finished job 780.
+37 of 2131 steps (2%) done
+[Mon May 19 15:58:47 2025]
+Finished job 408.
+38 of 2131 steps (2%) done
+[Mon May 19 15:59:27 2025]
+Finished job 527.
+39 of 2131 steps (2%) done
+[Mon May 19 16:01:58 2025]
+Finished job 339.
+40 of 2131 steps (2%) done
+[Mon May 19 16:03:28 2025]
+Finished job 509.
+41 of 2131 steps (2%) done
+[Mon May 19 16:04:58 2025]
+Finished job 804.
+42 of 2131 steps (2%) done
+[Mon May 19 16:04:58 2025]
+Finished job 550.
+43 of 2131 steps (2%) done
+[Mon May 19 16:04:58 2025]
+Finished job 580.
+44 of 2131 steps (2%) done
+[Mon May 19 16:05:38 2025]
+Finished job 480.
+45 of 2131 steps (2%) done
+[Mon May 19 16:07:09 2025]
+Finished job 783.
+46 of 2131 steps (2%) done
+[Mon May 19 16:09:39 2025]
+Finished job 769.
+47 of 2131 steps (2%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-05-19T142238.888901.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

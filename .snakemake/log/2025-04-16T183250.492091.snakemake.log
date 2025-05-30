@@ -1,0 +1,83 @@
+host: login-q-4
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 76
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+FILTER_PAF_VARIANCE        1
+GET_WHOLE_ALN              1
+GET_WHOLE_VAR              1
+SORT_PAF                   1
+all                        1
+total                      5
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Apr 16 18:32:50 2025]
+localrule FILTER_PAF_VARIANCE:
+    input: sharks/NarBan/NarBan_FASTGA.chain.paf
+    output: sharks/NarBan/NarBan_FASTGA.chain.fltr.paf
+    jobid: 2
+    reason: Missing output files: sharks/NarBan/NarBan_FASTGA.chain.fltr.paf
+    resources: tmpdir=/tmp
+
+[Wed Apr 16 18:32:51 2025]
+Finished job 2.
+1 of 5 steps (20%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Apr 16 18:32:51 2025]
+localrule SORT_PAF:
+    input: sharks/NarBan/NarBan_FASTGA.chain.fltr.paf
+    output: sharks/NarBan/NarBan_FASTGA.chain.fltr.srt.paf
+    jobid: 1
+    reason: Missing output files: sharks/NarBan/NarBan_FASTGA.chain.fltr.srt.paf; Input files updated by another job: sharks/NarBan/NarBan_FASTGA.chain.fltr.paf
+    resources: tmpdir=/tmp
+
+[Wed Apr 16 18:32:56 2025]
+Finished job 1.
+2 of 5 steps (40%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Wed Apr 16 18:32:57 2025]
+localrule GET_WHOLE_VAR:
+    input: sharks/NarBan/NarBan_FASTGA.chain.fltr.srt.paf
+    output: sharks/NarBan/temp/NarBan_Var_Only.txt
+    jobid: 10
+    reason: Missing output files: sharks/NarBan/temp/NarBan_Var_Only.txt; Input files updated by another job: sharks/NarBan/NarBan_FASTGA.chain.fltr.srt.paf
+    resources: tmpdir=/tmp
+
+
+[Wed Apr 16 18:32:57 2025]
+localrule GET_WHOLE_ALN:
+    input: sharks/NarBan/NarBan_FASTGA.chain.fltr.srt.paf
+    output: sharks/NarBan/temp/NarBan_Aln_Only.txt
+    jobid: 11
+    reason: Forced execution
+    resources: tmpdir=/tmp
+
+[Wed Apr 16 18:35:09 2025]
+Finished job 10.
+3 of 5 steps (60%) done
+[Wed Apr 16 18:35:12 2025]
+Finished job 11.
+4 of 5 steps (80%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Apr 16 18:35:12 2025]
+localrule all:
+    input: sharks/NarBan/NarBan_FASTGA.chain.fltr.srt.paf, sharks/NarBan/temp/NarBan_Var_Only.txt, sharks/NarBan/temp/NarBan_Aln_Only.txt
+    jobid: 0
+    reason: Input files updated by another job: sharks/NarBan/temp/NarBan_Aln_Only.txt, sharks/NarBan/temp/NarBan_Var_Only.txt, sharks/NarBan/NarBan_FASTGA.chain.fltr.srt.paf
+    resources: tmpdir=/tmp
+
+[Wed Apr 16 18:35:12 2025]
+Finished job 0.
+5 of 5 steps (100%) done
+Complete log: .snakemake/log/2025-04-16T183250.492091.snakemake.log

@@ -1,0 +1,2458 @@
+host: login-q-2
+Building DAG of jobs...
+SLURM run ID: 392ced83-c95c-4a11-b206-8dc4e948e2f0
+Using shell: /usr/bin/bash
+Provided remote nodes: 25
+Job stats:
+job                            count
+---------------------------  -------
+ALNCHAIN                           1
+ALNPLOT                            1
+ALNtoPAF                           1
+BAM_CALLER_BED                    40
+BGZIP_VCF                         40
+BOOTSTRAPPING_MULTIHET_FILE     1200
+CALC_HET_PER_CHR                  40
+CALC_HET_WHOLE_GENOME              1
+CALL_PLOIDY                       40
+COMPILE_HET                        1
+COMPILE_ROH                        1
+EXTRACT_CHR_FASTA                 40
+FILTER_PAF_CHR_ONLY                1
+FILTER_PAF_VARIANCE                1
+FROH_PER_AUT_CHR                  40
+GENERATE_MASK                     40
+GENERATE_MULTIHETSEP              40
+GET_ALN_ONLY_PER_CHROM            40
+GET_VAR_ONLY_PER_CHROM            40
+GET_WHOLE_ALN                      1
+GET_WHOLE_VAR                      1
+INDEL_MASKER                      40
+MAIN_MULTIHETSEP                  40
+MAKE_BAM                           1
+MAKE_SAM                           1
+PILEUP_VARIANTS                   40
+PLOT_HET_PER_CHR                  40
+PLOT_WHOLE_HET                     1
+Plot_ROH                           1
+REMOVE_INDELS                     40
+RESTRUCTURE                       40
+ROH_CALC                          40
+SEPARATE_BAM_BY_CHR               40
+SORT_PAF                           1
+UNZIP_REFERENCE                    1
+WHOLE_FROH                         1
+all                                1
+total                           1938
+
+Select jobs to execute...
+Execute 3 jobs...
+
+[Mon May 19 16:18:42 2025]
+rule MAKE_SAM:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084275.1.fa.gz, /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/sharks/GCA_035084065.1.fa.gz
+    output: sharks/HydCol/HydCol.sam
+    jobid: 263
+    reason: Missing output files: sharks/HydCol/HydCol.sam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1293, disk_mib=1234, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=720
+
+Job 263 has been submitted with SLURM jobid 9553912 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAKE_SAM/sharks_HydCol/9553912.log).
+
+[Mon May 19 16:18:44 2025]
+rule UNZIP_REFERENCE:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084275.1.fa.gz
+    output: sharks/HydCol/temp/GCA_035084275.1.fa
+    jobid: 260
+    reason: Missing output files: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, REF_NAME=GCA_035084275.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 260 has been submitted with SLURM jobid 9553914 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_UNZIP_REFERENCE/sharks_HydCol_GCA_035084275.1/9553914.log).
+
+[Mon May 19 16:18:44 2025]
+rule ALNCHAIN:
+    input: sharks/HydCol/HydCol_ALN.1aln
+    output: sharks/HydCol/HydCol_ALN.chain.1aln
+    jobid: 5
+    reason: Missing output files: sharks/HydCol/HydCol_ALN.chain.1aln
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 5 has been submitted with SLURM jobid 9553915 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ALNCHAIN/9553915.log).
+[Mon May 19 16:34:24 2025]
+Finished job 260.
+1 of 1938 steps (0.1%) done
+Select jobs to execute...
+Execute 23 jobs...
+
+[Mon May 19 16:34:24 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068742.1.fasta
+    jobid: 259
+    reason: Missing output files: sharks/HydCol/temp/CM068742.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068742.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 259 has been submitted with SLURM jobid 9554784 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068742.1/9554784.log).
+
+[Mon May 19 16:34:25 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068765.1.fasta
+    jobid: 331
+    reason: Missing output files: sharks/HydCol/temp/CM068765.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068765.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 331 has been submitted with SLURM jobid 9554785 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068765.1/9554785.log).
+
+[Mon May 19 16:34:25 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068753.1.fasta
+    jobid: 295
+    reason: Missing output files: sharks/HydCol/temp/CM068753.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068753.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 295 has been submitted with SLURM jobid 9554786 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068753.1/9554786.log).
+
+[Mon May 19 16:34:25 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068776.1.fasta
+    jobid: 364
+    reason: Missing output files: sharks/HydCol/temp/CM068776.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068776.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 364 has been submitted with SLURM jobid 9554787 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068776.1/9554787.log).
+
+[Mon May 19 16:34:27 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068769.1.fasta
+    jobid: 343
+    reason: Missing output files: sharks/HydCol/temp/CM068769.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068769.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 343 has been submitted with SLURM jobid 9554789 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068769.1/9554789.log).
+
+[Mon May 19 16:34:28 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068762.1.fasta
+    jobid: 322
+    reason: Missing output files: sharks/HydCol/temp/CM068762.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068762.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 322 has been submitted with SLURM jobid 9554790 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068762.1/9554790.log).
+
+[Mon May 19 16:34:28 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068759.1.fasta
+    jobid: 313
+    reason: Missing output files: sharks/HydCol/temp/CM068759.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068759.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 313 has been submitted with SLURM jobid 9554791 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068759.1/9554791.log).
+
+[Mon May 19 16:34:30 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068779.1.fasta
+    jobid: 373
+    reason: Missing output files: sharks/HydCol/temp/CM068779.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068779.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 373 has been submitted with SLURM jobid 9554792 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068779.1/9554792.log).
+
+[Mon May 19 16:34:30 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068780.1.fasta
+    jobid: 376
+    reason: Missing output files: sharks/HydCol/temp/CM068780.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068780.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 376 has been submitted with SLURM jobid 9554793 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068780.1/9554793.log).
+
+[Mon May 19 16:34:30 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068777.1.fasta
+    jobid: 367
+    reason: Missing output files: sharks/HydCol/temp/CM068777.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068777.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 367 has been submitted with SLURM jobid 9554794 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068777.1/9554794.log).
+
+[Mon May 19 16:34:31 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068749.1.fasta
+    jobid: 283
+    reason: Missing output files: sharks/HydCol/temp/CM068749.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068749.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 283 has been submitted with SLURM jobid 9554795 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068749.1/9554795.log).
+
+[Mon May 19 16:34:33 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068778.1.fasta
+    jobid: 370
+    reason: Missing output files: sharks/HydCol/temp/CM068778.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068778.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 370 has been submitted with SLURM jobid 9554796 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068778.1/9554796.log).
+
+[Mon May 19 16:34:33 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068743.1.fasta
+    jobid: 265
+    reason: Missing output files: sharks/HydCol/temp/CM068743.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068743.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 265 has been submitted with SLURM jobid 9554797 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068743.1/9554797.log).
+
+[Mon May 19 16:34:33 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068771.1.fasta
+    jobid: 349
+    reason: Missing output files: sharks/HydCol/temp/CM068771.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068771.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 349 has been submitted with SLURM jobid 9554798 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068771.1/9554798.log).
+
+[Mon May 19 16:34:33 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068764.1.fasta
+    jobid: 328
+    reason: Missing output files: sharks/HydCol/temp/CM068764.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068764.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 328 has been submitted with SLURM jobid 9554799 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068764.1/9554799.log).
+
+[Mon May 19 16:34:36 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068761.1.fasta
+    jobid: 319
+    reason: Missing output files: sharks/HydCol/temp/CM068761.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068761.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 319 has been submitted with SLURM jobid 9554800 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068761.1/9554800.log).
+
+[Mon May 19 16:34:36 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068754.1.fasta
+    jobid: 298
+    reason: Missing output files: sharks/HydCol/temp/CM068754.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068754.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 298 has been submitted with SLURM jobid 9554801 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068754.1/9554801.log).
+
+[Mon May 19 16:34:36 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068747.1.fasta
+    jobid: 277
+    reason: Missing output files: sharks/HydCol/temp/CM068747.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068747.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 277 has been submitted with SLURM jobid 9554802 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068747.1/9554802.log).
+
+[Mon May 19 16:34:36 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068775.1.fasta
+    jobid: 361
+    reason: Missing output files: sharks/HydCol/temp/CM068775.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068775.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 361 has been submitted with SLURM jobid 9554803 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068775.1/9554803.log).
+
+[Mon May 19 16:34:38 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068768.1.fasta
+    jobid: 340
+    reason: Missing output files: sharks/HydCol/temp/CM068768.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068768.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 340 has been submitted with SLURM jobid 9554805 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068768.1/9554805.log).
+
+[Mon May 19 16:34:38 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068758.1.fasta
+    jobid: 310
+    reason: Missing output files: sharks/HydCol/temp/CM068758.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068758.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 310 has been submitted with SLURM jobid 9554806 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068758.1/9554806.log).
+
+[Mon May 19 16:34:38 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068750.1.fasta
+    jobid: 286
+    reason: Missing output files: sharks/HydCol/temp/CM068750.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068750.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 286 has been submitted with SLURM jobid 9554807 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068750.1/9554807.log).
+
+[Mon May 19 16:34:39 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068772.1.fasta
+    jobid: 352
+    reason: Missing output files: sharks/HydCol/temp/CM068772.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068772.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 352 has been submitted with SLURM jobid 9554808 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068772.1/9554808.log).
+[Mon May 19 16:34:41 2025]
+Finished job 5.
+2 of 1938 steps (0.1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 16:34:41 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068755.1.fasta
+    jobid: 301
+    reason: Missing output files: sharks/HydCol/temp/CM068755.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068755.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 301 has been submitted with SLURM jobid 9554809 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068755.1/9554809.log).
+[Mon May 19 17:14:31 2025]
+Finished job 259.
+3 of 1938 steps (0.2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 17:14:32 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068745.1.fasta
+    jobid: 271
+    reason: Missing output files: sharks/HydCol/temp/CM068745.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068745.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 271 has been submitted with SLURM jobid 9557623 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068745.1/9557623.log).
+[Mon May 19 17:14:37 2025]
+Finished job 331.
+4 of 1938 steps (0.2%) done
+[Mon May 19 17:14:37 2025]
+Finished job 295.
+5 of 1938 steps (0.3%) done
+[Mon May 19 17:14:37 2025]
+Finished job 364.
+6 of 1938 steps (0.3%) done
+[Mon May 19 17:14:37 2025]
+Finished job 343.
+7 of 1938 steps (0.4%) done
+[Mon May 19 17:14:37 2025]
+Finished job 322.
+8 of 1938 steps (0.4%) done
+Select jobs to execute...
+Execute 5 jobs...
+
+[Mon May 19 17:14:41 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068744.1.fasta
+    jobid: 268
+    reason: Missing output files: sharks/HydCol/temp/CM068744.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068744.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 268 has been submitted with SLURM jobid 9557625 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068744.1/9557625.log).
+
+[Mon May 19 17:14:44 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068767.1.fasta
+    jobid: 337
+    reason: Missing output files: sharks/HydCol/temp/CM068767.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068767.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 337 has been submitted with SLURM jobid 9557627 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068767.1/9557627.log).
+
+[Mon May 19 17:14:47 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068756.1.fasta
+    jobid: 304
+    reason: Missing output files: sharks/HydCol/temp/CM068756.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068756.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 304 has been submitted with SLURM jobid 9557628 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068756.1/9557628.log).
+
+[Mon May 19 17:14:50 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068748.1.fasta
+    jobid: 280
+    reason: Missing output files: sharks/HydCol/temp/CM068748.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068748.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 280 has been submitted with SLURM jobid 9557630 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068748.1/9557630.log).
+
+[Mon May 19 17:14:52 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068751.1.fasta
+    jobid: 289
+    reason: Missing output files: sharks/HydCol/temp/CM068751.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068751.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 289 has been submitted with SLURM jobid 9557631 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068751.1/9557631.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Mon May 19 17:17:07 2025]
+Finished job 313.
+9 of 1938 steps (0.5%) done
+Execute 1 jobs...
+
+[Mon May 19 17:17:08 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068763.1.fasta
+    jobid: 325
+    reason: Missing output files: sharks/HydCol/temp/CM068763.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068763.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 325 has been submitted with SLURM jobid 9558034 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068763.1/9558034.log).
+[Mon May 19 17:17:08 2025]
+Finished job 373.
+10 of 1938 steps (1%) done
+[Mon May 19 17:17:08 2025]
+Finished job 376.
+11 of 1938 steps (1%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon May 19 17:17:09 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068773.1.fasta
+    jobid: 355
+    reason: Missing output files: sharks/HydCol/temp/CM068773.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068773.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 355 has been submitted with SLURM jobid 9558035 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068773.1/9558035.log).
+
+[Mon May 19 17:17:13 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068752.1.fasta
+    jobid: 292
+    reason: Missing output files: sharks/HydCol/temp/CM068752.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068752.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 292 has been submitted with SLURM jobid 9558037 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068752.1/9558037.log).
+Select jobs to execute...
+Waiting for more resources.
+[Mon May 19 17:18:38 2025]
+Finished job 263.
+12 of 1938 steps (1%) done
+Execute 1 jobs...
+
+[Mon May 19 17:18:38 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068760.1.fasta
+    jobid: 316
+    reason: Missing output files: sharks/HydCol/temp/CM068760.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068760.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 316 has been submitted with SLURM jobid 9558247 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068760.1/9558247.log).
+[Mon May 19 17:25:09 2025]
+Finished job 367.
+13 of 1938 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 17:25:09 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068770.1.fasta
+    jobid: 346
+    reason: Missing output files: sharks/HydCol/temp/CM068770.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068770.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 346 has been submitted with SLURM jobid 9559083 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068770.1/9559083.log).
+[Mon May 19 17:25:10 2025]
+Finished job 283.
+14 of 1938 steps (1%) done
+[Mon May 19 17:25:10 2025]
+Finished job 370.
+15 of 1938 steps (1%) done
+[Mon May 19 17:25:10 2025]
+Finished job 265.
+16 of 1938 steps (1%) done
+[Mon May 19 17:25:10 2025]
+Finished job 349.
+17 of 1938 steps (1%) done
+[Mon May 19 17:25:10 2025]
+Finished job 328.
+18 of 1938 steps (1%) done
+[Mon May 19 17:25:10 2025]
+Finished job 319.
+19 of 1938 steps (1%) done
+[Mon May 19 17:25:10 2025]
+Finished job 298.
+20 of 1938 steps (1%) done
+[Mon May 19 17:25:10 2025]
+Finished job 277.
+21 of 1938 steps (1%) done
+[Mon May 19 17:25:10 2025]
+Finished job 361.
+22 of 1938 steps (1%) done
+[Mon May 19 17:25:10 2025]
+Finished job 340.
+23 of 1938 steps (1%) done
+Select jobs to execute...
+Execute 8 jobs...
+
+[Mon May 19 17:25:10 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068781.1.fasta
+    jobid: 379
+    reason: Missing output files: sharks/HydCol/temp/CM068781.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068781.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 379 has been submitted with SLURM jobid 9559084 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068781.1/9559084.log).
+
+[Mon May 19 17:25:10 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068766.1.fasta
+    jobid: 334
+    reason: Missing output files: sharks/HydCol/temp/CM068766.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068766.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 334 has been submitted with SLURM jobid 9559085 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068766.1/9559085.log).
+
+[Mon May 19 17:25:12 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068746.1.fasta
+    jobid: 274
+    reason: Missing output files: sharks/HydCol/temp/CM068746.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068746.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 274 has been submitted with SLURM jobid 9559086 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068746.1/9559086.log).
+
+[Mon May 19 17:25:12 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068774.1.fasta
+    jobid: 358
+    reason: Missing output files: sharks/HydCol/temp/CM068774.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068774.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 358 has been submitted with SLURM jobid 9559087 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068774.1/9559087.log).
+
+[Mon May 19 17:25:12 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HydCol/temp/GCA_035084275.1.fa
+    output: sharks/HydCol/temp/CM068757.1.fasta
+    jobid: 307
+    reason: Missing output files: sharks/HydCol/temp/CM068757.1.fasta; Input files updated by another job: sharks/HydCol/temp/GCA_035084275.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068757.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1952, disk_mib=1862, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 307 has been submitted with SLURM jobid 9559088 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HydCol_CM068757.1/9559088.log).
+
+[Mon May 19 17:25:13 2025]
+rule MAKE_BAM:
+    input: sharks/HydCol/HydCol.sam
+    output: sharks/HydCol/HydCol.bam
+    jobid: 262
+    reason: Missing output files: sharks/HydCol/HydCol.bam; Input files updated by another job: sharks/HydCol/HydCol.sam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=4451, disk_mib=4245, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 262 has been submitted with SLURM jobid 9559089 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAKE_BAM/sharks_HydCol/9559089.log).
+
+[Mon May 19 17:25:15 2025]
+rule ALNPLOT:
+    input: sharks/HydCol/HydCol_ALN.chain.1aln
+    output: sharks/HydCol/HydCol_ALN.chain.pdf
+    jobid: 9
+    reason: Missing output files: sharks/HydCol/HydCol_ALN.chain.pdf; Input files updated by another job: sharks/HydCol/HydCol_ALN.chain.1aln
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 9 has been submitted with SLURM jobid 9559090 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ALNPLOT/sharks_HydCol/9559090.log).
+
+[Mon May 19 17:25:15 2025]
+rule ALNtoPAF:
+    input: sharks/HydCol/HydCol_ALN.chain.1aln
+    output: sharks/HydCol/HydCol_FASTGA.chain.paf
+    jobid: 4
+    reason: Missing output files: sharks/HydCol/HydCol_FASTGA.chain.paf; Input files updated by another job: sharks/HydCol/HydCol_ALN.chain.1aln
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 4 has been submitted with SLURM jobid 9559091 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ALNtoPAF/9559091.log).
+[Mon May 19 17:35:10 2025]
+Finished job 310.
+24 of 1938 steps (1%) done
+[Mon May 19 17:35:10 2025]
+Finished job 286.
+25 of 1938 steps (1%) done
+[Mon May 19 17:35:10 2025]
+Finished job 352.
+26 of 1938 steps (1%) done
+[Mon May 19 17:35:10 2025]
+Finished job 301.
+27 of 1938 steps (1%) done
+[Mon May 19 17:56:53 2025]
+Finished job 271.
+28 of 1938 steps (1%) done
+[Mon May 19 17:56:53 2025]
+Finished job 268.
+29 of 1938 steps (1%) done
+[Mon May 19 17:56:53 2025]
+Finished job 337.
+30 of 1938 steps (2%) done
+[Mon May 19 17:56:53 2025]
+Finished job 304.
+31 of 1938 steps (2%) done
+[Mon May 19 17:56:53 2025]
+Finished job 280.
+32 of 1938 steps (2%) done
+[Mon May 19 17:56:53 2025]
+Finished job 289.
+33 of 1938 steps (2%) done
+[Mon May 19 17:56:53 2025]
+Finished job 325.
+34 of 1938 steps (2%) done
+[Mon May 19 17:56:53 2025]
+Finished job 355.
+35 of 1938 steps (2%) done
+[Mon May 19 17:56:53 2025]
+Finished job 292.
+36 of 1938 steps (2%) done
+[Mon May 19 17:56:53 2025]
+Finished job 316.
+37 of 1938 steps (2%) done
+[Mon May 19 17:56:53 2025]
+Finished job 346.
+38 of 1938 steps (2%) done
+[Mon May 19 17:56:53 2025]
+Finished job 379.
+39 of 1938 steps (2%) done
+[Mon May 19 17:56:53 2025]
+Finished job 334.
+40 of 1938 steps (2%) done
+[Mon May 19 17:56:53 2025]
+Finished job 274.
+41 of 1938 steps (2%) done
+[Mon May 19 17:56:53 2025]
+Finished job 358.
+42 of 1938 steps (2%) done
+[Mon May 19 17:56:53 2025]
+Finished job 307.
+43 of 1938 steps (2%) done
+Removing temporary output sharks/HydCol/temp/GCA_035084275.1.fa.
+[Mon May 19 17:56:53 2025]
+Finished job 4.
+44 of 1938 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 17:56:53 2025]
+rule FILTER_PAF_VARIANCE:
+    input: sharks/HydCol/HydCol_FASTGA.chain.paf
+    output: sharks/HydCol/HydCol_FASTGA.chain.fltr.paf
+    jobid: 3
+    reason: Missing output files: sharks/HydCol/HydCol_FASTGA.chain.fltr.paf; Input files updated by another job: sharks/HydCol/HydCol_FASTGA.chain.paf
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 3 has been submitted with SLURM jobid 9562334 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FILTER_PAF_VARIANCE/9562334.log).
+[Mon May 19 17:57:33 2025]
+Error in rule ALNPLOT:
+    message: SLURM-job '9559090' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 9
+    input: sharks/HydCol/HydCol_ALN.chain.1aln
+    output: sharks/HydCol/HydCol_ALN.chain.pdf
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ALNPLOT/sharks_HydCol/9559090.log (check log file(s) for error details)
+    shell:
+        
+        ALNplot -p -H500 sharks/HydCol/HydCol_ALN.chain.1aln
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9559090
+
+[Mon May 19 17:59:24 2025]
+Finished job 262.
+45 of 1938 steps (2%) done
+Select jobs to execute...
+Execute 24 jobs...
+
+[Mon May 19 17:59:24 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068761.1.bam
+    jobid: 320
+    reason: Missing output files: sharks/HydCol/HydCol_CM068761.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068761.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 320 has been submitted with SLURM jobid 9562884 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068761.1/9562884.log).
+
+[Mon May 19 17:59:24 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068779.1.bam
+    jobid: 374
+    reason: Missing output files: sharks/HydCol/HydCol_CM068779.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068779.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 374 has been submitted with SLURM jobid 9562885 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068779.1/9562885.log).
+
+[Mon May 19 17:59:26 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068750.1.bam
+    jobid: 287
+    reason: Missing output files: sharks/HydCol/HydCol_CM068750.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068750.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 287 has been submitted with SLURM jobid 9562886 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068750.1/9562886.log).
+
+[Mon May 19 17:59:27 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068744.1.bam
+    jobid: 269
+    reason: Missing output files: sharks/HydCol/HydCol_CM068744.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068744.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 269 has been submitted with SLURM jobid 9562887 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068744.1/9562887.log).
+
+[Mon May 19 17:59:27 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068772.1.bam
+    jobid: 353
+    reason: Missing output files: sharks/HydCol/HydCol_CM068772.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068772.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 353 has been submitted with SLURM jobid 9562888 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068772.1/9562888.log).
+
+[Mon May 19 17:59:29 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068742.1.bam
+    jobid: 261
+    reason: Missing output files: sharks/HydCol/HydCol_CM068742.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068742.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 261 has been submitted with SLURM jobid 9562889 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068742.1/9562889.log).
+
+[Mon May 19 17:59:29 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068765.1.bam
+    jobid: 332
+    reason: Missing output files: sharks/HydCol/HydCol_CM068765.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068765.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 332 has been submitted with SLURM jobid 9562890 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068765.1/9562890.log).
+
+[Mon May 19 17:59:31 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068755.1.bam
+    jobid: 302
+    reason: Missing output files: sharks/HydCol/HydCol_CM068755.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068755.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 302 has been submitted with SLURM jobid 9562891 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068755.1/9562891.log).
+
+[Mon May 19 17:59:32 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068753.1.bam
+    jobid: 296
+    reason: Missing output files: sharks/HydCol/HydCol_CM068753.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068753.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 296 has been submitted with SLURM jobid 9562892 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068753.1/9562892.log).
+
+[Mon May 19 17:59:34 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068776.1.bam
+    jobid: 365
+    reason: Missing output files: sharks/HydCol/HydCol_CM068776.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068776.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 365 has been submitted with SLURM jobid 9562893 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068776.1/9562893.log).
+
+[Mon May 19 17:59:34 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068745.1.bam
+    jobid: 272
+    reason: Missing output files: sharks/HydCol/HydCol_CM068745.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068745.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 272 has been submitted with SLURM jobid 9562944 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068745.1/9562944.log).
+
+[Mon May 19 17:59:36 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068752.1.bam
+    jobid: 293
+    reason: Missing output files: sharks/HydCol/HydCol_CM068752.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068752.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 293 has been submitted with SLURM jobid 9562945 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068752.1/9562945.log).
+
+[Mon May 19 17:59:37 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068781.1.bam
+    jobid: 380
+    reason: Missing output files: sharks/HydCol/HydCol_CM068781.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068781.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 380 has been submitted with SLURM jobid 9562946 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068781.1/9562946.log).
+
+[Mon May 19 17:59:39 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068774.1.bam
+    jobid: 359
+    reason: Missing output files: sharks/HydCol/HydCol_CM068774.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068774.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 359 has been submitted with SLURM jobid 9562947 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068774.1/9562947.log).
+
+[Mon May 19 17:59:40 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068746.1.bam
+    jobid: 275
+    reason: Missing output files: sharks/HydCol/HydCol_CM068746.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068746.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 275 has been submitted with SLURM jobid 9562948 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068746.1/9562948.log).
+
+[Mon May 19 17:59:42 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068767.1.bam
+    jobid: 338
+    reason: Missing output files: sharks/HydCol/HydCol_CM068767.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068767.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 338 has been submitted with SLURM jobid 9562949 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068767.1/9562949.log).
+
+[Mon May 19 17:59:43 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068757.1.bam
+    jobid: 308
+    reason: Missing output files: sharks/HydCol/HydCol_CM068757.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068757.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 308 has been submitted with SLURM jobid 9563050 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068757.1/9563050.log).
+
+[Mon May 19 17:59:47 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068749.1.bam
+    jobid: 284
+    reason: Missing output files: sharks/HydCol/HydCol_CM068749.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068749.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 284 has been submitted with SLURM jobid 9563051 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068749.1/9563051.log).
+
+[Mon May 19 17:59:47 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068778.1.bam
+    jobid: 371
+    reason: Missing output files: sharks/HydCol/HydCol_CM068778.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068778.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 371 has been submitted with SLURM jobid 9563052 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068778.1/9563052.log).
+
+[Mon May 19 17:59:47 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068743.1.bam
+    jobid: 266
+    reason: Missing output files: sharks/HydCol/HydCol_CM068743.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068743.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 266 has been submitted with SLURM jobid 9563053 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068743.1/9563053.log).
+
+[Mon May 19 17:59:50 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068771.1.bam
+    jobid: 350
+    reason: Missing output files: sharks/HydCol/HydCol_CM068771.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068771.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 350 has been submitted with SLURM jobid 9563054 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068771.1/9563054.log).
+
+[Mon May 19 17:59:50 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068764.1.bam
+    jobid: 329
+    reason: Missing output files: sharks/HydCol/HydCol_CM068764.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068764.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 329 has been submitted with SLURM jobid 9563055 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068764.1/9563055.log).
+
+[Mon May 19 17:59:53 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068754.1.bam
+    jobid: 299
+    reason: Missing output files: sharks/HydCol/HydCol_CM068754.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068754.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 299 has been submitted with SLURM jobid 9563056 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068754.1/9563056.log).
+
+[Mon May 19 17:59:53 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068775.1.bam
+    jobid: 362
+    reason: Missing output files: sharks/HydCol/HydCol_CM068775.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068775.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 362 has been submitted with SLURM jobid 9563057 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068775.1/9563057.log).
+[Mon May 19 18:04:25 2025]
+Finished job 3.
+46 of 1938 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 18:04:25 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068768.1.bam
+    jobid: 341
+    reason: Missing output files: sharks/HydCol/HydCol_CM068768.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068768.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 341 has been submitted with SLURM jobid 9563443 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068768.1/9563443.log).
+[Mon May 19 18:09:26 2025]
+Finished job 320.
+47 of 1938 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 18:09:26 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068748.1.bam
+    jobid: 281
+    reason: Missing output files: sharks/HydCol/HydCol_CM068748.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068748.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 281 has been submitted with SLURM jobid 9563593 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068748.1/9563593.log).
+[Mon May 19 18:09:26 2025]
+Finished job 374.
+48 of 1938 steps (2%) done
+[Mon May 19 18:09:26 2025]
+Finished job 287.
+49 of 1938 steps (3%) done
+[Mon May 19 18:09:26 2025]
+Finished job 269.
+50 of 1938 steps (3%) done
+[Mon May 19 18:09:26 2025]
+Finished job 353.
+51 of 1938 steps (3%) done
+[Mon May 19 18:09:26 2025]
+Finished job 261.
+52 of 1938 steps (3%) done
+[Mon May 19 18:09:26 2025]
+Finished job 332.
+53 of 1938 steps (3%) done
+[Mon May 19 18:09:26 2025]
+Finished job 302.
+54 of 1938 steps (3%) done
+[Mon May 19 18:09:26 2025]
+Finished job 296.
+55 of 1938 steps (3%) done
+[Mon May 19 18:09:26 2025]
+Finished job 365.
+56 of 1938 steps (3%) done
+Select jobs to execute...
+Execute 9 jobs...
+
+[Mon May 19 18:09:26 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068769.1.bam
+    jobid: 344
+    reason: Missing output files: sharks/HydCol/HydCol_CM068769.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068769.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 344 has been submitted with SLURM jobid 9563594 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068769.1/9563594.log).
+
+[Mon May 19 18:09:27 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068779.1.fasta, sharks/HydCol/HydCol_CM068779.1.bam
+    output: sharks/HydCol/temp/CM068779.1_pileup.vcf.gz
+    jobid: 372
+    reason: Missing output files: sharks/HydCol/temp/CM068779.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/HydCol_CM068779.1.bam, sharks/HydCol/temp/CM068779.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068779.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 372 has been submitted with SLURM jobid 9563595 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068779.1/9563595.log).
+
+[Mon May 19 18:09:27 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068772.1.fasta, sharks/HydCol/HydCol_CM068772.1.bam
+    output: sharks/HydCol/temp/CM068772.1_pileup.vcf.gz
+    jobid: 351
+    reason: Missing output files: sharks/HydCol/temp/CM068772.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/HydCol_CM068772.1.bam, sharks/HydCol/temp/CM068772.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068772.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 351 has been submitted with SLURM jobid 9563596 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068772.1/9563596.log).
+
+[Mon May 19 18:09:27 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068762.1.bam
+    jobid: 323
+    reason: Missing output files: sharks/HydCol/HydCol_CM068762.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068762.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 323 has been submitted with SLURM jobid 9563597 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068762.1/9563597.log).
+
+[Mon May 19 18:09:27 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068765.1.fasta, sharks/HydCol/HydCol_CM068765.1.bam
+    output: sharks/HydCol/temp/CM068765.1_pileup.vcf.gz
+    jobid: 330
+    reason: Missing output files: sharks/HydCol/temp/CM068765.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/HydCol_CM068765.1.bam, sharks/HydCol/temp/CM068765.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068765.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 330 has been submitted with SLURM jobid 9563598 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068765.1/9563598.log).
+
+[Mon May 19 18:09:27 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068759.1.bam
+    jobid: 314
+    reason: Missing output files: sharks/HydCol/HydCol_CM068759.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068759.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 314 has been submitted with SLURM jobid 9563599 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068759.1/9563599.log).
+
+[Mon May 19 18:09:28 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068751.1.bam
+    jobid: 290
+    reason: Missing output files: sharks/HydCol/HydCol_CM068751.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068751.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 290 has been submitted with SLURM jobid 9563600 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068751.1/9563600.log).
+
+[Mon May 19 18:09:28 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068747.1.bam
+    jobid: 278
+    reason: Missing output files: sharks/HydCol/HydCol_CM068747.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068747.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 278 has been submitted with SLURM jobid 9563601 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068747.1/9563601.log).
+
+[Mon May 19 18:09:28 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068744.1.fasta, sharks/HydCol/HydCol_CM068744.1.bam
+    output: sharks/HydCol/temp/CM068744.1_pileup.vcf.gz
+    jobid: 267
+    reason: Missing output files: sharks/HydCol/temp/CM068744.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/HydCol_CM068744.1.bam, sharks/HydCol/temp/CM068744.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068744.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 267 has been submitted with SLURM jobid 9563602 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068744.1/9563602.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Mon May 19 18:10:06 2025]
+Finished job 272.
+57 of 1938 steps (3%) done
+Execute 1 jobs...
+
+[Mon May 19 18:10:06 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068753.1.fasta, sharks/HydCol/HydCol_CM068753.1.bam
+    output: sharks/HydCol/temp/CM068753.1_pileup.vcf.gz
+    jobid: 294
+    reason: Missing output files: sharks/HydCol/temp/CM068753.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/temp/CM068753.1.fasta, sharks/HydCol/HydCol_CM068753.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068753.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 294 has been submitted with SLURM jobid 9563606 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068753.1/9563606.log).
+[Mon May 19 18:10:06 2025]
+Finished job 293.
+58 of 1938 steps (3%) done
+[Mon May 19 18:10:06 2025]
+Finished job 380.
+59 of 1938 steps (3%) done
+[Mon May 19 18:10:06 2025]
+Finished job 359.
+60 of 1938 steps (3%) done
+[Mon May 19 18:10:06 2025]
+Finished job 275.
+61 of 1938 steps (3%) done
+[Mon May 19 18:10:06 2025]
+Finished job 338.
+62 of 1938 steps (3%) done
+[Mon May 19 18:10:06 2025]
+Finished job 308.
+63 of 1938 steps (3%) done
+Select jobs to execute...
+Execute 6 jobs...
+
+[Mon May 19 18:10:06 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068756.1.bam
+    jobid: 305
+    reason: Missing output files: sharks/HydCol/HydCol_CM068756.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068756.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 305 has been submitted with SLURM jobid 9563607 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068756.1/9563607.log).
+
+[Mon May 19 18:10:07 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068755.1.fasta, sharks/HydCol/HydCol_CM068755.1.bam
+    output: sharks/HydCol/temp/CM068755.1_pileup.vcf.gz
+    jobid: 300
+    reason: Missing output files: sharks/HydCol/temp/CM068755.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/temp/CM068755.1.fasta, sharks/HydCol/HydCol_CM068755.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068755.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 300 has been submitted with SLURM jobid 9563608 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068755.1/9563608.log).
+
+[Mon May 19 18:10:07 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068780.1.bam
+    jobid: 377
+    reason: Missing output files: sharks/HydCol/HydCol_CM068780.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068780.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 377 has been submitted with SLURM jobid 9563609 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068780.1/9563609.log).
+
+[Mon May 19 18:10:07 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068773.1.bam
+    jobid: 356
+    reason: Missing output files: sharks/HydCol/HydCol_CM068773.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068773.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 356 has been submitted with SLURM jobid 9563610 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068773.1/9563610.log).
+
+[Mon May 19 18:10:08 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068766.1.bam
+    jobid: 335
+    reason: Missing output files: sharks/HydCol/HydCol_CM068766.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068766.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 335 has been submitted with SLURM jobid 9563611 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068766.1/9563611.log).
+
+[Mon May 19 18:10:08 2025]
+rule SORT_PAF:
+    input: sharks/HydCol/HydCol_FASTGA.chain.fltr.paf
+    output: sharks/HydCol/HydCol_FASTGA.chain.fltr.srt.paf
+    jobid: 2
+    reason: Missing output files: sharks/HydCol/HydCol_FASTGA.chain.fltr.srt.paf; Input files updated by another job: sharks/HydCol/HydCol_FASTGA.chain.fltr.paf
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 2 has been submitted with SLURM jobid 9563612 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SORT_PAF/9563612.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Mon May 19 18:10:46 2025]
+Finished job 284.
+64 of 1938 steps (3%) done
+[Mon May 19 18:10:46 2025]
+Error in rule SEPARATE_BAM_BY_CHR:
+    message: SLURM-job '9563056' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 299
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068754.1.bam
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068754.1/9563056.log (check log file(s) for error details)
+    shell:
+        
+        samtools index sharks/HydCol/HydCol.bam
+        samtools view -b sharks/HydCol/HydCol.bam CM068754.1 > sharks/HydCol/HydCol_CM068754.1.bam
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9563056
+
+Execute 1 jobs...
+
+[Mon May 19 18:10:46 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068777.1.bam
+    jobid: 368
+    reason: Missing output files: sharks/HydCol/HydCol_CM068777.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068777.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 368 has been submitted with SLURM jobid 9563615 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068777.1/9563615.log).
+[Mon May 19 18:10:46 2025]
+Finished job 371.
+65 of 1938 steps (3%) done
+[Mon May 19 18:10:46 2025]
+Finished job 266.
+66 of 1938 steps (3%) done
+[Mon May 19 18:10:46 2025]
+Finished job 350.
+67 of 1938 steps (3%) done
+[Mon May 19 18:10:46 2025]
+Finished job 329.
+68 of 1938 steps (4%) done
+[Mon May 19 18:10:46 2025]
+Finished job 362.
+69 of 1938 steps (4%) done
+Select jobs to execute...
+Execute 6 jobs...
+
+[Mon May 19 18:10:47 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068746.1.fasta, sharks/HydCol/HydCol_CM068746.1.bam
+    output: sharks/HydCol/temp/CM068746.1_pileup.vcf.gz
+    jobid: 273
+    reason: Missing output files: sharks/HydCol/temp/CM068746.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/temp/CM068746.1.fasta, sharks/HydCol/HydCol_CM068746.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068746.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 273 has been submitted with SLURM jobid 9563616 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068746.1/9563616.log).
+
+[Mon May 19 18:10:47 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068752.1.fasta, sharks/HydCol/HydCol_CM068752.1.bam
+    output: sharks/HydCol/temp/CM068752.1_pileup.vcf.gz
+    jobid: 291
+    reason: Missing output files: sharks/HydCol/temp/CM068752.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/temp/CM068752.1.fasta, sharks/HydCol/HydCol_CM068752.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068752.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 291 has been submitted with SLURM jobid 9563617 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068752.1/9563617.log).
+
+[Mon May 19 18:10:47 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068776.1.fasta, sharks/HydCol/HydCol_CM068776.1.bam
+    output: sharks/HydCol/temp/CM068776.1_pileup.vcf.gz
+    jobid: 363
+    reason: Missing output files: sharks/HydCol/temp/CM068776.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/HydCol_CM068776.1.bam, sharks/HydCol/temp/CM068776.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068776.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 363 has been submitted with SLURM jobid 9563618 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068776.1/9563618.log).
+
+[Mon May 19 18:10:47 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068745.1.fasta, sharks/HydCol/HydCol_CM068745.1.bam
+    output: sharks/HydCol/temp/CM068745.1_pileup.vcf.gz
+    jobid: 270
+    reason: Missing output files: sharks/HydCol/temp/CM068745.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/temp/CM068745.1.fasta, sharks/HydCol/HydCol_CM068745.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068745.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 270 has been submitted with SLURM jobid 9563619 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068745.1/9563619.log).
+
+[Mon May 19 18:10:48 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068771.1.fasta, sharks/HydCol/HydCol_CM068771.1.bam
+    output: sharks/HydCol/temp/CM068771.1_pileup.vcf.gz
+    jobid: 348
+    reason: Missing output files: sharks/HydCol/temp/CM068771.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/temp/CM068771.1.fasta, sharks/HydCol/HydCol_CM068771.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068771.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 348 has been submitted with SLURM jobid 9563620 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068771.1/9563620.log).
+
+[Mon May 19 18:10:48 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068764.1.fasta, sharks/HydCol/HydCol_CM068764.1.bam
+    output: sharks/HydCol/temp/CM068764.1_pileup.vcf.gz
+    jobid: 327
+    reason: Missing output files: sharks/HydCol/temp/CM068764.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/HydCol_CM068764.1.bam, sharks/HydCol/temp/CM068764.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068764.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 327 has been submitted with SLURM jobid 9563621 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068764.1/9563621.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Mon May 19 18:13:17 2025]
+Finished job 341.
+70 of 1938 steps (4%) done
+Execute 1 jobs...
+
+[Mon May 19 18:13:17 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068781.1.fasta, sharks/HydCol/HydCol_CM068781.1.bam
+    output: sharks/HydCol/temp/CM068781.1_pileup.vcf.gz
+    jobid: 378
+    reason: Missing output files: sharks/HydCol/temp/CM068781.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/HydCol_CM068781.1.bam, sharks/HydCol/temp/CM068781.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068781.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 378 has been submitted with SLURM jobid 9563715 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068781.1/9563715.log).
+[Mon May 19 18:14:47 2025]
+Finished job 281.
+71 of 1938 steps (4%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 18:14:47 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068770.1.bam
+    jobid: 347
+    reason: Missing output files: sharks/HydCol/HydCol_CM068770.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068770.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 347 has been submitted with SLURM jobid 9563757 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068770.1/9563757.log).
+[Mon May 19 18:15:27 2025]
+Finished job 344.
+72 of 1938 steps (4%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 18:15:27 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068758.1.bam
+    jobid: 311
+    reason: Missing output files: sharks/HydCol/HydCol_CM068758.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068758.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 311 has been submitted with SLURM jobid 9563761 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068758.1/9563761.log).
+[Mon May 19 18:15:29 2025]
+Finished job 372.
+73 of 1938 steps (4%) done
+[Mon May 19 18:15:29 2025]
+Finished job 351.
+74 of 1938 steps (4%) done
+[Mon May 19 18:15:29 2025]
+Finished job 323.
+75 of 1938 steps (4%) done
+[Mon May 19 18:15:29 2025]
+Finished job 330.
+76 of 1938 steps (4%) done
+[Mon May 19 18:15:29 2025]
+Finished job 314.
+77 of 1938 steps (4%) done
+[Mon May 19 18:15:29 2025]
+Finished job 290.
+78 of 1938 steps (4%) done
+Select jobs to execute...
+Execute 6 jobs...
+
+[Mon May 19 18:15:30 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068750.1.fasta, sharks/HydCol/HydCol_CM068750.1.bam
+    output: sharks/HydCol/temp/CM068750.1_pileup.vcf.gz
+    jobid: 285
+    reason: Missing output files: sharks/HydCol/temp/CM068750.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/HydCol_CM068750.1.bam, sharks/HydCol/temp/CM068750.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068750.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 285 has been submitted with SLURM jobid 9563763 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068750.1/9563763.log).
+
+[Mon May 19 18:15:32 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068774.1.fasta, sharks/HydCol/HydCol_CM068774.1.bam
+    output: sharks/HydCol/temp/CM068774.1_pileup.vcf.gz
+    jobid: 357
+    reason: Missing output files: sharks/HydCol/temp/CM068774.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/HydCol_CM068774.1.bam, sharks/HydCol/temp/CM068774.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068774.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 357 has been submitted with SLURM jobid 9563764 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068774.1/9563764.log).
+
+[Mon May 19 18:15:32 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068759.1.fasta, sharks/HydCol/HydCol_CM068759.1.bam
+    output: sharks/HydCol/temp/CM068759.1_pileup.vcf.gz
+    jobid: 312
+    reason: Missing output files: sharks/HydCol/temp/CM068759.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/temp/CM068759.1.fasta, sharks/HydCol/HydCol_CM068759.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068759.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 312 has been submitted with SLURM jobid 9563765 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068759.1/9563765.log).
+
+[Mon May 19 18:15:32 2025]
+rule CALL_PLOIDY:
+    input: sharks/HydCol/temp/CM068779.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068779.1_unmodified_bed.txt.gz, sharks/HydCol/temp/CM068779.1_only_snps.vcf.bgz
+    jobid: 456
+    reason: Missing output files: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068779.1_unmodified_bed.txt.gz, sharks/HydCol/temp/CM068779.1_only_snps.vcf.bgz; Input files updated by another job: sharks/HydCol/temp/CM068779.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068779.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 456 has been submitted with SLURM jobid 9563766 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HydCol_CM068779.1/9563766.log).
+
+[Mon May 19 18:15:34 2025]
+rule CALL_PLOIDY:
+    input: sharks/HydCol/temp/CM068772.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068772.1_unmodified_bed.txt.gz, sharks/HydCol/temp/CM068772.1_only_snps.vcf.bgz
+    jobid: 442
+    reason: Missing output files: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068772.1_unmodified_bed.txt.gz, sharks/HydCol/temp/CM068772.1_only_snps.vcf.bgz; Input files updated by another job: sharks/HydCol/temp/CM068772.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068772.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 442 has been submitted with SLURM jobid 9563767 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HydCol_CM068772.1/9563767.log).
+
+[Mon May 19 18:15:35 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068751.1.fasta, sharks/HydCol/HydCol_CM068751.1.bam
+    output: sharks/HydCol/temp/CM068751.1_pileup.vcf.gz
+    jobid: 288
+    reason: Missing output files: sharks/HydCol/temp/CM068751.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/temp/CM068751.1.fasta, sharks/HydCol/HydCol_CM068751.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068751.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 288 has been submitted with SLURM jobid 9563768 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068751.1/9563768.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Mon May 19 18:16:08 2025]
+Finished job 278.
+79 of 1938 steps (4%) done
+Execute 1 jobs...
+
+[Mon May 19 18:16:08 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068757.1.fasta, sharks/HydCol/HydCol_CM068757.1.bam
+    output: sharks/HydCol/temp/CM068757.1_pileup.vcf.gz
+    jobid: 306
+    reason: Missing output files: sharks/HydCol/temp/CM068757.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/HydCol_CM068757.1.bam, sharks/HydCol/temp/CM068757.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068757.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 306 has been submitted with SLURM jobid 9563828 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068757.1/9563828.log).
+[Mon May 19 18:16:08 2025]
+Finished job 294.
+80 of 1938 steps (4%) done
+[Mon May 19 18:16:08 2025]
+Finished job 305.
+81 of 1938 steps (4%) done
+[Mon May 19 18:16:08 2025]
+Finished job 300.
+82 of 1938 steps (4%) done
+[Mon May 19 18:16:08 2025]
+Finished job 377.
+83 of 1938 steps (4%) done
+[Mon May 19 18:16:08 2025]
+Finished job 356.
+84 of 1938 steps (4%) done
+[Mon May 19 18:16:08 2025]
+Finished job 335.
+85 of 1938 steps (4%) done
+[Mon May 19 18:16:08 2025]
+Finished job 2.
+86 of 1938 steps (4%) done
+Select jobs to execute...
+Execute 7 jobs...
+
+[Mon May 19 18:16:08 2025]
+rule FILTER_PAF_CHR_ONLY:
+    input: sharks/HydCol/HydCol_FASTGA.chain.fltr.srt.paf, sharks/chrom_lists/GCA_035084275.1_chroms.txt
+    output: sharks/HydCol/HydCol_FASTGA.chain.chr.fltr.srt.paf
+    jobid: 1
+    reason: Missing output files: sharks/HydCol/HydCol_FASTGA.chain.chr.fltr.srt.paf; Input files updated by another job: sharks/HydCol/HydCol_FASTGA.chain.fltr.srt.paf
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 1 has been submitted with SLURM jobid 9563829 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FILTER_PAF_CHR_ONLY/9563829.log).
+
+[Mon May 19 18:16:11 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068748.1.fasta, sharks/HydCol/HydCol_CM068748.1.bam
+    output: sharks/HydCol/temp/CM068748.1_pileup.vcf.gz
+    jobid: 279
+    reason: Missing output files: sharks/HydCol/temp/CM068748.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/temp/CM068748.1.fasta, sharks/HydCol/HydCol_CM068748.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068748.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 279 has been submitted with SLURM jobid 9563830 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068748.1/9563830.log).
+
+[Mon May 19 18:16:13 2025]
+rule CALL_PLOIDY:
+    input: sharks/HydCol/temp/CM068753.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068753.1_unmodified_bed.txt.gz, sharks/HydCol/temp/CM068753.1_only_snps.vcf.bgz
+    jobid: 404
+    reason: Missing output files: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068753.1_unmodified_bed.txt.gz, sharks/HydCol/temp/CM068753.1_only_snps.vcf.bgz; Input files updated by another job: sharks/HydCol/temp/CM068753.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068753.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 404 has been submitted with SLURM jobid 9563831 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HydCol_CM068753.1/9563831.log).
+
+[Mon May 19 18:16:13 2025]
+rule INDEL_MASKER:
+    input: sharks/HydCol/temp/CM068755.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_indel_BED_file/CM068755.1_indel_bed.txt
+    jobid: 594
+    reason: Missing output files: sharks/HydCol/MSMC/Output_indel_BED_file/CM068755.1_indel_bed.txt; Input files updated by another job: sharks/HydCol/temp/CM068755.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068755.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 594 has been submitted with SLURM jobid 9563832 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HydCol_CM068755.1/9563832.log).
+
+[Mon May 19 18:16:13 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068780.1.fasta, sharks/HydCol/HydCol_CM068780.1.bam
+    output: sharks/HydCol/temp/CM068780.1_pileup.vcf.gz
+    jobid: 375
+    reason: Missing output files: sharks/HydCol/temp/CM068780.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/temp/CM068780.1.fasta, sharks/HydCol/HydCol_CM068780.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068780.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 375 has been submitted with SLURM jobid 9563833 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068780.1/9563833.log).
+
+[Mon May 19 18:16:15 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068773.1.fasta, sharks/HydCol/HydCol_CM068773.1.bam
+    output: sharks/HydCol/temp/CM068773.1_pileup.vcf.gz
+    jobid: 354
+    reason: Missing output files: sharks/HydCol/temp/CM068773.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/temp/CM068773.1.fasta, sharks/HydCol/HydCol_CM068773.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068773.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 354 has been submitted with SLURM jobid 9563834 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068773.1/9563834.log).
+
+[Mon May 19 18:16:16 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068766.1.fasta, sharks/HydCol/HydCol_CM068766.1.bam
+    output: sharks/HydCol/temp/CM068766.1_pileup.vcf.gz
+    jobid: 333
+    reason: Missing output files: sharks/HydCol/temp/CM068766.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/temp/CM068766.1.fasta, sharks/HydCol/HydCol_CM068766.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068766.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 333 has been submitted with SLURM jobid 9563835 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068766.1/9563835.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Mon May 19 18:16:48 2025]
+Finished job 368.
+87 of 1938 steps (4%) done
+Execute 1 jobs...
+
+[Mon May 19 18:16:48 2025]
+rule CALL_PLOIDY:
+    input: sharks/HydCol/temp/CM068765.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068765.1_unmodified_bed.txt.gz, sharks/HydCol/temp/CM068765.1_only_snps.vcf.bgz
+    jobid: 428
+    reason: Missing output files: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068765.1_unmodified_bed.txt.gz, sharks/HydCol/temp/CM068765.1_only_snps.vcf.bgz; Input files updated by another job: sharks/HydCol/temp/CM068765.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068765.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 428 has been submitted with SLURM jobid 9563837 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HydCol_CM068765.1/9563837.log).
+[Mon May 19 18:16:48 2025]
+Finished job 363.
+88 of 1938 steps (5%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 18:16:48 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068743.1.fasta, sharks/HydCol/HydCol_CM068743.1.bam
+    output: sharks/HydCol/temp/CM068743.1_pileup.vcf.gz
+    jobid: 264
+    reason: Missing output files: sharks/HydCol/temp/CM068743.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/HydCol_CM068743.1.bam, sharks/HydCol/temp/CM068743.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068743.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 264 has been submitted with SLURM jobid 9563838 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068743.1/9563838.log).
+[Mon May 19 18:17:28 2025]
+Finished job 291.
+89 of 1938 steps (5%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 18:17:28 2025]
+rule INDEL_MASKER:
+    input: sharks/HydCol/temp/CM068753.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_indel_BED_file/CM068753.1_indel_bed.txt
+    jobid: 592
+    reason: Missing output files: sharks/HydCol/MSMC/Output_indel_BED_file/CM068753.1_indel_bed.txt; Input files updated by another job: sharks/HydCol/temp/CM068753.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068753.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 592 has been submitted with SLURM jobid 9563842 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HydCol_CM068753.1/9563842.log).
+[Mon May 19 18:17:29 2025]
+Finished job 348.
+90 of 1938 steps (5%) done
+[Mon May 19 18:17:29 2025]
+Finished job 327.
+91 of 1938 steps (5%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon May 19 18:17:29 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068761.1.fasta, sharks/HydCol/HydCol_CM068761.1.bam
+    output: sharks/HydCol/temp/CM068761.1_pileup.vcf.gz
+    jobid: 318
+    reason: Missing output files: sharks/HydCol/temp/CM068761.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/temp/CM068761.1.fasta, sharks/HydCol/HydCol_CM068761.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068761.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 318 has been submitted with SLURM jobid 9563843 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068761.1/9563843.log).
+
+[Mon May 19 18:17:32 2025]
+rule INDEL_MASKER:
+    input: sharks/HydCol/temp/CM068765.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_indel_BED_file/CM068765.1_indel_bed.txt
+    jobid: 604
+    reason: Missing output files: sharks/HydCol/MSMC/Output_indel_BED_file/CM068765.1_indel_bed.txt; Input files updated by another job: sharks/HydCol/temp/CM068765.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068765.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 604 has been submitted with SLURM jobid 9563844 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HydCol_CM068765.1/9563844.log).
+Select jobs to execute...
+Waiting for more resources.
+[Mon May 19 18:18:08 2025]
+Finished job 273.
+92 of 1938 steps (5%) done
+Execute 1 jobs...
+
+[Mon May 19 18:18:09 2025]
+rule CALL_PLOIDY:
+    input: sharks/HydCol/temp/CM068771.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068771.1_unmodified_bed.txt.gz, sharks/HydCol/temp/CM068771.1_only_snps.vcf.bgz
+    jobid: 440
+    reason: Missing output files: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068771.1_unmodified_bed.txt.gz, sharks/HydCol/temp/CM068771.1_only_snps.vcf.bgz; Input files updated by another job: sharks/HydCol/temp/CM068771.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068771.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 440 has been submitted with SLURM jobid 9563862 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HydCol_CM068771.1/9563862.log).
+[Mon May 19 18:19:39 2025]
+Finished job 267.
+93 of 1938 steps (5%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 18:19:39 2025]
+rule CALL_PLOIDY:
+    input: sharks/HydCol/temp/CM068744.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068744.1_unmodified_bed.txt.gz, sharks/HydCol/temp/CM068744.1_only_snps.vcf.bgz
+    jobid: 386
+    reason: Missing output files: sharks/HydCol/temp/CM068744.1_only_snps.vcf.bgz, sharks/HydCol/MSMC/Output_bam_caller_BED/CM068744.1_unmodified_bed.txt.gz; Input files updated by another job: sharks/HydCol/temp/CM068744.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068744.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 386 has been submitted with SLURM jobid 9564035 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HydCol_CM068744.1/9564035.log).
+[Mon May 19 18:20:19 2025]
+Finished job 270.
+94 of 1938 steps (5%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 18:20:19 2025]
+rule INDEL_MASKER:
+    input: sharks/HydCol/temp/CM068745.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_indel_BED_file/CM068745.1_indel_bed.txt
+    jobid: 584
+    reason: Missing output files: sharks/HydCol/MSMC/Output_indel_BED_file/CM068745.1_indel_bed.txt; Input files updated by another job: sharks/HydCol/temp/CM068745.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068745.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 584 has been submitted with SLURM jobid 9564042 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HydCol_CM068745.1/9564042.log).
+[Mon May 19 18:20:19 2025]
+Finished job 378.
+95 of 1938 steps (5%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 18:20:19 2025]
+rule INDEL_MASKER:
+    input: sharks/HydCol/temp/CM068781.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_indel_BED_file/CM068781.1_indel_bed.txt
+    jobid: 620
+    reason: Missing output files: sharks/HydCol/MSMC/Output_indel_BED_file/CM068781.1_indel_bed.txt; Input files updated by another job: sharks/HydCol/temp/CM068781.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068781.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 620 has been submitted with SLURM jobid 9564043 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HydCol_CM068781.1/9564043.log).
+[Mon May 19 18:22:50 2025]
+Finished job 347.
+96 of 1938 steps (5%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 18:22:50 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068770.1.fasta, sharks/HydCol/HydCol_CM068770.1.bam
+    output: sharks/HydCol/temp/CM068770.1_pileup.vcf.gz
+    jobid: 345
+    reason: Missing output files: sharks/HydCol/temp/CM068770.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/HydCol_CM068770.1.bam, sharks/HydCol/temp/CM068770.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068770.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 345 has been submitted with SLURM jobid 9564430 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068770.1/9564430.log).
+[Mon May 19 18:22:51 2025]
+Finished job 311.
+97 of 1938 steps (5%) done
+[Mon May 19 18:22:51 2025]
+Finished job 285.
+98 of 1938 steps (5%) done
+[Mon May 19 18:22:51 2025]
+Finished job 357.
+99 of 1938 steps (5%) done
+[Mon May 19 18:22:52 2025]
+Finished job 456.
+100 of 1938 steps (5%) done
+[Mon May 19 18:22:52 2025]
+Finished job 442.
+101 of 1938 steps (5%) done
+Select jobs to execute...
+Execute 5 jobs...
+
+[Mon May 19 18:22:52 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068762.1.fasta, sharks/HydCol/HydCol_CM068762.1.bam
+    output: sharks/HydCol/temp/CM068762.1_pileup.vcf.gz
+    jobid: 321
+    reason: Missing output files: sharks/HydCol/temp/CM068762.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/HydCol_CM068762.1.bam, sharks/HydCol/temp/CM068762.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068762.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 321 has been submitted with SLURM jobid 9564431 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068762.1/9564431.log).
+
+[Mon May 19 18:22:54 2025]
+rule INDEL_MASKER:
+    input: sharks/HydCol/temp/CM068779.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_indel_BED_file/CM068779.1_indel_bed.txt
+    jobid: 618
+    reason: Missing output files: sharks/HydCol/MSMC/Output_indel_BED_file/CM068779.1_indel_bed.txt; Input files updated by another job: sharks/HydCol/temp/CM068779.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068779.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 618 has been submitted with SLURM jobid 9564432 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HydCol_CM068779.1/9564432.log).
+
+[Mon May 19 18:22:54 2025]
+rule INDEL_MASKER:
+    input: sharks/HydCol/temp/CM068772.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_indel_BED_file/CM068772.1_indel_bed.txt
+    jobid: 611
+    reason: Missing output files: sharks/HydCol/MSMC/Output_indel_BED_file/CM068772.1_indel_bed.txt; Input files updated by another job: sharks/HydCol/temp/CM068772.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068772.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 611 has been submitted with SLURM jobid 9564433 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HydCol_CM068772.1/9564433.log).
+
+[Mon May 19 18:22:57 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068749.1.fasta, sharks/HydCol/HydCol_CM068749.1.bam
+    output: sharks/HydCol/temp/CM068749.1_pileup.vcf.gz
+    jobid: 282
+    reason: Missing output files: sharks/HydCol/temp/CM068749.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/HydCol_CM068749.1.bam, sharks/HydCol/temp/CM068749.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068749.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 282 has been submitted with SLURM jobid 9564434 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068749.1/9564434.log).
+
+[Mon May 19 18:22:57 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068768.1.fasta, sharks/HydCol/HydCol_CM068768.1.bam
+    output: sharks/HydCol/temp/CM068768.1_pileup.vcf.gz
+    jobid: 339
+    reason: Missing output files: sharks/HydCol/temp/CM068768.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/HydCol_CM068768.1.bam, sharks/HydCol/temp/CM068768.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068768.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 339 has been submitted with SLURM jobid 9564435 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068768.1/9564435.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Mon May 19 18:23:30 2025]
+Finished job 312.
+102 of 1938 steps (5%) done
+Execute 1 jobs...
+
+[Mon May 19 18:23:30 2025]
+rule INDEL_MASKER:
+    input: sharks/HydCol/temp/CM068771.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_indel_BED_file/CM068771.1_indel_bed.txt
+    jobid: 610
+    reason: Missing output files: sharks/HydCol/MSMC/Output_indel_BED_file/CM068771.1_indel_bed.txt; Input files updated by another job: sharks/HydCol/temp/CM068771.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068771.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 610 has been submitted with SLURM jobid 9564552 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HydCol_CM068771.1/9564552.log).
+[Mon May 19 18:23:30 2025]
+Finished job 288.
+103 of 1938 steps (5%) done
+[Mon May 19 18:23:30 2025]
+Finished job 306.
+104 of 1938 steps (5%) done
+[Mon May 19 18:23:31 2025]
+Finished job 1.
+105 of 1938 steps (5%) done
+Select jobs to execute...
+Execute 3 jobs...
+
+[Mon May 19 18:23:31 2025]
+rule GET_WHOLE_ALN:
+    input: sharks/HydCol/HydCol_FASTGA.chain.chr.fltr.srt.paf
+    output: sharks/HydCol/temp/HydCol_Aln_Only.txt
+    jobid: 11
+    reason: Input files updated by another job: sharks/HydCol/HydCol_FASTGA.chain.chr.fltr.srt.paf; Set of input files has changed since last execution
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 11 has been submitted with SLURM jobid 9564553 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_WHOLE_ALN/9564553.log).
+
+[Mon May 19 18:23:31 2025]
+rule CALL_PLOIDY:
+    input: sharks/HydCol/temp/CM068757.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068757.1_unmodified_bed.txt.gz, sharks/HydCol/temp/CM068757.1_only_snps.vcf.bgz
+    jobid: 412
+    reason: Missing output files: sharks/HydCol/temp/CM068757.1_only_snps.vcf.bgz, sharks/HydCol/MSMC/Output_bam_caller_BED/CM068757.1_unmodified_bed.txt.gz; Input files updated by another job: sharks/HydCol/temp/CM068757.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068757.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 412 has been submitted with SLURM jobid 9564554 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HydCol_CM068757.1/9564554.log).
+
+[Mon May 19 18:23:33 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068775.1.fasta, sharks/HydCol/HydCol_CM068775.1.bam
+    output: sharks/HydCol/temp/CM068775.1_pileup.vcf.gz
+    jobid: 360
+    reason: Missing output files: sharks/HydCol/temp/CM068775.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/temp/CM068775.1.fasta, sharks/HydCol/HydCol_CM068775.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068775.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 360 has been submitted with SLURM jobid 9564555 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068775.1/9564555.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+[Mon May 19 18:24:10 2025]
+Finished job 279.
+106 of 1938 steps (5%) done
+Execute 1 jobs...
+
+[Mon May 19 18:24:10 2025]
+rule INDEL_MASKER:
+    input: sharks/HydCol/temp/CM068764.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_indel_BED_file/CM068764.1_indel_bed.txt
+    jobid: 603
+    reason: Missing output files: sharks/HydCol/MSMC/Output_indel_BED_file/CM068764.1_indel_bed.txt; Input files updated by another job: sharks/HydCol/temp/CM068764.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068764.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 603 has been submitted with SLURM jobid 9564563 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HydCol_CM068764.1/9564563.log).
+[Mon May 19 18:24:12 2025]
+Finished job 594.
+107 of 1938 steps (6%) done
+[Mon May 19 18:24:12 2025]
+Finished job 375.
+108 of 1938 steps (6%) done
+[Mon May 19 18:24:12 2025]
+Finished job 354.
+109 of 1938 steps (6%) done
+Select jobs to execute...
+Execute 3 jobs...
+
+[Mon May 19 18:24:12 2025]
+rule INDEL_MASKER:
+    input: sharks/HydCol/temp/CM068757.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_indel_BED_file/CM068757.1_indel_bed.txt
+    jobid: 596
+    reason: Missing output files: sharks/HydCol/MSMC/Output_indel_BED_file/CM068757.1_indel_bed.txt; Input files updated by another job: sharks/HydCol/temp/CM068757.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068757.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 596 has been submitted with SLURM jobid 9564564 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HydCol_CM068757.1/9564564.log).
+
+[Mon May 19 18:24:12 2025]
+rule INDEL_MASKER:
+    input: sharks/HydCol/temp/CM068773.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_indel_BED_file/CM068773.1_indel_bed.txt
+    jobid: 612
+    reason: Missing output files: sharks/HydCol/MSMC/Output_indel_BED_file/CM068773.1_indel_bed.txt; Input files updated by another job: sharks/HydCol/temp/CM068773.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068773.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 612 has been submitted with SLURM jobid 9564565 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HydCol_CM068773.1/9564565.log).
+
+[Mon May 19 18:24:14 2025]
+rule CALL_PLOIDY:
+    input: sharks/HydCol/temp/CM068748.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068748.1_unmodified_bed.txt.gz, sharks/HydCol/temp/CM068748.1_only_snps.vcf.bgz
+    jobid: 394
+    reason: Missing output files: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068748.1_unmodified_bed.txt.gz, sharks/HydCol/temp/CM068748.1_only_snps.vcf.bgz; Input files updated by another job: sharks/HydCol/temp/CM068748.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068748.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 394 has been submitted with SLURM jobid 9564566 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HydCol_CM068748.1/9564566.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+[Mon May 19 18:24:50 2025]
+Finished job 333.
+110 of 1938 steps (6%) done
+Execute 1 jobs...
+
+[Mon May 19 18:24:51 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068760.1.bam
+    jobid: 317
+    reason: Missing output files: sharks/HydCol/HydCol_CM068760.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068760.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 317 has been submitted with SLURM jobid 9564673 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068760.1/9564673.log).
+[Mon May 19 18:24:51 2025]
+Finished job 604.
+111 of 1938 steps (6%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 18:24:51 2025]
+rule CALL_PLOIDY:
+    input: sharks/HydCol/temp/CM068755.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068755.1_unmodified_bed.txt.gz, sharks/HydCol/temp/CM068755.1_only_snps.vcf.bgz
+    jobid: 408
+    reason: Missing output files: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068755.1_unmodified_bed.txt.gz, sharks/HydCol/temp/CM068755.1_only_snps.vcf.bgz; Input files updated by another job: sharks/HydCol/temp/CM068755.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068755.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 408 has been submitted with SLURM jobid 9564674 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HydCol_CM068755.1/9564674.log).
+[Mon May 19 18:25:31 2025]
+Finished job 404.
+112 of 1938 steps (6%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 18:25:31 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068767.1.fasta, sharks/HydCol/HydCol_CM068767.1.bam
+    output: sharks/HydCol/temp/CM068767.1_pileup.vcf.gz
+    jobid: 336
+    reason: Missing output files: sharks/HydCol/temp/CM068767.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/temp/CM068767.1.fasta, sharks/HydCol/HydCol_CM068767.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068767.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 336 has been submitted with SLURM jobid 9564945 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068767.1/9564945.log).
+[Mon May 19 18:25:33 2025]
+Finished job 428.
+113 of 1938 steps (6%) done
+[Mon May 19 18:25:33 2025]
+Finished job 592.
+114 of 1938 steps (6%) done
+[Mon May 19 18:25:33 2025]
+Finished job 318.
+115 of 1938 steps (6%) done
+Select jobs to execute...
+Execute 3 jobs...
+
+[Mon May 19 18:25:33 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068756.1.fasta, sharks/HydCol/HydCol_CM068756.1.bam
+    output: sharks/HydCol/temp/CM068756.1_pileup.vcf.gz
+    jobid: 303
+    reason: Missing output files: sharks/HydCol/temp/CM068756.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/temp/CM068756.1.fasta, sharks/HydCol/HydCol_CM068756.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068756.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 303 has been submitted with SLURM jobid 9564946 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068756.1/9564946.log).
+
+[Mon May 19 18:25:36 2025]
+rule CALL_PLOIDY:
+    input: sharks/HydCol/temp/CM068751.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068751.1_unmodified_bed.txt.gz, sharks/HydCol/temp/CM068751.1_only_snps.vcf.bgz
+    jobid: 400
+    reason: Missing output files: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068751.1_unmodified_bed.txt.gz, sharks/HydCol/temp/CM068751.1_only_snps.vcf.bgz; Input files updated by another job: sharks/HydCol/temp/CM068751.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068751.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 400 has been submitted with SLURM jobid 9564947 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HydCol_CM068751.1/9564947.log).
+
+[Mon May 19 18:25:36 2025]
+rule INDEL_MASKER:
+    input: sharks/HydCol/temp/CM068780.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_indel_BED_file/CM068780.1_indel_bed.txt
+    jobid: 619
+    reason: Missing output files: sharks/HydCol/MSMC/Output_indel_BED_file/CM068780.1_indel_bed.txt; Input files updated by another job: sharks/HydCol/temp/CM068780.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068780.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 619 has been submitted with SLURM jobid 9564948 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HydCol_CM068780.1/9564948.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+[Mon May 19 18:26:11 2025]
+Finished job 440.
+116 of 1938 steps (6%) done
+Execute 1 jobs...
+
+[Mon May 19 18:26:11 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068763.1.bam
+    jobid: 326
+    reason: Missing output files: sharks/HydCol/HydCol_CM068763.1.bam; Input files updated by another job: sharks/HydCol/HydCol.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068763.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 326 has been submitted with SLURM jobid 9564952 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HydCol_CM068763.1/9564952.log).
+[Mon May 19 18:27:42 2025]
+Finished job 620.
+117 of 1938 steps (6%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 18:27:42 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HydCol/temp/CM068747.1.fasta, sharks/HydCol/HydCol_CM068747.1.bam
+    output: sharks/HydCol/temp/CM068747.1_pileup.vcf.gz
+    jobid: 276
+    reason: Missing output files: sharks/HydCol/temp/CM068747.1_pileup.vcf.gz; Input files updated by another job: sharks/HydCol/temp/CM068747.1.fasta, sharks/HydCol/HydCol_CM068747.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068747.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 276 has been submitted with SLURM jobid 9564969 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HydCol_CM068747.1/9564969.log).
+[Mon May 19 18:29:12 2025]
+Finished job 264.
+118 of 1938 steps (6%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 18:29:12 2025]
+rule INDEL_MASKER:
+    input: sharks/HydCol/temp/CM068750.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_indel_BED_file/CM068750.1_indel_bed.txt
+    jobid: 589
+    reason: Missing output files: sharks/HydCol/MSMC/Output_indel_BED_file/CM068750.1_indel_bed.txt; Input files updated by another job: sharks/HydCol/temp/CM068750.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068750.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 589 has been submitted with SLURM jobid 9565277 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HydCol_CM068750.1/9565277.log).
+[Mon May 19 18:29:52 2025]
+Finished job 584.
+119 of 1938 steps (6%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 18:29:53 2025]
+rule INDEL_MASKER:
+    input: sharks/HydCol/temp/CM068766.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_indel_BED_file/CM068766.1_indel_bed.txt
+    jobid: 605
+    reason: Missing output files: sharks/HydCol/MSMC/Output_indel_BED_file/CM068766.1_indel_bed.txt; Input files updated by another job: sharks/HydCol/temp/CM068766.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068766.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 605 has been submitted with SLURM jobid 9565381 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HydCol_CM068766.1/9565381.log).
+[Mon May 19 18:31:23 2025]
+Finished job 345.
+120 of 1938 steps (6%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 18:31:23 2025]
+rule GET_WHOLE_VAR:
+    input: sharks/HydCol/HydCol_FASTGA.chain.chr.fltr.srt.paf
+    output: sharks/HydCol/temp/HydCol_Var_Only.txt
+    jobid: 10
+    reason: Input files updated by another job: sharks/HydCol/HydCol_FASTGA.chain.chr.fltr.srt.paf; Set of input files has changed since last execution
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 10 has been submitted with SLURM jobid 9565702 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_WHOLE_VAR/9565702.log).
+[Mon May 19 18:32:03 2025]
+Finished job 321.
+121 of 1938 steps (6%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 18:32:03 2025]
+rule CALL_PLOIDY:
+    input: sharks/HydCol/temp/CM068762.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068762.1_unmodified_bed.txt.gz, sharks/HydCol/temp/CM068762.1_only_snps.vcf.bgz
+    jobid: 422
+    reason: Missing output files: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068762.1_unmodified_bed.txt.gz, sharks/HydCol/temp/CM068762.1_only_snps.vcf.bgz; Input files updated by another job: sharks/HydCol/temp/CM068762.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068762.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 422 has been submitted with SLURM jobid 9565913 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HydCol_CM068762.1/9565913.log).
+[Mon May 19 18:32:06 2025]
+Finished job 618.
+122 of 1938 steps (6%) done
+[Mon May 19 18:32:06 2025]
+Finished job 611.
+123 of 1938 steps (6%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon May 19 18:32:06 2025]
+rule BAM_CALLER_BED:
+    input: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068765.1_unmodified_bed.txt.gz
+    output: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068765.1_modified_bed.txt.gz
+    jobid: 427
+    reason: Missing output files: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068765.1_modified_bed.txt.gz; Input files updated by another job: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068765.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068765.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 427 has been submitted with SLURM jobid 9565914 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BAM_CALLER_BED/sharks_HydCol_CM068765.1/9565914.log).
+
+[Mon May 19 18:32:06 2025]
+rule CALL_PLOIDY:
+    input: sharks/HydCol/temp/CM068776.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068776.1_unmodified_bed.txt.gz, sharks/HydCol/temp/CM068776.1_only_snps.vcf.bgz
+    jobid: 450
+    reason: Missing output files: sharks/HydCol/temp/CM068776.1_only_snps.vcf.bgz, sharks/HydCol/MSMC/Output_bam_caller_BED/CM068776.1_unmodified_bed.txt.gz; Input files updated by another job: sharks/HydCol/temp/CM068776.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068776.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 450 has been submitted with SLURM jobid 9565915 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HydCol_CM068776.1/9565915.log).
+Select jobs to execute...
+Waiting for more resources.
+[Mon May 19 18:32:43 2025]
+Finished job 339.
+124 of 1938 steps (6%) done
+Execute 1 jobs...
+
+[Mon May 19 18:32:44 2025]
+rule CALL_PLOIDY:
+    input: sharks/HydCol/temp/CM068768.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068768.1_unmodified_bed.txt.gz, sharks/HydCol/temp/CM068768.1_only_snps.vcf.bgz
+    jobid: 434
+    reason: Missing output files: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068768.1_unmodified_bed.txt.gz, sharks/HydCol/temp/CM068768.1_only_snps.vcf.bgz; Input files updated by another job: sharks/HydCol/temp/CM068768.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068768.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 434 has been submitted with SLURM jobid 9566065 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HydCol_CM068768.1/9566065.log).
+[Mon May 19 18:32:44 2025]
+Finished job 610.
+125 of 1938 steps (6%) done
+[Mon May 19 18:32:44 2025]
+Finished job 11.
+126 of 1938 steps (7%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon May 19 18:32:44 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol/temp/HydCol_Aln_Only.txt
+    output: sharks/HydCol/temp/20250410_CM068776.1_Aln_Only.txt
+    jobid: 46
+    reason: Input files updated by another job: sharks/HydCol/temp/HydCol_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, TODAY_DATE=20250410, CHR=CM068776.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 46 has been submitted with SLURM jobid 9566066 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HydCol_20250410_CM068776.1/9566066.log).
+
+[Mon May 19 18:32:45 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol/temp/HydCol_Aln_Only.txt
+    output: sharks/HydCol/temp/20250410_CM068750.1_Aln_Only.txt
+    jobid: 20
+    reason: Input files updated by another job: sharks/HydCol/temp/HydCol_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, TODAY_DATE=20250410, CHR=CM068750.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 20 has been submitted with SLURM jobid 9566067 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HydCol_20250410_CM068750.1/9566067.log).
+Select jobs to execute...
+Waiting for more resources.
+[Mon May 19 18:33:24 2025]
+Finished job 282.
+127 of 1938 steps (7%) done
+Execute 1 jobs...
+
+[Mon May 19 18:33:24 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol/temp/HydCol_Aln_Only.txt
+    output: sharks/HydCol/temp/20250410_CM068769.1_Aln_Only.txt
+    jobid: 39
+    reason: Input files updated by another job: sharks/HydCol/temp/HydCol_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, TODAY_DATE=20250410, CHR=CM068769.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 39 has been submitted with SLURM jobid 9566184 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HydCol_20250410_CM068769.1/9566184.log).
+[Mon May 19 18:33:26 2025]
+Finished job 360.
+128 of 1938 steps (7%) done
+[Mon May 19 18:33:26 2025]
+Finished job 612.
+129 of 1938 steps (7%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon May 19 18:33:26 2025]
+rule INDEL_MASKER:
+    input: sharks/HydCol/temp/CM068749.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_indel_BED_file/CM068749.1_indel_bed.txt
+    jobid: 588
+    reason: Missing output files: sharks/HydCol/MSMC/Output_indel_BED_file/CM068749.1_indel_bed.txt; Input files updated by another job: sharks/HydCol/temp/CM068749.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068749.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 588 has been submitted with SLURM jobid 9566185 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HydCol_CM068749.1/9566185.log).
+
+[Mon May 19 18:33:29 2025]
+rule CALL_PLOIDY:
+    input: sharks/HydCol/temp/CM068764.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068764.1_unmodified_bed.txt.gz, sharks/HydCol/temp/CM068764.1_only_snps.vcf.bgz
+    jobid: 426
+    reason: Missing output files: sharks/HydCol/temp/CM068764.1_only_snps.vcf.bgz, sharks/HydCol/MSMC/Output_bam_caller_BED/CM068764.1_unmodified_bed.txt.gz; Input files updated by another job: sharks/HydCol/temp/CM068764.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068764.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 426 has been submitted with SLURM jobid 9566186 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HydCol_CM068764.1/9566186.log).
+Select jobs to execute...
+Waiting for more resources.
+[Mon May 19 18:34:04 2025]
+Finished job 603.
+130 of 1938 steps (7%) done
+Execute 1 jobs...
+
+[Mon May 19 18:34:04 2025]
+rule INDEL_MASKER:
+    input: sharks/HydCol/temp/CM068770.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_indel_BED_file/CM068770.1_indel_bed.txt
+    jobid: 609
+    reason: Missing output files: sharks/HydCol/MSMC/Output_indel_BED_file/CM068770.1_indel_bed.txt; Input files updated by another job: sharks/HydCol/temp/CM068770.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068770.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 609 has been submitted with SLURM jobid 9566301 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HydCol_CM068770.1/9566301.log).
+[Mon May 19 18:34:05 2025]
+Finished job 596.
+131 of 1938 steps (7%) done
+[Mon May 19 18:34:05 2025]
+Finished job 317.
+132 of 1938 steps (7%) done
+[Mon May 19 18:34:05 2025]
+Finished job 336.
+133 of 1938 steps (7%) done
+Select jobs to execute...
+Execute 3 jobs...
+
+[Mon May 19 18:34:05 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol/temp/HydCol_Aln_Only.txt
+    output: sharks/HydCol/temp/20250410_CM068745.1_Aln_Only.txt
+    jobid: 15
+    reason: Input files updated by another job: sharks/HydCol/temp/HydCol_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, TODAY_DATE=20250410, CHR=CM068745.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 15 has been submitted with SLURM jobid 9566302 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HydCol_20250410_CM068745.1/9566302.log).
+
+[Mon May 19 18:34:06 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol/temp/HydCol_Aln_Only.txt
+    output: sharks/HydCol/temp/20250410_CM068779.1_Aln_Only.txt
+    jobid: 49
+    reason: Input files updated by another job: sharks/HydCol/temp/HydCol_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, TODAY_DATE=20250410, CHR=CM068779.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 49 has been submitted with SLURM jobid 9566403 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HydCol_20250410_CM068779.1/9566403.log).
+
+[Mon May 19 18:34:10 2025]
+rule INDEL_MASKER:
+    input: sharks/HydCol/temp/CM068752.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_indel_BED_file/CM068752.1_indel_bed.txt
+    jobid: 591
+    reason: Missing output files: sharks/HydCol/MSMC/Output_indel_BED_file/CM068752.1_indel_bed.txt; Input files updated by another job: sharks/HydCol/temp/CM068752.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068752.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 591 has been submitted with SLURM jobid 9566404 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HydCol_CM068752.1/9566404.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+[Mon May 19 18:34:44 2025]
+Finished job 412.
+134 of 1938 steps (7%) done
+Execute 1 jobs...
+
+[Mon May 19 18:34:44 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol/temp/HydCol_Aln_Only.txt
+    output: sharks/HydCol/temp/20250410_CM068767.1_Aln_Only.txt
+    jobid: 37
+    reason: Input files updated by another job: sharks/HydCol/temp/HydCol_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, TODAY_DATE=20250410, CHR=CM068767.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 37 has been submitted with SLURM jobid 9566615 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HydCol_20250410_CM068767.1/9566615.log).
+[Mon May 19 18:34:45 2025]
+Finished job 303.
+135 of 1938 steps (7%) done
+[Mon May 19 18:34:45 2025]
+Finished job 619.
+136 of 1938 steps (7%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon May 19 18:34:45 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol/temp/HydCol_Aln_Only.txt
+    output: sharks/HydCol/temp/20250410_CM068775.1_Aln_Only.txt
+    jobid: 45
+    reason: Input files updated by another job: sharks/HydCol/temp/HydCol_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, TODAY_DATE=20250410, CHR=CM068775.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 45 has been submitted with SLURM jobid 9566616 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HydCol_20250410_CM068775.1/9566616.log).
+
+[Mon May 19 18:34:45 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol/temp/HydCol_Aln_Only.txt
+    output: sharks/HydCol/temp/20250410_CM068751.1_Aln_Only.txt
+    jobid: 21
+    reason: Input files updated by another job: sharks/HydCol/temp/HydCol_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, TODAY_DATE=20250410, CHR=CM068751.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 21 has been submitted with SLURM jobid 9566676 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HydCol_20250410_CM068751.1/9566676.log).
+Select jobs to execute...
+Waiting for more resources.
+[Mon May 19 18:35:25 2025]
+Finished job 326.
+137 of 1938 steps (7%) done
+Execute 1 jobs...
+
+[Mon May 19 18:35:25 2025]
+rule CALL_PLOIDY:
+    input: sharks/HydCol/temp/CM068780.1_pileup.vcf.gz
+    output: sharks/HydCol/MSMC/Output_bam_caller_BED/CM068780.1_unmodified_bed.txt.gz, sharks/HydCol/temp/CM068780.1_only_snps.vcf.bgz
+    jobid: 458
+    reason: Missing output files: sharks/HydCol/temp/CM068780.1_only_snps.vcf.bgz, sharks/HydCol/MSMC/Output_bam_caller_BED/CM068780.1_unmodified_bed.txt.gz; Input files updated by another job: sharks/HydCol/temp/CM068780.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068780.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 458 has been submitted with SLURM jobid 9566794 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HydCol_CM068780.1/9566794.log).
+[Mon May 19 18:36:05 2025]
+Finished job 408.
+138 of 1938 steps (7%) done
+Select jobs to execute...

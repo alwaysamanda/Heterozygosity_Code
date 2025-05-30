@@ -1,0 +1,40 @@
+host: login-q-1
+Building DAG of jobs...
+SLURM run ID: 5e979a81-5605-4479-91d9-af858bacff7e
+Using shell: /usr/bin/bash
+Provided remote nodes: 50
+Job stats:
+job                            count
+---------------------------  -------
+BAM_CALLER_BED                    51
+BGZIP_VCF                         52
+BOOTSTRAPPING_MULTIHET_FILE     1560
+CALL_PLOIDY                       23
+GENERATE_MASK                     52
+GENERATE_MULTIHETSEP              52
+INDEL_MASKER                      23
+MAIN_MULTIHETSEP                  52
+PILEUP_VARIANTS                    3
+REMOVE_INDELS                     52
+RESTRUCTURE                       51
+TABIX                             49
+all                                1
+total                           2021
+
+Select jobs to execute...
+Execute 50 jobs...
+
+[Thu May 22 09:23:53 2025]
+rule BAM_CALLER_BED:
+    input: sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083450.1_unmodified_bed.txt.gz
+    output: sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083450.1_modified_bed.txt.gz
+    jobid: 917
+    reason: Updated input files: sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083450.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHROM=NC_083450.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+RuleException in rule BAM_CALLER_BED in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 656:
+AttributeError: 'Wildcards' object has no attribute 'CHR', when formatting the following:
+
+        zcat {input}  |         awk -v chrom="{wildcards.CHR}" 'BEGIN{{OFS="	"}} {{ $1=chrom; print $0 }}' |         gzip -c > {output}
+        

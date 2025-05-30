@@ -1,0 +1,93 @@
+host: login-p-2
+Building DAG of jobs...
+SLURM run ID: b94e1312-feaf-4acd-8ab6-324b16676b82
+Using shell: /usr/bin/bash
+Provided remote nodes: 25
+Job stats:
+job                            count
+---------------------------  -------
+BAM_CALLER_BED                    54
+BGZIP_VCF                         54
+BOOTSTRAPPING_MULTIHET_FILE     1620
+CALC_HET_PER_CHR                   2
+CALC_HET_WHOLE_GENOME              1
+CALL_PLOIDY                       54
+COMPILE_HET                        1
+GENERATE_MASK                     54
+GENERATE_MULTIHETSEP              54
+INDEL_MASKER                      54
+MAIN_MULTIHETSEP                  54
+MAKE_BAM                           1
+MAKE_SAM                           1
+PILEUP_VARIANTS                   54
+PLOT_HET_PER_CHR                  54
+PLOT_WHOLE_HET                     1
+REMOVE_INDELS                     54
+RESTRUCTURE                       54
+SEPARATE_BAM_BY_CHR               54
+all                                1
+total                           2276
+
+Select jobs to execute...
+Execute 3 jobs...
+
+[Fri May 16 22:04:14 2025]
+rule MAKE_SAM:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCF_020745735.1.fa.gz, /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/sharks/GCA_020745765.1.fa.gz
+    output: sharks/HemOce/HemOce.sam
+    jobid: 346
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=4933, disk_mib=4705, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=720
+
+Job 346 has been submitted with SLURM jobid 9461567 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAKE_SAM/sharks_HemOce/9461567.log).
+
+[Fri May 16 22:04:15 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083453.1_het.txt
+    jobid: 282
+    reason: Missing output files: sharks/HemOce/20250428_NC_083453.1_het.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083453.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 282 has been submitted with SLURM jobid 9461568 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083453.1/9461568.log).
+
+[Fri May 16 22:04:16 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083454.1_het.txt
+    jobid: 283
+    reason: Missing output files: sharks/HemOce/20250428_NC_083454.1_het.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083454.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 283 has been submitted with SLURM jobid 9461569 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083454.1/9461569.log).
+[Fri May 16 22:12:15 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9461568' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 282
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083453.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083453.1/9461568.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_per_chr_V3.py sharks/HemOce/temp/HemOce_Var_Only.txt sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt sharks HemOce 20250428 1000000 500000 52 sharks/HemOce/HemOce_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9461568
+
+[Fri May 16 22:19:56 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9461569' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 283
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083454.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083454.1/9461569.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_per_chr_V3.py sharks/HemOce/temp/HemOce_Var_Only.txt sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt sharks HemOce 20250428 1000000 500000 52 sharks/HemOce/HemOce_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9461569
+

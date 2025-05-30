@@ -1,0 +1,94 @@
+host: login-p-2
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count
+----------  -------
+ALNtoPAF          1
+FASTGA            1
+WHOLE_FROH        1
+all               1
+total             4
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon Mar 31 10:51:17 2025]
+localrule WHOLE_FROH:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt
+    output: sharks/HydCol_Test/20250331_HydCol_Test_FROH.txt
+    jobid: 251
+    reason: Missing output files: sharks/HydCol_Test/20250331_HydCol_Test_FROH.txt; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250331
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:51:17 2025]
+localrule FASTGA:
+    input: sharks/HydCol_Test/temp/HydCol_Test_GCA_035084275.1.gix, sharks/HydCol_Test/temp/HydCol_Test_GCA_035084065.1.gix
+    output: sharks/HydCol_Test/HydCol_Test_ALN.1aln
+    jobid: 2
+    reason: Missing output files: sharks/HydCol_Test/HydCol_Test_ALN.1aln
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 365:
+Command 'set -euo pipefail;  
+        set -e 
+        
+        Laut_autosomal=0
+        Laut=0
+
+        while read -r line; do
+            start="$(head -n 1 sharks/HydCol_Test/temp/20250331_"$line"_Var_Only.txt | awk ' {print $3} ')"
+            end="$(tail -n 1 sharks/HydCol_Test/temp/20250331_"$line"_Var_Only.txt | awk ' {print $4} ')"
+            chrom_length="$((end - start))"
+            Laut_autosomal=$(("$Laut_autosomal" + "$chrom_length"))
+        done < <(head -n 40 "sharks/chrom_lists/GCA_035084275.1_chroms.txt") 
+
+
+        start="$(head -n  1 sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt | awk ' {print $3} ')"
+        end="$(tail -n  1 sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt | awk ' {print $4} ')"
+        chrom_length="$((end - start))"
+        Laut="$("$Laut" + "$chrom_length")"
+
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250106_FROH_Calc.R sharks/HydCol_Test/HydCol_Test_ROH_Results.csv sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt 20250331 GCA_035084275.1 sharks "$Laut" 40 "$Laut_autosomal" > sharks/HydCol_Test/20250331_HydCol_Test_FROH.txt' returned non-zero exit status 127.
+[Mon Mar 31 10:51:17 2025]
+Error in rule WHOLE_FROH:
+    jobid: 251
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt
+    output: sharks/HydCol_Test/20250331_HydCol_Test_FROH.txt
+    shell:
+        
+        set -e 
+        
+        Laut_autosomal=0
+        Laut=0
+
+        while read -r line; do
+            start="$(head -n 1 sharks/HydCol_Test/temp/20250331_"$line"_Var_Only.txt | awk ' {print $3} ')"
+            end="$(tail -n 1 sharks/HydCol_Test/temp/20250331_"$line"_Var_Only.txt | awk ' {print $4} ')"
+            chrom_length="$((end - start))"
+            Laut_autosomal=$(("$Laut_autosomal" + "$chrom_length"))
+        done < <(head -n 40 "sharks/chrom_lists/GCA_035084275.1_chroms.txt") 
+
+
+        start="$(head -n  1 sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt | awk ' {print $3} ')"
+        end="$(tail -n  1 sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt | awk ' {print $4} ')"
+        chrom_length="$((end - start))"
+        Laut="$("$Laut" + "$chrom_length")"
+
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250106_FROH_Calc.R sharks/HydCol_Test/HydCol_Test_ROH_Results.csv sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt 20250331 GCA_035084275.1 sharks "$Laut" 40 "$Laut_autosomal" > sharks/HydCol_Test/20250331_HydCol_Test_FROH.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Mar 31 10:54:55 2025]
+Finished job 2.
+1 of 4 steps (25%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-31T105116.010340.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

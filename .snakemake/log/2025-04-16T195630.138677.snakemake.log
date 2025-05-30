@@ -1,0 +1,93 @@
+host: login-q-4
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 76
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+ALNCHAIN                   1
+ALNtoPAF                   1
+FASTGA                     1
+FAtoGDB_ALT                1
+FAtoGDB_REF                1
+FILTER_PAF_VARIANCE        1
+GET_WHOLE_ALN              1
+GET_WHOLE_VAR              1
+GIXmake_ALT                1
+GIXmake_REF                1
+SORT_PAF                   1
+all                        1
+total                     12
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Wed Apr 16 19:56:30 2025]
+localrule FAtoGDB_REF:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/reference/sharks/GCA_036365495.1.fa.gz
+    output: sharks/HetFra/temp/HetFra_GCA_036365495.1.1gdb
+    jobid: 7
+    reason: Missing output files: sharks/HetFra/temp/HetFra_GCA_036365495.1.1gdb
+    resources: tmpdir=/tmp
+
+
+[Wed Apr 16 19:56:30 2025]
+localrule FAtoGDB_ALT:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/alternate/sharks/GCA_036365525.1.fa.gz
+    output: sharks/HetFra/temp/HetFra_GCA_036365525.1.1gdb
+    jobid: 9
+    reason: Missing output files: sharks/HetFra/temp/HetFra_GCA_036365525.1.1gdb
+    resources: tmpdir=/tmp
+
+[Wed Apr 16 19:57:02 2025]
+Finished job 7.
+1 of 12 steps (8%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Apr 16 19:57:02 2025]
+localrule GIXmake_REF:
+    input: sharks/HetFra/temp/HetFra_GCA_036365495.1.1gdb
+    output: sharks/HetFra/temp/HetFra_GCA_036365495.1.gix
+    jobid: 6
+    reason: Missing output files: sharks/HetFra/temp/HetFra_GCA_036365495.1.gix; Input files updated by another job: sharks/HetFra/temp/HetFra_GCA_036365495.1.1gdb
+    resources: tmpdir=/tmp
+
+[Wed Apr 16 19:57:15 2025]
+Finished job 9.
+2 of 12 steps (17%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Apr 16 19:57:15 2025]
+localrule GIXmake_ALT:
+    input: sharks/HetFra/temp/HetFra_GCA_036365525.1.1gdb
+    output: sharks/HetFra/temp/HetFra_GCA_036365525.1.gix
+    jobid: 8
+    reason: Missing output files: sharks/HetFra/temp/HetFra_GCA_036365525.1.gix; Input files updated by another job: sharks/HetFra/temp/HetFra_GCA_036365525.1.1gdb
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 142:
+Command 'set -euo pipefail;  
+        GIXmake -v -P. -T8 sharks/HetFra/temp/HetFra_GCA_036365495.1.1gdb' died with <Signals.SIGKILL: 9>.
+[Wed Apr 16 19:58:53 2025]
+Error in rule GIXmake_REF:
+    jobid: 6
+    input: sharks/HetFra/temp/HetFra_GCA_036365495.1.1gdb
+    output: sharks/HetFra/temp/HetFra_GCA_036365495.1.gix
+    shell:
+        
+        GIXmake -v -P. -T8 sharks/HetFra/temp/HetFra_GCA_036365495.1.1gdb
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Apr 16 20:02:47 2025]
+Finished job 8.
+3 of 12 steps (25%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-04-16T195630.138677.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

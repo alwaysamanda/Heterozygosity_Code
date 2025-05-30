@@ -1,0 +1,41 @@
+host: login-p-3
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job         count
+--------  -------
+Plot_ROH        1
+all             1
+total           2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 18:23:45 2025]
+localrule Plot_ROH:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    output: sharks/HydCol_Test/20250326_HydCol_Test_ROH_Map.pdf
+    jobid: 34
+    reason: Missing output files: sharks/HydCol_Test/20250326_HydCol_Test_ROH_Map.pdf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326
+    resources: tmpdir=/tmp
+
+[Wed Mar 26 18:23:50 2025]
+Finished job 34.
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 18:23:50 2025]
+localrule all:
+    input: sharks/HydCol_Test/HydCol_Test_FASTGA.paf, sharks/HydCol_Test/20250326_CM068742.1_filtered.paf, sharks/HydCol_Test/20250326_CM068743.1_filtered.paf, sharks/HydCol_Test/20250326_CM068744.1_filtered.paf, sharks/HydCol_Test/20250326_CM068745.1_filtered.paf, sharks/HydCol_Test/20250326_CM068746.1_filtered.paf, sharks/HydCol_Test/temp/20250326_CM068742.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068743.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068744.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068745.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068746.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068742.1_Var_Only.txt, sharks/HydCol_Test/temp/20250326_CM068743.1_Var_Only.txt, sharks/HydCol_Test/temp/20250326_CM068744.1_Var_Only.txt, sharks/HydCol_Test/temp/20250326_CM068745.1_Var_Only.txt, sharks/HydCol_Test/temp/20250326_CM068746.1_Var_Only.txt, sharks/HydCol_Test/20250326_CM068742.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068743.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068744.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068745.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068746.1_ROH_Results.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/20250326_HydCol_Test_ROH_Map.pdf
+    jobid: 0
+    reason: Input files updated by another job: sharks/HydCol_Test/20250326_HydCol_Test_ROH_Map.pdf
+    resources: tmpdir=/tmp
+
+[Wed Mar 26 18:23:50 2025]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2025-03-26T182345.169544.snakemake.log

@@ -1,0 +1,55 @@
+host: login-q-4
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 76
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count
+-----------  -------
+PAF_DOTPLOT        1
+Plot_ROH           1
+all                1
+total              3
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon Mar 31 09:48:03 2025]
+localrule PAF_DOTPLOT:
+    input: sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/GCA_035084275.1.mm2.srt.paf
+    output: sharks/HydCol_Test/dotplots/20250326_HydCol_Test_DotPlot.pdf
+    jobid: 57
+    reason: Missing output files: sharks/HydCol_Test/dotplots/20250326_HydCol_Test_DotPlot.pdf; Set of input files has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 09:48:03 2025]
+localrule Plot_ROH:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    output: sharks/HydCol_Test/20250326_HydCol_Test_ROH_Map.pdf
+    jobid: 35
+    reason: Missing output files: sharks/HydCol_Test/20250326_HydCol_Test_ROH_Map.pdf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326
+    resources: tmpdir=/tmp
+
+[Mon Mar 31 09:48:04 2025]
+Finished job 35.
+1 of 3 steps (33%) done
+[Mon Mar 31 09:48:09 2025]
+Finished job 57.
+2 of 3 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Mar 31 09:48:09 2025]
+localrule all:
+    input: sharks/HydCol_Test/HydCol_Test_FASTGA.paf, sharks/HydCol_Test/20250326_CM068742.1_filtered.paf, sharks/HydCol_Test/20250326_CM068743.1_filtered.paf, sharks/HydCol_Test/20250326_CM068744.1_filtered.paf, sharks/HydCol_Test/20250326_CM068745.1_filtered.paf, sharks/HydCol_Test/20250326_CM068746.1_filtered.paf, sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/temp/20250326_CM068742.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068743.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068744.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068745.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068746.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068742.1_Var_Only.txt, sharks/HydCol_Test/temp/20250326_CM068743.1_Var_Only.txt, sharks/HydCol_Test/temp/20250326_CM068744.1_Var_Only.txt, sharks/HydCol_Test/temp/20250326_CM068745.1_Var_Only.txt, sharks/HydCol_Test/temp/20250326_CM068746.1_Var_Only.txt, sharks/HydCol_Test/20250326_CM068742.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068743.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068744.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068745.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068746.1_ROH_Results.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/20250326_HydCol_Test_ROH_Map.pdf, sharks/HydCol_Test/20250326_CM068742.1_GCA_035084275.1_FROH.txt, sharks/HydCol_Test/20250326_CM068743.1_GCA_035084275.1_FROH.txt, sharks/HydCol_Test/20250326_CM068744.1_GCA_035084275.1_FROH.txt, sharks/HydCol_Test/20250326_CM068745.1_GCA_035084275.1_FROH.txt, sharks/HydCol_Test/20250326_CM068746.1_GCA_035084275.1_FROH.txt, sharks/HydCol_Test/20250326_CM068742.1_het.txt, sharks/HydCol_Test/20250326_CM068743.1_het.txt, sharks/HydCol_Test/20250326_CM068744.1_het.txt, sharks/HydCol_Test/20250326_CM068745.1_het.txt, sharks/HydCol_Test/20250326_CM068746.1_het.txt, sharks/HydCol_Test/20250326_HydCol_Test_per_chr_mean_heterozygosity.txt, sharks/HydCol_Test/20250326_HydCol_Test_whole_genome_mean_heterozygosity.txt, sharks/HydCol_Test/HydCol_Test_Het_Compiled.tsv, sharks/HydCol_Test/20250326_HydCol_Test_CM068742.1_Het_Map.svg, sharks/HydCol_Test/20250326_HydCol_Test_CM068743.1_Het_Map.svg, sharks/HydCol_Test/20250326_HydCol_Test_CM068744.1_Het_Map.svg, sharks/HydCol_Test/20250326_HydCol_Test_CM068745.1_Het_Map.svg, sharks/HydCol_Test/20250326_HydCol_Test_CM068746.1_Het_Map.svg, sharks/HydCol_Test/20250326_HydCol_Test_Het_Whole_Genome_Map.svg, sharks/HydCol_Test/20250326_HydCol_Test_BAM_Coverage.txt, sharks/HydCol_Test/dotplots/20250326_HydCol_Test_DotPlot.pdf
+    jobid: 0
+    reason: Input files updated by another job: sharks/HydCol_Test/dotplots/20250326_HydCol_Test_DotPlot.pdf, sharks/HydCol_Test/20250326_HydCol_Test_ROH_Map.pdf
+    resources: tmpdir=/tmp
+
+[Mon Mar 31 09:48:09 2025]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2025-03-31T094802.988823.snakemake.log

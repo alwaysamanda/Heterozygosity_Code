@@ -1,0 +1,42 @@
+host: login-p-1
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count
+----------  -------
+FILTER_PAF        1
+all               1
+total             2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 13:13:20 2025]
+localrule FILTER_PAF:
+    input: amphibians/EleCoq_TEST/EleCoq_TEST_FASTGA.paf
+    output: amphibians/EleCoq_TEST/20250325_CM069418.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069419.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069420.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069421.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069422.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069423.1_filtered.paf
+    jobid: 7
+    reason: Missing output files: amphibians/EleCoq_TEST/20250325_CM069419.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069420.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069422.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069423.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069418.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069421.1_filtered.paf; Code has changed since last execution
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 241:
+Command 'set -euo pipefail;  awk -v var='CM069418.1 CM069419.1 CM069420.1 CM069421.1 CM069422.1 CM069423.1' '{if ($6 == var && $12 >= 60) {print $0}}' amphibians/EleCoq_TEST/EleCoq_TEST_FASTGA.paf > amphibians/EleCoq_TEST/20250325_CM069418.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069419.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069420.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069421.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069422.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069423.1_filtered.paf' returned non-zero exit status 2.
+[Wed Mar 26 13:13:23 2025]
+Error in rule FILTER_PAF:
+    jobid: 7
+    input: amphibians/EleCoq_TEST/EleCoq_TEST_FASTGA.paf
+    output: amphibians/EleCoq_TEST/20250325_CM069418.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069419.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069420.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069421.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069422.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069423.1_filtered.paf
+    shell:
+        awk -v var='CM069418.1 CM069419.1 CM069420.1 CM069421.1 CM069422.1 CM069423.1' '{if ($6 == var && $12 >= 60) {print $0}}' amphibians/EleCoq_TEST/EleCoq_TEST_FASTGA.paf > amphibians/EleCoq_TEST/20250325_CM069418.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069419.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069420.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069421.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069422.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069423.1_filtered.paf
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job FILTER_PAF since they might be corrupted:
+amphibians/EleCoq_TEST/20250325_CM069418.1_filtered.paf
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-26T131320.000722.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

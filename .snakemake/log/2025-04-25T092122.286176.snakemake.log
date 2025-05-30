@@ -1,0 +1,42 @@
+host: login-p-4
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+CALC_HET_PER_CHR             51
+CALC_HET_WHOLE_GENOME         1
+COMPILE_HET                   1
+COMPILE_ROH                   1
+FILTER_PAF_CHR_ONLY           1
+FROH_PER_AUT_CHR             51
+GET_ALN_ONLY_PER_CHROM       51
+GET_VAR_ONLY_PER_CHROM       51
+GET_WHOLE_ALN                 1
+GET_WHOLE_VAR                 1
+PLOT_HET_PER_CHR             51
+PLOT_WHOLE_HET                1
+Plot_ROH                      1
+ROH_CALC                     51
+WHOLE_FROH                    1
+all                           1
+total                       316
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 09:21:22 2025]
+localrule FILTER_PAF_CHR_ONLY:
+    input: sharks/HetFra/HetFra_FASTGA.chain.fltr.srt.paf, sharks/chrom_lists/GCA_036365495.1_chroms.txt
+    output: sharks/HetFra/HetFra_FASTGA.chain.chr.fltr.srt.paf
+    jobid: 11
+    reason: Missing output files: sharks/HetFra/HetFra_FASTGA.chain.chr.fltr.srt.paf
+    resources: tmpdir=/tmp
+
+RuleException in rule FILTER_PAF_CHR_ONLY in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 205:
+ValueError: unexpected '{' in field name, when formatting the following:
+
+        awk 'BEGIN { while (getline < {input.ALL_CHROMS}) list[$0] } $6 in list' {input.PAF} > {output}
+        

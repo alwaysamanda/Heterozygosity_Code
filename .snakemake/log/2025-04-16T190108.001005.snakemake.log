@@ -1,0 +1,186 @@
+host: login-q-4
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 76
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+ALNCHAIN                   1
+ALNtoPAF                   1
+FASTGA                     1
+FAtoGDB_ALT                1
+FAtoGDB_REF                1
+FILTER_PAF_VARIANCE        1
+GET_WHOLE_ALN              1
+GET_WHOLE_VAR              1
+GIXmake_ALT                1
+GIXmake_REF                1
+SORT_PAF                   1
+all                        1
+total                     12
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Wed Apr 16 19:01:08 2025]
+localrule FAtoGDB_REF:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/reference/sharks/GCF_020745735.1.fa.gz
+    output: sharks/HemOce/temp/HemOce_GCF_020745735.1.1gdb
+    jobid: 7
+    reason: Missing output files: sharks/HemOce/temp/HemOce_GCF_020745735.1.1gdb
+    resources: tmpdir=/tmp
+
+
+[Wed Apr 16 19:01:08 2025]
+localrule FAtoGDB_ALT:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/alternate/sharks/GCA_020745765.1.fa.gz
+    output: sharks/HemOce/temp/HemOce_GCA_020745765.1.1gdb
+    jobid: 9
+    reason: Missing output files: sharks/HemOce/temp/HemOce_GCA_020745765.1.1gdb
+    resources: tmpdir=/tmp
+
+[Wed Apr 16 19:01:33 2025]
+Finished job 7.
+1 of 12 steps (8%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Apr 16 19:01:33 2025]
+localrule GIXmake_REF:
+    input: sharks/HemOce/temp/HemOce_GCF_020745735.1.1gdb
+    output: sharks/HemOce/temp/HemOce_GCF_020745735.1.gix
+    jobid: 6
+    reason: Missing output files: sharks/HemOce/temp/HemOce_GCF_020745735.1.gix; Input files updated by another job: sharks/HemOce/temp/HemOce_GCF_020745735.1.1gdb
+    resources: tmpdir=/tmp
+
+[Wed Apr 16 19:01:39 2025]
+Finished job 9.
+2 of 12 steps (17%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Apr 16 19:01:39 2025]
+localrule GIXmake_ALT:
+    input: sharks/HemOce/temp/HemOce_GCA_020745765.1.1gdb
+    output: sharks/HemOce/temp/HemOce_GCA_020745765.1.gix
+    jobid: 8
+    reason: Missing output files: sharks/HemOce/temp/HemOce_GCA_020745765.1.gix; Input files updated by another job: sharks/HemOce/temp/HemOce_GCA_020745765.1.1gdb
+    resources: tmpdir=/tmp
+
+[Wed Apr 16 19:11:03 2025]
+Finished job 6.
+3 of 12 steps (25%) done
+[Wed Apr 16 19:11:05 2025]
+Finished job 8.
+4 of 12 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Apr 16 19:11:05 2025]
+localrule FASTGA:
+    input: sharks/HemOce/temp/HemOce_GCF_020745735.1.gix, sharks/HemOce/temp/HemOce_GCA_020745765.1.gix
+    output: sharks/HemOce/HemOce_ALN.1aln
+    jobid: 5
+    reason: Missing output files: sharks/HemOce/HemOce_ALN.1aln; Input files updated by another job: sharks/HemOce/temp/HemOce_GCF_020745735.1.gix, sharks/HemOce/temp/HemOce_GCA_020745765.1.gix
+    resources: tmpdir=/tmp
+
+[Wed Apr 16 19:46:00 2025]
+Finished job 5.
+5 of 12 steps (42%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Apr 16 19:46:00 2025]
+localrule ALNCHAIN:
+    input: sharks/HemOce/HemOce_ALN.1aln
+    output: sharks/HemOce/HemOce_ALN.chain.1aln
+    jobid: 4
+    reason: Missing output files: sharks/HemOce/HemOce_ALN.chain.1aln; Input files updated by another job: sharks/HemOce/HemOce_ALN.1aln
+    resources: tmpdir=/tmp
+
+[Wed Apr 16 19:46:11 2025]
+Finished job 4.
+6 of 12 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Apr 16 19:46:11 2025]
+localrule ALNtoPAF:
+    input: sharks/HemOce/HemOce_ALN.chain.1aln
+    output: sharks/HemOce/HemOce_FASTGA.chain.paf
+    jobid: 3
+    reason: Missing output files: sharks/HemOce/HemOce_FASTGA.chain.paf; Input files updated by another job: sharks/HemOce/HemOce_ALN.chain.1aln
+    resources: tmpdir=/tmp
+
+[Wed Apr 16 19:47:30 2025]
+Finished job 3.
+7 of 12 steps (58%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Apr 16 19:47:30 2025]
+localrule FILTER_PAF_VARIANCE:
+    input: sharks/HemOce/HemOce_FASTGA.chain.paf
+    output: sharks/HemOce/HemOce_FASTGA.chain.fltr.paf
+    jobid: 2
+    reason: Missing output files: sharks/HemOce/HemOce_FASTGA.chain.fltr.paf; Input files updated by another job: sharks/HemOce/HemOce_FASTGA.chain.paf
+    resources: tmpdir=/tmp
+
+[Wed Apr 16 19:47:34 2025]
+Finished job 2.
+8 of 12 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Apr 16 19:47:34 2025]
+localrule SORT_PAF:
+    input: sharks/HemOce/HemOce_FASTGA.chain.fltr.paf
+    output: sharks/HemOce/HemOce_FASTGA.chain.fltr.srt.paf
+    jobid: 1
+    reason: Missing output files: sharks/HemOce/HemOce_FASTGA.chain.fltr.srt.paf; Input files updated by another job: sharks/HemOce/HemOce_FASTGA.chain.fltr.paf
+    resources: tmpdir=/tmp
+
+[Wed Apr 16 19:48:49 2025]
+Finished job 1.
+9 of 12 steps (75%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Wed Apr 16 19:48:49 2025]
+localrule GET_WHOLE_VAR:
+    input: sharks/HemOce/HemOce_FASTGA.chain.fltr.srt.paf
+    output: sharks/HemOce/temp/HemOce_Var_Only.txt
+    jobid: 10
+    reason: Missing output files: sharks/HemOce/temp/HemOce_Var_Only.txt; Input files updated by another job: sharks/HemOce/HemOce_FASTGA.chain.fltr.srt.paf
+    resources: tmpdir=/tmp
+
+
+[Wed Apr 16 19:48:49 2025]
+localrule GET_WHOLE_ALN:
+    input: sharks/HemOce/HemOce_FASTGA.chain.fltr.srt.paf
+    output: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    jobid: 11
+    reason: Missing output files: sharks/HemOce/temp/HemOce_Aln_Only.txt; Input files updated by another job: sharks/HemOce/HemOce_FASTGA.chain.fltr.srt.paf
+    resources: tmpdir=/tmp
+
+[Wed Apr 16 19:49:12 2025]
+Finished job 11.
+10 of 12 steps (83%) done
+[Wed Apr 16 19:49:12 2025]
+Finished job 10.
+11 of 12 steps (92%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Apr 16 19:49:12 2025]
+localrule all:
+    input: sharks/HemOce/HemOce_FASTGA.chain.fltr.srt.paf, sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/temp/HemOce_Aln_Only.txt
+    jobid: 0
+    reason: Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/temp/HemOce_Aln_Only.txt, sharks/HemOce/HemOce_FASTGA.chain.fltr.srt.paf
+    resources: tmpdir=/tmp
+
+[Wed Apr 16 19:49:12 2025]
+Finished job 0.
+12 of 12 steps (100%) done
+Complete log: .snakemake/log/2025-04-16T190108.001005.snakemake.log

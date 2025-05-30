@@ -1,0 +1,14 @@
+host: login-p-3
+Building DAG of jobs...
+AmbiguousRuleException:
+Rules CALC_HET_PER_CHR and CALC_HET_WHOLE_GENOME are ambiguous for the file sharks/HydCol_Test/20250326_HydCol_Test_whole_genome_mean_heterozygosity.txt.
+Consider starting rule output with a unique prefix, constrain your wildcards, or use the ruleorder directive.
+Wildcards:
+	CALC_HET_PER_CHR: CHR=HydCol_Test_whole_genome_mean,CLADE=sharks,SPEC_NAME=HydCol_Test,TODAY_DATE=20250326
+	CALC_HET_WHOLE_GENOME: CLADE=sharks,SPEC_NAME=HydCol_Test,TODAY_DATE=20250326
+Expected input files:
+	CALC_HET_PER_CHR: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+	CALC_HET_WHOLE_GENOME: sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+Expected output files:
+	CALC_HET_PER_CHR: sharks/HydCol_Test/20250326_HydCol_Test_whole_genome_mean_heterozygosity.txt
+	CALC_HET_WHOLE_GENOME: sharks/HydCol_Test/20250326_HydCol_Test_mean_heterozygosity_per_chr.txt sharks/HydCol_Test/20250326_HydCol_Test_whole_genome_mean_heterozygosity.txt

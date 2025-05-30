@@ -1,0 +1,616 @@
+host: login-q-1
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 76
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+CHROM_LENGTH_CALC             1
+COMPILE_ROH                   1
+GET_ALN_ONLY_PER_CHROM        1
+GET_VAR_ALN_FILE              1
+GET_VAR_ONLY_PER_CHROM        1
+GET_WHOLE_VAR                 1
+ROH_CALC                     40
+all                           1
+total                        47
+
+Select jobs to execute...
+Execute 3 jobs...
+
+[Fri Apr  4 09:56:35 2025]
+localrule GET_WHOLE_VAR:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/HydCol_Test2_Var_Only.txt
+    jobid: 48
+    reason: Missing output files: sharks/HydCol_Test2/temp/HydCol_Test2_Var_Only.txt
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:35 2025]
+localrule CHROM_LENGTH_CALC:
+    input: ../241117.UCSC-hubs-VGP-alignment/alignment/reference/sharks/GCA_035084275.1.fa.gz
+    output: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    jobid: 170
+    reason: Missing output files: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:35 2025]
+localrule GET_VAR_ALN_FILE:
+    input: sharks/HydCol_Test2/20250403_CM068756.1_filtered.paf
+    output: sharks/HydCol_Test2/temp/20250403_CM068756.1_Aln_Var.txt
+    jobid: 78
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068756.1
+    resources: tmpdir=/tmp
+
+[Fri Apr  4 09:56:42 2025]
+Finished job 170.
+1 of 47 steps (2%) done
+Select jobs to execute...
+Execute 39 jobs...
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068772.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068772.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068772.1_ROH_Results.txt
+    jobid: 200
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068772.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068772.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068765.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068765.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068765.1_ROH_Results.txt
+    jobid: 193
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068765.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068765.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068758.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068758.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068758.1_ROH_Results.txt
+    jobid: 186
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068758.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068758.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068752.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068752.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068752.1_ROH_Results.txt
+    jobid: 180
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068752.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068752.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068745.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068745.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068745.1_ROH_Results.txt
+    jobid: 173
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068745.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068745.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068780.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068780.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068780.1_ROH_Results.txt
+    jobid: 208
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068780.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068780.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068773.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068773.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068773.1_ROH_Results.txt
+    jobid: 201
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068773.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068773.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068766.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068766.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068766.1_ROH_Results.txt
+    jobid: 194
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068766.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068766.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068759.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068759.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068759.1_ROH_Results.txt
+    jobid: 187
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068759.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068759.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068753.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068753.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068753.1_ROH_Results.txt
+    jobid: 181
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068753.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068753.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068746.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068746.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068746.1_ROH_Results.txt
+    jobid: 174
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068746.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068746.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068781.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068781.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068781.1_ROH_Results.txt
+    jobid: 209
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068781.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068781.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068774.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068774.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068774.1_ROH_Results.txt
+    jobid: 202
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068774.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068774.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068767.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068767.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068767.1_ROH_Results.txt
+    jobid: 195
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068767.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068767.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068760.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068760.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068760.1_ROH_Results.txt
+    jobid: 188
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068760.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068760.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068754.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068754.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068754.1_ROH_Results.txt
+    jobid: 182
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068754.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068754.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068747.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068747.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068747.1_ROH_Results.txt
+    jobid: 175
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068747.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068747.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068775.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068775.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068775.1_ROH_Results.txt
+    jobid: 203
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068775.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068775.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068768.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068768.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068768.1_ROH_Results.txt
+    jobid: 196
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068768.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068768.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068761.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068761.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068761.1_ROH_Results.txt
+    jobid: 189
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068761.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068761.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068755.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068755.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068755.1_ROH_Results.txt
+    jobid: 183
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068755.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068755.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068748.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068748.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068748.1_ROH_Results.txt
+    jobid: 176
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068748.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068748.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068776.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068776.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068776.1_ROH_Results.txt
+    jobid: 204
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068776.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068776.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068769.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068769.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068769.1_ROH_Results.txt
+    jobid: 197
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068769.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068769.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068762.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068762.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068762.1_ROH_Results.txt
+    jobid: 190
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068762.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068762.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068749.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068749.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068749.1_ROH_Results.txt
+    jobid: 177
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068749.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068749.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068742.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068742.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068742.1_ROH_Results.txt
+    jobid: 169
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068742.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068742.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068777.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068777.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068777.1_ROH_Results.txt
+    jobid: 205
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068777.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068777.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068770.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068770.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068770.1_ROH_Results.txt
+    jobid: 198
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068770.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068770.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068763.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068763.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068763.1_ROH_Results.txt
+    jobid: 191
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068763.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068763.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068757.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068757.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068757.1_ROH_Results.txt
+    jobid: 185
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068757.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068757.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068750.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068750.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068750.1_ROH_Results.txt
+    jobid: 178
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068750.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068750.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068743.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068743.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068743.1_ROH_Results.txt
+    jobid: 171
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068743.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068743.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068778.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068778.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068778.1_ROH_Results.txt
+    jobid: 206
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068778.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068778.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068771.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068771.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068771.1_ROH_Results.txt
+    jobid: 199
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068771.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068771.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068764.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068764.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068764.1_ROH_Results.txt
+    jobid: 192
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068764.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068764.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068751.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068751.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068751.1_ROH_Results.txt
+    jobid: 179
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068751.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068751.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068744.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068744.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068744.1_ROH_Results.txt
+    jobid: 172
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068744.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068744.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 09:56:42 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test2/temp/20250403_CM068779.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068779.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068779.1_ROH_Results.txt
+    jobid: 207
+    reason: Missing output files: sharks/HydCol_Test2/20250403_CM068779.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068779.1
+    resources: tmpdir=/tmp
+
+[Fri Apr  4 09:56:43 2025]
+Finished job 201.
+2 of 47 steps (4%) done
+[Fri Apr  4 09:56:43 2025]
+Finished job 205.
+3 of 47 steps (6%) done
+[Fri Apr  4 09:56:43 2025]
+Finished job 202.
+4 of 47 steps (9%) done
+[Fri Apr  4 09:56:43 2025]
+Finished job 206.
+5 of 47 steps (11%) done
+[Fri Apr  4 09:56:43 2025]
+Finished job 203.
+6 of 47 steps (13%) done
+[Fri Apr  4 09:56:43 2025]
+Finished job 199.
+7 of 47 steps (15%) done
+[Fri Apr  4 09:56:43 2025]
+Finished job 207.
+8 of 47 steps (17%) done
+[Fri Apr  4 09:56:43 2025]
+Finished job 204.
+9 of 47 steps (19%) done
+[Fri Apr  4 09:56:43 2025]
+Finished job 193.
+10 of 47 steps (21%) done
+[Fri Apr  4 09:56:43 2025]
+Finished job 195.
+11 of 47 steps (23%) done
+[Fri Apr  4 09:56:43 2025]
+Finished job 196.
+12 of 47 steps (26%) done
+[Fri Apr  4 09:56:43 2025]
+Finished job 198.
+13 of 47 steps (28%) done
+[Fri Apr  4 09:56:43 2025]
+Finished job 188.
+14 of 47 steps (30%) done
+[Fri Apr  4 09:56:43 2025]
+Finished job 189.
+15 of 47 steps (32%) done
+[Fri Apr  4 09:56:43 2025]
+Finished job 187.
+16 of 47 steps (34%) done
+[Fri Apr  4 09:56:43 2025]
+Finished job 186.
+17 of 47 steps (36%) done
+[Fri Apr  4 09:56:43 2025]
+Finished job 197.
+18 of 47 steps (38%) done
+[Fri Apr  4 09:56:43 2025]
+Finished job 194.
+19 of 47 steps (40%) done
+[Fri Apr  4 09:56:43 2025]
+Finished job 183.
+20 of 47 steps (43%) done
+[Fri Apr  4 09:56:43 2025]
+Finished job 181.
+21 of 47 steps (45%) done
+[Fri Apr  4 09:56:43 2025]
+Finished job 185.
+22 of 47 steps (47%) done
+[Fri Apr  4 09:56:43 2025]
+Finished job 180.
+23 of 47 steps (49%) done
+[Fri Apr  4 09:56:43 2025]
+Finished job 179.
+24 of 47 steps (51%) done
+[Fri Apr  4 09:56:43 2025]
+Finished job 177.
+25 of 47 steps (53%) done
+[Fri Apr  4 09:56:44 2025]
+Finished job 176.
+26 of 47 steps (55%) done
+[Fri Apr  4 09:56:44 2025]
+Finished job 209.
+27 of 47 steps (57%) done
+[Fri Apr  4 09:56:44 2025]
+Finished job 174.
+28 of 47 steps (60%) done
+[Fri Apr  4 09:56:44 2025]
+Finished job 200.
+29 of 47 steps (62%) done
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 306:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM068763.1' '$1 == var {print $2; exit}' sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068763.1 "$CHROM_LENGTH" 20250403 GCA_035084275.1 sharks sharks/HydCol_Test2/temp/20250403_CM068763.1_Aln_Only.txt sharks/HydCol_Test2/temp/20250403_CM068763.1_Var_Only.txt HydCol_Test2' returned non-zero exit status 1.
+[Fri Apr  4 09:56:45 2025]
+Error in rule ROH_CALC:
+    jobid: 191
+    input: sharks/HydCol_Test2/temp/20250403_CM068763.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068763.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068763.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM068763.1' '$1 == var {print $2; exit}' sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068763.1 "$CHROM_LENGTH" 20250403 GCA_035084275.1 sharks sharks/HydCol_Test2/temp/20250403_CM068763.1_Aln_Only.txt sharks/HydCol_Test2/temp/20250403_CM068763.1_Var_Only.txt HydCol_Test2
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Apr  4 09:56:46 2025]
+Finished job 182.
+30 of 47 steps (64%) done
+[Fri Apr  4 09:56:46 2025]
+Finished job 172.
+31 of 47 steps (66%) done
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 306:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM068747.1' '$1 == var {print $2; exit}' sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068747.1 "$CHROM_LENGTH" 20250403 GCA_035084275.1 sharks sharks/HydCol_Test2/temp/20250403_CM068747.1_Aln_Only.txt sharks/HydCol_Test2/temp/20250403_CM068747.1_Var_Only.txt HydCol_Test2' returned non-zero exit status 1.
+[Fri Apr  4 09:56:46 2025]
+Error in rule ROH_CALC:
+    jobid: 175
+    input: sharks/HydCol_Test2/temp/20250403_CM068747.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068747.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068747.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM068747.1' '$1 == var {print $2; exit}' sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068747.1 "$CHROM_LENGTH" 20250403 GCA_035084275.1 sharks sharks/HydCol_Test2/temp/20250403_CM068747.1_Aln_Only.txt sharks/HydCol_Test2/temp/20250403_CM068747.1_Var_Only.txt HydCol_Test2
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Apr  4 09:56:46 2025]
+Finished job 173.
+32 of 47 steps (68%) done
+[Fri Apr  4 09:56:46 2025]
+Finished job 208.
+33 of 47 steps (70%) done
+[Fri Apr  4 09:56:47 2025]
+Finished job 171.
+34 of 47 steps (72%) done
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 306:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM068762.1' '$1 == var {print $2; exit}' sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068762.1 "$CHROM_LENGTH" 20250403 GCA_035084275.1 sharks sharks/HydCol_Test2/temp/20250403_CM068762.1_Aln_Only.txt sharks/HydCol_Test2/temp/20250403_CM068762.1_Var_Only.txt HydCol_Test2' returned non-zero exit status 1.
+[Fri Apr  4 09:56:48 2025]
+Error in rule ROH_CALC:
+    jobid: 190
+    input: sharks/HydCol_Test2/temp/20250403_CM068762.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068762.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068762.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM068762.1' '$1 == var {print $2; exit}' sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068762.1 "$CHROM_LENGTH" 20250403 GCA_035084275.1 sharks sharks/HydCol_Test2/temp/20250403_CM068762.1_Aln_Only.txt sharks/HydCol_Test2/temp/20250403_CM068762.1_Var_Only.txt HydCol_Test2
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Apr  4 09:56:50 2025]
+Finished job 178.
+35 of 47 steps (74%) done
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 306:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM068764.1' '$1 == var {print $2; exit}' sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068764.1 "$CHROM_LENGTH" 20250403 GCA_035084275.1 sharks sharks/HydCol_Test2/temp/20250403_CM068764.1_Aln_Only.txt sharks/HydCol_Test2/temp/20250403_CM068764.1_Var_Only.txt HydCol_Test2' returned non-zero exit status 1.
+[Fri Apr  4 09:56:51 2025]
+Error in rule ROH_CALC:
+    jobid: 192
+    input: sharks/HydCol_Test2/temp/20250403_CM068764.1_Aln_Only.txt, sharks/HydCol_Test2/temp/20250403_CM068764.1_Var_Only.txt, sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_CM068764.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM068764.1' '$1 == var {print $2; exit}' sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068764.1 "$CHROM_LENGTH" 20250403 GCA_035084275.1 sharks sharks/HydCol_Test2/temp/20250403_CM068764.1_Aln_Only.txt sharks/HydCol_Test2/temp/20250403_CM068764.1_Var_Only.txt HydCol_Test2
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Apr  4 09:56:53 2025]
+Finished job 169.
+36 of 47 steps (77%) done

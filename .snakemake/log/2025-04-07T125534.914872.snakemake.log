@@ -1,0 +1,161 @@
+host: login-q-3
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 76
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+ALNtoPAF                   1
+FASTGA                     1
+FAtoGDB_ALT                1
+FAtoGDB_REF                1
+FILTER_PAF_CHR_ONLY        1
+GIXmake_ALT                1
+GIXmake_REF                1
+PAF_CS                     1
+SORT_PAF                   1
+all                        1
+total                     10
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon Apr  7 12:55:36 2025]
+localrule FAtoGDB_REF:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/reference/sharks/GCA_036971175.1.fa.gz
+    output: sharks/NarBan_Test/temp/NarBan_Test_GCA_036971175.1.1gdb
+    jobid: 7
+    reason: Missing output files: sharks/NarBan_Test/temp/NarBan_Test_GCA_036971175.1.1gdb
+    resources: tmpdir=/tmp
+
+
+[Mon Apr  7 12:55:36 2025]
+localrule FAtoGDB_ALT:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/alternate/sharks/GCA_036971445.1.fa.gz
+    output: sharks/NarBan_Test/temp/NarBan_Test_GCA_036971445.1.1gdb
+    jobid: 9
+    reason: Missing output files: sharks/NarBan_Test/temp/NarBan_Test_GCA_036971445.1.1gdb
+    resources: tmpdir=/tmp
+
+[Mon Apr  7 12:55:55 2025]
+Finished job 7.
+1 of 10 steps (10%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr  7 12:55:55 2025]
+localrule GIXmake_REF:
+    input: sharks/NarBan_Test/temp/NarBan_Test_GCA_036971175.1.1gdb
+    output: sharks/NarBan_Test/temp/NarBan_Test_GCA_036971175.1.gix
+    jobid: 6
+    reason: Missing output files: sharks/NarBan_Test/temp/NarBan_Test_GCA_036971175.1.gix; Input files updated by another job: sharks/NarBan_Test/temp/NarBan_Test_GCA_036971175.1.1gdb
+    resources: tmpdir=/tmp
+
+[Mon Apr  7 12:55:56 2025]
+Finished job 9.
+2 of 10 steps (20%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr  7 12:55:56 2025]
+localrule GIXmake_ALT:
+    input: sharks/NarBan_Test/temp/NarBan_Test_GCA_036971445.1.1gdb
+    output: sharks/NarBan_Test/temp/NarBan_Test_GCA_036971445.1.gix
+    jobid: 8
+    reason: Missing output files: sharks/NarBan_Test/temp/NarBan_Test_GCA_036971445.1.gix; Input files updated by another job: sharks/NarBan_Test/temp/NarBan_Test_GCA_036971445.1.1gdb
+    resources: tmpdir=/tmp
+
+[Mon Apr  7 12:56:55 2025]
+Finished job 6.
+3 of 10 steps (30%) done
+[Mon Apr  7 12:57:02 2025]
+Finished job 8.
+4 of 10 steps (40%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr  7 12:57:02 2025]
+localrule FASTGA:
+    input: sharks/NarBan_Test/temp/NarBan_Test_GCA_036971175.1.gix, sharks/NarBan_Test/temp/NarBan_Test_GCA_036971445.1.gix
+    output: sharks/NarBan_Test/NarBan_Test_ALN.1aln
+    jobid: 5
+    reason: Missing output files: sharks/NarBan_Test/NarBan_Test_ALN.1aln; Input files updated by another job: sharks/NarBan_Test/temp/NarBan_Test_GCA_036971175.1.gix, sharks/NarBan_Test/temp/NarBan_Test_GCA_036971445.1.gix
+    resources: tmpdir=/tmp
+
+[Mon Apr  7 14:32:47 2025]
+Finished job 5.
+5 of 10 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr  7 14:32:47 2025]
+localrule ALNtoPAF:
+    input: sharks/NarBan_Test/NarBan_Test_ALN.1aln
+    output: sharks/NarBan_Test/NarBan_Test_FASTGA.paf
+    jobid: 4
+    reason: Missing output files: sharks/NarBan_Test/NarBan_Test_FASTGA.paf; Input files updated by another job: sharks/NarBan_Test/NarBan_Test_ALN.1aln
+    resources: tmpdir=/tmp
+
+[Mon Apr  7 14:41:32 2025]
+Finished job 4.
+6 of 10 steps (60%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr  7 14:41:32 2025]
+localrule SORT_PAF:
+    input: sharks/NarBan_Test/NarBan_Test_FASTGA.paf
+    output: sharks/NarBan_Test/NarBan_Test_FASTGA.srt.paf
+    jobid: 3
+    reason: Missing output files: sharks/NarBan_Test/NarBan_Test_FASTGA.srt.paf; Input files updated by another job: sharks/NarBan_Test/NarBan_Test_FASTGA.paf
+    resources: tmpdir=/tmp
+
+[Mon Apr  7 14:45:53 2025]
+Finished job 3.
+7 of 10 steps (70%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr  7 14:45:53 2025]
+localrule FILTER_PAF_CHR_ONLY:
+    input: sharks/NarBan_Test/NarBan_Test_FASTGA.srt.paf
+    output: sharks/NarBan_Test/NarBan_Test_FASTGA_Filtered_Chr_Only.paf
+    jobid: 2
+    reason: Missing output files: sharks/NarBan_Test/NarBan_Test_FASTGA_Filtered_Chr_Only.paf; Input files updated by another job: sharks/NarBan_Test/NarBan_Test_FASTGA.srt.paf
+    resources: tmpdir=/tmp
+
+[Mon Apr  7 14:46:27 2025]
+Finished job 2.
+8 of 10 steps (80%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr  7 14:46:27 2025]
+localrule PAF_CS:
+    input: sharks/NarBan_Test/NarBan_Test_FASTGA_Filtered_Chr_Only.paf
+    output: sharks/NarBan_Test/NarBan_Test_FASTGA_Updated.paf
+    jobid: 1
+    reason: Missing output files: sharks/NarBan_Test/NarBan_Test_FASTGA_Updated.paf; Input files updated by another job: sharks/NarBan_Test/NarBan_Test_FASTGA_Filtered_Chr_Only.paf
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 205:
+Command 'set -euo pipefail;  
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250403_cs_string_generator.py sharks/NarBan_Test/NarBan_Test_FASTGA_Filtered_Chr_Only.paf sharks NarBan_Test' returned non-zero exit status 1.
+[Mon Apr  7 15:06:13 2025]
+Error in rule PAF_CS:
+    jobid: 1
+    input: sharks/NarBan_Test/NarBan_Test_FASTGA_Filtered_Chr_Only.paf
+    output: sharks/NarBan_Test/NarBan_Test_FASTGA_Updated.paf
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250403_cs_string_generator.py sharks/NarBan_Test/NarBan_Test_FASTGA_Filtered_Chr_Only.paf sharks NarBan_Test
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-04-07T125534.914872.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

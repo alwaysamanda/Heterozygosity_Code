@@ -1,0 +1,52 @@
+host: cpu-p-200
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 21 01:24:34 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HydCol/MSMC/Output_multihet_filtered_95/CM068780.1_multihet.txt
+    output: sharks/HydCol/MSMC/Output_Multihet_Bootstrapped/10/CM068780.1_multihet.txt
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, BOOT=10, CHR=CM068780.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+host: cpu-p-200
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 21 01:24:36 2025]
+localrule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HydCol/MSMC/Output_multihet_filtered_95/CM068780.1_multihet.txt
+    output: sharks/HydCol/MSMC/Output_Multihet_Bootstrapped/10/CM068780.1_multihet.txt
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, BOOT=10, CHR=CM068780.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=/tmp, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+inmhs is sharks/HydCol/MSMC/Output_multihet_filtered_95/CM068780.1_multihet.txt
+outmhs is sharks/HydCol/MSMC/Output_Multihet_Bootstrapped/10/CM068780.1_multihet.txt
+start_block is 1000
+windowsize is 5e+05
+heterozygosity of sharks/HydCol/MSMC/Output_multihet_filtered_95/CM068780.1_multihet.txt = 0.001329464185956881
+seq_length=1051362
+num_windows=2
+heterozygosity of sharks/HydCol/MSMC/Output_Multihet_Bootstrapped/10/CM068780.1_multihet.txt = 0.0015681991918750683
+		written mhs file to sharks/HydCol/MSMC/Output_Multihet_Bootstrapped/10/CM068780.1_multihet.txt
+[Wed May 21 01:24:37 2025]
+Finished job 0.
+1 of 1 steps (100%) done
+Storing output in storage.
+[Wed May 21 01:24:37 2025]
+Finished job 0.
+1 of 1 steps (100%) done
+Storing output in storage.

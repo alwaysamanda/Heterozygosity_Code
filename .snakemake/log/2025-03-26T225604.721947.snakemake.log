@@ -1,0 +1,44 @@
+host: login-p-4
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count
+-----------  -------
+PAF_DOTPLOT        1
+all                1
+total              2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 22:56:04 2025]
+localrule PAF_DOTPLOT:
+    input: sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/HydCol_Test_FASTGA.paf
+    output: sharks/HydCol_Test/dotplots/20250326_HydCol_Test_CoveragePlot.pdf
+    jobid: 56
+    reason: Missing output files: sharks/HydCol_Test/dotplots/20250326_HydCol_Test_CoveragePlot.pdf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 518:
+Command 'set -euo pipefail;  
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250212_pafr_dotplot.R sharks HydCol_Test 20250326 sharks/HydCol_Test/dotplots sharks/chrom_lists/GCA_035084275.1_chroms.txt sharks/HydCol_Test/HydCol_Test_FASTGA.paf' returned non-zero exit status 1.
+[Wed Mar 26 22:58:17 2025]
+Error in rule PAF_DOTPLOT:
+    jobid: 56
+    input: sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/HydCol_Test_FASTGA.paf
+    output: sharks/HydCol_Test/dotplots/20250326_HydCol_Test_CoveragePlot.pdf
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250212_pafr_dotplot.R sharks HydCol_Test 20250326 sharks/HydCol_Test/dotplots sharks/chrom_lists/GCA_035084275.1_chroms.txt sharks/HydCol_Test/HydCol_Test_FASTGA.paf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-26T225604.721947.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

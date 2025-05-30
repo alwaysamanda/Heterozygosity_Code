@@ -1,0 +1,79 @@
+host: cpu-p-597
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=6926, disk_mib=6606
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue May 20 03:27:51 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HypSab/HypSab.bam
+    output: sharks/HypSab/HypSab_NC_082719.1.bam
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHR=NC_082719.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6926, disk_mib=6606, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+host: cpu-p-597
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=6926, disk_mib=6606
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue May 20 03:27:54 2025]
+localrule SEPARATE_BAM_BY_CHR:
+    input: sharks/HypSab/HypSab.bam
+    output: sharks/HypSab/HypSab_NC_082719.1.bam
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHR=NC_082719.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6926, disk_mib=6606, tmpdir=/tmp, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+[E::hts_idx_load3] Could not load local index file 'sharks/HypSab/HypSab.bam.bai' : No such file or directory
+samtools view: Random alignment retrieval only works for indexed SAM.gz, BAM or CRAM files.
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 565:
+Command 'set -euo pipefail;  
+        samtools index sharks/HypSab/HypSab.bam
+        samtools view -b sharks/HypSab/HypSab.bam NC_082719.1 > sharks/HypSab/HypSab_NC_082719.1.bam' returned non-zero exit status 1.
+[Tue May 20 03:28:18 2025]
+Error in rule SEPARATE_BAM_BY_CHR:
+    jobid: 0
+    input: sharks/HypSab/HypSab.bam
+    output: sharks/HypSab/HypSab_NC_082719.1.bam
+    shell:
+        
+        samtools index sharks/HypSab/HypSab.bam
+        samtools view -b sharks/HypSab/HypSab.bam NC_082719.1 > sharks/HypSab/HypSab_NC_082719.1.bam
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job SEPARATE_BAM_BY_CHR since they might be corrupted:
+sharks/HypSab/HypSab_NC_082719.1.bam
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.
+srun: error: cpu-p-597: task 0: Exited with exit code 1
+[Tue May 20 03:28:18 2025]
+Error in rule SEPARATE_BAM_BY_CHR:
+    jobid: 0
+    input: sharks/HypSab/HypSab.bam
+    output: sharks/HypSab/HypSab_NC_082719.1.bam
+    shell:
+        
+        samtools index sharks/HypSab/HypSab.bam
+        samtools view -b sharks/HypSab/HypSab.bam NC_082719.1 > sharks/HypSab/HypSab_NC_082719.1.bam
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.

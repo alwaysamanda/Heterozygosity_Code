@@ -1,0 +1,27 @@
+host: login-p-1
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count
+----------  -------
+FILTER_PAF        6
+all               1
+total             7
+
+Select jobs to execute...
+Execute 6 jobs...
+
+[Wed Mar 26 13:15:11 2025]
+localrule FILTER_PAF:
+    input: amphibians/EleCoq_TEST/EleCoq_TEST_FASTGA.paf
+    output: amphibians/EleCoq_TEST/20250325_CM069419.1_filtered.paf
+    jobid: 8
+    reason: Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: ['CM069418.1', 'CM069419.1', 'CM069420.1', 'CM069421.1', 'CM069422.1', 'CM069423.1'] now: <nothing exclusive> 
+    wildcards: CLADE=amphibians, SPEC_NAME=EleCoq_TEST, TODAY_DATE=20250325, CHR=CM069419.1
+    resources: tmpdir=/tmp
+
+RuleException in rule FILTER_PAF in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 219:
+AttributeError: 'Wildcards' object has no attribute 'CHROMS', when formatting the following:
+awk -v var='{wildcards.CHROMS}' '{{if ($6 == var && $12 >= 60) {{print $0}}}}' {input} > {output}

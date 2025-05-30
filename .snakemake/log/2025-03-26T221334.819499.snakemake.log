@@ -1,0 +1,36 @@
+host: login-p-4
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count
+---------------------  -------
+CALC_HET_WHOLE_GENOME        1
+all                          1
+total                        2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 22:13:35 2025]
+localrule CALC_HET_WHOLE_GENOME:
+    input: sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    output: sharks/HydCol_Test/20250326_HydCol_Test_per_chr_mean_heterozygosity.txt, sharks/HydCol_Test/20250326_HydCol_Test_whole_genome_mean_heterozygosity.txt
+    jobid: 46
+    reason: Missing output files: sharks/HydCol_Test/20250326_HydCol_Test_whole_genome_mean_heterozygosity.txt, sharks/HydCol_Test/20250326_HydCol_Test_per_chr_mean_heterozygosity.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326
+    resources: tmpdir=/tmp
+
+Waiting at most 5 seconds for missing files:
+sharks/HydCol_Test/20250326_HydCol_Test_per_chr_mean_heterozygosity.txt (missing locally)
+sharks/HydCol_Test/20250326_HydCol_Test_whole_genome_mean_heterozygosity.txt (missing locally)
+MissingOutputException in rule CALC_HET_WHOLE_GENOME in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 407:
+Job 46  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+sharks/HydCol_Test/20250326_HydCol_Test_per_chr_mean_heterozygosity.txt (missing locally, parent dir contents: GCA_035084275.1.mm2.srt.paf, 20250326_CM068744.1_het.txt, 20250326_CM068778.1_het.txt, 20250326_CM068776.1_het.txt, 20250326_CM068777.1_het.txt, 20250326_CM068774.1_het.txt, 20250326_CM068780.1_het.txt, 20250326_per_chr_mean_het.txt, 20250326_CM068764.1_het.txt, temp, 20250326_CM068746.1_filtered.paf, 20250326_CM068745.1_het.txt, 20250326_CM068759.1_het.txt, 20250326_whole_genome_mean_heterozygosity.txt, 20250326_CM068745.1_GCA_035084275.1_FROH.txt, 20250326_CM068744.1_GCA_035084275.1_FROH.txt, HydCol_Test_Het_Compiled.tsv, 20250326_CM068770.1_het.txt, 20250326_CM068743.1_GCA_035084275.1_FROH.txt, 20250326_CM068760.1_het.txt, 20250326_CM068761.1_het.txt, 20250326_CM068754.1_het.txt, 20250326_CM068772.1_het.txt, 20250326_CM068768.1_het.txt, 20250326_CM068781.1_het.txt, HydCol_Test_ROH_Results.csv, HydCol_Test_FASTGA.paf, 20250326_CM068747.1_het.txt, 20250326_CM068766.1_het.txt, 20250326_CM068742.1_filtered.paf, 20250326_CM068749.1_het.txt, 20250326_CM068746.1_ROH_Results.txt, 20250326_CM068742.1_GCA_035084275.1_FROH.txt, 20250326_CM068745.1_filtered.paf, HydCol_Test_Aln_Var.txt, 20250326_HydCol_Test_ROH_Map.pdf, 20250326_CM068755.1_het.txt, 20250326_CM068753.1_het.txt, 20250326_CM068743.1_filtered.paf, 20250326_CM068765.1_het.txt, 20250326_CM068769.1_het.txt, 20250326_CM068762.1_het.txt, 20250326_CM068748.1_het.txt, 20250326_CM068750.1_het.txt, 20250326_CM068743.1_het.txt, 20250326_CM068745.1_ROH_Results.txt, 20250326_CM068767.1_het.txt, 20250326_CM068775.1_het.txt, 20250326_CM068757.1_het.txt, 20250326_CM068743.1_ROH_Results.txt, 20250326_CM068752.1_het.txt, 20250326_CM068742.1_ROH_Results.txt, 20250326_CM068779.1_het.txt, 20250326_CM068746.1_het.txt, 20250326_CM068771.1_het.txt, 20250326_CM068744.1_ROH_Results.txt, 20250326_CM068744.1_filtered.paf, 20250326_CM068758.1_het.txt, 20250326_CM068742.1_het.txt, Reference_HydCol_Test_Chroms_Lengths.txt, 20250326_CM068746.1_GCA_035084275.1_FROH.txt, HydCol_Test_ALN.1aln, 20250326_CM068763.1_het.txt, 20250326_CM068756.1_het.txt, 20250326_CM068751.1_het.txt, 20250326_CM068773.1_het.txt)
+sharks/HydCol_Test/20250326_HydCol_Test_whole_genome_mean_heterozygosity.txt (missing locally, parent dir contents: GCA_035084275.1.mm2.srt.paf, 20250326_CM068744.1_het.txt, 20250326_CM068778.1_het.txt, 20250326_CM068776.1_het.txt, 20250326_CM068777.1_het.txt, 20250326_CM068774.1_het.txt, 20250326_CM068780.1_het.txt, 20250326_per_chr_mean_het.txt, 20250326_CM068764.1_het.txt, temp, 20250326_CM068746.1_filtered.paf, 20250326_CM068745.1_het.txt, 20250326_CM068759.1_het.txt, 20250326_whole_genome_mean_heterozygosity.txt, 20250326_CM068745.1_GCA_035084275.1_FROH.txt, 20250326_CM068744.1_GCA_035084275.1_FROH.txt, HydCol_Test_Het_Compiled.tsv, 20250326_CM068770.1_het.txt, 20250326_CM068743.1_GCA_035084275.1_FROH.txt, 20250326_CM068760.1_het.txt, 20250326_CM068761.1_het.txt, 20250326_CM068754.1_het.txt, 20250326_CM068772.1_het.txt, 20250326_CM068768.1_het.txt, 20250326_CM068781.1_het.txt, HydCol_Test_ROH_Results.csv, HydCol_Test_FASTGA.paf, 20250326_CM068747.1_het.txt, 20250326_CM068766.1_het.txt, 20250326_CM068742.1_filtered.paf, 20250326_CM068749.1_het.txt, 20250326_CM068746.1_ROH_Results.txt, 20250326_CM068742.1_GCA_035084275.1_FROH.txt, 20250326_CM068745.1_filtered.paf, HydCol_Test_Aln_Var.txt, 20250326_HydCol_Test_ROH_Map.pdf, 20250326_CM068755.1_het.txt, 20250326_CM068753.1_het.txt, 20250326_CM068743.1_filtered.paf, 20250326_CM068765.1_het.txt, 20250326_CM068769.1_het.txt, 20250326_CM068762.1_het.txt, 20250326_CM068748.1_het.txt, 20250326_CM068750.1_het.txt, 20250326_CM068743.1_het.txt, 20250326_CM068745.1_ROH_Results.txt, 20250326_CM068767.1_het.txt, 20250326_CM068775.1_het.txt, 20250326_CM068757.1_het.txt, 20250326_CM068743.1_ROH_Results.txt, 20250326_CM068752.1_het.txt, 20250326_CM068742.1_ROH_Results.txt, 20250326_CM068779.1_het.txt, 20250326_CM068746.1_het.txt, 20250326_CM068771.1_het.txt, 20250326_CM068744.1_ROH_Results.txt, 20250326_CM068744.1_filtered.paf, 20250326_CM068758.1_het.txt, 20250326_CM068742.1_het.txt, Reference_HydCol_Test_Chroms_Lengths.txt, 20250326_CM068746.1_GCA_035084275.1_FROH.txt, HydCol_Test_ALN.1aln, 20250326_CM068763.1_het.txt, 20250326_CM068756.1_het.txt, 20250326_CM068751.1_het.txt, 20250326_CM068773.1_het.txt)
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-26T221334.819499.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

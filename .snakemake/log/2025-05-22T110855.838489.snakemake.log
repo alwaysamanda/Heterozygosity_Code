@@ -1,0 +1,55 @@
+host: login-q-1
+Building DAG of jobs...
+SLURM run ID: d33569ad-1b46-435a-8d5b-9cb955b06283
+Using shell: /usr/bin/bash
+Provided remote nodes: 50
+Job stats:
+job                    count
+-------------------  -------
+BAM_CALLER_BED            45
+BGZIP_VCF                 45
+CALL_PLOIDY               45
+INDEL_MASKER              45
+INDEX_BAM_FILE            45
+MAKE_BAM                   1
+PILEUP_VARIANTS           46
+REMOVE_INDELS             45
+RESTRUCTURE               45
+SEPARATE_BAM_BY_CHR       46
+TABIX                     45
+all                        1
+total                    454
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu May 22 11:08:59 2025]
+rule MAKE_BAM:
+    input: sharks/HepPer/HepPer.sam
+    output: sharks/HepPer/HepPer.bam
+    jobid: 294
+    reason: Updated input files: sharks/HepPer/HepPer.sam
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=12035, disk_mib=11478, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake, runtime=120
+
+Job 294 has been submitted with SLURM jobid 9737501 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAKE_BAM/sharks_HepPer/9737501.log).
+[Thu May 22 11:09:39 2025]
+Error in rule MAKE_BAM:
+    message: SLURM-job '9737501' failed, SLURM status is: 'CANCELLED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 294
+    input: sharks/HepPer/HepPer.sam
+    output: sharks/HepPer/HepPer.bam
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAKE_BAM/sharks_HepPer/9737501.log (check log file(s) for error details)
+    shell:
+        
+        samtools sort sharks/HepPer/HepPer.sam -o sharks/HepPer/HepPer.bam
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9737501
+
+Removing output files of failed job MAKE_BAM since they might be corrupted:
+sharks/HepPer/HepPer.bam
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-05-22T110855.838489.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -1,0 +1,119 @@
+host: login-p-2
+Building DAG of jobs...
+SLURM run ID: 9381931f-7796-444d-a8b6-b283e7dd4dc7
+Using shell: /usr/bin/bash
+Provided remote nodes: 10
+Job stats:
+job                       count
+----------------------  -------
+ALNCHAIN                      1
+ALNtoPAF                      1
+CALC_HET_PER_CHR             35
+CALC_HET_WHOLE_GENOME         1
+CHROM_LENGTH_CALC             1
+COMPILE_HET                   1
+COMPILE_ROH                   1
+FASTGA                        1
+FAtoGDB_ALT                   1
+FAtoGDB_REF                   1
+FILTER_PAF_CHR_ONLY           1
+FILTER_PAF_VARIANCE           1
+FROH_PER_AUT_CHR             35
+GET_ALN_ONLY_PER_CHROM       35
+GET_VAR_ONLY_PER_CHROM       35
+GET_WHOLE_ALN                 1
+GET_WHOLE_VAR                 1
+GIXmake_ALT                   1
+GIXmake_REF                   1
+PLOT_HET_PER_CHR             35
+PLOT_WHOLE_HET                1
+Plot_ROH                      1
+ROH_CALC                     35
+SORT_PAF                      1
+WHOLE_FROH                    1
+all                           1
+total                       230
+
+Select jobs to execute...
+Execute 3 jobs...
+
+[Fri Apr 25 16:19:10 2025]
+rule CHROM_LENGTH_CALC:
+    input: ../241117.UCSC-hubs-VGP-alignment/alignment/reference/sharks/GCF_030144855.1.fa.gz, sharks/chrom_lists/GCF_030144855.1_chroms.txt
+    output: sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt
+    jobid: 84
+    reason: Missing output files: sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=2330, disk_mib=2223, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake, runtime=120
+
+Job 84 has been submitted with SLURM jobid 8745231 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CHROM_LENGTH_CALC/8745231.log).
+
+[Fri Apr 25 16:19:10 2025]
+rule FAtoGDB_ALT:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/alternate/sharks/GCA_030144785.1.fa.gz
+    output: sharks/HypSab/temp/HypSab_GCA_030144785.1.1gdb
+    jobid: 9
+    reason: Missing output files: sharks/HypSab/temp/HypSab_GCA_030144785.1.1gdb
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=2136, disk_mib=2038, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake, runtime=120
+
+Job 9 has been submitted with SLURM jobid 8745232 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FAtoGDB_ALT/8745232.log).
+
+[Fri Apr 25 16:19:11 2025]
+rule FAtoGDB_REF:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/reference/sharks/GCF_030144855.1.fa.gz
+    output: sharks/HypSab/temp/HypSab_GCF_030144855.1.1gdb
+    jobid: 7
+    reason: Missing output files: sharks/HypSab/temp/HypSab_GCF_030144855.1.1gdb
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=2330, disk_mib=2223, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake, runtime=120
+
+Job 7 has been submitted with SLURM jobid 8745233 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FAtoGDB_REF/8745233.log).
+[Fri Apr 25 16:30:42 2025]
+Finished job 84.
+1 of 230 steps (0.4%) done
+[Fri Apr 25 16:30:42 2025]
+Finished job 9.
+2 of 230 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 16:30:42 2025]
+rule GIXmake_ALT:
+    input: sharks/HypSab/temp/HypSab_GCA_030144785.1.1gdb
+    output: sharks/HypSab/temp/HypSab_GCA_030144785.1.gix
+    jobid: 8
+    reason: Missing output files: sharks/HypSab/temp/HypSab_GCA_030144785.1.gix; Input files updated by another job: sharks/HypSab/temp/HypSab_GCA_030144785.1.1gdb
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake, runtime=120
+
+Job 8 has been submitted with SLURM jobid 8745527 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GIXmake_ALT/8745527.log).
+[Fri Apr 25 16:30:43 2025]
+Finished job 7.
+3 of 230 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 16:30:43 2025]
+rule GIXmake_REF:
+    input: sharks/HypSab/temp/HypSab_GCF_030144855.1.1gdb
+    output: sharks/HypSab/temp/HypSab_GCF_030144855.1.gix
+    jobid: 6
+    reason: Missing output files: sharks/HypSab/temp/HypSab_GCF_030144855.1.gix; Input files updated by another job: sharks/HypSab/temp/HypSab_GCF_030144855.1.1gdb
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake, runtime=120
+
+Job 6 has been submitted with SLURM jobid 8745533 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GIXmake_REF/8745533.log).
+[Fri Apr 25 16:44:54 2025]
+Finished job 8.
+4 of 230 steps (2%) done
+[Fri Apr 25 16:45:34 2025]
+Finished job 6.
+5 of 230 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 16:45:34 2025]
+rule FASTGA:
+    input: sharks/HypSab/temp/HypSab_GCF_030144855.1.gix, sharks/HypSab/temp/HypSab_GCA_030144785.1.gix
+    output: sharks/HypSab/HypSab_ALN.1aln
+    jobid: 5
+    reason: Missing output files: sharks/HypSab/HypSab_ALN.1aln; Input files updated by another job: sharks/HypSab/temp/HypSab_GCA_030144785.1.gix, sharks/HypSab/temp/HypSab_GCF_030144855.1.gix
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake, runtime=720
+
+Job 5 has been submitted with SLURM jobid 8746244 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FASTGA/8746244.log).

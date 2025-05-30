@@ -1,0 +1,94 @@
+host: login-q-2
+Building DAG of jobs...
+SLURM run ID: 880ff3ae-b579-4be8-90fa-0543ac87180f
+Using shell: /usr/bin/bash
+Provided remote nodes: 25
+Job stats:
+job                            count
+---------------------------  -------
+BAM_CALLER_BED                     1
+BGZIP_VCF                          1
+BOOTSTRAPPING_MULTIHET_FILE       30
+CALC_HET_PER_CHR                   3
+CALC_HET_WHOLE_GENOME              1
+CALL_PLOIDY                        1
+COMPILE_HET                        1
+EXTRACT_CHR_FASTA                 55
+GENERATE_MASK                      1
+GENERATE_MULTIHETSEP               1
+INDEL_MASKER                       1
+MAIN_MULTIHETSEP                   1
+PILEUP_VARIANTS                   55
+PLOT_HET_PER_CHR                   1
+PLOT_WHOLE_HET                     1
+REMOVE_INDELS                      1
+RESTRUCTURE                        1
+SEPARATE_BAM_BY_CHR               16
+UNZIP_REFERENCE                    1
+all                                1
+total                            174
+
+Select jobs to execute...
+Execute 20 jobs...
+
+[Mon May 19 14:21:53 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_c- NC_083401.1 - NC_083402.1 - NC_083403.1 - NC_083404.1 - NC_083405.1 - NC_083406.1 - NC_083407.1 - NC_083408.1 - NC_083409.1 - NC_083410.1 - NC_083411.1 - NC_083412.1 - NC_083413.1 - NC_083414.1 - NC_083415.1 - NC_083416.1 - NC_083417.1 - NC_083418.1 - NC_083419.1 - NC_083420.1 - NC_083421.1 - NC_083422.1 - NC_083423.1 - NC_083424.1 - NC_083425.1 - NC_083426.1 - NC_083427.1 - NC_083428.1 - NC_083429.1 - NC_083430.1 - NC_083431.1 - NC_083432.1 - NC_083433.1 - NC_083434.1 - NC_083435.1 - NC_083436.1 - NC_083437.1 - NC_083438.1 - NC_083439.1 - NC_083440.1 - NC_083441.1 - NC_083442.1 - NC_083443.1 - NC_083444.1 - NC_083445.1 - NC_083446.1 - NC_083447.1 - NC_083448.1 - NC_083449.1 - NC_083450.1 - NC_083451.1 - NC_083452.1_het.txt
+    jobid: 230
+    reason: Missing output files: sharks/HemOce/20250428_c- NC_083401.1 - NC_083402.1 - NC_083403.1 - NC_083404.1 - NC_083405.1 - NC_083406.1 - NC_083407.1 - NC_083408.1 - NC_083409.1 - NC_083410.1 - NC_083411.1 - NC_083412.1 - NC_083413.1 - NC_083414.1 - NC_083415.1 - NC_083416.1 - NC_083417.1 - NC_083418.1 - NC_083419.1 - NC_083420.1 - NC_083421.1 - NC_083422.1 - NC_083423.1 - NC_083424.1 - NC_083425.1 - NC_083426.1 - NC_083427.1 - NC_083428.1 - NC_083429.1 - NC_083430.1 - NC_083431.1 - NC_083432.1 - NC_083433.1 - NC_083434.1 - NC_083435.1 - NC_083436.1 - NC_083437.1 - NC_083438.1 - NC_083439.1 - NC_083440.1 - NC_083441.1 - NC_083442.1 - NC_083443.1 - NC_083444.1 - NC_083445.1 - NC_083446.1 - NC_083447.1 - NC_083448.1 - NC_083449.1 - NC_083450.1 - NC_083451.1 - NC_083452.1_het.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=c- NC_083401.1 - NC_083402.1 - NC_083403.1 - NC_083404.1 - NC_083405.1 - NC_083406.1 - NC_083407.1 - NC_083408.1 - NC_083409.1 - NC_083410.1 - NC_083411.1 - NC_083412.1 - NC_083413.1 - NC_083414.1 - NC_083415.1 - NC_083416.1 - NC_083417.1 - NC_083418.1 - NC_083419.1 - NC_083420.1 - NC_083421.1 - NC_083422.1 - NC_083423.1 - NC_083424.1 - NC_083425.1 - NC_083426.1 - NC_083427.1 - NC_083428.1 - NC_083429.1 - NC_083430.1 - NC_083431.1 - NC_083432.1 - NC_083433.1 - NC_083434.1 - NC_083435.1 - NC_083436.1 - NC_083437.1 - NC_083438.1 - NC_083439.1 - NC_083440.1 - NC_083441.1 - NC_083442.1 - NC_083443.1 - NC_083444.1 - NC_083445.1 - NC_083446.1 - NC_083447.1 - NC_083448.1 - NC_083449.1 - NC_083450.1 - NC_083451.1 - NC_083452.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Traceback (most recent call last):
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+
+OSError: [Errno 36] File name too long: '/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_c- NC_083401.1 - NC_083402.1 - NC_083403.1 - NC_083404.1 - NC_083405.1 - NC_083406.1 - NC_083407.1 - NC_083408.1 - NC_083409.1 - NC_083410.1 - NC_083411.1 - NC_083412.1 - NC_083413.1 - NC_083414.1 - NC_083415.1 - NC_083416.1 - NC_083417.1 - NC_083418.1 - NC_083419.1 - NC_083420.1 - NC_083421.1 - NC_083422.1 - NC_083423.1 - NC_083424.1 - NC_083425.1 - NC_083426.1 - NC_083427.1 - NC_083428.1 - NC_083429.1 - NC_083430.1 - NC_083431.1 - NC_083432.1 - NC_083433.1 - NC_083434.1 - NC_083435.1 - NC_083436.1 - NC_083437.1 - NC_083438.1 - NC_083439.1 - NC_083440.1 - NC_083441.1 - NC_083442.1 - NC_083443.1 - NC_083444.1 - NC_083445.1 - NC_083446.1 - NC_083447.1 - NC_083448.1 - NC_083449.1 - NC_083450.1 - NC_083451.1 - NC_083452.1'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/cli.py", line 2164, in args_to_api
+    dag_api.execute_workflow(
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/api.py", line 597, in execute_workflow
+    workflow.execute(
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/workflow.py", line 1283, in execute
+    raise e
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/workflow.py", line 1279, in execute
+    success = self.scheduler.schedule()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/scheduler.py", line 319, in schedule
+    self.run(runjobs)
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/scheduler.py", line 419, in run
+    executor.run_jobs(jobs)
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake_interface_executor_plugins/executors/base.py", line 72, in run_jobs
+    self.run_job(job)
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake_executor_plugin_slurm/__init__.py", line 213, in run_job
+    slurm_logfile.parent.mkdir(parents=True, exist_ok=True)
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/pathlib.py", line 1125, in mkdir
+    if not exist_ok or not self.is_dir():
+                           ^^^^^^^^^^^^^
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/pathlib.py", line 1250, in is_dir
+    return S_ISDIR(self.stat().st_mode)
+                   ^^^^^^^^^^^
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/pathlib.py", line 1013, in stat
+    return os.stat(self, follow_symlinks=follow_symlinks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+OSError: [Errno 36] File name too long: '/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_c- NC_083401.1 - NC_083402.1 - NC_083403.1 - NC_083404.1 - NC_083405.1 - NC_083406.1 - NC_083407.1 - NC_083408.1 - NC_083409.1 - NC_083410.1 - NC_083411.1 - NC_083412.1 - NC_083413.1 - NC_083414.1 - NC_083415.1 - NC_083416.1 - NC_083417.1 - NC_083418.1 - NC_083419.1 - NC_083420.1 - NC_083421.1 - NC_083422.1 - NC_083423.1 - NC_083424.1 - NC_083425.1 - NC_083426.1 - NC_083427.1 - NC_083428.1 - NC_083429.1 - NC_083430.1 - NC_083431.1 - NC_083432.1 - NC_083433.1 - NC_083434.1 - NC_083435.1 - NC_083436.1 - NC_083437.1 - NC_083438.1 - NC_083439.1 - NC_083440.1 - NC_083441.1 - NC_083442.1 - NC_083443.1 - NC_083444.1 - NC_083445.1 - NC_083446.1 - NC_083447.1 - NC_083448.1 - NC_083449.1 - NC_083450.1 - NC_083451.1 - NC_083452.1'
+

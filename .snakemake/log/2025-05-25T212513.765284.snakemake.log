@@ -1,0 +1,2747 @@
+host: login-p-4
+Building DAG of jobs...
+SLURM run ID: bdfaa0bc-1aee-4b49-9b8e-427be6111ea4
+Using shell: /usr/bin/bash
+Provided remote nodes: 30
+Job stats:
+job                            count
+---------------------------  -------
+BAM_CALLER_BED                    50
+BGZIP_VCF                         50
+BOOTSTRAPPING_MULTIHET_FILE     1500
+CALL_PLOIDY                       50
+GENERATE_MASK                     50
+GENERATE_MULTIHETSEP              50
+INDEL_MASKER                      29
+INDEX_BAM_FILE                    29
+MAIN_MULTIHETSEP                  50
+PILEUP_VARIANTS                   29
+PLOT_MSMC                          1
+REMOVE_INDELS                     50
+RESTRUCTURE                       50
+RUN_PRIMARY_MSMC                   1
+SEPARATE_BAM_BY_CHR               29
+TABIX                             50
+all                                1
+total                           2069
+
+Select jobs to execute...
+Execute 30 jobs...
+
+[Sun May 25 21:25:46 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM071010.1.bam
+    jobid: 374
+    reason: Missing output files: sharks/HetFra/HetFra_CM071010.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071010.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 374 has been submitted with SLURM jobid 9941740 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM071010.1/9941740.log).
+
+[Sun May 25 21:25:48 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM070996.1.bam
+    jobid: 360
+    reason: Missing output files: sharks/HetFra/HetFra_CM070996.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070996.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 360 has been submitted with SLURM jobid 9941741 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM070996.1/9941741.log).
+
+[Sun May 25 21:25:48 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM070989.1.bam
+    jobid: 353
+    reason: Missing output files: sharks/HetFra/HetFra_CM070989.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070989.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 353 has been submitted with SLURM jobid 9941742 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM070989.1/9941742.log).
+
+[Sun May 25 21:25:48 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070974.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070974.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070974.1_only_snps.vcf.bgz
+    jobid: 514
+    reason: Missing output files: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070974.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070974.1_only_snps.vcf.bgz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070974.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 514 has been submitted with SLURM jobid 9941743 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070974.1/9941743.log).
+
+[Sun May 25 21:25:50 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM070982.1.bam
+    jobid: 346
+    reason: Missing output files: sharks/HetFra/HetFra_CM070982.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070982.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 346 has been submitted with SLURM jobid 9941744 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM070982.1/9941744.log).
+
+[Sun May 25 21:25:51 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM070975.1.bam
+    jobid: 339
+    reason: Missing output files: sharks/HetFra/HetFra_CM070975.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070975.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 339 has been submitted with SLURM jobid 9941745 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM070975.1/9941745.log).
+
+[Sun May 25 21:25:51 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM070969.1.bam
+    jobid: 333
+    reason: Missing output files: sharks/HetFra/HetFra_CM070969.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070969.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 333 has been submitted with SLURM jobid 9941746 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM070969.1/9941746.log).
+
+[Sun May 25 21:25:53 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070968.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070968.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070968.1_only_snps.vcf.bgz
+    jobid: 496
+    reason: Missing output files: sharks/HetFra/temp/CM070968.1_only_snps.vcf.bgz, sharks/HetFra/MSMC/Output_bam_caller_BED/CM070968.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070968.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 496 has been submitted with SLURM jobid 9941747 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070968.1/9941747.log).
+
+[Sun May 25 21:25:53 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM071011.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071011.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071011.1_only_snps.vcf.bgz
+    jobid: 625
+    reason: Missing output files: sharks/HetFra/temp/CM071011.1_only_snps.vcf.bgz, sharks/HetFra/MSMC/Output_bam_caller_BED/CM071011.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071011.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 625 has been submitted with SLURM jobid 9941748 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM071011.1/9941748.log).
+
+[Sun May 25 21:25:53 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM071004.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071004.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071004.1_only_snps.vcf.bgz
+    jobid: 604
+    reason: Missing output files: sharks/HetFra/temp/CM071004.1_only_snps.vcf.bgz, sharks/HetFra/MSMC/Output_bam_caller_BED/CM071004.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071004.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 604 has been submitted with SLURM jobid 9941749 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM071004.1/9941749.log).
+
+[Sun May 25 21:25:55 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070998.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070998.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070998.1_only_snps.vcf.bgz
+    jobid: 586
+    reason: Missing output files: sharks/HetFra/temp/CM070998.1_only_snps.vcf.bgz, sharks/HetFra/MSMC/Output_bam_caller_BED/CM070998.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070998.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 586 has been submitted with SLURM jobid 9941750 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070998.1/9941750.log).
+
+[Sun May 25 21:25:56 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070992.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070992.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070992.1_only_snps.vcf.bgz
+    jobid: 568
+    reason: Missing output files: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070992.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070992.1_only_snps.vcf.bgz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070992.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 568 has been submitted with SLURM jobid 9941751 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070992.1/9941751.log).
+
+[Sun May 25 21:25:56 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM071007.1.bam
+    jobid: 371
+    reason: Missing output files: sharks/HetFra/HetFra_CM071007.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071007.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 371 has been submitted with SLURM jobid 9941752 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM071007.1/9941752.log).
+
+[Sun May 25 21:25:58 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM071000.1.bam
+    jobid: 364
+    reason: Missing output files: sharks/HetFra/HetFra_CM071000.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071000.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 364 has been submitted with SLURM jobid 9941753 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM071000.1/9941753.log).
+
+[Sun May 25 21:25:58 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM070993.1.bam
+    jobid: 357
+    reason: Missing output files: sharks/HetFra/HetFra_CM070993.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070993.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 357 has been submitted with SLURM jobid 9941754 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM070993.1/9941754.log).
+
+[Sun May 25 21:25:58 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM070986.1.bam
+    jobid: 350
+    reason: Missing output files: sharks/HetFra/HetFra_CM070986.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070986.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 350 has been submitted with SLURM jobid 9941755 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM070986.1/9941755.log).
+
+[Sun May 25 21:26:01 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070971.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070971.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070971.1_only_snps.vcf.bgz
+    jobid: 505
+    reason: Missing output files: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070971.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070971.1_only_snps.vcf.bgz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070971.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 505 has been submitted with SLURM jobid 9941756 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070971.1/9941756.log).
+
+[Sun May 25 21:26:01 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM070979.1.bam
+    jobid: 343
+    reason: Missing output files: sharks/HetFra/HetFra_CM070979.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070979.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 343 has been submitted with SLURM jobid 9941757 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM070979.1/9941757.log).
+
+[Sun May 25 21:26:03 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070964.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070964.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070964.1_only_snps.vcf.bgz
+    jobid: 484
+    reason: Missing output files: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070964.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070964.1_only_snps.vcf.bgz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070964.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 484 has been submitted with SLURM jobid 9941758 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070964.1/9941758.log).
+
+[Sun May 25 21:26:03 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM070973.1.bam
+    jobid: 337
+    reason: Missing output files: sharks/HetFra/HetFra_CM070973.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070973.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 337 has been submitted with SLURM jobid 9941759 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM070973.1/9941759.log).
+
+[Sun May 25 21:26:03 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM070966.1.bam
+    jobid: 330
+    reason: Missing output files: sharks/HetFra/HetFra_CM070966.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070966.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 330 has been submitted with SLURM jobid 9941760 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM070966.1/9941760.log).
+
+[Sun May 25 21:26:04 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM071008.1.bam
+    jobid: 372
+    reason: Missing output files: sharks/HetFra/HetFra_CM071008.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071008.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 372 has been submitted with SLURM jobid 9941761 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM071008.1/9941761.log).
+
+[Sun May 25 21:26:06 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM071001.1.bam
+    jobid: 365
+    reason: Missing output files: sharks/HetFra/HetFra_CM071001.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071001.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 365 has been submitted with SLURM jobid 9941762 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM071001.1/9941762.log).
+
+[Sun May 25 21:26:06 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM070994.1.bam
+    jobid: 358
+    reason: Missing output files: sharks/HetFra/HetFra_CM070994.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070994.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 358 has been submitted with SLURM jobid 9941763 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM070994.1/9941763.log).
+
+[Sun May 25 21:26:06 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM070987.1.bam
+    jobid: 351
+    reason: Missing output files: sharks/HetFra/HetFra_CM070987.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070987.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 351 has been submitted with SLURM jobid 9941764 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM070987.1/9941764.log).
+
+[Sun May 25 21:26:09 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM070980.1.bam
+    jobid: 344
+    reason: Missing output files: sharks/HetFra/HetFra_CM070980.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070980.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 344 has been submitted with SLURM jobid 9941765 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM070980.1/9941765.log).
+
+[Sun May 25 21:26:09 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM070967.1.bam
+    jobid: 331
+    reason: Missing output files: sharks/HetFra/HetFra_CM070967.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070967.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 331 has been submitted with SLURM jobid 9941766 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM070967.1/9941766.log).
+
+[Sun May 25 21:26:11 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM071009.1.bam
+    jobid: 373
+    reason: Missing output files: sharks/HetFra/HetFra_CM071009.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071009.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 373 has been submitted with SLURM jobid 9941767 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM071009.1/9941767.log).
+
+[Sun May 25 21:26:11 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM071002.1.bam
+    jobid: 366
+    reason: Missing output files: sharks/HetFra/HetFra_CM071002.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071002.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 366 has been submitted with SLURM jobid 9941768 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM071002.1/9941768.log).
+
+[Sun May 25 21:26:12 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM070995.1.bam
+    jobid: 359
+    reason: Missing output files: sharks/HetFra/HetFra_CM070995.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070995.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 359 has been submitted with SLURM jobid 9941770 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM070995.1/9941770.log).
+[Sun May 25 21:30:56 2025]
+Finished job 374.
+1 of 2069 steps (0.0%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sun May 25 21:30:56 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM071003.1.bam
+    jobid: 367
+    reason: Missing output files: sharks/HetFra/HetFra_CM071003.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071003.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 367 has been submitted with SLURM jobid 9941815 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM071003.1/9941815.log).
+[Sun May 25 21:30:56 2025]
+Finished job 360.
+2 of 2069 steps (0.1%) done
+[Sun May 25 21:30:56 2025]
+Finished job 353.
+3 of 2069 steps (0.1%) done
+[Sun May 25 21:30:56 2025]
+Finished job 346.
+4 of 2069 steps (0.2%) done
+[Sun May 25 21:30:56 2025]
+Finished job 339.
+5 of 2069 steps (0.2%) done
+[Sun May 25 21:30:56 2025]
+Finished job 333.
+6 of 2069 steps (0.3%) done
+[Sun May 25 21:30:56 2025]
+Finished job 371.
+7 of 2069 steps (0.3%) done
+[Sun May 25 21:30:56 2025]
+Finished job 364.
+8 of 2069 steps (0.4%) done
+[Sun May 25 21:30:56 2025]
+Finished job 357.
+9 of 2069 steps (0.4%) done
+[Sun May 25 21:30:56 2025]
+Finished job 350.
+10 of 2069 steps (0.5%) done
+[Sun May 25 21:30:56 2025]
+Finished job 343.
+11 of 2069 steps (1%) done
+[Sun May 25 21:30:56 2025]
+Finished job 337.
+12 of 2069 steps (1%) done
+[Sun May 25 21:30:56 2025]
+Finished job 330.
+13 of 2069 steps (1%) done
+[Sun May 25 21:30:56 2025]
+Finished job 372.
+14 of 2069 steps (1%) done
+[Sun May 25 21:30:56 2025]
+Finished job 365.
+15 of 2069 steps (1%) done
+[Sun May 25 21:30:56 2025]
+Finished job 358.
+16 of 2069 steps (1%) done
+[Sun May 25 21:30:56 2025]
+Finished job 351.
+17 of 2069 steps (1%) done
+[Sun May 25 21:30:56 2025]
+Finished job 344.
+18 of 2069 steps (1%) done
+[Sun May 25 21:30:56 2025]
+Finished job 331.
+19 of 2069 steps (1%) done
+Select jobs to execute...
+Execute 18 jobs...
+
+[Sun May 25 21:30:56 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM070996.1.fasta, sharks/HetFra/HetFra_CM070996.1.bam
+    output: sharks/HetFra/temp/CM070996.1_pileup.vcf.gz
+    jobid: 581
+    reason: Missing output files: sharks/HetFra/temp/CM070996.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM070996.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070996.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 581 has been submitted with SLURM jobid 9941816 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM070996.1/9941816.log).
+
+[Sun May 25 21:30:58 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM070979.1.bam
+    output: sharks/HetFra/HetFra_CM070979.1.bam.bai
+    jobid: 393
+    reason: Missing output files: sharks/HetFra/HetFra_CM070979.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM070979.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070979.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 393 has been submitted with SLURM jobid 9941817 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM070979.1/9941817.log).
+
+[Sun May 25 21:30:58 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM070989.1.fasta, sharks/HetFra/HetFra_CM070989.1.bam
+    output: sharks/HetFra/temp/CM070989.1_pileup.vcf.gz
+    jobid: 560
+    reason: Missing output files: sharks/HetFra/temp/CM070989.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM070989.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070989.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 560 has been submitted with SLURM jobid 9941818 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM070989.1/9941818.log).
+
+[Sun May 25 21:30:59 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM070982.1.fasta, sharks/HetFra/HetFra_CM070982.1.bam
+    output: sharks/HetFra/temp/CM070982.1_pileup.vcf.gz
+    jobid: 539
+    reason: Missing output files: sharks/HetFra/temp/CM070982.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM070982.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070982.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 539 has been submitted with SLURM jobid 9941819 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM070982.1/9941819.log).
+
+[Sun May 25 21:31:01 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM070975.1.fasta, sharks/HetFra/HetFra_CM070975.1.bam
+    output: sharks/HetFra/temp/CM070975.1_pileup.vcf.gz
+    jobid: 518
+    reason: Missing output files: sharks/HetFra/temp/CM070975.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM070975.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070975.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 518 has been submitted with SLURM jobid 9941820 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM070975.1/9941820.log).
+
+[Sun May 25 21:31:01 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM071008.1.fasta, sharks/HetFra/HetFra_CM071008.1.bam
+    output: sharks/HetFra/temp/CM071008.1_pileup.vcf.gz
+    jobid: 617
+    reason: Missing output files: sharks/HetFra/temp/CM071008.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM071008.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071008.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 617 has been submitted with SLURM jobid 9941821 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM071008.1/9941821.log).
+
+[Sun May 25 21:31:01 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM070967.1.bam
+    output: sharks/HetFra/HetFra_CM070967.1.bam.bai
+    jobid: 381
+    reason: Missing output files: sharks/HetFra/HetFra_CM070967.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM070967.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070967.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 381 has been submitted with SLURM jobid 9941822 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM070967.1/9941822.log).
+
+[Sun May 25 21:31:03 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM070978.1.bam
+    jobid: 342
+    reason: Missing output files: sharks/HetFra/HetFra_CM070978.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070978.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 342 has been submitted with SLURM jobid 9941823 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM070978.1/9941823.log).
+
+[Sun May 25 21:31:03 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM070985.1.bam
+    jobid: 349
+    reason: Missing output files: sharks/HetFra/HetFra_CM070985.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070985.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 349 has been submitted with SLURM jobid 9941824 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM070985.1/9941824.log).
+
+[Sun May 25 21:31:04 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070988.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070988.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070988.1_only_snps.vcf.bgz
+    jobid: 556
+    reason: Missing output files: sharks/HetFra/temp/CM070988.1_only_snps.vcf.bgz, sharks/HetFra/MSMC/Output_bam_caller_BED/CM070988.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070988.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 556 has been submitted with SLURM jobid 9941825 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070988.1/9941825.log).
+
+[Sun May 25 21:31:06 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM071001.1.fasta, sharks/HetFra/HetFra_CM071001.1.bam
+    output: sharks/HetFra/temp/CM071001.1_pileup.vcf.gz
+    jobid: 596
+    reason: Missing output files: sharks/HetFra/temp/CM071001.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM071001.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071001.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 596 has been submitted with SLURM jobid 9941826 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM071001.1/9941826.log).
+
+[Sun May 25 21:31:06 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM070972.1.bam
+    jobid: 336
+    reason: Missing output files: sharks/HetFra/HetFra_CM070972.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070972.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 336 has been submitted with SLURM jobid 9941827 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM070972.1/9941827.log).
+
+[Sun May 25 21:31:06 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM071007.1.bam
+    output: sharks/HetFra/HetFra_CM071007.1.bam.bai
+    jobid: 421
+    reason: Missing output files: sharks/HetFra/HetFra_CM071007.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM071007.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071007.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 421 has been submitted with SLURM jobid 9941828 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM071007.1/9941828.log).
+
+[Sun May 25 21:31:11 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM071006.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071006.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071006.1_only_snps.vcf.bgz
+    jobid: 610
+    reason: Missing output files: sharks/HetFra/temp/CM071006.1_only_snps.vcf.bgz, sharks/HetFra/MSMC/Output_bam_caller_BED/CM071006.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071006.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 610 has been submitted with SLURM jobid 9941829 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM071006.1/9941829.log).
+
+[Sun May 25 21:31:11 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM070965.1.bam
+    jobid: 329
+    reason: Missing output files: sharks/HetFra/HetFra_CM070965.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070965.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 329 has been submitted with SLURM jobid 9941830 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM070965.1/9941830.log).
+
+[Sun May 25 21:31:11 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070999.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070999.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070999.1_only_snps.vcf.bgz
+    jobid: 589
+    reason: Missing output files: sharks/HetFra/temp/CM070999.1_only_snps.vcf.bgz, sharks/HetFra/MSMC/Output_bam_caller_BED/CM070999.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070999.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 589 has been submitted with SLURM jobid 9941831 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070999.1/9941831.log).
+
+[Sun May 25 21:31:11 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM071000.1.bam
+    output: sharks/HetFra/HetFra_CM071000.1.bam.bai
+    jobid: 414
+    reason: Missing output files: sharks/HetFra/HetFra_CM071000.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM071000.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071000.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 414 has been submitted with SLURM jobid 9941832 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM071000.1/9941832.log).
+
+[Sun May 25 21:31:14 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM070967.1.fasta, sharks/HetFra/HetFra_CM070967.1.bam
+    output: sharks/HetFra/temp/CM070967.1_pileup.vcf.gz
+    jobid: 494
+    reason: Missing output files: sharks/HetFra/temp/CM070967.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM070967.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070967.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 494 has been submitted with SLURM jobid 9941833 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM070967.1/9941833.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Sun May 25 21:31:36 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9941743' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 514
+    input: sharks/HetFra/temp/CM070974.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070974.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070974.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070974.1/9941743.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070974.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070974.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070974.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9941743
+
+[Sun May 25 21:31:36 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9941747' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 496
+    input: sharks/HetFra/temp/CM070968.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070968.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070968.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070968.1/9941747.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070968.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070968.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070968.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9941747
+
+[Sun May 25 21:31:36 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9941748' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 625
+    input: sharks/HetFra/temp/CM071011.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071011.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071011.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM071011.1/9941748.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM071011.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM071011.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM071011.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9941748
+
+[Sun May 25 21:31:36 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9941749' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 604
+    input: sharks/HetFra/temp/CM071004.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071004.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071004.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM071004.1/9941749.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM071004.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM071004.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM071004.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9941749
+
+[Sun May 25 21:31:36 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9941750' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 586
+    input: sharks/HetFra/temp/CM070998.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070998.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070998.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070998.1/9941750.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070998.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070998.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070998.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9941750
+
+[Sun May 25 21:31:36 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9941751' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 568
+    input: sharks/HetFra/temp/CM070992.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070992.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070992.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070992.1/9941751.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070992.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070992.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070992.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9941751
+
+[Sun May 25 21:31:36 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9941756' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 505
+    input: sharks/HetFra/temp/CM070971.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070971.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070971.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070971.1/9941756.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070971.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070971.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070971.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9941756
+
+[Sun May 25 21:31:36 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9941758' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 484
+    input: sharks/HetFra/temp/CM070964.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070964.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070964.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070964.1/9941758.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070964.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070964.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070964.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9941758
+
+Execute 1 jobs...
+
+[Sun May 25 21:31:36 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070991.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070991.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070991.1_only_snps.vcf.bgz
+    jobid: 565
+    reason: Missing output files: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070991.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070991.1_only_snps.vcf.bgz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070991.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 565 has been submitted with SLURM jobid 9941921 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070991.1/9941921.log).
+Select jobs to execute...
+Execute 7 jobs...
+
+[Sun May 25 21:31:37 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM070980.1.bam
+    output: sharks/HetFra/HetFra_CM070980.1.bam.bai
+    jobid: 394
+    reason: Missing output files: sharks/HetFra/HetFra_CM070980.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM070980.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070980.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 394 has been submitted with SLURM jobid 9941922 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM070980.1/9941922.log).
+
+[Sun May 25 21:31:42 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM070966.1.fasta, sharks/HetFra/HetFra_CM070966.1.bam
+    output: sharks/HetFra/temp/CM070966.1_pileup.vcf.gz
+    jobid: 491
+    reason: Missing output files: sharks/HetFra/temp/CM070966.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM070966.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070966.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 491 has been submitted with SLURM jobid 9941923 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM070966.1/9941923.log).
+
+[Sun May 25 21:31:42 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070984.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070984.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070984.1_only_snps.vcf.bgz
+    jobid: 544
+    reason: Missing output files: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070984.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070984.1_only_snps.vcf.bgz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070984.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 544 has been submitted with SLURM jobid 9941924 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070984.1/9941924.log).
+
+[Sun May 25 21:31:42 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070977.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070977.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070977.1_only_snps.vcf.bgz
+    jobid: 523
+    reason: Missing output files: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070977.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070977.1_only_snps.vcf.bgz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070977.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 523 has been submitted with SLURM jobid 9941925 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070977.1/9941925.log).
+
+[Sun May 25 21:31:42 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070970.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070970.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070970.1_only_snps.vcf.bgz
+    jobid: 502
+    reason: Missing output files: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070970.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070970.1_only_snps.vcf.bgz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070970.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 502 has been submitted with SLURM jobid 9941926 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070970.1/9941926.log).
+
+[Sun May 25 21:31:45 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM071010.1.fasta, sharks/HetFra/HetFra_CM071010.1.bam
+    output: sharks/HetFra/temp/CM071010.1_pileup.vcf.gz
+    jobid: 623
+    reason: Missing output files: sharks/HetFra/temp/CM071010.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM071010.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071010.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 623 has been submitted with SLURM jobid 9941927 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM071010.1/9941927.log).
+
+[Sun May 25 21:31:45 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM070966.1.bam
+    output: sharks/HetFra/HetFra_CM070966.1.bam.bai
+    jobid: 380
+    reason: Missing output files: sharks/HetFra/HetFra_CM070966.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM070966.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070966.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 380 has been submitted with SLURM jobid 9941928 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM070966.1/9941928.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Sun May 25 21:47:27 2025]
+Finished job 373.
+20 of 2069 steps (1%) done
+Execute 1 jobs...
+
+[Sun May 25 21:47:27 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM070987.1.fasta, sharks/HetFra/HetFra_CM070987.1.bam
+    output: sharks/HetFra/temp/CM070987.1_pileup.vcf.gz
+    jobid: 554
+    reason: Missing output files: sharks/HetFra/temp/CM070987.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM070987.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070987.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+[Sun May 25 21:47:27 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9941825' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 556
+    input: sharks/HetFra/temp/CM070988.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070988.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070988.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070988.1/9941825.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070988.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070988.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070988.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9941825
+
+Job 554 has been submitted with SLURM jobid 9942043 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM070987.1/9942043.log).
+[Sun May 25 21:47:28 2025]
+Finished job 366.
+21 of 2069 steps (1%) done
+[Sun May 25 21:47:28 2025]
+Finished job 359.
+22 of 2069 steps (1%) done
+[Sun May 25 21:47:28 2025]
+Finished job 367.
+23 of 2069 steps (1%) done
+[Sun May 25 21:47:28 2025]
+Finished job 581.
+24 of 2069 steps (1%) done
+[Sun May 25 21:47:28 2025]
+Finished job 393.
+25 of 2069 steps (1%) done
+[Sun May 25 21:47:28 2025]
+Finished job 560.
+26 of 2069 steps (1%) done
+[Sun May 25 21:47:28 2025]
+Finished job 539.
+27 of 2069 steps (1%) done
+[Sun May 25 21:47:29 2025]
+Finished job 518.
+28 of 2069 steps (1%) done
+[Sun May 25 21:47:29 2025]
+Finished job 617.
+29 of 2069 steps (1%) done
+[Sun May 25 21:47:29 2025]
+Finished job 381.
+30 of 2069 steps (1%) done
+[Sun May 25 21:47:29 2025]
+Finished job 342.
+31 of 2069 steps (1%) done
+[Sun May 25 21:47:29 2025]
+Finished job 349.
+32 of 2069 steps (2%) done
+[Sun May 25 21:47:29 2025]
+Finished job 596.
+33 of 2069 steps (2%) done
+[Sun May 25 21:47:29 2025]
+Finished job 336.
+34 of 2069 steps (2%) done
+Select jobs to execute...
+Execute 15 jobs...
+
+[Sun May 25 21:47:29 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM071005.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071005.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071005.1_only_snps.vcf.bgz
+    jobid: 607
+    reason: Missing output files: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071005.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071005.1_only_snps.vcf.bgz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071005.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 607 has been submitted with SLURM jobid 9942046 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM071005.1/9942046.log).
+
+[Sun May 25 21:47:34 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM070980.1.fasta, sharks/HetFra/HetFra_CM070980.1.bam
+    output: sharks/HetFra/temp/CM070980.1_pileup.vcf.gz
+    jobid: 533
+    reason: Missing output files: sharks/HetFra/temp/CM070980.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM070980.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070980.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 533 has been submitted with SLURM jobid 9942047 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM070980.1/9942047.log).
+
+[Sun May 25 21:47:34 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM070973.1.fasta, sharks/HetFra/HetFra_CM070973.1.bam
+    output: sharks/HetFra/temp/CM070973.1_pileup.vcf.gz
+    jobid: 512
+    reason: Missing output files: sharks/HetFra/temp/CM070973.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM070973.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070973.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 512 has been submitted with SLURM jobid 9942048 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM070973.1/9942048.log).
+
+[Sun May 25 21:47:34 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM070972.1.bam
+    output: sharks/HetFra/HetFra_CM070972.1.bam.bai
+    jobid: 386
+    reason: Missing output files: sharks/HetFra/HetFra_CM070972.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM070972.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070972.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 386 has been submitted with SLURM jobid 9942049 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM070972.1/9942049.log).
+
+[Sun May 25 21:47:34 2025]
+rule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM070996.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM070996.1_indel_bed.txt
+    jobid: 811
+    reason: Missing output files: sharks/HetFra/MSMC/Output_indel_BED_file/CM070996.1_indel_bed.txt; Input files updated by another job: sharks/HetFra/temp/CM070996.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070996.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 811 has been submitted with SLURM jobid 9942050 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HetFra_CM070996.1/9942050.log).
+
+[Sun May 25 21:47:36 2025]
+rule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM070989.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM070989.1_indel_bed.txt
+    jobid: 804
+    reason: Missing output files: sharks/HetFra/MSMC/Output_indel_BED_file/CM070989.1_indel_bed.txt; Input files updated by another job: sharks/HetFra/temp/CM070989.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070989.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 804 has been submitted with SLURM jobid 9942051 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HetFra_CM070989.1/9942051.log).
+
+[Sun May 25 21:47:37 2025]
+rule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM070982.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM070982.1_indel_bed.txt
+    jobid: 797
+    reason: Missing output files: sharks/HetFra/MSMC/Output_indel_BED_file/CM070982.1_indel_bed.txt; Input files updated by another job: sharks/HetFra/temp/CM070982.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070982.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 797 has been submitted with SLURM jobid 9942052 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HetFra_CM070982.1/9942052.log).
+
+[Sun May 25 21:47:39 2025]
+rule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM070975.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM070975.1_indel_bed.txt
+    jobid: 790
+    reason: Missing output files: sharks/HetFra/MSMC/Output_indel_BED_file/CM070975.1_indel_bed.txt; Input files updated by another job: sharks/HetFra/temp/CM070975.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070975.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 790 has been submitted with SLURM jobid 9942053 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HetFra_CM070975.1/9942053.log).
+
+[Sun May 25 21:47:39 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM071002.1.bam
+    output: sharks/HetFra/HetFra_CM071002.1.bam.bai
+    jobid: 416
+    reason: Missing output files: sharks/HetFra/HetFra_CM071002.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM071002.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071002.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 416 has been submitted with SLURM jobid 9942054 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM071002.1/9942054.log).
+
+[Sun May 25 21:47:39 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM070995.1.fasta, sharks/HetFra/HetFra_CM070995.1.bam
+    output: sharks/HetFra/temp/CM070995.1_pileup.vcf.gz
+    jobid: 578
+    reason: Missing output files: sharks/HetFra/temp/CM070995.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM070995.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070995.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 578 has been submitted with SLURM jobid 9942055 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM070995.1/9942055.log).
+
+[Sun May 25 21:47:39 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM070978.1.bam
+    output: sharks/HetFra/HetFra_CM070978.1.bam.bai
+    jobid: 392
+    reason: Missing output files: sharks/HetFra/HetFra_CM070978.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM070978.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070978.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 392 has been submitted with SLURM jobid 9942056 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM070978.1/9942056.log).
+
+[Sun May 25 21:47:42 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM071009.1.fasta, sharks/HetFra/HetFra_CM071009.1.bam
+    output: sharks/HetFra/temp/CM071009.1_pileup.vcf.gz
+    jobid: 620
+    reason: Missing output files: sharks/HetFra/temp/CM071009.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM071009.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071009.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 620 has been submitted with SLURM jobid 9942058 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM071009.1/9942058.log).
+
+[Sun May 25 21:47:42 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM071008.1.bam
+    output: sharks/HetFra/HetFra_CM071008.1.bam.bai
+    jobid: 422
+    reason: Missing output files: sharks/HetFra/HetFra_CM071008.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM071008.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071008.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 422 has been submitted with SLURM jobid 9942059 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM071008.1/9942059.log).
+
+[Sun May 25 21:47:42 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM070985.1.bam
+    output: sharks/HetFra/HetFra_CM070985.1.bam.bai
+    jobid: 399
+    reason: Missing output files: sharks/HetFra/HetFra_CM070985.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM070985.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070985.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 399 has been submitted with SLURM jobid 9942060 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM070985.1/9942060.log).
+
+[Sun May 25 21:47:44 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM071002.1.fasta, sharks/HetFra/HetFra_CM071002.1.bam
+    output: sharks/HetFra/temp/CM071002.1_pileup.vcf.gz
+    jobid: 599
+    reason: Missing output files: sharks/HetFra/temp/CM071002.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM071002.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071002.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 599 has been submitted with SLURM jobid 9942061 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM071002.1/9942061.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Sun May 25 21:59:29 2025]
+Finished job 421.
+35 of 2069 steps (2%) done
+Execute 1 jobs...
+
+[Sun May 25 21:59:29 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070983.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070983.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070983.1_only_snps.vcf.bgz
+    jobid: 541
+    reason: Missing output files: sharks/HetFra/temp/CM070983.1_only_snps.vcf.bgz, sharks/HetFra/MSMC/Output_bam_caller_BED/CM070983.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070983.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 541 has been submitted with SLURM jobid 9942129 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070983.1/9942129.log).
+[Sun May 25 21:59:29 2025]
+Finished job 329.
+36 of 2069 steps (2%) done
+[Sun May 25 21:59:29 2025]
+Finished job 414.
+37 of 2069 steps (2%) done
+[Sun May 25 21:59:29 2025]
+Finished job 494.
+38 of 2069 steps (2%) done
+[Sun May 25 21:59:29 2025]
+Finished job 394.
+39 of 2069 steps (2%) done
+[Sun May 25 21:59:29 2025]
+Finished job 491.
+40 of 2069 steps (2%) done
+[Sun May 25 21:59:29 2025]
+Finished job 623.
+41 of 2069 steps (2%) done
+[Sun May 25 21:59:29 2025]
+Finished job 380.
+42 of 2069 steps (2%) done
+[Sun May 25 21:59:29 2025]
+Finished job 554.
+43 of 2069 steps (2%) done
+[Sun May 25 21:59:29 2025]
+Finished job 533.
+44 of 2069 steps (2%) done
+[Sun May 25 21:59:29 2025]
+Finished job 512.
+45 of 2069 steps (2%) done
+[Sun May 25 21:59:29 2025]
+Finished job 386.
+46 of 2069 steps (2%) done
+[Sun May 25 21:59:29 2025]
+Finished job 811.
+47 of 2069 steps (2%) done
+[Sun May 25 21:59:29 2025]
+Finished job 804.
+48 of 2069 steps (2%) done
+[Sun May 25 21:59:29 2025]
+Finished job 797.
+49 of 2069 steps (2%) done
+[Sun May 25 21:59:29 2025]
+Finished job 790.
+50 of 2069 steps (2%) done
+[Sun May 25 21:59:29 2025]
+Finished job 416.
+51 of 2069 steps (2%) done
+[Sun May 25 21:59:29 2025]
+Finished job 578.
+52 of 2069 steps (3%) done
+[Sun May 25 21:59:29 2025]
+Finished job 392.
+53 of 2069 steps (3%) done
+[Sun May 25 21:59:29 2025]
+Finished job 620.
+54 of 2069 steps (3%) done
+[Sun May 25 21:59:29 2025]
+Finished job 422.
+55 of 2069 steps (3%) done
+[Sun May 25 21:59:29 2025]
+Finished job 399.
+56 of 2069 steps (3%) done
+[Sun May 25 21:59:29 2025]
+Finished job 599.
+57 of 2069 steps (3%) done
+Select jobs to execute...
+Execute 22 jobs...
+
+[Sun May 25 21:59:29 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070966.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070966.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070966.1_only_snps.vcf.bgz
+    jobid: 490
+    reason: Missing output files: sharks/HetFra/temp/CM070966.1_only_snps.vcf.bgz, sharks/HetFra/MSMC/Output_bam_caller_BED/CM070966.1_unmodified_bed.txt.gz; Input files updated by another job: sharks/HetFra/temp/CM070966.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070966.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 490 has been submitted with SLURM jobid 9942130 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070966.1/9942130.log).
+
+[Sun May 25 21:59:32 2025]
+rule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM070967.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM070967.1_indel_bed.txt
+    jobid: 782
+    reason: Missing output files: sharks/HetFra/MSMC/Output_indel_BED_file/CM070967.1_indel_bed.txt; Input files updated by another job: sharks/HetFra/temp/CM070967.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070967.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 782 has been submitted with SLURM jobid 9942131 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HetFra_CM070967.1/9942131.log).
+
+[Sun May 25 21:59:32 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070997.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070997.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070997.1_only_snps.vcf.bgz
+    jobid: 583
+    reason: Missing output files: sharks/HetFra/temp/CM070997.1_only_snps.vcf.bgz, sharks/HetFra/MSMC/Output_bam_caller_BED/CM070997.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070997.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 583 has been submitted with SLURM jobid 9942132 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070997.1/9942132.log).
+
+[Sun May 25 21:59:34 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM070979.1.fasta, sharks/HetFra/HetFra_CM070979.1.bam
+    output: sharks/HetFra/temp/CM070979.1_pileup.vcf.gz
+    jobid: 530
+    reason: Missing output files: sharks/HetFra/temp/CM070979.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM070979.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070979.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 530 has been submitted with SLURM jobid 9942133 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM070979.1/9942133.log).
+
+[Sun May 25 21:59:34 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070990.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070990.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070990.1_only_snps.vcf.bgz
+    jobid: 562
+    reason: Missing output files: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070990.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070990.1_only_snps.vcf.bgz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070990.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 562 has been submitted with SLURM jobid 9942134 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070990.1/9942134.log).
+
+[Sun May 25 21:59:34 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM070972.1.fasta, sharks/HetFra/HetFra_CM070972.1.bam
+    output: sharks/HetFra/temp/CM070972.1_pileup.vcf.gz
+    jobid: 509
+    reason: Missing output files: sharks/HetFra/temp/CM070972.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM070972.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070972.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 509 has been submitted with SLURM jobid 9942135 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM070972.1/9942135.log).
+
+[Sun May 25 21:59:37 2025]
+rule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM071002.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM071002.1_indel_bed.txt
+    jobid: 817
+    reason: Missing output files: sharks/HetFra/MSMC/Output_indel_BED_file/CM071002.1_indel_bed.txt; Input files updated by another job: sharks/HetFra/temp/CM071002.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071002.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 817 has been submitted with SLURM jobid 9942136 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HetFra_CM071002.1/9942136.log).
+
+[Sun May 25 21:59:37 2025]
+rule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM071009.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM071009.1_indel_bed.txt
+    jobid: 824
+    reason: Missing output files: sharks/HetFra/MSMC/Output_indel_BED_file/CM071009.1_indel_bed.txt; Input files updated by another job: sharks/HetFra/temp/CM071009.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071009.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 824 has been submitted with SLURM jobid 9942137 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HetFra_CM071009.1/9942137.log).
+
+[Sun May 25 21:59:37 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070976.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070976.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070976.1_only_snps.vcf.bgz
+    jobid: 520
+    reason: Missing output files: sharks/HetFra/temp/CM070976.1_only_snps.vcf.bgz, sharks/HetFra/MSMC/Output_bam_caller_BED/CM070976.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070976.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 520 has been submitted with SLURM jobid 9942138 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070976.1/9942138.log).
+
+[Sun May 25 21:59:39 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM070965.1.fasta, sharks/HetFra/HetFra_CM070965.1.bam
+    output: sharks/HetFra/temp/CM070965.1_pileup.vcf.gz
+    jobid: 488
+    reason: Missing output files: sharks/HetFra/temp/CM070965.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM070965.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070965.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 488 has been submitted with SLURM jobid 9942139 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM070965.1/9942139.log).
+
+[Sun May 25 21:59:40 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM071007.1.fasta, sharks/HetFra/HetFra_CM071007.1.bam
+    output: sharks/HetFra/temp/CM071007.1_pileup.vcf.gz
+    jobid: 614
+    reason: Missing output files: sharks/HetFra/temp/CM071007.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM071007.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071007.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 614 has been submitted with SLURM jobid 9942174 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM071007.1/9942174.log).
+
+[Sun May 25 21:59:42 2025]
+rule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM070995.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM070995.1_indel_bed.txt
+    jobid: 810
+    reason: Missing output files: sharks/HetFra/MSMC/Output_indel_BED_file/CM070995.1_indel_bed.txt; Input files updated by another job: sharks/HetFra/temp/CM070995.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070995.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 810 has been submitted with SLURM jobid 9942175 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HetFra_CM070995.1/9942175.log).
+
+[Sun May 25 21:59:42 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM071000.1.fasta, sharks/HetFra/HetFra_CM071000.1.bam
+    output: sharks/HetFra/temp/CM071000.1_pileup.vcf.gz
+    jobid: 593
+    reason: Missing output files: sharks/HetFra/temp/CM071000.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM071000.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071000.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 593 has been submitted with SLURM jobid 9942176 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM071000.1/9942176.log).
+
+[Sun May 25 21:59:42 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070962.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070962.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070962.1_only_snps.vcf.bgz
+    jobid: 478
+    reason: Missing output files: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070962.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070962.1_only_snps.vcf.bgz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070962.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 478 has been submitted with SLURM jobid 9942177 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070962.1/9942177.log).
+
+[Sun May 25 21:59:42 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM070994.1.fasta, sharks/HetFra/HetFra_CM070994.1.bam
+    output: sharks/HetFra/temp/CM070994.1_pileup.vcf.gz
+    jobid: 575
+    reason: Missing output files: sharks/HetFra/temp/CM070994.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM070994.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070994.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 575 has been submitted with SLURM jobid 9942179 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM070994.1/9942179.log).
+
+[Sun May 25 21:59:47 2025]
+rule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM071010.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM071010.1_indel_bed.txt
+    jobid: 825
+    reason: Missing output files: sharks/HetFra/MSMC/Output_indel_BED_file/CM071010.1_indel_bed.txt; Input files updated by another job: sharks/HetFra/temp/CM071010.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071010.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 825 has been submitted with SLURM jobid 9942180 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HetFra_CM071010.1/9942180.log).
+
+[Sun May 25 21:59:47 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM070965.1.bam
+    output: sharks/HetFra/HetFra_CM070965.1.bam.bai
+    jobid: 379
+    reason: Missing output files: sharks/HetFra/HetFra_CM070965.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM070965.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070965.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 379 has been submitted with SLURM jobid 9942181 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM070965.1/9942181.log).
+
+[Sun May 25 21:59:47 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM070993.1.bam
+    output: sharks/HetFra/HetFra_CM070993.1.bam.bai
+    jobid: 407
+    reason: Missing output files: sharks/HetFra/HetFra_CM070993.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM070993.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070993.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 407 has been submitted with SLURM jobid 9942182 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM070993.1/9942182.log).
+
+[Sun May 25 21:59:48 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM070986.1.bam
+    output: sharks/HetFra/HetFra_CM070986.1.bam.bai
+    jobid: 400
+    reason: Missing output files: sharks/HetFra/HetFra_CM070986.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM070986.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070986.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 400 has been submitted with SLURM jobid 9942183 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM070986.1/9942183.log).
+
+[Sun May 25 21:59:50 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM071003.1.fasta, sharks/HetFra/HetFra_CM071003.1.bam
+    output: sharks/HetFra/temp/CM071003.1_pileup.vcf.gz
+    jobid: 602
+    reason: Missing output files: sharks/HetFra/temp/CM071003.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM071003.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071003.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 602 has been submitted with SLURM jobid 9942184 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM071003.1/9942184.log).
+
+[Sun May 25 21:59:50 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM071008.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071008.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071008.1_only_snps.vcf.bgz
+    jobid: 616
+    reason: Missing output files: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071008.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071008.1_only_snps.vcf.bgz; Input files updated by another job: sharks/HetFra/temp/CM071008.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071008.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 616 has been submitted with SLURM jobid 9942185 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM071008.1/9942185.log).
+
+[Sun May 25 21:59:50 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070987.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070987.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070987.1_only_snps.vcf.bgz
+    jobid: 553
+    reason: Missing output files: sharks/HetFra/temp/CM070987.1_only_snps.vcf.bgz, sharks/HetFra/MSMC/Output_bam_caller_BED/CM070987.1_unmodified_bed.txt.gz; Input files updated by another job: sharks/HetFra/temp/CM070987.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070987.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 553 has been submitted with SLURM jobid 9942186 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070987.1/9942186.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Sun May 25 22:00:09 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9941829' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 610
+    input: sharks/HetFra/temp/CM071006.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071006.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071006.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM071006.1/9941829.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM071006.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM071006.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM071006.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9941829
+
+[Sun May 25 22:00:09 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9941831' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 589
+    input: sharks/HetFra/temp/CM070999.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070999.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070999.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070999.1/9941831.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070999.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070999.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070999.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9941831
+
+[Sun May 25 22:00:09 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9941921' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 565
+    input: sharks/HetFra/temp/CM070991.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070991.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070991.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070991.1/9941921.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070991.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070991.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070991.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9941921
+
+[Sun May 25 22:00:09 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9941924' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 544
+    input: sharks/HetFra/temp/CM070984.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070984.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070984.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070984.1/9941924.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070984.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070984.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070984.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9941924
+
+[Sun May 25 22:00:09 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9941925' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 523
+    input: sharks/HetFra/temp/CM070977.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070977.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070977.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070977.1/9941925.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070977.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070977.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070977.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9941925
+
+[Sun May 25 22:00:09 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9941926' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 502
+    input: sharks/HetFra/temp/CM070970.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070970.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070970.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070970.1/9941926.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070970.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070970.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070970.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9941926
+
+[Sun May 25 22:00:09 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9942046' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 607
+    input: sharks/HetFra/temp/CM071005.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071005.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071005.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM071005.1/9942046.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM071005.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM071005.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM071005.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9942046
+
+Execute 1 jobs...
+
+[Sun May 25 22:00:09 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM070982.1.bam
+    output: sharks/HetFra/HetFra_CM070982.1.bam.bai
+    jobid: 396
+    reason: Missing output files: sharks/HetFra/HetFra_CM070982.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM070982.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070982.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 396 has been submitted with SLURM jobid 9942251 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM070982.1/9942251.log).
+Select jobs to execute...
+Execute 6 jobs...
+
+[Sun May 25 22:00:10 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM070987.1.bam
+    output: sharks/HetFra/HetFra_CM070987.1.bam.bai
+    jobid: 401
+    reason: Missing output files: sharks/HetFra/HetFra_CM070987.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM070987.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070987.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 401 has been submitted with SLURM jobid 9942252 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM070987.1/9942252.log).
+
+[Sun May 25 22:00:13 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070982.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070982.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070982.1_only_snps.vcf.bgz
+    jobid: 538
+    reason: Missing output files: sharks/HetFra/temp/CM070982.1_only_snps.vcf.bgz, sharks/HetFra/MSMC/Output_bam_caller_BED/CM070982.1_unmodified_bed.txt.gz; Input files updated by another job: sharks/HetFra/temp/CM070982.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070982.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 538 has been submitted with SLURM jobid 9942253 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070982.1/9942253.log).
+
+[Sun May 25 22:00:13 2025]
+rule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM070980.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM070980.1_indel_bed.txt
+    jobid: 795
+    reason: Missing output files: sharks/HetFra/MSMC/Output_indel_BED_file/CM070980.1_indel_bed.txt; Input files updated by another job: sharks/HetFra/temp/CM070980.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070980.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 795 has been submitted with SLURM jobid 9942254 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HetFra_CM070980.1/9942254.log).
+
+[Sun May 25 22:00:13 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM070989.1.bam
+    output: sharks/HetFra/HetFra_CM070989.1.bam.bai
+    jobid: 403
+    reason: Missing output files: sharks/HetFra/HetFra_CM070989.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM070989.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070989.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 403 has been submitted with SLURM jobid 9942255 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM070989.1/9942255.log).
+
+[Sun May 25 22:00:16 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM070993.1.fasta, sharks/HetFra/HetFra_CM070993.1.bam
+    output: sharks/HetFra/temp/CM070993.1_pileup.vcf.gz
+    jobid: 572
+    reason: Missing output files: sharks/HetFra/temp/CM070993.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM070993.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070993.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 572 has been submitted with SLURM jobid 9942256 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM070993.1/9942256.log).
+
+[Sun May 25 22:00:18 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM071001.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071001.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071001.1_only_snps.vcf.bgz
+    jobid: 595
+    reason: Missing output files: sharks/HetFra/temp/CM071001.1_only_snps.vcf.bgz, sharks/HetFra/MSMC/Output_bam_caller_BED/CM071001.1_unmodified_bed.txt.gz; Input files updated by another job: sharks/HetFra/temp/CM071001.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071001.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 595 has been submitted with SLURM jobid 9942258 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM071001.1/9942258.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Sun May 25 22:09:30 2025]
+Finished job 782.
+58 of 2069 steps (3%) done
+Execute 1 jobs...
+
+[Sun May 25 22:09:30 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070973.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070973.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070973.1_only_snps.vcf.bgz
+    jobid: 511
+    reason: Missing output files: sharks/HetFra/temp/CM070973.1_only_snps.vcf.bgz, sharks/HetFra/MSMC/Output_bam_caller_BED/CM070973.1_unmodified_bed.txt.gz; Input files updated by another job: sharks/HetFra/temp/CM070973.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070973.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 511 has been submitted with SLURM jobid 9942320 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070973.1/9942320.log).
+[Sun May 25 22:09:34 2025]
+Finished job 530.
+59 of 2069 steps (3%) done
+[Sun May 25 22:09:34 2025]
+Finished job 509.
+60 of 2069 steps (3%) done
+[Sun May 25 22:09:34 2025]
+Finished job 817.
+61 of 2069 steps (3%) done
+[Sun May 25 22:09:34 2025]
+Finished job 824.
+62 of 2069 steps (3%) done
+[Sun May 25 22:09:34 2025]
+Finished job 488.
+63 of 2069 steps (3%) done
+[Sun May 25 22:09:34 2025]
+Finished job 614.
+64 of 2069 steps (3%) done
+[Sun May 25 22:09:34 2025]
+Finished job 810.
+65 of 2069 steps (3%) done
+[Sun May 25 22:09:34 2025]
+Finished job 593.
+66 of 2069 steps (3%) done
+[Sun May 25 22:09:34 2025]
+Finished job 575.
+67 of 2069 steps (3%) done
+[Sun May 25 22:09:34 2025]
+Finished job 825.
+68 of 2069 steps (3%) done
+[Sun May 25 22:09:34 2025]
+Finished job 379.
+69 of 2069 steps (3%) done
+[Sun May 25 22:09:34 2025]
+Finished job 407.
+70 of 2069 steps (3%) done
+[Sun May 25 22:09:34 2025]
+Finished job 400.
+71 of 2069 steps (3%) done
+[Sun May 25 22:09:34 2025]
+Finished job 602.
+72 of 2069 steps (3%) done
+[Sun May 25 22:09:34 2025]
+Finished job 396.
+73 of 2069 steps (4%) done
+[Sun May 25 22:09:34 2025]
+Finished job 401.
+74 of 2069 steps (4%) done
+[Sun May 25 22:09:34 2025]
+Finished job 795.
+75 of 2069 steps (4%) done
+[Sun May 25 22:09:34 2025]
+Finished job 403.
+76 of 2069 steps (4%) done
+[Sun May 25 22:09:34 2025]
+Finished job 572.
+77 of 2069 steps (4%) done
+Select jobs to execute...
+Execute 19 jobs...
+
+[Sun May 25 22:09:34 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM071009.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071009.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071009.1_only_snps.vcf.bgz
+    jobid: 619
+    reason: Missing output files: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071009.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071009.1_only_snps.vcf.bgz; Input files updated by another job: sharks/HetFra/temp/CM071009.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071009.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 619 has been submitted with SLURM jobid 9942321 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM071009.1/9942321.log).
+
+[Sun May 25 22:09:36 2025]
+rule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM070965.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM070965.1_indel_bed.txt
+    jobid: 780
+    reason: Missing output files: sharks/HetFra/MSMC/Output_indel_BED_file/CM070965.1_indel_bed.txt; Input files updated by another job: sharks/HetFra/temp/CM070965.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070965.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 780 has been submitted with SLURM jobid 9942322 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HetFra_CM070965.1/9942322.log).
+
+[Sun May 25 22:09:36 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM071002.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071002.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071002.1_only_snps.vcf.bgz
+    jobid: 598
+    reason: Missing output files: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071002.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071002.1_only_snps.vcf.bgz; Input files updated by another job: sharks/HetFra/temp/CM071002.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071002.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 598 has been submitted with SLURM jobid 9942323 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM071002.1/9942323.log).
+
+[Sun May 25 22:09:37 2025]
+rule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM070994.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM070994.1_indel_bed.txt
+    jobid: 809
+    reason: Missing output files: sharks/HetFra/MSMC/Output_indel_BED_file/CM070994.1_indel_bed.txt; Input files updated by another job: sharks/HetFra/temp/CM070994.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070994.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 809 has been submitted with SLURM jobid 9942324 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HetFra_CM070994.1/9942324.log).
+
+[Sun May 25 22:09:39 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM071003.1.bam
+    output: sharks/HetFra/HetFra_CM071003.1.bam.bai
+    jobid: 417
+    reason: Missing output files: sharks/HetFra/HetFra_CM071003.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM071003.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071003.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 417 has been submitted with SLURM jobid 9942325 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM071003.1/9942325.log).
+
+[Sun May 25 22:09:39 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM070969.1.bam
+    output: sharks/HetFra/HetFra_CM070969.1.bam.bai
+    jobid: 383
+    reason: Missing output files: sharks/HetFra/HetFra_CM070969.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM070969.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070969.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 383 has been submitted with SLURM jobid 9942326 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM070969.1/9942326.log).
+
+[Sun May 25 22:09:41 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM070963.1.bam
+    jobid: 327
+    reason: Missing output files: sharks/HetFra/HetFra_CM070963.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070963.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 327 has been submitted with SLURM jobid 9942327 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM070963.1/9942327.log).
+
+[Sun May 25 22:09:42 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM070986.1.fasta, sharks/HetFra/HetFra_CM070986.1.bam
+    output: sharks/HetFra/temp/CM070986.1_pileup.vcf.gz
+    jobid: 551
+    reason: Missing output files: sharks/HetFra/temp/CM070986.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM070986.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070986.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 551 has been submitted with SLURM jobid 9942328 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM070986.1/9942328.log).
+
+[Sun May 25 22:09:44 2025]
+rule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM071003.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM071003.1_indel_bed.txt
+    jobid: 818
+    reason: Missing output files: sharks/HetFra/MSMC/Output_indel_BED_file/CM071003.1_indel_bed.txt; Input files updated by another job: sharks/HetFra/temp/CM071003.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071003.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 818 has been submitted with SLURM jobid 9942329 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HetFra_CM071003.1/9942329.log).
+
+[Sun May 25 22:09:44 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM071007.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071007.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071007.1_only_snps.vcf.bgz
+    jobid: 613
+    reason: Missing output files: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071007.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071007.1_only_snps.vcf.bgz; Input files updated by another job: sharks/HetFra/temp/CM071007.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071007.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 613 has been submitted with SLURM jobid 9942330 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM071007.1/9942330.log).
+
+[Sun May 25 22:09:44 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM071000.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071000.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071000.1_only_snps.vcf.bgz
+    jobid: 592
+    reason: Missing output files: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071000.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071000.1_only_snps.vcf.bgz; Input files updated by another job: sharks/HetFra/temp/CM071000.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071000.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 592 has been submitted with SLURM jobid 9942331 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM071000.1/9942331.log).
+
+[Sun May 25 22:09:45 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070993.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070993.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070993.1_only_snps.vcf.bgz
+    jobid: 571
+    reason: Missing output files: sharks/HetFra/temp/CM070993.1_only_snps.vcf.bgz, sharks/HetFra/MSMC/Output_bam_caller_BED/CM070993.1_unmodified_bed.txt.gz; Input files updated by another job: sharks/HetFra/temp/CM070993.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070993.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 571 has been submitted with SLURM jobid 9942332 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070993.1/9942332.log).
+
+[Sun May 25 22:09:47 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070979.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070979.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070979.1_only_snps.vcf.bgz
+    jobid: 529
+    reason: Missing output files: sharks/HetFra/temp/CM070979.1_only_snps.vcf.bgz, sharks/HetFra/MSMC/Output_bam_caller_BED/CM070979.1_unmodified_bed.txt.gz; Input files updated by another job: sharks/HetFra/temp/CM070979.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070979.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 529 has been submitted with SLURM jobid 9942333 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070979.1/9942333.log).
+
+[Sun May 25 22:09:47 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070972.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070972.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070972.1_only_snps.vcf.bgz
+    jobid: 508
+    reason: Missing output files: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070972.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070972.1_only_snps.vcf.bgz; Input files updated by another job: sharks/HetFra/temp/CM070972.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070972.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 508 has been submitted with SLURM jobid 9942334 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070972.1/9942334.log).
+
+[Sun May 25 22:09:47 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070965.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070965.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070965.1_only_snps.vcf.bgz
+    jobid: 487
+    reason: Missing output files: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070965.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070965.1_only_snps.vcf.bgz; Input files updated by another job: sharks/HetFra/temp/CM070965.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070965.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 487 has been submitted with SLURM jobid 9942335 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070965.1/9942335.log).
+
+[Sun May 25 22:09:49 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM070973.1.bam
+    output: sharks/HetFra/HetFra_CM070973.1.bam.bai
+    jobid: 387
+    reason: Missing output files: sharks/HetFra/HetFra_CM070973.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM070973.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070973.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 387 has been submitted with SLURM jobid 9942336 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM070973.1/9942336.log).
+
+[Sun May 25 22:09:50 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070994.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070994.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070994.1_only_snps.vcf.bgz
+    jobid: 574
+    reason: Missing output files: sharks/HetFra/temp/CM070994.1_only_snps.vcf.bgz, sharks/HetFra/MSMC/Output_bam_caller_BED/CM070994.1_unmodified_bed.txt.gz; Input files updated by another job: sharks/HetFra/temp/CM070994.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070994.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 574 has been submitted with SLURM jobid 9942337 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070994.1/9942337.log).
+
+[Sun May 25 22:09:52 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM070969.1.fasta, sharks/HetFra/HetFra_CM070969.1.bam
+    output: sharks/HetFra/temp/CM070969.1_pileup.vcf.gz
+    jobid: 500
+    reason: Missing output files: sharks/HetFra/temp/CM070969.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM070969.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070969.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 500 has been submitted with SLURM jobid 9942338 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM070969.1/9942338.log).
+
+[Sun May 25 22:09:52 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM071001.1.bam
+    output: sharks/HetFra/HetFra_CM071001.1.bam.bai
+    jobid: 415
+    reason: Missing output files: sharks/HetFra/HetFra_CM071001.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM071001.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071001.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 415 has been submitted with SLURM jobid 9942339 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM071001.1/9942339.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Sun May 25 22:11:00 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9942129' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 541
+    input: sharks/HetFra/temp/CM070983.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070983.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070983.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070983.1/9942129.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070983.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070983.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070983.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9942129
+
+[Sun May 25 22:11:00 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9942130' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 490
+    input: sharks/HetFra/temp/CM070966.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070966.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070966.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070966.1/9942130.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070966.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070966.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070966.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9942130
+
+[Sun May 25 22:11:00 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9942132' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 583
+    input: sharks/HetFra/temp/CM070997.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070997.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070997.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070997.1/9942132.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070997.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070997.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070997.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9942132
+
+[Sun May 25 22:11:00 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9942134' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 562
+    input: sharks/HetFra/temp/CM070990.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070990.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070990.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070990.1/9942134.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070990.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070990.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070990.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9942134
+
+[Sun May 25 22:11:00 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9942138' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 520
+    input: sharks/HetFra/temp/CM070976.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070976.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070976.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070976.1/9942138.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070976.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070976.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070976.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9942138
+
+[Sun May 25 22:11:00 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9942177' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 478
+    input: sharks/HetFra/temp/CM070962.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070962.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070962.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070962.1/9942177.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070962.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070962.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070962.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9942177
+
+[Sun May 25 22:11:00 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9942185' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 616
+    input: sharks/HetFra/temp/CM071008.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071008.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071008.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM071008.1/9942185.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM071008.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM071008.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM071008.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9942185
+
+[Sun May 25 22:11:00 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9942186' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 553
+    input: sharks/HetFra/temp/CM070987.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070987.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070987.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070987.1/9942186.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070987.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070987.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070987.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9942186
+
+[Sun May 25 22:11:00 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9942253' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 538
+    input: sharks/HetFra/temp/CM070982.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070982.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070982.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070982.1/9942253.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070982.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070982.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070982.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9942253
+
+[Sun May 25 22:11:00 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9942258' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 595
+    input: sharks/HetFra/temp/CM071001.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071001.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071001.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM071001.1/9942258.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM071001.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM071001.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM071001.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9942258
+
+Execute 1 jobs...
+
+[Sun May 25 22:11:00 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HetFra/HetFra.bam
+    output: sharks/HetFra/HetFra_CM070981.1.bam
+    jobid: 345
+    reason: Missing output files: sharks/HetFra/HetFra_CM070981.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070981.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=4790, disk_mib=4569, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 345 has been submitted with SLURM jobid 9942350 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HetFra_CM070981.1/9942350.log).
+Select jobs to execute...
+Execute 9 jobs...
+
+[Sun May 25 22:11:01 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM070996.1.bam
+    output: sharks/HetFra/HetFra_CM070996.1.bam.bai
+    jobid: 410
+    reason: Missing output files: sharks/HetFra/HetFra_CM070996.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM070996.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070996.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 410 has been submitted with SLURM jobid 9942446 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM070996.1/9942446.log).
+
+[Sun May 25 22:11:04 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM071009.1.bam
+    output: sharks/HetFra/HetFra_CM071009.1.bam.bai
+    jobid: 423
+    reason: Missing output files: sharks/HetFra/HetFra_CM071009.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM071009.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071009.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 423 has been submitted with SLURM jobid 9942447 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM071009.1/9942447.log).
+
+[Sun May 25 22:11:06 2025]
+rule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM071000.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM071000.1_indel_bed.txt
+    jobid: 815
+    reason: Missing output files: sharks/HetFra/MSMC/Output_indel_BED_file/CM071000.1_indel_bed.txt; Input files updated by another job: sharks/HetFra/temp/CM071000.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071000.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 815 has been submitted with SLURM jobid 9942448 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HetFra_CM071000.1/9942448.log).
+
+[Sun May 25 22:11:07 2025]
+rule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM070993.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM070993.1_indel_bed.txt
+    jobid: 808
+    reason: Missing output files: sharks/HetFra/MSMC/Output_indel_BED_file/CM070993.1_indel_bed.txt; Input files updated by another job: sharks/HetFra/temp/CM070993.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070993.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 808 has been submitted with SLURM jobid 9942449 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HetFra_CM070993.1/9942449.log).
+
+[Sun May 25 22:11:09 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM070995.1.bam
+    output: sharks/HetFra/HetFra_CM070995.1.bam.bai
+    jobid: 409
+    reason: Missing output files: sharks/HetFra/HetFra_CM070995.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM070995.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070995.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 409 has been submitted with SLURM jobid 9942450 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM070995.1/9942450.log).
+
+[Sun May 25 22:11:09 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070967.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070967.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070967.1_only_snps.vcf.bgz
+    jobid: 493
+    reason: Missing output files: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070967.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070967.1_only_snps.vcf.bgz; Input files updated by another job: sharks/HetFra/temp/CM070967.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070967.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 493 has been submitted with SLURM jobid 9942451 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070967.1/9942451.log).
+
+[Sun May 25 22:11:09 2025]
+rule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM070979.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM070979.1_indel_bed.txt
+    jobid: 794
+    reason: Missing output files: sharks/HetFra/MSMC/Output_indel_BED_file/CM070979.1_indel_bed.txt; Input files updated by another job: sharks/HetFra/temp/CM070979.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070979.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 794 has been submitted with SLURM jobid 9942452 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HetFra_CM070979.1/9942452.log).
+
+[Sun May 25 22:11:12 2025]
+rule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM070972.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM070972.1_indel_bed.txt
+    jobid: 787
+    reason: Missing output files: sharks/HetFra/MSMC/Output_indel_BED_file/CM070972.1_indel_bed.txt; Input files updated by another job: sharks/HetFra/temp/CM070972.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070972.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 787 has been submitted with SLURM jobid 9942453 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HetFra_CM070972.1/9942453.log).
+
+[Sun May 25 22:11:12 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070980.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070980.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070980.1_only_snps.vcf.bgz
+    jobid: 532
+    reason: Missing output files: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070980.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070980.1_only_snps.vcf.bgz; Input files updated by another job: sharks/HetFra/temp/CM070980.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070980.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 532 has been submitted with SLURM jobid 9942454 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070980.1/9942454.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Sun May 25 22:21:31 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9942320' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 511
+    input: sharks/HetFra/temp/CM070973.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070973.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070973.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070973.1/9942320.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070973.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070973.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070973.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9942320
+
+[Sun May 25 22:21:31 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9942321' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 619
+    input: sharks/HetFra/temp/CM071009.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071009.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071009.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM071009.1/9942321.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM071009.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM071009.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM071009.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9942321
+
+[Sun May 25 22:21:31 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9942323' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 598
+    input: sharks/HetFra/temp/CM071002.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071002.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071002.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM071002.1/9942323.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM071002.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM071002.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM071002.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9942323
+
+[Sun May 25 22:21:31 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9942330' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 613
+    input: sharks/HetFra/temp/CM071007.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071007.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071007.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM071007.1/9942330.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM071007.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM071007.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM071007.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9942330
+
+[Sun May 25 22:21:31 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9942331' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 592
+    input: sharks/HetFra/temp/CM071000.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071000.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071000.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM071000.1/9942331.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM071000.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM071000.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM071000.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9942331
+
+[Sun May 25 22:21:31 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9942332' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 571
+    input: sharks/HetFra/temp/CM070993.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070993.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070993.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070993.1/9942332.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070993.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070993.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070993.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9942332
+
+[Sun May 25 22:21:31 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9942333' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 529
+    input: sharks/HetFra/temp/CM070979.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070979.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070979.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070979.1/9942333.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070979.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070979.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070979.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9942333
+
+[Sun May 25 22:21:31 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9942334' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 508
+    input: sharks/HetFra/temp/CM070972.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070972.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070972.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070972.1/9942334.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070972.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070972.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070972.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9942334
+
+[Sun May 25 22:21:31 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9942335' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 487
+    input: sharks/HetFra/temp/CM070965.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070965.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070965.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070965.1/9942335.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070965.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070965.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070965.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9942335
+
+[Sun May 25 22:21:31 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9942337' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 574
+    input: sharks/HetFra/temp/CM070994.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070994.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070994.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070994.1/9942337.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070994.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070994.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070994.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9942337
+
+Execute 1 jobs...
+
+[Sun May 25 22:21:31 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM071010.1.bam
+    output: sharks/HetFra/HetFra_CM071010.1.bam.bai
+    jobid: 424
+    reason: Missing output files: sharks/HetFra/HetFra_CM071010.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM071010.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071010.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+[Sun May 25 22:21:31 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9942451' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 493
+    input: sharks/HetFra/temp/CM070967.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070967.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070967.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070967.1/9942451.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070967.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070967.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070967.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9942451
+
+[Sun May 25 22:21:31 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9942454' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 532
+    input: sharks/HetFra/temp/CM070980.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070980.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070980.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070980.1/9942454.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070980.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070980.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070980.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9942454
+
+Job 424 has been submitted with SLURM jobid 9942581 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM071010.1/9942581.log).
+[Sun May 25 22:21:32 2025]
+Finished job 780.
+78 of 2069 steps (4%) done
+[Sun May 25 22:21:32 2025]
+Finished job 809.
+79 of 2069 steps (4%) done
+[Sun May 25 22:21:32 2025]
+Finished job 417.
+80 of 2069 steps (4%) done
+[Sun May 25 22:21:32 2025]
+Finished job 383.
+81 of 2069 steps (4%) done
+[Sun May 25 22:21:32 2025]
+Finished job 327.
+82 of 2069 steps (4%) done
+[Sun May 25 22:21:32 2025]
+Finished job 551.
+83 of 2069 steps (4%) done
+[Sun May 25 22:21:32 2025]
+Finished job 818.
+84 of 2069 steps (4%) done
+[Sun May 25 22:21:32 2025]
+Finished job 387.
+85 of 2069 steps (4%) done
+[Sun May 25 22:21:32 2025]
+Finished job 500.
+86 of 2069 steps (4%) done
+[Sun May 25 22:21:32 2025]
+Finished job 415.
+87 of 2069 steps (4%) done
+[Sun May 25 22:21:32 2025]
+Finished job 345.
+88 of 2069 steps (4%) done
+[Sun May 25 22:21:32 2025]
+Finished job 410.
+89 of 2069 steps (4%) done
+[Sun May 25 22:21:32 2025]
+Finished job 423.
+90 of 2069 steps (4%) done
+[Sun May 25 22:21:32 2025]
+Finished job 815.
+91 of 2069 steps (4%) done
+[Sun May 25 22:21:32 2025]
+Finished job 808.
+92 of 2069 steps (4%) done
+[Sun May 25 22:21:32 2025]
+Finished job 409.
+93 of 2069 steps (4%) done
+[Sun May 25 22:21:32 2025]
+Finished job 794.
+94 of 2069 steps (5%) done
+[Sun May 25 22:21:32 2025]
+Finished job 787.
+95 of 2069 steps (5%) done
+Select jobs to execute...
+Execute 24 jobs...
+
+[Sun May 25 22:21:33 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM070994.1.bam
+    output: sharks/HetFra/HetFra_CM070994.1.bam.bai
+    jobid: 408
+    reason: Missing output files: sharks/HetFra/HetFra_CM070994.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM070994.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070994.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 408 has been submitted with SLURM jobid 9942582 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM070994.1/9942582.log).
+
+[Sun May 25 22:21:35 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070995.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070995.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070995.1_only_snps.vcf.bgz
+    jobid: 577
+    reason: Missing output files: sharks/HetFra/temp/CM070995.1_only_snps.vcf.bgz, sharks/HetFra/MSMC/Output_bam_caller_BED/CM070995.1_unmodified_bed.txt.gz; Input files updated by another job: sharks/HetFra/temp/CM070995.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070995.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 577 has been submitted with SLURM jobid 9942583 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070995.1/9942583.log).
+
+[Sun May 25 22:21:35 2025]
+rule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM071007.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM071007.1_indel_bed.txt
+    jobid: 822
+    reason: Missing output files: sharks/HetFra/MSMC/Output_indel_BED_file/CM071007.1_indel_bed.txt; Input files updated by another job: sharks/HetFra/temp/CM071007.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071007.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 822 has been submitted with SLURM jobid 9942584 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HetFra_CM071007.1/9942584.log).
+
+[Sun May 25 22:21:39 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM070963.1.fasta, sharks/HetFra/HetFra_CM070963.1.bam
+    output: sharks/HetFra/temp/CM070963.1_pileup.vcf.gz
+    jobid: 482
+    reason: Missing output files: sharks/HetFra/temp/CM070963.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM070963.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070963.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 482 has been submitted with SLURM jobid 9942585 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM070963.1/9942585.log).
+
+[Sun May 25 22:21:40 2025]
+rule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM070986.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM070986.1_indel_bed.txt
+    jobid: 801
+    reason: Missing output files: sharks/HetFra/MSMC/Output_indel_BED_file/CM070986.1_indel_bed.txt; Input files updated by another job: sharks/HetFra/temp/CM070986.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070986.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 801 has been submitted with SLURM jobid 9942586 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HetFra_CM070986.1/9942586.log).
+
+[Sun May 25 22:21:40 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM070981.1.bam
+    output: sharks/HetFra/HetFra_CM070981.1.bam.bai
+    jobid: 395
+    reason: Missing output files: sharks/HetFra/HetFra_CM070981.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM070981.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070981.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 395 has been submitted with SLURM jobid 9942587 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM070981.1/9942587.log).
+
+[Sun May 25 22:21:42 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM071010.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071010.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071010.1_only_snps.vcf.bgz
+    jobid: 622
+    reason: Missing output files: sharks/HetFra/temp/CM071010.1_only_snps.vcf.bgz, sharks/HetFra/MSMC/Output_bam_caller_BED/CM071010.1_unmodified_bed.txt.gz; Input files updated by another job: sharks/HetFra/temp/CM071010.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071010.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 622 has been submitted with SLURM jobid 9942588 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM071010.1/9942588.log).
+
+[Sun May 25 22:21:42 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM070975.1.bam
+    output: sharks/HetFra/HetFra_CM070975.1.bam.bai
+    jobid: 389
+    reason: Missing output files: sharks/HetFra/HetFra_CM070975.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM070975.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070975.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 389 has been submitted with SLURM jobid 9942589 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM070975.1/9942589.log).
+
+[Sun May 25 22:21:42 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM070985.1.fasta, sharks/HetFra/HetFra_CM070985.1.bam
+    output: sharks/HetFra/temp/CM070985.1_pileup.vcf.gz
+    jobid: 548
+    reason: Missing output files: sharks/HetFra/temp/CM070985.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM070985.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070985.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 548 has been submitted with SLURM jobid 9942590 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM070985.1/9942590.log).
+
+[Sun May 25 22:21:45 2025]
+rule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM070966.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM070966.1_indel_bed.txt
+    jobid: 781
+    reason: Missing output files: sharks/HetFra/MSMC/Output_indel_BED_file/CM070966.1_indel_bed.txt; Input files updated by another job: sharks/HetFra/temp/CM070966.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070966.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 781 has been submitted with SLURM jobid 9942591 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HetFra_CM070966.1/9942591.log).
+
+[Sun May 25 22:21:45 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM070978.1.fasta, sharks/HetFra/HetFra_CM070978.1.bam
+    output: sharks/HetFra/temp/CM070978.1_pileup.vcf.gz
+    jobid: 527
+    reason: Missing output files: sharks/HetFra/temp/CM070978.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM070978.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070978.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 527 has been submitted with SLURM jobid 9942704 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM070978.1/9942704.log).
+
+[Sun May 25 22:21:47 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070996.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070996.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070996.1_only_snps.vcf.bgz
+    jobid: 580
+    reason: Missing output files: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070996.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070996.1_only_snps.vcf.bgz; Input files updated by another job: sharks/HetFra/temp/CM070996.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070996.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 580 has been submitted with SLURM jobid 9942705 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070996.1/9942705.log).
+
+[Sun May 25 22:21:47 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070989.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070989.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070989.1_only_snps.vcf.bgz
+    jobid: 559
+    reason: Missing output files: sharks/HetFra/temp/CM070989.1_only_snps.vcf.bgz, sharks/HetFra/MSMC/Output_bam_caller_BED/CM070989.1_unmodified_bed.txt.gz; Input files updated by another job: sharks/HetFra/temp/CM070989.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070989.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 559 has been submitted with SLURM jobid 9942706 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070989.1/9942706.log).
+
+[Sun May 25 22:21:47 2025]
+rule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM071001.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM071001.1_indel_bed.txt
+    jobid: 816
+    reason: Missing output files: sharks/HetFra/MSMC/Output_indel_BED_file/CM071001.1_indel_bed.txt; Input files updated by another job: sharks/HetFra/temp/CM071001.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071001.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 816 has been submitted with SLURM jobid 9942707 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HetFra_CM071001.1/9942707.log).
+
+[Sun May 25 22:21:47 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM071003.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071003.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071003.1_only_snps.vcf.bgz
+    jobid: 601
+    reason: Missing output files: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071003.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071003.1_only_snps.vcf.bgz; Input files updated by another job: sharks/HetFra/temp/CM071003.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071003.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 601 has been submitted with SLURM jobid 9942708 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM071003.1/9942708.log).
+
+[Sun May 25 22:21:50 2025]
+rule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM071008.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM071008.1_indel_bed.txt
+    jobid: 823
+    reason: Missing output files: sharks/HetFra/MSMC/Output_indel_BED_file/CM071008.1_indel_bed.txt; Input files updated by another job: sharks/HetFra/temp/CM071008.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071008.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 823 has been submitted with SLURM jobid 9942709 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HetFra_CM071008.1/9942709.log).
+
+[Sun May 25 22:21:50 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070975.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070975.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070975.1_only_snps.vcf.bgz
+    jobid: 517
+    reason: Missing output files: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070975.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070975.1_only_snps.vcf.bgz; Input files updated by another job: sharks/HetFra/temp/CM070975.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070975.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 517 has been submitted with SLURM jobid 9942711 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070975.1/9942711.log).
+
+[Sun May 25 22:21:50 2025]
+rule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM070987.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM070987.1_indel_bed.txt
+    jobid: 802
+    reason: Missing output files: sharks/HetFra/MSMC/Output_indel_BED_file/CM070987.1_indel_bed.txt; Input files updated by another job: sharks/HetFra/temp/CM070987.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070987.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 802 has been submitted with SLURM jobid 9942712 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HetFra_CM070987.1/9942712.log).
+
+[Sun May 25 22:21:52 2025]
+rule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM070973.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM070973.1_indel_bed.txt
+    jobid: 788
+    reason: Missing output files: sharks/HetFra/MSMC/Output_indel_BED_file/CM070973.1_indel_bed.txt; Input files updated by another job: sharks/HetFra/temp/CM070973.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070973.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 788 has been submitted with SLURM jobid 9942713 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HetFra_CM070973.1/9942713.log).
+
+[Sun May 25 22:21:52 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070969.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070969.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070969.1_only_snps.vcf.bgz
+    jobid: 499
+    reason: Missing output files: sharks/HetFra/temp/CM070969.1_only_snps.vcf.bgz, sharks/HetFra/MSMC/Output_bam_caller_BED/CM070969.1_unmodified_bed.txt.gz; Input files updated by another job: sharks/HetFra/temp/CM070969.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070969.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 499 has been submitted with SLURM jobid 9942714 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070969.1/9942714.log).
+
+[Sun May 25 22:21:52 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/HetFra/HetFra_CM070963.1.bam
+    output: sharks/HetFra/HetFra_CM070963.1.bam.bai
+    jobid: 377
+    reason: Missing output files: sharks/HetFra/HetFra_CM070963.1.bam.bai; Input files updated by another job: sharks/HetFra/HetFra_CM070963.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070963.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 377 has been submitted with SLURM jobid 9942715 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_HetFra_CM070963.1/9942715.log).
+
+[Sun May 25 22:21:55 2025]
+rule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM070969.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM070969.1_indel_bed.txt
+    jobid: 784
+    reason: Missing output files: sharks/HetFra/MSMC/Output_indel_BED_file/CM070969.1_indel_bed.txt; Input files updated by another job: sharks/HetFra/temp/CM070969.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070969.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 784 has been submitted with SLURM jobid 9942716 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HetFra_CM070969.1/9942716.log).
+
+[Sun May 25 22:21:55 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HetFra/temp/CM070981.1.fasta, sharks/HetFra/HetFra_CM070981.1.bam
+    output: sharks/HetFra/temp/CM070981.1_pileup.vcf.gz
+    jobid: 536
+    reason: Missing output files: sharks/HetFra/temp/CM070981.1_pileup.vcf.gz; Input files updated by another job: sharks/HetFra/HetFra_CM070981.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070981.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 536 has been submitted with SLURM jobid 9942717 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HetFra_CM070981.1/9942717.log).
+
+[Sun May 25 22:21:55 2025]
+rule CALL_PLOIDY:
+    input: sharks/HetFra/temp/CM070986.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070986.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070986.1_only_snps.vcf.bgz
+    jobid: 550
+    reason: Missing output files: sharks/HetFra/temp/CM070986.1_only_snps.vcf.bgz, sharks/HetFra/MSMC/Output_bam_caller_BED/CM070986.1_unmodified_bed.txt.gz; Input files updated by another job: sharks/HetFra/temp/CM070986.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM070986.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 550 has been submitted with SLURM jobid 9942718 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070986.1/9942718.log).
+[Sun May 25 22:31:32 2025]
+Finished job 424.
+96 of 2069 steps (5%) done
+[Sun May 25 22:31:32 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9942583' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 577
+    input: sharks/HetFra/temp/CM070995.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM070995.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM070995.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM070995.1/9942583.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM070995.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM070995.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM070995.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9942583
+
+[Sun May 25 22:31:33 2025]
+Finished job 408.
+97 of 2069 steps (5%) done
+[Sun May 25 22:31:33 2025]
+Finished job 822.
+98 of 2069 steps (5%) done
+[Sun May 25 22:31:33 2025]
+Finished job 482.
+99 of 2069 steps (5%) done
+Select jobs to execute...
+[Sun May 25 22:31:33 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9942588' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 622
+    input: sharks/HetFra/temp/CM071010.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_bam_caller_BED/CM071010.1_unmodified_bed.txt.gz, sharks/HetFra/temp/CM071010.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HetFra_CM071010.1/9942588.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HetFra/temp/CM071010.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HetFra/MSMC/Output_bam_caller_BED/CM071010.1_unmodified_bed.txt.gz | bgzip -c > sharks/HetFra/temp/CM071010.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9942588
+
+[Sun May 25 22:31:33 2025]

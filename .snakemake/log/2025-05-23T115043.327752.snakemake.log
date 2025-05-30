@@ -1,0 +1,1615 @@
+host: login-q-4
+Building DAG of jobs...
+SLURM run ID: 5bdb43e3-b21a-4535-900a-0e00c3c57a85
+Using shell: /usr/bin/bash
+Provided remote nodes: 30
+Job stats:
+job                            count
+---------------------------  -------
+BOOTSTRAPPING_MULTIHET_FILE     1560
+MAIN_MULTIHETSEP                  48
+TABIX                             49
+all                                1
+total                           1658
+
+Select jobs to execute...
+Execute 30 jobs...
+
+[Fri May 23 11:50:44 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083402.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/8/NC_083402.1_multihet.txt
+    jobid: 533
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=8, CHROM=NC_083402.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 533 has been submitted with SLURM jobid 9803288 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_8_NC_083402.1/9803288.log).
+
+[Fri May 23 11:50:45 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083435.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/26/NC_083435.1_multihet.txt
+    jobid: 1541
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=26, CHROM=NC_083435.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1541 has been submitted with SLURM jobid 9803291 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_26_NC_083435.1/9803291.log).
+
+[Fri May 23 11:50:45 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083430.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/8/NC_083430.1_multihet.txt
+    jobid: 1373
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=8, CHROM=NC_083430.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1373 has been submitted with SLURM jobid 9803293 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_8_NC_083430.1/9803293.log).
+
+[Fri May 23 11:50:47 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083433.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/4/NC_083433.1_multihet.txt
+    jobid: 1459
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=4, CHROM=NC_083433.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1459 has been submitted with SLURM jobid 9803296 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_4_NC_083433.1/9803296.log).
+
+[Fri May 23 11:50:47 2025]
+rule TABIX:
+    input: sharks/HemOce/temp/NC_083405.1_only_snps.vcf.bgz
+    output: sharks/HemOce/temp/NC_083405.1_only_snps.vcf.bgz.tbi
+    jobid: 395
+    reason: Missing output files: sharks/HemOce/temp/NC_083405.1_only_snps.vcf.bgz.tbi
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHROM=NC_083405.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 395 has been submitted with SLURM jobid 9803298 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_TABIX/sharks_HemOce_NC_083405.1/9803298.log).
+
+[Fri May 23 11:50:47 2025]
+rule MAIN_MULTIHETSEP:
+    input: sharks/HemOce/NC_083434.1.recode.vcf.gz, sharks/HemOce/MSMC/Output_Bed/NC_083434.1/NC_083434.1_95.txt, sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083434.1_modified_bed.txt.gz, sharks/HemOce/MSMC/Output_indel_BED_file/NC_083434.1_indel_bed.txt
+    output: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    jobid: 476
+    reason: Updated input files: sharks/HemOce/NC_083434.1.recode.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHROM=NC_083434.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 476 has been submitted with SLURM jobid 9803301 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAIN_MULTIHETSEP/sharks_HemOce_NC_083434.1/9803301.log).
+
+[Fri May 23 11:50:52 2025]
+rule MAIN_MULTIHETSEP:
+    input: sharks/HemOce/NC_083438.1.recode.vcf.gz, sharks/HemOce/MSMC/Output_Bed/NC_083438.1/NC_083438.1_95.txt, sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083438.1_modified_bed.txt.gz, sharks/HemOce/MSMC/Output_indel_BED_file/NC_083438.1_indel_bed.txt
+    output: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083438.1_multihet.txt
+    jobid: 480
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHROM=NC_083438.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 480 has been submitted with SLURM jobid 9803304 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAIN_MULTIHETSEP/sharks_HemOce_NC_083438.1/9803304.log).
+
+[Fri May 23 11:50:53 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083435.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/29/NC_083435.1_multihet.txt
+    jobid: 1544
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=29, CHROM=NC_083435.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1544 has been submitted with SLURM jobid 9803306 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_29_NC_083435.1/9803306.log).
+
+[Fri May 23 11:50:53 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083430.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/11/NC_083430.1_multihet.txt
+    jobid: 1376
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=11, CHROM=NC_083430.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1376 has been submitted with SLURM jobid 9803308 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_11_NC_083430.1/9803308.log).
+
+[Fri May 23 11:50:55 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083402.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/11/NC_083402.1_multihet.txt
+    jobid: 536
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=11, CHROM=NC_083402.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 536 has been submitted with SLURM jobid 9803311 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_11_NC_083402.1/9803311.log).
+
+[Fri May 23 11:50:55 2025]
+rule TABIX:
+    input: sharks/HemOce/temp/NC_083434.1_only_snps.vcf.bgz
+    output: sharks/HemOce/temp/NC_083434.1_only_snps.vcf.bgz.tbi
+    jobid: 424
+    reason: Missing output files: sharks/HemOce/temp/NC_083434.1_only_snps.vcf.bgz.tbi
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHROM=NC_083434.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 424 has been submitted with SLURM jobid 9803314 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_TABIX/sharks_HemOce_NC_083434.1/9803314.log).
+
+[Fri May 23 11:50:55 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083430.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/4/NC_083430.1_multihet.txt
+    jobid: 1369
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=4, CHROM=NC_083430.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1369 has been submitted with SLURM jobid 9803316 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_4_NC_083430.1/9803316.log).
+
+[Fri May 23 11:50:58 2025]
+rule MAIN_MULTIHETSEP:
+    input: sharks/HemOce/NC_083410.1.recode.vcf.gz, sharks/HemOce/MSMC/Output_Bed/NC_083410.1/NC_083410.1_95.txt, sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083410.1_modified_bed.txt.gz, sharks/HemOce/MSMC/Output_indel_BED_file/NC_083410.1_indel_bed.txt
+    output: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083410.1_multihet.txt
+    jobid: 452
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHROM=NC_083410.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 452 has been submitted with SLURM jobid 9803319 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAIN_MULTIHETSEP/sharks_HemOce_NC_083410.1/9803319.log).
+
+[Fri May 23 11:50:58 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083435.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/1/NC_083435.1_multihet.txt
+    jobid: 1516
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=1, CHROM=NC_083435.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1516 has been submitted with SLURM jobid 9803321 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_1_NC_083435.1/9803321.log).
+
+[Fri May 23 11:51:00 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083433.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/5/NC_083433.1_multihet.txt
+    jobid: 1460
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=5, CHROM=NC_083433.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1460 has been submitted with SLURM jobid 9803324 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_5_NC_083433.1/9803324.log).
+
+[Fri May 23 11:51:00 2025]
+rule TABIX:
+    input: sharks/HemOce/temp/NC_083406.1_only_snps.vcf.bgz
+    output: sharks/HemOce/temp/NC_083406.1_only_snps.vcf.bgz.tbi
+    jobid: 396
+    reason: Missing output files: sharks/HemOce/temp/NC_083406.1_only_snps.vcf.bgz.tbi
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHROM=NC_083406.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 396 has been submitted with SLURM jobid 9803326 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_TABIX/sharks_HemOce_NC_083406.1/9803326.log).
+
+[Fri May 23 11:51:01 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083430.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/12/NC_083430.1_multihet.txt
+    jobid: 1377
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=12, CHROM=NC_083430.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1377 has been submitted with SLURM jobid 9803328 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_12_NC_083430.1/9803328.log).
+
+[Fri May 23 11:51:03 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083402.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/12/NC_083402.1_multihet.txt
+    jobid: 537
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=12, CHROM=NC_083402.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 537 has been submitted with SLURM jobid 9803331 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_12_NC_083402.1/9803331.log).
+
+[Fri May 23 11:51:03 2025]
+rule MAIN_MULTIHETSEP:
+    input: sharks/HemOce/NC_083439.1.recode.vcf.gz, sharks/HemOce/MSMC/Output_Bed/NC_083439.1/NC_083439.1_95.txt, sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083439.1_modified_bed.txt.gz, sharks/HemOce/MSMC/Output_indel_BED_file/NC_083439.1_indel_bed.txt
+    output: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083439.1_multihet.txt
+    jobid: 481
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHROM=NC_083439.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 481 has been submitted with SLURM jobid 9803333 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAIN_MULTIHETSEP/sharks_HemOce_NC_083439.1/9803333.log).
+
+[Fri May 23 11:51:03 2025]
+rule TABIX:
+    input: sharks/HemOce/temp/NC_083435.1_only_snps.vcf.bgz
+    output: sharks/HemOce/temp/NC_083435.1_only_snps.vcf.bgz.tbi
+    jobid: 425
+    reason: Missing output files: sharks/HemOce/temp/NC_083435.1_only_snps.vcf.bgz.tbi
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHROM=NC_083435.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 425 has been submitted with SLURM jobid 9803335 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_TABIX/sharks_HemOce_NC_083435.1/9803335.log).
+
+[Fri May 23 11:51:06 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083435.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/2/NC_083435.1_multihet.txt
+    jobid: 1517
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=2, CHROM=NC_083435.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1517 has been submitted with SLURM jobid 9803338 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_2_NC_083435.1/9803338.log).
+
+[Fri May 23 11:51:06 2025]
+rule MAIN_MULTIHETSEP:
+    input: sharks/HemOce/NC_083411.1.recode.vcf.gz, sharks/HemOce/MSMC/Output_Bed/NC_083411.1/NC_083411.1_95.txt, sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083411.1_modified_bed.txt.gz, sharks/HemOce/MSMC/Output_indel_BED_file/NC_083411.1_indel_bed.txt
+    output: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083411.1_multihet.txt
+    jobid: 453
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHROM=NC_083411.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 453 has been submitted with SLURM jobid 9803340 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAIN_MULTIHETSEP/sharks_HemOce_NC_083411.1/9803340.log).
+
+[Fri May 23 11:51:08 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083430.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/7/NC_083430.1_multihet.txt
+    jobid: 1372
+    reason: Updated input files: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083430.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=7, CHROM=NC_083430.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1372 has been submitted with SLURM jobid 9803344 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_7_NC_083430.1/9803344.log).
+
+[Fri May 23 11:51:08 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083433.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/6/NC_083433.1_multihet.txt
+    jobid: 1461
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=6, CHROM=NC_083433.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1461 has been submitted with SLURM jobid 9803347 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_6_NC_083433.1/9803347.log).
+
+[Fri May 23 11:51:08 2025]
+rule TABIX:
+    input: sharks/HemOce/temp/NC_083407.1_only_snps.vcf.bgz
+    output: sharks/HemOce/temp/NC_083407.1_only_snps.vcf.bgz.tbi
+    jobid: 397
+    reason: Missing output files: sharks/HemOce/temp/NC_083407.1_only_snps.vcf.bgz.tbi
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHROM=NC_083407.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 397 has been submitted with SLURM jobid 9803350 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_TABIX/sharks_HemOce_NC_083407.1/9803350.log).
+
+[Fri May 23 11:51:11 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083433.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/0/NC_083433.1_multihet.txt
+    jobid: 1455
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=0, CHROM=NC_083433.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1455 has been submitted with SLURM jobid 9803354 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_0_NC_083433.1/9803354.log).
+
+[Fri May 23 11:51:11 2025]
+rule MAIN_MULTIHETSEP:
+    input: sharks/HemOce/NC_083440.1.recode.vcf.gz, sharks/HemOce/MSMC/Output_Bed/NC_083440.1/NC_083440.1_95.txt, sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083440.1_modified_bed.txt.gz, sharks/HemOce/MSMC/Output_indel_BED_file/NC_083440.1_indel_bed.txt
+    output: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083440.1_multihet.txt
+    jobid: 482
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHROM=NC_083440.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 482 has been submitted with SLURM jobid 9803358 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAIN_MULTIHETSEP/sharks_HemOce_NC_083440.1/9803358.log).
+
+[Fri May 23 11:51:11 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083430.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/13/NC_083430.1_multihet.txt
+    jobid: 1378
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=13, CHROM=NC_083430.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1378 has been submitted with SLURM jobid 9803362 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_13_NC_083430.1/9803362.log).
+
+[Fri May 23 11:51:13 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083402.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/13/NC_083402.1_multihet.txt
+    jobid: 538
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=13, CHROM=NC_083402.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 538 has been submitted with SLURM jobid 9803367 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_13_NC_083402.1/9803367.log).
+
+[Fri May 23 11:51:14 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083435.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/25/NC_083435.1_multihet.txt
+    jobid: 1540
+    reason: Updated input files: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083435.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=25, CHROM=NC_083435.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1540 has been submitted with SLURM jobid 9803370 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_25_NC_083435.1/9803370.log).
+[Fri May 23 11:58:45 2025]
+Finished job 533.
+1 of 1658 steps (0.1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri May 23 11:58:46 2025]
+rule TABIX:
+    input: sharks/HemOce/temp/NC_083425.1_only_snps.vcf.bgz
+    output: sharks/HemOce/temp/NC_083425.1_only_snps.vcf.bgz.tbi
+    jobid: 415
+    reason: Missing output files: sharks/HemOce/temp/NC_083425.1_only_snps.vcf.bgz.tbi
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHROM=NC_083425.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 415 has been submitted with SLURM jobid 9803745 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_TABIX/sharks_HemOce_NC_083425.1/9803745.log).
+[Fri May 23 11:58:46 2025]
+Finished job 1541.
+2 of 1658 steps (0.1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri May 23 11:58:46 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083435.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/21/NC_083435.1_multihet.txt
+    jobid: 1536
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=21, CHROM=NC_083435.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1536 has been submitted with SLURM jobid 9803746 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_21_NC_083435.1/9803746.log).
+[Fri May 23 12:17:48 2025]
+Finished job 1373.
+3 of 1658 steps (0.2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri May 23 12:17:48 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083430.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/3/NC_083430.1_multihet.txt
+    jobid: 1368
+    reason: Updated input files: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083430.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=3, CHROM=NC_083430.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1368 has been submitted with SLURM jobid 9804099 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_3_NC_083430.1/9804099.log).
+[Fri May 23 12:17:50 2025]
+Finished job 1459.
+4 of 1658 steps (0.2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri May 23 12:17:50 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083435.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/28/NC_083435.1_multihet.txt
+    jobid: 1543
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=28, CHROM=NC_083435.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1543 has been submitted with SLURM jobid 9804100 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_28_NC_083435.1/9804100.log).
+[Fri May 23 12:34:20 2025]
+Finished job 395.
+5 of 1658 steps (0.3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri May 23 12:34:20 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083430.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/10/NC_083430.1_multihet.txt
+    jobid: 1375
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=10, CHROM=NC_083430.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1375 has been submitted with SLURM jobid 9804446 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_10_NC_083430.1/9804446.log).
+[Fri May 23 12:34:21 2025]
+Finished job 476.
+6 of 1658 steps (0.4%) done
+[Fri May 23 12:34:21 2025]
+Finished job 480.
+7 of 1658 steps (0.4%) done
+[Fri May 23 12:34:21 2025]
+Finished job 1544.
+8 of 1658 steps (0.5%) done
+Select jobs to execute...
+Execute 3 jobs...
+
+[Fri May 23 12:34:21 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083438.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/18/NC_083438.1_multihet.txt
+    jobid: 1623
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083438.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=18, CHROM=NC_083438.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1623 has been submitted with SLURM jobid 9804448 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_18_NC_083438.1/9804448.log).
+
+[Fri May 23 12:34:23 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083438.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/23/NC_083438.1_multihet.txt
+    jobid: 1628
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083438.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=23, CHROM=NC_083438.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1628 has been submitted with SLURM jobid 9804449 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_23_NC_083438.1/9804449.log).
+
+[Fri May 23 12:34:23 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083435.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/24/NC_083435.1_multihet.txt
+    jobid: 1539
+    reason: Updated input files: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083435.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=24, CHROM=NC_083435.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1539 has been submitted with SLURM jobid 9804450 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_24_NC_083435.1/9804450.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+[Fri May 23 12:48:31 2025]
+Finished job 1376.
+9 of 1658 steps (1%) done
+Execute 1 jobs...
+
+[Fri May 23 12:48:32 2025]
+rule TABIX:
+    input: sharks/HemOce/temp/NC_083422.1_only_snps.vcf.bgz
+    output: sharks/HemOce/temp/NC_083422.1_only_snps.vcf.bgz.tbi
+    jobid: 412
+    reason: Missing output files: sharks/HemOce/temp/NC_083422.1_only_snps.vcf.bgz.tbi
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHROM=NC_083422.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 412 has been submitted with SLURM jobid 9804692 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_TABIX/sharks_HemOce_NC_083422.1/9804692.log).
+[Fri May 23 12:48:32 2025]
+Finished job 536.
+10 of 1658 steps (1%) done
+[Fri May 23 12:48:32 2025]
+Finished job 424.
+11 of 1658 steps (1%) done
+[Fri May 23 12:48:32 2025]
+Finished job 1369.
+12 of 1658 steps (1%) done
+[Fri May 23 12:48:32 2025]
+Finished job 452.
+13 of 1658 steps (1%) done
+Select jobs to execute...
+Execute 4 jobs...
+
+[Fri May 23 12:48:32 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083402.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/5/NC_083402.1_multihet.txt
+    jobid: 530
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=5, CHROM=NC_083402.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 530 has been submitted with SLURM jobid 9804693 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_5_NC_083402.1/9804693.log).
+
+[Fri May 23 12:48:40 2025]
+rule MAIN_MULTIHETSEP:
+    input: sharks/HemOce/NC_083405.1.recode.vcf.gz, sharks/HemOce/MSMC/Output_Bed/NC_083405.1/NC_083405.1_95.txt, sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083405.1_modified_bed.txt.gz, sharks/HemOce/MSMC/Output_indel_BED_file/NC_083405.1_indel_bed.txt
+    output: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083405.1_multihet.txt
+    jobid: 447
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHROM=NC_083405.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 447 has been submitted with SLURM jobid 9804696 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAIN_MULTIHETSEP/sharks_HemOce_NC_083405.1/9804696.log).
+
+[Fri May 23 12:48:41 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083430.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/6/NC_083430.1_multihet.txt
+    jobid: 1371
+    reason: Updated input files: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083430.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=6, CHROM=NC_083430.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1371 has been submitted with SLURM jobid 9804698 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_6_NC_083430.1/9804698.log).
+
+[Fri May 23 12:48:43 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083410.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/18/NC_083410.1_multihet.txt
+    jobid: 783
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083410.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=18, CHROM=NC_083410.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 783 has been submitted with SLURM jobid 9804701 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_18_NC_083410.1/9804701.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Fri May 23 12:56:42 2025]
+Finished job 1516.
+14 of 1658 steps (1%) done
+Execute 1 jobs...
+
+[Fri May 23 12:56:43 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083438.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/10/NC_083438.1_multihet.txt
+    jobid: 1615
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083438.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=10, CHROM=NC_083438.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1615 has been submitted with SLURM jobid 9804840 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_10_NC_083438.1/9804840.log).
+[Fri May 23 12:56:44 2025]
+Finished job 1460.
+15 of 1658 steps (1%) done
+[Fri May 23 12:56:44 2025]
+Finished job 396.
+16 of 1658 steps (1%) done
+[Fri May 23 12:56:44 2025]
+Finished job 1377.
+17 of 1658 steps (1%) done
+[Fri May 23 12:56:44 2025]
+Finished job 537.
+18 of 1658 steps (1%) done
+[Fri May 23 12:56:44 2025]
+Finished job 425.
+19 of 1658 steps (1%) done
+[Fri May 23 12:56:44 2025]
+Finished job 1517.
+20 of 1658 steps (1%) done
+[Fri May 23 12:56:44 2025]
+Finished job 1372.
+21 of 1658 steps (1%) done
+[Fri May 23 12:56:44 2025]
+Finished job 1461.
+22 of 1658 steps (1%) done
+[Fri May 23 12:56:44 2025]
+Finished job 397.
+23 of 1658 steps (1%) done
+[Fri May 23 12:56:44 2025]
+Finished job 1455.
+24 of 1658 steps (1%) done
+[Fri May 23 12:56:44 2025]
+Finished job 482.
+25 of 1658 steps (2%) done
+[Fri May 23 12:56:44 2025]
+Finished job 1378.
+26 of 1658 steps (2%) done
+Select jobs to execute...
+Execute 12 jobs...
+
+[Fri May 23 12:56:44 2025]
+rule MAIN_MULTIHETSEP:
+    input: sharks/HemOce/NC_083431.1.recode.vcf.gz, sharks/HemOce/MSMC/Output_Bed/NC_083431.1/NC_083431.1_95.txt, sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083431.1_modified_bed.txt.gz, sharks/HemOce/MSMC/Output_indel_BED_file/NC_083431.1_indel_bed.txt
+    output: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083431.1_multihet.txt
+    jobid: 473
+    reason: Updated input files: sharks/HemOce/NC_083431.1.recode.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHROM=NC_083431.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 473 has been submitted with SLURM jobid 9804843 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAIN_MULTIHETSEP/sharks_HemOce_NC_083431.1/9804843.log).
+
+[Fri May 23 12:56:46 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083402.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/4/NC_083402.1_multihet.txt
+    jobid: 529
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=4, CHROM=NC_083402.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 529 has been submitted with SLURM jobid 9804847 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_4_NC_083402.1/9804847.log).
+
+[Fri May 23 12:56:47 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083440.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/17/NC_083440.1_multihet.txt
+    jobid: 1682
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083440.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=17, CHROM=NC_083440.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1682 has been submitted with SLURM jobid 9804850 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_17_NC_083440.1/9804850.log).
+
+[Fri May 23 12:56:49 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083435.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/22/NC_083435.1_multihet.txt
+    jobid: 1537
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=22, CHROM=NC_083435.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1537 has been submitted with SLURM jobid 9804853 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_22_NC_083435.1/9804853.log).
+
+[Fri May 23 12:56:51 2025]
+rule TABIX:
+    input: sharks/HemOce/temp/NC_083427.1_only_snps.vcf.bgz
+    output: sharks/HemOce/temp/NC_083427.1_only_snps.vcf.bgz.tbi
+    jobid: 417
+    reason: Missing output files: sharks/HemOce/temp/NC_083427.1_only_snps.vcf.bgz.tbi
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHROM=NC_083427.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 417 has been submitted with SLURM jobid 9804854 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_TABIX/sharks_HemOce_NC_083427.1/9804854.log).
+
+[Fri May 23 12:56:54 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083433.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/26/NC_083433.1_multihet.txt
+    jobid: 1481
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=26, CHROM=NC_083433.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1481 has been submitted with SLURM jobid 9804860 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_26_NC_083433.1/9804860.log).
+
+[Fri May 23 12:56:56 2025]
+rule MAIN_MULTIHETSEP:
+    input: sharks/HemOce/NC_083404.1.recode.vcf.gz, sharks/HemOce/MSMC/Output_Bed/NC_083404.1/NC_083404.1_95.txt, sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083404.1_modified_bed.txt.gz, sharks/HemOce/MSMC/Output_indel_BED_file/NC_083404.1_indel_bed.txt
+    output: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083404.1_multihet.txt
+    jobid: 446
+    reason: Updated input files: sharks/HemOce/NC_083404.1.recode.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHROM=NC_083404.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 446 has been submitted with SLURM jobid 9804861 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAIN_MULTIHETSEP/sharks_HemOce_NC_083404.1/9804861.log).
+
+[Fri May 23 12:56:59 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083438.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/17/NC_083438.1_multihet.txt
+    jobid: 1622
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083438.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=17, CHROM=NC_083438.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1622 has been submitted with SLURM jobid 9804866 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_17_NC_083438.1/9804866.log).
+
+[Fri May 23 12:57:01 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083410.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/17/NC_083410.1_multihet.txt
+    jobid: 782
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083410.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=17, CHROM=NC_083410.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 782 has been submitted with SLURM jobid 9804868 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_17_NC_083410.1/9804868.log).
+
+[Fri May 23 12:57:07 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083440.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/13/NC_083440.1_multihet.txt
+    jobid: 1678
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083440.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=13, CHROM=NC_083440.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1678 has been submitted with SLURM jobid 9804873 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_13_NC_083440.1/9804873.log).
+
+[Fri May 23 12:57:09 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/25/NC_083434.1_multihet.txt
+    jobid: 1510
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=25, CHROM=NC_083434.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1510 has been submitted with SLURM jobid 9804876 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_25_NC_083434.1/9804876.log).
+
+[Fri May 23 12:57:12 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/24/NC_083434.1_multihet.txt
+    jobid: 1509
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=24, CHROM=NC_083434.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1509 has been submitted with SLURM jobid 9804879 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_24_NC_083434.1/9804879.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Fri May 23 12:57:23 2025]
+Finished job 481.
+27 of 1658 steps (2%) done
+Execute 1 jobs...
+
+[Fri May 23 12:57:23 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083410.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/8/NC_083410.1_multihet.txt
+    jobid: 773
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083410.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=8, CHROM=NC_083410.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 773 has been submitted with SLURM jobid 9804893 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_8_NC_083410.1/9804893.log).
+[Fri May 23 12:58:03 2025]
+Finished job 453.
+28 of 1658 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri May 23 12:58:03 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083440.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/0/NC_083440.1_multihet.txt
+    jobid: 1665
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083440.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=0, CHROM=NC_083440.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1665 has been submitted with SLURM jobid 9804902 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_0_NC_083440.1/9804902.log).
+[Fri May 23 13:10:04 2025]
+Finished job 538.
+29 of 1658 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri May 23 13:10:04 2025]
+rule MAIN_MULTIHETSEP:
+    input: sharks/HemOce/NC_083448.1.recode.vcf.gz, sharks/HemOce/MSMC/Output_Bed/NC_083448.1/NC_083448.1_95.txt, sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083448.1_modified_bed.txt.gz, sharks/HemOce/MSMC/Output_indel_BED_file/NC_083448.1_indel_bed.txt
+    output: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083448.1_multihet.txt
+    jobid: 490
+    reason: Updated input files: sharks/HemOce/NC_083448.1.recode.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHROM=NC_083448.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 490 has been submitted with SLURM jobid 9804994 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAIN_MULTIHETSEP/sharks_HemOce_NC_083448.1/9804994.log).
+[Fri May 23 13:10:05 2025]
+Finished job 1540.
+30 of 1658 steps (2%) done
+[Fri May 23 13:10:05 2025]
+Finished job 415.
+31 of 1658 steps (2%) done
+[Fri May 23 13:10:05 2025]
+Finished job 1536.
+32 of 1658 steps (2%) done
+[Fri May 23 13:10:05 2025]
+Finished job 1368.
+33 of 1658 steps (2%) done
+[Fri May 23 13:10:05 2025]
+Finished job 1543.
+34 of 1658 steps (2%) done
+[Fri May 23 13:10:05 2025]
+Finished job 1375.
+35 of 1658 steps (2%) done
+[Fri May 23 13:10:05 2025]
+Finished job 1623.
+36 of 1658 steps (2%) done
+[Fri May 23 13:10:05 2025]
+Finished job 1628.
+37 of 1658 steps (2%) done
+[Fri May 23 13:10:05 2025]
+Finished job 1539.
+38 of 1658 steps (2%) done
+[Fri May 23 13:10:05 2025]
+Finished job 412.
+39 of 1658 steps (2%) done
+[Fri May 23 13:10:05 2025]
+Finished job 530.
+40 of 1658 steps (2%) done
+[Fri May 23 13:10:05 2025]
+Finished job 1371.
+41 of 1658 steps (2%) done
+[Fri May 23 13:10:05 2025]
+Finished job 783.
+42 of 1658 steps (3%) done
+Select jobs to execute...
+Execute 13 jobs...
+
+[Fri May 23 13:10:05 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/1/NC_083434.1_multihet.txt
+    jobid: 1486
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=1, CHROM=NC_083434.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1486 has been submitted with SLURM jobid 9804996 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_1_NC_083434.1/9804996.log).
+
+[Fri May 23 13:10:07 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083438.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/26/NC_083438.1_multihet.txt
+    jobid: 1631
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083438.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=26, CHROM=NC_083438.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1631 has been submitted with SLURM jobid 9804997 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_26_NC_083438.1/9804997.log).
+
+[Fri May 23 13:10:08 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/3/NC_083434.1_multihet.txt
+    jobid: 1488
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=3, CHROM=NC_083434.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1488 has been submitted with SLURM jobid 9804998 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_3_NC_083434.1/9804998.log).
+
+[Fri May 23 13:10:10 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083438.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/19/NC_083438.1_multihet.txt
+    jobid: 1624
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083438.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=19, CHROM=NC_083438.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1624 has been submitted with SLURM jobid 9804999 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_19_NC_083438.1/9804999.log).
+
+[Fri May 23 13:10:10 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/5/NC_083434.1_multihet.txt
+    jobid: 1490
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=5, CHROM=NC_083434.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1490 has been submitted with SLURM jobid 9805000 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_5_NC_083434.1/9805000.log).
+
+[Fri May 23 13:10:10 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083430.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/15/NC_083430.1_multihet.txt
+    jobid: 1380
+    reason: Updated input files: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083430.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=15, CHROM=NC_083430.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1380 has been submitted with SLURM jobid 9805001 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_15_NC_083430.1/9805001.log).
+
+[Fri May 23 13:10:13 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/7/NC_083434.1_multihet.txt
+    jobid: 1492
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=7, CHROM=NC_083434.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1492 has been submitted with SLURM jobid 9805002 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_7_NC_083434.1/9805002.log).
+
+[Fri May 23 13:10:13 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/8/NC_083434.1_multihet.txt
+    jobid: 1493
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=8, CHROM=NC_083434.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1493 has been submitted with SLURM jobid 9805003 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_8_NC_083434.1/9805003.log).
+
+[Fri May 23 13:10:15 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/2/NC_083434.1_multihet.txt
+    jobid: 1487
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=2, CHROM=NC_083434.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1487 has been submitted with SLURM jobid 9805004 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_2_NC_083434.1/9805004.log).
+
+[Fri May 23 13:10:15 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/4/NC_083434.1_multihet.txt
+    jobid: 1489
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=4, CHROM=NC_083434.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1489 has been submitted with SLURM jobid 9805005 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_4_NC_083434.1/9805005.log).
+
+[Fri May 23 13:10:18 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083430.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/14/NC_083430.1_multihet.txt
+    jobid: 1379
+    reason: Updated input files: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083430.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=14, CHROM=NC_083430.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1379 has been submitted with SLURM jobid 9805007 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_14_NC_083430.1/9805007.log).
+
+[Fri May 23 13:10:18 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/6/NC_083434.1_multihet.txt
+    jobid: 1491
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=6, CHROM=NC_083434.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1491 has been submitted with SLURM jobid 9805008 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_6_NC_083434.1/9805008.log).
+
+[Fri May 23 13:10:20 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083430.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/16/NC_083430.1_multihet.txt
+    jobid: 1381
+    reason: Updated input files: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083430.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=16, CHROM=NC_083430.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1381 has been submitted with SLURM jobid 9805009 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_16_NC_083430.1/9805009.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Fri May 23 13:11:35 2025]
+Finished job 447.
+43 of 1658 steps (3%) done
+Execute 1 jobs...
+
+[Fri May 23 13:11:35 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083410.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/19/NC_083410.1_multihet.txt
+    jobid: 784
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083410.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=19, CHROM=NC_083410.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 784 has been submitted with SLURM jobid 9805029 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_19_NC_083410.1/9805029.log).
+[Fri May 23 13:28:06 2025]
+Finished job 1615.
+44 of 1658 steps (3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri May 23 13:28:06 2025]
+rule MAIN_MULTIHETSEP:
+    input: sharks/HemOce/NC_083406.1.recode.vcf.gz, sharks/HemOce/MSMC/Output_Bed/NC_083406.1/NC_083406.1_95.txt, sharks/HemOce/MSMC/Output_bam_caller_BED/NC_083406.1_modified_bed.txt.gz, sharks/HemOce/MSMC/Output_indel_BED_file/NC_083406.1_indel_bed.txt
+    output: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083406.1_multihet.txt
+    jobid: 448
+    reason: Updated input files: sharks/HemOce/NC_083406.1.recode.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHROM=NC_083406.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 448 has been submitted with SLURM jobid 9805271 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAIN_MULTIHETSEP/sharks_HemOce_NC_083406.1/9805271.log).
+[Fri May 23 13:28:07 2025]
+Finished job 473.
+45 of 1658 steps (3%) done
+[Fri May 23 13:28:07 2025]
+Finished job 529.
+46 of 1658 steps (3%) done
+[Fri May 23 13:28:07 2025]
+Finished job 1682.
+47 of 1658 steps (3%) done
+[Fri May 23 13:28:07 2025]
+Finished job 1537.
+48 of 1658 steps (3%) done
+[Fri May 23 13:28:07 2025]
+Finished job 417.
+49 of 1658 steps (3%) done
+[Fri May 23 13:28:07 2025]
+Finished job 1481.
+50 of 1658 steps (3%) done
+[Fri May 23 13:28:07 2025]
+Finished job 1622.
+51 of 1658 steps (3%) done
+[Fri May 23 13:28:07 2025]
+Finished job 782.
+52 of 1658 steps (3%) done
+[Fri May 23 13:28:07 2025]
+Finished job 1678.
+53 of 1658 steps (3%) done
+[Fri May 23 13:28:07 2025]
+Finished job 1510.
+54 of 1658 steps (3%) done
+[Fri May 23 13:28:07 2025]
+Finished job 1509.
+55 of 1658 steps (3%) done
+[Fri May 23 13:28:07 2025]
+Finished job 773.
+56 of 1658 steps (3%) done
+[Fri May 23 13:28:07 2025]
+Finished job 1665.
+57 of 1658 steps (3%) done
+[Fri May 23 13:28:07 2025]
+Finished job 490.
+58 of 1658 steps (3%) done
+[Fri May 23 13:28:07 2025]
+Finished job 1486.
+59 of 1658 steps (4%) done
+Select jobs to execute...
+Execute 15 jobs...
+
+[Fri May 23 13:28:08 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083440.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/29/NC_083440.1_multihet.txt
+    jobid: 1694
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083440.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=29, CHROM=NC_083440.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1694 has been submitted with SLURM jobid 9805272 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_29_NC_083440.1/9805272.log).
+
+[Fri May 23 13:28:10 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083433.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/15/NC_083433.1_multihet.txt
+    jobid: 1470
+    reason: Updated input files: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083433.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=15, CHROM=NC_083433.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1470 has been submitted with SLURM jobid 9805274 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_15_NC_083433.1/9805274.log).
+
+[Fri May 23 13:28:10 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083405.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/15/NC_083405.1_multihet.txt
+    jobid: 630
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083405.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=15, CHROM=NC_083405.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 630 has been submitted with SLURM jobid 9805275 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_15_NC_083405.1/9805275.log).
+
+[Fri May 23 13:28:12 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083433.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/17/NC_083433.1_multihet.txt
+    jobid: 1472
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=17, CHROM=NC_083433.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1472 has been submitted with SLURM jobid 9805276 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_17_NC_083433.1/9805276.log).
+
+[Fri May 23 13:28:13 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083405.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/17/NC_083405.1_multihet.txt
+    jobid: 632
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083405.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=17, CHROM=NC_083405.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 632 has been submitted with SLURM jobid 9805277 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_17_NC_083405.1/9805277.log).
+
+[Fri May 23 13:28:15 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083433.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/19/NC_083433.1_multihet.txt
+    jobid: 1474
+    reason: Updated input files: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083433.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=19, CHROM=NC_083433.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1474 has been submitted with SLURM jobid 9805279 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_19_NC_083433.1/9805279.log).
+
+[Fri May 23 13:28:15 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083405.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/19/NC_083405.1_multihet.txt
+    jobid: 634
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083405.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=19, CHROM=NC_083405.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 634 has been submitted with SLURM jobid 9805280 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_19_NC_083405.1/9805280.log).
+
+[Fri May 23 13:28:15 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083405.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/14/NC_083405.1_multihet.txt
+    jobid: 629
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083405.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=14, CHROM=NC_083405.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 629 has been submitted with SLURM jobid 9805281 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_14_NC_083405.1/9805281.log).
+
+[Fri May 23 13:28:15 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083440.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/28/NC_083440.1_multihet.txt
+    jobid: 1693
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083440.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=28, CHROM=NC_083440.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1693 has been submitted with SLURM jobid 9805282 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_28_NC_083440.1/9805282.log).
+
+[Fri May 23 13:28:20 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083431.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/11/NC_083431.1_multihet.txt
+    jobid: 1406
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083431.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=11, CHROM=NC_083431.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1406 has been submitted with SLURM jobid 9805284 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_11_NC_083431.1/9805284.log).
+
+[Fri May 23 13:28:20 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083433.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/16/NC_083433.1_multihet.txt
+    jobid: 1471
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=16, CHROM=NC_083433.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1471 has been submitted with SLURM jobid 9805285 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_16_NC_083433.1/9805285.log).
+
+[Fri May 23 13:28:20 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083405.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/16/NC_083405.1_multihet.txt
+    jobid: 631
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083405.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=16, CHROM=NC_083405.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 631 has been submitted with SLURM jobid 9805286 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_16_NC_083405.1/9805286.log).
+
+[Fri May 23 13:28:21 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083433.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/18/NC_083433.1_multihet.txt
+    jobid: 1473
+    reason: Updated input files: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083433.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=18, CHROM=NC_083433.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1473 has been submitted with SLURM jobid 9805287 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_18_NC_083433.1/9805287.log).
+
+[Fri May 23 13:28:23 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083433.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/20/NC_083433.1_multihet.txt
+    jobid: 1475
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=20, CHROM=NC_083433.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1475 has been submitted with SLURM jobid 9805289 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_20_NC_083433.1/9805289.log).
+
+[Fri May 23 13:28:23 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083405.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/18/NC_083405.1_multihet.txt
+    jobid: 633
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083405.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=18, CHROM=NC_083405.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 633 has been submitted with SLURM jobid 9805290 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_18_NC_083405.1/9805290.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Fri May 23 13:29:37 2025]
+Finished job 446.
+60 of 1658 steps (4%) done
+Execute 1 jobs...
+
+[Fri May 23 13:29:37 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083448.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/2/NC_083448.1_multihet.txt
+    jobid: 1907
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083448.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=2, CHROM=NC_083448.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1907 has been submitted with SLURM jobid 9805374 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_2_NC_083448.1/9805374.log).
+[Fri May 23 13:43:49 2025]
+Error in rule BOOTSTRAPPING_MULTIHET_FILE:
+    message: SLURM-job '9804997' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 1631
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083438.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/26/NC_083438.1_multihet.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_26_NC_083438.1/9804997.log (check log file(s) for error details)
+    shell:
+        
+        mkdir -p sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/26
+        python /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/20241011_jaskaran_script_msmc_fileprep/block_bootstrap_mhs.py --inmhs sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083438.1_multihet.txt --windowsize 5e+05 --outmhs sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/26/NC_083438.1_multihet.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9804997
+
+[Fri May 23 13:43:49 2025]
+Error in rule BOOTSTRAPPING_MULTIHET_FILE:
+    message: SLURM-job '9804998' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 1488
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/3/NC_083434.1_multihet.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_3_NC_083434.1/9804998.log (check log file(s) for error details)
+    shell:
+        
+        mkdir -p sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/3
+        python /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/20241011_jaskaran_script_msmc_fileprep/block_bootstrap_mhs.py --inmhs sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt --windowsize 5e+05 --outmhs sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/3/NC_083434.1_multihet.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9804998
+
+Removing output files of failed job BOOTSTRAPPING_MULTIHET_FILE since they might be corrupted:
+sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/26/NC_083438.1_multihet.txt
+Select jobs to execute...
+[Fri May 23 13:43:49 2025]
+Error in rule BOOTSTRAPPING_MULTIHET_FILE:
+    message: SLURM-job '9804999' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 1624
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083438.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/19/NC_083438.1_multihet.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_19_NC_083438.1/9804999.log (check log file(s) for error details)
+    shell:
+        
+        mkdir -p sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/19
+        python /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/20241011_jaskaran_script_msmc_fileprep/block_bootstrap_mhs.py --inmhs sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083438.1_multihet.txt --windowsize 5e+05 --outmhs sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/19/NC_083438.1_multihet.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9804999
+
+[Fri May 23 13:43:49 2025]
+Error in rule BOOTSTRAPPING_MULTIHET_FILE:
+    message: SLURM-job '9805000' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 1490
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/5/NC_083434.1_multihet.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_5_NC_083434.1/9805000.log (check log file(s) for error details)
+    shell:
+        
+        mkdir -p sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/5
+        python /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/20241011_jaskaran_script_msmc_fileprep/block_bootstrap_mhs.py --inmhs sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt --windowsize 5e+05 --outmhs sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/5/NC_083434.1_multihet.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9805000
+
+[Fri May 23 13:43:49 2025]
+Error in rule BOOTSTRAPPING_MULTIHET_FILE:
+    message: SLURM-job '9805001' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 1380
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083430.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/15/NC_083430.1_multihet.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_15_NC_083430.1/9805001.log (check log file(s) for error details)
+    shell:
+        
+        mkdir -p sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/15
+        python /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/20241011_jaskaran_script_msmc_fileprep/block_bootstrap_mhs.py --inmhs sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083430.1_multihet.txt --windowsize 5e+05 --outmhs sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/15/NC_083430.1_multihet.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9805001
+
+[Fri May 23 13:43:49 2025]
+Error in rule BOOTSTRAPPING_MULTIHET_FILE:
+    message: SLURM-job '9805002' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 1492
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/7/NC_083434.1_multihet.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_7_NC_083434.1/9805002.log (check log file(s) for error details)
+    shell:
+        
+        mkdir -p sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/7
+        python /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/20241011_jaskaran_script_msmc_fileprep/block_bootstrap_mhs.py --inmhs sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt --windowsize 5e+05 --outmhs sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/7/NC_083434.1_multihet.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9805002
+
+[Fri May 23 13:43:49 2025]
+Error in rule BOOTSTRAPPING_MULTIHET_FILE:
+    message: SLURM-job '9805003' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 1493
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/8/NC_083434.1_multihet.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_8_NC_083434.1/9805003.log (check log file(s) for error details)
+    shell:
+        
+        mkdir -p sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/8
+        python /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/20241011_jaskaran_script_msmc_fileprep/block_bootstrap_mhs.py --inmhs sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt --windowsize 5e+05 --outmhs sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/8/NC_083434.1_multihet.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9805003
+
+[Fri May 23 13:43:49 2025]
+Error in rule BOOTSTRAPPING_MULTIHET_FILE:
+    message: SLURM-job '9805004' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 1487
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/2/NC_083434.1_multihet.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_2_NC_083434.1/9805004.log (check log file(s) for error details)
+    shell:
+        
+        mkdir -p sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/2
+        python /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/20241011_jaskaran_script_msmc_fileprep/block_bootstrap_mhs.py --inmhs sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt --windowsize 5e+05 --outmhs sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/2/NC_083434.1_multihet.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9805004
+
+[Fri May 23 13:43:49 2025]
+Error in rule BOOTSTRAPPING_MULTIHET_FILE:
+    message: SLURM-job '9805005' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 1489
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/4/NC_083434.1_multihet.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_4_NC_083434.1/9805005.log (check log file(s) for error details)
+    shell:
+        
+        mkdir -p sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/4
+        python /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/20241011_jaskaran_script_msmc_fileprep/block_bootstrap_mhs.py --inmhs sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt --windowsize 5e+05 --outmhs sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/4/NC_083434.1_multihet.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9805005
+
+[Fri May 23 13:43:49 2025]
+Error in rule BOOTSTRAPPING_MULTIHET_FILE:
+    message: SLURM-job '9805007' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 1379
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083430.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/14/NC_083430.1_multihet.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_14_NC_083430.1/9805007.log (check log file(s) for error details)
+    shell:
+        
+        mkdir -p sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/14
+        python /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/20241011_jaskaran_script_msmc_fileprep/block_bootstrap_mhs.py --inmhs sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083430.1_multihet.txt --windowsize 5e+05 --outmhs sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/14/NC_083430.1_multihet.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9805007
+
+[Fri May 23 13:43:49 2025]
+Error in rule BOOTSTRAPPING_MULTIHET_FILE:
+    message: SLURM-job '9805008' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 1491
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/6/NC_083434.1_multihet.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_6_NC_083434.1/9805008.log (check log file(s) for error details)
+    shell:
+        
+        mkdir -p sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/6
+        python /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/20241011_jaskaran_script_msmc_fileprep/block_bootstrap_mhs.py --inmhs sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083434.1_multihet.txt --windowsize 5e+05 --outmhs sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/6/NC_083434.1_multihet.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9805008
+
+[Fri May 23 13:43:49 2025]
+Error in rule BOOTSTRAPPING_MULTIHET_FILE:
+    message: SLURM-job '9805009' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 1381
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083430.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/16/NC_083430.1_multihet.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_16_NC_083430.1/9805009.log (check log file(s) for error details)
+    shell:
+        
+        mkdir -p sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/16
+        python /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/20241011_jaskaran_script_msmc_fileprep/block_bootstrap_mhs.py --inmhs sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083430.1_multihet.txt --windowsize 5e+05 --outmhs sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/16/NC_083430.1_multihet.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9805009
+
+Execute 1 jobs...
+
+[Fri May 23 13:43:49 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083410.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/23/NC_083410.1_multihet.txt
+    jobid: 788
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083410.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=23, CHROM=NC_083410.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 788 has been submitted with SLURM jobid 9805741 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_23_NC_083410.1/9805741.log).
+Removing output files of failed job BOOTSTRAPPING_MULTIHET_FILE since they might be corrupted:
+sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/3/NC_083434.1_multihet.txt
+Removing output files of failed job BOOTSTRAPPING_MULTIHET_FILE since they might be corrupted:
+sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/19/NC_083438.1_multihet.txt
+Removing output files of failed job BOOTSTRAPPING_MULTIHET_FILE since they might be corrupted:
+sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/5/NC_083434.1_multihet.txt
+Removing output files of failed job BOOTSTRAPPING_MULTIHET_FILE since they might be corrupted:
+sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/15/NC_083430.1_multihet.txt
+Removing output files of failed job BOOTSTRAPPING_MULTIHET_FILE since they might be corrupted:
+sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/7/NC_083434.1_multihet.txt
+Removing output files of failed job BOOTSTRAPPING_MULTIHET_FILE since they might be corrupted:
+sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/8/NC_083434.1_multihet.txt
+Removing output files of failed job BOOTSTRAPPING_MULTIHET_FILE since they might be corrupted:
+sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/2/NC_083434.1_multihet.txt
+Removing output files of failed job BOOTSTRAPPING_MULTIHET_FILE since they might be corrupted:
+sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/4/NC_083434.1_multihet.txt
+Removing output files of failed job BOOTSTRAPPING_MULTIHET_FILE since they might be corrupted:
+sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/14/NC_083430.1_multihet.txt
+Removing output files of failed job BOOTSTRAPPING_MULTIHET_FILE since they might be corrupted:
+sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/6/NC_083434.1_multihet.txt
+Removing output files of failed job BOOTSTRAPPING_MULTIHET_FILE since they might be corrupted:
+sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/16/NC_083430.1_multihet.txt
+Select jobs to execute...
+Execute 11 jobs...
+
+[Fri May 23 13:43:50 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083435.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/4/NC_083435.1_multihet.txt
+    jobid: 1519
+    reason: Updated input files: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083435.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=4, CHROM=NC_083435.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1519 has been submitted with SLURM jobid 9805742 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_4_NC_083435.1/9805742.log).
+
+[Fri May 23 13:43:52 2025]
+rule TABIX:
+    input: sharks/HemOce/temp/NC_083409.1_only_snps.vcf.bgz
+    output: sharks/HemOce/temp/NC_083409.1_only_snps.vcf.bgz.tbi
+    jobid: 399
+    reason: Missing output files: sharks/HemOce/temp/NC_083409.1_only_snps.vcf.bgz.tbi
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHROM=NC_083409.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 399 has been submitted with SLURM jobid 9805743 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_TABIX/sharks_HemOce_NC_083409.1/9805743.log).
+
+[Fri May 23 13:43:52 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083440.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/25/NC_083440.1_multihet.txt
+    jobid: 1690
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083440.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=25, CHROM=NC_083440.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1690 has been submitted with SLURM jobid 9805744 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_25_NC_083440.1/9805744.log).
+
+[Fri May 23 13:43:54 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083405.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/11/NC_083405.1_multihet.txt
+    jobid: 626
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083405.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=11, CHROM=NC_083405.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 626 has been submitted with SLURM jobid 9805745 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_11_NC_083405.1/9805745.log).
+
+[Fri May 23 13:43:54 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083433.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/10/NC_083433.1_multihet.txt
+    jobid: 1465
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=10, CHROM=NC_083433.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1465 has been submitted with SLURM jobid 9805746 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_10_NC_083433.1/9805746.log).
+
+[Fri May 23 13:43:57 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083440.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/24/NC_083440.1_multihet.txt
+    jobid: 1689
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083440.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=24, CHROM=NC_083440.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1689 has been submitted with SLURM jobid 9805747 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_24_NC_083440.1/9805747.log).
+
+[Fri May 23 13:43:57 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083405.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/10/NC_083405.1_multihet.txt
+    jobid: 625
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083405.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=10, CHROM=NC_083405.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 625 has been submitted with SLURM jobid 9805748 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_10_NC_083405.1/9805748.log).
+
+[Fri May 23 13:43:59 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083433.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/12/NC_083433.1_multihet.txt
+    jobid: 1467
+    reason: Updated input files: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083433.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=12, CHROM=NC_083433.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1467 has been submitted with SLURM jobid 9805749 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_12_NC_083433.1/9805749.log).
+
+[Fri May 23 13:43:59 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083440.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/23/NC_083440.1_multihet.txt
+    jobid: 1688
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083440.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=23, CHROM=NC_083440.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1688 has been submitted with SLURM jobid 9805750 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_23_NC_083440.1/9805750.log).
+
+[Fri May 23 13:44:00 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083405.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/9/NC_083405.1_multihet.txt
+    jobid: 624
+    reason: Input files updated by another job: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083405.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=9, CHROM=NC_083405.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 624 has been submitted with SLURM jobid 9805751 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_9_NC_083405.1/9805751.log).
+
+[Fri May 23 13:44:02 2025]
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083433.1_multihet.txt
+    output: sharks/HemOce/MSMC/Output_Multihet_Bootstrapped/11/NC_083433.1_multihet.txt
+    jobid: 1466
+    reason: Updated input files: sharks/HemOce/MSMC/Output_multihet_filtered_95/NC_083433.1_multihet.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, BOOT=11, CHROM=NC_083433.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 1466 has been submitted with SLURM jobid 9805752 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BOOTSTRAPPING_MULTIHET_FILE/sharks_HemOce_11_NC_083433.1/9805752.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.

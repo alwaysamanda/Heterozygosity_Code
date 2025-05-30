@@ -1,0 +1,33 @@
+host: login-p-3
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count
+----------------  -------
+PLOT_HET_PER_CHR       46
+PLOT_WHOLE_HET          1
+all                     1
+total                  48
+
+Select jobs to execute...
+Execute 47 jobs...
+
+[Thu Apr 24 12:24:19 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068656.1_Het_Map.svg
+    jobid: 267
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068656.1_Het_Map.svg; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068656.1
+    resources: tmpdir=/tmp
+
+RuleException in rule PLOT_HET_PER_CHR in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 481:
+AttributeError: 'InputFiles' object has no attribute 'ALL_CHROMS', when formatting the following:
+
+        while read -r line; do
+            test="$i"
+            echo "$test"
+        done < <(head -n {params.NUM_AUT_CHROMOSOMES} "{input.ALL_CHROMS}") 
+        

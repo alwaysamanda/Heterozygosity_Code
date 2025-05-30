@@ -1,0 +1,551 @@
+host: login-p-1
+Building DAG of jobs...
+SLURM run ID: 925a35dc-4ba3-415a-89a2-ca67f031166d
+Using shell: /usr/bin/bash
+Provided remote nodes: 20
+Job stats:
+job                            count
+---------------------------  -------
+BAM_CALLER_BED                    46
+BGZIP_VCF                         46
+BOOTSTRAPPING_MULTIHET_FILE        1
+CALL_PLOIDY                       46
+EXTRACT_CHR_FASTA                 15
+GENERATE_MASK                     46
+GENERATE_MULTIHETSEP              46
+INDEL_MASKER                      46
+MAIN_MULTIHETSEP                  46
+PILEUP_VARIANTS                    1
+Plot_ROH                           1
+REMOVE_INDELS                     46
+RESTRUCTURE                       46
+SEPARATE_BAM_BY_CHR                8
+all                                1
+total                            441
+
+Select jobs to execute...
+Execute 20 jobs...
+
+[Wed May 14 11:56:51 2025]
+rule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068655.1.fasta
+    jobid: 317
+    reason: Missing output files: sharks/HepPer/temp/CM068655.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068655.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1872, disk_mib=1786, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 317 has been submitted with SLURM jobid 9367927 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068655.1/9367927.log).
+
+[Wed May 14 11:56:52 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HepPer/HepPer.bam
+    output: sharks/HepPer/HepPer_CM068658.1.bam
+    jobid: 368
+    reason: Missing output files: sharks/HepPer/HepPer_CM068658.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068658.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=4168, disk_mib=3975, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 368 has been submitted with SLURM jobid 9367928 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HepPer_CM068658.1/9367928.log).
+
+[Wed May 14 11:56:52 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HepPer/HepPer.bam
+    output: sharks/HepPer/HepPer_CM068639.1.bam
+    jobid: 349
+    reason: Missing output files: sharks/HepPer/HepPer_CM068639.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068639.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=4168, disk_mib=3975, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 349 has been submitted with SLURM jobid 9367929 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HepPer_CM068639.1/9367929.log).
+
+[Wed May 14 11:56:52 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HepPer/HepPer.bam
+    output: sharks/HepPer/HepPer_CM068681.1.bam
+    jobid: 391
+    reason: Missing output files: sharks/HepPer/HepPer_CM068681.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068681.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=4168, disk_mib=3975, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 391 has been submitted with SLURM jobid 9367930 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HepPer_CM068681.1/9367930.log).
+
+[Wed May 14 11:56:54 2025]
+rule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068664.1.fasta
+    jobid: 326
+    reason: Missing output files: sharks/HepPer/temp/CM068664.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068664.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1872, disk_mib=1786, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 326 has been submitted with SLURM jobid 9367931 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068664.1/9367931.log).
+
+[Wed May 14 11:56:54 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HepPer/HepPer.bam
+    output: sharks/HepPer/HepPer_CM068674.1.bam
+    jobid: 384
+    reason: Missing output files: sharks/HepPer/HepPer_CM068674.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068674.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=4168, disk_mib=3975, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 384 has been submitted with SLURM jobid 9367932 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HepPer_CM068674.1/9367932.log).
+
+[Wed May 14 11:56:55 2025]
+rule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068657.1.fasta
+    jobid: 319
+    reason: Missing output files: sharks/HepPer/temp/CM068657.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068657.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1872, disk_mib=1786, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 319 has been submitted with SLURM jobid 9367933 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068657.1/9367933.log).
+
+[Wed May 14 11:56:55 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HepPer/HepPer.bam
+    output: sharks/HepPer/HepPer_CM068667.1.bam
+    jobid: 377
+    reason: Missing output files: sharks/HepPer/HepPer_CM068667.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068667.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=4168, disk_mib=3975, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 377 has been submitted with SLURM jobid 9367934 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HepPer_CM068667.1/9367934.log).
+
+[Wed May 14 11:56:57 2025]
+rule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068650.1.fasta
+    jobid: 312
+    reason: Missing output files: sharks/HepPer/temp/CM068650.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068650.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1872, disk_mib=1786, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 312 has been submitted with SLURM jobid 9367935 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068650.1/9367935.log).
+
+[Wed May 14 11:56:57 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HepPer/HepPer.bam
+    output: sharks/HepPer/HepPer_CM068647.1.bam
+    jobid: 357
+    reason: Missing output files: sharks/HepPer/HepPer_CM068647.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068647.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=4168, disk_mib=3975, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 357 has been submitted with SLURM jobid 9367936 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HepPer_CM068647.1/9367936.log).
+
+[Wed May 14 11:56:58 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HepPer/HepPer.bam
+    output: sharks/HepPer/HepPer_CM068640.1.bam
+    jobid: 350
+    reason: Missing output files: sharks/HepPer/HepPer_CM068640.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068640.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=4168, disk_mib=3975, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 350 has been submitted with SLURM jobid 9367937 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HepPer_CM068640.1/9367937.log).
+
+[Wed May 14 11:57:00 2025]
+rule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068679.1.fasta
+    jobid: 341
+    reason: Missing output files: sharks/HepPer/temp/CM068679.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068679.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1872, disk_mib=1786, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 341 has been submitted with SLURM jobid 9367938 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068679.1/9367938.log).
+
+[Wed May 14 11:57:01 2025]
+rule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068672.1.fasta
+    jobid: 334
+    reason: Missing output files: sharks/HepPer/temp/CM068672.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068672.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1872, disk_mib=1786, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 334 has been submitted with SLURM jobid 9367939 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068672.1/9367939.log).
+
+[Wed May 14 11:57:03 2025]
+rule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068665.1.fasta
+    jobid: 327
+    reason: Missing output files: sharks/HepPer/temp/CM068665.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068665.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1872, disk_mib=1786, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 327 has been submitted with SLURM jobid 9367940 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068665.1/9367940.log).
+
+[Wed May 14 11:57:03 2025]
+rule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068658.1.fasta
+    jobid: 320
+    reason: Missing output files: sharks/HepPer/temp/CM068658.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068658.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1872, disk_mib=1786, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 320 has been submitted with SLURM jobid 9367942 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068658.1/9367942.log).
+
+[Wed May 14 11:57:06 2025]
+rule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068651.1.fasta
+    jobid: 313
+    reason: Missing output files: sharks/HepPer/temp/CM068651.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068651.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1872, disk_mib=1786, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 313 has been submitted with SLURM jobid 9367943 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068651.1/9367943.log).
+
+[Wed May 14 11:57:07 2025]
+rule Plot_ROH:
+    input: sharks/HepPer/HepPer_ROH_Results.csv, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_HepPer_ROH_Map.pdf
+    jobid: 150
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_ROH_Map.pdf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 150 has been submitted with SLURM jobid 9367944 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_Plot_ROH/sharks_HepPer_20250422/9367944.log).
+
+[Wed May 14 11:57:08 2025]
+rule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068644.1.fasta
+    jobid: 306
+    reason: Missing output files: sharks/HepPer/temp/CM068644.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068644.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1872, disk_mib=1786, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 306 has been submitted with SLURM jobid 9367946 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068644.1/9367946.log).
+
+[Wed May 14 11:57:08 2025]
+rule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068680.1.fasta
+    jobid: 342
+    reason: Missing output files: sharks/HepPer/temp/CM068680.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068680.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1872, disk_mib=1786, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 342 has been submitted with SLURM jobid 9367947 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068680.1/9367947.log).
+
+[Wed May 14 11:57:08 2025]
+rule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068673.1.fasta
+    jobid: 335
+    reason: Missing output files: sharks/HepPer/temp/CM068673.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068673.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1872, disk_mib=1786, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 335 has been submitted with SLURM jobid 9367948 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068673.1/9367948.log).
+[Wed May 14 12:02:03 2025]
+Finished job 368.
+1 of 441 steps (0.2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 14 12:02:03 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HepPer/HepPer.bam
+    output: sharks/HepPer/HepPer_CM068653.1.bam
+    jobid: 363
+    reason: Missing output files: sharks/HepPer/HepPer_CM068653.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068653.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=4168, disk_mib=3975, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 363 has been submitted with SLURM jobid 9368011 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HepPer_CM068653.1/9368011.log).
+[Wed May 14 12:02:04 2025]
+Finished job 349.
+2 of 441 steps (0.5%) done
+[Wed May 14 12:02:04 2025]
+Finished job 391.
+3 of 441 steps (1%) done
+[Wed May 14 12:02:05 2025]
+Finished job 384.
+4 of 441 steps (1%) done
+[Wed May 14 12:02:06 2025]
+Finished job 377.
+5 of 441 steps (1%) done
+Select jobs to execute...
+Execute 3 jobs...
+
+[Wed May 14 12:02:06 2025]
+rule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068643.1.fasta
+    jobid: 305
+    reason: Missing output files: sharks/HepPer/temp/CM068643.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068643.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1872, disk_mib=1786, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 305 has been submitted with SLURM jobid 9368012 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068643.1/9368012.log).
+
+[Wed May 14 12:02:07 2025]
+rule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068648.1.fasta
+    jobid: 310
+    reason: Missing output files: sharks/HepPer/temp/CM068648.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068648.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1872, disk_mib=1786, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 310 has been submitted with SLURM jobid 9368013 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068648.1/9368013.log).
+
+[Wed May 14 12:02:07 2025]
+rule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068637.1.fasta
+    jobid: 299
+    reason: Missing output files: sharks/HepPer/temp/CM068637.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068637.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1872, disk_mib=1786, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 299 has been submitted with SLURM jobid 9368014 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068637.1/9368014.log).
+[Wed May 14 12:02:43 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    message: SLURM-job '9367927' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 317
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068655.1.fasta
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068655.1/9367927.log (check log file(s) for error details)
+    shell:
+        
+        gunzip -c /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068655.1 > sharks/HepPer/temp/CM068655.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068655.1.fasta
+        rm -r -f sharks/HepPer/temp/GCA_035084215.1.fa
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9367927
+
+[Wed May 14 12:02:43 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    message: SLURM-job '9367931' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 326
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068664.1.fasta
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068664.1/9367931.log (check log file(s) for error details)
+    shell:
+        
+        gunzip -c /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068664.1 > sharks/HepPer/temp/CM068664.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068664.1.fasta
+        rm -r -f sharks/HepPer/temp/GCA_035084215.1.fa
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9367931
+
+[Wed May 14 12:02:43 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    message: SLURM-job '9367933' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 319
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068657.1.fasta
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068657.1/9367933.log (check log file(s) for error details)
+    shell:
+        
+        gunzip -c /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068657.1 > sharks/HepPer/temp/CM068657.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068657.1.fasta
+        rm -r -f sharks/HepPer/temp/GCA_035084215.1.fa
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9367933
+
+[Wed May 14 12:02:45 2025]
+Finished job 312.
+6 of 441 steps (1%) done
+[Wed May 14 12:02:48 2025]
+Finished job 357.
+7 of 441 steps (2%) done
+[Wed May 14 12:02:48 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    message: SLURM-job '9367938' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 341
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068679.1.fasta
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068679.1/9367938.log (check log file(s) for error details)
+    shell:
+        
+        gunzip -c /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068679.1 > sharks/HepPer/temp/CM068679.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068679.1.fasta
+        rm -r -f sharks/HepPer/temp/GCA_035084215.1.fa
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9367938
+
+[Wed May 14 12:02:54 2025]
+Finished job 350.
+8 of 441 steps (2%) done
+[Wed May 14 12:02:54 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    message: SLURM-job '9367939' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 334
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068672.1.fasta
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068672.1/9367939.log (check log file(s) for error details)
+    shell:
+        
+        gunzip -c /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068672.1 > sharks/HepPer/temp/CM068672.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068672.1.fasta
+        rm -r -f sharks/HepPer/temp/GCA_035084215.1.fa
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9367939
+
+[Wed May 14 12:02:54 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    message: SLURM-job '9367940' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 327
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068665.1.fasta
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068665.1/9367940.log (check log file(s) for error details)
+    shell:
+        
+        gunzip -c /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068665.1 > sharks/HepPer/temp/CM068665.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068665.1.fasta
+        rm -r -f sharks/HepPer/temp/GCA_035084215.1.fa
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9367940
+
+[Wed May 14 12:02:56 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    message: SLURM-job '9367942' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 320
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068658.1.fasta
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068658.1/9367942.log (check log file(s) for error details)
+    shell:
+        
+        gunzip -c /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068658.1 > sharks/HepPer/temp/CM068658.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068658.1.fasta
+        rm -r -f sharks/HepPer/temp/GCA_035084215.1.fa
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9367942
+
+[Wed May 14 12:02:57 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    message: SLURM-job '9367943' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 313
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068651.1.fasta
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068651.1/9367943.log (check log file(s) for error details)
+    shell:
+        
+        gunzip -c /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068651.1 > sharks/HepPer/temp/CM068651.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068651.1.fasta
+        rm -r -f sharks/HepPer/temp/GCA_035084215.1.fa
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9367943
+
+[Wed May 14 12:12:59 2025]
+Error in rule Plot_ROH:
+    message: SLURM-job '9367944' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 150
+    input: sharks/HepPer/HepPer_ROH_Results.csv, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_HepPer_ROH_Map.pdf
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_Plot_ROH/sharks_HepPer_20250422/9367944.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250106_Plot_ROH.R sharks/HepPer/HepPer_ROH_Results.csv sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt 20250422 GCA_035084215.1 sharks 45 HepPer 46 > sharks/HepPer/20250422_HepPer_ROH_Map.pdf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9367944
+
+[Wed May 14 12:12:59 2025]
+Finished job 306.
+9 of 441 steps (2%) done
+[Wed May 14 12:12:59 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    message: SLURM-job '9367948' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 335
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068673.1.fasta
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068673.1/9367948.log (check log file(s) for error details)
+    shell:
+        
+        gunzip -c /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068673.1 > sharks/HepPer/temp/CM068673.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068673.1.fasta
+        rm -r -f sharks/HepPer/temp/GCA_035084215.1.fa
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9367948
+
+[Wed May 14 12:12:59 2025]
+Finished job 342.
+10 of 441 steps (2%) done
+[Wed May 14 12:12:59 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    message: SLURM-job '9368012' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 305
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068643.1.fasta
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068643.1/9368012.log (check log file(s) for error details)
+    shell:
+        
+        gunzip -c /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068643.1 > sharks/HepPer/temp/CM068643.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068643.1.fasta
+        rm -r -f sharks/HepPer/temp/GCA_035084215.1.fa
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9368012
+
+[Wed May 14 12:12:59 2025]
+Finished job 363.
+11 of 441 steps (2%) done
+[Wed May 14 12:12:59 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    message: SLURM-job '9368013' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 310
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068648.1.fasta
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068648.1/9368013.log (check log file(s) for error details)
+    shell:
+        
+        gunzip -c /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068648.1 > sharks/HepPer/temp/CM068648.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068648.1.fasta
+        rm -r -f sharks/HepPer/temp/GCA_035084215.1.fa
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9368013
+
+[Wed May 14 12:12:59 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    message: SLURM-job '9368014' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 299
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068637.1.fasta
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068637.1/9368014.log (check log file(s) for error details)
+    shell:
+        
+        gunzip -c /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068637.1 > sharks/HepPer/temp/CM068637.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068637.1.fasta
+        rm -r -f sharks/HepPer/temp/GCA_035084215.1.fa
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9368014
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-05-14T115649.752994.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

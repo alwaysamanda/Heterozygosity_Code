@@ -1,0 +1,77 @@
+host: cpu-p-247
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=4127, disk_mib=3936
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue May 20 18:40:04 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt, sharks/HetFra/HetFra_ROH_Results.csv
+    output: sharks/HetFra/20250411_CM071003.1_het.txt
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071003.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=4127, disk_mib=3936, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+host: cpu-p-247
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=4127, disk_mib=3936
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue May 20 18:40:07 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt, sharks/HetFra/HetFra_ROH_Results.csv
+    output: sharks/HetFra/20250411_CM071003.1_het.txt
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071003.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=4127, disk_mib=3936, tmpdir=/tmp, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Traceback (most recent call last):
+  File "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250520_find_het_per_chr_V4.py", line 31, in <module>
+    chrom = int(sys.argv[8]) # Number of autosomal chromosomes in the genome
+            ^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'CM071003.1'
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 471:
+Command 'set -euo pipefail;  
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250520_find_het_per_chr_V4.py sharks/HetFra/temp/HetFra_Var_Only.txt sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt sharks HetFra 20250411 1000000 500000 CM071003.1 sharks/HetFra/HetFra_ROH_Results.csv' returned non-zero exit status 1.
+[Tue May 20 18:40:07 2025]
+Error in rule CALC_HET_PER_CHR:
+    jobid: 0
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt, sharks/HetFra/HetFra_ROH_Results.csv
+    output: sharks/HetFra/20250411_CM071003.1_het.txt
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250520_find_het_per_chr_V4.py sharks/HetFra/temp/HetFra_Var_Only.txt sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt sharks HetFra 20250411 1000000 500000 CM071003.1 sharks/HetFra/HetFra_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.
+srun: error: cpu-p-247: task 0: Exited with exit code 1
+[Tue May 20 18:40:08 2025]
+Error in rule CALC_HET_PER_CHR:
+    jobid: 0
+    input: sharks/HetFra/temp/HetFra_Var_Only.txt, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt, sharks/HetFra/HetFra_ROH_Results.csv
+    output: sharks/HetFra/20250411_CM071003.1_het.txt
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250520_find_het_per_chr_V4.py sharks/HetFra/temp/HetFra_Var_Only.txt sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt sharks HetFra 20250411 1000000 500000 CM071003.1 sharks/HetFra/HetFra_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.

@@ -1,0 +1,35 @@
+host: login-p-1
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job         count
+--------  -------
+ROH_CALC        5
+all             1
+total           6
+
+Select jobs to execute...
+Execute 5 jobs...
+
+[Wed Mar 26 15:24:08 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test/temp/20250326_CM068742.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068742.1_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    output: sharks/HydCol_Test/20250326_CM068742.1_ROH_Results.txt
+    jobid: 27
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068742.1_ROH_Results.txt; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068742.1
+    resources: tmpdir=/tmp
+
+RuleException in rule ROH_CALC in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 276:
+ValueError: unexpected '{' in field name, when formatting the following:
+
+        find_chrom_length() {
+            chrom_length_file="$1"
+            chr="$2"
+            awk -v chr="$chr" '$1 == chr {print $2; exit}' "$chrom_length_file"
+        }
+        CHROM_LENGTH="$(find_chrom_length({input.CHROM_LENGTH_FILE}, {wildcards.CHR}))"
+        python {ROH_CALC_PY} {wildcards.CHR} "$CHROM_LENGTH" {params.TODAY_DATE} {params.REF_NAME} {params.CLADE} {input.chr_aln_only} {input.chr_var_only}
+        

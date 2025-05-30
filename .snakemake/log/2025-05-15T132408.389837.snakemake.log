@@ -1,0 +1,495 @@
+host: login-q-2
+Building DAG of jobs...
+SLURM run ID: 1c50ad67-3829-4c93-8210-162c911255d7
+Using shell: /usr/bin/bash
+Provided remote nodes: 25
+Job stats:
+job                            count
+---------------------------  -------
+BAM_CALLER_BED                    35
+BGZIP_VCF                         35
+BOOTSTRAPPING_MULTIHET_FILE        1
+CALC_HET_PER_CHR                  35
+CALC_HET_WHOLE_GENOME              1
+CALL_PLOIDY                       27
+COMPILE_HET                        1
+COMPILE_ROH                        1
+FROH_PER_AUT_CHR                  35
+GENERATE_MASK                     35
+GENERATE_MULTIHETSEP              35
+GET_ALN_ONLY_PER_CHROM            10
+GET_VAR_ONLY_PER_CHROM            10
+INDEL_MASKER                      18
+MAIN_MULTIHETSEP                  35
+PILEUP_VARIANTS                   11
+PLOT_HET_PER_CHR                  35
+PLOT_WHOLE_HET                     1
+Plot_ROH                           1
+REMOVE_INDELS                     35
+RESTRUCTURE                       32
+ROH_CALC                          27
+WHOLE_FROH                         1
+all                                1
+total                            458
+
+Select jobs to execute...
+Execute 25 jobs...
+
+[Thu May 15 13:24:20 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HypSab/temp/HypSab_Aln_Only.txt
+    output: sharks/HypSab/temp/20250425_NC_082721.1_Aln_Only.txt
+    jobid: 26
+    reason: Missing output files: sharks/HypSab/temp/20250425_NC_082721.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082721.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 26 has been submitted with SLURM jobid 9401243 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HypSab_20250425_NC_082721.1/9401243.log).
+
+[Thu May 15 13:24:20 2025]
+rule INDEL_MASKER:
+    input: sharks/HypSab/temp/NC_082731.1_pileup.vcf.gz
+    output: sharks/HypSab/MSMC/Output_indel_BED_file/NC_082731.1_indel_bed.txt
+    jobid: 568
+    reason: Missing output files: sharks/HypSab/MSMC/Output_indel_BED_file/NC_082731.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHR=NC_082731.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 568 has been submitted with SLURM jobid 9401244 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HypSab_NC_082731.1/9401244.log).
+
+[Thu May 15 13:24:20 2025]
+rule RESTRUCTURE:
+    input: sharks/HypSab/temp/NC_082715.1_only_snps.vcf.bgz
+    output: sharks/HypSab/temp/NC_082715.1_restructured.vcf.gz
+    jobid: 419
+    reason: Missing output files: sharks/HypSab/temp/NC_082715.1_restructured.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHR=NC_082715.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 419 has been submitted with SLURM jobid 9401245 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_RESTRUCTURE/sharks_HypSab_NC_082715.1/9401245.log).
+
+[Thu May 15 13:24:20 2025]
+rule RESTRUCTURE:
+    input: sharks/HypSab/temp/NC_082722.1_only_snps.vcf.bgz
+    output: sharks/HypSab/temp/NC_082722.1_restructured.vcf.gz
+    jobid: 482
+    reason: Missing output files: sharks/HypSab/temp/NC_082722.1_restructured.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHR=NC_082722.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 482 has been submitted with SLURM jobid 9401246 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_RESTRUCTURE/sharks_HypSab_NC_082722.1/9401246.log).
+
+[Thu May 15 13:24:20 2025]
+rule ROH_CALC:
+    input: sharks/HypSab/temp/20250425_NC_082735.1_Aln_Only.txt, sharks/HypSab/temp/20250425_NC_082735.1_Var_Only.txt, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt
+    output: sharks/HypSab/20250425_NC_082735.1_ROH_Results.txt
+    jobid: 110
+    reason: Updated input files: sharks/HypSab/temp/20250425_NC_082735.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082735.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 110 has been submitted with SLURM jobid 9401247 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HypSab_20250425_NC_082735.1/9401247.log).
+
+[Thu May 15 13:24:20 2025]
+rule BAM_CALLER_BED:
+    input: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082712.1_unmodified_bed.txt.gz
+    output: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082712.1_modified_bed.txt.gz
+    jobid: 396
+    reason: Missing output files: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082712.1_modified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHR=NC_082712.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 396 has been submitted with SLURM jobid 9401248 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BAM_CALLER_BED/sharks_HypSab_NC_082712.1/9401248.log).
+
+[Thu May 15 13:24:20 2025]
+rule BAM_CALLER_BED:
+    input: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082719.1_unmodified_bed.txt.gz
+    output: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082719.1_modified_bed.txt.gz
+    jobid: 459
+    reason: Missing output files: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082719.1_modified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHR=NC_082719.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 459 has been submitted with SLURM jobid 9401249 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BAM_CALLER_BED/sharks_HypSab_NC_082719.1/9401249.log).
+
+[Thu May 15 13:24:20 2025]
+rule BAM_CALLER_BED:
+    input: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082733.1_unmodified_bed.txt.gz
+    output: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082733.1_modified_bed.txt.gz
+    jobid: 585
+    reason: Missing output files: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082733.1_modified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHR=NC_082733.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 585 has been submitted with SLURM jobid 9401250 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BAM_CALLER_BED/sharks_HypSab_NC_082733.1/9401250.log).
+
+[Thu May 15 13:24:21 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082729.1.fasta, sharks/HypSab/HypSab_NC_082729.1.bam
+    output: sharks/HypSab/temp/NC_082729.1_pileup.vcf.gz
+    jobid: 299
+    reason: Missing output files: sharks/HypSab/temp/NC_082729.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHR=NC_082729.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 299 has been submitted with SLURM jobid 9401251 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082729.1/9401251.log).
+
+[Thu May 15 13:24:21 2025]
+rule RESTRUCTURE:
+    input: sharks/HypSab/temp/NC_082716.1_only_snps.vcf.bgz
+    output: sharks/HypSab/temp/NC_082716.1_restructured.vcf.gz
+    jobid: 428
+    reason: Missing output files: sharks/HypSab/temp/NC_082716.1_restructured.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHR=NC_082716.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 428 has been submitted with SLURM jobid 9401252 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_RESTRUCTURE/sharks_HypSab_NC_082716.1/9401252.log).
+
+[Thu May 15 13:24:21 2025]
+rule REMOVE_INDELS:
+    input: sharks/HypSab/temp/NC_082719.1_restructured.vcf.gz
+    output: sharks/HypSab/NC_082719.1.recode.vcf
+    jobid: 454
+    reason: Missing output files: sharks/HypSab/NC_082719.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHR=NC_082719.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 454 has been submitted with SLURM jobid 9401253 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HypSab_NC_082719.1/9401253.log).
+
+[Thu May 15 13:24:21 2025]
+rule REMOVE_INDELS:
+    input: sharks/HypSab/temp/NC_082733.1_restructured.vcf.gz
+    output: sharks/HypSab/NC_082733.1.recode.vcf
+    jobid: 580
+    reason: Missing output files: sharks/HypSab/NC_082733.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHR=NC_082733.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 580 has been submitted with SLURM jobid 9401254 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HypSab_NC_082733.1/9401254.log).
+
+[Thu May 15 13:24:21 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HypSab/temp/HypSab_Aln_Only.txt
+    output: sharks/HypSab/temp/20250425_NC_082731.1_Aln_Only.txt
+    jobid: 36
+    reason: Missing output files: sharks/HypSab/temp/20250425_NC_082731.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082731.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 36 has been submitted with SLURM jobid 9401255 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HypSab_20250425_NC_082731.1/9401255.log).
+
+[Thu May 15 13:24:21 2025]
+rule ROH_CALC:
+    input: sharks/HypSab/temp/20250425_NC_082732.1_Aln_Only.txt, sharks/HypSab/temp/20250425_NC_082732.1_Var_Only.txt, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt
+    output: sharks/HypSab/20250425_NC_082732.1_ROH_Results.txt
+    jobid: 107
+    reason: Updated input files: sharks/HypSab/temp/20250425_NC_082732.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082732.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 107 has been submitted with SLURM jobid 9401256 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HypSab_20250425_NC_082732.1/9401256.log).
+
+[Thu May 15 13:24:21 2025]
+rule RESTRUCTURE:
+    input: sharks/HypSab/temp/NC_082712.1_only_snps.vcf.bgz
+    output: sharks/HypSab/temp/NC_082712.1_restructured.vcf.gz
+    jobid: 392
+    reason: Missing output files: sharks/HypSab/temp/NC_082712.1_restructured.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHR=NC_082712.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 392 has been submitted with SLURM jobid 9401257 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_RESTRUCTURE/sharks_HypSab_NC_082712.1/9401257.log).
+
+[Thu May 15 13:24:22 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082739.1.fasta, sharks/HypSab/HypSab_NC_082739.1.bam
+    output: sharks/HypSab/temp/NC_082739.1_pileup.vcf.gz
+    jobid: 329
+    reason: Missing output files: sharks/HypSab/temp/NC_082739.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHR=NC_082739.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 329 has been submitted with SLURM jobid 9401259 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082739.1/9401259.log).
+
+[Thu May 15 13:24:22 2025]
+rule CALL_PLOIDY:
+    input: sharks/HypSab/temp/NC_082718.1_pileup.vcf.gz
+    output: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082718.1_unmodified_bed.txt.gz, sharks/HypSab/temp/NC_082718.1_only_snps.vcf.bgz
+    jobid: 447
+    reason: Missing output files: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082718.1_unmodified_bed.txt.gz, sharks/HypSab/temp/NC_082718.1_only_snps.vcf.bgz
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHR=NC_082718.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 447 has been submitted with SLURM jobid 9401261 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HypSab_NC_082718.1/9401261.log).
+
+[Thu May 15 13:24:22 2025]
+rule CALL_PLOIDY:
+    input: sharks/HypSab/temp/NC_082725.1_pileup.vcf.gz
+    output: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082725.1_unmodified_bed.txt.gz, sharks/HypSab/temp/NC_082725.1_only_snps.vcf.bgz
+    jobid: 510
+    reason: Missing output files: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082725.1_unmodified_bed.txt.gz, sharks/HypSab/temp/NC_082725.1_only_snps.vcf.bgz
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHR=NC_082725.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 510 has been submitted with SLURM jobid 9401263 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HypSab_NC_082725.1/9401263.log).
+
+[Thu May 15 13:24:22 2025]
+rule BAM_CALLER_BED:
+    input: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082715.1_unmodified_bed.txt.gz
+    output: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082715.1_modified_bed.txt.gz
+    jobid: 423
+    reason: Missing output files: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082715.1_modified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHR=NC_082715.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 423 has been submitted with SLURM jobid 9401265 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BAM_CALLER_BED/sharks_HypSab_NC_082715.1/9401265.log).
+
+[Thu May 15 13:24:23 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082711.1.fasta, sharks/HypSab/HypSab_NC_082711.1.bam
+    output: sharks/HypSab/temp/NC_082711.1_pileup.vcf.gz
+    jobid: 245
+    reason: Missing output files: sharks/HypSab/temp/NC_082711.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHR=NC_082711.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 245 has been submitted with SLURM jobid 9401267 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082711.1/9401267.log).
+
+[Thu May 15 13:24:23 2025]
+rule BAM_CALLER_BED:
+    input: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082722.1_unmodified_bed.txt.gz
+    output: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082722.1_modified_bed.txt.gz
+    jobid: 486
+    reason: Missing output files: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082722.1_modified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHR=NC_082722.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 486 has been submitted with SLURM jobid 9401269 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BAM_CALLER_BED/sharks_HypSab_NC_082722.1/9401269.log).
+
+[Thu May 15 13:24:23 2025]
+rule CALL_PLOIDY:
+    input: sharks/HypSab/temp/NC_082726.1_pileup.vcf.gz
+    output: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082726.1_unmodified_bed.txt.gz, sharks/HypSab/temp/NC_082726.1_only_snps.vcf.bgz
+    jobid: 519
+    reason: Missing output files: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082726.1_unmodified_bed.txt.gz, sharks/HypSab/temp/NC_082726.1_only_snps.vcf.bgz
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHR=NC_082726.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 519 has been submitted with SLURM jobid 9401271 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HypSab_NC_082726.1/9401271.log).
+
+[Thu May 15 13:24:23 2025]
+rule CALL_PLOIDY:
+    input: sharks/HypSab/temp/NC_082740.1_pileup.vcf.gz
+    output: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082740.1_unmodified_bed.txt.gz, sharks/HypSab/temp/NC_082740.1_only_snps.vcf.bgz
+    jobid: 645
+    reason: Missing output files: sharks/HypSab/temp/NC_082740.1_only_snps.vcf.bgz, sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082740.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHR=NC_082740.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 645 has been submitted with SLURM jobid 9401273 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HypSab_NC_082740.1/9401273.log).
+
+[Thu May 15 13:24:24 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HypSab/temp/HypSab_Aln_Only.txt
+    output: sharks/HypSab/temp/20250425_NC_082734.1_Aln_Only.txt
+    jobid: 39
+    reason: Missing output files: sharks/HypSab/temp/20250425_NC_082734.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082734.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 39 has been submitted with SLURM jobid 9401275 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HypSab_20250425_NC_082734.1/9401275.log).
+
+[Thu May 15 13:24:24 2025]
+rule ROH_CALC:
+    input: sharks/HypSab/temp/20250425_NC_082706.1_Aln_Only.txt, sharks/HypSab/temp/20250425_NC_082706.1_Var_Only.txt, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt
+    output: sharks/HypSab/20250425_NC_082706.1_ROH_Results.txt
+    jobid: 81
+    reason: Updated input files: sharks/HypSab/temp/20250425_NC_082706.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082706.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 81 has been submitted with SLURM jobid 9401277 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HypSab_20250425_NC_082706.1/9401277.log).
+[Thu May 15 13:28:20 2025]
+Finished job 26.
+1 of 458 steps (0.2%) done
+Select jobs to execute...
+[Thu May 15 13:28:20 2025]
+Error in rule BAM_CALLER_BED:
+    message: SLURM-job '9401248' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 396
+    input: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082712.1_unmodified_bed.txt.gz
+    output: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082712.1_modified_bed.txt.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BAM_CALLER_BED/sharks_HypSab_NC_082712.1/9401248.log (check log file(s) for error details)
+    shell:
+        
+        zcat sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082712.1_unmodified_bed.txt.gz  |         awk -v chrom2="$CHROM2" 'BEGIN{OFS="	"} { $1=chrom2; print $0 }' |         gzip -c > sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082712.1_modified_bed.txt.gz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9401248
+
+[Thu May 15 13:28:20 2025]
+Error in rule BAM_CALLER_BED:
+    message: SLURM-job '9401249' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 459
+    input: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082719.1_unmodified_bed.txt.gz
+    output: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082719.1_modified_bed.txt.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BAM_CALLER_BED/sharks_HypSab_NC_082719.1/9401249.log (check log file(s) for error details)
+    shell:
+        
+        zcat sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082719.1_unmodified_bed.txt.gz  |         awk -v chrom2="$CHROM2" 'BEGIN{OFS="	"} { $1=chrom2; print $0 }' |         gzip -c > sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082719.1_modified_bed.txt.gz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9401249
+
+[Thu May 15 13:28:20 2025]
+Error in rule BAM_CALLER_BED:
+    message: SLURM-job '9401250' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 585
+    input: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082733.1_unmodified_bed.txt.gz
+    output: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082733.1_modified_bed.txt.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BAM_CALLER_BED/sharks_HypSab_NC_082733.1/9401250.log (check log file(s) for error details)
+    shell:
+        
+        zcat sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082733.1_unmodified_bed.txt.gz  |         awk -v chrom2="$CHROM2" 'BEGIN{OFS="	"} { $1=chrom2; print $0 }' |         gzip -c > sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082733.1_modified_bed.txt.gz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9401250
+
+[Thu May 15 13:28:20 2025]
+Error in rule REMOVE_INDELS:
+    message: SLURM-job '9401253' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 454
+    input: sharks/HypSab/temp/NC_082719.1_restructured.vcf.gz
+    output: sharks/HypSab/NC_082719.1.recode.vcf
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HypSab_NC_082719.1/9401253.log (check log file(s) for error details)
+    shell:
+        
+        vcftools --gzvcf sharks/HypSab/temp/NC_082719.1_restructured.vcf.gz          --remove-indels          --recode          --out sharks/HypSab/NC_082719.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9401253
+
+Execute 1 jobs...
+
+[Thu May 15 13:28:20 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HypSab/temp/HypSab_Aln_Only.txt
+    output: sharks/HypSab/temp/20250425_NC_082730.1_Aln_Only.txt
+    jobid: 35
+    reason: Missing output files: sharks/HypSab/temp/20250425_NC_082730.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082730.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 35 has been submitted with SLURM jobid 9401366 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HypSab_20250425_NC_082730.1/9401366.log).
+[Thu May 15 13:28:21 2025]
+Finished job 419.
+2 of 458 steps (0.4%) done
+[Thu May 15 13:28:21 2025]
+Finished job 482.
+3 of 458 steps (1%) done
+[Thu May 15 13:28:21 2025]
+Finished job 110.
+4 of 458 steps (1%) done
+[Thu May 15 13:28:21 2025]
+Finished job 428.
+5 of 458 steps (1%) done
+[Thu May 15 13:29:00 2025]
+Finished job 299.
+6 of 458 steps (1%) done
+[Thu May 15 13:29:40 2025]
+Finished job 568.
+7 of 458 steps (2%) done
+[Thu May 15 13:36:11 2025]
+Error in rule REMOVE_INDELS:
+    message: SLURM-job '9401254' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 580
+    input: sharks/HypSab/temp/NC_082733.1_restructured.vcf.gz
+    output: sharks/HypSab/NC_082733.1.recode.vcf
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HypSab_NC_082733.1/9401254.log (check log file(s) for error details)
+    shell:
+        
+        vcftools --gzvcf sharks/HypSab/temp/NC_082733.1_restructured.vcf.gz          --remove-indels          --recode          --out sharks/HypSab/NC_082733.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9401254
+
+[Thu May 15 13:36:11 2025]
+Finished job 36.
+8 of 458 steps (2%) done
+[Thu May 15 13:36:11 2025]
+Finished job 107.
+9 of 458 steps (2%) done
+[Thu May 15 13:36:11 2025]
+Finished job 392.
+10 of 458 steps (2%) done
+[Thu May 15 13:36:11 2025]
+Error in rule BAM_CALLER_BED:
+    message: SLURM-job '9401265' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 423
+    input: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082715.1_unmodified_bed.txt.gz
+    output: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082715.1_modified_bed.txt.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BAM_CALLER_BED/sharks_HypSab_NC_082715.1/9401265.log (check log file(s) for error details)
+    shell:
+        
+        zcat sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082715.1_unmodified_bed.txt.gz  |         awk -v chrom2="$CHROM2" 'BEGIN{OFS="	"} { $1=chrom2; print $0 }' |         gzip -c > sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082715.1_modified_bed.txt.gz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9401265
+
+[Thu May 15 13:36:11 2025]
+Finished job 329.
+11 of 458 steps (2%) done
+[Thu May 15 13:36:11 2025]
+Error in rule BAM_CALLER_BED:
+    message: SLURM-job '9401269' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 486
+    input: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082722.1_unmodified_bed.txt.gz
+    output: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082722.1_modified_bed.txt.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BAM_CALLER_BED/sharks_HypSab_NC_082722.1/9401269.log (check log file(s) for error details)
+    shell:
+        
+        zcat sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082722.1_unmodified_bed.txt.gz  |         awk -v chrom2="$CHROM2" 'BEGIN{OFS="	"} { $1=chrom2; print $0 }' |         gzip -c > sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082722.1_modified_bed.txt.gz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9401269
+
+[Thu May 15 13:41:12 2025]
+Finished job 245.
+12 of 458 steps (3%) done
+[Thu May 15 13:42:42 2025]
+Finished job 510.
+13 of 458 steps (3%) done
+[Thu May 15 13:42:42 2025]
+Finished job 519.
+14 of 458 steps (3%) done
+[Thu May 15 13:44:12 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9401273' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 645
+    input: sharks/HypSab/temp/NC_082740.1_pileup.vcf.gz
+    output: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082740.1_unmodified_bed.txt.gz, sharks/HypSab/temp/NC_082740.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HypSab_NC_082740.1/9401273.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HypSab/temp/NC_082740.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082740.1_unmodified_bed.txt.gz | bgzip -c > sharks/HypSab/temp/NC_082740.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9401273
+
+[Thu May 15 13:44:12 2025]
+Finished job 39.
+15 of 458 steps (3%) done
+[Thu May 15 13:44:12 2025]
+Finished job 81.
+16 of 458 steps (3%) done
+[Thu May 15 13:46:42 2025]
+Finished job 447.
+17 of 458 steps (4%) done
+[Thu May 15 13:53:13 2025]
+Finished job 35.
+18 of 458 steps (4%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-05-15T132408.389837.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

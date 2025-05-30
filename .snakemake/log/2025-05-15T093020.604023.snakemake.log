@@ -1,0 +1,14 @@
+host: login-p-4
+Building DAG of jobs...
+AmbiguousRuleException:
+Rules BAM_CALLER_BED and CALL_PLOIDY are ambiguous for the file sharks/HepPer/MSMC/Output_bam_caller_BED/CM068637.1_modified_bed.txt.gz.
+Consider starting rule output with a unique prefix, constrain your wildcards, or use the ruleorder directive.
+Wildcards:
+	BAM_CALLER_BED: CHR=CM068637.1,CLADE=sharks,SPEC_NAME=HepPer
+	CALL_PLOIDY: CHR=CM068637.1_modified,CLADE=sharks,SPEC_NAME=HepPer
+Expected input files:
+	BAM_CALLER_BED: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068637.1_bed.txt.gz
+	CALL_PLOIDY: sharks/HepPer/temp/CM068637.1_modified_pileup.vcf.gz
+Expected output files:
+	BAM_CALLER_BED: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068637.1_modified_bed.txt.gz
+	CALL_PLOIDY: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068637.1_modified_bed.txt.gz sharks/HepPer/temp/CM068637.1_modified_only_snps.vcf.bgz

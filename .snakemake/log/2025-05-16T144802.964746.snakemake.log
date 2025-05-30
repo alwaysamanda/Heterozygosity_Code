@@ -1,0 +1,80 @@
+host: login-q-1
+Building DAG of jobs...
+SLURM run ID: 3c9def40-d174-4283-b6e8-beb67a909cf5
+Using shell: /usr/bin/bash
+Provided remote nodes: 25
+Job stats:
+job                            count
+---------------------------  -------
+BAM_CALLER_BED                    46
+BGZIP_VCF                         46
+BOOTSTRAPPING_MULTIHET_FILE     1380
+CALL_PLOIDY                       46
+GENERATE_MASK                     46
+GENERATE_MULTIHETSEP              46
+INDEL_MASKER                      46
+MAIN_MULTIHETSEP                  46
+MAKE_BAM                           1
+MAKE_SAM                           1
+PILEUP_VARIANTS                   46
+PLOT_WHOLE_HET                     1
+REMOVE_INDELS                     46
+RESTRUCTURE                       46
+SEPARATE_BAM_BY_CHR               46
+all                                1
+total                           1890
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Fri May 16 14:48:04 2025]
+rule MAKE_SAM:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz, /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/sharks/GCA_035084135.1.fa.gz
+    output: sharks/HepPer/HepPer.sam
+    jobid: 298
+    reason: Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29] 
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=3672, disk_mib=3502, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=720
+
+Job 298 has been submitted with SLURM jobid 9442060 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAKE_SAM/sharks_HepPer/9442060.log).
+
+[Fri May 16 14:48:04 2025]
+rule PLOT_WHOLE_HET:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_Het_Whole_Genome_Map.svg
+    jobid: 292
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_Het_Whole_Genome_Map.svg
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 292 has been submitted with SLURM jobid 9442061 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_WHOLE_HET/sharks_HepPer_20250422/9442061.log).
+[Fri May 16 14:52:04 2025]
+Finished job 292.
+1 of 1890 steps (0.1%) done
+[Fri May 16 14:53:35 2025]
+Error in rule MAKE_SAM:
+    message: SLURM-job '9442060' failed, SLURM status is: 'CANCELLED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 298
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz, /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/sharks/GCA_035084135.1.fa.gz
+    output: sharks/HepPer/HepPer.sam
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAKE_SAM/sharks_HepPer/9442060.log (check log file(s) for error details)
+    shell:
+        
+        mkdir -p sharks/HepPer/MSMC
+        mkdir -p sharks/HepPer/MSMC/Output_BED_file
+        mkdir -p sharks/HepPer/MSMC/Output_indel_BED_file
+        mkdir -p sharks/HepPer/MSMC/Output_bam_caller_BED_file
+        mkdir -p sharks/HepPer/MSMC/Output_multihet_filtered_95
+        mkdir -p sharks/HepPer/MSMC/Output_Multihet_Bootstrapped/0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29
+        minimap2 -t 16 -ax asm5 /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/sharks/GCA_035084135.1.fa.gz > sharks/HepPer/HepPer.sam
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9442060
+
+Removing output files of failed job MAKE_SAM since they might be corrupted:
+sharks/HepPer/HepPer.sam
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-05-16T144802.964746.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

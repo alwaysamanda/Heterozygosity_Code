@@ -1,0 +1,148 @@
+host: login-q-3
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 76
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+ALNtoPAF                      1
+FASTGA                        1
+FAtoGDB_ALT                   1
+FAtoGDB_REF                   1
+FILTER_PAF_CHR_ONLY           1
+GET_ALN_ONLY_PER_CHROM       40
+GET_WHOLE_VAR                 1
+GIXmake_ALT                   1
+GIXmake_REF                   1
+PAF_CS                        1
+all                           1
+total                        50
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Fri Apr  4 14:26:19 2025]
+localrule FAtoGDB_REF:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/reference/sharks/GCA_035084275.1.fa.gz
+    output: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084275.1.1gdb
+    jobid: 6
+    reason: Missing output files: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084275.1.1gdb
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 14:26:19 2025]
+localrule FAtoGDB_ALT:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/alternate/sharks/GCA_035084065.1.fa.gz
+    output: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084065.1.1gdb
+    jobid: 8
+    reason: Missing output files: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084065.1.1gdb
+    resources: tmpdir=/tmp
+
+[Fri Apr  4 14:26:25 2025]
+Finished job 6.
+1 of 50 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr  4 14:26:25 2025]
+localrule GIXmake_REF:
+    input: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084275.1.1gdb
+    output: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084275.1.gix
+    jobid: 5
+    reason: Missing output files: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084275.1.gix; Input files updated by another job: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084275.1.1gdb
+    resources: tmpdir=/tmp
+
+[Fri Apr  4 14:26:26 2025]
+Finished job 8.
+2 of 50 steps (4%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr  4 14:26:26 2025]
+localrule GIXmake_ALT:
+    input: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084065.1.1gdb
+    output: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084065.1.gix
+    jobid: 7
+    reason: Missing output files: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084065.1.gix; Input files updated by another job: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084065.1.1gdb
+    resources: tmpdir=/tmp
+
+[Fri Apr  4 14:26:45 2025]
+Finished job 5.
+3 of 50 steps (6%) done
+[Fri Apr  4 14:26:48 2025]
+Finished job 7.
+4 of 50 steps (8%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr  4 14:26:48 2025]
+localrule FASTGA:
+    input: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084275.1.gix, sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084065.1.gix
+    output: sharks/HydCol_Test2/HydCol_Test2_ALN.1aln
+    jobid: 4
+    reason: Missing output files: sharks/HydCol_Test2/HydCol_Test2_ALN.1aln; Input files updated by another job: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084275.1.gix, sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084065.1.gix
+    resources: tmpdir=/tmp
+
+[Fri Apr  4 14:30:31 2025]
+Finished job 4.
+5 of 50 steps (10%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr  4 14:30:31 2025]
+localrule ALNtoPAF:
+    input: sharks/HydCol_Test2/HydCol_Test2_ALN.1aln
+    output: sharks/HydCol_Test2/HydCol_Test2_FASTGA.paf
+    jobid: 3
+    reason: Missing output files: sharks/HydCol_Test2/HydCol_Test2_FASTGA.paf; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_ALN.1aln
+    resources: tmpdir=/tmp
+
+[Fri Apr  4 14:31:05 2025]
+Finished job 3.
+6 of 50 steps (12%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr  4 14:31:05 2025]
+localrule FILTER_PAF_CHR_ONLY:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA.paf
+    output: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Filtered_Chr_Only.paf
+    jobid: 2
+    reason: Missing output files: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Filtered_Chr_Only.paf; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA.paf
+    resources: tmpdir=/tmp
+
+[Fri Apr  4 14:31:06 2025]
+Finished job 2.
+7 of 50 steps (14%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr  4 14:31:06 2025]
+localrule PAF_CS:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Filtered_Chr_Only.paf
+    output: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    jobid: 1
+    reason: Missing output files: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Filtered_Chr_Only.paf
+    resources: tmpdir=/tmp
+
+[Fri Apr  4 14:31:32 2025]
+Finished job 1.
+8 of 50 steps (16%) done
+Select jobs to execute...
+Execute 41 jobs...
+
+[Fri Apr  4 14:31:33 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/20250403_CM068780.1_Aln_Only.txt
+    jobid: 48
+    reason: Missing output files: sharks/HydCol_Test2/temp/20250403_CM068780.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf; Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068780.1
+    resources: tmpdir=/tmp
+
+RuleException in rule GET_ALN_ONLY_PER_CHROM in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 216:
+NameError: The name 'CHR' is unknown in this context. Did you mean 'wildcards.CHR'?, when formatting the following:
+
+        k8 paftools.js call {input} | awk '$1 == "R" && $2 == {CHR}' > {output.chr_aln_only}
+        

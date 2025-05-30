@@ -1,0 +1,1364 @@
+host: login-q-1
+Building DAG of jobs...
+SLURM run ID: bd8ab235-691b-4f2f-9a90-e8ba0f594df1
+Using shell: /usr/bin/bash
+Provided remote nodes: 50
+Job stats:
+job                            count
+---------------------------  -------
+BGZIP_VCF                         52
+BOOTSTRAPPING_MULTIHET_FILE     1560
+CALC_HET_PER_CHR                  53
+CALC_HET_WHOLE_GENOME              1
+COMPILE_HET                        1
+FROH_PER_AUT_CHR                   2
+GENERATE_MASK                     52
+GENERATE_MULTIHETSEP              52
+MAIN_MULTIHETSEP                  52
+PLOT_HET_PER_CHR                  52
+PLOT_WHOLE_HET                     1
+REMOVE_INDELS                     52
+all                                1
+total                           1931
+
+Select jobs to execute...
+Execute 50 jobs...
+
+[Wed May 21 08:45:23 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083419.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083419.1.recode.vcf
+    jobid: 646
+    reason: Missing output files: sharks/HemOce/NC_083419.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083419.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 646 has been submitted with SLURM jobid 9663247 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083419.1/9663247.log).
+
+[Wed May 21 08:45:25 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083408.1_het.txt
+    jobid: 239
+    reason: Updated input files: sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083408.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 239 has been submitted with SLURM jobid 9663248 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083408.1/9663248.log).
+
+[Wed May 21 08:45:26 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083444.1_het.txt
+    jobid: 275
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083444.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 275 has been submitted with SLURM jobid 9663250 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083444.1/9663250.log).
+
+[Wed May 21 08:45:28 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083448.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083448.1.recode.vcf
+    jobid: 704
+    reason: Missing output files: sharks/HemOce/NC_083448.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083448.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 704 has been submitted with SLURM jobid 9663253 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083448.1/9663253.log).
+
+[Wed May 21 08:45:28 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083437.1_het.txt
+    jobid: 268
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083437.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 268 has been submitted with SLURM jobid 9663254 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083437.1/9663254.log).
+
+[Wed May 21 08:45:31 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083427.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083427.1.recode.vcf
+    jobid: 662
+    reason: Missing output files: sharks/HemOce/NC_083427.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083427.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 662 has been submitted with SLURM jobid 9663258 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083427.1/9663258.log).
+
+[Wed May 21 08:45:31 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083416.1_het.txt
+    jobid: 247
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083416.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 247 has been submitted with SLURM jobid 9663261 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083416.1/9663261.log).
+
+[Wed May 21 08:45:33 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083420.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083420.1.recode.vcf
+    jobid: 648
+    reason: Missing output files: sharks/HemOce/NC_083420.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083420.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 648 has been submitted with SLURM jobid 9663263 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083420.1/9663263.log).
+
+[Wed May 21 08:45:33 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083409.1_het.txt
+    jobid: 240
+    reason: Updated input files: sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083409.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 240 has been submitted with SLURM jobid 9663265 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083409.1/9663265.log).
+
+[Wed May 21 08:45:33 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083436.1_het.txt
+    jobid: 267
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083436.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 267 has been submitted with SLURM jobid 9663268 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083436.1/9663268.log).
+
+[Wed May 21 08:45:36 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083445.1_het.txt
+    jobid: 276
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083445.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 276 has been submitted with SLURM jobid 9663270 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083445.1/9663270.log).
+
+[Wed May 21 08:45:36 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083438.1_het.txt
+    jobid: 269
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083438.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 269 has been submitted with SLURM jobid 9663272 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083438.1/9663272.log).
+
+[Wed May 21 08:45:38 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083449.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083449.1.recode.vcf
+    jobid: 706
+    reason: Missing output files: sharks/HemOce/NC_083449.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083449.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 706 has been submitted with SLURM jobid 9663273 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083449.1/9663273.log).
+
+[Wed May 21 08:45:39 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083435.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083435.1.recode.vcf
+    jobid: 678
+    reason: Missing output files: sharks/HemOce/NC_083435.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083435.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 678 has been submitted with SLURM jobid 9663274 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083435.1/9663274.log).
+
+[Wed May 21 08:45:41 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083424.1_het.txt
+    jobid: 255
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083424.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 255 has been submitted with SLURM jobid 9663276 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083424.1/9663276.log).
+
+[Wed May 21 08:45:42 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083428.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083428.1.recode.vcf
+    jobid: 664
+    reason: Missing output files: sharks/HemOce/NC_083428.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083428.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 664 has been submitted with SLURM jobid 9663279 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083428.1/9663279.log).
+
+[Wed May 21 08:45:44 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083417.1_het.txt
+    jobid: 248
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083417.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 248 has been submitted with SLURM jobid 9663280 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083417.1/9663280.log).
+
+[Wed May 21 08:45:44 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083421.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083421.1.recode.vcf
+    jobid: 650
+    reason: Missing output files: sharks/HemOce/NC_083421.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083421.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 650 has been submitted with SLURM jobid 9663286 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083421.1/9663286.log).
+
+[Wed May 21 08:45:46 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083410.1_het.txt
+    jobid: 241
+    reason: Updated input files: sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083410.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 241 has been submitted with SLURM jobid 9663289 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083410.1/9663289.log).
+
+[Wed May 21 08:45:47 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083407.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083407.1.recode.vcf
+    jobid: 622
+    reason: Missing output files: sharks/HemOce/NC_083407.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083407.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 622 has been submitted with SLURM jobid 9663291 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083407.1/9663291.log).
+
+[Wed May 21 08:45:49 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083452.1_het.txt
+    jobid: 283
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083452.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 283 has been submitted with SLURM jobid 9663294 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083452.1/9663294.log).
+
+[Wed May 21 08:45:52 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083401.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083401.1.recode.vcf
+    jobid: 610
+    reason: Missing output files: sharks/HemOce/NC_083401.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083401.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 610 has been submitted with SLURM jobid 9663295 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083401.1/9663295.log).
+
+[Wed May 21 08:45:52 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083446.1_het.txt
+    jobid: 277
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083446.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 277 has been submitted with SLURM jobid 9663297 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083446.1/9663297.log).
+
+[Wed May 21 08:45:54 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083450.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083450.1.recode.vcf
+    jobid: 708
+    reason: Missing output files: sharks/HemOce/NC_083450.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083450.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 708 has been submitted with SLURM jobid 9663298 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083450.1/9663298.log).
+
+[Wed May 21 08:45:54 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083439.1_het.txt
+    jobid: 270
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083439.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 270 has been submitted with SLURM jobid 9663299 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083439.1/9663299.log).
+
+[Wed May 21 08:45:55 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083429.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083429.1.recode.vcf
+    jobid: 666
+    reason: Missing output files: sharks/HemOce/NC_083429.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083429.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 666 has been submitted with SLURM jobid 9663300 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083429.1/9663300.log).
+
+[Wed May 21 08:45:57 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083418.1_het.txt
+    jobid: 249
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083418.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 249 has been submitted with SLURM jobid 9663301 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083418.1/9663301.log).
+
+[Wed May 21 08:45:57 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083422.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083422.1.recode.vcf
+    jobid: 652
+    reason: Missing output files: sharks/HemOce/NC_083422.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083422.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 652 has been submitted with SLURM jobid 9663302 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083422.1/9663302.log).
+
+[Wed May 21 08:45:57 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083411.1_het.txt
+    jobid: 242
+    reason: Updated input files: sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083411.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 242 has been submitted with SLURM jobid 9663303 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083411.1/9663303.log).
+
+[Wed May 21 08:45:57 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083402.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083402.1.recode.vcf
+    jobid: 612
+    reason: Missing output files: sharks/HemOce/NC_083402.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083402.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 612 has been submitted with SLURM jobid 9663304 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083402.1/9663304.log).
+
+[Wed May 21 08:46:00 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083447.1_het.txt
+    jobid: 278
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083447.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 278 has been submitted with SLURM jobid 9663305 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083447.1/9663305.log).
+
+[Wed May 21 08:46:02 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083451.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083451.1.recode.vcf
+    jobid: 710
+    reason: Missing output files: sharks/HemOce/NC_083451.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083451.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 710 has been submitted with SLURM jobid 9663306 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083451.1/9663306.log).
+
+[Wed May 21 08:46:02 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083440.1_het.txt
+    jobid: 271
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083440.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 271 has been submitted with SLURM jobid 9663307 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083440.1/9663307.log).
+
+[Wed May 21 08:46:02 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083430.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083430.1.recode.vcf
+    jobid: 668
+    reason: Missing output files: sharks/HemOce/NC_083430.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083430.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 668 has been submitted with SLURM jobid 9663308 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083430.1/9663308.log).
+
+[Wed May 21 08:46:04 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083419.1_het.txt
+    jobid: 250
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083419.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 250 has been submitted with SLURM jobid 9663309 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083419.1/9663309.log).
+
+[Wed May 21 08:46:05 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083423.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083423.1.recode.vcf
+    jobid: 654
+    reason: Missing output files: sharks/HemOce/NC_083423.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083423.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 654 has been submitted with SLURM jobid 9663310 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083423.1/9663310.log).
+
+[Wed May 21 08:46:05 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083412.1_het.txt
+    jobid: 243
+    reason: Updated input files: sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083412.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 243 has been submitted with SLURM jobid 9663311 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083412.1/9663311.log).
+
+[Wed May 21 08:46:07 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083403.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083403.1.recode.vcf
+    jobid: 614
+    reason: Missing output files: sharks/HemOce/NC_083403.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083403.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 614 has been submitted with SLURM jobid 9663312 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083403.1/9663312.log).
+
+[Wed May 21 08:46:07 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083448.1_het.txt
+    jobid: 279
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083448.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 279 has been submitted with SLURM jobid 9663313 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083448.1/9663313.log).
+
+[Wed May 21 08:46:07 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083452.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083452.1.recode.vcf
+    jobid: 712
+    reason: Missing output files: sharks/HemOce/NC_083452.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083452.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 712 has been submitted with SLURM jobid 9663314 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083452.1/9663314.log).
+
+[Wed May 21 08:46:09 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083441.1_het.txt
+    jobid: 272
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083441.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 272 has been submitted with SLURM jobid 9663315 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083441.1/9663315.log).
+
+[Wed May 21 08:46:10 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083431.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083431.1.recode.vcf
+    jobid: 670
+    reason: Missing output files: sharks/HemOce/NC_083431.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083431.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 670 has been submitted with SLURM jobid 9663319 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083431.1/9663319.log).
+
+[Wed May 21 08:46:12 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083424.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083424.1.recode.vcf
+    jobid: 656
+    reason: Missing output files: sharks/HemOce/NC_083424.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083424.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 656 has been submitted with SLURM jobid 9663321 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083424.1/9663321.log).
+
+[Wed May 21 08:46:13 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083413.1_het.txt
+    jobid: 244
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083413.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 244 has been submitted with SLURM jobid 9663325 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083413.1/9663325.log).
+
+[Wed May 21 08:46:15 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083426.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083426.1.recode.vcf
+    jobid: 660
+    reason: Missing output files: sharks/HemOce/NC_083426.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083426.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 660 has been submitted with SLURM jobid 9663326 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083426.1/9663326.log).
+
+[Wed May 21 08:46:15 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083418.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083418.1.recode.vcf
+    jobid: 644
+    reason: Missing output files: sharks/HemOce/NC_083418.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083418.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 644 has been submitted with SLURM jobid 9663329 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083418.1/9663329.log).
+
+[Wed May 21 08:46:18 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083407.1_het.txt
+    jobid: 238
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083407.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 238 has been submitted with SLURM jobid 9663331 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083407.1/9663331.log).
+
+[Wed May 21 08:46:22 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083443.1_het.txt
+    jobid: 274
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083443.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 274 has been submitted with SLURM jobid 9663333 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083443.1/9663333.log).
+
+[Wed May 21 08:46:23 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083447.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083447.1.recode.vcf
+    jobid: 702
+    reason: Missing output files: sharks/HemOce/NC_083447.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083447.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 702 has been submitted with SLURM jobid 9663335 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083447.1/9663335.log).
+
+[Wed May 21 08:46:25 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083415.1_het.txt
+    jobid: 246
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083415.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 246 has been submitted with SLURM jobid 9663338 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083415.1/9663338.log).
+[Wed May 21 09:41:28 2025]
+Finished job 646.
+1 of 1931 steps (0.1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 21 09:41:28 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083453.1_het.txt
+    jobid: 285
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083453.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 285 has been submitted with SLURM jobid 9665248 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083453.1/9665248.log).
+[Wed May 21 09:41:29 2025]
+Finished job 239.
+2 of 1931 steps (0.1%) done
+[Wed May 21 09:41:29 2025]
+Finished job 275.
+3 of 1931 steps (0.2%) done
+[Wed May 21 09:41:29 2025]
+Finished job 704.
+4 of 1931 steps (0.2%) done
+[Wed May 21 09:41:29 2025]
+Finished job 268.
+5 of 1931 steps (0.3%) done
+[Wed May 21 09:41:29 2025]
+Finished job 662.
+6 of 1931 steps (0.3%) done
+[Wed May 21 09:41:29 2025]
+Finished job 247.
+7 of 1931 steps (0.4%) done
+[Wed May 21 09:41:29 2025]
+Finished job 648.
+8 of 1931 steps (0.4%) done
+[Wed May 21 09:41:29 2025]
+Finished job 240.
+9 of 1931 steps (0.5%) done
+[Wed May 21 09:41:29 2025]
+Finished job 267.
+10 of 1931 steps (1%) done
+[Wed May 21 09:41:29 2025]
+Finished job 276.
+11 of 1931 steps (1%) done
+[Wed May 21 09:41:29 2025]
+Finished job 269.
+12 of 1931 steps (1%) done
+[Wed May 21 09:41:30 2025]
+Finished job 706.
+13 of 1931 steps (1%) done
+[Wed May 21 09:41:30 2025]
+Finished job 678.
+14 of 1931 steps (1%) done
+[Wed May 21 09:41:30 2025]
+Finished job 255.
+15 of 1931 steps (1%) done
+[Wed May 21 09:41:30 2025]
+Finished job 664.
+16 of 1931 steps (1%) done
+[Wed May 21 09:41:30 2025]
+Finished job 248.
+17 of 1931 steps (1%) done
+[Wed May 21 09:41:30 2025]
+Finished job 650.
+18 of 1931 steps (1%) done
+[Wed May 21 09:41:30 2025]
+Finished job 241.
+19 of 1931 steps (1%) done
+[Wed May 21 09:41:30 2025]
+Finished job 622.
+20 of 1931 steps (1%) done
+[Wed May 21 09:41:30 2025]
+Finished job 283.
+21 of 1931 steps (1%) done
+Select jobs to execute...
+Execute 20 jobs...
+
+[Wed May 21 09:41:30 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083454.1_het.txt
+    jobid: 286
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083454.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 286 has been submitted with SLURM jobid 9665253 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083454.1/9665253.log).
+
+[Wed May 21 09:41:32 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083441.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083441.1.recode.vcf
+    jobid: 690
+    reason: Missing output files: sharks/HemOce/NC_083441.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083441.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 690 has been submitted with SLURM jobid 9665254 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083441.1/9665254.log).
+
+[Wed May 21 09:41:32 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083445.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083445.1.recode.vcf
+    jobid: 698
+    reason: Missing output files: sharks/HemOce/NC_083445.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083445.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 698 has been submitted with SLURM jobid 9665255 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083445.1/9665255.log).
+
+[Wed May 21 09:41:32 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083434.1_het.txt
+    jobid: 265
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083434.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 265 has been submitted with SLURM jobid 9665256 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083434.1/9665256.log).
+
+[Wed May 21 09:41:32 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083427.1_het.txt
+    jobid: 258
+    reason: Updated input files: sharks/HemOce/HemOce_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083427.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 258 has been submitted with SLURM jobid 9665257 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083427.1/9665257.log).
+
+[Wed May 21 09:41:34 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083438.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083438.1.recode.vcf
+    jobid: 684
+    reason: Missing output files: sharks/HemOce/NC_083438.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083438.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 684 has been submitted with SLURM jobid 9665258 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083438.1/9665258.log).
+
+[Wed May 21 09:41:34 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083420.1_het.txt
+    jobid: 251
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083420.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 251 has been submitted with SLURM jobid 9665259 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083420.1/9665259.log).
+
+[Wed May 21 09:41:35 2025]
+rule BGZIP_VCF:
+    input: sharks/HemOce/NC_083449.1.recode.vcf
+    output: sharks/HemOce/NC_083449.1.recode.vcf.gz
+    jobid: 762
+    reason: Input files updated by another job: sharks/HemOce/NC_083449.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083449.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 762 has been submitted with SLURM jobid 9665260 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HemOce_NC_083449.1/9665260.log).
+
+[Wed May 21 09:41:35 2025]
+rule BGZIP_VCF:
+    input: sharks/HemOce/NC_083435.1.recode.vcf
+    output: sharks/HemOce/NC_083435.1.recode.vcf.gz
+    jobid: 748
+    reason: Input files updated by another job: sharks/HemOce/NC_083435.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083435.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 748 has been submitted with SLURM jobid 9665262 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HemOce_NC_083435.1/9665262.log).
+
+[Wed May 21 09:41:37 2025]
+rule BGZIP_VCF:
+    input: sharks/HemOce/NC_083428.1.recode.vcf
+    output: sharks/HemOce/NC_083428.1.recode.vcf.gz
+    jobid: 741
+    reason: Input files updated by another job: sharks/HemOce/NC_083428.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083428.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 741 has been submitted with SLURM jobid 9665263 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HemOce_NC_083428.1/9665263.log).
+
+[Wed May 21 09:41:39 2025]
+rule BGZIP_VCF:
+    input: sharks/HemOce/NC_083421.1.recode.vcf
+    output: sharks/HemOce/NC_083421.1.recode.vcf.gz
+    jobid: 734
+    reason: Input files updated by another job: sharks/HemOce/NC_083421.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083421.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 734 has been submitted with SLURM jobid 9665264 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HemOce_NC_083421.1/9665264.log).
+
+[Wed May 21 09:41:39 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083417.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083417.1.recode.vcf
+    jobid: 642
+    reason: Missing output files: sharks/HemOce/NC_083417.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083417.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 642 has been submitted with SLURM jobid 9665265 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083417.1/9665265.log).
+
+[Wed May 21 09:41:40 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083410.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083410.1.recode.vcf
+    jobid: 628
+    reason: Missing output files: sharks/HemOce/NC_083410.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083410.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 628 has been submitted with SLURM jobid 9665266 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083410.1/9665266.log).
+
+[Wed May 21 09:41:42 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083404.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083404.1.recode.vcf
+    jobid: 616
+    reason: Missing output files: sharks/HemOce/NC_083404.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083404.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 616 has been submitted with SLURM jobid 9665267 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083404.1/9665267.log).
+
+[Wed May 21 09:41:42 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083449.1_het.txt
+    jobid: 280
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083449.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 280 has been submitted with SLURM jobid 9665268 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083449.1/9665268.log).
+
+[Wed May 21 09:41:42 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083442.1_het.txt
+    jobid: 273
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083442.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 273 has been submitted with SLURM jobid 9665269 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083442.1/9665269.log).
+
+[Wed May 21 09:41:42 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HemOce/HemOce_ROH_Results.csv, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/chrom_lists/GCF_020745735.1_chroms.txt, sharks/HemOce/temp/20250428_NC_083448.1_Var_Only.txt
+    output: sharks/HemOce/20250428_NC_083448.1_GCF_020745735.1_FROH.txt
+    jobid: 224
+    reason: Updated input files: sharks/HemOce/HemOce_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083448.1, REF_NAME=GCF_020745735.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 224 has been submitted with SLURM jobid 9665280 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HemOce_20250428_NC_083448.1_GCF_020745735.1/9665280.log).
+
+[Wed May 21 09:41:44 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083446.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083446.1.recode.vcf
+    jobid: 700
+    reason: Missing output files: sharks/HemOce/NC_083446.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083446.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 700 has been submitted with SLURM jobid 9665281 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083446.1/9665281.log).
+
+[Wed May 21 09:41:45 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083435.1_het.txt
+    jobid: 266
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083435.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 266 has been submitted with SLURM jobid 9665282 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083435.1/9665282.log).
+
+[Wed May 21 09:41:47 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083433.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083433.1.recode.vcf
+    jobid: 674
+    reason: Missing output files: sharks/HemOce/NC_083433.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083433.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 674 has been submitted with SLURM jobid 9665283 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083433.1/9665283.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Wed May 21 09:42:09 2025]
+Finished job 610.
+22 of 1931 steps (1%) done
+Execute 1 jobs...
+
+[Wed May 21 09:42:09 2025]
+rule BGZIP_VCF:
+    input: sharks/HemOce/NC_083448.1.recode.vcf
+    output: sharks/HemOce/NC_083448.1.recode.vcf.gz
+    jobid: 761
+    reason: Input files updated by another job: sharks/HemOce/NC_083448.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083448.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 761 has been submitted with SLURM jobid 9665293 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HemOce_NC_083448.1/9665293.log).
+[Wed May 21 09:42:10 2025]
+Finished job 277.
+23 of 1931 steps (1%) done
+[Wed May 21 09:42:10 2025]
+Finished job 708.
+24 of 1931 steps (1%) done
+[Wed May 21 09:42:10 2025]
+Finished job 270.
+25 of 1931 steps (1%) done
+[Wed May 21 09:42:10 2025]
+Finished job 666.
+26 of 1931 steps (1%) done
+[Wed May 21 09:42:10 2025]
+Finished job 249.
+27 of 1931 steps (1%) done
+[Wed May 21 09:42:10 2025]
+Finished job 652.
+28 of 1931 steps (1%) done
+Select jobs to execute...
+Execute 6 jobs...
+
+[Wed May 21 09:42:10 2025]
+rule BGZIP_VCF:
+    input: sharks/HemOce/NC_083401.1.recode.vcf
+    output: sharks/HemOce/NC_083401.1.recode.vcf.gz
+    jobid: 714
+    reason: Input files updated by another job: sharks/HemOce/NC_083401.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083401.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 714 has been submitted with SLURM jobid 9665295 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HemOce_NC_083401.1/9665295.log).
+
+[Wed May 21 09:42:13 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083405.1_het.txt
+    jobid: 236
+    reason: Updated input files: sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083405.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 236 has been submitted with SLURM jobid 9665297 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083405.1/9665297.log).
+
+[Wed May 21 09:42:13 2025]
+rule BGZIP_VCF:
+    input: sharks/HemOce/NC_083420.1.recode.vcf
+    output: sharks/HemOce/NC_083420.1.recode.vcf.gz
+    jobid: 733
+    reason: Input files updated by another job: sharks/HemOce/NC_083420.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083420.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 733 has been submitted with SLURM jobid 9665298 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HemOce_NC_083420.1/9665298.log).
+
+[Wed May 21 09:42:13 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083409.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083409.1.recode.vcf
+    jobid: 626
+    reason: Missing output files: sharks/HemOce/NC_083409.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083409.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 626 has been submitted with SLURM jobid 9665299 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083409.1/9665299.log).
+
+[Wed May 21 09:42:15 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083425.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083425.1.recode.vcf
+    jobid: 658
+    reason: Missing output files: sharks/HemOce/NC_083425.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083425.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 658 has been submitted with SLURM jobid 9665301 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083425.1/9665301.log).
+
+[Wed May 21 09:42:16 2025]
+rule BGZIP_VCF:
+    input: sharks/HemOce/NC_083407.1.recode.vcf
+    output: sharks/HemOce/NC_083407.1.recode.vcf.gz
+    jobid: 720
+    reason: Input files updated by another job: sharks/HemOce/NC_083407.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083407.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 720 has been submitted with SLURM jobid 9665302 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HemOce_NC_083407.1/9665302.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Wed May 21 09:42:49 2025]
+Finished job 242.
+29 of 1931 steps (2%) done
+Execute 1 jobs...
+
+[Wed May 21 09:42:49 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083437.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083437.1.recode.vcf
+    jobid: 682
+    reason: Missing output files: sharks/HemOce/NC_083437.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083437.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 682 has been submitted with SLURM jobid 9665311 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083437.1/9665311.log).
+[Wed May 21 09:42:49 2025]
+Finished job 612.
+30 of 1931 steps (2%) done
+[Wed May 21 09:42:49 2025]
+Finished job 278.
+31 of 1931 steps (2%) done
+[Wed May 21 09:42:49 2025]
+Finished job 710.
+32 of 1931 steps (2%) done
+[Wed May 21 09:42:49 2025]
+Finished job 271.
+33 of 1931 steps (2%) done
+[Wed May 21 09:42:49 2025]
+Finished job 668.
+34 of 1931 steps (2%) done
+[Wed May 21 09:42:50 2025]
+Finished job 250.
+35 of 1931 steps (2%) done
+[Wed May 21 09:42:50 2025]
+Finished job 654.
+36 of 1931 steps (2%) done
+[Wed May 21 09:42:50 2025]
+Finished job 712.
+37 of 1931 steps (2%) done
+[Wed May 21 09:42:50 2025]
+Finished job 670.
+38 of 1931 steps (2%) done
+Select jobs to execute...
+Execute 9 jobs...
+
+[Wed May 21 09:42:50 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083426.1_het.txt
+    jobid: 257
+    reason: Updated input files: sharks/HemOce/HemOce_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083426.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 257 has been submitted with SLURM jobid 9665312 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083426.1/9665312.log).
+
+[Wed May 21 09:42:52 2025]
+rule BGZIP_VCF:
+    input: sharks/HemOce/NC_083450.1.recode.vcf
+    output: sharks/HemOce/NC_083450.1.recode.vcf.gz
+    jobid: 763
+    reason: Input files updated by another job: sharks/HemOce/NC_083450.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083450.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 763 has been submitted with SLURM jobid 9665313 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HemOce_NC_083450.1/9665313.log).
+
+[Wed May 21 09:42:52 2025]
+rule BGZIP_VCF:
+    input: sharks/HemOce/NC_083427.1.recode.vcf
+    output: sharks/HemOce/NC_083427.1.recode.vcf.gz
+    jobid: 740
+    reason: Input files updated by another job: sharks/HemOce/NC_083427.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083427.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 740 has been submitted with SLURM jobid 9665314 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HemOce_NC_083427.1/9665314.log).
+
+[Wed May 21 09:42:52 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083439.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083439.1.recode.vcf
+    jobid: 686
+    reason: Missing output files: sharks/HemOce/NC_083439.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083439.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 686 has been submitted with SLURM jobid 9665316 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083439.1/9665316.log).
+
+[Wed May 21 09:42:55 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083416.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083416.1.recode.vcf
+    jobid: 640
+    reason: Missing output files: sharks/HemOce/NC_083416.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083416.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 640 has been submitted with SLURM jobid 9665317 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083416.1/9665317.log).
+
+[Wed May 21 09:42:55 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083428.1_het.txt
+    jobid: 259
+    reason: Updated input files: sharks/HemOce/HemOce_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083428.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 259 has been submitted with SLURM jobid 9665318 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083428.1/9665318.log).
+
+[Wed May 21 09:42:55 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083432.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083432.1.recode.vcf
+    jobid: 672
+    reason: Missing output files: sharks/HemOce/NC_083432.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083432.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 672 has been submitted with SLURM jobid 9665319 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083432.1/9665319.log).
+
+[Wed May 21 09:42:57 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083421.1_het.txt
+    jobid: 252
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083421.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 252 has been submitted with SLURM jobid 9665320 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083421.1/9665320.log).
+
+[Wed May 21 09:42:57 2025]
+rule BGZIP_VCF:
+    input: sharks/HemOce/NC_083422.1.recode.vcf
+    output: sharks/HemOce/NC_083422.1.recode.vcf.gz
+    jobid: 735
+    reason: Input files updated by another job: sharks/HemOce/NC_083422.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083422.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 735 has been submitted with SLURM jobid 9665321 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HemOce_NC_083422.1/9665321.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Wed May 21 09:43:29 2025]
+Finished job 243.
+39 of 1931 steps (2%) done
+Execute 1 jobs...
+
+[Wed May 21 09:43:29 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083404.1_het.txt
+    jobid: 235
+    reason: Updated input files: sharks/HemOce/HemOce_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083404.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 235 has been submitted with SLURM jobid 9665324 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083404.1/9665324.log).
+[Wed May 21 09:43:29 2025]
+Finished job 614.
+40 of 1931 steps (2%) done
+[Wed May 21 09:43:29 2025]
+Finished job 279.
+41 of 1931 steps (2%) done
+[Wed May 21 09:43:29 2025]
+Finished job 272.
+42 of 1931 steps (2%) done
+[Wed May 21 09:43:29 2025]
+Finished job 656.
+43 of 1931 steps (2%) done
+[Wed May 21 09:43:29 2025]
+Finished job 660.
+44 of 1931 steps (2%) done
+[Wed May 21 09:43:30 2025]
+Finished job 644.
+45 of 1931 steps (2%) done
+[Wed May 21 09:43:30 2025]
+Finished job 238.
+46 of 1931 steps (2%) done
+Select jobs to execute...
+Execute 7 jobs...
+
+[Wed May 21 09:43:30 2025]
+rule BGZIP_VCF:
+    input: sharks/HemOce/NC_083419.1.recode.vcf
+    output: sharks/HemOce/NC_083419.1.recode.vcf.gz
+    jobid: 732
+    reason: Input files updated by another job: sharks/HemOce/NC_083419.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083419.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 732 has been submitted with SLURM jobid 9665325 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HemOce_NC_083419.1/9665325.log).
+
+[Wed May 21 09:43:32 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083444.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083444.1.recode.vcf
+    jobid: 696
+    reason: Missing output files: sharks/HemOce/NC_083444.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083444.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 696 has been submitted with SLURM jobid 9665326 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083444.1/9665326.log).
+
+[Wed May 21 09:43:32 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083405.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083405.1.recode.vcf
+    jobid: 618
+    reason: Missing output files: sharks/HemOce/NC_083405.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083405.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 618 has been submitted with SLURM jobid 9665327 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083405.1/9665327.log).
+
+[Wed May 21 09:43:32 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083433.1_het.txt
+    jobid: 264
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083433.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 264 has been submitted with SLURM jobid 9665328 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083433.1/9665328.log).
+
+[Wed May 21 09:43:34 2025]
+rule BGZIP_VCF:
+    input: sharks/HemOce/NC_083451.1.recode.vcf
+    output: sharks/HemOce/NC_083451.1.recode.vcf.gz
+    jobid: 764
+    reason: Input files updated by another job: sharks/HemOce/NC_083451.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083451.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 764 has been submitted with SLURM jobid 9665329 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HemOce_NC_083451.1/9665329.log).
+
+[Wed May 21 09:43:35 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083415.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083415.1.recode.vcf
+    jobid: 638
+    reason: Missing output files: sharks/HemOce/NC_083415.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083415.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 638 has been submitted with SLURM jobid 9665330 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083415.1/9665330.log).
+
+[Wed May 21 09:43:35 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083408.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083408.1.recode.vcf
+    jobid: 624
+    reason: Missing output files: sharks/HemOce/NC_083408.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083408.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 624 has been submitted with SLURM jobid 9665331 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083408.1/9665331.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Wed May 21 09:44:09 2025]
+Finished job 244.
+47 of 1931 steps (2%) done
+Execute 1 jobs...
+
+[Wed May 21 09:44:09 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083436.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083436.1.recode.vcf
+    jobid: 680
+    reason: Missing output files: sharks/HemOce/NC_083436.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083436.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 680 has been submitted with SLURM jobid 9665333 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083436.1/9665333.log).
+[Wed May 21 09:44:10 2025]
+Finished job 274.
+48 of 1931 steps (2%) done
+[Wed May 21 09:44:10 2025]
+Finished job 702.
+49 of 1931 steps (3%) done
+[Wed May 21 09:44:10 2025]
+Finished job 246.
+50 of 1931 steps (3%) done
+Select jobs to execute...
+Execute 3 jobs...
+
+[Wed May 21 09:44:10 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083440.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083440.1.recode.vcf
+    jobid: 688
+    reason: Missing output files: sharks/HemOce/NC_083440.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083440.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 688 has been submitted with SLURM jobid 9665334 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083440.1/9665334.log).
+
+[Wed May 21 09:44:11 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083422.1_het.txt
+    jobid: 253
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083422.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 253 has been submitted with SLURM jobid 9665335 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083422.1/9665335.log).
+
+[Wed May 21 09:44:11 2025]
+rule BGZIP_VCF:
+    input: sharks/HemOce/NC_083426.1.recode.vcf
+    output: sharks/HemOce/NC_083426.1.recode.vcf.gz
+    jobid: 739
+    reason: Input files updated by another job: sharks/HemOce/NC_083426.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083426.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 739 has been submitted with SLURM jobid 9665336 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HemOce_NC_083426.1/9665336.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+[Wed May 21 09:58:21 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9665248' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 285
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/HemOce_ROH_Results.csv
+    output: sharks/HemOce/20250428_NC_083453.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HemOce_20250428_NC_083453.1/9665248.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250520_find_het_per_chr_V4.py sharks/HemOce/temp/HemOce_Var_Only.txt sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt sharks HemOce 20250428 1000000 500000 NC_083453.1 sharks/HemOce/HemOce_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9665248
+
+Removing output files of failed job CALC_HET_PER_CHR since they might be corrupted:
+sharks/HemOce/20250428_NC_083453.1_het.txt
+Execute 1 jobs...
+
+[Wed May 21 09:58:21 2025]
+rule REMOVE_INDELS:
+    input: sharks/HemOce/temp/NC_083412.1_restructured.vcf.gz
+    output: sharks/HemOce/NC_083412.1.recode.vcf
+    jobid: 632
+    reason: Missing output files: sharks/HemOce/NC_083412.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHR=NC_083412.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 632 has been submitted with SLURM jobid 9665884 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HemOce_NC_083412.1/9665884.log).

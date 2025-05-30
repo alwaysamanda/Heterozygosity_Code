@@ -1,0 +1,468 @@
+host: login-p-2
+Building DAG of jobs...
+SLURM run ID: 17bbbbe4-1026-49fe-95ed-97d96441e143
+Using shell: /usr/bin/bash
+Provided remote nodes: 10
+Job stats:
+job                       count
+----------------------  -------
+ALNCHAIN                      1
+ALNtoPAF                      1
+CALC_HET_PER_CHR             33
+CALC_HET_WHOLE_GENOME         1
+COMPILE_HET                   1
+COMPILE_ROH                   1
+FILTER_PAF_CHR_ONLY           1
+FILTER_PAF_VARIANCE           1
+FROH_PER_AUT_CHR             33
+GET_ALN_ONLY_PER_CHROM       33
+GET_VAR_ONLY_PER_CHROM       33
+GET_WHOLE_ALN                 1
+GET_WHOLE_VAR                 1
+PLOT_HET_PER_CHR             33
+PLOT_WHOLE_HET                1
+Plot_ROH                      1
+ROH_CALC                     33
+SORT_PAF                      1
+WHOLE_FROH                    1
+all                           1
+total                       212
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 11:24:58 2025]
+rule ALNCHAIN:
+    input: sharks/MobBir/MobBir_ALN.1aln
+    output: sharks/MobBir/MobBir_ALN.chain.1aln
+    jobid: 4
+    reason: Missing output files: sharks/MobBir/MobBir_ALN.chain.1aln
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 4 has been submitted with SLURM jobid 8816321 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ALNCHAIN/8816321.log).
+[Mon Apr 28 12:48:03 2025]
+Finished job 4.
+1 of 212 steps (0.5%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 12:48:03 2025]
+rule ALNtoPAF:
+    input: sharks/MobBir/MobBir_ALN.chain.1aln
+    output: sharks/MobBir/MobBir_FASTGA.chain.paf
+    jobid: 3
+    reason: Missing output files: sharks/MobBir/MobBir_FASTGA.chain.paf; Input files updated by another job: sharks/MobBir/MobBir_ALN.chain.1aln
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 3 has been submitted with SLURM jobid 8818731 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ALNtoPAF/8818731.log).
+[Mon Apr 28 13:00:04 2025]
+Finished job 3.
+2 of 212 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 13:00:04 2025]
+rule FILTER_PAF_VARIANCE:
+    input: sharks/MobBir/MobBir_FASTGA.chain.paf
+    output: sharks/MobBir/MobBir_FASTGA.chain.fltr.paf
+    jobid: 2
+    reason: Missing output files: sharks/MobBir/MobBir_FASTGA.chain.fltr.paf; Input files updated by another job: sharks/MobBir/MobBir_FASTGA.chain.paf
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=3031, disk_mib=2891, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 2 has been submitted with SLURM jobid 8818950 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FILTER_PAF_VARIANCE/8818950.log).
+[Mon Apr 28 13:08:15 2025]
+Finished job 2.
+3 of 212 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 13:08:15 2025]
+rule SORT_PAF:
+    input: sharks/MobBir/MobBir_FASTGA.chain.fltr.paf
+    output: sharks/MobBir/MobBir_FASTGA.chain.fltr.srt.paf
+    jobid: 1
+    reason: Missing output files: sharks/MobBir/MobBir_FASTGA.chain.fltr.srt.paf; Input files updated by another job: sharks/MobBir/MobBir_FASTGA.chain.fltr.paf
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 1 has been submitted with SLURM jobid 8819276 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SORT_PAF/8819276.log).
+[Mon Apr 28 13:13:16 2025]
+Finished job 1.
+4 of 212 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 13:13:16 2025]
+rule FILTER_PAF_CHR_ONLY:
+    input: sharks/MobBir/MobBir_FASTGA.chain.fltr.srt.paf, sharks/chrom_lists/GCA_030028105.1_chroms.txt
+    output: sharks/MobBir/MobBir_FASTGA.chain.chr.fltr.srt.paf
+    jobid: 11
+    reason: Missing output files: sharks/MobBir/MobBir_FASTGA.chain.chr.fltr.srt.paf; Input files updated by another job: sharks/MobBir/MobBir_FASTGA.chain.fltr.srt.paf
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 11 has been submitted with SLURM jobid 8819335 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FILTER_PAF_CHR_ONLY/8819335.log).
+[Mon Apr 28 13:23:17 2025]
+Finished job 11.
+5 of 212 steps (2%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon Apr 28 13:23:17 2025]
+rule GET_WHOLE_ALN:
+    input: sharks/MobBir/MobBir_FASTGA.chain.chr.fltr.srt.paf
+    output: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    jobid: 12
+    reason: Missing output files: sharks/MobBir/temp/MobBir_Aln_Only.txt; Input files updated by another job: sharks/MobBir/MobBir_FASTGA.chain.chr.fltr.srt.paf
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 12 has been submitted with SLURM jobid 8819508 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_WHOLE_ALN/8819508.log).
+
+[Mon Apr 28 13:23:19 2025]
+rule GET_WHOLE_VAR:
+    input: sharks/MobBir/MobBir_FASTGA.chain.chr.fltr.srt.paf
+    output: sharks/MobBir/temp/MobBir_Var_Only.txt
+    jobid: 10
+    reason: Missing output files: sharks/MobBir/temp/MobBir_Var_Only.txt; Input files updated by another job: sharks/MobBir/MobBir_FASTGA.chain.chr.fltr.srt.paf
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 10 has been submitted with SLURM jobid 8819509 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_WHOLE_VAR/8819509.log).
+[Mon Apr 28 13:37:28 2025]
+Finished job 12.
+6 of 212 steps (3%) done
+Select jobs to execute...
+Execute 9 jobs...
+
+[Mon Apr 28 13:37:28 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    output: sharks/MobBir/temp/20250425_CM057572.1_Aln_Only.txt
+    jobid: 29
+    reason: Missing output files: sharks/MobBir/temp/20250425_CM057572.1_Aln_Only.txt; Input files updated by another job: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250425, CHR=CM057572.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 29 has been submitted with SLURM jobid 8819724 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_MobBir_20250425_CM057572.1/8819724.log).
+
+[Mon Apr 28 13:37:29 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    output: sharks/MobBir/temp/20250425_CM057565.1_Aln_Only.txt
+    jobid: 22
+    reason: Missing output files: sharks/MobBir/temp/20250425_CM057565.1_Aln_Only.txt; Input files updated by another job: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250425, CHR=CM057565.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 22 has been submitted with SLURM jobid 8819725 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_MobBir_20250425_CM057565.1/8819725.log).
+
+[Mon Apr 28 13:37:29 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    output: sharks/MobBir/temp/20250425_CM057563.1_Aln_Only.txt
+    jobid: 20
+    reason: Missing output files: sharks/MobBir/temp/20250425_CM057563.1_Aln_Only.txt; Input files updated by another job: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250425, CHR=CM057563.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 20 has been submitted with SLURM jobid 8819726 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_MobBir_20250425_CM057563.1/8819726.log).
+
+[Mon Apr 28 13:37:31 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    output: sharks/MobBir/temp/20250425_CM057567.1_Aln_Only.txt
+    jobid: 24
+    reason: Missing output files: sharks/MobBir/temp/20250425_CM057567.1_Aln_Only.txt; Input files updated by another job: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250425, CHR=CM057567.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 24 has been submitted with SLURM jobid 8819728 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_MobBir_20250425_CM057567.1/8819728.log).
+
+[Mon Apr 28 13:37:31 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    output: sharks/MobBir/temp/20250425_CM057586.1_Aln_Only.txt
+    jobid: 43
+    reason: Missing output files: sharks/MobBir/temp/20250425_CM057586.1_Aln_Only.txt; Input files updated by another job: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250425, CHR=CM057586.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 43 has been submitted with SLURM jobid 8819730 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_MobBir_20250425_CM057586.1/8819730.log).
+
+[Mon Apr 28 13:37:31 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    output: sharks/MobBir/temp/20250425_CM057579.1_Aln_Only.txt
+    jobid: 36
+    reason: Missing output files: sharks/MobBir/temp/20250425_CM057579.1_Aln_Only.txt; Input files updated by another job: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250425, CHR=CM057579.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 36 has been submitted with SLURM jobid 8819731 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_MobBir_20250425_CM057579.1/8819731.log).
+
+[Mon Apr 28 13:37:34 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    output: sharks/MobBir/temp/20250425_CM057566.1_Aln_Only.txt
+    jobid: 23
+    reason: Missing output files: sharks/MobBir/temp/20250425_CM057566.1_Aln_Only.txt; Input files updated by another job: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250425, CHR=CM057566.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 23 has been submitted with SLURM jobid 8819732 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_MobBir_20250425_CM057566.1/8819732.log).
+
+[Mon Apr 28 13:37:34 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    output: sharks/MobBir/temp/20250425_CM057585.1_Aln_Only.txt
+    jobid: 42
+    reason: Missing output files: sharks/MobBir/temp/20250425_CM057585.1_Aln_Only.txt; Input files updated by another job: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250425, CHR=CM057585.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 42 has been submitted with SLURM jobid 8819733 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_MobBir_20250425_CM057585.1/8819733.log).
+
+[Mon Apr 28 13:37:34 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    output: sharks/MobBir/temp/20250425_CM057578.1_Aln_Only.txt
+    jobid: 35
+    reason: Missing output files: sharks/MobBir/temp/20250425_CM057578.1_Aln_Only.txt; Input files updated by another job: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250425, CHR=CM057578.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 35 has been submitted with SLURM jobid 8819735 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_MobBir_20250425_CM057578.1/8819735.log).
+[Mon Apr 28 13:37:34 2025]
+Finished job 10.
+7 of 212 steps (3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 13:37:34 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt
+    output: sharks/MobBir/temp/20250425_CM057572.1_Var_Only.txt
+    jobid: 62
+    reason: Missing output files: sharks/MobBir/temp/20250425_CM057572.1_Var_Only.txt; Input files updated by another job: sharks/MobBir/temp/MobBir_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250425, CHR=CM057572.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 62 has been submitted with SLURM jobid 8819736 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_MobBir_20250425_CM057572.1/8819736.log).
+[Mon Apr 28 14:05:01 2025]
+Finished job 29.
+8 of 212 steps (4%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 14:05:01 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt
+    output: sharks/MobBir/temp/20250425_CM057579.1_Var_Only.txt
+    jobid: 69
+    reason: Missing output files: sharks/MobBir/temp/20250425_CM057579.1_Var_Only.txt; Input files updated by another job: sharks/MobBir/temp/MobBir_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250425, CHR=CM057579.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 69 has been submitted with SLURM jobid 8820747 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_MobBir_20250425_CM057579.1/8820747.log).
+[Mon Apr 28 14:15:02 2025]
+Finished job 22.
+9 of 212 steps (4%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 14:15:02 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt
+    output: sharks/MobBir/temp/20250425_CM057565.1_Var_Only.txt
+    jobid: 55
+    reason: Missing output files: sharks/MobBir/temp/20250425_CM057565.1_Var_Only.txt; Input files updated by another job: sharks/MobBir/temp/MobBir_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250425, CHR=CM057565.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 55 has been submitted with SLURM jobid 8821080 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_MobBir_20250425_CM057565.1/8821080.log).
+[Mon Apr 28 14:15:04 2025]
+Finished job 20.
+10 of 212 steps (5%) done
+[Mon Apr 28 14:15:04 2025]
+Finished job 24.
+11 of 212 steps (5%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon Apr 28 14:15:04 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    output: sharks/MobBir/temp/20250425_CM057584.1_Aln_Only.txt
+    jobid: 41
+    reason: Missing output files: sharks/MobBir/temp/20250425_CM057584.1_Aln_Only.txt; Input files updated by another job: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250425, CHR=CM057584.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 41 has been submitted with SLURM jobid 8821083 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_MobBir_20250425_CM057584.1/8821083.log).
+
+[Mon Apr 28 14:15:04 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt
+    output: sharks/MobBir/temp/20250425_CM057581.1_Var_Only.txt
+    jobid: 71
+    reason: Missing output files: sharks/MobBir/temp/20250425_CM057581.1_Var_Only.txt; Input files updated by another job: sharks/MobBir/temp/MobBir_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250425, CHR=CM057581.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 71 has been submitted with SLURM jobid 8821084 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_MobBir_20250425_CM057581.1/8821084.log).
+Select jobs to execute...
+Waiting for more resources.
+[Mon Apr 28 14:20:02 2025]
+Finished job 43.
+12 of 212 steps (6%) done
+Execute 1 jobs...
+
+[Mon Apr 28 14:20:02 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt
+    output: sharks/MobBir/temp/20250425_CM057586.1_Var_Only.txt
+    jobid: 76
+    reason: Missing output files: sharks/MobBir/temp/20250425_CM057586.1_Var_Only.txt; Input files updated by another job: sharks/MobBir/temp/MobBir_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250425, CHR=CM057586.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 76 has been submitted with SLURM jobid 8821150 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_MobBir_20250425_CM057586.1/8821150.log).
+[Mon Apr 28 14:20:05 2025]
+Finished job 36.
+13 of 212 steps (6%) done
+[Mon Apr 28 14:20:05 2025]
+Finished job 23.
+14 of 212 steps (7%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon Apr 28 14:20:05 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt
+    output: sharks/MobBir/temp/20250425_CM057558.1_Var_Only.txt
+    jobid: 48
+    reason: Missing output files: sharks/MobBir/temp/20250425_CM057558.1_Var_Only.txt; Input files updated by another job: sharks/MobBir/temp/MobBir_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250425, CHR=CM057558.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 48 has been submitted with SLURM jobid 8821151 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_MobBir_20250425_CM057558.1/8821151.log).
+
+[Mon Apr 28 14:20:05 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt
+    output: sharks/MobBir/temp/20250425_CM057588.1_Var_Only.txt
+    jobid: 78
+    reason: Missing output files: sharks/MobBir/temp/20250425_CM057588.1_Var_Only.txt; Input files updated by another job: sharks/MobBir/temp/MobBir_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250425, CHR=CM057588.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 78 has been submitted with SLURM jobid 8821152 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_MobBir_20250425_CM057588.1/8821152.log).
+Select jobs to execute...
+Waiting for more resources.
+[Mon Apr 28 14:23:43 2025]
+Finished job 42.
+15 of 212 steps (7%) done
+Execute 1 jobs...
+
+[Mon Apr 28 14:23:43 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    output: sharks/MobBir/temp/20250425_CM057561.1_Aln_Only.txt
+    jobid: 18
+    reason: Missing output files: sharks/MobBir/temp/20250425_CM057561.1_Aln_Only.txt; Input files updated by another job: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250425, CHR=CM057561.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 18 has been submitted with SLURM jobid 8821583 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_MobBir_20250425_CM057561.1/8821583.log).
+[Mon Apr 28 14:23:44 2025]
+Finished job 35.
+16 of 212 steps (8%) done
+[Mon Apr 28 14:23:44 2025]
+Finished job 62.
+17 of 212 steps (8%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon Apr 28 14:23:44 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt
+    output: sharks/MobBir/temp/20250425_CM057574.1_Var_Only.txt
+    jobid: 64
+    reason: Missing output files: sharks/MobBir/temp/20250425_CM057574.1_Var_Only.txt; Input files updated by another job: sharks/MobBir/temp/MobBir_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250425, CHR=CM057574.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 64 has been submitted with SLURM jobid 8821586 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_MobBir_20250425_CM057574.1/8821586.log).
+
+[Mon Apr 28 14:23:44 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    output: sharks/MobBir/temp/20250425_CM057556.1_Aln_Only.txt
+    jobid: 13
+    reason: Missing output files: sharks/MobBir/temp/20250425_CM057556.1_Aln_Only.txt; Input files updated by another job: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250425, CHR=CM057556.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 13 has been submitted with SLURM jobid 8821588 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_MobBir_20250425_CM057556.1/8821588.log).
+Select jobs to execute...
+Waiting for more resources.
+[Mon Apr 28 14:40:15 2025]
+Finished job 69.
+18 of 212 steps (8%) done
+Execute 1 jobs...
+
+[Mon Apr 28 14:40:15 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    output: sharks/MobBir/temp/20250425_CM057564.1_Aln_Only.txt
+    jobid: 21
+    reason: Missing output files: sharks/MobBir/temp/20250425_CM057564.1_Aln_Only.txt; Input files updated by another job: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250425, CHR=CM057564.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 21 has been submitted with SLURM jobid 8822051 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_MobBir_20250425_CM057564.1/8822051.log).
+[Mon Apr 28 14:43:55 2025]
+Finished job 55.
+19 of 212 steps (9%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 14:43:55 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt
+    output: sharks/MobBir/temp/20250425_CM057583.1_Var_Only.txt
+    jobid: 73
+    reason: Missing output files: sharks/MobBir/temp/20250425_CM057583.1_Var_Only.txt; Input files updated by another job: sharks/MobBir/temp/MobBir_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250425, CHR=CM057583.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 73 has been submitted with SLURM jobid 8822126 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_MobBir_20250425_CM057583.1/8822126.log).
+[Mon Apr 28 14:47:36 2025]
+Finished job 41.
+20 of 212 steps (9%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 14:47:36 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/MobBir/temp/MobBir_Var_Only.txt
+    output: sharks/MobBir/temp/20250425_CM057576.1_Var_Only.txt
+    jobid: 66
+    reason: Missing output files: sharks/MobBir/temp/20250425_CM057576.1_Var_Only.txt; Input files updated by another job: sharks/MobBir/temp/MobBir_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250425, CHR=CM057576.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1479, disk_mib=1411, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 66 has been submitted with SLURM jobid 8822268 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_MobBir_20250425_CM057576.1/8822268.log).
+[Mon Apr 28 14:57:37 2025]
+Finished job 71.
+21 of 212 steps (10%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 14:57:37 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    output: sharks/MobBir/temp/20250425_CM057570.1_Aln_Only.txt
+    jobid: 27
+    reason: Missing output files: sharks/MobBir/temp/20250425_CM057570.1_Aln_Only.txt; Input files updated by another job: sharks/MobBir/temp/MobBir_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, TODAY_DATE=20250425, CHR=CM057570.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 27 has been submitted with SLURM jobid 8822439 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_MobBir_20250425_CM057570.1/8822439.log).

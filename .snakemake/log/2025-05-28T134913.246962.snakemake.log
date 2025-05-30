@@ -1,0 +1,31 @@
+host: login-q-1
+Building DAG of jobs...
+SLURM run ID: 866b13a3-f9c5-45f1-ad2d-3ee4006f328d
+Using shell: /usr/bin/bash
+Provided remote nodes: 30
+Job stats:
+job              count
+-------------  -------
+GEN_CHROM_VCF       40
+all                  1
+total               41
+
+Select jobs to execute...
+Execute 30 jobs...
+
+[Wed May 28 13:49:29 2025]
+rule GEN_CHROM_VCF:
+    input: sharks/HydCol/MSMC/paf_files/HydCol_CM068774.1.paf, /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084275.1.fa.gz
+    output: sharks/HydCol/MSMC/vcf_files/HydCol_CM068774.1.vcf.gz
+    jobid: 331
+    reason: Missing output files: sharks/HydCol/MSMC/vcf_files/HydCol_CM068774.1.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHROM=CM068774.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+RuleException in rule GEN_CHROM_VCF in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+NameError: The name 'CHROM' is unknown in this context. Did you mean 'wildcards.CHROM'?, when formatting the following:
+
+        mkdir -p "{CLADE}/{SPEC_NAME}/MSMC/vcf_files"
+        k8 paftools call -s {SPEC_NAME} -f {input.refseq} {input.paf} > {CLADE}/{SPEC_NAME}/MSMC/vcf_files/{SPEC_NAME}_{CHROM}.vcf
+        gzip {CLADE}/{SPEC_NAME}/MSMC/vcf_files/{SPEC_NAME}_{CHROM}.vcf
+        

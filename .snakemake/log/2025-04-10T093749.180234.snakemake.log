@@ -1,0 +1,40 @@
+host: login-p-1
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+FILTER_PAF_CHR_ONLY        1
+all                        1
+total                      2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Apr 10 09:37:49 2025]
+localrule FILTER_PAF_CHR_ONLY:
+    input: sharks/NarBan_Test/NarBan_Test_FASTGA.srt.paf
+    output: sharks/NarBan_Test/NarBan_Test_FASTGA_Filtered.srt.paf
+    jobid: 1
+    reason: Missing output files: sharks/NarBan_Test/NarBan_Test_FASTGA_Filtered.srt.paf; Code has changed since last execution
+    resources: tmpdir=/tmp
+
+[Thu Apr 10 09:38:32 2025]
+Finished job 1.
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Apr 10 09:38:32 2025]
+localrule all:
+    input: sharks/NarBan_Test/NarBan_Test_FASTGA_Filtered.srt.paf
+    jobid: 0
+    reason: Input files updated by another job: sharks/NarBan_Test/NarBan_Test_FASTGA_Filtered.srt.paf
+    resources: tmpdir=/tmp
+
+[Thu Apr 10 09:38:32 2025]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2025-04-10T093749.180234.snakemake.log

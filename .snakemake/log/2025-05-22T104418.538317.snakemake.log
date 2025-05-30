@@ -1,0 +1,1265 @@
+host: login-q-1
+Building DAG of jobs...
+SLURM run ID: 7c7bac3d-28a6-4eb9-a5ae-c92976cc4698
+Using shell: /usr/bin/bash
+Provided remote nodes: 50
+Job stats:
+job                    count
+-------------------  -------
+BAM_CALLER_BED            14
+BGZIP_VCF                 14
+CALL_PLOIDY               14
+EXTRACT_CHR_FASTA         14
+INDEL_MASKER              14
+INDEX_BAM_FILE            14
+MAKE_BAM                   1
+MAKE_SAM                   1
+PILEUP_VARIANTS           14
+REMOVE_INDELS             14
+RESTRUCTURE               14
+SEPARATE_BAM_BY_CHR       14
+TABIX                     14
+UNZIP_REFERENCE            1
+all                        1
+total                    158
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu May 22 10:44:18 2025]
+rule MAKE_SAM:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_036971175.1.fa.gz, /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/sharks/GCA_036971445.1.fa.gz
+    output: sharks/NarBan/NarBan.sam
+    jobid: 105
+    reason: Missing output files: sharks/NarBan/NarBan.sam; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=3763, disk_mib=3589, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=720
+
+Job 105 has been submitted with SLURM jobid 9731818 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAKE_SAM/sharks_NarBan/9731818.log).
+
+[Thu May 22 10:44:21 2025]
+rule UNZIP_REFERENCE:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_036971175.1.fa.gz
+    output: sharks/NarBan/temp/GCA_036971175.1.fa
+    jobid: 133
+    reason: Missing output files: sharks/NarBan/temp/GCA_036971175.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, REF_NAME=GCA_036971175.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1841, disk_mib=1756, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 133 has been submitted with SLURM jobid 9731819 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_UNZIP_REFERENCE/sharks_NarBan_GCA_036971175.1/9731819.log).
+[Thu May 22 10:55:50 2025]
+Finished job 105.
+1 of 158 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu May 22 10:55:50 2025]
+rule MAKE_BAM:
+    input: sharks/NarBan/NarBan.sam
+    output: sharks/NarBan/NarBan.bam
+    jobid: 104
+    reason: Input files updated by another job: sharks/NarBan/NarBan.sam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=12281, disk_mib=11713, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 104 has been submitted with SLURM jobid 9731922 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAKE_BAM/sharks_NarBan/9731922.log).
+[Thu May 22 10:55:51 2025]
+Finished job 133.
+2 of 158 steps (1%) done
+Select jobs to execute...
+Execute 14 jobs...
+
+[Thu May 22 10:55:51 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072966.1.fasta
+    jobid: 144
+    reason: Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072966.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 144 has been submitted with SLURM jobid 9731923 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072966.1/9731923.log).
+
+[Thu May 22 10:55:51 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072959.1.fasta
+    jobid: 137
+    reason: Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072959.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 137 has been submitted with SLURM jobid 9731924 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072959.1/9731924.log).
+
+[Thu May 22 10:55:51 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072968.1.fasta
+    jobid: 146
+    reason: Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072968.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 146 has been submitted with SLURM jobid 9731925 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072968.1/9731925.log).
+
+[Thu May 22 10:55:56 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072961.1.fasta
+    jobid: 139
+    reason: Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072961.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 139 has been submitted with SLURM jobid 9731926 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072961.1/9731926.log).
+
+[Thu May 22 10:55:57 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072963.1.fasta
+    jobid: 141
+    reason: Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072963.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 141 has been submitted with SLURM jobid 9731927 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072963.1/9731927.log).
+
+[Thu May 22 10:55:57 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072956.1.fasta
+    jobid: 134
+    reason: Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072956.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 134 has been submitted with SLURM jobid 9731928 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072956.1/9731928.log).
+
+[Thu May 22 10:55:59 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072965.1.fasta
+    jobid: 143
+    reason: Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072965.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 143 has been submitted with SLURM jobid 9731929 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072965.1/9731929.log).
+
+[Thu May 22 10:55:59 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072958.1.fasta
+    jobid: 136
+    reason: Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072958.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 136 has been submitted with SLURM jobid 9731930 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072958.1/9731930.log).
+
+[Thu May 22 10:55:59 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072967.1.fasta
+    jobid: 145
+    reason: Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072967.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 145 has been submitted with SLURM jobid 9731931 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072967.1/9731931.log).
+
+[Thu May 22 10:55:59 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072960.1.fasta
+    jobid: 138
+    reason: Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072960.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 138 has been submitted with SLURM jobid 9731932 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072960.1/9731932.log).
+
+[Thu May 22 10:56:01 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072969.1.fasta
+    jobid: 147
+    reason: Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072969.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 147 has been submitted with SLURM jobid 9731933 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072969.1/9731933.log).
+
+[Thu May 22 10:56:01 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072962.1.fasta
+    jobid: 140
+    reason: Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072962.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 140 has been submitted with SLURM jobid 9731934 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072962.1/9731934.log).
+
+[Thu May 22 10:56:02 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072964.1.fasta
+    jobid: 142
+    reason: Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072964.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 142 has been submitted with SLURM jobid 9731935 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072964.1/9731935.log).
+
+[Thu May 22 10:56:04 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072957.1.fasta
+    jobid: 135
+    reason: Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072957.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 135 has been submitted with SLURM jobid 9731936 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072957.1/9731936.log).
+[Thu May 22 11:02:21 2025]
+Finished job 144.
+3 of 158 steps (2%) done
+[Thu May 22 11:02:21 2025]
+Finished job 137.
+4 of 158 steps (3%) done
+[Thu May 22 11:03:01 2025]
+Finished job 146.
+5 of 158 steps (3%) done
+[Thu May 22 11:03:01 2025]
+Finished job 139.
+6 of 158 steps (4%) done
+[Thu May 22 11:03:41 2025]
+Finished job 104.
+7 of 158 steps (4%) done
+Select jobs to execute...
+Execute 14 jobs...
+
+[Thu May 22 11:03:41 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/NarBan/NarBan.bam
+    output: sharks/NarBan/NarBan_CM072964.1.bam
+    jobid: 113
+    reason: Missing output files: sharks/NarBan/NarBan_CM072964.1.bam; Input files updated by another job: sharks/NarBan/NarBan.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072964.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=2982, disk_mib=2844, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 113 has been submitted with SLURM jobid 9731970 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_NarBan_CM072964.1/9731970.log).
+
+[Thu May 22 11:03:42 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/NarBan/NarBan.bam
+    output: sharks/NarBan/NarBan_CM072957.1.bam
+    jobid: 106
+    reason: Missing output files: sharks/NarBan/NarBan_CM072957.1.bam; Input files updated by another job: sharks/NarBan/NarBan.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072957.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=2982, disk_mib=2844, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 106 has been submitted with SLURM jobid 9731971 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_NarBan_CM072957.1/9731971.log).
+
+[Thu May 22 11:03:43 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/NarBan/NarBan.bam
+    output: sharks/NarBan/NarBan_CM072965.1.bam
+    jobid: 114
+    reason: Missing output files: sharks/NarBan/NarBan_CM072965.1.bam; Input files updated by another job: sharks/NarBan/NarBan.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072965.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=2982, disk_mib=2844, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 114 has been submitted with SLURM jobid 9731972 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_NarBan_CM072965.1/9731972.log).
+
+[Thu May 22 11:03:43 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/NarBan/NarBan.bam
+    output: sharks/NarBan/NarBan_CM072959.1.bam
+    jobid: 108
+    reason: Missing output files: sharks/NarBan/NarBan_CM072959.1.bam; Input files updated by another job: sharks/NarBan/NarBan.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072959.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=2982, disk_mib=2844, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 108 has been submitted with SLURM jobid 9731973 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_NarBan_CM072959.1/9731973.log).
+
+[Thu May 22 11:03:45 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/NarBan/NarBan.bam
+    output: sharks/NarBan/NarBan_CM072967.1.bam
+    jobid: 116
+    reason: Missing output files: sharks/NarBan/NarBan_CM072967.1.bam; Input files updated by another job: sharks/NarBan/NarBan.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072967.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=2982, disk_mib=2844, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 116 has been submitted with SLURM jobid 9731974 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_NarBan_CM072967.1/9731974.log).
+
+[Thu May 22 11:03:45 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/NarBan/NarBan.bam
+    output: sharks/NarBan/NarBan_CM072968.1.bam
+    jobid: 117
+    reason: Missing output files: sharks/NarBan/NarBan_CM072968.1.bam; Input files updated by another job: sharks/NarBan/NarBan.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072968.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=2982, disk_mib=2844, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 117 has been submitted with SLURM jobid 9731975 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_NarBan_CM072968.1/9731975.log).
+
+[Thu May 22 11:03:45 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/NarBan/NarBan.bam
+    output: sharks/NarBan/NarBan_CM072961.1.bam
+    jobid: 110
+    reason: Missing output files: sharks/NarBan/NarBan_CM072961.1.bam; Input files updated by another job: sharks/NarBan/NarBan.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072961.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=2982, disk_mib=2844, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 110 has been submitted with SLURM jobid 9731977 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_NarBan_CM072961.1/9731977.log).
+
+[Thu May 22 11:03:47 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/NarBan/NarBan.bam
+    output: sharks/NarBan/NarBan_CM072969.1.bam
+    jobid: 118
+    reason: Missing output files: sharks/NarBan/NarBan_CM072969.1.bam; Input files updated by another job: sharks/NarBan/NarBan.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072969.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=2982, disk_mib=2844, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 118 has been submitted with SLURM jobid 9731978 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_NarBan_CM072969.1/9731978.log).
+
+[Thu May 22 11:03:48 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/NarBan/NarBan.bam
+    output: sharks/NarBan/NarBan_CM072963.1.bam
+    jobid: 112
+    reason: Missing output files: sharks/NarBan/NarBan_CM072963.1.bam; Input files updated by another job: sharks/NarBan/NarBan.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072963.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=2982, disk_mib=2844, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 112 has been submitted with SLURM jobid 9731979 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_NarBan_CM072963.1/9731979.log).
+
+[Thu May 22 11:03:48 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/NarBan/NarBan.bam
+    output: sharks/NarBan/NarBan_CM072956.1.bam
+    jobid: 103
+    reason: Missing output files: sharks/NarBan/NarBan_CM072956.1.bam; Input files updated by another job: sharks/NarBan/NarBan.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072956.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=2982, disk_mib=2844, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 103 has been submitted with SLURM jobid 9731980 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_NarBan_CM072956.1/9731980.log).
+
+[Thu May 22 11:03:50 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/NarBan/NarBan.bam
+    output: sharks/NarBan/NarBan_CM072966.1.bam
+    jobid: 115
+    reason: Missing output files: sharks/NarBan/NarBan_CM072966.1.bam; Input files updated by another job: sharks/NarBan/NarBan.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072966.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=2982, disk_mib=2844, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 115 has been submitted with SLURM jobid 9731981 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_NarBan_CM072966.1/9731981.log).
+
+[Thu May 22 11:03:50 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/NarBan/NarBan.bam
+    output: sharks/NarBan/NarBan_CM072958.1.bam
+    jobid: 107
+    reason: Missing output files: sharks/NarBan/NarBan_CM072958.1.bam; Input files updated by another job: sharks/NarBan/NarBan.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072958.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=2982, disk_mib=2844, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 107 has been submitted with SLURM jobid 9731982 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_NarBan_CM072958.1/9731982.log).
+
+[Thu May 22 11:03:50 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/NarBan/NarBan.bam
+    output: sharks/NarBan/NarBan_CM072960.1.bam
+    jobid: 109
+    reason: Missing output files: sharks/NarBan/NarBan_CM072960.1.bam; Input files updated by another job: sharks/NarBan/NarBan.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072960.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=2982, disk_mib=2844, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 109 has been submitted with SLURM jobid 9731983 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_NarBan_CM072960.1/9731983.log).
+
+[Thu May 22 11:03:50 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/NarBan/NarBan.bam
+    output: sharks/NarBan/NarBan_CM072962.1.bam
+    jobid: 111
+    reason: Missing output files: sharks/NarBan/NarBan_CM072962.1.bam; Input files updated by another job: sharks/NarBan/NarBan.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072962.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=2982, disk_mib=2844, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 111 has been submitted with SLURM jobid 9731984 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_NarBan_CM072962.1/9731984.log).
+[Thu May 22 11:03:52 2025]
+Finished job 141.
+8 of 158 steps (5%) done
+[Thu May 22 11:03:52 2025]
+Finished job 134.
+9 of 158 steps (6%) done
+[Thu May 22 11:04:22 2025]
+Finished job 143.
+10 of 158 steps (6%) done
+[Thu May 22 11:04:22 2025]
+Finished job 136.
+11 of 158 steps (7%) done
+[Thu May 22 11:04:22 2025]
+Finished job 145.
+12 of 158 steps (8%) done
+[Thu May 22 11:04:22 2025]
+Finished job 138.
+13 of 158 steps (8%) done
+[Thu May 22 11:04:22 2025]
+Finished job 147.
+14 of 158 steps (9%) done
+[Thu May 22 11:04:22 2025]
+Finished job 140.
+15 of 158 steps (9%) done
+[Thu May 22 11:04:22 2025]
+Finished job 142.
+16 of 158 steps (10%) done
+[Thu May 22 11:05:02 2025]
+Finished job 135.
+17 of 158 steps (11%) done
+[Thu May 22 11:05:42 2025]
+Finished job 113.
+18 of 158 steps (11%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu May 22 11:05:42 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/NarBan/temp/CM072964.1.fasta, sharks/NarBan/NarBan_CM072964.1.bam
+    output: sharks/NarBan/temp/CM072964.1_pileup.vcf.gz
+    jobid: 174
+    reason: Missing output files: sharks/NarBan/temp/CM072964.1_pileup.vcf.gz; Input files updated by another job: sharks/NarBan/NarBan_CM072964.1.bam, sharks/NarBan/temp/CM072964.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072964.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 174 has been submitted with SLURM jobid 9734700 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_NarBan_CM072964.1/9734700.log).
+
+[Thu May 22 11:05:46 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/NarBan/NarBan_CM072964.1.bam
+    output: sharks/NarBan/NarBan_CM072964.1.bam.bai
+    jobid: 127
+    reason: Missing output files: sharks/NarBan/NarBan_CM072964.1.bam.bai; Input files updated by another job: sharks/NarBan/NarBan_CM072964.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072964.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 127 has been submitted with SLURM jobid 9734701 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_NarBan_CM072964.1/9734701.log).
+[Thu May 22 11:05:47 2025]
+Finished job 106.
+19 of 158 steps (12%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu May 22 11:05:47 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/NarBan/NarBan_CM072957.1.bam
+    output: sharks/NarBan/NarBan_CM072957.1.bam.bai
+    jobid: 120
+    reason: Missing output files: sharks/NarBan/NarBan_CM072957.1.bam.bai; Input files updated by another job: sharks/NarBan/NarBan_CM072957.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072957.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 120 has been submitted with SLURM jobid 9734707 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_NarBan_CM072957.1/9734707.log).
+
+[Thu May 22 11:05:49 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/NarBan/temp/CM072957.1.fasta, sharks/NarBan/NarBan_CM072957.1.bam
+    output: sharks/NarBan/temp/CM072957.1_pileup.vcf.gz
+    jobid: 153
+    reason: Missing output files: sharks/NarBan/temp/CM072957.1_pileup.vcf.gz; Input files updated by another job: sharks/NarBan/NarBan_CM072957.1.bam, sharks/NarBan/temp/CM072957.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072957.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 153 has been submitted with SLURM jobid 9734708 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_NarBan_CM072957.1/9734708.log).
+[Thu May 22 11:06:22 2025]
+Finished job 114.
+20 of 158 steps (13%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu May 22 11:06:22 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/NarBan/NarBan_CM072965.1.bam
+    output: sharks/NarBan/NarBan_CM072965.1.bam.bai
+    jobid: 128
+    reason: Missing output files: sharks/NarBan/NarBan_CM072965.1.bam.bai; Input files updated by another job: sharks/NarBan/NarBan_CM072965.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072965.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 128 has been submitted with SLURM jobid 9734719 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_NarBan_CM072965.1/9734719.log).
+
+[Thu May 22 11:06:22 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/NarBan/temp/CM072965.1.fasta, sharks/NarBan/NarBan_CM072965.1.bam
+    output: sharks/NarBan/temp/CM072965.1_pileup.vcf.gz
+    jobid: 177
+    reason: Missing output files: sharks/NarBan/temp/CM072965.1_pileup.vcf.gz; Input files updated by another job: sharks/NarBan/NarBan_CM072965.1.bam, sharks/NarBan/temp/CM072965.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072965.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 177 has been submitted with SLURM jobid 9734720 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_NarBan_CM072965.1/9734720.log).
+[Thu May 22 11:06:23 2025]
+Finished job 108.
+21 of 158 steps (13%) done
+[Thu May 22 11:06:23 2025]
+Finished job 116.
+22 of 158 steps (14%) done
+Select jobs to execute...
+Execute 4 jobs...
+
+[Thu May 22 11:06:23 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/NarBan/temp/CM072967.1.fasta, sharks/NarBan/NarBan_CM072967.1.bam
+    output: sharks/NarBan/temp/CM072967.1_pileup.vcf.gz
+    jobid: 183
+    reason: Missing output files: sharks/NarBan/temp/CM072967.1_pileup.vcf.gz; Input files updated by another job: sharks/NarBan/NarBan_CM072967.1.bam, sharks/NarBan/temp/CM072967.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072967.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 183 has been submitted with SLURM jobid 9734721 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_NarBan_CM072967.1/9734721.log).
+
+[Thu May 22 11:06:25 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/NarBan/temp/CM072959.1.fasta, sharks/NarBan/NarBan_CM072959.1.bam
+    output: sharks/NarBan/temp/CM072959.1_pileup.vcf.gz
+    jobid: 159
+    reason: Missing output files: sharks/NarBan/temp/CM072959.1_pileup.vcf.gz; Input files updated by another job: sharks/NarBan/NarBan_CM072959.1.bam, sharks/NarBan/temp/CM072959.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072959.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 159 has been submitted with SLURM jobid 9734722 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_NarBan_CM072959.1/9734722.log).
+
+[Thu May 22 11:06:25 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/NarBan/NarBan_CM072967.1.bam
+    output: sharks/NarBan/NarBan_CM072967.1.bam.bai
+    jobid: 130
+    reason: Missing output files: sharks/NarBan/NarBan_CM072967.1.bam.bai; Input files updated by another job: sharks/NarBan/NarBan_CM072967.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072967.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 130 has been submitted with SLURM jobid 9734723 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_NarBan_CM072967.1/9734723.log).
+
+[Thu May 22 11:06:25 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/NarBan/NarBan_CM072959.1.bam
+    output: sharks/NarBan/NarBan_CM072959.1.bam.bai
+    jobid: 122
+    reason: Missing output files: sharks/NarBan/NarBan_CM072959.1.bam.bai; Input files updated by another job: sharks/NarBan/NarBan_CM072959.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072959.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 122 has been submitted with SLURM jobid 9734724 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_NarBan_CM072959.1/9734724.log).
+[Thu May 22 11:07:02 2025]
+Finished job 117.
+23 of 158 steps (15%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu May 22 11:07:02 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/NarBan/temp/CM072968.1.fasta, sharks/NarBan/NarBan_CM072968.1.bam
+    output: sharks/NarBan/temp/CM072968.1_pileup.vcf.gz
+    jobid: 186
+    reason: Missing output files: sharks/NarBan/temp/CM072968.1_pileup.vcf.gz; Input files updated by another job: sharks/NarBan/NarBan_CM072968.1.bam, sharks/NarBan/temp/CM072968.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072968.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 186 has been submitted with SLURM jobid 9734730 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_NarBan_CM072968.1/9734730.log).
+
+[Thu May 22 11:07:03 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/NarBan/NarBan_CM072968.1.bam
+    output: sharks/NarBan/NarBan_CM072968.1.bam.bai
+    jobid: 131
+    reason: Missing output files: sharks/NarBan/NarBan_CM072968.1.bam.bai; Input files updated by another job: sharks/NarBan/NarBan_CM072968.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072968.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 131 has been submitted with SLURM jobid 9734731 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_NarBan_CM072968.1/9734731.log).
+[Thu May 22 11:07:04 2025]
+Finished job 110.
+24 of 158 steps (15%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu May 22 11:07:04 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/NarBan/NarBan_CM072961.1.bam
+    output: sharks/NarBan/NarBan_CM072961.1.bam.bai
+    jobid: 124
+    reason: Missing output files: sharks/NarBan/NarBan_CM072961.1.bam.bai; Input files updated by another job: sharks/NarBan/NarBan_CM072961.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072961.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 124 has been submitted with SLURM jobid 9734732 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_NarBan_CM072961.1/9734732.log).
+
+[Thu May 22 11:07:06 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/NarBan/temp/CM072961.1.fasta, sharks/NarBan/NarBan_CM072961.1.bam
+    output: sharks/NarBan/temp/CM072961.1_pileup.vcf.gz
+    jobid: 165
+    reason: Missing output files: sharks/NarBan/temp/CM072961.1_pileup.vcf.gz; Input files updated by another job: sharks/NarBan/NarBan_CM072961.1.bam, sharks/NarBan/temp/CM072961.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072961.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 165 has been submitted with SLURM jobid 9734733 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_NarBan_CM072961.1/9734733.log).
+[Thu May 22 11:07:43 2025]
+Finished job 118.
+25 of 158 steps (16%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu May 22 11:07:43 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/NarBan/NarBan_CM072969.1.bam
+    output: sharks/NarBan/NarBan_CM072969.1.bam.bai
+    jobid: 132
+    reason: Missing output files: sharks/NarBan/NarBan_CM072969.1.bam.bai; Input files updated by another job: sharks/NarBan/NarBan_CM072969.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072969.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 132 has been submitted with SLURM jobid 9735739 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_NarBan_CM072969.1/9735739.log).
+
+[Thu May 22 11:07:43 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/NarBan/temp/CM072969.1.fasta, sharks/NarBan/NarBan_CM072969.1.bam
+    output: sharks/NarBan/temp/CM072969.1_pileup.vcf.gz
+    jobid: 189
+    reason: Missing output files: sharks/NarBan/temp/CM072969.1_pileup.vcf.gz; Input files updated by another job: sharks/NarBan/NarBan_CM072969.1.bam, sharks/NarBan/temp/CM072969.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072969.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 189 has been submitted with SLURM jobid 9735740 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_NarBan_CM072969.1/9735740.log).
+[Thu May 22 11:07:45 2025]
+Finished job 112.
+26 of 158 steps (16%) done
+[Thu May 22 11:07:45 2025]
+Finished job 103.
+27 of 158 steps (17%) done
+Select jobs to execute...
+Execute 4 jobs...
+
+[Thu May 22 11:07:45 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/NarBan/temp/CM072956.1.fasta, sharks/NarBan/NarBan_CM072956.1.bam
+    output: sharks/NarBan/temp/CM072956.1_pileup.vcf.gz
+    jobid: 150
+    reason: Missing output files: sharks/NarBan/temp/CM072956.1_pileup.vcf.gz; Input files updated by another job: sharks/NarBan/NarBan_CM072956.1.bam, sharks/NarBan/temp/CM072956.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072956.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 150 has been submitted with SLURM jobid 9735741 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_NarBan_CM072956.1/9735741.log).
+
+[Thu May 22 11:07:48 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/NarBan/temp/CM072963.1.fasta, sharks/NarBan/NarBan_CM072963.1.bam
+    output: sharks/NarBan/temp/CM072963.1_pileup.vcf.gz
+    jobid: 171
+    reason: Missing output files: sharks/NarBan/temp/CM072963.1_pileup.vcf.gz; Input files updated by another job: sharks/NarBan/NarBan_CM072963.1.bam, sharks/NarBan/temp/CM072963.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072963.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 171 has been submitted with SLURM jobid 9737451 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_NarBan_CM072963.1/9737451.log).
+
+[Thu May 22 11:07:53 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/NarBan/NarBan_CM072963.1.bam
+    output: sharks/NarBan/NarBan_CM072963.1.bam.bai
+    jobid: 126
+    reason: Missing output files: sharks/NarBan/NarBan_CM072963.1.bam.bai; Input files updated by another job: sharks/NarBan/NarBan_CM072963.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072963.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 126 has been submitted with SLURM jobid 9737453 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_NarBan_CM072963.1/9737453.log).
+
+[Thu May 22 11:07:55 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/NarBan/NarBan_CM072956.1.bam
+    output: sharks/NarBan/NarBan_CM072956.1.bam.bai
+    jobid: 119
+    reason: Missing output files: sharks/NarBan/NarBan_CM072956.1.bam.bai; Input files updated by another job: sharks/NarBan/NarBan_CM072956.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072956.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 119 has been submitted with SLURM jobid 9737454 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_NarBan_CM072956.1/9737454.log).
+[Thu May 22 11:17:44 2025]
+Finished job 115.
+28 of 158 steps (18%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu May 22 11:17:44 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/NarBan/temp/CM072966.1.fasta, sharks/NarBan/NarBan_CM072966.1.bam
+    output: sharks/NarBan/temp/CM072966.1_pileup.vcf.gz
+    jobid: 180
+    reason: Missing output files: sharks/NarBan/temp/CM072966.1_pileup.vcf.gz; Input files updated by another job: sharks/NarBan/NarBan_CM072966.1.bam, sharks/NarBan/temp/CM072966.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072966.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 180 has been submitted with SLURM jobid 9737643 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_NarBan_CM072966.1/9737643.log).
+
+[Thu May 22 11:17:46 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/NarBan/NarBan_CM072966.1.bam
+    output: sharks/NarBan/NarBan_CM072966.1.bam.bai
+    jobid: 129
+    reason: Missing output files: sharks/NarBan/NarBan_CM072966.1.bam.bai; Input files updated by another job: sharks/NarBan/NarBan_CM072966.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072966.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 129 has been submitted with SLURM jobid 9737645 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_NarBan_CM072966.1/9737645.log).
+[Thu May 22 11:17:48 2025]
+Finished job 107.
+29 of 158 steps (18%) done
+[Thu May 22 11:17:48 2025]
+Finished job 109.
+30 of 158 steps (19%) done
+[Thu May 22 11:17:48 2025]
+Finished job 111.
+31 of 158 steps (20%) done
+[Thu May 22 11:17:48 2025]
+Finished job 174.
+32 of 158 steps (20%) done
+[Thu May 22 11:17:48 2025]
+Finished job 127.
+33 of 158 steps (21%) done
+[Thu May 22 11:17:48 2025]
+Finished job 120.
+34 of 158 steps (22%) done
+[Thu May 22 11:17:48 2025]
+Finished job 153.
+35 of 158 steps (22%) done
+[Thu May 22 11:17:48 2025]
+Finished job 128.
+36 of 158 steps (23%) done
+[Thu May 22 11:17:48 2025]
+Finished job 177.
+37 of 158 steps (23%) done
+[Thu May 22 11:17:48 2025]
+Finished job 183.
+38 of 158 steps (24%) done
+[Thu May 22 11:17:48 2025]
+Finished job 159.
+39 of 158 steps (25%) done
+Select jobs to execute...
+Execute 16 jobs...
+
+[Thu May 22 11:17:48 2025]
+rule INDEL_MASKER:
+    input: sharks/NarBan/temp/CM072964.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_indel_BED_file/CM072964.1_indel_bed.txt
+    jobid: 240
+    reason: Missing output files: sharks/NarBan/MSMC/Output_indel_BED_file/CM072964.1_indel_bed.txt; Input files updated by another job: sharks/NarBan/temp/CM072964.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072964.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 240 has been submitted with SLURM jobid 9737647 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_NarBan_CM072964.1/9737647.log).
+
+[Thu May 22 11:17:48 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/NarBan/NarBan_CM072958.1.bam
+    output: sharks/NarBan/NarBan_CM072958.1.bam.bai
+    jobid: 121
+    reason: Missing output files: sharks/NarBan/NarBan_CM072958.1.bam.bai; Input files updated by another job: sharks/NarBan/NarBan_CM072958.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072958.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 121 has been submitted with SLURM jobid 9737648 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_NarBan_CM072958.1/9737648.log).
+
+[Thu May 22 11:17:51 2025]
+rule INDEL_MASKER:
+    input: sharks/NarBan/temp/CM072957.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_indel_BED_file/CM072957.1_indel_bed.txt
+    jobid: 233
+    reason: Missing output files: sharks/NarBan/MSMC/Output_indel_BED_file/CM072957.1_indel_bed.txt; Input files updated by another job: sharks/NarBan/temp/CM072957.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072957.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 233 has been submitted with SLURM jobid 9737650 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_NarBan_CM072957.1/9737650.log).
+
+[Thu May 22 11:17:53 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/NarBan/NarBan_CM072960.1.bam
+    output: sharks/NarBan/NarBan_CM072960.1.bam.bai
+    jobid: 123
+    reason: Missing output files: sharks/NarBan/NarBan_CM072960.1.bam.bai; Input files updated by another job: sharks/NarBan/NarBan_CM072960.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072960.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 123 has been submitted with SLURM jobid 9737651 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_NarBan_CM072960.1/9737651.log).
+
+[Thu May 22 11:17:54 2025]
+rule INDEL_MASKER:
+    input: sharks/NarBan/temp/CM072959.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_indel_BED_file/CM072959.1_indel_bed.txt
+    jobid: 235
+    reason: Missing output files: sharks/NarBan/MSMC/Output_indel_BED_file/CM072959.1_indel_bed.txt; Input files updated by another job: sharks/NarBan/temp/CM072959.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072959.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 235 has been submitted with SLURM jobid 9737652 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_NarBan_CM072959.1/9737652.log).
+
+[Thu May 22 11:17:56 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/NarBan/temp/CM072958.1.fasta, sharks/NarBan/NarBan_CM072958.1.bam
+    output: sharks/NarBan/temp/CM072958.1_pileup.vcf.gz
+    jobid: 156
+    reason: Missing output files: sharks/NarBan/temp/CM072958.1_pileup.vcf.gz; Input files updated by another job: sharks/NarBan/temp/CM072958.1.fasta, sharks/NarBan/NarBan_CM072958.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072958.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 156 has been submitted with SLURM jobid 9737654 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_NarBan_CM072958.1/9737654.log).
+
+[Thu May 22 11:17:56 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/NarBan/NarBan_CM072962.1.bam
+    output: sharks/NarBan/NarBan_CM072962.1.bam.bai
+    jobid: 125
+    reason: Missing output files: sharks/NarBan/NarBan_CM072962.1.bam.bai; Input files updated by another job: sharks/NarBan/NarBan_CM072962.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072962.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 125 has been submitted with SLURM jobid 9737655 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_NarBan_CM072962.1/9737655.log).
+
+[Thu May 22 11:17:56 2025]
+rule CALL_PLOIDY:
+    input: sharks/NarBan/temp/CM072965.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_bam_caller_BED/CM072965.1_unmodified_bed.txt.gz, sharks/NarBan/temp/CM072965.1_only_snps.vcf.bgz
+    jobid: 176
+    reason: Missing output files: sharks/NarBan/temp/CM072965.1_only_snps.vcf.bgz, sharks/NarBan/MSMC/Output_bam_caller_BED/CM072965.1_unmodified_bed.txt.gz; Input files updated by another job: sharks/NarBan/temp/CM072965.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072965.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 176 has been submitted with SLURM jobid 9737656 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_NarBan_CM072965.1/9737656.log).
+
+[Thu May 22 11:17:59 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/NarBan/temp/CM072960.1.fasta, sharks/NarBan/NarBan_CM072960.1.bam
+    output: sharks/NarBan/temp/CM072960.1_pileup.vcf.gz
+    jobid: 162
+    reason: Missing output files: sharks/NarBan/temp/CM072960.1_pileup.vcf.gz; Input files updated by another job: sharks/NarBan/NarBan_CM072960.1.bam, sharks/NarBan/temp/CM072960.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072960.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 162 has been submitted with SLURM jobid 9737659 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_NarBan_CM072960.1/9737659.log).
+
+[Thu May 22 11:17:59 2025]
+rule CALL_PLOIDY:
+    input: sharks/NarBan/temp/CM072967.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_bam_caller_BED/CM072967.1_unmodified_bed.txt.gz, sharks/NarBan/temp/CM072967.1_only_snps.vcf.bgz
+    jobid: 182
+    reason: Missing output files: sharks/NarBan/MSMC/Output_bam_caller_BED/CM072967.1_unmodified_bed.txt.gz, sharks/NarBan/temp/CM072967.1_only_snps.vcf.bgz; Input files updated by another job: sharks/NarBan/temp/CM072967.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072967.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 182 has been submitted with SLURM jobid 9737660 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_NarBan_CM072967.1/9737660.log).
+
+[Thu May 22 11:18:01 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/NarBan/temp/CM072962.1.fasta, sharks/NarBan/NarBan_CM072962.1.bam
+    output: sharks/NarBan/temp/CM072962.1_pileup.vcf.gz
+    jobid: 168
+    reason: Missing output files: sharks/NarBan/temp/CM072962.1_pileup.vcf.gz; Input files updated by another job: sharks/NarBan/temp/CM072962.1.fasta, sharks/NarBan/NarBan_CM072962.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072962.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 168 has been submitted with SLURM jobid 9737662 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_NarBan_CM072962.1/9737662.log).
+
+[Thu May 22 11:18:02 2025]
+rule INDEL_MASKER:
+    input: sharks/NarBan/temp/CM072965.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_indel_BED_file/CM072965.1_indel_bed.txt
+    jobid: 241
+    reason: Missing output files: sharks/NarBan/MSMC/Output_indel_BED_file/CM072965.1_indel_bed.txt; Input files updated by another job: sharks/NarBan/temp/CM072965.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072965.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 241 has been submitted with SLURM jobid 9737663 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_NarBan_CM072965.1/9737663.log).
+
+[Thu May 22 11:18:04 2025]
+rule INDEL_MASKER:
+    input: sharks/NarBan/temp/CM072967.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_indel_BED_file/CM072967.1_indel_bed.txt
+    jobid: 243
+    reason: Missing output files: sharks/NarBan/MSMC/Output_indel_BED_file/CM072967.1_indel_bed.txt; Input files updated by another job: sharks/NarBan/temp/CM072967.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072967.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 243 has been submitted with SLURM jobid 9737665 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_NarBan_CM072967.1/9737665.log).
+
+[Thu May 22 11:18:04 2025]
+rule CALL_PLOIDY:
+    input: sharks/NarBan/temp/CM072964.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_bam_caller_BED/CM072964.1_unmodified_bed.txt.gz, sharks/NarBan/temp/CM072964.1_only_snps.vcf.bgz
+    jobid: 173
+    reason: Missing output files: sharks/NarBan/MSMC/Output_bam_caller_BED/CM072964.1_unmodified_bed.txt.gz, sharks/NarBan/temp/CM072964.1_only_snps.vcf.bgz; Input files updated by another job: sharks/NarBan/temp/CM072964.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072964.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 173 has been submitted with SLURM jobid 9737666 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_NarBan_CM072964.1/9737666.log).
+
+[Thu May 22 11:18:04 2025]
+rule CALL_PLOIDY:
+    input: sharks/NarBan/temp/CM072957.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_bam_caller_BED/CM072957.1_unmodified_bed.txt.gz, sharks/NarBan/temp/CM072957.1_only_snps.vcf.bgz
+    jobid: 152
+    reason: Missing output files: sharks/NarBan/MSMC/Output_bam_caller_BED/CM072957.1_unmodified_bed.txt.gz, sharks/NarBan/temp/CM072957.1_only_snps.vcf.bgz; Input files updated by another job: sharks/NarBan/temp/CM072957.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072957.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 152 has been submitted with SLURM jobid 9737667 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_NarBan_CM072957.1/9737667.log).
+
+[Thu May 22 11:18:09 2025]
+rule CALL_PLOIDY:
+    input: sharks/NarBan/temp/CM072959.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_bam_caller_BED/CM072959.1_unmodified_bed.txt.gz, sharks/NarBan/temp/CM072959.1_only_snps.vcf.bgz
+    jobid: 158
+    reason: Missing output files: sharks/NarBan/temp/CM072959.1_only_snps.vcf.bgz, sharks/NarBan/MSMC/Output_bam_caller_BED/CM072959.1_unmodified_bed.txt.gz; Input files updated by another job: sharks/NarBan/temp/CM072959.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072959.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 158 has been submitted with SLURM jobid 9737668 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_NarBan_CM072959.1/9737668.log).
+[Thu May 22 11:18:24 2025]
+Finished job 130.
+40 of 158 steps (25%) done
+[Thu May 22 11:18:24 2025]
+Finished job 122.
+41 of 158 steps (26%) done
+[Thu May 22 11:18:24 2025]
+Finished job 186.
+42 of 158 steps (27%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu May 22 11:18:24 2025]
+rule INDEL_MASKER:
+    input: sharks/NarBan/temp/CM072968.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_indel_BED_file/CM072968.1_indel_bed.txt
+    jobid: 244
+    reason: Missing output files: sharks/NarBan/MSMC/Output_indel_BED_file/CM072968.1_indel_bed.txt; Input files updated by another job: sharks/NarBan/temp/CM072968.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072968.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 244 has been submitted with SLURM jobid 9737669 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_NarBan_CM072968.1/9737669.log).
+
+[Thu May 22 11:18:24 2025]
+rule CALL_PLOIDY:
+    input: sharks/NarBan/temp/CM072968.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_bam_caller_BED/CM072968.1_unmodified_bed.txt.gz, sharks/NarBan/temp/CM072968.1_only_snps.vcf.bgz
+    jobid: 185
+    reason: Missing output files: sharks/NarBan/MSMC/Output_bam_caller_BED/CM072968.1_unmodified_bed.txt.gz, sharks/NarBan/temp/CM072968.1_only_snps.vcf.bgz; Input files updated by another job: sharks/NarBan/temp/CM072968.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072968.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 185 has been submitted with SLURM jobid 9737670 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_NarBan_CM072968.1/9737670.log).
+[Thu May 22 11:18:25 2025]
+Finished job 131.
+43 of 158 steps (27%) done
+[Thu May 22 11:19:04 2025]
+Finished job 124.
+44 of 158 steps (28%) done
+[Thu May 22 11:19:04 2025]
+Finished job 165.
+45 of 158 steps (28%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu May 22 11:19:04 2025]
+rule CALL_PLOIDY:
+    input: sharks/NarBan/temp/CM072961.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_bam_caller_BED/CM072961.1_unmodified_bed.txt.gz, sharks/NarBan/temp/CM072961.1_only_snps.vcf.bgz
+    jobid: 164
+    reason: Missing output files: sharks/NarBan/temp/CM072961.1_only_snps.vcf.bgz, sharks/NarBan/MSMC/Output_bam_caller_BED/CM072961.1_unmodified_bed.txt.gz; Input files updated by another job: sharks/NarBan/temp/CM072961.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072961.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 164 has been submitted with SLURM jobid 9737673 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_NarBan_CM072961.1/9737673.log).
+
+[Thu May 22 11:19:05 2025]
+rule INDEL_MASKER:
+    input: sharks/NarBan/temp/CM072961.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_indel_BED_file/CM072961.1_indel_bed.txt
+    jobid: 237
+    reason: Missing output files: sharks/NarBan/MSMC/Output_indel_BED_file/CM072961.1_indel_bed.txt; Input files updated by another job: sharks/NarBan/temp/CM072961.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072961.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 237 has been submitted with SLURM jobid 9737674 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_NarBan_CM072961.1/9737674.log).
+[Thu May 22 11:19:05 2025]
+Finished job 132.
+46 of 158 steps (29%) done
+[Thu May 22 11:19:05 2025]
+Finished job 189.
+47 of 158 steps (30%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu May 22 11:19:05 2025]
+rule INDEL_MASKER:
+    input: sharks/NarBan/temp/CM072969.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_indel_BED_file/CM072969.1_indel_bed.txt
+    jobid: 245
+    reason: Missing output files: sharks/NarBan/MSMC/Output_indel_BED_file/CM072969.1_indel_bed.txt; Input files updated by another job: sharks/NarBan/temp/CM072969.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072969.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 245 has been submitted with SLURM jobid 9737675 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_NarBan_CM072969.1/9737675.log).
+
+[Thu May 22 11:19:10 2025]
+rule CALL_PLOIDY:
+    input: sharks/NarBan/temp/CM072969.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_bam_caller_BED/CM072969.1_unmodified_bed.txt.gz, sharks/NarBan/temp/CM072969.1_only_snps.vcf.bgz
+    jobid: 188
+    reason: Missing output files: sharks/NarBan/temp/CM072969.1_only_snps.vcf.bgz, sharks/NarBan/MSMC/Output_bam_caller_BED/CM072969.1_unmodified_bed.txt.gz; Input files updated by another job: sharks/NarBan/temp/CM072969.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072969.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 188 has been submitted with SLURM jobid 9737676 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_NarBan_CM072969.1/9737676.log).
+[Thu May 22 11:19:44 2025]
+Finished job 150.
+48 of 158 steps (30%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu May 22 11:19:44 2025]
+rule CALL_PLOIDY:
+    input: sharks/NarBan/temp/CM072956.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_bam_caller_BED/CM072956.1_unmodified_bed.txt.gz, sharks/NarBan/temp/CM072956.1_only_snps.vcf.bgz
+    jobid: 149
+    reason: Missing output files: sharks/NarBan/temp/CM072956.1_only_snps.vcf.bgz, sharks/NarBan/MSMC/Output_bam_caller_BED/CM072956.1_unmodified_bed.txt.gz; Input files updated by another job: sharks/NarBan/temp/CM072956.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072956.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 149 has been submitted with SLURM jobid 9737679 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_NarBan_CM072956.1/9737679.log).
+
+[Thu May 22 11:19:46 2025]
+rule INDEL_MASKER:
+    input: sharks/NarBan/temp/CM072956.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_indel_BED_file/CM072956.1_indel_bed.txt
+    jobid: 232
+    reason: Missing output files: sharks/NarBan/MSMC/Output_indel_BED_file/CM072956.1_indel_bed.txt; Input files updated by another job: sharks/NarBan/temp/CM072956.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072956.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 232 has been submitted with SLURM jobid 9737680 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_NarBan_CM072956.1/9737680.log).
+[Thu May 22 11:19:46 2025]
+Finished job 171.
+49 of 158 steps (31%) done
+[Thu May 22 11:19:46 2025]
+Finished job 126.
+50 of 158 steps (32%) done
+[Thu May 22 11:19:46 2025]
+Finished job 119.
+51 of 158 steps (32%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu May 22 11:19:46 2025]
+rule INDEL_MASKER:
+    input: sharks/NarBan/temp/CM072963.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_indel_BED_file/CM072963.1_indel_bed.txt
+    jobid: 239
+    reason: Missing output files: sharks/NarBan/MSMC/Output_indel_BED_file/CM072963.1_indel_bed.txt; Input files updated by another job: sharks/NarBan/temp/CM072963.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072963.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 239 has been submitted with SLURM jobid 9737681 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_NarBan_CM072963.1/9737681.log).
+
+[Thu May 22 11:19:49 2025]
+rule CALL_PLOIDY:
+    input: sharks/NarBan/temp/CM072963.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_bam_caller_BED/CM072963.1_unmodified_bed.txt.gz, sharks/NarBan/temp/CM072963.1_only_snps.vcf.bgz
+    jobid: 170
+    reason: Missing output files: sharks/NarBan/MSMC/Output_bam_caller_BED/CM072963.1_unmodified_bed.txt.gz, sharks/NarBan/temp/CM072963.1_only_snps.vcf.bgz; Input files updated by another job: sharks/NarBan/temp/CM072963.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072963.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 170 has been submitted with SLURM jobid 9737682 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_NarBan_CM072963.1/9737682.log).
+[Thu May 22 11:20:25 2025]
+Finished job 180.
+52 of 158 steps (33%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu May 22 11:20:25 2025]
+rule INDEL_MASKER:
+    input: sharks/NarBan/temp/CM072966.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_indel_BED_file/CM072966.1_indel_bed.txt
+    jobid: 242
+    reason: Missing output files: sharks/NarBan/MSMC/Output_indel_BED_file/CM072966.1_indel_bed.txt; Input files updated by another job: sharks/NarBan/temp/CM072966.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072966.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 242 has been submitted with SLURM jobid 9737688 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_NarBan_CM072966.1/9737688.log).
+
+[Thu May 22 11:20:25 2025]
+rule CALL_PLOIDY:
+    input: sharks/NarBan/temp/CM072966.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_bam_caller_BED/CM072966.1_unmodified_bed.txt.gz, sharks/NarBan/temp/CM072966.1_only_snps.vcf.bgz
+    jobid: 179
+    reason: Missing output files: sharks/NarBan/MSMC/Output_bam_caller_BED/CM072966.1_unmodified_bed.txt.gz, sharks/NarBan/temp/CM072966.1_only_snps.vcf.bgz; Input files updated by another job: sharks/NarBan/temp/CM072966.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072966.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 179 has been submitted with SLURM jobid 9737689 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_NarBan_CM072966.1/9737689.log).
+[Thu May 22 11:20:25 2025]
+Finished job 129.
+53 of 158 steps (34%) done
+[Thu May 22 11:20:25 2025]
+Finished job 240.
+54 of 158 steps (34%) done
+[Thu May 22 11:20:25 2025]
+Finished job 121.
+55 of 158 steps (35%) done
+[Thu May 22 11:20:25 2025]
+Finished job 233.
+56 of 158 steps (35%) done
+[Thu May 22 11:20:25 2025]
+Finished job 123.
+57 of 158 steps (36%) done
+[Thu May 22 11:20:25 2025]
+Finished job 235.
+58 of 158 steps (37%) done
+[Thu May 22 11:20:25 2025]
+Finished job 156.
+59 of 158 steps (37%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu May 22 11:20:25 2025]
+rule CALL_PLOIDY:
+    input: sharks/NarBan/temp/CM072958.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_bam_caller_BED/CM072958.1_unmodified_bed.txt.gz, sharks/NarBan/temp/CM072958.1_only_snps.vcf.bgz
+    jobid: 155
+    reason: Missing output files: sharks/NarBan/temp/CM072958.1_only_snps.vcf.bgz, sharks/NarBan/MSMC/Output_bam_caller_BED/CM072958.1_unmodified_bed.txt.gz; Input files updated by another job: sharks/NarBan/temp/CM072958.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072958.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 155 has been submitted with SLURM jobid 9737690 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_NarBan_CM072958.1/9737690.log).
+
+[Thu May 22 11:20:28 2025]
+rule INDEL_MASKER:
+    input: sharks/NarBan/temp/CM072958.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_indel_BED_file/CM072958.1_indel_bed.txt
+    jobid: 234
+    reason: Missing output files: sharks/NarBan/MSMC/Output_indel_BED_file/CM072958.1_indel_bed.txt; Input files updated by another job: sharks/NarBan/temp/CM072958.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072958.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 234 has been submitted with SLURM jobid 9737691 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_NarBan_CM072958.1/9737691.log).
+[Thu May 22 11:21:05 2025]
+Finished job 125.
+60 of 158 steps (38%) done
+[Thu May 22 11:21:05 2025]
+Finished job 162.
+61 of 158 steps (39%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu May 22 11:21:05 2025]
+rule CALL_PLOIDY:
+    input: sharks/NarBan/temp/CM072960.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_bam_caller_BED/CM072960.1_unmodified_bed.txt.gz, sharks/NarBan/temp/CM072960.1_only_snps.vcf.bgz
+    jobid: 161
+    reason: Missing output files: sharks/NarBan/temp/CM072960.1_only_snps.vcf.bgz, sharks/NarBan/MSMC/Output_bam_caller_BED/CM072960.1_unmodified_bed.txt.gz; Input files updated by another job: sharks/NarBan/temp/CM072960.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072960.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 161 has been submitted with SLURM jobid 9737693 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_NarBan_CM072960.1/9737693.log).
+
+[Thu May 22 11:21:06 2025]
+rule INDEL_MASKER:
+    input: sharks/NarBan/temp/CM072960.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_indel_BED_file/CM072960.1_indel_bed.txt
+    jobid: 236
+    reason: Missing output files: sharks/NarBan/MSMC/Output_indel_BED_file/CM072960.1_indel_bed.txt; Input files updated by another job: sharks/NarBan/temp/CM072960.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072960.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 236 has been submitted with SLURM jobid 9737694 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_NarBan_CM072960.1/9737694.log).
+[Thu May 22 11:21:45 2025]
+Finished job 168.
+62 of 158 steps (39%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu May 22 11:21:45 2025]
+rule INDEL_MASKER:
+    input: sharks/NarBan/temp/CM072962.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_indel_BED_file/CM072962.1_indel_bed.txt
+    jobid: 238
+    reason: Missing output files: sharks/NarBan/MSMC/Output_indel_BED_file/CM072962.1_indel_bed.txt; Input files updated by another job: sharks/NarBan/temp/CM072962.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072962.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 238 has been submitted with SLURM jobid 9737696 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_NarBan_CM072962.1/9737696.log).
+
+[Thu May 22 11:21:47 2025]
+rule CALL_PLOIDY:
+    input: sharks/NarBan/temp/CM072962.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_bam_caller_BED/CM072962.1_unmodified_bed.txt.gz, sharks/NarBan/temp/CM072962.1_only_snps.vcf.bgz
+    jobid: 167
+    reason: Missing output files: sharks/NarBan/MSMC/Output_bam_caller_BED/CM072962.1_unmodified_bed.txt.gz, sharks/NarBan/temp/CM072962.1_only_snps.vcf.bgz; Input files updated by another job: sharks/NarBan/temp/CM072962.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072962.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 167 has been submitted with SLURM jobid 9737697 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_NarBan_CM072962.1/9737697.log).
+[Thu May 22 11:21:47 2025]
+Finished job 241.
+63 of 158 steps (40%) done
+[Thu May 22 11:22:25 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9737656' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 176
+    input: sharks/NarBan/temp/CM072965.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_bam_caller_BED/CM072965.1_unmodified_bed.txt.gz, sharks/NarBan/temp/CM072965.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_NarBan_CM072965.1/9737656.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/NarBan/temp/CM072965.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/NarBan/MSMC/Output_bam_caller_BED/CM072965.1_unmodified_bed.txt.gz | bgzip -c > sharks/NarBan/temp/CM072965.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9737656
+
+[Thu May 22 11:22:25 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9737660' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 182
+    input: sharks/NarBan/temp/CM072967.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_bam_caller_BED/CM072967.1_unmodified_bed.txt.gz, sharks/NarBan/temp/CM072967.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_NarBan_CM072967.1/9737660.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/NarBan/temp/CM072967.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/NarBan/MSMC/Output_bam_caller_BED/CM072967.1_unmodified_bed.txt.gz | bgzip -c > sharks/NarBan/temp/CM072967.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9737660
+
+[Thu May 22 11:22:25 2025]
+Finished job 243.
+64 of 158 steps (41%) done
+[Thu May 22 11:22:25 2025]
+Finished job 244.
+65 of 158 steps (41%) done
+[Thu May 22 11:23:05 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9737666' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 173
+    input: sharks/NarBan/temp/CM072964.1_pileup.vcf.gz
+    output: sharks/NarBan/MSMC/Output_bam_caller_BED/CM072964.1_unmodified_bed.txt.gz, sharks/NarBan/temp/CM072964.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_NarBan_CM072964.1/9737666.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/NarBan/temp/CM072964.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/NarBan/MSMC/Output_bam_caller_BED/CM072964.1_unmodified_bed.txt.gz | bgzip -c > sharks/NarBan/temp/CM072964.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9737666
+

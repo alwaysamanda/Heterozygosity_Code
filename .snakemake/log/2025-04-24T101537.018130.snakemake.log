@@ -1,0 +1,34 @@
+host: login-p-3
+Building DAG of jobs...
+SLURM run ID: 33636ce2-d00c-4635-b01f-c2050c4215c7
+Using shell: /usr/bin/bash
+Provided remote nodes: 10
+Job stats:
+job                      count
+---------------------  -------
+CALC_HET_PER_CHR            46
+CALC_HET_WHOLE_GENOME        1
+CHROM_LENGTH_CALC            1
+COMPILE_HET                  1
+COMPILE_ROH                  1
+FROH_PER_AUT_CHR            46
+PLOT_HET_PER_CHR            46
+PLOT_WHOLE_HET               1
+Plot_ROH                     1
+ROH_CALC                    46
+WHOLE_FROH                   1
+all                          1
+total                      192
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Apr 24 10:15:37 2025]
+rule CHROM_LENGTH_CALC:
+    input: ../241117.UCSC-hubs-VGP-alignment/alignment/reference/sharks/GCA_035084215.1.fa.gz, sharks/chrom_lists/GCA_035084215.1_chroms.txt
+    output: sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    jobid: 105
+    reason: Missing output files: sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt; Updated input files: sharks/chrom_lists/GCA_035084215.1_chroms.txt
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1872, disk_mib=1786, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake, runtime=120
+
+Job 105 has been submitted with SLURM jobid 8711165 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CHROM_LENGTH_CALC/8711165.log).

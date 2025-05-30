@@ -1,0 +1,49 @@
+host: login-p-1
+Building DAG of jobs...
+SLURM run ID: 8fe484e2-782e-4460-8a08-fe694a0fc286
+Using shell: /usr/bin/bash
+Provided remote nodes: 30
+Job stats:
+job         count
+--------  -------
+MAKE_SAM        1
+all             1
+total           2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 26 10:21:56 2025]
+rule MAKE_SAM:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_036365495.1.fa.gz, /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/sharks/GCA_036365525.1.fa.gz
+    output: sharks/HetFra/HetFra.sam
+    jobid: 323
+    reason: Missing output files: sharks/HetFra/HetFra.sam; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=5880, disk_mib=5608, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=720
+
+Job 323 has been submitted with SLURM jobid 9960568 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAKE_SAM/sharks_HetFra/9960568.log).
+[Mon May 26 10:28:27 2025]
+Error in rule MAKE_SAM:
+    message: SLURM-job '9960568' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 323
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_036365495.1.fa.gz, /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/sharks/GCA_036365525.1.fa.gz
+    output: sharks/HetFra/HetFra.sam
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAKE_SAM/sharks_HetFra/9960568.log (check log file(s) for error details)
+    shell:
+        
+        mkdir -p sharks/HetFra/MSMC
+        mkdir -p sharks/HetFra/MSMC/Output_BED_file
+        mkdir -p sharks/HetFra/MSMC/Output_indel_BED_file
+        mkdir -p sharks/HetFra/MSMC/Output_bam_caller_BED_file
+        mkdir -p sharks/HetFra/MSMC/Output_multihet_filtered_95
+        mkdir -p sharks/HetFra/MSMC/Output_Multihet_Bootstrapped/0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29
+        minimap2 -L -t 16 -ax asm5 /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_036365495.1.fa.gz /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/sharks/GCA_036365525.1.fa.gz > sharks/HetFra/HetFra.sam
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9960568
+
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-05-26T102155.633054.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

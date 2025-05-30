@@ -1,0 +1,30 @@
+host: login-p-2
+Building DAG of jobs...
+SLURM run ID: 204a8767-c7cf-453c-9ba7-ae49985a9caa
+Using shell: /usr/bin/bash
+Provided remote nodes: 10
+Job stats:
+job                    count
+-------------------  -------
+ALNCHAIN                   1
+ALNtoPAF                   1
+FASTGA                     1
+FILTER_PAF_VARIANCE        1
+GET_WHOLE_ALN              1
+GET_WHOLE_VAR              1
+SORT_PAF                   1
+all                        1
+total                      8
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 18 15:35:26 2025]
+rule FASTGA:
+    input: sharks/HetFra/temp/HetFra_GCA_036365495.1.gix, sharks/HetFra/temp/HetFra_GCA_036365525.1.gix
+    output: sharks/HetFra/HetFra_ALN.1aln
+    jobid: 5
+    reason: Missing output files: sharks/HetFra/HetFra_ALN.1aln
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake, runtime=720
+
+Job 5 has been submitted with SLURM jobid 8462938 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FASTGA/8462938.log).

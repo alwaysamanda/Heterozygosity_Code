@@ -1,0 +1,1030 @@
+host: login-q-1
+Building DAG of jobs...
+SLURM run ID: a1020910-e6e9-40c6-b5c1-0a330ee97531
+Using shell: /usr/bin/bash
+Provided remote nodes: 50
+Job stats:
+job                            count
+---------------------------  -------
+ALNPLOT                            1
+BAM_CALLER_BED                    32
+BGZIP_VCF                         32
+BOOTSTRAPPING_MULTIHET_FILE      960
+CALL_PLOIDY                       32
+EXTRACT_CHR_FASTA                 35
+GENERATE_MASK                     32
+GENERATE_MULTIHETSEP              32
+INDEL_MASKER                      32
+MAIN_MULTIHETSEP                  32
+PILEUP_VARIANTS                   35
+REMOVE_INDELS                     32
+RESTRUCTURE                       32
+SEPARATE_BAM_BY_CHR                3
+TABIX                             32
+UNZIP_REFERENCE                    1
+all                                1
+total                           1356
+
+Select jobs to execute...
+Execute 5 jobs...
+
+[Wed May 21 22:38:50 2025]
+rule UNZIP_REFERENCE:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCF_030144855.1.fa.gz
+    output: sharks/HypSab/temp/GCF_030144855.1.fa
+    jobid: 289
+    reason: Missing output files: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, REF_NAME=GCF_030144855.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=2330, disk_mib=2223, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 289 has been submitted with SLURM jobid 9705452 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_UNZIP_REFERENCE/sharks_HypSab_GCF_030144855.1/9705452.log).
+
+[Wed May 21 22:38:50 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HypSab/HypSab.bam
+    output: sharks/HypSab/HypSab_NC_082738.1.bam
+    jobid: 420
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082738.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6926, disk_mib=6606, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 420 has been submitted with SLURM jobid 9705453 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HypSab_NC_082738.1/9705453.log).
+
+[Wed May 21 22:38:50 2025]
+rule ALNPLOT:
+    input: sharks/HypSab/HypSab_ALN.chain.1aln
+    output: HypSab_ALN.chain.pdf
+    jobid: 9
+    reason: Missing output files: HypSab_ALN.chain.pdf
+    wildcards: SPEC_NAME=HypSab
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 9 has been submitted with SLURM jobid 9705454 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ALNPLOT/HypSab/9705454.log).
+
+[Wed May 21 22:38:50 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HypSab/HypSab.bam
+    output: sharks/HypSab/HypSab_NC_082739.1.bam
+    jobid: 423
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082739.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6926, disk_mib=6606, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 423 has been submitted with SLURM jobid 9705455 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HypSab_NC_082739.1/9705455.log).
+
+[Wed May 21 22:38:51 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HypSab/HypSab.bam
+    output: sharks/HypSab/HypSab_NC_082740.1.bam
+    jobid: 426
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082740.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6926, disk_mib=6606, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 426 has been submitted with SLURM jobid 9705456 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_SEPARATE_BAM_BY_CHR/sharks_HypSab_NC_082740.1/9705456.log).
+[Wed May 21 22:44:01 2025]
+Finished job 289.
+1 of 1356 steps (0.1%) done
+Select jobs to execute...
+Execute 35 jobs...
+
+[Wed May 21 22:44:01 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082712.1.fasta
+    jobid: 296
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082712.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 296 has been submitted with SLURM jobid 9705735 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082712.1/9705735.log).
+
+[Wed May 21 22:44:01 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082734.1.fasta
+    jobid: 318
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082734.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 318 has been submitted with SLURM jobid 9705736 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082734.1/9705736.log).
+
+[Wed May 21 22:44:03 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082727.1.fasta
+    jobid: 311
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082727.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 311 has been submitted with SLURM jobid 9705737 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082727.1/9705737.log).
+
+[Wed May 21 22:44:04 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082720.1.fasta
+    jobid: 304
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082720.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 304 has been submitted with SLURM jobid 9705738 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082720.1/9705738.log).
+
+[Wed May 21 22:44:04 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082713.1.fasta
+    jobid: 297
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082713.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 297 has been submitted with SLURM jobid 9705739 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082713.1/9705739.log).
+
+[Wed May 21 22:44:06 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082706.1.fasta
+    jobid: 290
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082706.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 290 has been submitted with SLURM jobid 9705740 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082706.1/9705740.log).
+
+[Wed May 21 22:44:06 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082735.1.fasta
+    jobid: 319
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082735.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 319 has been submitted with SLURM jobid 9705741 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082735.1/9705741.log).
+
+[Wed May 21 22:44:07 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082728.1.fasta
+    jobid: 312
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082728.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 312 has been submitted with SLURM jobid 9705742 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082728.1/9705742.log).
+
+[Wed May 21 22:44:07 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082721.1.fasta
+    jobid: 305
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082721.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 305 has been submitted with SLURM jobid 9705743 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082721.1/9705743.log).
+
+[Wed May 21 22:44:09 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082714.1.fasta
+    jobid: 298
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082714.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 298 has been submitted with SLURM jobid 9705744 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082714.1/9705744.log).
+
+[Wed May 21 22:44:09 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082738.1.fasta
+    jobid: 419
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082738.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 419 has been submitted with SLURM jobid 9705745 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082738.1/9705745.log).
+
+[Wed May 21 22:44:09 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082707.1.fasta
+    jobid: 291
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082707.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 291 has been submitted with SLURM jobid 9705746 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082707.1/9705746.log).
+
+[Wed May 21 22:44:12 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082736.1.fasta
+    jobid: 320
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082736.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 320 has been submitted with SLURM jobid 9705747 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082736.1/9705747.log).
+
+[Wed May 21 22:44:12 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082729.1.fasta
+    jobid: 313
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082729.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 313 has been submitted with SLURM jobid 9705748 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082729.1/9705748.log).
+
+[Wed May 21 22:44:12 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082722.1.fasta
+    jobid: 306
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082722.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 306 has been submitted with SLURM jobid 9705749 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082722.1/9705749.log).
+
+[Wed May 21 22:44:14 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082715.1.fasta
+    jobid: 299
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082715.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 299 has been submitted with SLURM jobid 9705750 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082715.1/9705750.log).
+
+[Wed May 21 22:44:14 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082708.1.fasta
+    jobid: 292
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082708.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 292 has been submitted with SLURM jobid 9705751 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082708.1/9705751.log).
+
+[Wed May 21 22:44:15 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082737.1.fasta
+    jobid: 321
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082737.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 321 has been submitted with SLURM jobid 9705752 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082737.1/9705752.log).
+
+[Wed May 21 22:44:17 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082730.1.fasta
+    jobid: 314
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082730.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 314 has been submitted with SLURM jobid 9705753 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082730.1/9705753.log).
+
+[Wed May 21 22:44:17 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082723.1.fasta
+    jobid: 307
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082723.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 307 has been submitted with SLURM jobid 9705754 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082723.1/9705754.log).
+
+[Wed May 21 22:44:17 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082716.1.fasta
+    jobid: 300
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082716.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 300 has been submitted with SLURM jobid 9705755 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082716.1/9705755.log).
+
+[Wed May 21 22:44:20 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082739.1.fasta
+    jobid: 422
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082739.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 422 has been submitted with SLURM jobid 9705756 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082739.1/9705756.log).
+
+[Wed May 21 22:44:20 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082709.1.fasta
+    jobid: 293
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082709.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 293 has been submitted with SLURM jobid 9705757 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082709.1/9705757.log).
+
+[Wed May 21 22:44:20 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082731.1.fasta
+    jobid: 315
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082731.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 315 has been submitted with SLURM jobid 9705758 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082731.1/9705758.log).
+
+[Wed May 21 22:44:25 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082724.1.fasta
+    jobid: 308
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082724.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 308 has been submitted with SLURM jobid 9705759 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082724.1/9705759.log).
+
+[Wed May 21 22:44:25 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082717.1.fasta
+    jobid: 301
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082717.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 301 has been submitted with SLURM jobid 9705760 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082717.1/9705760.log).
+
+[Wed May 21 22:44:25 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082710.1.fasta
+    jobid: 294
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082710.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 294 has been submitted with SLURM jobid 9705761 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082710.1/9705761.log).
+
+[Wed May 21 22:44:27 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082732.1.fasta
+    jobid: 316
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082732.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 316 has been submitted with SLURM jobid 9705762 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082732.1/9705762.log).
+
+[Wed May 21 22:44:28 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082725.1.fasta
+    jobid: 309
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082725.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 309 has been submitted with SLURM jobid 9705763 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082725.1/9705763.log).
+
+[Wed May 21 22:44:28 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082718.1.fasta
+    jobid: 302
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082718.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 302 has been submitted with SLURM jobid 9705764 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082718.1/9705764.log).
+
+[Wed May 21 22:44:28 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082740.1.fasta
+    jobid: 425
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082740.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 425 has been submitted with SLURM jobid 9705765 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082740.1/9705765.log).
+
+[Wed May 21 22:44:30 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082711.1.fasta
+    jobid: 295
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082711.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 295 has been submitted with SLURM jobid 9705766 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082711.1/9705766.log).
+
+[Wed May 21 22:44:30 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082733.1.fasta
+    jobid: 317
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082733.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 317 has been submitted with SLURM jobid 9705767 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082733.1/9705767.log).
+
+[Wed May 21 22:44:30 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082726.1.fasta
+    jobid: 310
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082726.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 310 has been submitted with SLURM jobid 9705768 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082726.1/9705768.log).
+
+[Wed May 21 22:44:32 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HypSab/temp/GCF_030144855.1.fa
+    output: sharks/HypSab/temp/NC_082719.1.fasta
+    jobid: 303
+    reason: Input files updated by another job: sharks/HypSab/temp/GCF_030144855.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082719.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=7869, disk_mib=7505, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 303 has been submitted with SLURM jobid 9705769 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HypSab_NC_082719.1/9705769.log).
+[Wed May 21 22:44:33 2025]
+Finished job 9.
+2 of 1356 steps (0.1%) done
+[Wed May 21 22:44:41 2025]
+Finished job 420.
+3 of 1356 steps (0.2%) done
+[Wed May 21 22:44:41 2025]
+Finished job 423.
+4 of 1356 steps (0.3%) done
+[Wed May 21 22:45:21 2025]
+Finished job 426.
+5 of 1356 steps (0.4%) done
+[Wed May 21 22:59:33 2025]
+Finished job 296.
+6 of 1356 steps (0.4%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 21 22:59:33 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082712.1.fasta, sharks/HypSab/HypSab_NC_082712.1.bam
+    output: sharks/HypSab/temp/NC_082712.1_pileup.vcf.gz
+    jobid: 342
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082712.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082712.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082712.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 342 has been submitted with SLURM jobid 9706274 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082712.1/9706274.log).
+[Wed May 21 22:59:34 2025]
+Finished job 318.
+7 of 1356 steps (1%) done
+[Wed May 21 22:59:34 2025]
+Finished job 311.
+8 of 1356 steps (1%) done
+[Wed May 21 22:59:34 2025]
+Finished job 304.
+9 of 1356 steps (1%) done
+Select jobs to execute...
+Execute 3 jobs...
+
+[Wed May 21 22:59:34 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082720.1.fasta, sharks/HypSab/HypSab_NC_082720.1.bam
+    output: sharks/HypSab/temp/NC_082720.1_pileup.vcf.gz
+    jobid: 366
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082720.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082720.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082720.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 366 has been submitted with SLURM jobid 9706275 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082720.1/9706275.log).
+
+[Wed May 21 22:59:34 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082734.1.fasta, sharks/HypSab/HypSab_NC_082734.1.bam
+    output: sharks/HypSab/temp/NC_082734.1_pileup.vcf.gz
+    jobid: 408
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082734.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082734.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082734.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 408 has been submitted with SLURM jobid 9706276 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082734.1/9706276.log).
+
+[Wed May 21 22:59:36 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082727.1.fasta, sharks/HypSab/HypSab_NC_082727.1.bam
+    output: sharks/HypSab/temp/NC_082727.1_pileup.vcf.gz
+    jobid: 387
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082727.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082727.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082727.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 387 has been submitted with SLURM jobid 9706277 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082727.1/9706277.log).
+[Wed May 21 23:00:13 2025]
+Finished job 297.
+10 of 1356 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 21 23:00:13 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082713.1.fasta, sharks/HypSab/HypSab_NC_082713.1.bam
+    output: sharks/HypSab/temp/NC_082713.1_pileup.vcf.gz
+    jobid: 345
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082713.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082713.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082713.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 345 has been submitted with SLURM jobid 9706286 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082713.1/9706286.log).
+[Wed May 21 23:00:19 2025]
+Finished job 290.
+11 of 1356 steps (1%) done
+[Wed May 21 23:00:19 2025]
+Finished job 319.
+12 of 1356 steps (1%) done
+[Wed May 21 23:00:19 2025]
+Finished job 312.
+13 of 1356 steps (1%) done
+Select jobs to execute...
+Execute 3 jobs...
+
+[Wed May 21 23:00:19 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082728.1.fasta, sharks/HypSab/HypSab_NC_082728.1.bam
+    output: sharks/HypSab/temp/NC_082728.1_pileup.vcf.gz
+    jobid: 390
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082728.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082728.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082728.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 390 has been submitted with SLURM jobid 9706287 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082728.1/9706287.log).
+
+[Wed May 21 23:00:21 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082706.1.fasta, sharks/HypSab/HypSab_NC_082706.1.bam
+    output: sharks/HypSab/temp/NC_082706.1_pileup.vcf.gz
+    jobid: 324
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082706.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082706.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082706.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 324 has been submitted with SLURM jobid 9706288 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082706.1/9706288.log).
+
+[Wed May 21 23:00:21 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082735.1.fasta, sharks/HypSab/HypSab_NC_082735.1.bam
+    output: sharks/HypSab/temp/NC_082735.1_pileup.vcf.gz
+    jobid: 411
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082735.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082735.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082735.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 411 has been submitted with SLURM jobid 9706289 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082735.1/9706289.log).
+[Wed May 21 23:00:53 2025]
+Finished job 305.
+14 of 1356 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 21 23:00:53 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082721.1.fasta, sharks/HypSab/HypSab_NC_082721.1.bam
+    output: sharks/HypSab/temp/NC_082721.1_pileup.vcf.gz
+    jobid: 369
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082721.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082721.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082721.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 369 has been submitted with SLURM jobid 9706290 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082721.1/9706290.log).
+[Wed May 21 23:00:55 2025]
+Finished job 298.
+15 of 1356 steps (1%) done
+[Wed May 21 23:00:55 2025]
+Finished job 419.
+16 of 1356 steps (1%) done
+[Wed May 21 23:00:55 2025]
+Finished job 291.
+17 of 1356 steps (1%) done
+[Wed May 21 23:00:55 2025]
+Finished job 320.
+18 of 1356 steps (1%) done
+[Wed May 21 23:00:55 2025]
+Finished job 313.
+19 of 1356 steps (1%) done
+[Wed May 21 23:00:55 2025]
+Finished job 306.
+20 of 1356 steps (1%) done
+Select jobs to execute...
+Execute 6 jobs...
+
+[Wed May 21 23:00:55 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082736.1.fasta, sharks/HypSab/HypSab_NC_082736.1.bam
+    output: sharks/HypSab/temp/NC_082736.1_pileup.vcf.gz
+    jobid: 414
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082736.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082736.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082736.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 414 has been submitted with SLURM jobid 9706291 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082736.1/9706291.log).
+
+[Wed May 21 23:00:56 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082729.1.fasta, sharks/HypSab/HypSab_NC_082729.1.bam
+    output: sharks/HypSab/temp/NC_082729.1_pileup.vcf.gz
+    jobid: 393
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082729.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082729.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082729.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 393 has been submitted with SLURM jobid 9706292 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082729.1/9706292.log).
+
+[Wed May 21 23:00:58 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082738.1.fasta, sharks/HypSab/HypSab_NC_082738.1.bam
+    output: sharks/HypSab/temp/NC_082738.1_pileup.vcf.gz
+    jobid: 418
+    reason: Input files updated by another job: sharks/HypSab/temp/NC_082738.1.fasta, sharks/HypSab/HypSab_NC_082738.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082738.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 418 has been submitted with SLURM jobid 9706293 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082738.1/9706293.log).
+
+[Wed May 21 23:00:58 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082722.1.fasta, sharks/HypSab/HypSab_NC_082722.1.bam
+    output: sharks/HypSab/temp/NC_082722.1_pileup.vcf.gz
+    jobid: 372
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082722.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082722.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082722.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 372 has been submitted with SLURM jobid 9706294 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082722.1/9706294.log).
+
+[Wed May 21 23:00:58 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082714.1.fasta, sharks/HypSab/HypSab_NC_082714.1.bam
+    output: sharks/HypSab/temp/NC_082714.1_pileup.vcf.gz
+    jobid: 348
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082714.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082714.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082714.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 348 has been submitted with SLURM jobid 9706295 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082714.1/9706295.log).
+
+[Wed May 21 23:00:58 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082707.1.fasta, sharks/HypSab/HypSab_NC_082707.1.bam
+    output: sharks/HypSab/temp/NC_082707.1_pileup.vcf.gz
+    jobid: 327
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082707.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082707.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082707.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 327 has been submitted with SLURM jobid 9706296 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082707.1/9706296.log).
+[Wed May 21 23:01:34 2025]
+Finished job 299.
+21 of 1356 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 21 23:01:34 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082715.1.fasta, sharks/HypSab/HypSab_NC_082715.1.bam
+    output: sharks/HypSab/temp/NC_082715.1_pileup.vcf.gz
+    jobid: 351
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082715.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082715.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082715.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 351 has been submitted with SLURM jobid 9706297 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082715.1/9706297.log).
+[Wed May 21 23:01:34 2025]
+Finished job 292.
+22 of 1356 steps (2%) done
+[Wed May 21 23:01:34 2025]
+Finished job 321.
+23 of 1356 steps (2%) done
+[Wed May 21 23:01:34 2025]
+Finished job 314.
+24 of 1356 steps (2%) done
+[Wed May 21 23:01:34 2025]
+Finished job 307.
+25 of 1356 steps (2%) done
+[Wed May 21 23:01:34 2025]
+Finished job 300.
+26 of 1356 steps (2%) done
+[Wed May 21 23:01:34 2025]
+Finished job 422.
+27 of 1356 steps (2%) done
+[Wed May 21 23:01:34 2025]
+Finished job 293.
+28 of 1356 steps (2%) done
+[Wed May 21 23:01:34 2025]
+Finished job 315.
+29 of 1356 steps (2%) done
+[Wed May 21 23:01:34 2025]
+Finished job 308.
+30 of 1356 steps (2%) done
+[Wed May 21 23:01:34 2025]
+Finished job 301.
+31 of 1356 steps (2%) done
+[Wed May 21 23:01:34 2025]
+Finished job 294.
+32 of 1356 steps (2%) done
+[Wed May 21 23:01:34 2025]
+Finished job 316.
+33 of 1356 steps (2%) done
+[Wed May 21 23:01:34 2025]
+Finished job 309.
+34 of 1356 steps (3%) done
+[Wed May 21 23:01:34 2025]
+Finished job 302.
+35 of 1356 steps (3%) done
+[Wed May 21 23:01:34 2025]
+Finished job 425.
+36 of 1356 steps (3%) done
+Select jobs to execute...
+Execute 15 jobs...
+
+[Wed May 21 23:01:34 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082725.1.fasta, sharks/HypSab/HypSab_NC_082725.1.bam
+    output: sharks/HypSab/temp/NC_082725.1_pileup.vcf.gz
+    jobid: 381
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082725.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082725.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082725.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 381 has been submitted with SLURM jobid 9706298 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082725.1/9706298.log).
+
+[Wed May 21 23:01:34 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082723.1.fasta, sharks/HypSab/HypSab_NC_082723.1.bam
+    output: sharks/HypSab/temp/NC_082723.1_pileup.vcf.gz
+    jobid: 375
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082723.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082723.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082723.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 375 has been submitted with SLURM jobid 9706299 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082723.1/9706299.log).
+
+[Wed May 21 23:01:35 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082731.1.fasta, sharks/HypSab/HypSab_NC_082731.1.bam
+    output: sharks/HypSab/temp/NC_082731.1_pileup.vcf.gz
+    jobid: 399
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082731.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082731.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082731.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 399 has been submitted with SLURM jobid 9706300 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082731.1/9706300.log).
+
+[Wed May 21 23:01:35 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082708.1.fasta, sharks/HypSab/HypSab_NC_082708.1.bam
+    output: sharks/HypSab/temp/NC_082708.1_pileup.vcf.gz
+    jobid: 330
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082708.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082708.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082708.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 330 has been submitted with SLURM jobid 9706301 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082708.1/9706301.log).
+
+[Wed May 21 23:01:35 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082740.1.fasta, sharks/HypSab/HypSab_NC_082740.1.bam
+    output: sharks/HypSab/temp/NC_082740.1_pileup.vcf.gz
+    jobid: 424
+    reason: Input files updated by another job: sharks/HypSab/temp/NC_082740.1.fasta, sharks/HypSab/HypSab_NC_082740.1.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082740.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 424 has been submitted with SLURM jobid 9706302 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082740.1/9706302.log).
+
+[Wed May 21 23:01:35 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082717.1.fasta, sharks/HypSab/HypSab_NC_082717.1.bam
+    output: sharks/HypSab/temp/NC_082717.1_pileup.vcf.gz
+    jobid: 357
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082717.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082717.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082717.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 357 has been submitted with SLURM jobid 9706303 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082717.1/9706303.log).
+
+[Wed May 21 23:01:35 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082724.1.fasta, sharks/HypSab/HypSab_NC_082724.1.bam
+    output: sharks/HypSab/temp/NC_082724.1_pileup.vcf.gz
+    jobid: 378
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082724.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082724.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082724.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 378 has been submitted with SLURM jobid 9706304 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082724.1/9706304.log).
+
+[Wed May 21 23:01:35 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082710.1.fasta, sharks/HypSab/HypSab_NC_082710.1.bam
+    output: sharks/HypSab/temp/NC_082710.1_pileup.vcf.gz
+    jobid: 336
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082710.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082710.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082710.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 336 has been submitted with SLURM jobid 9706305 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082710.1/9706305.log).
+
+[Wed May 21 23:01:35 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082737.1.fasta, sharks/HypSab/HypSab_NC_082737.1.bam
+    output: sharks/HypSab/temp/NC_082737.1_pileup.vcf.gz
+    jobid: 417
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082737.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082737.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082737.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 417 has been submitted with SLURM jobid 9706306 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082737.1/9706306.log).
+
+[Wed May 21 23:01:36 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082730.1.fasta, sharks/HypSab/HypSab_NC_082730.1.bam
+    output: sharks/HypSab/temp/NC_082730.1_pileup.vcf.gz
+    jobid: 396
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082730.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082730.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082730.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 396 has been submitted with SLURM jobid 9706307 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082730.1/9706307.log).
+
+[Wed May 21 23:01:36 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082732.1.fasta, sharks/HypSab/HypSab_NC_082732.1.bam
+    output: sharks/HypSab/temp/NC_082732.1_pileup.vcf.gz
+    jobid: 402
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082732.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082732.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082732.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 402 has been submitted with SLURM jobid 9706308 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082732.1/9706308.log).
+
+[Wed May 21 23:01:36 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082739.1.fasta, sharks/HypSab/HypSab_NC_082739.1.bam
+    output: sharks/HypSab/temp/NC_082739.1_pileup.vcf.gz
+    jobid: 421
+    reason: Input files updated by another job: sharks/HypSab/HypSab_NC_082739.1.bam, sharks/HypSab/temp/NC_082739.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082739.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 421 has been submitted with SLURM jobid 9706309 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082739.1/9706309.log).
+
+[Wed May 21 23:01:36 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082716.1.fasta, sharks/HypSab/HypSab_NC_082716.1.bam
+    output: sharks/HypSab/temp/NC_082716.1_pileup.vcf.gz
+    jobid: 354
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082716.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082716.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082716.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 354 has been submitted with SLURM jobid 9706310 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082716.1/9706310.log).
+
+[Wed May 21 23:01:36 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082709.1.fasta, sharks/HypSab/HypSab_NC_082709.1.bam
+    output: sharks/HypSab/temp/NC_082709.1_pileup.vcf.gz
+    jobid: 333
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082709.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082709.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082709.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 333 has been submitted with SLURM jobid 9706311 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082709.1/9706311.log).
+
+[Wed May 21 23:01:36 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082718.1.fasta, sharks/HypSab/HypSab_NC_082718.1.bam
+    output: sharks/HypSab/temp/NC_082718.1_pileup.vcf.gz
+    jobid: 360
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082718.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082718.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082718.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 360 has been submitted with SLURM jobid 9706312 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082718.1/9706312.log).
+[Wed May 21 23:02:14 2025]
+Finished job 295.
+37 of 1356 steps (3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 21 23:02:14 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082711.1.fasta, sharks/HypSab/HypSab_NC_082711.1.bam
+    output: sharks/HypSab/temp/NC_082711.1_pileup.vcf.gz
+    jobid: 339
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082711.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082711.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082711.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 339 has been submitted with SLURM jobid 9706314 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082711.1/9706314.log).
+[Wed May 21 23:02:14 2025]
+Finished job 317.
+38 of 1356 steps (3%) done
+[Wed May 21 23:02:14 2025]
+Finished job 310.
+39 of 1356 steps (3%) done
+[Wed May 21 23:02:14 2025]
+Finished job 303.
+40 of 1356 steps (3%) done
+Select jobs to execute...
+Execute 3 jobs...
+
+[Wed May 21 23:02:14 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082733.1.fasta, sharks/HypSab/HypSab_NC_082733.1.bam
+    output: sharks/HypSab/temp/NC_082733.1_pileup.vcf.gz
+    jobid: 405
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082733.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082733.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082733.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 405 has been submitted with SLURM jobid 9706315 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082733.1/9706315.log).
+
+[Wed May 21 23:02:14 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082726.1.fasta, sharks/HypSab/HypSab_NC_082726.1.bam
+    output: sharks/HypSab/temp/NC_082726.1_pileup.vcf.gz
+    jobid: 384
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082726.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082726.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082726.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 384 has been submitted with SLURM jobid 9706316 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082726.1/9706316.log).
+
+[Wed May 21 23:02:14 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082719.1.fasta, sharks/HypSab/HypSab_NC_082719.1.bam
+    output: sharks/HypSab/temp/NC_082719.1_pileup.vcf.gz
+    jobid: 363
+    reason: Updated input files: sharks/HypSab/HypSab_NC_082719.1.bam; Input files updated by another job: sharks/HypSab/temp/NC_082719.1.fasta
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082719.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 363 has been submitted with SLURM jobid 9706317 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/sharks_HypSab_NC_082719.1/9706317.log).
+[Wed May 21 23:04:44 2025]
+Finished job 418.
+41 of 1356 steps (3%) done
+[Wed May 21 23:05:24 2025]
+Finished job 408.
+42 of 1356 steps (3%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Wed May 21 23:05:24 2025]
+rule CALL_PLOIDY:
+    input: sharks/HypSab/temp/NC_082734.1_pileup.vcf.gz
+    output: sharks/HypSab/MSMC/Output_bam_caller_BED/NC_082734.1_unmodified_bed.txt.gz, sharks/HypSab/temp/NC_082734.1_only_snps.vcf.bgz
+    jobid: 407
+    reason: Input files updated by another job: sharks/HypSab/temp/NC_082734.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082734.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 407 has been submitted with SLURM jobid 9706519 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HypSab_NC_082734.1/9706519.log).
+
+[Wed May 21 23:05:25 2025]
+rule INDEL_MASKER:
+    input: sharks/HypSab/temp/NC_082734.1_pileup.vcf.gz
+    output: sharks/HypSab/MSMC/Output_indel_BED_file/NC_082734.1_indel_bed.txt
+    jobid: 551
+    reason: Input files updated by another job: sharks/HypSab/temp/NC_082734.1_pileup.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, CHROM=NC_082734.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+RuleException in rule INDEL_MASKER in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 635:
+AttributeError: 'Wildcards' object has no attribute 'CHR', when formatting the following:
+
+        python {INDEL_MASKER} --input_gen_vcf {input} --Chromosome_name {wildcards.CHR} --output_BED {output}
+        

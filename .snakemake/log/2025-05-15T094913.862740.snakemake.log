@@ -1,0 +1,55 @@
+host: login-p-4
+Building DAG of jobs...
+SLURM run ID: 460579dc-0a4c-4547-aef8-b6eb763f8f8e
+Using shell: /usr/bin/bash
+Provided remote nodes: 25
+Job stats:
+job              count
+-------------  -------
+GET_WHOLE_ALN        1
+GET_WHOLE_VAR        1
+all                  1
+total                3
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu May 15 09:49:14 2025]
+rule GET_WHOLE_VAR:
+    input: sharks/HypSab/HypSab_FASTGA.chain.chr.fltr.srt.paf
+    output: sharks/HypSab/temp/HypSab_Var_Only.txt
+    jobid: 9
+    reason: Missing output files: sharks/HypSab/temp/HypSab_Var_Only.txt
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 9 has been submitted with SLURM jobid 9394720 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_WHOLE_VAR/9394720.log).
+
+[Thu May 15 09:49:14 2025]
+rule GET_WHOLE_ALN:
+    input: sharks/HypSab/HypSab_FASTGA.chain.chr.fltr.srt.paf
+    output: sharks/HypSab/temp/HypSab_Aln_Only.txt
+    jobid: 10
+    reason: Missing output files: sharks/HypSab/temp/HypSab_Aln_Only.txt
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 10 has been submitted with SLURM jobid 9394721 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_WHOLE_ALN/9394721.log).
+[Thu May 15 10:18:16 2025]
+Finished job 9.
+1 of 3 steps (33%) done
+[Thu May 15 10:18:16 2025]
+Finished job 10.
+2 of 3 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu May 15 10:18:16 2025]
+localrule all:
+    input: sharks/HypSab/HypSab_FASTGA.chain.chr.fltr.srt.paf, sharks/HypSab/temp/HypSab_Var_Only.txt, sharks/HypSab/temp/HypSab_Aln_Only.txt
+    jobid: 0
+    reason: Input files updated by another job: sharks/HypSab/temp/HypSab_Var_Only.txt, sharks/HypSab/temp/HypSab_Aln_Only.txt
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=3286, disk_mib=3134, tmpdir=/tmp, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+[Thu May 15 10:18:16 2025]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2025-05-15T094913.862740.snakemake.log

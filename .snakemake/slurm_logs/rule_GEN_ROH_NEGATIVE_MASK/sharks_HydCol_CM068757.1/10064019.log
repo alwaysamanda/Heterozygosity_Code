@@ -1,0 +1,79 @@
+host: cpu-p-198
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu May 29 09:58:36 2025]
+rule GEN_ROH_NEGATIVE_MASK:
+    input: sharks/HydCol/20250410_CM068757.1_ROH_Results.txt
+    output: sharks/HydCol/MSMC/ROH_Negative_Mask/HydCol_CM068757.1_ROH_Mask.bed.gz
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHROM=CM068757.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+host: cpu-p-198
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu May 29 09:58:37 2025]
+localrule GEN_ROH_NEGATIVE_MASK:
+    input: sharks/HydCol/20250410_CM068757.1_ROH_Results.txt
+    output: sharks/HydCol/MSMC/ROH_Negative_Mask/HydCol_CM068757.1_ROH_Mask.bed.gz
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHROM=CM068757.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=/tmp, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+gzip: sharks/HydCol/MSMC/ROH_Negative_Mask/HydCol_CM068757.1_ROH_Mask.bed: No such file or directory
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 609:
+Command 'set -euo pipefail;  
+        mkdir -p "sharks/HydCol/MSMC/ROH_Negative_Mask"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250528_ROH_Masker.py sharks HydCol CM068757.1 sharks/HydCol/20250410_CM068757.1_ROH_Results.txt
+        gzip sharks/HydCol/MSMC/ROH_Negative_Mask/HydCol_CM068757.1_ROH_Mask.bed' returned non-zero exit status 1.
+[Thu May 29 09:58:38 2025]
+Error in rule GEN_ROH_NEGATIVE_MASK:
+    jobid: 0
+    input: sharks/HydCol/20250410_CM068757.1_ROH_Results.txt
+    output: sharks/HydCol/MSMC/ROH_Negative_Mask/HydCol_CM068757.1_ROH_Mask.bed.gz
+    shell:
+        
+        mkdir -p "sharks/HydCol/MSMC/ROH_Negative_Mask"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250528_ROH_Masker.py sharks HydCol CM068757.1 sharks/HydCol/20250410_CM068757.1_ROH_Results.txt
+        gzip sharks/HydCol/MSMC/ROH_Negative_Mask/HydCol_CM068757.1_ROH_Mask.bed
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.
+srun: error: cpu-p-198: task 0: Exited with exit code 1
+[Thu May 29 09:58:39 2025]
+Error in rule GEN_ROH_NEGATIVE_MASK:
+    jobid: 0
+    input: sharks/HydCol/20250410_CM068757.1_ROH_Results.txt
+    output: sharks/HydCol/MSMC/ROH_Negative_Mask/HydCol_CM068757.1_ROH_Mask.bed.gz
+    shell:
+        
+        mkdir -p "sharks/HydCol/MSMC/ROH_Negative_Mask"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250528_ROH_Masker.py sharks HydCol CM068757.1 sharks/HydCol/20250410_CM068757.1_ROH_Results.txt
+        gzip sharks/HydCol/MSMC/ROH_Negative_Mask/HydCol_CM068757.1_ROH_Mask.bed
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.

@@ -1,0 +1,25 @@
+host: login-p-1
+Building DAG of jobs...
+SLURM run ID: 7c0734fc-ed01-4834-b141-befb2a216c1a
+Using shell: /usr/bin/bash
+Provided remote nodes: 30
+Job stats:
+job         count
+--------  -------
+MAKE_SAM        1
+all             1
+total           2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 26 11:56:36 2025]
+rule MAKE_SAM:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_036971175.1.fa.gz, /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/sharks/GCA_036971445.1.fa.gz
+    output: sharks/NarBan/NarBan.sam
+    jobid: 103
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=3763, disk_mib=3589, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=720
+
+Job 103 has been submitted with SLURM jobid 9962094 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAKE_SAM/sharks_NarBan/9962094.log).

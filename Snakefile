@@ -11,7 +11,7 @@ check how many jobs are required AT EACH STAGE, this command also shows the shel
 to run locally use:
     snakemake --configfile config.yml
 to run on slurm use:
-    snakemake --executor slurm --jobs 25 --workflow-profile profiles --latency-wait 60 --configfile config.yml
+    snakemake --executor slurm --jobs 30 --workflow-profile profiles --latency-wait 60 --keep-going --configfile config.yml
 For changing input parameters, change in the config.yml file
 
 Generate simplified plot to show rule flow with:
@@ -43,21 +43,25 @@ WINDOW_INTERVAL=config['WINDOW_INTERVAL']
 WINDOW_LENGTH=config['WINDOW_LENGTH']
 NUM_AUT_CHROMOSOMES=config['NUM_AUT_CHROMOSOMES']
 NUM_ALL_CHR=config['NUM_ALL_CHR']
-CHROMS=config['Chromosomes']
+CHROMS=config['ALL_CHROMOSOMES']
+AUTO_CHROMS=config['AUTOSOMAL_CHROMOSOMES']
 BOOTSTRAPS=config['BOOTSTRAPPING_VALUES']
+MU=config['MUTATION_RATE']
+GEN_TIME=config['GENERATION_TIME']
 
 ### paths to dependent scripts
 ROH_CALC_PY = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py"
 ROH_PLOT_R = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250106_Plot_ROH.R"
 FROH_CALC_PER_CHR_R = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250210_FROH_per_chr_calc.R"
 FROH_CALC_R = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250106_FROH_Calc.R"
-CALC_HET_PER_CHR_PY = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_per_chr_V3.py"
+# CALC_HET_PER_CHR_PY = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_per_chr_V3.py"
+CALC_HET_PER_CHR_PY = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250520_find_het_per_chr_V4.py"
 CALC_HET_WHOLE_GENOME_PY = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_whole_genome_V3.py"
 PLOT_HET_PER_CHR_R = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R"
 PLOT_WHOLE_HET_R = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_Plot_het_whole_genome.R"
-DOTPLOR_R = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250212_pafr_dotplot.R"
-CS_STRING_PY = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250403_cs_string_generator.py"
 PLOT_MSMC_R = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250508_Plot_MSMC.R"
+PLOT_MSMC_BOOSTRAP_R = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250529_Plot_MSMC_Bootstrap.R"
+ROH_MASKER="/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250528_ROH_Masker.py"
 GENERATE_MULTIHETSEP="/rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/generate_multihetsep.py" ##change path, the script can be found in "MSMC-tools"
 MASK_FILE_GENERATOR="/rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/20241011_jaskaran_script_msmc_fileprep/mask_file.py" ##In this directory
 BOOTSTRAPPING_GENERATOR="/rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/20241011_jaskaran_script_msmc_fileprep/block_bootstrap_mhs.py" ## From "Cobraa-Trevor Cousins" also in this github directory
@@ -89,11 +93,14 @@ wildcard_constraints:
     NUM_AUT_CHROMOSOMES=NUM_AUT_CHROMOSOMES, 
     NUM_ALL_CHR=NUM_ALL_CHR, 
     CHROMS=CHROMS, 
+    AUTO_CHROMS=AUTO_CHROMS,
     BOOTSTRAPS=BOOTSTRAPS
 
 rule all: 
     input:
         expand("{CLADE}/{SPEC_NAME}/{SPEC_NAME}_FASTGA.chain.chr.fltr.srt.paf", CLADE=CLADE, SPEC_NAME=SPEC_NAME), 
+        expand("{SPEC_NAME}_ALN.chain.pdf", SPEC_NAME=SPEC_NAME), 
+        expand("{CLADE}/chrom_lists/{REF_NAME}_chroms.txt", CLADE=CLADE, REF_NAME=REF_NAME), 
         expand("{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_Var_Only.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME), 
         expand("{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_Aln_Only.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME), 
         expand("{CLADE}/{SPEC_NAME}/temp/{TODAY_DATE}_{CHR}_Aln_Only.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, TODAY_DATE=TODAY_DATE, CHR=CHROMS), 
@@ -103,23 +110,45 @@ rule all:
         expand("{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}_ROH_Map.pdf", CLADE=CLADE, SPEC_NAME=SPEC_NAME, TODAY_DATE=TODAY_DATE), 
         expand("{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{CHR}_{REF_NAME}_FROH.txt", CHR=CHROMS, CLADE=CLADE, SPEC_NAME=SPEC_NAME, TODAY_DATE=TODAY_DATE, REF_NAME=REF_NAME), 
         expand("{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}_FROH.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, TODAY_DATE=TODAY_DATE), 
-        expand("{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{CHR}_het.txt", CHR=CHROMS, CLADE=CLADE, SPEC_NAME=SPEC_NAME, TODAY_DATE=TODAY_DATE, REF_NAME=REF_NAME), 
+        expand("{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{CHROM}_het.txt", CHROM=AUTO_CHROMS, CLADE=CLADE, SPEC_NAME=SPEC_NAME, TODAY_DATE=TODAY_DATE, REF_NAME=REF_NAME), 
         expand("{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}_per_chr_mean_heterozygosity.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, TODAY_DATE=TODAY_DATE), 
         expand("{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}_whole_genome_mean_heterozygosity.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, TODAY_DATE=TODAY_DATE), 
         expand("{CLADE}/{SPEC_NAME}/{SPEC_NAME}_Het_Compiled.tsv", CLADE=CLADE, SPEC_NAME=SPEC_NAME), 
-        expand("{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}_{CHR}_Het_Map.svg", CHR=CHROMS, CLADE=CLADE, SPEC_NAME=SPEC_NAME, TODAY_DATE=TODAY_DATE, REF_NAME=REF_NAME),
+        expand("{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}_{CHROM}_Het_Map.svg", CHROM=AUTO_CHROMS, CLADE=CLADE, SPEC_NAME=SPEC_NAME, TODAY_DATE=TODAY_DATE, REF_NAME=REF_NAME),
         expand("{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}_Het_Whole_Genome_Map.svg", CLADE=CLADE, SPEC_NAME=SPEC_NAME, TODAY_DATE=TODAY_DATE), 
-        expand("{CLADE}/{SPEC_NAME}/temp/{CHR}_pileup.vcf.gz", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHR=CHROMS), 
-        expand("{CLADE}/{SPEC_NAME}/MSMC/Output_bam_caller_BED/{CHR}_modified_bed.txt.gz", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHR=CHROMS), 
-        expand("{CLADE}/{SPEC_NAME}/{CHR}.recode.vcf", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHR=CHROMS), 
-        expand("{CLADE}/{SPEC_NAME}/{CHR}.recode.vcf.gz", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHR=CHROMS), 
-        expand("{CLADE}/{SPEC_NAME}/MSMC/Output_bam_caller_BED/{CHR}_unmodified_bed.txt.gz", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHR=CHROMS),
-        expand("{CLADE}/{SPEC_NAME}/MSMC/Output_bam_caller_BED/{CHR}_modified_bed.txt.gz", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHR=CHROMS),  
-        expand("{CLADE}/{SPEC_NAME}/temp/{CHR}_only_snps.vcf.bgz", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHR=CHROMS), 
-        expand("{CLADE}/{SPEC_NAME}/MSMC/Output_indel_BED_file/{CHR}_indel_bed.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHR=CHROMS), 
-        expand("{CLADE}/{SPEC_NAME}/MSMC/Output_multihet_filtered_95/{CHR}_multihet.txt", CHR=CHROMS, CLADE=CLADE, SPEC_NAME=SPEC_NAME), 
-        expand("{CLADE}/{SPEC_NAME}/MSMC/Output_Multihet_Bootstrapped/{BOOT}/{CHR}_multihet.txt", CHR=CHROMS, BOOT=BOOTSTRAPS, CLADE=CLADE, SPEC_NAME=SPEC_NAME)
-        # f"{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}_BAM_Coverage.txt",  
+        expand("{CLADE}/{SPEC_NAME}/MSMC/paf_files/{SPEC_NAME}_{CHROM}.paf", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
+        expand("{CLADE}/{SPEC_NAME}/MSMC/vcf_files/{SPEC_NAME}_{CHROM}.vcf.gz", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
+        # expand("{CLADE}/{SPEC_NAME}/MSMC/Output_Mask/{SPEC_NAME}_{CHROM}.bed.gz", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
+        # expand("{CLADE}/{SPEC_NAME}/MSMC/Output_VCF/{SPEC_NAME}_{CHROM}_only_snps.vcf.gz", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
+        # expand("{CLADE}/{SPEC_NAME}/MSMC/ROH_Negative_Mask/{SPEC_NAME}_{CHROM}_ROH_Mask.bed.gz", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS),
+        expand("{CLADE}/{SPEC_NAME}/MSMC/Output_NEW_multihetsep/{CHROM}_multihet.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
+        # expand("{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}_MSMC2_test.svg", CLADE=CLADE, SPEC_NAME=SPEC_NAME, TODAY_DATE=TODAY_DATE), 
+
+
+
+
+        # expand("{CLADE}/{SPEC_NAME}/{SPEC_NAME}.sam", CLADE=CLADE, SPEC_NAME=SPEC_NAME), 
+        # expand("{CLADE}/{SPEC_NAME}/{SPEC_NAME}.bam", CLADE=CLADE, SPEC_NAME=SPEC_NAME), 
+        # expand("{CLADE}/{SPEC_NAME}/{SPEC_NAME}.bam.bai", CLADE=CLADE, SPEC_NAME=SPEC_NAME), 
+        # expand("{CLADE}/{SPEC_NAME}/{SPEC_NAME}_{CHROM}.bam", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
+        # expand("{CLADE}/{SPEC_NAME}/{SPEC_NAME}_{CHROM}.bam.bai", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
+        # expand("{CLADE}/{SPEC_NAME}/temp/{REF_NAME}.fa", CLADE=CLADE, SPEC_NAME=SPEC_NAME, REF_NAME=REF_NAME), 
+        # expand("{CLADE}/{SPEC_NAME}/temp/{CHROM}.fasta", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
+        # expand("{CLADE}/{SPEC_NAME}/temp/{CHROM}_restructured.vcf.gz", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
+        # expand("{CLADE}/{SPEC_NAME}/temp/{CHROM}_pileup.vcf.gz", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
+        # expand("{CLADE}/{SPEC_NAME}/{CHROM}.recode.vcf", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
+        # expand("{CLADE}/{SPEC_NAME}/{CHROM}.recode.vcf.gz", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
+        # expand("{CLADE}/{SPEC_NAME}/temp/{CHROM}_only_snps.vcf.bgz", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
+        # expand("{CLADE}/{SPEC_NAME}/temp/{CHROM}_only_snps.vcf.bgz.tbi", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
+        # expand("{CLADE}/{SPEC_NAME}/MSMC/Output_indel_BED_file/{CHROM}_indel_bed.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
+        # expand("{CLADE}/{SPEC_NAME}/MSMC/Output_bam_caller_BED/{CHROM}_unmodified_bed.txt.gz", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS),
+        # expand("{CLADE}/{SPEC_NAME}/MSMC/Output_bam_caller_BED/{CHROM}_modified_bed.txt.gz", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS),  
+        # expand("{CLADE}/{SPEC_NAME}/MSMC/Output_multihet_filtered_95/{CHROM}_multihet.txt", CHROM=AUTO_CHROMS, CLADE=CLADE, SPEC_NAME=SPEC_NAME), 
+        # expand("{CLADE}/{SPEC_NAME}/MSMC/Output_Multihet_Bootstrapped/{BOOT}/{CHROM}_multihet.txt", CHROM=AUTO_CHROMS, BOOT=BOOTSTRAPS, CLADE=CLADE, SPEC_NAME=SPEC_NAME),
+        # expand("{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}.msmc2.final.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, TODAY_DATE=TODAY_DATE), 
+        # expand("{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}_Bootstrapping_{BOOT}.msmc2", CLADE=CLADE, SPEC_NAME=SPEC_NAME, TODAY_DATE=TODAY_DATE, BOOT=BOOTSTRAPS), 
+        # expand("{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}_MSMC2_test.svg", CLADE=CLADE, SPEC_NAME=SPEC_NAME, TODAY_DATE=TODAY_DATE), 
+        # # # f"{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}_BAM_Coverage.txt",  
         # f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_FASTGA_collinear_plot.pdf"
 
 
@@ -230,27 +259,34 @@ rule FILTER_PAF_CHR_ONLY:
         """
         awk 'BEGIN {{ while (getline < "{input.ALL_CHROMS}") list[$0] }} $6 in list' {input.PAF} > {output}
         """
-# awk '{{ if ($6 !~ /^JA/) {{print $0}}}}' {input} > {output}
 
-# rule PAF_CS:
-#     input:
-#         f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_FASTGA_Filtered.srt.paf"
-#     output:
-#         f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_FASTGA_Updated.paf"
-#     params:
-#         CLADE=CLADE, 
-#         SPEC_NAME=SPEC_NAME, 
-#     shell:
-#         """
-#         python {CS_STRING_PY} {input} {params.CLADE} {params.SPEC_NAME}
-#         """
+rule ALNPLOT:
+    input:
+        expand("{CLADE}/{SPEC_NAME}/{SPEC_NAME}_ALN.chain.1aln", CLADE=CLADE, SPEC_NAME=SPEC_NAME)
+    output:
+        "{SPEC_NAME}_ALN.chain.pdf"
+    shell:
+        """
+        ALNplot -p -H500 {input}
+        """
 ####
 
+#### RULES FOR GETTING NECESSARY FILES AND INFO  ####
+rule GET_CHROM_LISTS:
+    input:
+    "../250430.VGP-Phase1/alignment/reference/{CLADE}/{REF_NAME}.fa.gz"
+    output:
+    "{CLADE}/chrom_lists/{REF_NAME}_chroms.txt"
+    params:
+        CHROM_START_CHR=CHROM_START_CHR
+    shell:
+        """
+        zcat < {input} | grep '>{params.CHROM_START_CHR}' > {output}
+        """
 
- #### RULES FOR GETTING NECESSARY FILES AND INFO  ####
 rule CHROM_LENGTH_CALC:
     input:
-        FASTA=f"../241117.UCSC-hubs-VGP-alignment/alignment/reference/{CLADE}/{REF_NAME}.fa.gz", 
+        FASTA=f"../250430.VGP-Phase1/alignment/reference/{CLADE}/{REF_NAME}.fa.gz", 
         ALL_CHROMS=f"{CLADE}/chrom_lists/{REF_NAME}_chroms.txt",
     output:
         f"{CLADE}/{SPEC_NAME}/Reference_{SPEC_NAME}_Chroms_Lengths.txt"
@@ -446,7 +482,7 @@ rule CALC_HET_PER_CHR:
         CHROM_LENGTH_FILE="{CLADE}/{SPEC_NAME}/Reference_{SPEC_NAME}_Chroms_Lengths.txt", 
         ROH="{CLADE}/{SPEC_NAME}/{SPEC_NAME}_ROH_Results.csv"
     output:
-        "{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{CHR}_het.txt"
+        "{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{CHROM}_het.txt"
     params:
         TODAY_DATE=TODAY_DATE,
         REF_NAME=REF_NAME, 
@@ -457,13 +493,13 @@ rule CALC_HET_PER_CHR:
         WINDOW_LENGTH=WINDOW_LENGTH
     shell:
         """
-        python {CALC_HET_PER_CHR_PY} {input.VAR_FILE} {input.CHROM_LENGTH_FILE} {params.CLADE} {params.SPEC_NAME} {params.TODAY_DATE} {params.WINDOW_LENGTH} {params.WINDOW_INTERVAL} {params.NUM_AUT_CHROMOSOMES} {input.ROH}
+        python {CALC_HET_PER_CHR_PY} {input.VAR_FILE} {input.CHROM_LENGTH_FILE} {params.CLADE} {params.SPEC_NAME} {params.TODAY_DATE} {params.WINDOW_LENGTH} {params.WINDOW_INTERVAL} {wildcards.CHROM} {input.ROH}
         """
 
 rule CALC_HET_WHOLE_GENOME:
     input:
         CHROM_LENGTH_FILE="{CLADE}/{SPEC_NAME}/Reference_{SPEC_NAME}_Chroms_Lengths.txt",
-        PER_CHR_FILES=expand("{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{CHR}_het.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, TODAY_DATE=TODAY_DATE, CHR=CHROMS)
+        PER_CHR_FILES=expand("{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{CHROM}_het.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, TODAY_DATE=TODAY_DATE, CHROM=AUTO_CHROMS)
     output:
         WHOLE_PER_CHR="{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}_per_chr_mean_heterozygosity.txt",
         WHOLE_GENOME="{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}_whole_genome_mean_heterozygosity.txt", 
@@ -479,7 +515,7 @@ rule CALC_HET_WHOLE_GENOME:
 
 rule COMPILE_HET:
     input:
-        expand("{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{CHR}_het.txt", CHR=CHROMS, CLADE=CLADE, SPEC_NAME=SPEC_NAME, TODAY_DATE=TODAY_DATE, REF_NAME=REF_NAME)
+        expand("{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{CHROM}_het.txt", CHROM=AUTO_CHROMS, CLADE=CLADE, SPEC_NAME=SPEC_NAME, TODAY_DATE=TODAY_DATE, REF_NAME=REF_NAME)
     output:
         "{CLADE}/{SPEC_NAME}/{SPEC_NAME}_Het_Compiled.tsv"
     shell:
@@ -526,249 +562,439 @@ rule PLOT_WHOLE_HET:
 
 
 #### RULES FOR CREATING MSMC INPUT FILES ####
+# rule SEP_PAF_BY_CHR:
+#     input:
+#         "{CLADE}/{SPEC_NAME}/{SPEC_NAME}_FASTGA.chain.chr.fltr.srt.paf"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/MSMC/paf_files/{SPEC_NAME}_{CHROM}.paf"
+#     shell:
+#         """
+#         mkdir -p "{CLADE}/{SPEC_NAME}/MSMC/paf_files"
+#         awk -v var={wildcards.CHROM} '{{if($6 == var) print}}' {input} > {output}
+#         """
 
-rule MAKE_SAM:
+# rule GEN_CHROM_VCF:
+#     input:
+#         paf="{CLADE}/{SPEC_NAME}/MSMC/paf_files/{SPEC_NAME}_{CHROM}.paf",
+#         refseq=expand("/rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/{CLADE}/{REF_NAME}.fa.gz", CLADE=CLADE, REF_NAME=REF_NAME)
+#     output:
+#         "{CLADE}/{SPEC_NAME}/MSMC/vcf_files/{SPEC_NAME}_{CHROM}.vcf.gz"
+#     shell:
+#         """
+#         mkdir -p "{wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/vcf_files"
+#         k8 paftools.js call -s {wildcards.SPEC_NAME} -f {input.refseq} {input.paf} > {wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/vcf_files/{wildcards.SPEC_NAME}_{wildcards.CHROM}.vcf
+#         gzip {wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/vcf_files/{wildcards.SPEC_NAME}_{wildcards.CHROM}.vcf
+#         """
+
+# rule GEN_ROH_NEGATIVE_MASK:
+#     input:
+#         lambda wildcards: f"{wildcards.CLADE}/{wildcards.SPEC_NAME}/{TODAY_DATE}_{wildcards.CHROM}_ROH_Results.txt"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/MSMC/ROH_Negative_Mask/{SPEC_NAME}_{CHROM}_ROH_Mask.bed.gz"
+#     shell:
+#         """
+#         mkdir -p "{wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/ROH_Negative_Mask"
+#         python {ROH_MASKER} {wildcards.CLADE} {wildcards.SPEC_NAME} {wildcards.CHROM} {input}
+#         gzip {wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/ROH_Negative_Mask/{wildcards.SPEC_NAME}_{wildcards.CHROM}_ROH_Mask.bed
+#         """
+
+rule MAKE_MASK:
     input:
-        REF=expand("/rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/{CLADE}/{REF_NAME}.fa.gz", CLADE=CLADE, REF_NAME=REF_NAME), 
-        ALT=expand("/rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/{CLADE}/{ALT_NAME}.fa.gz", CLADE=CLADE, ALT_NAME=ALT_NAME)
+        "{CLADE}/{SPEC_NAME}/temp/{TODAY_DATE}_{CHR}_Aln_Only.txt"
     output:
-        "{CLADE}/{SPEC_NAME}/{SPEC_NAME}.sam"
-    resources:
-        runtime="12h"
-    params:
-        BOOTSTRAPS=BOOTSTRAPS
+
     shell:
         """
-        mkdir -p {CLADE}/{SPEC_NAME}/MSMC
-        mkdir -p {CLADE}/{SPEC_NAME}/MSMC/Output_BED_file
-        mkdir -p {CLADE}/{SPEC_NAME}/MSMC/Output_indel_BED_file
-        mkdir -p {CLADE}/{SPEC_NAME}/MSMC/Output_bam_caller_BED_file
-        mkdir -p {CLADE}/{SPEC_NAME}/MSMC/Output_multihet_filtered_95
-        mkdir -p {CLADE}/{SPEC_NAME}/MSMC/Output_Multihet_Bootstrapped/{params.BOOTSTRAPS}
-        minimap2 -t 16 -ax asm5 {input.REF} {input.ALT} > {output}
         """
 
-rule MAKE_BAM:
+# rule MAIN_MULTIHETSEP:
+#     input:
+#         vcf="{CLADE}/{SPEC_NAME}/MSMC/vcf_files/{SPEC_NAME}_{CHROM}.vcf.gz", 
+#         ROH_negative_mask="{CLADE}/{SPEC_NAME}/MSMC/ROH_Negative_Mask/{SPEC_NAME}_{CHROM}_ROH_Mask.bed.gz"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/MSMC/Output_NEW_multihetsep/{CHROM}_multihet.txt"
+#     shell:
+#         """
+#         mkdir -p "{CLADE}/{SPEC_NAME}/MSMC/Output_NEW_multihetsep"
+#         python {GENERATE_MULTIHETSEP} {input.vcf} --negative_mask={input.ROH_negative_mask} > {output}
+#         """
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# rule GEN_INPUT_MASK_VCF:
+#     input:
+#         "{CLADE}/{SPEC_NAME}/MSMC/vcf_files/{SPEC_NAME}_{CHROM}.vcf.gz"
+#     output:
+#         mask="{CLADE}/{SPEC_NAME}/MSMC/Output_Mask/{SPEC_NAME}_{CHROM}.bed.gz", 
+#         vcf="{CLADE}/{SPEC_NAME}/MSMC/Output_VCF/{SPEC_NAME}_{CHROM}_only_snps.vcf.gz"
+#     shell:
+#         """
+#         mkdir -p "{wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/Output_Mask"
+#         mkdir -p "{wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/Output_VCF"
+#         bcftools view -V indels -m2 -M2 {input} | {BAM_CALLER} 1 {output.mask} | bgzip -c > {output.vcf}
+#         """
+### bcftools call --ploidy 2 -c -V indels {input} | {BAM_CALLER} 1 {output.mask} | bgzip -c > {output.vcf}
+
+# rule MAIN_MULTIHETSEP:
+#     input:
+#         vcf="{CLADE}/{SPEC_NAME}/MSMC/Output_VCF/{SPEC_NAME}_{CHROM}_only_snps.vcf.gz", 
+#         ROH_negative_mask="{CLADE}/{SPEC_NAME}/MSMC/ROH_Negative_Mask/{SPEC_NAME}_{CHROM}_ROH_Mask.bed.gz", 
+#         mask="{CLADE}/{SPEC_NAME}/MSMC/Output_Mask/{SPEC_NAME}_{CHROM}.bed.gz"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/MSMC/Output_NEW_multihetsep/{CHROM}_multihet.txt"
+#     shell:
+#         """
+#         mkdir -p "{CLADE}/{SPEC_NAME}/MSMC/Output_NEW_multihetsep"
+#         python {GENERATE_MULTIHETSEP} {input.vcf} --negative_mask={input.ROH_negative_mask} --mask={input.mask} > {output}
+#         """
+
+# rule BOOTSTRAPPING_MULTIHET_FILE:
+#     input:
+#         "{CLADE}/{SPEC_NAME}/MSMC/Output_multihet_filtered_95/{CHROM}_multihet.txt"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/MSMC/Output_Multihet_Bootstrapped/{BOOT}/{CHROM}_multihet.txt"
+#     shell:
+#         """
+#         mkdir -p {CLADE}/{SPEC_NAME}/MSMC/Output_Multihet_Bootstrapped/{wildcards.BOOT}
+#         python {BOOTSTRAPPING_GENERATOR} --inmhs {input} --windowsize 5e+05 --outmhs {wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/Output_Multihet_Bootstrapped/{wildcards.BOOT}/{wildcards.CHROM}_multihet.txt
+#         """
+
+#### 
+
+#### RULES FOR RUNNING MSMC ####
+rule RUN_PRIMARY_MSMC:
     input:
-        "{CLADE}/{SPEC_NAME}/{SPEC_NAME}.sam"
+        expand("{CLADE}/{SPEC_NAME}/MSMC/Output_multihet_filtered_95/{CHROM}_multihet.txt", CHROM=AUTO_CHROMS, CLADE=CLADE, SPEC_NAME=SPEC_NAME)
     output:
-        "{CLADE}/{SPEC_NAME}/{SPEC_NAME}.bam"
+        loop="{CLADE}/{SPEC_NAME}/MSMC/Primary_Results/{TODAY_DATE}_{SPEC_NAME}.msmc2.loop.txt", 
+        log="{CLADE}/{SPEC_NAME}/MSMC/Primary_Results/{TODAY_DATE}_{SPEC_NAME}.msmc2.log", 
+        final="{CLADE}/{SPEC_NAME}/MSMC/Primary_Results/{TODAY_DATE}_{SPEC_NAME}.msmc2.final.txt"
     shell:
         """
-        samtools sort {input} -o {output}
+        mkdir -p "{CLADE}/{SPEC_NAME}/MSMC/Primary_Results"
+        build/release/msmc2 -t 12 --fixedRecombination -o {CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}.msmc2 {input}
         """
 
-rule SEPARATE_BAM_BY_CHR:
-    input:
-        "{CLADE}/{SPEC_NAME}/{SPEC_NAME}.bam"
-    output:
-        "{CLADE}/{SPEC_NAME}/{SPEC_NAME}_{CHR}.bam"
-    shell:
-        """
-        samtools index {input}
-        samtools view -b {input} {wildcards.CHR} > {output}
-        """
 
-rule UNZIP_REFERENCE:
-    input:
-        "/rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/{CLADE}/{REF_NAME}.fa.gz"
-    output:
-        temp("{CLADE}/{SPEC_NAME}/temp/{REF_NAME}.fa")
-    shell:
-        """
-        gunzip -c {input} > {output}
-        """
+# rule PLOT_MSMC:
+#     input:
+#         "{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}.msmc2.final.txt"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}_MSMC2_test.svg"
+#     params:
+#         CLADE=CLADE, 
+#         TODAY_DATE=TODAY_DATE, 
+#         SPEC_NAME=SPEC_NAME, 
+#         MU=MU, 
+#         GEN_TIME=GEN_TIME
+#     shell:
+#         """
+#         Rscript {PLOT_MSMC_R} {CLADE} {TODAY_DATE} {SPEC_NAME} {MU} {GEN_TIME} {output} {input}
+#         """
 
-rule EXTRACT_CHR_FASTA:
-    input:
-        expand("{CLADE}/{SPEC_NAME}/temp/{REF_NAME}.fa", CLADE=CLADE, SPEC_NAME=SPEC_NAME, REF_NAME=REF_NAME)
-    output:
-        "{CLADE}/{SPEC_NAME}/temp/{CHR}.fasta"
-    params:
-        CLADE=CLADE, 
-        SPEC_NAME=SPEC_NAME, 
-        REF_NAME=REF_NAME
-    shell:
-        """
-        samtools faidx {input} {wildcards.CHR} > {output}
-        samtools faidx {output}
-        """
+# rule PLOT_MSMC_BOOTSTRAP:
+#     input:
+#         "{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}.msmc2.final.txt"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}_MSMC2_Bootstrap.svg"
+#     params:
+#         CLADE=CLADE, 
+#         TODAY_DATE=TODAY_DATE, 
+#         SPEC_NAME=SPEC_NAME, 
+#         MU=MU, 
+#         GEN_TIME=GEN_TIME
+#     shell:
+#         """
+#         Rscript {PLOT_MSMC_BOOTSTRAP_R} {CLADE} {TODAY_DATE} {SPEC_NAME} {MU} {GEN_TIME} {output} {input}
+#         """
 
-rule INDEX_BAM_FILE:
-    input:
-        "{CLADE}/{SPEC_NAME}/{SPEC_NAME}_{CHR}.bam"
-    output:
-        "{CLADE}/{SPEC_NAME}/{SPEC_NAME}_{CHR}.bam.bai"
-    shell:
-        """
-        samtools index {input}
-        """
 
-rule PILEUP_VARIANTS:
-    input:
-        FASTA="{CLADE}/{SPEC_NAME}/temp/{CHR}.fasta",
-        BAM="{CLADE}/{SPEC_NAME}/{SPEC_NAME}_{CHR}.bam"
-    output:
-        "{CLADE}/{SPEC_NAME}/temp/{CHR}_pileup.vcf.gz"
-    shell:
-        """
-        bcftools mpileup -f {input.FASTA} {input.BAM} --config pacbio-ccs -Oz -o {output}
-        """
 
-rule INDEL_MASKER:
-    input:
-        "{CLADE}/{SPEC_NAME}/temp/{CHR}_pileup.vcf.gz"
-    output:
-        "{CLADE}/{SPEC_NAME}/MSMC/Output_indel_BED_file/{CHR}_indel_bed.txt"
-    shell:
-        """
-        python {INDEL_MASKER} --input_gen_vcf {input} --Chromosome_name {wildcards.CHR} --output_BED {output}
-        """
 
-rule CALL_PLOIDY:
-    input:
-        "{CLADE}/{SPEC_NAME}/temp/{CHR}_pileup.vcf.gz"
-    output:
-        output_bam_caller="{CLADE}/{SPEC_NAME}/MSMC/Output_bam_caller_BED/{CHR}_unmodified_bed.txt.gz", 
-        only_snps="{CLADE}/{SPEC_NAME}/temp/{CHR}_only_snps.vcf.bgz"
-    shell:
-        """
-        bcftools call --ploidy 2 -c -V indels {input} | {BAM_CALLER} 1 {output.output_bam_caller} | bgzip -c > {output.only_snps}
-        """
 
-rule BAM_CALLER_BED:
-    input:
-        "{CLADE}/{SPEC_NAME}/MSMC/Output_bam_caller_BED/{CHR}_unmodified_bed.txt.gz"
-    output:
-        "{CLADE}/{SPEC_NAME}/MSMC/Output_bam_caller_BED/{CHR}_modified_bed.txt.gz"
-    shell:
-        """
-        zcat {input}  | \
-        awk -v chrom="{wildcards.CHR}" 'BEGIN{{OFS="\t"}} {{ $1=chrom; print $0 }}' | \
-        gzip -c > {output}
-        """
 
-rule TABIX:
-    input:
-        "{CLADE}/{SPEC_NAME}/temp/{CHR}_only_snps.vcf.bgz"
-    output:
-        "{CLADE}/{SPEC_NAME}/temp/{CHR}_only_snps.vcf.bgz.tbi"
-    shell:
-        """
-        tabix -p vcf {input}
-        """
 
-rule RESTRUCTURE:
-    input:
-        "{CLADE}/{SPEC_NAME}/temp/{CHR}_only_snps.vcf.bgz"
-    output:
-        "{CLADE}/{SPEC_NAME}/temp/{CHR}_restructured.vcf.gz"
-    shell:
-        """
-        zcat {input} | sed  's/1\/1/1\/0/g' | bgzip -c > {output}
-        """
 
-rule REMOVE_INDELS:
-    input:
-        "{CLADE}/{SPEC_NAME}/temp/{CHR}_restructured.vcf.gz"
-    output:
-        "{CLADE}/{SPEC_NAME}/{CHR}.recode.vcf"
-    params:
-        CLADE=CLADE,
-        SPEC_NAME=SPEC_NAME
-    shell:
-        """
-        vcftools --gzvcf {input} \
-         --remove-indels \
-         --recode \
-         --out {params.CLADE}/{params.SPEC_NAME}/{wildcards.CHR}
-        """
 
-rule BGZIP_VCF:
-    input:
-        "{CLADE}/{SPEC_NAME}/{CHR}.recode.vcf"
-    output:
-        "{CLADE}/{SPEC_NAME}/{CHR}.recode.vcf.gz"
-    shell:
-        """
-        bgzip {input}
-        """
 
-rule GENERATE_MULTIHETSEP:
-    input:
-        "{CLADE}/{SPEC_NAME}/{CHR}.recode.vcf.gz"
-    output:
-        "{CLADE}/{SPEC_NAME}/MSMC/Output_Multihet/{CHR}_multihet.txt"
-    shell:
-        """
-        python {GENERATE_MULTIHETSEP} {input} > {output}
-        """
 
-rule GENERATE_MASK:
-    input:
-        "{CLADE}/{SPEC_NAME}/MSMC/Output_Multihet/{CHR}_multihet.txt"
-    output:
-        "{CLADE}/{SPEC_NAME}/MSMC/Output_Bed/{CHR}/{CHR}_95.txt"
-    params:
-        CLADE=CLADE, 
-        SPEC_NAME=SPEC_NAME
-    shell:
-        """
-        python {MASK_FILE_GENERATOR} --input_file {input} --Chromosome_name {wildcards.CHR} --output_BED {params.CLADE}/{params.SPEC_NAME}/MSMC/Output_Bed/{wildcards.CHR}
-        """
 
-rule MAIN_MULTIHETSEP:
-    input:
-        vcf="{CLADE}/{SPEC_NAME}/{CHR}.recode.vcf.gz", 
-        negative_mask="{CLADE}/{SPEC_NAME}/MSMC/Output_Bed/{CHR}/{CHR}_95.txt", 
-        mask="{CLADE}/{SPEC_NAME}/MSMC/Output_bam_caller_BED/{CHR}_modified_bed.txt.gz", 
-        negative_mask_indel="{CLADE}/{SPEC_NAME}/MSMC/Output_indel_BED_file/{CHR}_indel_bed.txt"
-    output:
-        "{CLADE}/{SPEC_NAME}/MSMC/Output_multihet_filtered_95/{CHR}_multihet.txt"
-    shell:
-        """
-        python {GENERATE_MULTIHETSEP} {input.vcf} --negative_mask={input.negative_mask} --mask={input.mask} --negative_mask={input.negative_mask_indel} > {output}
-        """
 
-rule BOOTSTRAPPING_MULTIHET_FILE:
-    input:
-        "{CLADE}/{SPEC_NAME}/MSMC/Output_multihet_filtered_95/{CHR}_multihet.txt"
-    output:
-        "{CLADE}/{SPEC_NAME}/MSMC/Output_Multihet_Bootstrapped/{BOOT}/{CHR}_multihet.txt"
-    shell:
-        """
-        mkdir -p {CLADE}/{SPEC_NAME}/MSMC/Output_Multihet_Bootstrapped/{wildcards.BOOT}
-        python {BOOTSTRAPPING_GENERATOR} --inmhs {input} --windowsize 5e+06 --outmhs {wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/Output_Multihet_Bootstrapped/{wildcards.BOOT}/{wildcards.CHR}_multihet.txt
-        """
-####
 
+
+
+
+
+
+
+# rule MAKE_SAM:
+#     input:
+#         REF=expand("/rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/{CLADE}/{REF_NAME}.fa.gz", CLADE=CLADE, REF_NAME=REF_NAME), 
+#         ALT=expand("/rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/{CLADE}/{ALT_NAME}.fa.gz", CLADE=CLADE, ALT_NAME=ALT_NAME)
+#     output:
+#         "{CLADE}/{SPEC_NAME}/{SPEC_NAME}.sam"
+#     resources:
+#         runtime="12h", 
+#         mem_mb=200000
+#     params:
+#         BOOTSTRAPS=BOOTSTRAPS
+#     shell:
+#         """
+#         mkdir -p {CLADE}/{SPEC_NAME}/MSMC
+#         mkdir -p {CLADE}/{SPEC_NAME}/MSMC/Output_BED_file
+#         mkdir -p {CLADE}/{SPEC_NAME}/MSMC/Output_indel_BED_file
+#         mkdir -p {CLADE}/{SPEC_NAME}/MSMC/Output_bam_caller_BED_file
+#         mkdir -p {CLADE}/{SPEC_NAME}/MSMC/Output_multihet_filtered_95
+#         mkdir -p {CLADE}/{SPEC_NAME}/MSMC/Output_Multihet_Bootstrapped/{params.BOOTSTRAPS}
+#         minimap2 -L -t 16 -ax asm5 {input.REF} {input.ALT} > {output}
+#         """
+
+# rule MAKE_BAM:
+#     input:
+#         "{CLADE}/{SPEC_NAME}/{SPEC_NAME}.sam"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/{SPEC_NAME}.bam"
+#     shell:
+#         """
+#         samtools sort {input} -o {output}
+#         """
+
+# rule INDEX_WHOLE_BAM:
+#     input:
+#         "{CLADE}/{SPEC_NAME}/{SPEC_NAME}.bam"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/{SPEC_NAME}.bam.bai"
+#     shell:
+#         """
+#         samtools index {input}
+#         """
+
+# rule SEPARATE_BAM_BY_CHR:
+#     input:
+#         "{CLADE}/{SPEC_NAME}/{SPEC_NAME}.bam"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/{SPEC_NAME}_{CHROM}.bam"
+#     shell:
+#         """
+#         samtools view -b {input} {wildcards.CHROM} > {output}
+#         """
+
+# rule UNZIP_REFERENCE:
+#     input:
+#         "/rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/{CLADE}/{REF_NAME}.fa.gz"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/temp/{REF_NAME}.fa"
+#     shell:
+#         """
+#         gunzip -c {input} > {output}
+#         """
+
+# rule EXTRACT_CHR_FASTA:
+#     input:
+#         expand("{CLADE}/{SPEC_NAME}/temp/{REF_NAME}.fa", CLADE=CLADE, SPEC_NAME=SPEC_NAME, REF_NAME=REF_NAME)
+#     output:
+#         "{CLADE}/{SPEC_NAME}/temp/{CHROM}.fasta"
+#     params:
+#         CLADE=CLADE, 
+#         SPEC_NAME=SPEC_NAME, 
+#         REF_NAME=REF_NAME
+#     shell:
+#         """
+#         samtools faidx {input} {wildcards.CHROM} > {output}
+#         samtools faidx {output}
+#         """
+
+# rule INDEX_BAM_FILE:
+#     input:
+#         "{CLADE}/{SPEC_NAME}/{SPEC_NAME}_{CHROM}.bam"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/{SPEC_NAME}_{CHROM}.bam.bai"
+#     shell:
+#         """
+#         samtools index {input}
+#         """
+
+# rule PILEUP_VARIANTS:
+#     input:
+#         FASTA="{CLADE}/{SPEC_NAME}/temp/{CHROM}.fasta",
+#         BAM="{CLADE}/{SPEC_NAME}/{SPEC_NAME}_{CHROM}.bam"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/temp/{CHROM}_pileup.vcf.gz"
+#     shell:
+#         """
+#         bcftools mpileup -f {input.FASTA} {input.BAM} --config pacbio-ccs -Oz -o {output}
+#         """
+
+# rule INDEL_MASKER:
+#     input:
+#         "{CLADE}/{SPEC_NAME}/temp/{CHROM}_pileup.vcf.gz"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/MSMC/Output_indel_BED_file/{CHROM}_indel_bed.txt"
+#     shell:
+#         """
+#         python {INDEL_MASKER} --input_gen_vcf {input} --Chromosome_name {wildcards.CHROM} --output_BED {output}
+#         """
+
+# rule CALL_PLOIDY:
+#     input:
+#         "{CLADE}/{SPEC_NAME}/temp/{CHROM}_pileup.vcf.gz"
+#     output:
+#         output_bam_caller="{CLADE}/{SPEC_NAME}/MSMC/Output_bam_caller_BED/{CHROM}_unmodified_bed.txt.gz", 
+#         only_snps="{CLADE}/{SPEC_NAME}/temp/{CHROM}_only_snps.vcf.bgz"
+#     shell:
+#         """
+#         bcftools call --ploidy 2 -c -V indels {input} | {BAM_CALLER} 1 {output.output_bam_caller} | bgzip -c > {output.only_snps}
+#         """
+
+# rule BAM_CALLER_BED:
+#     input:
+#         "{CLADE}/{SPEC_NAME}/MSMC/Output_bam_caller_BED/{CHROM}_unmodified_bed.txt.gz"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/MSMC/Output_bam_caller_BED/{CHROM}_modified_bed.txt.gz"
+#     shell:
+#         """
+#         zcat {input}  | \
+#         awk -v chrom="{wildcards.CHROM}" 'BEGIN{{OFS="\t"}} {{ $1=chrom; print $0 }}' | \
+#         gzip -c > {output}
+#         """
+
+# rule TABIX:
+#     input:
+#         "{CLADE}/{SPEC_NAME}/temp/{CHROM}_only_snps.vcf.bgz"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/temp/{CHROM}_only_snps.vcf.bgz.tbi"
+#     shell:
+#         """
+#         tabix -p vcf {input}
+#         """
+
+# rule RESTRUCTURE:
+#     input:
+#         "{CLADE}/{SPEC_NAME}/temp/{CHROM}_only_snps.vcf.bgz"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/temp/{CHROM}_restructured.vcf.gz"
+#     shell:
+#         """
+#         zcat {input} | sed  's/1\/1/1\/0/g' | bgzip -c > {output}
+#         """
+
+# rule REMOVE_INDELS:
+#     input:
+#         "{CLADE}/{SPEC_NAME}/temp/{CHROM}_restructured.vcf.gz"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/{CHROM}.recode.vcf"
+#     params:
+#         CLADE=CLADE,
+#         SPEC_NAME=SPEC_NAME
+#     shell:
+#         """
+#         vcftools --gzvcf {input} \
+#          --remove-indels \
+#          --recode \
+#          --out {params.CLADE}/{params.SPEC_NAME}/{wildcards.CHROM}
+#         """
+
+# rule BGZIP_VCF:
+#     input:
+#         "{CLADE}/{SPEC_NAME}/{CHROM}.recode.vcf"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/{CHROM}.recode.vcf.gz"
+#     shell:
+#         """
+#         bgzip {input}
+#         """
+
+# rule GENERATE_MULTIHETSEP:
+#     input:
+#         "{CLADE}/{SPEC_NAME}/{CHROM}.recode.vcf.gz"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/MSMC/Output_Multihet/{CHROM}_multihet.txt"
+#     shell:
+#         """
+#         python {GENERATE_MULTIHETSEP} {input} > {output}
+#         """
+
+# rule GENERATE_MASK:
+#     input:
+#         "{CLADE}/{SPEC_NAME}/MSMC/Output_Multihet/{CHROM}_multihet.txt"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/MSMC/Output_Bed/{CHROM}/{CHROM}_95.txt"
+#     params:
+#         CLADE=CLADE, 
+#         SPEC_NAME=SPEC_NAME
+#     shell:
+#         """
+#         python {MASK_FILE_GENERATOR} --input_file {input} --Chromosome_name {wildcards.CHROM} --output_BED {params.CLADE}/{params.SPEC_NAME}/MSMC/Output_Bed/{wildcards.CHROM}
+#         """
+
+# rule MAIN_MULTIHETSEP:
+#     input:
+#         vcf="{CLADE}/{SPEC_NAME}/{CHROM}.recode.vcf.gz", 
+#         negative_mask="{CLADE}/{SPEC_NAME}/MSMC/Output_Bed/{CHROM}/{CHROM}_95.txt", 
+#         mask="{CLADE}/{SPEC_NAME}/MSMC/Output_bam_caller_BED/{CHROM}_modified_bed.txt.gz", 
+#         negative_mask_indel="{CLADE}/{SPEC_NAME}/MSMC/Output_indel_BED_file/{CHROM}_indel_bed.txt"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/MSMC/Output_multihet_filtered_95/{CHROM}_multihet.txt"
+#     shell:
+#         """
+#         python {GENERATE_MULTIHETSEP} {input.vcf} --negative_mask={input.negative_mask} --mask={input.mask} --negative_mask={input.negative_mask_indel} > {output}
+#         """
+
+# rule BOOTSTRAPPING_MULTIHET_FILE:
+#     input:
+#         "{CLADE}/{SPEC_NAME}/MSMC/Output_multihet_filtered_95/{CHROM}_multihet.txt"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/MSMC/Output_Multihet_Bootstrapped/{BOOT}/{CHROM}_multihet.txt"
+#     shell:
+#         """
+#         mkdir -p {CLADE}/{SPEC_NAME}/MSMC/Output_Multihet_Bootstrapped/{wildcards.BOOT}
+#         python {BOOTSTRAPPING_GENERATOR} --inmhs {input} --windowsize 5e+05 --outmhs {wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/Output_Multihet_Bootstrapped/{wildcards.BOOT}/{wildcards.CHROM}_multihet.txt
+#         """
+# ###
 
 # #### RULES FOR RUNNING MSMC ANALYSIS ####
 # rule RUN_PRIMARY_MSMC:
 #     input:
-#         expand("{CLADE}/{SPEC_NAME}/{CHR}_multihet.txt", CHR=CHROMS, CLADE=CLADE, SPEC_NAME=SPEC_NAME)
+#         expand("{CLADE}/{SPEC_NAME}/MSMC/Output_multihet_filtered_95/{CHROM}_multihet.txt", CHROM=AUTO_CHROMS, CLADE=CLADE, SPEC_NAME=SPEC_NAME)
 #     output:
-#         "{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}.msmc2"
+#         loop="{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}.msmc2.loop.txt", 
+#         log="{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}.msmc2.log", 
+#         final="{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}.msmc2.final.txt"
 #     shell:
 #         """
-#         build/release/msmc2 -t 12 --fixedRecombination -o {output} {input}
+#         build/release/msmc2 -t 12 --fixedRecombination -o {CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}.msmc2 {input}
 #         """
 
 # rule RUN_BOOTSTRAPPING_MSMC:
 #     input:
+#         expand("{CLADE}/{SPEC_NAME}/MSMC/Output_Multihet_Bootstrapped/{BOOT}/{CHROM}_multihet.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, BOOT=BOOTSTRAPS, CHROM=AUTO_CHROMS)
 #     output:
+#         "{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}_Bootstrapping_{BOOT}.msmc2"
+#     resources:
+#         runtime="6h", 
+#         mem_mb=200000
 #     shell:
 #         """
-#         for i in $(seq 0 29); do
-#             build/release/msmc2 -t 12 --fixedRecombination -o {CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}_Bootstrapping_${i}.msmc2 ${INPUTDIR_BOOTSTRAP}/${i}/${CHROM1}_multihet.txt &
-#         done
+#         build/release/msmc2 -t 12 --fixedRecombination -o {output} {input}
 #         """
 
 # rule PLOT_MSMC:
 #     input:
 #         "{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}.msmc2.final.txt"
 #     output:
-#         "{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}_MSMC2.svg"
+#         "{CLADE}/{SPEC_NAME}/{TODAY_DATE}_{SPEC_NAME}_MSMC2_Bootstrap.svg"
 #     params:
 #         CLADE=CLADE, 
 #         TODAY_DATE=TODAY_DATE, 

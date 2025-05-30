@@ -1,0 +1,237 @@
+host: login-p-1
+Building DAG of jobs...
+SLURM run ID: ec9f12a7-4af2-459c-a5a1-74a118a13027
+Using shell: /usr/bin/bash
+Provided remote nodes: 10
+Job stats:
+job                      count
+---------------------  -------
+CALC_HET_PER_CHR            46
+CALC_HET_WHOLE_GENOME        1
+COMPILE_HET                  1
+FROH_PER_AUT_CHR            35
+PLOT_HET_PER_CHR            46
+PLOT_WHOLE_HET               1
+Plot_ROH                     1
+WHOLE_FROH                   1
+all                          1
+total                      133
+
+Select jobs to execute...
+Execute 10 jobs...
+
+[Tue May  6 09:35:54 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HepPer/HepPer_ROH_Results.csv, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084215.1_chroms.txt, sharks/HepPer/temp/20250422_CM068671.1_Var_Only.txt
+    output: sharks/HepPer/20250422_CM068671.1_GCA_035084215.1_FROH.txt
+    jobid: 185
+    reason: Missing output files: sharks/HepPer/20250422_CM068671.1_GCA_035084215.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068671.1, REF_NAME=GCA_035084215.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 185 has been submitted with SLURM jobid 9079894 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HepPer_20250422_CM068671.1_GCA_035084215.1/9079894.log).
+
+[Tue May  6 09:35:55 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068680.1_het.txt
+    jobid: 241
+    reason: Missing output files: sharks/HepPer/20250422_CM068680.1_het.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068680.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 241 has been submitted with SLURM jobid 9079895 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068680.1/9079895.log).
+
+[Tue May  6 09:35:55 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068682.1_het.txt
+    jobid: 243
+    reason: Missing output files: sharks/HepPer/20250422_CM068682.1_het.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068682.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 243 has been submitted with SLURM jobid 9079896 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068682.1/9079896.log).
+
+[Tue May  6 09:35:55 2025]
+rule WHOLE_FROH:
+    input: sharks/HepPer/HepPer_ROH_Results.csv, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084215.1_chroms.txt, sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/20250422_HepPer_FROH.txt
+    jobid: 197
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 197 has been submitted with SLURM jobid 9079897 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_WHOLE_FROH/sharks_HepPer_20250422/9079897.log).
+
+[Tue May  6 09:35:57 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HepPer/HepPer_ROH_Results.csv, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084215.1_chroms.txt, sharks/HepPer/temp/20250422_CM068643.1_Var_Only.txt
+    output: sharks/HepPer/20250422_CM068643.1_GCA_035084215.1_FROH.txt
+    jobid: 157
+    reason: Missing output files: sharks/HepPer/20250422_CM068643.1_GCA_035084215.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068643.1, REF_NAME=GCA_035084215.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 157 has been submitted with SLURM jobid 9079898 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HepPer_20250422_CM068643.1_GCA_035084215.1/9079898.log).
+
+[Tue May  6 09:35:58 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068652.1_het.txt
+    jobid: 213
+    reason: Missing output files: sharks/HepPer/20250422_CM068652.1_het.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068652.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 213 has been submitted with SLURM jobid 9079899 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068652.1/9079899.log).
+
+[Tue May  6 09:35:58 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068681.1_het.txt
+    jobid: 242
+    reason: Missing output files: sharks/HepPer/20250422_CM068681.1_het.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068681.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 242 has been submitted with SLURM jobid 9079900 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068681.1/9079900.log).
+
+[Tue May  6 09:36:00 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HepPer/HepPer_ROH_Results.csv, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084215.1_chroms.txt, sharks/HepPer/temp/20250422_CM068642.1_Var_Only.txt
+    output: sharks/HepPer/20250422_CM068642.1_GCA_035084215.1_FROH.txt
+    jobid: 156
+    reason: Missing output files: sharks/HepPer/20250422_CM068642.1_GCA_035084215.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068642.1, REF_NAME=GCA_035084215.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 156 has been submitted with SLURM jobid 9079901 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HepPer_20250422_CM068642.1_GCA_035084215.1/9079901.log).
+
+[Tue May  6 09:36:00 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068653.1_het.txt
+    jobid: 214
+    reason: Missing output files: sharks/HepPer/20250422_CM068653.1_het.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068653.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 214 has been submitted with SLURM jobid 9079902 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068653.1/9079902.log).
+
+[Tue May  6 09:36:00 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HepPer/HepPer_ROH_Results.csv, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084215.1_chroms.txt, sharks/HepPer/temp/20250422_CM068653.1_Var_Only.txt
+    output: sharks/HepPer/20250422_CM068653.1_GCA_035084215.1_FROH.txt
+    jobid: 167
+    reason: Missing output files: sharks/HepPer/20250422_CM068653.1_GCA_035084215.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068653.1, REF_NAME=GCA_035084215.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 167 has been submitted with SLURM jobid 9079903 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HepPer_20250422_CM068653.1_GCA_035084215.1/9079903.log).
+[Tue May  6 09:43:54 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9079895' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 241
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068680.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068680.1/9079895.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_per_chr_V3.py sharks/HepPer/temp/HepPer_Var_Only.txt sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt sharks HepPer 20250422 1000000 500000 45 sharks/HepPer/HepPer_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9079895
+
+[Tue May  6 09:43:54 2025]
+Finished job 185.
+1 of 133 steps (1%) done
+Select jobs to execute...
+[Tue May  6 09:43:54 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9079896' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 243
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068682.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068682.1/9079896.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_per_chr_V3.py sharks/HepPer/temp/HepPer_Var_Only.txt sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt sharks HepPer 20250422 1000000 500000 45 sharks/HepPer/HepPer_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9079896
+
+Execute 1 jobs...
+
+[Tue May  6 09:43:54 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HepPer/HepPer_ROH_Results.csv, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084215.1_chroms.txt, sharks/HepPer/temp/20250422_CM068670.1_Var_Only.txt
+    output: sharks/HepPer/20250422_CM068670.1_GCA_035084215.1_FROH.txt
+    jobid: 184
+    reason: Missing output files: sharks/HepPer/20250422_CM068670.1_GCA_035084215.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068670.1, REF_NAME=GCA_035084215.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 184 has been submitted with SLURM jobid 9080449 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HepPer_20250422_CM068670.1_GCA_035084215.1/9080449.log).
+[Tue May  6 09:43:55 2025]
+Finished job 197.
+2 of 133 steps (2%) done
+[Tue May  6 09:52:05 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9079899' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 213
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068652.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068652.1/9079899.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_per_chr_V3.py sharks/HepPer/temp/HepPer_Var_Only.txt sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt sharks HepPer 20250422 1000000 500000 45 sharks/HepPer/HepPer_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9079899
+
+[Tue May  6 09:52:05 2025]
+Finished job 157.
+3 of 133 steps (2%) done
+[Tue May  6 09:52:05 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9079900' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 242
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068681.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068681.1/9079900.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_per_chr_V3.py sharks/HepPer/temp/HepPer_Var_Only.txt sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt sharks HepPer 20250422 1000000 500000 45 sharks/HepPer/HepPer_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9079900
+
+[Tue May  6 09:52:05 2025]
+Finished job 156.
+4 of 133 steps (3%) done
+[Tue May  6 10:00:16 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9079902' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 214
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068653.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068653.1/9079902.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_per_chr_V3.py sharks/HepPer/temp/HepPer_Var_Only.txt sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt sharks HepPer 20250422 1000000 500000 45 sharks/HepPer/HepPer_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9079902
+
+[Tue May  6 10:00:16 2025]
+Finished job 167.
+5 of 133 steps (4%) done
+[Tue May  6 10:00:16 2025]
+Finished job 184.
+6 of 133 steps (5%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-05-06T093539.906405.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

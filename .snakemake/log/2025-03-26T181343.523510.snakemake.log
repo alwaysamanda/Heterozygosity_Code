@@ -1,0 +1,61 @@
+host: login-p-3
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count
+-----------  -------
+COMPILE_ROH        1
+Plot_ROH           1
+all                1
+total              3
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 18:13:43 2025]
+localrule COMPILE_ROH:
+    input: sharks/HydCol_Test/20250326_CM068742.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068743.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068744.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068745.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068746.1_ROH_Results.txt
+    output: sharks/HydCol_Test/HydCol_Test_ROH_Results.tsv
+    jobid: 33
+    reason: Missing output files: sharks/HydCol_Test/HydCol_Test_ROH_Results.tsv
+    resources: tmpdir=/tmp
+
+[Wed Mar 26 18:13:43 2025]
+Finished job 33.
+1 of 3 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 18:13:43 2025]
+localrule Plot_ROH:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.tsv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    output: sharks/HydCol_Test/20250326_GCA_035084275.1_ROH_Map.pdf
+    jobid: 34
+    reason: Missing output files: sharks/HydCol_Test/20250326_GCA_035084275.1_ROH_Map.pdf; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.tsv; Set of input files has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 317:
+Command 'set -euo pipefail;  
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250106_Plot_ROH.R sharks/HydCol_Test/HydCol_Test_ROH_Results.tsv sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt 20250326 GCA_035084275.1 sharks 1000000 > sharks/HydCol_Test/20250326_GCA_035084275.1_ROH_Map.pdf' returned non-zero exit status 1.
+[Wed Mar 26 18:13:44 2025]
+Error in rule Plot_ROH:
+    jobid: 34
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.tsv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    output: sharks/HydCol_Test/20250326_GCA_035084275.1_ROH_Map.pdf
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250106_Plot_ROH.R sharks/HydCol_Test/HydCol_Test_ROH_Results.tsv sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt 20250326 GCA_035084275.1 sharks 1000000 > sharks/HydCol_Test/20250326_GCA_035084275.1_ROH_Map.pdf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job Plot_ROH since they might be corrupted:
+sharks/HydCol_Test/20250326_GCA_035084275.1_ROH_Map.pdf
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-26T181343.523510.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

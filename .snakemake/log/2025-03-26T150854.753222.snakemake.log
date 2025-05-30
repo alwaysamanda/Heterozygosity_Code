@@ -1,0 +1,391 @@
+host: login-p-1
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+ALNtoPAF                      1
+FASTGA                        1
+FAtoGDB_ALT                   1
+FAtoGDB_REF                   1
+FILTER_PAF                    5
+GET_ALN_ONLY_PER_CHROM        5
+GET_VAR_ALN_FILE              5
+GET_VAR_ONLY_PER_CHROM        5
+GIXmake_ALT                   1
+GIXmake_REF                   1
+all                           1
+total                        27
+
+Select jobs to execute...
+Execute 7 jobs...
+
+[Wed Mar 26 15:08:54 2025]
+localrule FILTER_PAF:
+    input: sharks/HydCol_Test/GCA_035084275.1.mm2.srt.paf
+    output: sharks/HydCol_Test/20250326_CM068743.1_filtered.paf
+    jobid: 8
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068743.1_filtered.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068743.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 15:08:54 2025]
+localrule FILTER_PAF:
+    input: sharks/HydCol_Test/GCA_035084275.1.mm2.srt.paf
+    output: sharks/HydCol_Test/20250326_CM068745.1_filtered.paf
+    jobid: 10
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068745.1_filtered.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068745.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 15:08:54 2025]
+localrule FILTER_PAF:
+    input: sharks/HydCol_Test/GCA_035084275.1.mm2.srt.paf
+    output: sharks/HydCol_Test/20250326_CM068746.1_filtered.paf
+    jobid: 11
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068746.1_filtered.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068746.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 15:08:54 2025]
+localrule FAtoGDB_REF:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/reference/sharks/GCA_035084275.1.fa.gz
+    output: sharks/HydCol_Test/temp/HydCol_Test_GCA_035084275.1.1gdb
+    jobid: 4
+    reason: Missing output files: sharks/HydCol_Test/temp/HydCol_Test_GCA_035084275.1.1gdb
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 15:08:54 2025]
+localrule FILTER_PAF:
+    input: sharks/HydCol_Test/GCA_035084275.1.mm2.srt.paf
+    output: sharks/HydCol_Test/20250326_CM068742.1_filtered.paf
+    jobid: 7
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068742.1_filtered.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068742.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 15:08:54 2025]
+localrule FILTER_PAF:
+    input: sharks/HydCol_Test/GCA_035084275.1.mm2.srt.paf
+    output: sharks/HydCol_Test/20250326_CM068744.1_filtered.paf
+    jobid: 9
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068744.1_filtered.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068744.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 15:08:54 2025]
+localrule FAtoGDB_ALT:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/alternate/sharks/GCA_035084065.1.fa.gz
+    output: sharks/HydCol_Test/temp/HydCol_Test_GCA_035084065.1.1gdb
+    jobid: 6
+    reason: Missing output files: sharks/HydCol_Test/temp/HydCol_Test_GCA_035084065.1.1gdb
+    resources: tmpdir=/tmp
+
+[Wed Mar 26 15:08:54 2025]
+Finished job 8.
+1 of 27 steps (4%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 15:08:54 2025]
+localrule GET_VAR_ALN_FILE:
+    input: sharks/HydCol_Test/20250326_CM068743.1_filtered.paf
+    output: sharks/HydCol_Test/temp/20250326_CM068743.1_Aln_Var.txt
+    jobid: 15
+    reason: Missing output files: sharks/HydCol_Test/temp/20250326_CM068743.1_Aln_Var.txt; Input files updated by another job: sharks/HydCol_Test/20250326_CM068743.1_filtered.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068743.1
+    resources: tmpdir=/tmp
+
+[Wed Mar 26 15:08:54 2025]
+Finished job 11.
+2 of 27 steps (7%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 15:08:54 2025]
+localrule GET_VAR_ALN_FILE:
+    input: sharks/HydCol_Test/20250326_CM068746.1_filtered.paf
+    output: sharks/HydCol_Test/temp/20250326_CM068746.1_Aln_Var.txt
+    jobid: 21
+    reason: Missing output files: sharks/HydCol_Test/temp/20250326_CM068746.1_Aln_Var.txt; Input files updated by another job: sharks/HydCol_Test/20250326_CM068746.1_filtered.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068746.1
+    resources: tmpdir=/tmp
+
+[Wed Mar 26 15:08:54 2025]
+Finished job 10.
+3 of 27 steps (11%) done
+[Wed Mar 26 15:08:54 2025]
+Finished job 9.
+4 of 27 steps (15%) done
+[Wed Mar 26 15:08:54 2025]
+Finished job 7.
+5 of 27 steps (19%) done
+Select jobs to execute...
+Execute 3 jobs...
+
+[Wed Mar 26 15:08:55 2025]
+localrule GET_VAR_ALN_FILE:
+    input: sharks/HydCol_Test/20250326_CM068744.1_filtered.paf
+    output: sharks/HydCol_Test/temp/20250326_CM068744.1_Aln_Var.txt
+    jobid: 17
+    reason: Missing output files: sharks/HydCol_Test/temp/20250326_CM068744.1_Aln_Var.txt; Input files updated by another job: sharks/HydCol_Test/20250326_CM068744.1_filtered.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068744.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 15:08:55 2025]
+localrule GET_VAR_ALN_FILE:
+    input: sharks/HydCol_Test/20250326_CM068742.1_filtered.paf
+    output: sharks/HydCol_Test/temp/20250326_CM068742.1_Aln_Var.txt
+    jobid: 13
+    reason: Missing output files: sharks/HydCol_Test/temp/20250326_CM068742.1_Aln_Var.txt; Input files updated by another job: sharks/HydCol_Test/20250326_CM068742.1_filtered.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068742.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 15:08:55 2025]
+localrule GET_VAR_ALN_FILE:
+    input: sharks/HydCol_Test/20250326_CM068745.1_filtered.paf
+    output: sharks/HydCol_Test/temp/20250326_CM068745.1_Aln_Var.txt
+    jobid: 19
+    reason: Missing output files: sharks/HydCol_Test/temp/20250326_CM068745.1_Aln_Var.txt; Input files updated by another job: sharks/HydCol_Test/20250326_CM068745.1_filtered.paf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068745.1
+    resources: tmpdir=/tmp
+
+[Wed Mar 26 15:08:55 2025]
+Finished job 21.
+6 of 27 steps (22%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Wed Mar 26 15:08:55 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test/temp/20250326_CM068746.1_Aln_Var.txt
+    output: sharks/HydCol_Test/temp/20250326_CM068746.1_Aln_Only.txt
+    jobid: 20
+    reason: Missing output files: sharks/HydCol_Test/temp/20250326_CM068746.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test/temp/20250326_CM068746.1_Aln_Var.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068746.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 15:08:55 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test/temp/20250326_CM068746.1_Aln_Var.txt
+    output: sharks/HydCol_Test/temp/20250326_CM068746.1_Var_Only.txt
+    jobid: 26
+    reason: Missing output files: sharks/HydCol_Test/temp/20250326_CM068746.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test/temp/20250326_CM068746.1_Aln_Var.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068746.1
+    resources: tmpdir=/tmp
+
+[Wed Mar 26 15:08:55 2025]
+Finished job 20.
+7 of 27 steps (26%) done
+[Wed Mar 26 15:08:55 2025]
+Finished job 26.
+8 of 27 steps (30%) done
+[Wed Mar 26 15:08:55 2025]
+Finished job 19.
+9 of 27 steps (33%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Wed Mar 26 15:08:55 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test/temp/20250326_CM068745.1_Aln_Var.txt
+    output: sharks/HydCol_Test/temp/20250326_CM068745.1_Var_Only.txt
+    jobid: 25
+    reason: Missing output files: sharks/HydCol_Test/temp/20250326_CM068745.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test/temp/20250326_CM068745.1_Aln_Var.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068745.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 15:08:55 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test/temp/20250326_CM068745.1_Aln_Var.txt
+    output: sharks/HydCol_Test/temp/20250326_CM068745.1_Aln_Only.txt
+    jobid: 18
+    reason: Missing output files: sharks/HydCol_Test/temp/20250326_CM068745.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test/temp/20250326_CM068745.1_Aln_Var.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068745.1
+    resources: tmpdir=/tmp
+
+[Wed Mar 26 15:08:55 2025]
+Finished job 15.
+10 of 27 steps (37%) done
+[Wed Mar 26 15:08:55 2025]
+Finished job 17.
+11 of 27 steps (41%) done
+Select jobs to execute...
+Execute 4 jobs...
+
+[Wed Mar 26 15:08:55 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test/temp/20250326_CM068743.1_Aln_Var.txt
+    output: sharks/HydCol_Test/temp/20250326_CM068743.1_Var_Only.txt
+    jobid: 23
+    reason: Missing output files: sharks/HydCol_Test/temp/20250326_CM068743.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test/temp/20250326_CM068743.1_Aln_Var.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068743.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 15:08:55 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test/temp/20250326_CM068744.1_Aln_Var.txt
+    output: sharks/HydCol_Test/temp/20250326_CM068744.1_Var_Only.txt
+    jobid: 24
+    reason: Missing output files: sharks/HydCol_Test/temp/20250326_CM068744.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test/temp/20250326_CM068744.1_Aln_Var.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068744.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 15:08:55 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test/temp/20250326_CM068744.1_Aln_Var.txt
+    output: sharks/HydCol_Test/temp/20250326_CM068744.1_Aln_Only.txt
+    jobid: 16
+    reason: Missing output files: sharks/HydCol_Test/temp/20250326_CM068744.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test/temp/20250326_CM068744.1_Aln_Var.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068744.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 15:08:55 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test/temp/20250326_CM068743.1_Aln_Var.txt
+    output: sharks/HydCol_Test/temp/20250326_CM068743.1_Aln_Only.txt
+    jobid: 14
+    reason: Missing output files: sharks/HydCol_Test/temp/20250326_CM068743.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test/temp/20250326_CM068743.1_Aln_Var.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068743.1
+    resources: tmpdir=/tmp
+
+[Wed Mar 26 15:08:55 2025]
+Finished job 18.
+12 of 27 steps (44%) done
+[Wed Mar 26 15:08:55 2025]
+Finished job 13.
+13 of 27 steps (48%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Wed Mar 26 15:08:55 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test/temp/20250326_CM068742.1_Aln_Var.txt
+    output: sharks/HydCol_Test/temp/20250326_CM068742.1_Aln_Only.txt
+    jobid: 12
+    reason: Missing output files: sharks/HydCol_Test/temp/20250326_CM068742.1_Aln_Only.txt; Input files updated by another job: sharks/HydCol_Test/temp/20250326_CM068742.1_Aln_Var.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068742.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 15:08:55 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test/temp/20250326_CM068742.1_Aln_Var.txt
+    output: sharks/HydCol_Test/temp/20250326_CM068742.1_Var_Only.txt
+    jobid: 22
+    reason: Missing output files: sharks/HydCol_Test/temp/20250326_CM068742.1_Var_Only.txt; Input files updated by another job: sharks/HydCol_Test/temp/20250326_CM068742.1_Aln_Var.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068742.1
+    resources: tmpdir=/tmp
+
+[Wed Mar 26 15:08:55 2025]
+Finished job 25.
+14 of 27 steps (52%) done
+[Wed Mar 26 15:08:55 2025]
+Finished job 16.
+15 of 27 steps (56%) done
+[Wed Mar 26 15:08:55 2025]
+Finished job 14.
+16 of 27 steps (59%) done
+[Wed Mar 26 15:08:55 2025]
+Finished job 24.
+17 of 27 steps (63%) done
+[Wed Mar 26 15:08:55 2025]
+Finished job 23.
+18 of 27 steps (67%) done
+[Wed Mar 26 15:08:55 2025]
+Finished job 12.
+19 of 27 steps (70%) done
+[Wed Mar 26 15:08:55 2025]
+Finished job 22.
+20 of 27 steps (74%) done
+[Wed Mar 26 15:08:59 2025]
+Finished job 4.
+21 of 27 steps (78%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 15:08:59 2025]
+localrule GIXmake_REF:
+    input: sharks/HydCol_Test/temp/HydCol_Test_GCA_035084275.1.1gdb
+    output: sharks/HydCol_Test/temp/HydCol_Test_GCA_035084275.1.gix
+    jobid: 3
+    reason: Missing output files: sharks/HydCol_Test/temp/HydCol_Test_GCA_035084275.1.gix; Input files updated by another job: sharks/HydCol_Test/temp/HydCol_Test_GCA_035084275.1.1gdb
+    resources: tmpdir=/tmp
+
+[Wed Mar 26 15:09:00 2025]
+Finished job 6.
+22 of 27 steps (81%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 15:09:00 2025]
+localrule GIXmake_ALT:
+    input: sharks/HydCol_Test/temp/HydCol_Test_GCA_035084065.1.1gdb
+    output: sharks/HydCol_Test/temp/HydCol_Test_GCA_035084065.1.gix
+    jobid: 5
+    reason: Missing output files: sharks/HydCol_Test/temp/HydCol_Test_GCA_035084065.1.gix; Input files updated by another job: sharks/HydCol_Test/temp/HydCol_Test_GCA_035084065.1.1gdb
+    resources: tmpdir=/tmp
+
+[Wed Mar 26 15:09:21 2025]
+Finished job 3.
+23 of 27 steps (85%) done
+[Wed Mar 26 15:09:24 2025]
+Finished job 5.
+24 of 27 steps (89%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 15:09:24 2025]
+localrule FASTGA:
+    input: sharks/HydCol_Test/temp/HydCol_Test_GCA_035084275.1.gix, sharks/HydCol_Test/temp/HydCol_Test_GCA_035084065.1.gix
+    output: sharks/HydCol_Test/HydCol_Test_ALN.1aln
+    jobid: 2
+    reason: Missing output files: sharks/HydCol_Test/HydCol_Test_ALN.1aln; Input files updated by another job: sharks/HydCol_Test/temp/HydCol_Test_GCA_035084275.1.gix, sharks/HydCol_Test/temp/HydCol_Test_GCA_035084065.1.gix
+    resources: tmpdir=/tmp
+
+[Wed Mar 26 15:13:02 2025]
+Finished job 2.
+25 of 27 steps (93%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 15:13:02 2025]
+localrule ALNtoPAF:
+    input: sharks/HydCol_Test/HydCol_Test_ALN.1aln
+    output: sharks/HydCol_Test/HydCol_Test_FASTGA.paf
+    jobid: 1
+    reason: Missing output files: sharks/HydCol_Test/HydCol_Test_FASTGA.paf; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ALN.1aln
+    resources: tmpdir=/tmp
+
+[Wed Mar 26 15:13:32 2025]
+Finished job 1.
+26 of 27 steps (96%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 15:13:32 2025]
+localrule all:
+    input: sharks/HydCol_Test/HydCol_Test_FASTGA.paf, sharks/HydCol_Test/20250326_CM068742.1_filtered.paf, sharks/HydCol_Test/20250326_CM068743.1_filtered.paf, sharks/HydCol_Test/20250326_CM068744.1_filtered.paf, sharks/HydCol_Test/20250326_CM068745.1_filtered.paf, sharks/HydCol_Test/20250326_CM068746.1_filtered.paf, sharks/HydCol_Test/temp/20250326_CM068742.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068743.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068744.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068745.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068746.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068742.1_Var_Only.txt, sharks/HydCol_Test/temp/20250326_CM068743.1_Var_Only.txt, sharks/HydCol_Test/temp/20250326_CM068744.1_Var_Only.txt, sharks/HydCol_Test/temp/20250326_CM068745.1_Var_Only.txt, sharks/HydCol_Test/temp/20250326_CM068746.1_Var_Only.txt
+    jobid: 0
+    reason: Input files updated by another job: sharks/HydCol_Test/temp/20250326_CM068744.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068746.1_Var_Only.txt, sharks/HydCol_Test/20250326_CM068742.1_filtered.paf, sharks/HydCol_Test/temp/20250326_CM068744.1_Var_Only.txt, sharks/HydCol_Test/temp/20250326_CM068746.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068745.1_Aln_Only.txt, sharks/HydCol_Test/20250326_CM068746.1_filtered.paf, sharks/HydCol_Test/temp/20250326_CM068743.1_Var_Only.txt, sharks/HydCol_Test/20250326_CM068744.1_filtered.paf, sharks/HydCol_Test/20250326_CM068745.1_filtered.paf, sharks/HydCol_Test/temp/20250326_CM068745.1_Var_Only.txt, sharks/HydCol_Test/temp/20250326_CM068743.1_Aln_Only.txt, sharks/HydCol_Test/20250326_CM068743.1_filtered.paf, sharks/HydCol_Test/HydCol_Test_FASTGA.paf, sharks/HydCol_Test/temp/20250326_CM068742.1_Var_Only.txt, sharks/HydCol_Test/temp/20250326_CM068742.1_Aln_Only.txt
+    resources: tmpdir=/tmp
+
+[Wed Mar 26 15:13:32 2025]
+Finished job 0.
+27 of 27 steps (100%) done
+Complete log: .snakemake/log/2025-03-26T150854.753222.snakemake.log

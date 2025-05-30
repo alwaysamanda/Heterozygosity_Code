@@ -1,0 +1,277 @@
+host: login-q-4
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 76
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count
+---------------------  -------
+CALC_HET_PER_CHR             5
+CALC_HET_WHOLE_GENOME        1
+COMPILE_HET                  1
+FROH_PER_AUT_CHR             5
+PAF_DOTPLOT                  1
+PLOT_HET_PER_CHR             5
+PLOT_WHOLE_HET               1
+Plot_ROH                     1
+WHOLE_FROH                   1
+all                          1
+total                       22
+
+Select jobs to execute...
+Execute 14 jobs...
+
+[Mon Mar 31 09:20:21 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068745.1_het.txt
+    jobid: 45
+    reason: Params have changed since last execution: Union of exclusive params before and now across all output: before: 40 now: 5 
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068745.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 09:20:21 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068743.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068743.1_GCA_035084275.1_FROH.txt
+    jobid: 36
+    reason: Params have changed since last execution: Union of exclusive params before and now across all output: before: 40 now: 5 
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068743.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 09:20:21 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068744.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068744.1_GCA_035084275.1_FROH.txt
+    jobid: 37
+    reason: Params have changed since last execution: Union of exclusive params before and now across all output: before: 40 now: 5 
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068744.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 09:20:21 2025]
+localrule CALC_HET_WHOLE_GENOME:
+    input: sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    output: sharks/HydCol_Test/20250326_HydCol_Test_per_chr_mean_heterozygosity.txt, sharks/HydCol_Test/20250326_HydCol_Test_whole_genome_mean_heterozygosity.txt
+    jobid: 47
+    reason: Params have changed since last execution: Union of exclusive params before and now across all output: before: 40 now: 5 
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 09:20:21 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068746.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068746.1_GCA_035084275.1_FROH.txt
+    jobid: 39
+    reason: Params have changed since last execution: Union of exclusive params before and now across all output: before: 40 now: 5 
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068746.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 09:20:21 2025]
+localrule PAF_DOTPLOT:
+    input: sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/HydCol_Test_FASTGA.paf
+    output: sharks/HydCol_Test/dotplots/20250326_HydCol_Test_CoveragePlot.pdf
+    jobid: 58
+    reason: Missing output files: sharks/HydCol_Test/dotplots/20250326_HydCol_Test_CoveragePlot.pdf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 09:20:21 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068742.1_het.txt
+    jobid: 42
+    reason: Params have changed since last execution: Union of exclusive params before and now across all output: before: 40 now: 5 
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068742.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 09:20:21 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068742.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068742.1_GCA_035084275.1_FROH.txt
+    jobid: 35
+    reason: Params have changed since last execution: Union of exclusive params before and now across all output: before: 40 now: 5 
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068742.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 09:20:21 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068744.1_het.txt
+    jobid: 44
+    reason: Params have changed since last execution: Union of exclusive params before and now across all output: before: 40 now: 5 
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068744.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 09:20:21 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068746.1_het.txt
+    jobid: 46
+    reason: Params have changed since last execution: Union of exclusive params before and now across all output: before: 40 now: 5 
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068746.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 09:20:21 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068745.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068745.1_GCA_035084275.1_FROH.txt
+    jobid: 38
+    reason: Params have changed since last execution: Union of exclusive params before and now across all output: before: 40 now: 5 
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068745.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 09:20:21 2025]
+localrule WHOLE_FROH:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_HydCol_Test_FROH.txt
+    jobid: 40
+    reason: Missing output files: sharks/HydCol_Test/20250326_HydCol_Test_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 09:20:21 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068743.1_het.txt
+    jobid: 43
+    reason: Params have changed since last execution: Union of exclusive params before and now across all output: before: 40 now: 5 
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068743.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 09:20:21 2025]
+localrule Plot_ROH:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    output: sharks/HydCol_Test/20250326_HydCol_Test_ROH_Map.pdf
+    jobid: 34
+    reason: Missing output files: sharks/HydCol_Test/20250326_HydCol_Test_ROH_Map.pdf; Params have changed since last execution: Union of exclusive params before and now across all output: before: 40 now: 5 
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 364:
+Command 'set -euo pipefail;  
+        Laut_autosomal=0
+        Laut=0
+
+        while read -r line; do
+            start="$(head -n 1 sharks/HydCol_Test/20250326_"$line"_Var_Only.txt | awk ' {print $3} ')"
+            end="$(tail -n 1 sharks/HydCol_Test/20250326_"$line"_Var_Only.txt | awk ' {print $4} ')"
+            chrom_length="$((end - start))"
+            Laut_autosomal=$(("$Laut_autosomal" + "$chrom_length"))
+        done < <(head -n 5 "sharks/chrom_lists/GCA_035084275.1_chroms.txt") 
+
+
+        start="$(head -n  1 sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt | awk ' {print $3} ')"
+        end="$(tail -n  1 sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt | awk ' {print $4} ')"
+        chrom_length="$((end - start))"
+        Laut="$("$Laut" + "$chrom_length")"
+
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250106_FROH_Calc.R sharks/HydCol_Test/HydCol_Test_ROH_Results.csv sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt 20250326 GCA_035084275.1 sharks "$Laut" 5 "$Laut_autosomal" > sharks/HydCol_Test/20250326_HydCol_Test_FROH.txt' returned non-zero exit status 1.
+[Mon Mar 31 09:20:21 2025]
+Error in rule WHOLE_FROH:
+    jobid: 40
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_HydCol_Test_FROH.txt
+    shell:
+        
+        Laut_autosomal=0
+        Laut=0
+
+        while read -r line; do
+            start="$(head -n 1 sharks/HydCol_Test/20250326_"$line"_Var_Only.txt | awk ' {print $3} ')"
+            end="$(tail -n 1 sharks/HydCol_Test/20250326_"$line"_Var_Only.txt | awk ' {print $4} ')"
+            chrom_length="$((end - start))"
+            Laut_autosomal=$(("$Laut_autosomal" + "$chrom_length"))
+        done < <(head -n 5 "sharks/chrom_lists/GCA_035084275.1_chroms.txt") 
+
+
+        start="$(head -n  1 sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt | awk ' {print $3} ')"
+        end="$(tail -n  1 sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt | awk ' {print $4} ')"
+        chrom_length="$((end - start))"
+        Laut="$("$Laut" + "$chrom_length")"
+
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250106_FROH_Calc.R sharks/HydCol_Test/HydCol_Test_ROH_Results.csv sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt 20250326 GCA_035084275.1 sharks "$Laut" 5 "$Laut_autosomal" > sharks/HydCol_Test/20250326_HydCol_Test_FROH.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 420:
+Command 'set -euo pipefail;  
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_whole_genome_V3.py sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt sharks HydCol_Test 20250326 5' returned non-zero exit status 1.
+[Mon Mar 31 09:20:21 2025]
+Error in rule CALC_HET_WHOLE_GENOME:
+    jobid: 47
+    input: sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    output: sharks/HydCol_Test/20250326_HydCol_Test_per_chr_mean_heterozygosity.txt, sharks/HydCol_Test/20250326_HydCol_Test_whole_genome_mean_heterozygosity.txt
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_whole_genome_V3.py sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt sharks HydCol_Test 20250326 5
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Mar 31 09:20:22 2025]
+Finished job 37.
+1 of 22 steps (5%) done
+[Mon Mar 31 09:20:22 2025]
+Finished job 35.
+2 of 22 steps (9%) done
+[Mon Mar 31 09:20:22 2025]
+Finished job 39.
+3 of 22 steps (14%) done
+[Mon Mar 31 09:20:22 2025]
+Finished job 38.
+4 of 22 steps (18%) done
+[Mon Mar 31 09:20:22 2025]
+Finished job 36.
+5 of 22 steps (23%) done
+[Mon Mar 31 09:20:22 2025]
+Finished job 34.
+6 of 22 steps (27%) done
+[Mon Mar 31 09:21:01 2025]
+Finished job 45.
+7 of 22 steps (32%) done
+[Mon Mar 31 09:21:01 2025]
+Finished job 44.
+8 of 22 steps (36%) done
+[Mon Mar 31 09:21:01 2025]
+Finished job 46.
+9 of 22 steps (41%) done
+[Mon Mar 31 09:21:01 2025]
+Finished job 42.
+10 of 22 steps (45%) done
+[Mon Mar 31 09:21:01 2025]
+Finished job 43.
+11 of 22 steps (50%) done
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 519:
+Command 'set -euo pipefail;  
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250212_pafr_dotplot.R sharks HydCol_Test 20250326 sharks/HydCol_Test/dotplots sharks/chrom_lists/GCA_035084275.1_chroms.txt sharks/HydCol_Test/HydCol_Test_FASTGA.paf' returned non-zero exit status 1.
+[Mon Mar 31 09:22:06 2025]
+Error in rule PAF_DOTPLOT:
+    jobid: 58
+    input: sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/HydCol_Test_FASTGA.paf
+    output: sharks/HydCol_Test/dotplots/20250326_HydCol_Test_CoveragePlot.pdf
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250212_pafr_dotplot.R sharks HydCol_Test 20250326 sharks/HydCol_Test/dotplots sharks/chrom_lists/GCA_035084275.1_chroms.txt sharks/HydCol_Test/HydCol_Test_FASTGA.paf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-31T092020.799908.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -1,0 +1,91 @@
+host: login-p-4
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count
+---------------------  -------
+CALC_HET_PER_CHR             5
+CALC_HET_WHOLE_GENOME        1
+COMPILE_HET                  1
+all                          1
+total                        8
+
+Select jobs to execute...
+Execute 6 jobs...
+
+[Wed Mar 26 22:02:22 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068746.1_het.txt
+    jobid: 45
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068746.1_het.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068746.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 22:02:22 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068743.1_het.txt
+    jobid: 42
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068743.1_het.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068743.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 22:02:22 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068745.1_het.txt
+    jobid: 44
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068745.1_het.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068745.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 22:02:22 2025]
+localrule CALC_HET_WHOLE_GENOME:
+    input: sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    output: sharks/HydCol_Test/20250326_HydCol_Test_per_chr_mean_heterozygosity.txt, sharks/HydCol_Test/20250326_HydCol_Test_whole_genome_mean_heterozygosity.txt
+    jobid: 46
+    reason: Missing output files: sharks/HydCol_Test/20250326_HydCol_Test_whole_genome_mean_heterozygosity.txt, sharks/HydCol_Test/20250326_HydCol_Test_per_chr_mean_heterozygosity.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 22:02:22 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068742.1_het.txt
+    jobid: 40
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068742.1_het.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068742.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 22:02:22 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068744.1_het.txt
+    jobid: 43
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068744.1_het.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068744.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 419:
+Command 'set -euo pipefail;  
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_whole_genome_V3.py sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt sharks HydCol_Test 20250326 40' returned non-zero exit status 1.
+[Wed Mar 26 22:02:22 2025]
+Error in rule CALC_HET_WHOLE_GENOME:
+    jobid: 46
+    input: sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    output: sharks/HydCol_Test/20250326_HydCol_Test_per_chr_mean_heterozygosity.txt, sharks/HydCol_Test/20250326_HydCol_Test_whole_genome_mean_heterozygosity.txt
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_whole_genome_V3.py sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt sharks HydCol_Test 20250326 40
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+

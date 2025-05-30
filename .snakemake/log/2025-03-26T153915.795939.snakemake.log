@@ -1,0 +1,33 @@
+host: login-p-1
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count
+-----------  -------
+COMPILE_ROH        1
+all                1
+total              2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 15:39:16 2025]
+localrule COMPILE_ROH:
+    input: sharks/chrom_lists/GCA_035084275.1_chroms.txt
+    output: sharks/HydCol_Test/GCA_035084275.1_ROH_Results.tsv
+    jobid: 33
+    reason: Missing output files: sharks/HydCol_Test/GCA_035084275.1_ROH_Results.tsv; Code has changed since last execution
+    resources: tmpdir=/tmp
+
+Waiting at most 5 seconds for missing files:
+sharks/HydCol_Test/GCA_035084275.1_ROH_Results.tsv (missing locally)
+MissingOutputException in rule COMPILE_ROH in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 287:
+Job 33  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+sharks/HydCol_Test/GCA_035084275.1_ROH_Results.tsv (missing locally, parent dir contents: GCA_035084275.1.mm2.srt.paf, temp, 20250326_CM068746.1_filtered.paf, HydCol_Test_FASTGA.paf, 20250326_CM068742.1_filtered.paf, 20250326_CM068746.1_ROH_Results.txt, 20250326_CM068745.1_filtered.paf, 20250326_CM068743.1_filtered.paf, 20250326_CM068745.1_ROH_Results.txt, 20250326_CM068743.1_ROH_Results.txt, 20250326_CM068742.1_ROH_Results.txt, 20250326_CM068744.1_ROH_Results.txt, 20250326_CM068744.1_filtered.paf, Reference_HydCol_Test_Chroms_Lengths.txt, HydCol_Test_ALN.1aln)
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-26T153915.795939.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

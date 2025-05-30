@@ -1,0 +1,59 @@
+host: cpu-p-160
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=4466, disk_mib=4260
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 11:58:31 2025]
+rule MAKE_SAM:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCF_030144855.1.fa.gz, /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/sharks/GCA_030144785.1.fa.gz
+    output: sharks/HypSab/HypSab.sam
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=4466, disk_mib=4260, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=720
+
+host: cpu-p-160
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=4466, disk_mib=4260
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 11:58:34 2025]
+localrule MAKE_SAM:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCF_030144855.1.fa.gz, /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/sharks/GCA_030144785.1.fa.gz
+    output: sharks/HypSab/HypSab.sam
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=4466, disk_mib=4260, tmpdir=/tmp, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=720
+
+[M::mm_idx_gen::107.943*1.00] collected minimizers
+[M::mm_idx_gen::141.777*1.00] sorted minimizers
+[M::main::141.779*1.00] loaded/built the index for 2989 target sequence(s)
+[M::mm_mapopt_update::145.532*1.00] mid_occ = 410
+[M::mm_idx_stat] kmer size: 19; skip: 19; is_hpc: 0; #seq: 2989
+[M::mm_idx_stat::148.491*1.00] distinct minimizers: 212576881 (87.98% are singletons); average occurrences: 1.910; average spacing: 9.962; total length: 4044869043
+[M::worker_pipeline::4911.943*1.00] mapped 3 sequences
+[M::worker_pipeline::9956.099*1.00] mapped 3 sequences
+[M::worker_pipeline::14130.389*1.00] mapped 3 sequences
+[M::worker_pipeline::17104.917*1.00] mapped 4 sequences
+[M::worker_pipeline::20800.763*1.00] mapped 6 sequences
+[M::worker_pipeline::23899.503*1.00] mapped 9 sequences
+[M::worker_pipeline::31064.467*1.00] mapped 1384 sequences
+[M::main] Version: 2.28-r1209
+[M::main] CMD: minimap2 -t 16 -ax asm5 /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCF_030144855.1.fa.gz /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/sharks/GCA_030144785.1.fa.gz
+[M::main] Real time: 31064.685 sec; CPU: 30948.075 sec; Peak RSS: 68.998 GB
+[Mon May 19 20:36:19 2025]
+Finished job 0.
+1 of 1 steps (100%) done
+Storing output in storage.
+[Mon May 19 20:36:20 2025]
+Finished job 0.
+1 of 1 steps (100%) done
+Storing output in storage.

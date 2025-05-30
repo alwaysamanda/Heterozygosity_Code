@@ -1,0 +1,347 @@
+host: login-q-4
+Building DAG of jobs...
+SLURM run ID: ce08691b-bf44-4692-9eb7-77bda31f0423
+Using shell: /usr/bin/bash
+Provided remote nodes: 30
+Job stats:
+job                            count
+---------------------------  -------
+BOOTSTRAPPING_MULTIHET_FILE      960
+INDEX_BAM_FILE                    32
+MAIN_MULTIHETSEP                  32
+TABIX                             32
+all                                1
+total                           1057
+
+Select jobs to execute...
+Execute 30 jobs...
+
+[Fri May 23 11:37:12 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/MobBir/MobBir_CM057586.1.bam
+    output: sharks/MobBir/MobBir_CM057586.1.bam.bai
+    jobid: 245
+    reason: Missing output files: sharks/MobBir/MobBir_CM057586.1.bam.bai
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057586.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 245 has been submitted with SLURM jobid 9802743 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_MobBir_CM057586.1/9802743.log).
+
+[Fri May 23 11:37:12 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/MobBir/MobBir_CM057559.1.bam
+    output: sharks/MobBir/MobBir_CM057559.1.bam.bai
+    jobid: 218
+    reason: Missing output files: sharks/MobBir/MobBir_CM057559.1.bam.bai
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057559.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 218 has been submitted with SLURM jobid 9802744 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_MobBir_CM057559.1/9802744.log).
+
+[Fri May 23 11:37:12 2025]
+rule TABIX:
+    input: sharks/MobBir/temp/CM057583.1_only_snps.vcf.bgz
+    output: sharks/MobBir/temp/CM057583.1_only_snps.vcf.bgz.tbi
+    jobid: 274
+    reason: Missing output files: sharks/MobBir/temp/CM057583.1_only_snps.vcf.bgz.tbi
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057583.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 274 has been submitted with SLURM jobid 9802745 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_TABIX/sharks_MobBir_CM057583.1/9802745.log).
+
+[Fri May 23 11:37:13 2025]
+rule MAIN_MULTIHETSEP:
+    input: sharks/MobBir/CM057579.1.recode.vcf.gz, sharks/MobBir/MSMC/Output_Bed/CM057579.1/CM057579.1_95.txt, sharks/MobBir/MSMC/Output_bam_caller_BED/CM057579.1_modified_bed.txt.gz, sharks/MobBir/MSMC/Output_indel_BED_file/CM057579.1_indel_bed.txt
+    output: sharks/MobBir/MSMC/Output_multihet_filtered_95/CM057579.1_multihet.txt
+    jobid: 302
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057579.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 302 has been submitted with SLURM jobid 9802746 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAIN_MULTIHETSEP/sharks_MobBir_CM057579.1/9802746.log).
+
+[Fri May 23 11:37:13 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/MobBir/MobBir_CM057587.1.bam
+    output: sharks/MobBir/MobBir_CM057587.1.bam.bai
+    jobid: 246
+    reason: Missing output files: sharks/MobBir/MobBir_CM057587.1.bam.bai
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057587.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 246 has been submitted with SLURM jobid 9802747 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_MobBir_CM057587.1/9802747.log).
+
+[Fri May 23 11:37:13 2025]
+rule MAIN_MULTIHETSEP:
+    input: sharks/MobBir/CM057587.1.recode.vcf.gz, sharks/MobBir/MSMC/Output_Bed/CM057587.1/CM057587.1_95.txt, sharks/MobBir/MSMC/Output_bam_caller_BED/CM057587.1_modified_bed.txt.gz, sharks/MobBir/MSMC/Output_indel_BED_file/CM057587.1_indel_bed.txt
+    output: sharks/MobBir/MSMC/Output_multihet_filtered_95/CM057587.1_multihet.txt
+    jobid: 310
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057587.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 310 has been submitted with SLURM jobid 9802748 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAIN_MULTIHETSEP/sharks_MobBir_CM057587.1/9802748.log).
+
+[Fri May 23 11:37:13 2025]
+rule TABIX:
+    input: sharks/MobBir/temp/CM057563.1_only_snps.vcf.bgz
+    output: sharks/MobBir/temp/CM057563.1_only_snps.vcf.bgz.tbi
+    jobid: 254
+    reason: Missing output files: sharks/MobBir/temp/CM057563.1_only_snps.vcf.bgz.tbi
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057563.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 254 has been submitted with SLURM jobid 9802749 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_TABIX/sharks_MobBir_CM057563.1/9802749.log).
+
+[Fri May 23 11:37:13 2025]
+rule TABIX:
+    input: sharks/MobBir/temp/CM057578.1_only_snps.vcf.bgz
+    output: sharks/MobBir/temp/CM057578.1_only_snps.vcf.bgz.tbi
+    jobid: 269
+    reason: Missing output files: sharks/MobBir/temp/CM057578.1_only_snps.vcf.bgz.tbi
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057578.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 269 has been submitted with SLURM jobid 9802750 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_TABIX/sharks_MobBir_CM057578.1/9802750.log).
+
+[Fri May 23 11:37:14 2025]
+rule MAIN_MULTIHETSEP:
+    input: sharks/MobBir/CM057574.1.recode.vcf.gz, sharks/MobBir/MSMC/Output_Bed/CM057574.1/CM057574.1_95.txt, sharks/MobBir/MSMC/Output_bam_caller_BED/CM057574.1_modified_bed.txt.gz, sharks/MobBir/MSMC/Output_indel_BED_file/CM057574.1_indel_bed.txt
+    output: sharks/MobBir/MSMC/Output_multihet_filtered_95/CM057574.1_multihet.txt
+    jobid: 297
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057574.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 297 has been submitted with SLURM jobid 9802751 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAIN_MULTIHETSEP/sharks_MobBir_CM057574.1/9802751.log).
+
+[Fri May 23 11:37:14 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/MobBir/MobBir_CM057582.1.bam
+    output: sharks/MobBir/MobBir_CM057582.1.bam.bai
+    jobid: 241
+    reason: Missing output files: sharks/MobBir/MobBir_CM057582.1.bam.bai
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057582.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 241 has been submitted with SLURM jobid 9802752 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_MobBir_CM057582.1/9802752.log).
+
+[Fri May 23 11:37:14 2025]
+rule TABIX:
+    input: sharks/MobBir/temp/CM057579.1_only_snps.vcf.bgz
+    output: sharks/MobBir/temp/CM057579.1_only_snps.vcf.bgz.tbi
+    jobid: 270
+    reason: Missing output files: sharks/MobBir/temp/CM057579.1_only_snps.vcf.bgz.tbi
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057579.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 270 has been submitted with SLURM jobid 9802753 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_TABIX/sharks_MobBir_CM057579.1/9802753.log).
+
+[Fri May 23 11:37:14 2025]
+rule MAIN_MULTIHETSEP:
+    input: sharks/MobBir/CM057582.1.recode.vcf.gz, sharks/MobBir/MSMC/Output_Bed/CM057582.1/CM057582.1_95.txt, sharks/MobBir/MSMC/Output_bam_caller_BED/CM057582.1_modified_bed.txt.gz, sharks/MobBir/MSMC/Output_indel_BED_file/CM057582.1_indel_bed.txt
+    output: sharks/MobBir/MSMC/Output_multihet_filtered_95/CM057582.1_multihet.txt
+    jobid: 305
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057582.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 305 has been submitted with SLURM jobid 9802754 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAIN_MULTIHETSEP/sharks_MobBir_CM057582.1/9802754.log).
+
+[Fri May 23 11:37:14 2025]
+rule MAIN_MULTIHETSEP:
+    input: sharks/MobBir/CM057575.1.recode.vcf.gz, sharks/MobBir/MSMC/Output_Bed/CM057575.1/CM057575.1_95.txt, sharks/MobBir/MSMC/Output_bam_caller_BED/CM057575.1_modified_bed.txt.gz, sharks/MobBir/MSMC/Output_indel_BED_file/CM057575.1_indel_bed.txt
+    output: sharks/MobBir/MSMC/Output_multihet_filtered_95/CM057575.1_multihet.txt
+    jobid: 298
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057575.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 298 has been submitted with SLURM jobid 9802755 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAIN_MULTIHETSEP/sharks_MobBir_CM057575.1/9802755.log).
+
+[Fri May 23 11:37:14 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/MobBir/MobBir_CM057583.1.bam
+    output: sharks/MobBir/MobBir_CM057583.1.bam.bai
+    jobid: 242
+    reason: Missing output files: sharks/MobBir/MobBir_CM057583.1.bam.bai
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057583.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 242 has been submitted with SLURM jobid 9802756 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_MobBir_CM057583.1/9802756.log).
+
+[Fri May 23 11:37:14 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/MobBir/MobBir_CM057556.1.bam
+    output: sharks/MobBir/MobBir_CM057556.1.bam.bai
+    jobid: 215
+    reason: Missing output files: sharks/MobBir/MobBir_CM057556.1.bam.bai
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057556.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 215 has been submitted with SLURM jobid 9802757 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_MobBir_CM057556.1/9802757.log).
+
+[Fri May 23 11:37:15 2025]
+rule TABIX:
+    input: sharks/MobBir/temp/CM057580.1_only_snps.vcf.bgz
+    output: sharks/MobBir/temp/CM057580.1_only_snps.vcf.bgz.tbi
+    jobid: 271
+    reason: Missing output files: sharks/MobBir/temp/CM057580.1_only_snps.vcf.bgz.tbi
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057580.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 271 has been submitted with SLURM jobid 9802758 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_TABIX/sharks_MobBir_CM057580.1/9802758.log).
+
+[Fri May 23 11:37:15 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/MobBir/MobBir_CM057584.1.bam
+    output: sharks/MobBir/MobBir_CM057584.1.bam.bai
+    jobid: 243
+    reason: Missing output files: sharks/MobBir/MobBir_CM057584.1.bam.bai
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057584.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 243 has been submitted with SLURM jobid 9802759 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_MobBir_CM057584.1/9802759.log).
+
+[Fri May 23 11:37:15 2025]
+rule MAIN_MULTIHETSEP:
+    input: sharks/MobBir/CM057576.1.recode.vcf.gz, sharks/MobBir/MSMC/Output_Bed/CM057576.1/CM057576.1_95.txt, sharks/MobBir/MSMC/Output_bam_caller_BED/CM057576.1_modified_bed.txt.gz, sharks/MobBir/MSMC/Output_indel_BED_file/CM057576.1_indel_bed.txt
+    output: sharks/MobBir/MSMC/Output_multihet_filtered_95/CM057576.1_multihet.txt
+    jobid: 299
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057576.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 299 has been submitted with SLURM jobid 9802760 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAIN_MULTIHETSEP/sharks_MobBir_CM057576.1/9802760.log).
+
+[Fri May 23 11:37:15 2025]
+rule MAIN_MULTIHETSEP:
+    input: sharks/MobBir/CM057556.1.recode.vcf.gz, sharks/MobBir/MSMC/Output_Bed/CM057556.1/CM057556.1_95.txt, sharks/MobBir/MSMC/Output_bam_caller_BED/CM057556.1_modified_bed.txt.gz, sharks/MobBir/MSMC/Output_indel_BED_file/CM057556.1_indel_bed.txt
+    output: sharks/MobBir/MSMC/Output_multihet_filtered_95/CM057556.1_multihet.txt
+    jobid: 279
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057556.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 279 has been submitted with SLURM jobid 9802761 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAIN_MULTIHETSEP/sharks_MobBir_CM057556.1/9802761.log).
+
+[Fri May 23 11:37:15 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/MobBir/MobBir_CM057564.1.bam
+    output: sharks/MobBir/MobBir_CM057564.1.bam.bai
+    jobid: 223
+    reason: Missing output files: sharks/MobBir/MobBir_CM057564.1.bam.bai
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057564.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 223 has been submitted with SLURM jobid 9802762 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_MobBir_CM057564.1/9802762.log).
+
+[Fri May 23 11:37:16 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/MobBir/MobBir_CM057557.1.bam
+    output: sharks/MobBir/MobBir_CM057557.1.bam.bai
+    jobid: 216
+    reason: Missing output files: sharks/MobBir/MobBir_CM057557.1.bam.bai
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057557.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 216 has been submitted with SLURM jobid 9802763 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_MobBir_CM057557.1/9802763.log).
+
+[Fri May 23 11:37:16 2025]
+rule TABIX:
+    input: sharks/MobBir/temp/CM057581.1_only_snps.vcf.bgz
+    output: sharks/MobBir/temp/CM057581.1_only_snps.vcf.bgz.tbi
+    jobid: 272
+    reason: Missing output files: sharks/MobBir/temp/CM057581.1_only_snps.vcf.bgz.tbi
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057581.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 272 has been submitted with SLURM jobid 9802764 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_TABIX/sharks_MobBir_CM057581.1/9802764.log).
+
+[Fri May 23 11:37:16 2025]
+rule MAIN_MULTIHETSEP:
+    input: sharks/MobBir/CM057584.1.recode.vcf.gz, sharks/MobBir/MSMC/Output_Bed/CM057584.1/CM057584.1_95.txt, sharks/MobBir/MSMC/Output_bam_caller_BED/CM057584.1_modified_bed.txt.gz, sharks/MobBir/MSMC/Output_indel_BED_file/CM057584.1_indel_bed.txt
+    output: sharks/MobBir/MSMC/Output_multihet_filtered_95/CM057584.1_multihet.txt
+    jobid: 307
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057584.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 307 has been submitted with SLURM jobid 9802765 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAIN_MULTIHETSEP/sharks_MobBir_CM057584.1/9802765.log).
+
+[Fri May 23 11:37:16 2025]
+rule TABIX:
+    input: sharks/MobBir/temp/CM057560.1_only_snps.vcf.bgz
+    output: sharks/MobBir/temp/CM057560.1_only_snps.vcf.bgz.tbi
+    jobid: 251
+    reason: Missing output files: sharks/MobBir/temp/CM057560.1_only_snps.vcf.bgz.tbi
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057560.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 251 has been submitted with SLURM jobid 9802766 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_TABIX/sharks_MobBir_CM057560.1/9802766.log).
+
+[Fri May 23 11:37:16 2025]
+rule MAIN_MULTIHETSEP:
+    input: sharks/MobBir/CM057577.1.recode.vcf.gz, sharks/MobBir/MSMC/Output_Bed/CM057577.1/CM057577.1_95.txt, sharks/MobBir/MSMC/Output_bam_caller_BED/CM057577.1_modified_bed.txt.gz, sharks/MobBir/MSMC/Output_indel_BED_file/CM057577.1_indel_bed.txt
+    output: sharks/MobBir/MSMC/Output_multihet_filtered_95/CM057577.1_multihet.txt
+    jobid: 300
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057577.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 300 has been submitted with SLURM jobid 9802767 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAIN_MULTIHETSEP/sharks_MobBir_CM057577.1/9802767.log).
+
+[Fri May 23 11:37:17 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/MobBir/MobBir_CM057585.1.bam
+    output: sharks/MobBir/MobBir_CM057585.1.bam.bai
+    jobid: 244
+    reason: Missing output files: sharks/MobBir/MobBir_CM057585.1.bam.bai
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057585.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 244 has been submitted with SLURM jobid 9802768 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_MobBir_CM057585.1/9802768.log).
+
+[Fri May 23 11:37:17 2025]
+rule INDEX_BAM_FILE:
+    input: sharks/MobBir/MobBir_CM057558.1.bam
+    output: sharks/MobBir/MobBir_CM057558.1.bam.bai
+    jobid: 217
+    reason: Missing output files: sharks/MobBir/MobBir_CM057558.1.bam.bai
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057558.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 217 has been submitted with SLURM jobid 9802769 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEX_BAM_FILE/sharks_MobBir_CM057558.1/9802769.log).
+
+[Fri May 23 11:37:17 2025]
+rule TABIX:
+    input: sharks/MobBir/temp/CM057582.1_only_snps.vcf.bgz
+    output: sharks/MobBir/temp/CM057582.1_only_snps.vcf.bgz.tbi
+    jobid: 273
+    reason: Missing output files: sharks/MobBir/temp/CM057582.1_only_snps.vcf.bgz.tbi
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057582.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 273 has been submitted with SLURM jobid 9802770 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_TABIX/sharks_MobBir_CM057582.1/9802770.log).
+
+[Fri May 23 11:37:17 2025]
+rule MAIN_MULTIHETSEP:
+    input: sharks/MobBir/CM057585.1.recode.vcf.gz, sharks/MobBir/MSMC/Output_Bed/CM057585.1/CM057585.1_95.txt, sharks/MobBir/MSMC/Output_bam_caller_BED/CM057585.1_modified_bed.txt.gz, sharks/MobBir/MSMC/Output_indel_BED_file/CM057585.1_indel_bed.txt
+    output: sharks/MobBir/MSMC/Output_multihet_filtered_95/CM057585.1_multihet.txt
+    jobid: 308
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057585.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 308 has been submitted with SLURM jobid 9802771 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAIN_MULTIHETSEP/sharks_MobBir_CM057585.1/9802771.log).
+
+[Fri May 23 11:37:18 2025]
+rule MAIN_MULTIHETSEP:
+    input: sharks/MobBir/CM057578.1.recode.vcf.gz, sharks/MobBir/MSMC/Output_Bed/CM057578.1/CM057578.1_95.txt, sharks/MobBir/MSMC/Output_bam_caller_BED/CM057578.1_modified_bed.txt.gz, sharks/MobBir/MSMC/Output_indel_BED_file/CM057578.1_indel_bed.txt
+    output: sharks/MobBir/MSMC/Output_multihet_filtered_95/CM057578.1_multihet.txt
+    jobid: 301
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir, CHROM=CM057578.1
+    resources: mem_mb=50000, mem_mib=47684, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 301 has been submitted with SLURM jobid 9802772 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAIN_MULTIHETSEP/sharks_MobBir_CM057578.1/9802772.log).

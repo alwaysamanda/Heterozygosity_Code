@@ -1,0 +1,25 @@
+host: login-p-1
+Building DAG of jobs...
+SLURM run ID: 43ab11ad-f0d1-422a-b7f8-0b5f15b88ad5
+Using shell: /usr/bin/bash
+Provided remote nodes: 30
+Job stats:
+job         count
+--------  -------
+MAKE_SAM        1
+all             1
+total           2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 26 10:33:41 2025]
+rule MAKE_SAM:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_036365495.1.fa.gz, /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/sharks/GCA_036365525.1.fa.gz
+    output: sharks/HetFra/HetFra.sam
+    jobid: 323
+    reason: Missing output files: sharks/HetFra/HetFra.sam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=5880, disk_mib=5608, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=720
+
+Job 323 has been submitted with SLURM jobid 9960711 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAKE_SAM/sharks_HetFra/9960711.log).

@@ -1,0 +1,144 @@
+host: login-p-4
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count
+----------------  -------
+PLOT_HET_PER_CHR        5
+all                     1
+total                   6
+
+Select jobs to execute...
+Execute 5 jobs...
+
+[Wed Mar 26 22:17:11 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_Het_Compiled.tsv
+    output: sharks/HydCol_Test/20250326_GCA_035084275.1_CM068746.1_Het_Map.svg
+    jobid: 52
+    reason: Missing output files: sharks/HydCol_Test/20250326_GCA_035084275.1_CM068746.1_Het_Map.svg
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, REF_NAME=GCA_035084275.1, chrom=CM068746.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 22:17:11 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_Het_Compiled.tsv
+    output: sharks/HydCol_Test/20250326_GCA_035084275.1_CM068743.1_Het_Map.svg
+    jobid: 49
+    reason: Missing output files: sharks/HydCol_Test/20250326_GCA_035084275.1_CM068743.1_Het_Map.svg
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, REF_NAME=GCA_035084275.1, chrom=CM068743.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 22:17:11 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_Het_Compiled.tsv
+    output: sharks/HydCol_Test/20250326_GCA_035084275.1_CM068745.1_Het_Map.svg
+    jobid: 51
+    reason: Missing output files: sharks/HydCol_Test/20250326_GCA_035084275.1_CM068745.1_Het_Map.svg
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, REF_NAME=GCA_035084275.1, chrom=CM068745.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 22:17:11 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_Het_Compiled.tsv
+    output: sharks/HydCol_Test/20250326_GCA_035084275.1_CM068742.1_Het_Map.svg
+    jobid: 48
+    reason: Missing output files: sharks/HydCol_Test/20250326_GCA_035084275.1_CM068742.1_Het_Map.svg
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, REF_NAME=GCA_035084275.1, chrom=CM068742.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 22:17:11 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_Het_Compiled.tsv
+    output: sharks/HydCol_Test/20250326_GCA_035084275.1_CM068744.1_Het_Map.svg
+    jobid: 50
+    reason: Missing output files: sharks/HydCol_Test/20250326_GCA_035084275.1_CM068744.1_Het_Map.svg
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, REF_NAME=GCA_035084275.1, chrom=CM068744.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 448:
+Command 'set -euo pipefail;  
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R 20250326 GCA_035084275.1 sharks 40 HydCol_Test' returned non-zero exit status 1.
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 448:
+Command 'set -euo pipefail;  
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R 20250326 GCA_035084275.1 sharks 40 HydCol_Test' returned non-zero exit status 1.
+[Wed Mar 26 22:17:13 2025]
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 448:
+Command 'set -euo pipefail;  
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R 20250326 GCA_035084275.1 sharks 40 HydCol_Test' returned non-zero exit status 1.
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 448:
+Command 'set -euo pipefail;  
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R 20250326 GCA_035084275.1 sharks 40 HydCol_Test' returned non-zero exit status 1.
+[Wed Mar 26 22:17:13 2025]
+Error in rule PLOT_HET_PER_CHR:
+    jobid: 49
+    input: sharks/HydCol_Test/HydCol_Test_Het_Compiled.tsv
+    output: sharks/HydCol_Test/20250326_GCA_035084275.1_CM068743.1_Het_Map.svg
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R 20250326 GCA_035084275.1 sharks 40 HydCol_Test
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Mar 26 22:17:13 2025]
+[Wed Mar 26 22:17:13 2025]
+Error in rule PLOT_HET_PER_CHR:
+    jobid: 48
+    input: sharks/HydCol_Test/HydCol_Test_Het_Compiled.tsv
+    output: sharks/HydCol_Test/20250326_GCA_035084275.1_CM068742.1_Het_Map.svg
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R 20250326 GCA_035084275.1 sharks 40 HydCol_Test
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error in rule PLOT_HET_PER_CHR:
+    jobid: 52
+    input: sharks/HydCol_Test/HydCol_Test_Het_Compiled.tsv
+    output: sharks/HydCol_Test/20250326_GCA_035084275.1_CM068746.1_Het_Map.svg
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R 20250326 GCA_035084275.1 sharks 40 HydCol_Test
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error in rule PLOT_HET_PER_CHR:
+    jobid: 50
+    input: sharks/HydCol_Test/HydCol_Test_Het_Compiled.tsv
+    output: sharks/HydCol_Test/20250326_GCA_035084275.1_CM068744.1_Het_Map.svg
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R 20250326 GCA_035084275.1 sharks 40 HydCol_Test
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 448:
+Command 'set -euo pipefail;  
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R 20250326 GCA_035084275.1 sharks 40 HydCol_Test' returned non-zero exit status 1.
+[Wed Mar 26 22:17:13 2025]
+Error in rule PLOT_HET_PER_CHR:
+    jobid: 51
+    input: sharks/HydCol_Test/HydCol_Test_Het_Compiled.tsv
+    output: sharks/HydCol_Test/20250326_GCA_035084275.1_CM068745.1_Het_Map.svg
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R 20250326 GCA_035084275.1 sharks 40 HydCol_Test
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-26T221711.172182.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -1,0 +1,783 @@
+host: login-p-2
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count
+---------------------  -------
+ALNtoPAF                     1
+BAM_COVERAGE                 1
+CALC_HET_PER_CHR            40
+CALC_HET_WHOLE_GENOME        1
+COMPILE_HET                  1
+COMPILE_ROH                  1
+FASTGA                       1
+FROH_PER_AUT_CHR            40
+MAKE_BAM                     1
+PLOT_HET_PER_CHR            40
+PLOT_WHOLE_HET               1
+Plot_ROH                     1
+all                          1
+total                      130
+
+Select jobs to execute...
+Execute 4 jobs...
+
+[Mon Mar 31 10:27:23 2025]
+localrule MAKE_BAM:
+    input: sharks/HydCol_Test/20250326_HydCol_Test.sam
+    output: sharks/HydCol_Test/20250326_HydCol_Test.bam
+    jobid: 335
+    reason: Missing output files: sharks/HydCol_Test/20250326_HydCol_Test.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:23 2025]
+localrule CALC_HET_WHOLE_GENOME:
+    input: sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    output: sharks/HydCol_Test/20250326_HydCol_Test_per_chr_mean_heterozygosity.txt, sharks/HydCol_Test/20250326_HydCol_Test_whole_genome_mean_heterozygosity.txt
+    jobid: 291
+    reason: Missing output files: sharks/HydCol_Test/20250326_HydCol_Test_whole_genome_mean_heterozygosity.txt, sharks/HydCol_Test/20250326_HydCol_Test_per_chr_mean_heterozygosity.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:23 2025]
+localrule FASTGA:
+    input: sharks/HydCol_Test/temp/HydCol_Test_GCA_035084275.1.gix, sharks/HydCol_Test/temp/HydCol_Test_GCA_035084065.1.gix
+    output: sharks/HydCol_Test/HydCol_Test_ALN.1aln
+    jobid: 2
+    reason: Missing output files: sharks/HydCol_Test/HydCol_Test_ALN.1aln
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:23 2025]
+localrule COMPILE_ROH:
+    input: sharks/HydCol_Test/20250326_CM068742.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068743.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068744.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068745.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068746.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068747.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068748.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068749.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068750.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068751.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068752.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068753.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068754.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068755.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068756.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068757.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068758.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068759.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068760.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068761.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068762.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068763.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068764.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068765.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068766.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068767.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068768.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068769.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068770.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068771.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068772.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068773.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068774.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068775.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068776.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068777.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068778.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068779.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068780.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068781.1_ROH_Results.txt
+    output: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    jobid: 209
+    reason: Missing output files: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv; Set of input files has changed since last execution
+    resources: tmpdir=/tmp
+
+[Mon Mar 31 10:27:24 2025]
+Finished job 209.
+1 of 130 steps (1%) done
+Select jobs to execute...
+Execute 53 jobs...
+
+[Mon Mar 31 10:27:24 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068743.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068743.1_GCA_035084275.1_FROH.txt
+    jobid: 212
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068743.1_GCA_035084275.1_FROH.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068743.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068778.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068778.1_GCA_035084275.1_FROH.txt
+    jobid: 247
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068778.1_GCA_035084275.1_FROH.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068778.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068765.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068765.1_GCA_035084275.1_FROH.txt
+    jobid: 234
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068765.1_GCA_035084275.1_FROH.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068765.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068781.1_het.txt
+    jobid: 290
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068781.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068781.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068751.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068751.1_GCA_035084275.1_FROH.txt
+    jobid: 220
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068751.1_GCA_035084275.1_FROH.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068751.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068767.1_het.txt
+    jobid: 276
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068767.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068767.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068744.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068744.1_GCA_035084275.1_FROH.txt
+    jobid: 213
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068744.1_GCA_035084275.1_FROH.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068744.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068753.1_het.txt
+    jobid: 262
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068753.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068753.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068746.1_het.txt
+    jobid: 255
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068746.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068746.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068779.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068779.1_GCA_035084275.1_FROH.txt
+    jobid: 248
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068779.1_GCA_035084275.1_FROH.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068779.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068766.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068766.1_GCA_035084275.1_FROH.txt
+    jobid: 235
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068766.1_GCA_035084275.1_FROH.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068766.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068759.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068759.1_GCA_035084275.1_FROH.txt
+    jobid: 228
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068759.1_GCA_035084275.1_FROH.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068759.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068775.1_het.txt
+    jobid: 284
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068775.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068775.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068768.1_het.txt
+    jobid: 277
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068768.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068768.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068752.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068752.1_GCA_035084275.1_FROH.txt
+    jobid: 221
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068752.1_GCA_035084275.1_FROH.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068752.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068761.1_het.txt
+    jobid: 270
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068761.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068761.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068754.1_het.txt
+    jobid: 263
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068754.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068754.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068747.1_het.txt
+    jobid: 256
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068747.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068747.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068780.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068780.1_GCA_035084275.1_FROH.txt
+    jobid: 249
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068780.1_GCA_035084275.1_FROH.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068780.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068773.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068773.1_GCA_035084275.1_FROH.txt
+    jobid: 242
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068773.1_GCA_035084275.1_FROH.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068773.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068767.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068767.1_GCA_035084275.1_FROH.txt
+    jobid: 236
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068767.1_GCA_035084275.1_FROH.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068767.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068760.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068760.1_GCA_035084275.1_FROH.txt
+    jobid: 229
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068760.1_GCA_035084275.1_FROH.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068760.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068776.1_het.txt
+    jobid: 285
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068776.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068776.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068762.1_het.txt
+    jobid: 271
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068762.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068762.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068746.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068746.1_GCA_035084275.1_FROH.txt
+    jobid: 215
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068746.1_GCA_035084275.1_FROH.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068746.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068755.1_het.txt
+    jobid: 264
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068755.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068755.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068748.1_het.txt
+    jobid: 257
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068748.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068748.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068766.1_het.txt
+    jobid: 275
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068766.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068766.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068774.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068774.1_GCA_035084275.1_FROH.txt
+    jobid: 243
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068774.1_GCA_035084275.1_FROH.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068774.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068768.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068768.1_GCA_035084275.1_FROH.txt
+    jobid: 237
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068768.1_GCA_035084275.1_FROH.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068768.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068761.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068761.1_GCA_035084275.1_FROH.txt
+    jobid: 230
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068761.1_GCA_035084275.1_FROH.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068761.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068777.1_het.txt
+    jobid: 286
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068777.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068777.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068756.1_het.txt
+    jobid: 265
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068756.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068756.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068749.1_het.txt
+    jobid: 258
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068749.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068749.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068769.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068769.1_GCA_035084275.1_FROH.txt
+    jobid: 238
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068769.1_GCA_035084275.1_FROH.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068769.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068762.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068762.1_GCA_035084275.1_FROH.txt
+    jobid: 231
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068762.1_GCA_035084275.1_FROH.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068762.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068778.1_het.txt
+    jobid: 287
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068778.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068778.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule Plot_ROH:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    output: sharks/HydCol_Test/20250326_HydCol_Test_ROH_Map.pdf
+    jobid: 210
+    reason: Missing output files: sharks/HydCol_Test/20250326_HydCol_Test_ROH_Map.pdf; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068757.1_het.txt
+    jobid: 266
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068757.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068757.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068750.1_het.txt
+    jobid: 259
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068750.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068750.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068770.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068770.1_GCA_035084275.1_FROH.txt
+    jobid: 239
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068770.1_GCA_035084275.1_FROH.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068770.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068763.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068763.1_GCA_035084275.1_FROH.txt
+    jobid: 232
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068763.1_GCA_035084275.1_FROH.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068763.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068779.1_het.txt
+    jobid: 288
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068779.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068779.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068765.1_het.txt
+    jobid: 274
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068765.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068765.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068742.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068742.1_GCA_035084275.1_FROH.txt
+    jobid: 211
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068742.1_GCA_035084275.1_FROH.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068742.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068758.1_het.txt
+    jobid: 267
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068758.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068758.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068751.1_het.txt
+    jobid: 260
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068751.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068751.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 421:
+Command 'set -euo pipefail;  
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_whole_genome_V3.py sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt sharks HydCol_Test 20250326 40' returned non-zero exit status 1.
+[Mon Mar 31 10:27:24 2025]
+
+Error in rule CALC_HET_WHOLE_GENOME:
+    jobid: 291
+    input: sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    output: sharks/HydCol_Test/20250326_HydCol_Test_per_chr_mean_heterozygosity.txt, sharks/HydCol_Test/20250326_HydCol_Test_whole_genome_mean_heterozygosity.txt
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_whole_genome_V3.py sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt sharks HydCol_Test 20250326 40
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Mar 31 10:27:24 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068764.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068764.1_GCA_035084275.1_FROH.txt
+    jobid: 233
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068764.1_GCA_035084275.1_FROH.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068764.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068777.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068777.1_GCA_035084275.1_FROH.txt
+    jobid: 246
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068777.1_GCA_035084275.1_FROH.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068777.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068780.1_het.txt
+    jobid: 289
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068780.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068780.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068750.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068750.1_GCA_035084275.1_FROH.txt
+    jobid: 219
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068750.1_GCA_035084275.1_FROH.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068750.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068759.1_het.txt
+    jobid: 268
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068759.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068759.1
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 31 10:27:24 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068752.1_het.txt
+    jobid: 261
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068752.1_het.txt; Input files updated by another job: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068752.1
+    resources: tmpdir=/tmp
+
+[Mon Mar 31 10:27:25 2025]
+Finished job 238.
+2 of 130 steps (2%) done
+[Mon Mar 31 10:27:25 2025]
+Finished job 232.
+3 of 130 steps (2%) done
+[Mon Mar 31 10:27:25 2025]
+Finished job 228.
+4 of 130 steps (3%) done
+[Mon Mar 31 10:27:25 2025]
+Finished job 248.
+5 of 130 steps (4%) done
+[Mon Mar 31 10:27:25 2025]
+Finished job 249.
+6 of 130 steps (5%) done
+[Mon Mar 31 10:27:25 2025]
+Finished job 242.
+7 of 130 steps (5%) done
+[Mon Mar 31 10:27:25 2025]
+Finished job 236.
+8 of 130 steps (6%) done
+[Mon Mar 31 10:27:25 2025]
+Finished job 231.
+9 of 130 steps (7%) done
+[Mon Mar 31 10:27:25 2025]
+Finished job 215.
+10 of 130 steps (8%) done
+[Mon Mar 31 10:27:25 2025]
+Finished job 230.
+11 of 130 steps (8%) done
+[Mon Mar 31 10:27:25 2025]
+Finished job 243.
+12 of 130 steps (9%) done
+[Mon Mar 31 10:27:25 2025]
+Finished job 247.
+13 of 130 steps (10%) done
+[Mon Mar 31 10:27:25 2025]
+Finished job 234.
+14 of 130 steps (11%) done
+[Mon Mar 31 10:27:25 2025]
+Finished job 211.
+15 of 130 steps (12%) done
+[Mon Mar 31 10:27:25 2025]
+Finished job 239.
+16 of 130 steps (12%) done
+[Mon Mar 31 10:27:25 2025]
+Finished job 237.
+17 of 130 steps (13%) done
+[Mon Mar 31 10:27:25 2025]
+Finished job 219.
+18 of 130 steps (14%) done
+[Mon Mar 31 10:27:25 2025]
+Finished job 213.
+19 of 130 steps (15%) done
+[Mon Mar 31 10:27:25 2025]
+Finished job 229.
+20 of 130 steps (15%) done
+[Mon Mar 31 10:27:25 2025]
+Finished job 233.
+21 of 130 steps (16%) done
+[Mon Mar 31 10:27:25 2025]
+Finished job 220.
+22 of 130 steps (17%) done
+[Mon Mar 31 10:27:25 2025]
+Finished job 212.
+23 of 130 steps (18%) done
+[Mon Mar 31 10:27:25 2025]
+Finished job 235.
+24 of 130 steps (18%) done
+[Mon Mar 31 10:27:25 2025]
+Finished job 221.
+25 of 130 steps (19%) done
+[Mon Mar 31 10:27:25 2025]
+Finished job 246.
+26 of 130 steps (20%) done
+[Mon Mar 31 10:27:25 2025]
+Finished job 210.
+27 of 130 steps (21%) done
+[Mon Mar 31 10:28:14 2025]
+Finished job 335.
+28 of 130 steps (22%) done
+[Mon Mar 31 10:28:30 2025]
+Finished job 277.
+29 of 130 steps (22%) done
+[Mon Mar 31 10:28:31 2025]
+Finished job 255.
+30 of 130 steps (23%) done
+[Mon Mar 31 10:28:31 2025]
+Finished job 262.
+31 of 130 steps (24%) done
+[Mon Mar 31 10:28:31 2025]
+Finished job 257.
+32 of 130 steps (25%) done
+[Mon Mar 31 10:28:31 2025]
+Finished job 266.
+33 of 130 steps (25%) done
+[Mon Mar 31 10:28:31 2025]
+Finished job 286.
+34 of 130 steps (26%) done
+[Mon Mar 31 10:28:31 2025]
+Finished job 274.
+35 of 130 steps (27%) done
+[Mon Mar 31 10:28:31 2025]
+Finished job 263.
+36 of 130 steps (28%) done
+[Mon Mar 31 10:28:31 2025]
+Finished job 287.
+37 of 130 steps (28%) done
+[Mon Mar 31 10:28:31 2025]
+Finished job 265.
+38 of 130 steps (29%) done
+[Mon Mar 31 10:28:32 2025]
+Finished job 256.
+39 of 130 steps (30%) done
+[Mon Mar 31 10:28:32 2025]
+Finished job 268.
+40 of 130 steps (31%) done
+[Mon Mar 31 10:28:32 2025]
+Finished job 267.
+41 of 130 steps (32%) done
+[Mon Mar 31 10:28:32 2025]
+Finished job 264.
+42 of 130 steps (32%) done
+[Mon Mar 31 10:28:32 2025]
+Finished job 276.
+43 of 130 steps (33%) done
+[Mon Mar 31 10:28:32 2025]
+Finished job 275.
+44 of 130 steps (34%) done
+[Mon Mar 31 10:28:32 2025]
+Finished job 270.
+45 of 130 steps (35%) done
+[Mon Mar 31 10:28:32 2025]
+Finished job 289.
+46 of 130 steps (35%) done
+[Mon Mar 31 10:28:32 2025]
+Finished job 288.
+47 of 130 steps (36%) done
+[Mon Mar 31 10:28:32 2025]
+Finished job 261.
+48 of 130 steps (37%) done
+[Mon Mar 31 10:28:32 2025]
+Finished job 271.
+49 of 130 steps (38%) done
+[Mon Mar 31 10:28:32 2025]
+Finished job 259.
+50 of 130 steps (38%) done
+[Mon Mar 31 10:28:32 2025]
+Finished job 290.
+51 of 130 steps (39%) done
+[Mon Mar 31 10:28:32 2025]
+Finished job 285.
+52 of 130 steps (40%) done
+[Mon Mar 31 10:28:33 2025]
+Finished job 260.
+53 of 130 steps (41%) done
+[Mon Mar 31 10:28:33 2025]
+Finished job 258.
+54 of 130 steps (42%) done
+[Mon Mar 31 10:28:33 2025]
+Finished job 284.
+55 of 130 steps (42%) done
+[Mon Mar 31 10:31:14 2025]
+Finished job 2.
+56 of 130 steps (43%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-31T102719.806434.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

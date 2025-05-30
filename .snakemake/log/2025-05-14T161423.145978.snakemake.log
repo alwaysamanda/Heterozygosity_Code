@@ -1,0 +1,737 @@
+host: login-p-3
+Building DAG of jobs...
+SLURM run ID: ab56530b-8bc0-40de-bc10-b9129c2f0595
+Using shell: /usr/bin/bash
+Provided remote nodes: 25
+Job stats:
+job                            count
+---------------------------  -------
+BAM_CALLER_BED                    46
+BGZIP_VCF                         46
+BOOTSTRAPPING_MULTIHET_FILE        1
+CALL_PLOIDY                       46
+EXTRACT_CHR_FASTA                 46
+GENERATE_MASK                     46
+GENERATE_MULTIHETSEP              46
+INDEL_MASKER                      46
+MAIN_MULTIHETSEP                  46
+PILEUP_VARIANTS                    1
+Plot_ROH                           1
+REMOVE_INDELS                     46
+RESTRUCTURE                       46
+UNZIP_REFERENCE                    1
+all                                1
+total                            465
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Wed May 14 16:14:38 2025]
+rule Plot_ROH:
+    input: sharks/HepPer/HepPer_ROH_Results.csv, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_HepPer_ROH_Map.pdf
+    jobid: 150
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_ROH_Map.pdf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 150 has been submitted with SLURM jobid 9374175 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_Plot_ROH/sharks_HepPer_20250422/9374175.log).
+
+[Wed May 14 16:14:40 2025]
+rule UNZIP_REFERENCE:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/GCA_035084215.1.fa
+    jobid: 300
+    reason: Missing output files: sharks/HepPer/temp/GCA_035084215.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, REF_NAME=GCA_035084215.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1872, disk_mib=1786, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 300 has been submitted with SLURM jobid 9374176 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_UNZIP_REFERENCE/sharks_HepPer_GCA_035084215.1/9374176.log).
+[Wed May 14 16:22:39 2025]
+Finished job 150.
+1 of 465 steps (0.2%) done
+[Wed May 14 16:22:39 2025]
+Finished job 300.
+2 of 465 steps (0.4%) done
+Select jobs to execute...
+Execute 25 jobs...
+
+[Wed May 14 16:22:39 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068655.1.fasta
+    jobid: 318
+    reason: Missing output files: sharks/HepPer/temp/CM068655.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: 'sharks','HepPer','GCA_035084215.1' 
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068655.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 318 has been submitted with SLURM jobid 9374529 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068655.1/9374529.log).
+
+[Wed May 14 16:22:39 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068677.1.fasta
+    jobid: 340
+    reason: Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068677.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 340 has been submitted with SLURM jobid 9374530 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068677.1/9374530.log).
+
+[Wed May 14 16:22:39 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068670.1.fasta
+    jobid: 333
+    reason: Missing output files: sharks/HepPer/temp/CM068670.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068670.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 333 has been submitted with SLURM jobid 9374531 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068670.1/9374531.log).
+
+[Wed May 14 16:22:40 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068663.1.fasta
+    jobid: 326
+    reason: Missing output files: sharks/HepPer/temp/CM068663.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068663.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 326 has been submitted with SLURM jobid 9374532 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068663.1/9374532.log).
+
+[Wed May 14 16:22:40 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068656.1.fasta
+    jobid: 319
+    reason: Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: 'sharks','HepPer','GCA_035084215.1' 
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068656.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 319 has been submitted with SLURM jobid 9374533 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068656.1/9374533.log).
+
+[Wed May 14 16:22:42 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068649.1.fasta
+    jobid: 312
+    reason: Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: 'sharks','HepPer','GCA_035084215.1' 
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068649.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 312 has been submitted with SLURM jobid 9374534 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068649.1/9374534.log).
+
+[Wed May 14 16:22:42 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068642.1.fasta
+    jobid: 305
+    reason: Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: 'sharks','HepPer','GCA_035084215.1' 
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068642.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 305 has been submitted with SLURM jobid 9374535 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068642.1/9374535.log).
+
+[Wed May 14 16:22:42 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068678.1.fasta
+    jobid: 341
+    reason: Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: 'sharks','HepPer','GCA_035084215.1' 
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068678.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 341 has been submitted with SLURM jobid 9374536 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068678.1/9374536.log).
+
+[Wed May 14 16:22:42 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068658.1.fasta
+    jobid: 321
+    reason: Missing output files: sharks/HepPer/temp/CM068658.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: 'sharks','HepPer','GCA_035084215.1' 
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068658.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 321 has been submitted with SLURM jobid 9374537 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068658.1/9374537.log).
+
+[Wed May 14 16:22:44 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068681.1.fasta
+    jobid: 344
+    reason: Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068681.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 344 has been submitted with SLURM jobid 9374539 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068681.1/9374539.log).
+
+[Wed May 14 16:22:45 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068674.1.fasta
+    jobid: 337
+    reason: Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068674.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 337 has been submitted with SLURM jobid 9374540 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068674.1/9374540.log).
+
+[Wed May 14 16:22:45 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068667.1.fasta
+    jobid: 330
+    reason: Missing output files: sharks/HepPer/temp/CM068667.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068667.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 330 has been submitted with SLURM jobid 9374541 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068667.1/9374541.log).
+
+[Wed May 14 16:22:45 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068660.1.fasta
+    jobid: 323
+    reason: Missing output files: sharks/HepPer/temp/CM068660.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068660.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 323 has been submitted with SLURM jobid 9374542 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068660.1/9374542.log).
+
+[Wed May 14 16:22:47 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068653.1.fasta
+    jobid: 316
+    reason: Missing output files: sharks/HepPer/temp/CM068653.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068653.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 316 has been submitted with SLURM jobid 9374543 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068653.1/9374543.log).
+
+[Wed May 14 16:22:47 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068646.1.fasta
+    jobid: 309
+    reason: Missing output files: sharks/HepPer/temp/CM068646.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068646.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 309 has been submitted with SLURM jobid 9374544 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068646.1/9374544.log).
+
+[Wed May 14 16:22:47 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068640.1.fasta
+    jobid: 303
+    reason: Missing output files: sharks/HepPer/temp/CM068640.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068640.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 303 has been submitted with SLURM jobid 9374545 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068640.1/9374545.log).
+
+[Wed May 14 16:22:47 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068682.1.fasta
+    jobid: 345
+    reason: Missing output files: sharks/HepPer/temp/CM068682.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068682.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 345 has been submitted with SLURM jobid 9374546 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068682.1/9374546.log).
+
+[Wed May 14 16:22:50 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068675.1.fasta
+    jobid: 338
+    reason: Missing output files: sharks/HepPer/temp/CM068675.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068675.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 338 has been submitted with SLURM jobid 9374548 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068675.1/9374548.log).
+
+[Wed May 14 16:22:50 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068668.1.fasta
+    jobid: 331
+    reason: Missing output files: sharks/HepPer/temp/CM068668.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068668.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 331 has been submitted with SLURM jobid 9374549 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068668.1/9374549.log).
+
+[Wed May 14 16:22:50 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068661.1.fasta
+    jobid: 324
+    reason: Missing output files: sharks/HepPer/temp/CM068661.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068661.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 324 has been submitted with SLURM jobid 9374550 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068661.1/9374550.log).
+
+[Wed May 14 16:22:50 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068654.1.fasta
+    jobid: 317
+    reason: Missing output files: sharks/HepPer/temp/CM068654.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068654.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 317 has been submitted with SLURM jobid 9374551 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068654.1/9374551.log).
+
+[Wed May 14 16:22:52 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068647.1.fasta
+    jobid: 310
+    reason: Missing output files: sharks/HepPer/temp/CM068647.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068647.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 310 has been submitted with SLURM jobid 9374552 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068647.1/9374552.log).
+
+[Wed May 14 16:22:52 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068676.1.fasta
+    jobid: 339
+    reason: Missing output files: sharks/HepPer/temp/CM068676.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068676.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 339 has been submitted with SLURM jobid 9374553 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068676.1/9374553.log).
+
+[Wed May 14 16:22:53 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068669.1.fasta
+    jobid: 332
+    reason: Missing output files: sharks/HepPer/temp/CM068669.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068669.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 332 has been submitted with SLURM jobid 9374554 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068669.1/9374554.log).
+
+[Wed May 14 16:22:55 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068662.1.fasta
+    jobid: 325
+    reason: Missing output files: sharks/HepPer/temp/CM068662.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068662.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 325 has been submitted with SLURM jobid 9374556 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068662.1/9374556.log).
+[Wed May 14 16:32:40 2025]
+Finished job 318.
+3 of 465 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 14 16:32:40 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068648.1.fasta
+    jobid: 311
+    reason: Missing output files: sharks/HepPer/temp/CM068648.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068648.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 311 has been submitted with SLURM jobid 9374958 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068648.1/9374958.log).
+[Wed May 14 16:32:41 2025]
+Finished job 340.
+4 of 465 steps (1%) done
+[Wed May 14 16:32:41 2025]
+Finished job 333.
+5 of 465 steps (1%) done
+[Wed May 14 16:32:41 2025]
+Finished job 326.
+6 of 465 steps (1%) done
+[Wed May 14 16:32:41 2025]
+Finished job 319.
+7 of 465 steps (2%) done
+[Wed May 14 16:32:41 2025]
+Finished job 312.
+8 of 465 steps (2%) done
+[Wed May 14 16:32:41 2025]
+Finished job 305.
+9 of 465 steps (2%) done
+[Wed May 14 16:32:41 2025]
+Finished job 341.
+10 of 465 steps (2%) done
+[Wed May 14 16:32:41 2025]
+Finished job 321.
+11 of 465 steps (2%) done
+[Wed May 14 16:32:41 2025]
+Finished job 344.
+12 of 465 steps (3%) done
+[Wed May 14 16:32:41 2025]
+Finished job 337.
+13 of 465 steps (3%) done
+[Wed May 14 16:32:41 2025]
+Finished job 330.
+14 of 465 steps (3%) done
+[Wed May 14 16:32:41 2025]
+Finished job 323.
+15 of 465 steps (3%) done
+[Wed May 14 16:32:41 2025]
+Finished job 316.
+16 of 465 steps (3%) done
+[Wed May 14 16:32:41 2025]
+Finished job 309.
+17 of 465 steps (4%) done
+[Wed May 14 16:32:41 2025]
+Finished job 303.
+18 of 465 steps (4%) done
+[Wed May 14 16:32:41 2025]
+Finished job 345.
+19 of 465 steps (4%) done
+[Wed May 14 16:32:41 2025]
+Finished job 338.
+20 of 465 steps (4%) done
+[Wed May 14 16:32:41 2025]
+Finished job 331.
+21 of 465 steps (5%) done
+[Wed May 14 16:32:41 2025]
+Finished job 324.
+22 of 465 steps (5%) done
+[Wed May 14 16:32:41 2025]
+Finished job 317.
+23 of 465 steps (5%) done
+[Wed May 14 16:32:41 2025]
+Finished job 310.
+24 of 465 steps (5%) done
+[Wed May 14 16:32:41 2025]
+Finished job 339.
+25 of 465 steps (5%) done
+[Wed May 14 16:32:41 2025]
+Finished job 332.
+26 of 465 steps (6%) done
+[Wed May 14 16:32:41 2025]
+Finished job 325.
+27 of 465 steps (6%) done
+Select jobs to execute...
+Execute 20 jobs...
+
+[Wed May 14 16:32:41 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068641.1.fasta
+    jobid: 304
+    reason: Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: 'sharks','HepPer','GCA_035084215.1' 
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068641.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 304 has been submitted with SLURM jobid 9374959 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068641.1/9374959.log).
+
+[Wed May 14 16:32:41 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068671.1.fasta
+    jobid: 334
+    reason: Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: 'sharks','HepPer','GCA_035084215.1' 
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068671.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 334 has been submitted with SLURM jobid 9374963 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068671.1/9374963.log).
+
+[Wed May 14 16:32:46 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068664.1.fasta
+    jobid: 327
+    reason: Missing output files: sharks/HepPer/temp/CM068664.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: 'sharks','HepPer','GCA_035084215.1' 
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068664.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 327 has been submitted with SLURM jobid 9374964 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068664.1/9374964.log).
+
+[Wed May 14 16:32:46 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068657.1.fasta
+    jobid: 320
+    reason: Missing output files: sharks/HepPer/temp/CM068657.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: 'sharks','HepPer','GCA_035084215.1' 
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068657.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 320 has been submitted with SLURM jobid 9374965 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068657.1/9374965.log).
+
+[Wed May 14 16:32:46 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068650.1.fasta
+    jobid: 313
+    reason: Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: 'sharks','HepPer','GCA_035084215.1' 
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068650.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 313 has been submitted with SLURM jobid 9374966 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068650.1/9374966.log).
+
+[Wed May 14 16:32:46 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068643.1.fasta
+    jobid: 306
+    reason: Missing output files: sharks/HepPer/temp/CM068643.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: 'sharks','HepPer','GCA_035084215.1' 
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068643.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 306 has been submitted with SLURM jobid 9374967 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068643.1/9374967.log).
+
+[Wed May 14 16:32:49 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068637.1.fasta
+    jobid: 299
+    reason: Missing output files: sharks/HepPer/temp/CM068637.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: 'sharks','HepPer','GCA_035084215.1' 
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068637.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 299 has been submitted with SLURM jobid 9374968 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068637.1/9374968.log).
+
+[Wed May 14 16:32:49 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068679.1.fasta
+    jobid: 342
+    reason: Missing output files: sharks/HepPer/temp/CM068679.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: 'sharks','HepPer','GCA_035084215.1' 
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068679.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 342 has been submitted with SLURM jobid 9374970 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068679.1/9374970.log).
+
+[Wed May 14 16:32:49 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068672.1.fasta
+    jobid: 335
+    reason: Missing output files: sharks/HepPer/temp/CM068672.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: 'sharks','HepPer','GCA_035084215.1' 
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068672.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 335 has been submitted with SLURM jobid 9374971 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068672.1/9374971.log).
+
+[Wed May 14 16:32:51 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068665.1.fasta
+    jobid: 328
+    reason: Missing output files: sharks/HepPer/temp/CM068665.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: 'sharks','HepPer','GCA_035084215.1' 
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068665.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 328 has been submitted with SLURM jobid 9374972 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068665.1/9374972.log).
+
+[Wed May 14 16:32:51 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068651.1.fasta
+    jobid: 314
+    reason: Missing output files: sharks/HepPer/temp/CM068651.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: 'sharks','HepPer','GCA_035084215.1' 
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068651.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 314 has been submitted with SLURM jobid 9374973 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068651.1/9374973.log).
+
+[Wed May 14 16:32:52 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068644.1.fasta
+    jobid: 307
+    reason: Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: 'sharks','HepPer','GCA_035084215.1' 
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068644.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 307 has been submitted with SLURM jobid 9374974 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068644.1/9374974.log).
+
+[Wed May 14 16:32:52 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068638.1.fasta
+    jobid: 301
+    reason: Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: 'sharks','HepPer','GCA_035084215.1' 
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068638.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 301 has been submitted with SLURM jobid 9374975 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068638.1/9374975.log).
+
+[Wed May 14 16:32:54 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068680.1.fasta
+    jobid: 343
+    reason: Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: 'sharks','HepPer','GCA_035084215.1' 
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068680.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 343 has been submitted with SLURM jobid 9374976 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068680.1/9374976.log).
+
+[Wed May 14 16:32:54 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068673.1.fasta
+    jobid: 336
+    reason: Missing output files: sharks/HepPer/temp/CM068673.1.fasta; Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: 'sharks','HepPer','GCA_035084215.1' 
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068673.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 336 has been submitted with SLURM jobid 9374977 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068673.1/9374977.log).
+
+[Wed May 14 16:32:54 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068666.1.fasta
+    jobid: 329
+    reason: Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: 'sharks','HepPer','GCA_035084215.1' 
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068666.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 329 has been submitted with SLURM jobid 9374978 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068666.1/9374978.log).
+
+[Wed May 14 16:32:54 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068659.1.fasta
+    jobid: 322
+    reason: Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: 'sharks','HepPer','GCA_035084215.1' 
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068659.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 322 has been submitted with SLURM jobid 9374979 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068659.1/9374979.log).
+
+[Wed May 14 16:32:56 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068652.1.fasta
+    jobid: 315
+    reason: Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: 'sharks','HepPer','GCA_035084215.1' 
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068652.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 315 has been submitted with SLURM jobid 9374980 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068652.1/9374980.log).
+
+[Wed May 14 16:32:57 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068645.1.fasta
+    jobid: 308
+    reason: Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: 'sharks','HepPer','GCA_035084215.1' 
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068645.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 308 has been submitted with SLURM jobid 9374981 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068645.1/9374981.log).
+
+[Wed May 14 16:32:57 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HepPer/temp/GCA_035084215.1.fa
+    output: sharks/HepPer/temp/CM068639.1.fasta
+    jobid: 302
+    reason: Input files updated by another job: sharks/HepPer/temp/GCA_035084215.1.fa; Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068639.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6323, disk_mib=6031, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 302 has been submitted with SLURM jobid 9374982 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HepPer_CM068639.1/9374982.log).
+[Wed May 14 16:42:41 2025]
+Finished job 311.
+28 of 465 steps (6%) done
+[Wed May 14 16:42:42 2025]
+Finished job 304.
+29 of 465 steps (6%) done
+[Wed May 14 16:42:42 2025]
+Finished job 334.
+30 of 465 steps (6%) done
+[Wed May 14 16:42:42 2025]
+Finished job 327.
+31 of 465 steps (7%) done
+[Wed May 14 16:42:42 2025]
+Finished job 320.
+32 of 465 steps (7%) done
+[Wed May 14 16:42:42 2025]
+Finished job 313.
+33 of 465 steps (7%) done
+[Wed May 14 16:42:42 2025]
+Finished job 306.
+34 of 465 steps (7%) done
+[Wed May 14 16:42:42 2025]
+Finished job 299.
+35 of 465 steps (8%) done
+[Wed May 14 16:42:42 2025]
+Finished job 342.
+36 of 465 steps (8%) done
+[Wed May 14 16:42:42 2025]
+Finished job 335.
+37 of 465 steps (8%) done
+[Wed May 14 16:42:42 2025]
+Finished job 328.
+38 of 465 steps (8%) done
+[Wed May 14 16:42:42 2025]
+Finished job 314.
+39 of 465 steps (8%) done
+[Wed May 14 16:42:42 2025]
+Finished job 307.
+40 of 465 steps (9%) done
+[Wed May 14 16:42:42 2025]
+Finished job 301.
+41 of 465 steps (9%) done
+[Wed May 14 16:42:42 2025]
+Finished job 343.
+42 of 465 steps (9%) done
+[Wed May 14 16:42:42 2025]
+Finished job 336.
+43 of 465 steps (9%) done
+[Wed May 14 16:42:42 2025]
+Finished job 329.
+44 of 465 steps (9%) done
+[Wed May 14 16:42:42 2025]
+Finished job 322.
+45 of 465 steps (10%) done
+[Wed May 14 16:42:43 2025]
+Finished job 315.
+46 of 465 steps (10%) done
+[Wed May 14 16:42:43 2025]
+Finished job 308.
+47 of 465 steps (10%) done
+[Wed May 14 16:42:43 2025]
+Finished job 302.
+48 of 465 steps (10%) done
+Removing temporary output sharks/HepPer/temp/GCA_035084215.1.fa.
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 14 16:42:44 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HepPer/temp/CM068637.1.fasta, sharks/HepPer/temp/CM068638.1.fasta, sharks/HepPer/temp/CM068639.1.fasta, sharks/HepPer/temp/CM068640.1.fasta, sharks/HepPer/temp/CM068641.1.fasta, sharks/HepPer/temp/CM068642.1.fasta, sharks/HepPer/temp/CM068643.1.fasta, sharks/HepPer/temp/CM068644.1.fasta, sharks/HepPer/temp/CM068645.1.fasta, sharks/HepPer/temp/CM068646.1.fasta, sharks/HepPer/temp/CM068647.1.fasta, sharks/HepPer/temp/CM068648.1.fasta, sharks/HepPer/temp/CM068649.1.fasta, sharks/HepPer/temp/CM068650.1.fasta, sharks/HepPer/temp/CM068651.1.fasta, sharks/HepPer/temp/CM068652.1.fasta, sharks/HepPer/temp/CM068653.1.fasta, sharks/HepPer/temp/CM068654.1.fasta, sharks/HepPer/temp/CM068655.1.fasta, sharks/HepPer/temp/CM068656.1.fasta, sharks/HepPer/temp/CM068657.1.fasta, sharks/HepPer/temp/CM068658.1.fasta, sharks/HepPer/temp/CM068659.1.fasta, sharks/HepPer/temp/CM068660.1.fasta, sharks/HepPer/temp/CM068661.1.fasta, sharks/HepPer/temp/CM068662.1.fasta, sharks/HepPer/temp/CM068663.1.fasta, sharks/HepPer/temp/CM068664.1.fasta, sharks/HepPer/temp/CM068665.1.fasta, sharks/HepPer/temp/CM068666.1.fasta, sharks/HepPer/temp/CM068667.1.fasta, sharks/HepPer/temp/CM068668.1.fasta, sharks/HepPer/temp/CM068669.1.fasta, sharks/HepPer/temp/CM068670.1.fasta, sharks/HepPer/temp/CM068671.1.fasta, sharks/HepPer/temp/CM068672.1.fasta, sharks/HepPer/temp/CM068673.1.fasta, sharks/HepPer/temp/CM068674.1.fasta, sharks/HepPer/temp/CM068675.1.fasta, sharks/HepPer/temp/CM068676.1.fasta, sharks/HepPer/temp/CM068677.1.fasta, sharks/HepPer/temp/CM068678.1.fasta, sharks/HepPer/temp/CM068679.1.fasta, sharks/HepPer/temp/CM068680.1.fasta, sharks/HepPer/temp/CM068681.1.fasta, sharks/HepPer/temp/CM068682.1.fasta, sharks/HepPer/HepPer_CM068637.1.bam, sharks/HepPer/HepPer_CM068638.1.bam, sharks/HepPer/HepPer_CM068639.1.bam, sharks/HepPer/HepPer_CM068640.1.bam, sharks/HepPer/HepPer_CM068641.1.bam, sharks/HepPer/HepPer_CM068642.1.bam, sharks/HepPer/HepPer_CM068643.1.bam, sharks/HepPer/HepPer_CM068644.1.bam, sharks/HepPer/HepPer_CM068645.1.bam, sharks/HepPer/HepPer_CM068646.1.bam, sharks/HepPer/HepPer_CM068647.1.bam, sharks/HepPer/HepPer_CM068648.1.bam, sharks/HepPer/HepPer_CM068649.1.bam, sharks/HepPer/HepPer_CM068650.1.bam, sharks/HepPer/HepPer_CM068651.1.bam, sharks/HepPer/HepPer_CM068652.1.bam, sharks/HepPer/HepPer_CM068653.1.bam, sharks/HepPer/HepPer_CM068654.1.bam, sharks/HepPer/HepPer_CM068655.1.bam, sharks/HepPer/HepPer_CM068656.1.bam, sharks/HepPer/HepPer_CM068657.1.bam, sharks/HepPer/HepPer_CM068658.1.bam, sharks/HepPer/HepPer_CM068659.1.bam, sharks/HepPer/HepPer_CM068660.1.bam, sharks/HepPer/HepPer_CM068661.1.bam, sharks/HepPer/HepPer_CM068662.1.bam, sharks/HepPer/HepPer_CM068663.1.bam, sharks/HepPer/HepPer_CM068664.1.bam, sharks/HepPer/HepPer_CM068665.1.bam, sharks/HepPer/HepPer_CM068666.1.bam, sharks/HepPer/HepPer_CM068667.1.bam, sharks/HepPer/HepPer_CM068668.1.bam, sharks/HepPer/HepPer_CM068669.1.bam, sharks/HepPer/HepPer_CM068670.1.bam, sharks/HepPer/HepPer_CM068671.1.bam, sharks/HepPer/HepPer_CM068672.1.bam, sharks/HepPer/HepPer_CM068673.1.bam, sharks/HepPer/HepPer_CM068674.1.bam, sharks/HepPer/HepPer_CM068675.1.bam, sharks/HepPer/HepPer_CM068676.1.bam, sharks/HepPer/HepPer_CM068677.1.bam, sharks/HepPer/HepPer_CM068678.1.bam, sharks/HepPer/HepPer_CM068679.1.bam, sharks/HepPer/HepPer_CM068680.1.bam, sharks/HepPer/HepPer_CM068681.1.bam, sharks/HepPer/HepPer_CM068682.1.bam
+    output: sharks/HepPer/temp/CM068637.1.vcf.gz, sharks/HepPer/temp/CM068638.1.vcf.gz, sharks/HepPer/temp/CM068639.1.vcf.gz, sharks/HepPer/temp/CM068640.1.vcf.gz, sharks/HepPer/temp/CM068641.1.vcf.gz, sharks/HepPer/temp/CM068642.1.vcf.gz, sharks/HepPer/temp/CM068643.1.vcf.gz, sharks/HepPer/temp/CM068644.1.vcf.gz, sharks/HepPer/temp/CM068645.1.vcf.gz, sharks/HepPer/temp/CM068646.1.vcf.gz, sharks/HepPer/temp/CM068647.1.vcf.gz, sharks/HepPer/temp/CM068648.1.vcf.gz, sharks/HepPer/temp/CM068649.1.vcf.gz, sharks/HepPer/temp/CM068650.1.vcf.gz, sharks/HepPer/temp/CM068651.1.vcf.gz, sharks/HepPer/temp/CM068652.1.vcf.gz, sharks/HepPer/temp/CM068653.1.vcf.gz, sharks/HepPer/temp/CM068654.1.vcf.gz, sharks/HepPer/temp/CM068655.1.vcf.gz, sharks/HepPer/temp/CM068656.1.vcf.gz, sharks/HepPer/temp/CM068657.1.vcf.gz, sharks/HepPer/temp/CM068658.1.vcf.gz, sharks/HepPer/temp/CM068659.1.vcf.gz, sharks/HepPer/temp/CM068660.1.vcf.gz, sharks/HepPer/temp/CM068661.1.vcf.gz, sharks/HepPer/temp/CM068662.1.vcf.gz, sharks/HepPer/temp/CM068663.1.vcf.gz, sharks/HepPer/temp/CM068664.1.vcf.gz, sharks/HepPer/temp/CM068665.1.vcf.gz, sharks/HepPer/temp/CM068666.1.vcf.gz, sharks/HepPer/temp/CM068667.1.vcf.gz, sharks/HepPer/temp/CM068668.1.vcf.gz, sharks/HepPer/temp/CM068669.1.vcf.gz, sharks/HepPer/temp/CM068670.1.vcf.gz, sharks/HepPer/temp/CM068671.1.vcf.gz, sharks/HepPer/temp/CM068672.1.vcf.gz, sharks/HepPer/temp/CM068673.1.vcf.gz, sharks/HepPer/temp/CM068674.1.vcf.gz, sharks/HepPer/temp/CM068675.1.vcf.gz, sharks/HepPer/temp/CM068676.1.vcf.gz, sharks/HepPer/temp/CM068677.1.vcf.gz, sharks/HepPer/temp/CM068678.1.vcf.gz, sharks/HepPer/temp/CM068679.1.vcf.gz, sharks/HepPer/temp/CM068680.1.vcf.gz, sharks/HepPer/temp/CM068681.1.vcf.gz, sharks/HepPer/temp/CM068682.1.vcf.gz
+    jobid: 298
+    reason: Missing output files: sharks/HepPer/temp/CM068669.1.vcf.gz, sharks/HepPer/temp/CM068655.1.vcf.gz, sharks/HepPer/temp/CM068665.1.vcf.gz, sharks/HepPer/temp/CM068658.1.vcf.gz, sharks/HepPer/temp/CM068653.1.vcf.gz, sharks/HepPer/temp/CM068654.1.vcf.gz, sharks/HepPer/temp/CM068644.1.vcf.gz, sharks/HepPer/temp/CM068659.1.vcf.gz, sharks/HepPer/temp/CM068679.1.vcf.gz, sharks/HepPer/temp/CM068638.1.vcf.gz, sharks/HepPer/temp/CM068640.1.vcf.gz, sharks/HepPer/temp/CM068645.1.vcf.gz, sharks/HepPer/temp/CM068677.1.vcf.gz, sharks/HepPer/temp/CM068678.1.vcf.gz, sharks/HepPer/temp/CM068675.1.vcf.gz, sharks/HepPer/temp/CM068643.1.vcf.gz, sharks/HepPer/temp/CM068642.1.vcf.gz, sharks/HepPer/temp/CM068661.1.vcf.gz, sharks/HepPer/temp/CM068649.1.vcf.gz, sharks/HepPer/temp/CM068670.1.vcf.gz, sharks/HepPer/temp/CM068646.1.vcf.gz, sharks/HepPer/temp/CM068663.1.vcf.gz, sharks/HepPer/temp/CM068656.1.vcf.gz, sharks/HepPer/temp/CM068671.1.vcf.gz, sharks/HepPer/temp/CM068672.1.vcf.gz, sharks/HepPer/temp/CM068660.1.vcf.gz, sharks/HepPer/temp/CM068674.1.vcf.gz, sharks/HepPer/temp/CM068651.1.vcf.gz, sharks/HepPer/temp/CM068667.1.vcf.gz, sharks/HepPer/temp/CM068680.1.vcf.gz, sharks/HepPer/temp/CM068657.1.vcf.gz, sharks/HepPer/temp/CM068666.1.vcf.gz, sharks/HepPer/temp/CM068641.1.vcf.gz, sharks/HepPer/temp/CM068650.1.vcf.gz, sharks/HepPer/temp/CM068673.1.vcf.gz, sharks/HepPer/temp/CM068637.1.vcf.gz, sharks/HepPer/temp/CM068662.1.vcf.gz, sharks/HepPer/temp/CM068652.1.vcf.gz, sharks/HepPer/temp/CM068681.1.vcf.gz, sharks/HepPer/temp/CM068664.1.vcf.gz, sharks/HepPer/temp/CM068647.1.vcf.gz, sharks/HepPer/temp/CM068648.1.vcf.gz, sharks/HepPer/temp/CM068682.1.vcf.gz, sharks/HepPer/temp/CM068639.1.vcf.gz, sharks/HepPer/temp/CM068676.1.vcf.gz, sharks/HepPer/temp/CM068668.1.vcf.gz; Input files updated by another job: sharks/HepPer/temp/CM068672.1.fasta, sharks/HepPer/temp/CM068655.1.fasta, sharks/HepPer/temp/CM068680.1.fasta, sharks/HepPer/temp/CM068678.1.fasta, sharks/HepPer/temp/CM068659.1.fasta, sharks/HepPer/temp/CM068663.1.fasta, sharks/HepPer/temp/CM068677.1.fasta, sharks/HepPer/temp/CM068641.1.fasta, sharks/HepPer/temp/CM068675.1.fasta, sharks/HepPer/temp/CM068671.1.fasta, sharks/HepPer/temp/CM068647.1.fasta, sharks/HepPer/temp/CM068645.1.fasta, sharks/HepPer/temp/CM068654.1.fasta, sharks/HepPer/temp/CM068664.1.fasta, sharks/HepPer/temp/CM068657.1.fasta, sharks/HepPer/temp/CM068640.1.fasta, sharks/HepPer/temp/CM068669.1.fasta, sharks/HepPer/temp/CM068660.1.fasta, sharks/HepPer/temp/CM068666.1.fasta, sharks/HepPer/temp/CM068665.1.fasta, sharks/HepPer/temp/CM068638.1.fasta, sharks/HepPer/temp/CM068653.1.fasta, sharks/HepPer/temp/CM068673.1.fasta, sharks/HepPer/temp/CM068682.1.fasta, sharks/HepPer/temp/CM068644.1.fasta, sharks/HepPer/temp/CM068667.1.fasta, sharks/HepPer/temp/CM068639.1.fasta, sharks/HepPer/temp/CM068651.1.fasta, sharks/HepPer/temp/CM068643.1.fasta, sharks/HepPer/temp/CM068646.1.fasta, sharks/HepPer/temp/CM068670.1.fasta, sharks/HepPer/temp/CM068662.1.fasta, sharks/HepPer/temp/CM068637.1.fasta, sharks/HepPer/temp/CM068642.1.fasta, sharks/HepPer/temp/CM068656.1.fasta, sharks/HepPer/temp/CM068649.1.fasta, sharks/HepPer/temp/CM068681.1.fasta, sharks/HepPer/temp/CM068652.1.fasta, sharks/HepPer/temp/CM068648.1.fasta, sharks/HepPer/temp/CM068679.1.fasta, sharks/HepPer/temp/CM068676.1.fasta, sharks/HepPer/temp/CM068661.1.fasta, sharks/HepPer/temp/CM068650.1.fasta, sharks/HepPer/temp/CM068668.1.fasta, sharks/HepPer/temp/CM068658.1.fasta, sharks/HepPer/temp/CM068674.1.fasta
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=9086, disk_mib=8666, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 298 has been submitted with SLURM jobid 9375513 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/9375513.log).
+[Wed May 14 16:52:44 2025]
+Error in rule PILEUP_VARIANTS:
+    message: SLURM-job '9375513' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 298
+    input: sharks/HepPer/temp/CM068637.1.fasta, sharks/HepPer/temp/CM068638.1.fasta, sharks/HepPer/temp/CM068639.1.fasta, sharks/HepPer/temp/CM068640.1.fasta, sharks/HepPer/temp/CM068641.1.fasta, sharks/HepPer/temp/CM068642.1.fasta, sharks/HepPer/temp/CM068643.1.fasta, sharks/HepPer/temp/CM068644.1.fasta, sharks/HepPer/temp/CM068645.1.fasta, sharks/HepPer/temp/CM068646.1.fasta, sharks/HepPer/temp/CM068647.1.fasta, sharks/HepPer/temp/CM068648.1.fasta, sharks/HepPer/temp/CM068649.1.fasta, sharks/HepPer/temp/CM068650.1.fasta, sharks/HepPer/temp/CM068651.1.fasta, sharks/HepPer/temp/CM068652.1.fasta, sharks/HepPer/temp/CM068653.1.fasta, sharks/HepPer/temp/CM068654.1.fasta, sharks/HepPer/temp/CM068655.1.fasta, sharks/HepPer/temp/CM068656.1.fasta, sharks/HepPer/temp/CM068657.1.fasta, sharks/HepPer/temp/CM068658.1.fasta, sharks/HepPer/temp/CM068659.1.fasta, sharks/HepPer/temp/CM068660.1.fasta, sharks/HepPer/temp/CM068661.1.fasta, sharks/HepPer/temp/CM068662.1.fasta, sharks/HepPer/temp/CM068663.1.fasta, sharks/HepPer/temp/CM068664.1.fasta, sharks/HepPer/temp/CM068665.1.fasta, sharks/HepPer/temp/CM068666.1.fasta, sharks/HepPer/temp/CM068667.1.fasta, sharks/HepPer/temp/CM068668.1.fasta, sharks/HepPer/temp/CM068669.1.fasta, sharks/HepPer/temp/CM068670.1.fasta, sharks/HepPer/temp/CM068671.1.fasta, sharks/HepPer/temp/CM068672.1.fasta, sharks/HepPer/temp/CM068673.1.fasta, sharks/HepPer/temp/CM068674.1.fasta, sharks/HepPer/temp/CM068675.1.fasta, sharks/HepPer/temp/CM068676.1.fasta, sharks/HepPer/temp/CM068677.1.fasta, sharks/HepPer/temp/CM068678.1.fasta, sharks/HepPer/temp/CM068679.1.fasta, sharks/HepPer/temp/CM068680.1.fasta, sharks/HepPer/temp/CM068681.1.fasta, sharks/HepPer/temp/CM068682.1.fasta, sharks/HepPer/HepPer_CM068637.1.bam, sharks/HepPer/HepPer_CM068638.1.bam, sharks/HepPer/HepPer_CM068639.1.bam, sharks/HepPer/HepPer_CM068640.1.bam, sharks/HepPer/HepPer_CM068641.1.bam, sharks/HepPer/HepPer_CM068642.1.bam, sharks/HepPer/HepPer_CM068643.1.bam, sharks/HepPer/HepPer_CM068644.1.bam, sharks/HepPer/HepPer_CM068645.1.bam, sharks/HepPer/HepPer_CM068646.1.bam, sharks/HepPer/HepPer_CM068647.1.bam, sharks/HepPer/HepPer_CM068648.1.bam, sharks/HepPer/HepPer_CM068649.1.bam, sharks/HepPer/HepPer_CM068650.1.bam, sharks/HepPer/HepPer_CM068651.1.bam, sharks/HepPer/HepPer_CM068652.1.bam, sharks/HepPer/HepPer_CM068653.1.bam, sharks/HepPer/HepPer_CM068654.1.bam, sharks/HepPer/HepPer_CM068655.1.bam, sharks/HepPer/HepPer_CM068656.1.bam, sharks/HepPer/HepPer_CM068657.1.bam, sharks/HepPer/HepPer_CM068658.1.bam, sharks/HepPer/HepPer_CM068659.1.bam, sharks/HepPer/HepPer_CM068660.1.bam, sharks/HepPer/HepPer_CM068661.1.bam, sharks/HepPer/HepPer_CM068662.1.bam, sharks/HepPer/HepPer_CM068663.1.bam, sharks/HepPer/HepPer_CM068664.1.bam, sharks/HepPer/HepPer_CM068665.1.bam, sharks/HepPer/HepPer_CM068666.1.bam, sharks/HepPer/HepPer_CM068667.1.bam, sharks/HepPer/HepPer_CM068668.1.bam, sharks/HepPer/HepPer_CM068669.1.bam, sharks/HepPer/HepPer_CM068670.1.bam, sharks/HepPer/HepPer_CM068671.1.bam, sharks/HepPer/HepPer_CM068672.1.bam, sharks/HepPer/HepPer_CM068673.1.bam, sharks/HepPer/HepPer_CM068674.1.bam, sharks/HepPer/HepPer_CM068675.1.bam, sharks/HepPer/HepPer_CM068676.1.bam, sharks/HepPer/HepPer_CM068677.1.bam, sharks/HepPer/HepPer_CM068678.1.bam, sharks/HepPer/HepPer_CM068679.1.bam, sharks/HepPer/HepPer_CM068680.1.bam, sharks/HepPer/HepPer_CM068681.1.bam, sharks/HepPer/HepPer_CM068682.1.bam
+    output: sharks/HepPer/temp/CM068637.1.vcf.gz, sharks/HepPer/temp/CM068638.1.vcf.gz, sharks/HepPer/temp/CM068639.1.vcf.gz, sharks/HepPer/temp/CM068640.1.vcf.gz, sharks/HepPer/temp/CM068641.1.vcf.gz, sharks/HepPer/temp/CM068642.1.vcf.gz, sharks/HepPer/temp/CM068643.1.vcf.gz, sharks/HepPer/temp/CM068644.1.vcf.gz, sharks/HepPer/temp/CM068645.1.vcf.gz, sharks/HepPer/temp/CM068646.1.vcf.gz, sharks/HepPer/temp/CM068647.1.vcf.gz, sharks/HepPer/temp/CM068648.1.vcf.gz, sharks/HepPer/temp/CM068649.1.vcf.gz, sharks/HepPer/temp/CM068650.1.vcf.gz, sharks/HepPer/temp/CM068651.1.vcf.gz, sharks/HepPer/temp/CM068652.1.vcf.gz, sharks/HepPer/temp/CM068653.1.vcf.gz, sharks/HepPer/temp/CM068654.1.vcf.gz, sharks/HepPer/temp/CM068655.1.vcf.gz, sharks/HepPer/temp/CM068656.1.vcf.gz, sharks/HepPer/temp/CM068657.1.vcf.gz, sharks/HepPer/temp/CM068658.1.vcf.gz, sharks/HepPer/temp/CM068659.1.vcf.gz, sharks/HepPer/temp/CM068660.1.vcf.gz, sharks/HepPer/temp/CM068661.1.vcf.gz, sharks/HepPer/temp/CM068662.1.vcf.gz, sharks/HepPer/temp/CM068663.1.vcf.gz, sharks/HepPer/temp/CM068664.1.vcf.gz, sharks/HepPer/temp/CM068665.1.vcf.gz, sharks/HepPer/temp/CM068666.1.vcf.gz, sharks/HepPer/temp/CM068667.1.vcf.gz, sharks/HepPer/temp/CM068668.1.vcf.gz, sharks/HepPer/temp/CM068669.1.vcf.gz, sharks/HepPer/temp/CM068670.1.vcf.gz, sharks/HepPer/temp/CM068671.1.vcf.gz, sharks/HepPer/temp/CM068672.1.vcf.gz, sharks/HepPer/temp/CM068673.1.vcf.gz, sharks/HepPer/temp/CM068674.1.vcf.gz, sharks/HepPer/temp/CM068675.1.vcf.gz, sharks/HepPer/temp/CM068676.1.vcf.gz, sharks/HepPer/temp/CM068677.1.vcf.gz, sharks/HepPer/temp/CM068678.1.vcf.gz, sharks/HepPer/temp/CM068679.1.vcf.gz, sharks/HepPer/temp/CM068680.1.vcf.gz, sharks/HepPer/temp/CM068681.1.vcf.gz, sharks/HepPer/temp/CM068682.1.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/9375513.log (check log file(s) for error details)
+    shell:
+        
+        bcftools mpileup -f sharks/HepPer/temp/CM068637.1.fasta sharks/HepPer/temp/CM068638.1.fasta sharks/HepPer/temp/CM068639.1.fasta sharks/HepPer/temp/CM068640.1.fasta sharks/HepPer/temp/CM068641.1.fasta sharks/HepPer/temp/CM068642.1.fasta sharks/HepPer/temp/CM068643.1.fasta sharks/HepPer/temp/CM068644.1.fasta sharks/HepPer/temp/CM068645.1.fasta sharks/HepPer/temp/CM068646.1.fasta sharks/HepPer/temp/CM068647.1.fasta sharks/HepPer/temp/CM068648.1.fasta sharks/HepPer/temp/CM068649.1.fasta sharks/HepPer/temp/CM068650.1.fasta sharks/HepPer/temp/CM068651.1.fasta sharks/HepPer/temp/CM068652.1.fasta sharks/HepPer/temp/CM068653.1.fasta sharks/HepPer/temp/CM068654.1.fasta sharks/HepPer/temp/CM068655.1.fasta sharks/HepPer/temp/CM068656.1.fasta sharks/HepPer/temp/CM068657.1.fasta sharks/HepPer/temp/CM068658.1.fasta sharks/HepPer/temp/CM068659.1.fasta sharks/HepPer/temp/CM068660.1.fasta sharks/HepPer/temp/CM068661.1.fasta sharks/HepPer/temp/CM068662.1.fasta sharks/HepPer/temp/CM068663.1.fasta sharks/HepPer/temp/CM068664.1.fasta sharks/HepPer/temp/CM068665.1.fasta sharks/HepPer/temp/CM068666.1.fasta sharks/HepPer/temp/CM068667.1.fasta sharks/HepPer/temp/CM068668.1.fasta sharks/HepPer/temp/CM068669.1.fasta sharks/HepPer/temp/CM068670.1.fasta sharks/HepPer/temp/CM068671.1.fasta sharks/HepPer/temp/CM068672.1.fasta sharks/HepPer/temp/CM068673.1.fasta sharks/HepPer/temp/CM068674.1.fasta sharks/HepPer/temp/CM068675.1.fasta sharks/HepPer/temp/CM068676.1.fasta sharks/HepPer/temp/CM068677.1.fasta sharks/HepPer/temp/CM068678.1.fasta sharks/HepPer/temp/CM068679.1.fasta sharks/HepPer/temp/CM068680.1.fasta sharks/HepPer/temp/CM068681.1.fasta sharks/HepPer/temp/CM068682.1.fasta sharks/HepPer/HepPer_CM068637.1.bam sharks/HepPer/HepPer_CM068638.1.bam sharks/HepPer/HepPer_CM068639.1.bam sharks/HepPer/HepPer_CM068640.1.bam sharks/HepPer/HepPer_CM068641.1.bam sharks/HepPer/HepPer_CM068642.1.bam sharks/HepPer/HepPer_CM068643.1.bam sharks/HepPer/HepPer_CM068644.1.bam sharks/HepPer/HepPer_CM068645.1.bam sharks/HepPer/HepPer_CM068646.1.bam sharks/HepPer/HepPer_CM068647.1.bam sharks/HepPer/HepPer_CM068648.1.bam sharks/HepPer/HepPer_CM068649.1.bam sharks/HepPer/HepPer_CM068650.1.bam sharks/HepPer/HepPer_CM068651.1.bam sharks/HepPer/HepPer_CM068652.1.bam sharks/HepPer/HepPer_CM068653.1.bam sharks/HepPer/HepPer_CM068654.1.bam sharks/HepPer/HepPer_CM068655.1.bam sharks/HepPer/HepPer_CM068656.1.bam sharks/HepPer/HepPer_CM068657.1.bam sharks/HepPer/HepPer_CM068658.1.bam sharks/HepPer/HepPer_CM068659.1.bam sharks/HepPer/HepPer_CM068660.1.bam sharks/HepPer/HepPer_CM068661.1.bam sharks/HepPer/HepPer_CM068662.1.bam sharks/HepPer/HepPer_CM068663.1.bam sharks/HepPer/HepPer_CM068664.1.bam sharks/HepPer/HepPer_CM068665.1.bam sharks/HepPer/HepPer_CM068666.1.bam sharks/HepPer/HepPer_CM068667.1.bam sharks/HepPer/HepPer_CM068668.1.bam sharks/HepPer/HepPer_CM068669.1.bam sharks/HepPer/HepPer_CM068670.1.bam sharks/HepPer/HepPer_CM068671.1.bam sharks/HepPer/HepPer_CM068672.1.bam sharks/HepPer/HepPer_CM068673.1.bam sharks/HepPer/HepPer_CM068674.1.bam sharks/HepPer/HepPer_CM068675.1.bam sharks/HepPer/HepPer_CM068676.1.bam sharks/HepPer/HepPer_CM068677.1.bam sharks/HepPer/HepPer_CM068678.1.bam sharks/HepPer/HepPer_CM068679.1.bam sharks/HepPer/HepPer_CM068680.1.bam sharks/HepPer/HepPer_CM068681.1.bam sharks/HepPer/HepPer_CM068682.1.bam --config pacbio-ccs -Oz -o sharks/HepPer/temp/CM068637.1.vcf.gz sharks/HepPer/temp/CM068638.1.vcf.gz sharks/HepPer/temp/CM068639.1.vcf.gz sharks/HepPer/temp/CM068640.1.vcf.gz sharks/HepPer/temp/CM068641.1.vcf.gz sharks/HepPer/temp/CM068642.1.vcf.gz sharks/HepPer/temp/CM068643.1.vcf.gz sharks/HepPer/temp/CM068644.1.vcf.gz sharks/HepPer/temp/CM068645.1.vcf.gz sharks/HepPer/temp/CM068646.1.vcf.gz sharks/HepPer/temp/CM068647.1.vcf.gz sharks/HepPer/temp/CM068648.1.vcf.gz sharks/HepPer/temp/CM068649.1.vcf.gz sharks/HepPer/temp/CM068650.1.vcf.gz sharks/HepPer/temp/CM068651.1.vcf.gz sharks/HepPer/temp/CM068652.1.vcf.gz sharks/HepPer/temp/CM068653.1.vcf.gz sharks/HepPer/temp/CM068654.1.vcf.gz sharks/HepPer/temp/CM068655.1.vcf.gz sharks/HepPer/temp/CM068656.1.vcf.gz sharks/HepPer/temp/CM068657.1.vcf.gz sharks/HepPer/temp/CM068658.1.vcf.gz sharks/HepPer/temp/CM068659.1.vcf.gz sharks/HepPer/temp/CM068660.1.vcf.gz sharks/HepPer/temp/CM068661.1.vcf.gz sharks/HepPer/temp/CM068662.1.vcf.gz sharks/HepPer/temp/CM068663.1.vcf.gz sharks/HepPer/temp/CM068664.1.vcf.gz sharks/HepPer/temp/CM068665.1.vcf.gz sharks/HepPer/temp/CM068666.1.vcf.gz sharks/HepPer/temp/CM068667.1.vcf.gz sharks/HepPer/temp/CM068668.1.vcf.gz sharks/HepPer/temp/CM068669.1.vcf.gz sharks/HepPer/temp/CM068670.1.vcf.gz sharks/HepPer/temp/CM068671.1.vcf.gz sharks/HepPer/temp/CM068672.1.vcf.gz sharks/HepPer/temp/CM068673.1.vcf.gz sharks/HepPer/temp/CM068674.1.vcf.gz sharks/HepPer/temp/CM068675.1.vcf.gz sharks/HepPer/temp/CM068676.1.vcf.gz sharks/HepPer/temp/CM068677.1.vcf.gz sharks/HepPer/temp/CM068678.1.vcf.gz sharks/HepPer/temp/CM068679.1.vcf.gz sharks/HepPer/temp/CM068680.1.vcf.gz sharks/HepPer/temp/CM068681.1.vcf.gz sharks/HepPer/temp/CM068682.1.vcf.gz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9375513
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-05-14T161423.145978.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

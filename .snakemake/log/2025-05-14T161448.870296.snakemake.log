@@ -1,0 +1,478 @@
+host: login-p-3
+Building DAG of jobs...
+SLURM run ID: 3d764fc6-bec4-44b5-af80-e20a782d97e9
+Using shell: /usr/bin/bash
+Provided remote nodes: 25
+Job stats:
+job                            count
+---------------------------  -------
+BAM_CALLER_BED                    35
+BGZIP_VCF                         35
+BOOTSTRAPPING_MULTIHET_FILE        1
+CALC_HET_PER_CHR                   6
+CALC_HET_WHOLE_GENOME              1
+CALL_PLOIDY                       35
+COMPILE_HET                        1
+FROH_PER_AUT_CHR                  21
+GENERATE_MASK                     35
+GENERATE_MULTIHETSEP              35
+INDEL_MASKER                      35
+MAIN_MULTIHETSEP                  35
+PILEUP_VARIANTS                    1
+PLOT_HET_PER_CHR                  35
+PLOT_WHOLE_HET                     1
+Plot_ROH                           1
+REMOVE_INDELS                     35
+RESTRUCTURE                       35
+all                                1
+total                            384
+
+Select jobs to execute...
+Execute 25 jobs...
+
+[Wed May 14 16:14:55 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HypSab/HypSab_ROH_Results.csv, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/chrom_lists/GCF_030144855.1_chroms.txt, sharks/HypSab/temp/20250425_NC_082738.1_Var_Only.txt
+    output: sharks/HypSab/20250425_NC_082738.1_GCF_030144855.1_FROH.txt
+    jobid: 150
+    reason: Missing output files: sharks/HypSab/20250425_NC_082738.1_GCF_030144855.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082738.1, REF_NAME=GCF_030144855.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 150 has been submitted with SLURM jobid 9374181 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HypSab_20250425_NC_082738.1_GCF_030144855.1/9374181.log).
+
+[Wed May 14 16:14:56 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HypSab/HypSab_ROH_Results.csv, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/chrom_lists/GCF_030144855.1_chroms.txt, sharks/HypSab/temp/20250425_NC_082724.1_Var_Only.txt
+    output: sharks/HypSab/20250425_NC_082724.1_GCF_030144855.1_FROH.txt
+    jobid: 136
+    reason: Missing output files: sharks/HypSab/20250425_NC_082724.1_GCF_030144855.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082724.1, REF_NAME=GCF_030144855.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 136 has been submitted with SLURM jobid 9374182 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HypSab_20250425_NC_082724.1_GCF_030144855.1/9374182.log).
+
+[Wed May 14 16:14:58 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HypSab/temp/HypSab_Var_Only.txt, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/HypSab/HypSab_ROH_Results.csv
+    output: sharks/HypSab/20250425_NC_082738.1_het.txt
+    jobid: 186
+    reason: Missing output files: sharks/HypSab/20250425_NC_082738.1_het.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082738.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=2930, disk_mib=2795, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 186 has been submitted with SLURM jobid 9374183 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HypSab_20250425_NC_082738.1/9374183.log).
+
+[Wed May 14 16:14:58 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HypSab/HypSab_ROH_Results.csv, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/chrom_lists/GCF_030144855.1_chroms.txt, sharks/HypSab/temp/20250425_NC_082718.1_Var_Only.txt
+    output: sharks/HypSab/20250425_NC_082718.1_GCF_030144855.1_FROH.txt
+    jobid: 130
+    reason: Missing output files: sharks/HypSab/20250425_NC_082718.1_GCF_030144855.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082718.1, REF_NAME=GCF_030144855.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 130 has been submitted with SLURM jobid 9374184 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HypSab_20250425_NC_082718.1_GCF_030144855.1/9374184.log).
+
+[Wed May 14 16:14:58 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HypSab/HypSab_ROH_Results.csv, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/chrom_lists/GCF_030144855.1_chroms.txt, sharks/HypSab/temp/20250425_NC_082739.1_Var_Only.txt
+    output: sharks/HypSab/20250425_NC_082739.1_GCF_030144855.1_FROH.txt
+    jobid: 151
+    reason: Missing output files: sharks/HypSab/20250425_NC_082739.1_GCF_030144855.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082739.1, REF_NAME=GCF_030144855.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 151 has been submitted with SLURM jobid 9374185 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HypSab_20250425_NC_082739.1_GCF_030144855.1/9374185.log).
+
+[Wed May 14 16:14:58 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HypSab/HypSab_ROH_Results.csv, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/chrom_lists/GCF_030144855.1_chroms.txt, sharks/HypSab/temp/20250425_NC_082732.1_Var_Only.txt
+    output: sharks/HypSab/20250425_NC_082732.1_GCF_030144855.1_FROH.txt
+    jobid: 144
+    reason: Missing output files: sharks/HypSab/20250425_NC_082732.1_GCF_030144855.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082732.1, REF_NAME=GCF_030144855.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 144 has been submitted with SLURM jobid 9374186 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HypSab_20250425_NC_082732.1_GCF_030144855.1/9374186.log).
+
+[Wed May 14 16:15:00 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HypSab/HypSab_ROH_Results.csv, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/chrom_lists/GCF_030144855.1_chroms.txt, sharks/HypSab/temp/20250425_NC_082725.1_Var_Only.txt
+    output: sharks/HypSab/20250425_NC_082725.1_GCF_030144855.1_FROH.txt
+    jobid: 137
+    reason: Missing output files: sharks/HypSab/20250425_NC_082725.1_GCF_030144855.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082725.1, REF_NAME=GCF_030144855.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 137 has been submitted with SLURM jobid 9374187 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HypSab_20250425_NC_082725.1_GCF_030144855.1/9374187.log).
+
+[Wed May 14 16:15:00 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HypSab/HypSab_ROH_Results.csv, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/chrom_lists/GCF_030144855.1_chroms.txt, sharks/HypSab/temp/20250425_NC_082719.1_Var_Only.txt
+    output: sharks/HypSab/20250425_NC_082719.1_GCF_030144855.1_FROH.txt
+    jobid: 131
+    reason: Missing output files: sharks/HypSab/20250425_NC_082719.1_GCF_030144855.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082719.1, REF_NAME=GCF_030144855.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 131 has been submitted with SLURM jobid 9374188 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HypSab_20250425_NC_082719.1_GCF_030144855.1/9374188.log).
+
+[Wed May 14 16:15:01 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HypSab/temp/HypSab_Var_Only.txt, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/HypSab/HypSab_ROH_Results.csv
+    output: sharks/HypSab/20250425_NC_082739.1_het.txt
+    jobid: 187
+    reason: Missing output files: sharks/HypSab/20250425_NC_082739.1_het.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082739.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=2930, disk_mib=2795, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 187 has been submitted with SLURM jobid 9374189 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HypSab_20250425_NC_082739.1/9374189.log).
+
+[Wed May 14 16:15:01 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HypSab/HypSab_ROH_Results.csv, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/chrom_lists/GCF_030144855.1_chroms.txt, sharks/HypSab/temp/20250425_NC_082733.1_Var_Only.txt
+    output: sharks/HypSab/20250425_NC_082733.1_GCF_030144855.1_FROH.txt
+    jobid: 145
+    reason: Missing output files: sharks/HypSab/20250425_NC_082733.1_GCF_030144855.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082733.1, REF_NAME=GCF_030144855.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 145 has been submitted with SLURM jobid 9374190 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HypSab_20250425_NC_082733.1_GCF_030144855.1/9374190.log).
+
+[Wed May 14 16:15:03 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HypSab/HypSab_ROH_Results.csv, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/chrom_lists/GCF_030144855.1_chroms.txt, sharks/HypSab/temp/20250425_NC_082726.1_Var_Only.txt
+    output: sharks/HypSab/20250425_NC_082726.1_GCF_030144855.1_FROH.txt
+    jobid: 138
+    reason: Missing output files: sharks/HypSab/20250425_NC_082726.1_GCF_030144855.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082726.1, REF_NAME=GCF_030144855.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 138 has been submitted with SLURM jobid 9374192 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HypSab_20250425_NC_082726.1_GCF_030144855.1/9374192.log).
+
+[Wed May 14 16:15:03 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HypSab/HypSab_ROH_Results.csv, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/chrom_lists/GCF_030144855.1_chroms.txt, sharks/HypSab/temp/20250425_NC_082720.1_Var_Only.txt
+    output: sharks/HypSab/20250425_NC_082720.1_GCF_030144855.1_FROH.txt
+    jobid: 132
+    reason: Missing output files: sharks/HypSab/20250425_NC_082720.1_GCF_030144855.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082720.1, REF_NAME=GCF_030144855.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 132 has been submitted with SLURM jobid 9374193 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HypSab_20250425_NC_082720.1_GCF_030144855.1/9374193.log).
+
+[Wed May 14 16:15:03 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HypSab/temp/HypSab_Var_Only.txt, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/HypSab/HypSab_ROH_Results.csv
+    output: sharks/HypSab/20250425_NC_082740.1_het.txt
+    jobid: 188
+    reason: Missing output files: sharks/HypSab/20250425_NC_082740.1_het.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082740.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=2930, disk_mib=2795, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 188 has been submitted with SLURM jobid 9374194 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HypSab_20250425_NC_082740.1/9374194.log).
+
+[Wed May 14 16:15:03 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HypSab/HypSab_ROH_Results.csv, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/chrom_lists/GCF_030144855.1_chroms.txt, sharks/HypSab/temp/20250425_NC_082713.1_Var_Only.txt
+    output: sharks/HypSab/20250425_NC_082713.1_GCF_030144855.1_FROH.txt
+    jobid: 125
+    reason: Missing output files: sharks/HypSab/20250425_NC_082713.1_GCF_030144855.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082713.1, REF_NAME=GCF_030144855.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 125 has been submitted with SLURM jobid 9374195 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HypSab_20250425_NC_082713.1_GCF_030144855.1/9374195.log).
+
+[Wed May 14 16:15:06 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HypSab/HypSab_ROH_Results.csv, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/chrom_lists/GCF_030144855.1_chroms.txt, sharks/HypSab/temp/20250425_NC_082706.1_Var_Only.txt
+    output: sharks/HypSab/20250425_NC_082706.1_GCF_030144855.1_FROH.txt
+    jobid: 118
+    reason: Missing output files: sharks/HypSab/20250425_NC_082706.1_GCF_030144855.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082706.1, REF_NAME=GCF_030144855.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 118 has been submitted with SLURM jobid 9374196 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HypSab_20250425_NC_082706.1_GCF_030144855.1/9374196.log).
+
+[Wed May 14 16:15:06 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HypSab/HypSab_ROH_Results.csv, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/chrom_lists/GCF_030144855.1_chroms.txt, sharks/HypSab/temp/20250425_NC_082734.1_Var_Only.txt
+    output: sharks/HypSab/20250425_NC_082734.1_GCF_030144855.1_FROH.txt
+    jobid: 146
+    reason: Missing output files: sharks/HypSab/20250425_NC_082734.1_GCF_030144855.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082734.1, REF_NAME=GCF_030144855.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 146 has been submitted with SLURM jobid 9374197 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HypSab_20250425_NC_082734.1_GCF_030144855.1/9374197.log).
+
+[Wed May 14 16:15:06 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HypSab/temp/HypSab_Var_Only.txt, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/HypSab/HypSab_ROH_Results.csv
+    output: sharks/HypSab/20250425_NC_082723.1_het.txt
+    jobid: 171
+    reason: Missing output files: sharks/HypSab/20250425_NC_082723.1_het.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082723.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=2930, disk_mib=2795, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 171 has been submitted with SLURM jobid 9374198 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HypSab_20250425_NC_082723.1/9374198.log).
+
+[Wed May 14 16:15:06 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HypSab/temp/HypSab_Var_Only.txt, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/HypSab/HypSab_ROH_Results.csv
+    output: sharks/HypSab/20250425_NC_082735.1_het.txt
+    jobid: 183
+    reason: Missing output files: sharks/HypSab/20250425_NC_082735.1_het.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082735.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=2930, disk_mib=2795, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 183 has been submitted with SLURM jobid 9374199 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HypSab_20250425_NC_082735.1/9374199.log).
+
+[Wed May 14 16:15:09 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HypSab/HypSab_ROH_Results.csv, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/chrom_lists/GCF_030144855.1_chroms.txt, sharks/HypSab/temp/20250425_NC_082716.1_Var_Only.txt
+    output: sharks/HypSab/20250425_NC_082716.1_GCF_030144855.1_FROH.txt
+    jobid: 128
+    reason: Missing output files: sharks/HypSab/20250425_NC_082716.1_GCF_030144855.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082716.1, REF_NAME=GCF_030144855.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 128 has been submitted with SLURM jobid 9374200 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HypSab_20250425_NC_082716.1_GCF_030144855.1/9374200.log).
+
+[Wed May 14 16:15:11 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HypSab/temp/HypSab_Var_Only.txt, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/HypSab/HypSab_ROH_Results.csv
+    output: sharks/HypSab/20250425_NC_082708.1_het.txt
+    jobid: 156
+    reason: Missing output files: sharks/HypSab/20250425_NC_082708.1_het.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082708.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=2930, disk_mib=2795, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 156 has been submitted with SLURM jobid 9374201 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HypSab_20250425_NC_082708.1/9374201.log).
+
+[Wed May 14 16:15:11 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HypSab/HypSab_ROH_Results.csv, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/chrom_lists/GCF_030144855.1_chroms.txt, sharks/HypSab/temp/20250425_NC_082737.1_Var_Only.txt
+    output: sharks/HypSab/20250425_NC_082737.1_GCF_030144855.1_FROH.txt
+    jobid: 149
+    reason: Missing output files: sharks/HypSab/20250425_NC_082737.1_GCF_030144855.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082737.1, REF_NAME=GCF_030144855.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 149 has been submitted with SLURM jobid 9374202 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HypSab_20250425_NC_082737.1_GCF_030144855.1/9374202.log).
+
+[Wed May 14 16:15:11 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HypSab/HypSab_ROH_Results.csv, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/chrom_lists/GCF_030144855.1_chroms.txt, sharks/HypSab/temp/20250425_NC_082730.1_Var_Only.txt
+    output: sharks/HypSab/20250425_NC_082730.1_GCF_030144855.1_FROH.txt
+    jobid: 142
+    reason: Missing output files: sharks/HypSab/20250425_NC_082730.1_GCF_030144855.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082730.1, REF_NAME=GCF_030144855.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 142 has been submitted with SLURM jobid 9374203 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HypSab_20250425_NC_082730.1_GCF_030144855.1/9374203.log).
+
+[Wed May 14 16:15:14 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HypSab/HypSab_ROH_Results.csv, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/chrom_lists/GCF_030144855.1_chroms.txt, sharks/HypSab/temp/20250425_NC_082717.1_Var_Only.txt
+    output: sharks/HypSab/20250425_NC_082717.1_GCF_030144855.1_FROH.txt
+    jobid: 129
+    reason: Missing output files: sharks/HypSab/20250425_NC_082717.1_GCF_030144855.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082717.1, REF_NAME=GCF_030144855.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 129 has been submitted with SLURM jobid 9374205 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HypSab_20250425_NC_082717.1_GCF_030144855.1/9374205.log).
+
+[Wed May 14 16:15:14 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HypSab/HypSab_ROH_Results.csv, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/chrom_lists/GCF_030144855.1_chroms.txt, sharks/HypSab/temp/20250425_NC_082710.1_Var_Only.txt
+    output: sharks/HypSab/20250425_NC_082710.1_GCF_030144855.1_FROH.txt
+    jobid: 122
+    reason: Missing output files: sharks/HypSab/20250425_NC_082710.1_GCF_030144855.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425, CHR=NC_082710.1, REF_NAME=GCF_030144855.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 122 has been submitted with SLURM jobid 9374206 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HypSab_20250425_NC_082710.1_GCF_030144855.1/9374206.log).
+
+[Wed May 14 16:15:14 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HypSab/temp/NC_082706.1.fasta, sharks/HypSab/temp/NC_082707.1.fasta, sharks/HypSab/temp/NC_082708.1.fasta, sharks/HypSab/temp/NC_082709.1.fasta, sharks/HypSab/temp/NC_082710.1.fasta, sharks/HypSab/temp/NC_082711.1.fasta, sharks/HypSab/temp/NC_082712.1.fasta, sharks/HypSab/temp/NC_082713.1.fasta, sharks/HypSab/temp/NC_082714.1.fasta, sharks/HypSab/temp/NC_082715.1.fasta, sharks/HypSab/temp/NC_082716.1.fasta, sharks/HypSab/temp/NC_082717.1.fasta, sharks/HypSab/temp/NC_082718.1.fasta, sharks/HypSab/temp/NC_082719.1.fasta, sharks/HypSab/temp/NC_082720.1.fasta, sharks/HypSab/temp/NC_082721.1.fasta, sharks/HypSab/temp/NC_082722.1.fasta, sharks/HypSab/temp/NC_082723.1.fasta, sharks/HypSab/temp/NC_082724.1.fasta, sharks/HypSab/temp/NC_082725.1.fasta, sharks/HypSab/temp/NC_082726.1.fasta, sharks/HypSab/temp/NC_082727.1.fasta, sharks/HypSab/temp/NC_082728.1.fasta, sharks/HypSab/temp/NC_082729.1.fasta, sharks/HypSab/temp/NC_082730.1.fasta, sharks/HypSab/temp/NC_082731.1.fasta, sharks/HypSab/temp/NC_082732.1.fasta, sharks/HypSab/temp/NC_082733.1.fasta, sharks/HypSab/temp/NC_082734.1.fasta, sharks/HypSab/temp/NC_082735.1.fasta, sharks/HypSab/temp/NC_082736.1.fasta, sharks/HypSab/temp/NC_082737.1.fasta, sharks/HypSab/temp/NC_082738.1.fasta, sharks/HypSab/temp/NC_082739.1.fasta, sharks/HypSab/temp/NC_082740.1.fasta, sharks/HypSab/HypSab_NC_082706.1.bam, sharks/HypSab/HypSab_NC_082707.1.bam, sharks/HypSab/HypSab_NC_082708.1.bam, sharks/HypSab/HypSab_NC_082709.1.bam, sharks/HypSab/HypSab_NC_082710.1.bam, sharks/HypSab/HypSab_NC_082711.1.bam, sharks/HypSab/HypSab_NC_082712.1.bam, sharks/HypSab/HypSab_NC_082713.1.bam, sharks/HypSab/HypSab_NC_082714.1.bam, sharks/HypSab/HypSab_NC_082715.1.bam, sharks/HypSab/HypSab_NC_082716.1.bam, sharks/HypSab/HypSab_NC_082717.1.bam, sharks/HypSab/HypSab_NC_082718.1.bam, sharks/HypSab/HypSab_NC_082719.1.bam, sharks/HypSab/HypSab_NC_082720.1.bam, sharks/HypSab/HypSab_NC_082721.1.bam, sharks/HypSab/HypSab_NC_082722.1.bam, sharks/HypSab/HypSab_NC_082723.1.bam, sharks/HypSab/HypSab_NC_082724.1.bam, sharks/HypSab/HypSab_NC_082725.1.bam, sharks/HypSab/HypSab_NC_082726.1.bam, sharks/HypSab/HypSab_NC_082727.1.bam, sharks/HypSab/HypSab_NC_082728.1.bam, sharks/HypSab/HypSab_NC_082729.1.bam, sharks/HypSab/HypSab_NC_082730.1.bam, sharks/HypSab/HypSab_NC_082731.1.bam, sharks/HypSab/HypSab_NC_082732.1.bam, sharks/HypSab/HypSab_NC_082733.1.bam, sharks/HypSab/HypSab_NC_082734.1.bam, sharks/HypSab/HypSab_NC_082735.1.bam, sharks/HypSab/HypSab_NC_082736.1.bam, sharks/HypSab/HypSab_NC_082737.1.bam, sharks/HypSab/HypSab_NC_082738.1.bam, sharks/HypSab/HypSab_NC_082739.1.bam, sharks/HypSab/HypSab_NC_082740.1.bam
+    output: sharks/HypSab/temp/NC_082706.1.vcf.gz, sharks/HypSab/temp/NC_082707.1.vcf.gz, sharks/HypSab/temp/NC_082708.1.vcf.gz, sharks/HypSab/temp/NC_082709.1.vcf.gz, sharks/HypSab/temp/NC_082710.1.vcf.gz, sharks/HypSab/temp/NC_082711.1.vcf.gz, sharks/HypSab/temp/NC_082712.1.vcf.gz, sharks/HypSab/temp/NC_082713.1.vcf.gz, sharks/HypSab/temp/NC_082714.1.vcf.gz, sharks/HypSab/temp/NC_082715.1.vcf.gz, sharks/HypSab/temp/NC_082716.1.vcf.gz, sharks/HypSab/temp/NC_082717.1.vcf.gz, sharks/HypSab/temp/NC_082718.1.vcf.gz, sharks/HypSab/temp/NC_082719.1.vcf.gz, sharks/HypSab/temp/NC_082720.1.vcf.gz, sharks/HypSab/temp/NC_082721.1.vcf.gz, sharks/HypSab/temp/NC_082722.1.vcf.gz, sharks/HypSab/temp/NC_082723.1.vcf.gz, sharks/HypSab/temp/NC_082724.1.vcf.gz, sharks/HypSab/temp/NC_082725.1.vcf.gz, sharks/HypSab/temp/NC_082726.1.vcf.gz, sharks/HypSab/temp/NC_082727.1.vcf.gz, sharks/HypSab/temp/NC_082728.1.vcf.gz, sharks/HypSab/temp/NC_082729.1.vcf.gz, sharks/HypSab/temp/NC_082730.1.vcf.gz, sharks/HypSab/temp/NC_082731.1.vcf.gz, sharks/HypSab/temp/NC_082732.1.vcf.gz, sharks/HypSab/temp/NC_082733.1.vcf.gz, sharks/HypSab/temp/NC_082734.1.vcf.gz, sharks/HypSab/temp/NC_082735.1.vcf.gz, sharks/HypSab/temp/NC_082736.1.vcf.gz, sharks/HypSab/temp/NC_082737.1.vcf.gz, sharks/HypSab/temp/NC_082738.1.vcf.gz, sharks/HypSab/temp/NC_082739.1.vcf.gz, sharks/HypSab/temp/NC_082740.1.vcf.gz
+    jobid: 232
+    reason: Missing output files: sharks/HypSab/temp/NC_082707.1.vcf.gz, sharks/HypSab/temp/NC_082724.1.vcf.gz, sharks/HypSab/temp/NC_082708.1.vcf.gz, sharks/HypSab/temp/NC_082740.1.vcf.gz, sharks/HypSab/temp/NC_082716.1.vcf.gz, sharks/HypSab/temp/NC_082713.1.vcf.gz, sharks/HypSab/temp/NC_082717.1.vcf.gz, sharks/HypSab/temp/NC_082719.1.vcf.gz, sharks/HypSab/temp/NC_082738.1.vcf.gz, sharks/HypSab/temp/NC_082730.1.vcf.gz, sharks/HypSab/temp/NC_082721.1.vcf.gz, sharks/HypSab/temp/NC_082737.1.vcf.gz, sharks/HypSab/temp/NC_082709.1.vcf.gz, sharks/HypSab/temp/NC_082733.1.vcf.gz, sharks/HypSab/temp/NC_082712.1.vcf.gz, sharks/HypSab/temp/NC_082718.1.vcf.gz, sharks/HypSab/temp/NC_082729.1.vcf.gz, sharks/HypSab/temp/NC_082736.1.vcf.gz, sharks/HypSab/temp/NC_082725.1.vcf.gz, sharks/HypSab/temp/NC_082715.1.vcf.gz, sharks/HypSab/temp/NC_082727.1.vcf.gz, sharks/HypSab/temp/NC_082710.1.vcf.gz, sharks/HypSab/temp/NC_082731.1.vcf.gz, sharks/HypSab/temp/NC_082722.1.vcf.gz, sharks/HypSab/temp/NC_082732.1.vcf.gz, sharks/HypSab/temp/NC_082720.1.vcf.gz, sharks/HypSab/temp/NC_082723.1.vcf.gz, sharks/HypSab/temp/NC_082734.1.vcf.gz, sharks/HypSab/temp/NC_082726.1.vcf.gz, sharks/HypSab/temp/NC_082714.1.vcf.gz, sharks/HypSab/temp/NC_082711.1.vcf.gz, sharks/HypSab/temp/NC_082739.1.vcf.gz, sharks/HypSab/temp/NC_082706.1.vcf.gz, sharks/HypSab/temp/NC_082728.1.vcf.gz, sharks/HypSab/temp/NC_082735.1.vcf.gz
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=13421, disk_mib=12800, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 232 has been submitted with SLURM jobid 9374207 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/9374207.log).
+[Wed May 14 16:22:56 2025]
+Finished job 150.
+1 of 384 steps (0.3%) done
+Select jobs to execute...
+[Wed May 14 16:22:57 2025]
+Error in rule PILEUP_VARIANTS:
+    message: SLURM-job '9374207' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 232
+    input: sharks/HypSab/temp/NC_082706.1.fasta, sharks/HypSab/temp/NC_082707.1.fasta, sharks/HypSab/temp/NC_082708.1.fasta, sharks/HypSab/temp/NC_082709.1.fasta, sharks/HypSab/temp/NC_082710.1.fasta, sharks/HypSab/temp/NC_082711.1.fasta, sharks/HypSab/temp/NC_082712.1.fasta, sharks/HypSab/temp/NC_082713.1.fasta, sharks/HypSab/temp/NC_082714.1.fasta, sharks/HypSab/temp/NC_082715.1.fasta, sharks/HypSab/temp/NC_082716.1.fasta, sharks/HypSab/temp/NC_082717.1.fasta, sharks/HypSab/temp/NC_082718.1.fasta, sharks/HypSab/temp/NC_082719.1.fasta, sharks/HypSab/temp/NC_082720.1.fasta, sharks/HypSab/temp/NC_082721.1.fasta, sharks/HypSab/temp/NC_082722.1.fasta, sharks/HypSab/temp/NC_082723.1.fasta, sharks/HypSab/temp/NC_082724.1.fasta, sharks/HypSab/temp/NC_082725.1.fasta, sharks/HypSab/temp/NC_082726.1.fasta, sharks/HypSab/temp/NC_082727.1.fasta, sharks/HypSab/temp/NC_082728.1.fasta, sharks/HypSab/temp/NC_082729.1.fasta, sharks/HypSab/temp/NC_082730.1.fasta, sharks/HypSab/temp/NC_082731.1.fasta, sharks/HypSab/temp/NC_082732.1.fasta, sharks/HypSab/temp/NC_082733.1.fasta, sharks/HypSab/temp/NC_082734.1.fasta, sharks/HypSab/temp/NC_082735.1.fasta, sharks/HypSab/temp/NC_082736.1.fasta, sharks/HypSab/temp/NC_082737.1.fasta, sharks/HypSab/temp/NC_082738.1.fasta, sharks/HypSab/temp/NC_082739.1.fasta, sharks/HypSab/temp/NC_082740.1.fasta, sharks/HypSab/HypSab_NC_082706.1.bam, sharks/HypSab/HypSab_NC_082707.1.bam, sharks/HypSab/HypSab_NC_082708.1.bam, sharks/HypSab/HypSab_NC_082709.1.bam, sharks/HypSab/HypSab_NC_082710.1.bam, sharks/HypSab/HypSab_NC_082711.1.bam, sharks/HypSab/HypSab_NC_082712.1.bam, sharks/HypSab/HypSab_NC_082713.1.bam, sharks/HypSab/HypSab_NC_082714.1.bam, sharks/HypSab/HypSab_NC_082715.1.bam, sharks/HypSab/HypSab_NC_082716.1.bam, sharks/HypSab/HypSab_NC_082717.1.bam, sharks/HypSab/HypSab_NC_082718.1.bam, sharks/HypSab/HypSab_NC_082719.1.bam, sharks/HypSab/HypSab_NC_082720.1.bam, sharks/HypSab/HypSab_NC_082721.1.bam, sharks/HypSab/HypSab_NC_082722.1.bam, sharks/HypSab/HypSab_NC_082723.1.bam, sharks/HypSab/HypSab_NC_082724.1.bam, sharks/HypSab/HypSab_NC_082725.1.bam, sharks/HypSab/HypSab_NC_082726.1.bam, sharks/HypSab/HypSab_NC_082727.1.bam, sharks/HypSab/HypSab_NC_082728.1.bam, sharks/HypSab/HypSab_NC_082729.1.bam, sharks/HypSab/HypSab_NC_082730.1.bam, sharks/HypSab/HypSab_NC_082731.1.bam, sharks/HypSab/HypSab_NC_082732.1.bam, sharks/HypSab/HypSab_NC_082733.1.bam, sharks/HypSab/HypSab_NC_082734.1.bam, sharks/HypSab/HypSab_NC_082735.1.bam, sharks/HypSab/HypSab_NC_082736.1.bam, sharks/HypSab/HypSab_NC_082737.1.bam, sharks/HypSab/HypSab_NC_082738.1.bam, sharks/HypSab/HypSab_NC_082739.1.bam, sharks/HypSab/HypSab_NC_082740.1.bam
+    output: sharks/HypSab/temp/NC_082706.1.vcf.gz, sharks/HypSab/temp/NC_082707.1.vcf.gz, sharks/HypSab/temp/NC_082708.1.vcf.gz, sharks/HypSab/temp/NC_082709.1.vcf.gz, sharks/HypSab/temp/NC_082710.1.vcf.gz, sharks/HypSab/temp/NC_082711.1.vcf.gz, sharks/HypSab/temp/NC_082712.1.vcf.gz, sharks/HypSab/temp/NC_082713.1.vcf.gz, sharks/HypSab/temp/NC_082714.1.vcf.gz, sharks/HypSab/temp/NC_082715.1.vcf.gz, sharks/HypSab/temp/NC_082716.1.vcf.gz, sharks/HypSab/temp/NC_082717.1.vcf.gz, sharks/HypSab/temp/NC_082718.1.vcf.gz, sharks/HypSab/temp/NC_082719.1.vcf.gz, sharks/HypSab/temp/NC_082720.1.vcf.gz, sharks/HypSab/temp/NC_082721.1.vcf.gz, sharks/HypSab/temp/NC_082722.1.vcf.gz, sharks/HypSab/temp/NC_082723.1.vcf.gz, sharks/HypSab/temp/NC_082724.1.vcf.gz, sharks/HypSab/temp/NC_082725.1.vcf.gz, sharks/HypSab/temp/NC_082726.1.vcf.gz, sharks/HypSab/temp/NC_082727.1.vcf.gz, sharks/HypSab/temp/NC_082728.1.vcf.gz, sharks/HypSab/temp/NC_082729.1.vcf.gz, sharks/HypSab/temp/NC_082730.1.vcf.gz, sharks/HypSab/temp/NC_082731.1.vcf.gz, sharks/HypSab/temp/NC_082732.1.vcf.gz, sharks/HypSab/temp/NC_082733.1.vcf.gz, sharks/HypSab/temp/NC_082734.1.vcf.gz, sharks/HypSab/temp/NC_082735.1.vcf.gz, sharks/HypSab/temp/NC_082736.1.vcf.gz, sharks/HypSab/temp/NC_082737.1.vcf.gz, sharks/HypSab/temp/NC_082738.1.vcf.gz, sharks/HypSab/temp/NC_082739.1.vcf.gz, sharks/HypSab/temp/NC_082740.1.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PILEUP_VARIANTS/9374207.log (check log file(s) for error details)
+    shell:
+        
+        bcftools mpileup -f sharks/HypSab/temp/NC_082706.1.fasta sharks/HypSab/temp/NC_082707.1.fasta sharks/HypSab/temp/NC_082708.1.fasta sharks/HypSab/temp/NC_082709.1.fasta sharks/HypSab/temp/NC_082710.1.fasta sharks/HypSab/temp/NC_082711.1.fasta sharks/HypSab/temp/NC_082712.1.fasta sharks/HypSab/temp/NC_082713.1.fasta sharks/HypSab/temp/NC_082714.1.fasta sharks/HypSab/temp/NC_082715.1.fasta sharks/HypSab/temp/NC_082716.1.fasta sharks/HypSab/temp/NC_082717.1.fasta sharks/HypSab/temp/NC_082718.1.fasta sharks/HypSab/temp/NC_082719.1.fasta sharks/HypSab/temp/NC_082720.1.fasta sharks/HypSab/temp/NC_082721.1.fasta sharks/HypSab/temp/NC_082722.1.fasta sharks/HypSab/temp/NC_082723.1.fasta sharks/HypSab/temp/NC_082724.1.fasta sharks/HypSab/temp/NC_082725.1.fasta sharks/HypSab/temp/NC_082726.1.fasta sharks/HypSab/temp/NC_082727.1.fasta sharks/HypSab/temp/NC_082728.1.fasta sharks/HypSab/temp/NC_082729.1.fasta sharks/HypSab/temp/NC_082730.1.fasta sharks/HypSab/temp/NC_082731.1.fasta sharks/HypSab/temp/NC_082732.1.fasta sharks/HypSab/temp/NC_082733.1.fasta sharks/HypSab/temp/NC_082734.1.fasta sharks/HypSab/temp/NC_082735.1.fasta sharks/HypSab/temp/NC_082736.1.fasta sharks/HypSab/temp/NC_082737.1.fasta sharks/HypSab/temp/NC_082738.1.fasta sharks/HypSab/temp/NC_082739.1.fasta sharks/HypSab/temp/NC_082740.1.fasta sharks/HypSab/HypSab_NC_082706.1.bam sharks/HypSab/HypSab_NC_082707.1.bam sharks/HypSab/HypSab_NC_082708.1.bam sharks/HypSab/HypSab_NC_082709.1.bam sharks/HypSab/HypSab_NC_082710.1.bam sharks/HypSab/HypSab_NC_082711.1.bam sharks/HypSab/HypSab_NC_082712.1.bam sharks/HypSab/HypSab_NC_082713.1.bam sharks/HypSab/HypSab_NC_082714.1.bam sharks/HypSab/HypSab_NC_082715.1.bam sharks/HypSab/HypSab_NC_082716.1.bam sharks/HypSab/HypSab_NC_082717.1.bam sharks/HypSab/HypSab_NC_082718.1.bam sharks/HypSab/HypSab_NC_082719.1.bam sharks/HypSab/HypSab_NC_082720.1.bam sharks/HypSab/HypSab_NC_082721.1.bam sharks/HypSab/HypSab_NC_082722.1.bam sharks/HypSab/HypSab_NC_082723.1.bam sharks/HypSab/HypSab_NC_082724.1.bam sharks/HypSab/HypSab_NC_082725.1.bam sharks/HypSab/HypSab_NC_082726.1.bam sharks/HypSab/HypSab_NC_082727.1.bam sharks/HypSab/HypSab_NC_082728.1.bam sharks/HypSab/HypSab_NC_082729.1.bam sharks/HypSab/HypSab_NC_082730.1.bam sharks/HypSab/HypSab_NC_082731.1.bam sharks/HypSab/HypSab_NC_082732.1.bam sharks/HypSab/HypSab_NC_082733.1.bam sharks/HypSab/HypSab_NC_082734.1.bam sharks/HypSab/HypSab_NC_082735.1.bam sharks/HypSab/HypSab_NC_082736.1.bam sharks/HypSab/HypSab_NC_082737.1.bam sharks/HypSab/HypSab_NC_082738.1.bam sharks/HypSab/HypSab_NC_082739.1.bam sharks/HypSab/HypSab_NC_082740.1.bam --config pacbio-ccs -Oz -o sharks/HypSab/temp/NC_082706.1.vcf.gz sharks/HypSab/temp/NC_082707.1.vcf.gz sharks/HypSab/temp/NC_082708.1.vcf.gz sharks/HypSab/temp/NC_082709.1.vcf.gz sharks/HypSab/temp/NC_082710.1.vcf.gz sharks/HypSab/temp/NC_082711.1.vcf.gz sharks/HypSab/temp/NC_082712.1.vcf.gz sharks/HypSab/temp/NC_082713.1.vcf.gz sharks/HypSab/temp/NC_082714.1.vcf.gz sharks/HypSab/temp/NC_082715.1.vcf.gz sharks/HypSab/temp/NC_082716.1.vcf.gz sharks/HypSab/temp/NC_082717.1.vcf.gz sharks/HypSab/temp/NC_082718.1.vcf.gz sharks/HypSab/temp/NC_082719.1.vcf.gz sharks/HypSab/temp/NC_082720.1.vcf.gz sharks/HypSab/temp/NC_082721.1.vcf.gz sharks/HypSab/temp/NC_082722.1.vcf.gz sharks/HypSab/temp/NC_082723.1.vcf.gz sharks/HypSab/temp/NC_082724.1.vcf.gz sharks/HypSab/temp/NC_082725.1.vcf.gz sharks/HypSab/temp/NC_082726.1.vcf.gz sharks/HypSab/temp/NC_082727.1.vcf.gz sharks/HypSab/temp/NC_082728.1.vcf.gz sharks/HypSab/temp/NC_082729.1.vcf.gz sharks/HypSab/temp/NC_082730.1.vcf.gz sharks/HypSab/temp/NC_082731.1.vcf.gz sharks/HypSab/temp/NC_082732.1.vcf.gz sharks/HypSab/temp/NC_082733.1.vcf.gz sharks/HypSab/temp/NC_082734.1.vcf.gz sharks/HypSab/temp/NC_082735.1.vcf.gz sharks/HypSab/temp/NC_082736.1.vcf.gz sharks/HypSab/temp/NC_082737.1.vcf.gz sharks/HypSab/temp/NC_082738.1.vcf.gz sharks/HypSab/temp/NC_082739.1.vcf.gz sharks/HypSab/temp/NC_082740.1.vcf.gz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9374207
+
+Execute 1 jobs...
+
+[Wed May 14 16:22:57 2025]
+rule Plot_ROH:
+    input: sharks/HypSab/HypSab_ROH_Results.csv, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt
+    output: sharks/HypSab/20250425_HypSab_ROH_Map.pdf
+    jobid: 117
+    reason: Missing output files: sharks/HypSab/20250425_HypSab_ROH_Map.pdf
+    wildcards: CLADE=sharks, SPEC_NAME=HypSab, TODAY_DATE=20250425
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 117 has been submitted with SLURM jobid 9374558 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_Plot_ROH/sharks_HypSab_20250425/9374558.log).
+[Wed May 14 16:23:00 2025]
+Finished job 136.
+2 of 384 steps (1%) done
+[Wed May 14 16:23:00 2025]
+Finished job 130.
+3 of 384 steps (1%) done
+[Wed May 14 16:23:00 2025]
+Finished job 151.
+4 of 384 steps (1%) done
+[Wed May 14 16:23:00 2025]
+Finished job 144.
+5 of 384 steps (1%) done
+[Wed May 14 16:23:00 2025]
+Finished job 137.
+6 of 384 steps (2%) done
+[Wed May 14 16:23:00 2025]
+Finished job 131.
+7 of 384 steps (2%) done
+[Wed May 14 16:23:00 2025]
+Finished job 145.
+8 of 384 steps (2%) done
+[Wed May 14 16:23:00 2025]
+Finished job 138.
+9 of 384 steps (2%) done
+[Wed May 14 16:23:00 2025]
+Finished job 132.
+10 of 384 steps (3%) done
+[Wed May 14 16:23:00 2025]
+Finished job 125.
+11 of 384 steps (3%) done
+[Wed May 14 16:23:00 2025]
+Finished job 118.
+12 of 384 steps (3%) done
+[Wed May 14 16:23:00 2025]
+Finished job 146.
+13 of 384 steps (3%) done
+[Wed May 14 16:23:00 2025]
+Finished job 128.
+14 of 384 steps (4%) done
+[Wed May 14 16:23:00 2025]
+Finished job 149.
+15 of 384 steps (4%) done
+[Wed May 14 16:23:00 2025]
+Finished job 142.
+16 of 384 steps (4%) done
+[Wed May 14 16:23:00 2025]
+Finished job 129.
+17 of 384 steps (4%) done
+[Wed May 14 16:23:00 2025]
+Finished job 122.
+18 of 384 steps (5%) done
+[Wed May 14 16:29:27 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9374183' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 186
+    input: sharks/HypSab/temp/HypSab_Var_Only.txt, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/HypSab/HypSab_ROH_Results.csv
+    output: sharks/HypSab/20250425_NC_082738.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HypSab_20250425_NC_082738.1/9374183.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_per_chr_V3.py sharks/HypSab/temp/HypSab_Var_Only.txt sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt sharks HypSab 20250425 1000000 500000 32 sharks/HypSab/HypSab_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9374183
+
+[Wed May 14 16:29:27 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9374189' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 187
+    input: sharks/HypSab/temp/HypSab_Var_Only.txt, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/HypSab/HypSab_ROH_Results.csv
+    output: sharks/HypSab/20250425_NC_082739.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HypSab_20250425_NC_082739.1/9374189.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_per_chr_V3.py sharks/HypSab/temp/HypSab_Var_Only.txt sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt sharks HypSab 20250425 1000000 500000 32 sharks/HypSab/HypSab_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9374189
+
+[Wed May 14 16:29:27 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9374194' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 188
+    input: sharks/HypSab/temp/HypSab_Var_Only.txt, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/HypSab/HypSab_ROH_Results.csv
+    output: sharks/HypSab/20250425_NC_082740.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HypSab_20250425_NC_082740.1/9374194.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_per_chr_V3.py sharks/HypSab/temp/HypSab_Var_Only.txt sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt sharks HypSab 20250425 1000000 500000 32 sharks/HypSab/HypSab_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9374194
+
+[Wed May 14 16:29:27 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9374198' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 171
+    input: sharks/HypSab/temp/HypSab_Var_Only.txt, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/HypSab/HypSab_ROH_Results.csv
+    output: sharks/HypSab/20250425_NC_082723.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HypSab_20250425_NC_082723.1/9374198.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_per_chr_V3.py sharks/HypSab/temp/HypSab_Var_Only.txt sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt sharks HypSab 20250425 1000000 500000 32 sharks/HypSab/HypSab_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9374198
+
+[Wed May 14 16:29:27 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9374199' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 183
+    input: sharks/HypSab/temp/HypSab_Var_Only.txt, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/HypSab/HypSab_ROH_Results.csv
+    output: sharks/HypSab/20250425_NC_082735.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HypSab_20250425_NC_082735.1/9374199.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_per_chr_V3.py sharks/HypSab/temp/HypSab_Var_Only.txt sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt sharks HypSab 20250425 1000000 500000 32 sharks/HypSab/HypSab_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9374199
+
+[Wed May 14 16:29:27 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9374201' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 156
+    input: sharks/HypSab/temp/HypSab_Var_Only.txt, sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt, sharks/HypSab/HypSab_ROH_Results.csv
+    output: sharks/HypSab/20250425_NC_082708.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HypSab_20250425_NC_082708.1/9374201.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_per_chr_V3.py sharks/HypSab/temp/HypSab_Var_Only.txt sharks/HypSab/Reference_HypSab_Chroms_Lengths.txt sharks HypSab 20250425 1000000 500000 32 sharks/HypSab/HypSab_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9374201
+
+[Wed May 14 16:32:58 2025]
+Finished job 117.
+19 of 384 steps (5%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-05-14T161448.870296.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

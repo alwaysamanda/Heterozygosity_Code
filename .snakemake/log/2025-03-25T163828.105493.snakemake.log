@@ -1,0 +1,96 @@
+host: login-q-2
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 76
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+ALNtoPAF                      1
+BAM_COVERAGE                  1
+CALC_HET_PER_CHR             14
+CALC_HET_WHOLE_GENOME         1
+CHROM_LENGTH_CALC             1
+COMPILE_HET                   1
+COMPILE_ROH                   1
+FASTGA                        1
+FAtoGDB_ALT                   1
+FAtoGDB_REF                   1
+FILTER_PAF                   14
+FROH_PER_AUT_CHR             14
+GET_ALN_ONLY_PER_CHROM       14
+GET_VAR_ALN_FILE             14
+GET_VAR_ONLY_PER_CHROM       14
+GET_WHOLE_VAR                 1
+GIXmake_ALT                   1
+GIXmake_REF                   1
+MAKE_BAM                      1
+MAKE_SAM                      1
+PAF_DOTPLOT                   1
+PLOT_HET_PER_CHR             14
+PLOT_WHOLE_HET                1
+Plot_ROH                      1
+ROH_CALC                     14
+WHOLE_FROH                    1
+all                           1
+total                       131
+
+Select jobs to execute...
+Execute 5 jobs...
+
+[Tue Mar 25 16:38:36 2025]
+localrule CHROM_LENGTH_CALC:
+    input: ../241117.UCSC-hubs-VGP-alignment/alignment/reference/amphibians/GCA_035609145.1.fa.gz
+    output: amphibians/EleCoq_TEST/Reference_EleCoq_TEST_Chroms_Lengths.txt
+    jobid: 12
+    reason: Missing output files: amphibians/EleCoq_TEST/Reference_EleCoq_TEST_Chroms_Lengths.txt
+    wildcards: CLADE=amphibians, SPEC_NAME=EleCoq_TEST
+    resources: tmpdir=/tmp
+
+
+[Tue Mar 25 16:38:36 2025]
+localrule FAtoGDB_REF:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/reference/amphibians/GCA_035609145.1.fa.gz
+    output: amphibians/EleCoq_TEST/temp/EleCoq_TEST_GCA_035609145.1.1gdb
+    jobid: 4
+    reason: Missing output files: amphibians/EleCoq_TEST/temp/EleCoq_TEST_GCA_035609145.1.1gdb
+    wildcards: CLADE=amphibians, SPEC_NAME=EleCoq_TEST, REF_NAME=GCA_035609145.1
+    resources: tmpdir=/tmp
+
+
+[Tue Mar 25 16:38:36 2025]
+localrule FAtoGDB_ALT:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/alternate/amphibians/GCA_035609135.1.fa.gz
+    output: amphibians/EleCoq_TEST/temp/EleCoq_TEST_GCA_035609135.1.1gdb
+    jobid: 6
+    reason: Missing output files: amphibians/EleCoq_TEST/temp/EleCoq_TEST_GCA_035609135.1.1gdb
+    wildcards: CLADE=amphibians, SPEC_NAME=EleCoq_TEST, ALT_NAME=GCA_035609135.1
+    resources: tmpdir=/tmp
+
+
+[Tue Mar 25 16:38:36 2025]
+localrule MAKE_SAM:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/reference/amphibians/GCA_035609145.1.fa.gz, /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/alternate/amphibians/GCA_035609135.1.fa.gz
+    output: amphibians/EleCoq_TEST/20250325_EleCoq_TEST.sam
+    jobid: 129
+    reason: Missing output files: amphibians/EleCoq_TEST/20250325_EleCoq_TEST.sam
+    wildcards: CLADE=amphibians, SPEC_NAME=EleCoq_TEST, TODAY_DATE=20250325
+    resources: tmpdir=/tmp
+
+
+[Tue Mar 25 16:38:36 2025]
+localrule COMPILE_ROH:
+    input: amphibians/chrom_lists/GCA_035609145.1_chroms.txt
+    output: amphibians/EleCoq_TEST/GCA_035609145.1_ROH_Results.tsv
+    jobid: 79
+    reason: Missing output files: amphibians/EleCoq_TEST/GCA_035609145.1_ROH_Results.tsv; Code has changed since last execution
+    wildcards: CLADE=amphibians, SPEC_NAME=EleCoq_TEST, REF_NAME=GCA_035609145.1
+    resources: tmpdir=/tmp
+
+RuleException in rule COMPILE_ROH in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 280:
+NameError: The name ' print var, $1, $2, $3, $5 ' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}, when formatting the following:
+
+        while read -r line; do
+            awk -v var="$line" -F',' '{ print var, $1, $2, $3, $5 }' {params.CLADE}/{params.SPEC_NAME}/"$line"_ROH_Results.txt >> {output}
+        done < {input}
+        

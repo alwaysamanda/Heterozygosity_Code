@@ -1,0 +1,98 @@
+host: login-p-4
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+ALNtoPAF                   1
+FILTER_PAF_VARIANCE        1
+GET_WHOLE_ALN              1
+GET_WHOLE_VAR              1
+SORT_PAF                   1
+all                        1
+total                      6
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Apr 22 14:27:25 2025]
+localrule ALNtoPAF:
+    input: sharks/HepPer/HepPer_ALN.chain.1aln
+    output: sharks/HepPer/HepPer_FASTGA.chain.paf
+    jobid: 3
+    reason: Missing output files: sharks/HepPer/HepPer_FASTGA.chain.paf
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 14:27:53 2025]
+Finished job 3.
+1 of 6 steps (17%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Apr 22 14:27:53 2025]
+localrule FILTER_PAF_VARIANCE:
+    input: sharks/HepPer/HepPer_FASTGA.chain.paf
+    output: sharks/HepPer/HepPer_FASTGA.chain.fltr.paf
+    jobid: 2
+    reason: Missing output files: sharks/HepPer/HepPer_FASTGA.chain.fltr.paf; Input files updated by another job: sharks/HepPer/HepPer_FASTGA.chain.paf
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 14:27:54 2025]
+Finished job 2.
+2 of 6 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Apr 22 14:27:54 2025]
+localrule SORT_PAF:
+    input: sharks/HepPer/HepPer_FASTGA.chain.fltr.paf
+    output: sharks/HepPer/HepPer_FASTGA.chain.fltr.srt.paf
+    jobid: 1
+    reason: Missing output files: sharks/HepPer/HepPer_FASTGA.chain.fltr.srt.paf; Input files updated by another job: sharks/HepPer/HepPer_FASTGA.chain.fltr.paf
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 14:28:10 2025]
+Finished job 1.
+3 of 6 steps (50%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Tue Apr 22 14:28:10 2025]
+localrule GET_WHOLE_VAR:
+    input: sharks/HepPer/HepPer_FASTGA.chain.fltr.srt.paf
+    output: sharks/HepPer/temp/HepPer_Var_Only.txt
+    jobid: 10
+    reason: Missing output files: sharks/HepPer/temp/HepPer_Var_Only.txt; Input files updated by another job: sharks/HepPer/HepPer_FASTGA.chain.fltr.srt.paf
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 14:28:10 2025]
+localrule GET_WHOLE_ALN:
+    input: sharks/HepPer/HepPer_FASTGA.chain.fltr.srt.paf
+    output: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    jobid: 11
+    reason: Missing output files: sharks/HepPer/temp/HepPer_Aln_Only.txt; Input files updated by another job: sharks/HepPer/HepPer_FASTGA.chain.fltr.srt.paf
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 14:28:52 2025]
+Finished job 11.
+4 of 6 steps (67%) done
+[Tue Apr 22 14:28:56 2025]
+Finished job 10.
+5 of 6 steps (83%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Apr 22 14:28:56 2025]
+localrule all:
+    input: sharks/HepPer/HepPer_FASTGA.chain.fltr.srt.paf, sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/temp/HepPer_Aln_Only.txt
+    jobid: 0
+    reason: Input files updated by another job: sharks/HepPer/HepPer_FASTGA.chain.fltr.srt.paf, sharks/HepPer/temp/HepPer_Aln_Only.txt, sharks/HepPer/temp/HepPer_Var_Only.txt
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 14:28:56 2025]
+Finished job 0.
+6 of 6 steps (100%) done
+Complete log: .snakemake/log/2025-04-22T142724.912682.snakemake.log

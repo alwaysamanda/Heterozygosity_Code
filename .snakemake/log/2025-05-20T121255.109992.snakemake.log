@@ -1,0 +1,40 @@
+host: login-q-4
+Building DAG of jobs...
+SLURM run ID: 35659d01-f67f-4d50-958a-6e3d2b14e750
+Using shell: /usr/bin/bash
+Provided remote nodes: 25
+Job stats:
+job                            count
+---------------------------  -------
+BGZIP_VCF                         40
+BOOTSTRAPPING_MULTIHET_FILE     1200
+GENERATE_MASK                     40
+GENERATE_MULTIHETSEP              40
+MAIN_MULTIHETSEP                  40
+REMOVE_INDELS                     40
+all                                1
+total                           1401
+
+Select jobs to execute...
+Execute 25 jobs...
+
+[Tue May 20 12:15:11 2025]
+rule REMOVE_INDELS:
+    input: sharks/HydCol/temp/CM068746.1_restructured.vcf.gz
+    output: sharks/HydCol/CM068746.1.recode.vcf
+    jobid: 469
+    reason: Missing output files: sharks/HydCol/CM068746.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068746.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 469 has been submitted with SLURM jobid 9614468 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HydCol_CM068746.1/9614468.log).
+
+[Tue May 20 12:15:13 2025]
+rule REMOVE_INDELS:
+    input: sharks/HydCol/temp/CM068768.1_restructured.vcf.gz
+    output: sharks/HydCol/CM068768.1.recode.vcf
+    jobid: 513
+    reason: Missing output files: sharks/HydCol/CM068768.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068768.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+

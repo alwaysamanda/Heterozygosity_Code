@@ -1,0 +1,82 @@
+host: login-p-1
+Building DAG of jobs...
+Traceback (most recent call last):
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/cli.py", line 2164, in args_to_api
+    dag_api.execute_workflow(
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/api.py", line 597, in execute_workflow
+    workflow.execute(
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/workflow.py", line 1142, in execute
+    self._build_dag()
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/workflow.py", line 1090, in _build_dag
+    async_run(self.dag.init())
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/common/__init__.py", line 99, in async_run
+    return asyncio.run(coroutine)
+           ^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/dag.py", line 228, in init
+    self.update_conda_envs()
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/dag.py", line 331, in update_conda_envs
+    env_set = {
+              ^
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/dag.py", line 334, in <setcomp>
+    if job.conda_env_spec
+       ^^^^^^^^^^^^^^^^^^
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/jobs.py", line 526, in conda_env_spec
+    self.wildcards_dict, self.params, self.input
+                         ^^^^^^^^^^^
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/jobs.py", line 433, in params
+    self._expand_params()
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/jobs.py", line 443, in _expand_params
+    self._params, self._non_derived_params = self.rule.expand_params(
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/rules.py", line 905, in expand_params
+    self._apply_wildcards(
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/rules.py", line 724, in _apply_wildcards
+    item, incomplete = self.apply_input_function(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/rules.py", line 629, in apply_input_function
+    if "groupid" in get_function_params(func):
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/common/__init__.py", line 293, in get_function_params
+    return inspect.signature(func).parameters
+           ^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/inspect.py", line 3263, in signature
+    return Signature.from_callable(obj, follow_wrapped=follow_wrapped,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/inspect.py", line 3011, in from_callable
+    return _signature_from_callable(obj, sigcls=cls,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/inspect.py", line 2592, in _signature_from_callable
+    raise ValueError(
+
+ValueError: no signature found for builtin type <class 'str'>
+

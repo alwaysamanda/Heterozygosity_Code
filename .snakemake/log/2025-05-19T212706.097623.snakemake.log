@@ -1,0 +1,728 @@
+host: login-p-1
+Building DAG of jobs...
+SLURM run ID: 252f2d91-15e9-42a2-ba08-1b53e6948c8c
+Using shell: /usr/bin/bash
+Provided remote nodes: 25
+Job stats:
+job                            count
+---------------------------  -------
+ALNPLOT                            1
+BAM_CALLER_BED                    14
+BGZIP_VCF                         14
+BOOTSTRAPPING_MULTIHET_FILE      420
+CALL_PLOIDY                       14
+COMPILE_HET                        1
+EXTRACT_CHR_FASTA                 14
+GENERATE_MASK                     14
+GENERATE_MULTIHETSEP              14
+INDEL_MASKER                      14
+MAIN_MULTIHETSEP                  14
+MAKE_BAM                           1
+MAKE_SAM                           1
+PILEUP_VARIANTS                   14
+PLOT_HET_PER_CHR                  14
+PLOT_WHOLE_HET                     1
+Plot_ROH                           1
+REMOVE_INDELS                     14
+RESTRUCTURE                       14
+SEPARATE_BAM_BY_CHR               14
+UNZIP_REFERENCE                    1
+all                                1
+total                            610
+
+Select jobs to execute...
+Execute 5 jobs...
+
+[Mon May 19 21:27:14 2025]
+rule Plot_ROH:
+    input: sharks/NarBan/NarBan_ROH_Results.csv, sharks/NarBan/Reference_NarBan_Chroms_Lengths.txt
+    output: sharks/NarBan/20250425_NarBan_ROH_Map.pdf
+    jobid: 55
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, TODAY_DATE=20250425
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 55 has been submitted with SLURM jobid 9575588 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_Plot_ROH/sharks_NarBan_20250425/9575588.log).
+
+[Mon May 19 21:27:14 2025]
+rule UNZIP_REFERENCE:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_036971175.1.fa.gz
+    output: sharks/NarBan/temp/GCA_036971175.1.fa
+    jobid: 104
+    reason: Missing output files: sharks/NarBan/temp/GCA_036971175.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, REF_NAME=GCA_036971175.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1841, disk_mib=1756, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 104 has been submitted with SLURM jobid 9575591 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_UNZIP_REFERENCE/sharks_NarBan_GCA_036971175.1/9575591.log).
+
+[Mon May 19 21:27:14 2025]
+rule MAKE_SAM:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_036971175.1.fa.gz, /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/sharks/GCA_036971445.1.fa.gz
+    output: sharks/NarBan/NarBan.sam
+    jobid: 107
+    reason: Missing output files: sharks/NarBan/NarBan.sam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=3763, disk_mib=3589, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=720
+
+Job 107 has been submitted with SLURM jobid 9575593 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAKE_SAM/sharks_NarBan/9575593.log).
+
+[Mon May 19 21:27:14 2025]
+rule COMPILE_HET:
+    input: sharks/NarBan/20250425_CM072956.1_het.txt, sharks/NarBan/20250425_CM072957.1_het.txt, sharks/NarBan/20250425_CM072958.1_het.txt, sharks/NarBan/20250425_CM072959.1_het.txt, sharks/NarBan/20250425_CM072960.1_het.txt, sharks/NarBan/20250425_CM072961.1_het.txt, sharks/NarBan/20250425_CM072962.1_het.txt, sharks/NarBan/20250425_CM072963.1_het.txt, sharks/NarBan/20250425_CM072964.1_het.txt, sharks/NarBan/20250425_CM072965.1_het.txt, sharks/NarBan/20250425_CM072966.1_het.txt, sharks/NarBan/20250425_CM072967.1_het.txt, sharks/NarBan/20250425_CM072968.1_het.txt, sharks/NarBan/20250425_CM072969.1_het.txt
+    output: sharks/NarBan/NarBan_Het_Compiled.tsv
+    jobid: 86
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 86 has been submitted with SLURM jobid 9575594 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_COMPILE_HET/sharks_NarBan/9575594.log).
+
+[Mon May 19 21:27:17 2025]
+rule ALNPLOT:
+    input: sharks/NarBan/NarBan_ALN.chain.1aln
+    output: sharks/NarBan/NarBan_ALN.chain.pdf
+    jobid: 9
+    reason: Missing output files: sharks/NarBan/NarBan_ALN.chain.pdf
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 9 has been submitted with SLURM jobid 9575595 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ALNPLOT/sharks_NarBan/9575595.log).
+[Mon May 19 21:30:14 2025]
+Finished job 55.
+1 of 610 steps (0.2%) done
+[Mon May 19 21:30:55 2025]
+Finished job 104.
+2 of 610 steps (0.3%) done
+Select jobs to execute...
+Execute 14 jobs...
+
+[Mon May 19 21:30:55 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072958.1.fasta
+    jobid: 112
+    reason: Missing output files: sharks/NarBan/temp/CM072958.1.fasta; Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHR=CM072958.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 112 has been submitted with SLURM jobid 9575758 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072958.1/9575758.log).
+
+[Mon May 19 21:30:55 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072965.1.fasta
+    jobid: 133
+    reason: Missing output files: sharks/NarBan/temp/CM072965.1.fasta; Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHR=CM072965.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 133 has been submitted with SLURM jobid 9575759 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072965.1/9575759.log).
+
+[Mon May 19 21:30:55 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072956.1.fasta
+    jobid: 103
+    reason: Missing output files: sharks/NarBan/temp/CM072956.1.fasta; Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHR=CM072956.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 103 has been submitted with SLURM jobid 9575760 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072956.1/9575760.log).
+
+[Mon May 19 21:30:55 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072959.1.fasta
+    jobid: 115
+    reason: Missing output files: sharks/NarBan/temp/CM072959.1.fasta; Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHR=CM072959.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 115 has been submitted with SLURM jobid 9575761 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072959.1/9575761.log).
+
+[Mon May 19 21:30:55 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072966.1.fasta
+    jobid: 136
+    reason: Missing output files: sharks/NarBan/temp/CM072966.1.fasta; Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHR=CM072966.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 136 has been submitted with SLURM jobid 9575762 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072966.1/9575762.log).
+
+[Mon May 19 21:30:56 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072960.1.fasta
+    jobid: 118
+    reason: Missing output files: sharks/NarBan/temp/CM072960.1.fasta; Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHR=CM072960.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 118 has been submitted with SLURM jobid 9575763 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072960.1/9575763.log).
+
+[Mon May 19 21:30:56 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072968.1.fasta
+    jobid: 142
+    reason: Missing output files: sharks/NarBan/temp/CM072968.1.fasta; Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHR=CM072968.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 142 has been submitted with SLURM jobid 9575764 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072968.1/9575764.log).
+
+[Mon May 19 21:30:56 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072961.1.fasta
+    jobid: 121
+    reason: Missing output files: sharks/NarBan/temp/CM072961.1.fasta; Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHR=CM072961.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 121 has been submitted with SLURM jobid 9575765 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072961.1/9575765.log).
+
+[Mon May 19 21:30:56 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072969.1.fasta
+    jobid: 145
+    reason: Missing output files: sharks/NarBan/temp/CM072969.1.fasta; Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHR=CM072969.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 145 has been submitted with SLURM jobid 9575766 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072969.1/9575766.log).
+
+[Mon May 19 21:30:56 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072964.1.fasta
+    jobid: 130
+    reason: Missing output files: sharks/NarBan/temp/CM072964.1.fasta; Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHR=CM072964.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 130 has been submitted with SLURM jobid 9575767 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072964.1/9575767.log).
+
+[Mon May 19 21:30:56 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072967.1.fasta
+    jobid: 139
+    reason: Missing output files: sharks/NarBan/temp/CM072967.1.fasta; Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHR=CM072967.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 139 has been submitted with SLURM jobid 9575768 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072967.1/9575768.log).
+
+[Mon May 19 21:30:57 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072962.1.fasta
+    jobid: 124
+    reason: Missing output files: sharks/NarBan/temp/CM072962.1.fasta; Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHR=CM072962.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 124 has been submitted with SLURM jobid 9575769 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072962.1/9575769.log).
+
+[Mon May 19 21:30:57 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072963.1.fasta
+    jobid: 127
+    reason: Missing output files: sharks/NarBan/temp/CM072963.1.fasta; Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHR=CM072963.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 127 has been submitted with SLURM jobid 9575770 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072963.1/9575770.log).
+
+[Mon May 19 21:31:01 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/NarBan/temp/GCA_036971175.1.fa
+    output: sharks/NarBan/temp/CM072957.1.fasta
+    jobid: 109
+    reason: Missing output files: sharks/NarBan/temp/CM072957.1.fasta; Input files updated by another job: sharks/NarBan/temp/GCA_036971175.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHR=CM072957.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=6051, disk_mib=5771, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 109 has been submitted with SLURM jobid 9575775 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_NarBan_CM072957.1/9575775.log).
+[Mon May 19 21:31:02 2025]
+Finished job 86.
+3 of 610 steps (0.5%) done
+Select jobs to execute...
+Execute 9 jobs...
+
+[Mon May 19 21:31:02 2025]
+rule PLOT_WHOLE_HET:
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_Het_Whole_Genome_Map.svg
+    jobid: 101
+    reason: Input files updated by another job: sharks/NarBan/NarBan_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, TODAY_DATE=20250425
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 101 has been submitted with SLURM jobid 9575777 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_WHOLE_HET/sharks_NarBan_20250425/9575777.log).
+
+[Mon May 19 21:31:02 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072963.1_Het_Map.svg
+    jobid: 94
+    reason: Input files updated by another job: sharks/NarBan/NarBan_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, TODAY_DATE=20250425, CHR=CM072963.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 94 has been submitted with SLURM jobid 9575778 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072963.1/9575778.log).
+
+[Mon May 19 21:31:02 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072956.1_Het_Map.svg
+    jobid: 87
+    reason: Input files updated by another job: sharks/NarBan/NarBan_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, TODAY_DATE=20250425, CHR=CM072956.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 87 has been submitted with SLURM jobid 9575779 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072956.1/9575779.log).
+
+[Mon May 19 21:31:03 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072965.1_Het_Map.svg
+    jobid: 96
+    reason: Input files updated by another job: sharks/NarBan/NarBan_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, TODAY_DATE=20250425, CHR=CM072965.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 96 has been submitted with SLURM jobid 9575780 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072965.1/9575780.log).
+
+[Mon May 19 21:31:03 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072957.1_Het_Map.svg
+    jobid: 88
+    reason: Input files updated by another job: sharks/NarBan/NarBan_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, TODAY_DATE=20250425, CHR=CM072957.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 88 has been submitted with SLURM jobid 9575781 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072957.1/9575781.log).
+
+[Mon May 19 21:31:03 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072966.1_Het_Map.svg
+    jobid: 97
+    reason: Input files updated by another job: sharks/NarBan/NarBan_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, TODAY_DATE=20250425, CHR=CM072966.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 97 has been submitted with SLURM jobid 9575782 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072966.1/9575782.log).
+
+[Mon May 19 21:31:03 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072959.1_Het_Map.svg
+    jobid: 90
+    reason: Input files updated by another job: sharks/NarBan/NarBan_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, TODAY_DATE=20250425, CHR=CM072959.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 90 has been submitted with SLURM jobid 9575783 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072959.1/9575783.log).
+
+[Mon May 19 21:31:03 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072968.1_Het_Map.svg
+    jobid: 99
+    reason: Input files updated by another job: sharks/NarBan/NarBan_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, TODAY_DATE=20250425, CHR=CM072968.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 99 has been submitted with SLURM jobid 9575784 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072968.1/9575784.log).
+
+[Mon May 19 21:31:03 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072961.1_Het_Map.svg
+    jobid: 92
+    reason: Input files updated by another job: sharks/NarBan/NarBan_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, TODAY_DATE=20250425, CHR=CM072961.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 92 has been submitted with SLURM jobid 9575785 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072961.1/9575785.log).
+[Mon May 19 21:32:25 2025]
+Error in rule ALNPLOT:
+    message: SLURM-job '9575595' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 9
+    input: sharks/NarBan/NarBan_ALN.chain.1aln
+    output: sharks/NarBan/NarBan_ALN.chain.pdf
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ALNPLOT/sharks_NarBan/9575595.log (check log file(s) for error details)
+    shell:
+        
+        ALNplot -p -H500 sharks/NarBan/NarBan_ALN.chain.1aln
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9575595
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 21:32:25 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072964.1_Het_Map.svg
+    jobid: 95
+    reason: Input files updated by another job: sharks/NarBan/NarBan_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, TODAY_DATE=20250425, CHR=CM072964.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 95 has been submitted with SLURM jobid 9575815 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072964.1/9575815.log).
+[Mon May 19 21:35:55 2025]
+Finished job 112.
+4 of 610 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 21:35:55 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072962.1_Het_Map.svg
+    jobid: 93
+    reason: Input files updated by another job: sharks/NarBan/NarBan_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, TODAY_DATE=20250425, CHR=CM072962.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 93 has been submitted with SLURM jobid 9575983 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072962.1/9575983.log).
+[Mon May 19 21:35:57 2025]
+Finished job 133.
+5 of 610 steps (1%) done
+[Mon May 19 21:35:57 2025]
+Finished job 103.
+6 of 610 steps (1%) done
+[Mon May 19 21:35:57 2025]
+Finished job 145.
+7 of 610 steps (1%) done
+[Mon May 19 21:35:57 2025]
+Finished job 139.
+8 of 610 steps (1%) done
+Select jobs to execute...
+Execute 4 jobs...
+
+[Mon May 19 21:35:57 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072958.1_Het_Map.svg
+    jobid: 89
+    reason: Input files updated by another job: sharks/NarBan/NarBan_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, TODAY_DATE=20250425, CHR=CM072958.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 89 has been submitted with SLURM jobid 9575984 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072958.1/9575984.log).
+
+[Mon May 19 21:35:57 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072967.1_Het_Map.svg
+    jobid: 98
+    reason: Input files updated by another job: sharks/NarBan/NarBan_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, TODAY_DATE=20250425, CHR=CM072967.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 98 has been submitted with SLURM jobid 9575985 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072967.1/9575985.log).
+
+[Mon May 19 21:35:57 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072960.1_Het_Map.svg
+    jobid: 91
+    reason: Input files updated by another job: sharks/NarBan/NarBan_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, TODAY_DATE=20250425, CHR=CM072960.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 91 has been submitted with SLURM jobid 9575986 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072960.1/9575986.log).
+
+[Mon May 19 21:35:59 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072969.1_Het_Map.svg
+    jobid: 100
+    reason: Input files updated by another job: sharks/NarBan/NarBan_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, TODAY_DATE=20250425, CHR=CM072969.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 100 has been submitted with SLURM jobid 9575988 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072969.1/9575988.log).
+[Mon May 19 21:36:36 2025]
+Finished job 115.
+9 of 610 steps (1%) done
+[Mon May 19 21:36:36 2025]
+Finished job 136.
+10 of 610 steps (2%) done
+[Mon May 19 21:36:36 2025]
+Finished job 118.
+11 of 610 steps (2%) done
+[Mon May 19 21:36:36 2025]
+Finished job 142.
+12 of 610 steps (2%) done
+[Mon May 19 21:36:36 2025]
+Finished job 121.
+13 of 610 steps (2%) done
+[Mon May 19 21:36:36 2025]
+Finished job 130.
+14 of 610 steps (2%) done
+[Mon May 19 21:36:36 2025]
+Finished job 124.
+15 of 610 steps (2%) done
+[Mon May 19 21:36:36 2025]
+Finished job 127.
+16 of 610 steps (3%) done
+[Mon May 19 21:36:36 2025]
+Error in rule PLOT_WHOLE_HET:
+    message: SLURM-job '9575777' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 101
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_Het_Whole_Genome_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_WHOLE_HET/sharks_NarBan_20250425/9575777.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_Plot_het_whole_genome.R sharks/NarBan/NarBan_Het_Compiled.tsv 20250425 GCA_036971175.1 sharks 14 NarBan
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9575777
+
+[Mon May 19 21:36:36 2025]
+Finished job 109.
+17 of 610 steps (3%) done
+Removing temporary output sharks/NarBan/temp/GCA_036971175.1.fa.
+[Mon May 19 21:36:36 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9575778' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 94
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072963.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072963.1/9575778.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/NarBan/NarBan_Het_Compiled.tsv 20250425 GCA_036971175.1 sharks 14 NarBan
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9575778
+
+[Mon May 19 21:36:36 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9575779' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 87
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072956.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072956.1/9575779.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/NarBan/NarBan_Het_Compiled.tsv 20250425 GCA_036971175.1 sharks 14 NarBan
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9575779
+
+[Mon May 19 21:36:36 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9575780' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 96
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072965.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072965.1/9575780.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/NarBan/NarBan_Het_Compiled.tsv 20250425 GCA_036971175.1 sharks 14 NarBan
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9575780
+
+[Mon May 19 21:37:16 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9575781' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 88
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072957.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072957.1/9575781.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/NarBan/NarBan_Het_Compiled.tsv 20250425 GCA_036971175.1 sharks 14 NarBan
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9575781
+
+[Mon May 19 21:37:16 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9575782' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 97
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072966.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072966.1/9575782.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/NarBan/NarBan_Het_Compiled.tsv 20250425 GCA_036971175.1 sharks 14 NarBan
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9575782
+
+[Mon May 19 21:37:16 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9575783' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 90
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072959.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072959.1/9575783.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/NarBan/NarBan_Het_Compiled.tsv 20250425 GCA_036971175.1 sharks 14 NarBan
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9575783
+
+[Mon May 19 21:37:16 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9575784' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 99
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072968.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072968.1/9575784.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/NarBan/NarBan_Het_Compiled.tsv 20250425 GCA_036971175.1 sharks 14 NarBan
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9575784
+
+[Mon May 19 21:37:16 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9575785' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 92
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072961.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072961.1/9575785.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/NarBan/NarBan_Het_Compiled.tsv 20250425 GCA_036971175.1 sharks 14 NarBan
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9575785
+
+[Mon May 19 21:38:06 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9575815' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 95
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072964.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072964.1/9575815.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/NarBan/NarBan_Het_Compiled.tsv 20250425 GCA_036971175.1 sharks 14 NarBan
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9575815
+
+[Mon May 19 21:43:07 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9575983' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 93
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072962.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072962.1/9575983.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/NarBan/NarBan_Het_Compiled.tsv 20250425 GCA_036971175.1 sharks 14 NarBan
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9575983
+
+[Mon May 19 21:43:07 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9575984' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 89
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072958.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072958.1/9575984.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/NarBan/NarBan_Het_Compiled.tsv 20250425 GCA_036971175.1 sharks 14 NarBan
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9575984
+
+[Mon May 19 21:43:07 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9575985' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 98
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072967.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072967.1/9575985.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/NarBan/NarBan_Het_Compiled.tsv 20250425 GCA_036971175.1 sharks 14 NarBan
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9575985
+
+[Mon May 19 21:43:07 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9575986' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 91
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072960.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072960.1/9575986.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/NarBan/NarBan_Het_Compiled.tsv 20250425 GCA_036971175.1 sharks 14 NarBan
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9575986
+
+[Mon May 19 21:43:07 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9575988' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 100
+    input: sharks/NarBan/NarBan_Het_Compiled.tsv
+    output: sharks/NarBan/20250425_NarBan_CM072969.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_NarBan_20250425_CM072969.1/9575988.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/NarBan/NarBan_Het_Compiled.tsv 20250425 GCA_036971175.1 sharks 14 NarBan
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9575988
+
+[Tue May 20 02:49:26 2025]
+Finished job 107.
+18 of 610 steps (3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue May 20 02:49:26 2025]
+rule MAKE_BAM:
+    input: sharks/NarBan/NarBan.sam
+    output: sharks/NarBan/NarBan.bam
+    jobid: 106
+    reason: Missing output files: sharks/NarBan/NarBan.bam; Input files updated by another job: sharks/NarBan/NarBan.sam
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=31896, disk_mib=30419, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 106 has been submitted with SLURM jobid 9583170 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAKE_BAM/sharks_NarBan/9583170.log).
+[Tue May 20 02:57:37 2025]
+Error in rule MAKE_BAM:
+    message: SLURM-job '9583170' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 106
+    input: sharks/NarBan/NarBan.sam
+    output: sharks/NarBan/NarBan.bam
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAKE_BAM/sharks_NarBan/9583170.log (check log file(s) for error details)
+    shell:
+        
+        samtools sort sharks/NarBan/NarBan.sam -o sharks/NarBan/NarBan.bam
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9583170
+
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-05-19T212706.097623.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

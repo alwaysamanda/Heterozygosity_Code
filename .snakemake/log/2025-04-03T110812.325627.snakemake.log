@@ -1,0 +1,149 @@
+host: login-p-3
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+ALNtoPAF                      1
+BAM_COVERAGE                  1
+CALC_HET_PER_CHR             40
+CALC_HET_WHOLE_GENOME         1
+CHROM_LENGTH_CALC             1
+COMPILE_HET                   1
+COMPILE_ROH                   1
+FASTGA                        1
+FAtoGDB_ALT                   1
+FAtoGDB_REF                   1
+FILTER_PAF                   40
+FROH_PER_AUT_CHR             40
+GET_ALN_ONLY_PER_CHROM       40
+GET_VAR_ALN_FILE             40
+GET_VAR_ONLY_PER_CHROM       40
+GET_WHOLE_VAR                 1
+GIXmake_ALT                   1
+GIXmake_REF                   1
+MAKE_BAM                      1
+MAKE_SAM                      1
+PAF_CS                        1
+PAF_DOTPLOT                   1
+PLOT_HET_PER_CHR             40
+PLOT_WHOLE_HET                1
+Plot_ROH                      1
+ROH_CALC                     40
+WHOLE_FROH                    1
+all                           1
+total                       340
+
+Select jobs to execute...
+Execute 4 jobs...
+
+[Thu Apr  3 11:08:14 2025]
+localrule CHROM_LENGTH_CALC:
+    input: ../241117.UCSC-hubs-VGP-alignment/alignment/reference/sharks/GCA_035084275.1.fa.gz
+    output: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    jobid: 170
+    reason: Missing output files: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    resources: tmpdir=/tmp
+
+
+[Thu Apr  3 11:08:14 2025]
+localrule FAtoGDB_ALT:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/alternate/sharks/GCA_035084065.1.fa.gz
+    output: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084065.1.1gdb
+    jobid: 7
+    reason: Missing output files: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084065.1.1gdb
+    resources: tmpdir=/tmp
+
+
+[Thu Apr  3 11:08:14 2025]
+localrule MAKE_SAM:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/reference/sharks/GCA_035084275.1.fa.gz, /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/alternate/sharks/GCA_035084065.1.fa.gz
+    output: sharks/HydCol_Test2/20250403_HydCol_Test2.sam
+    jobid: 338
+    reason: Missing output files: sharks/HydCol_Test2/20250403_HydCol_Test2.sam
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403
+    resources: tmpdir=/tmp
+
+
+[Thu Apr  3 11:08:14 2025]
+localrule FAtoGDB_REF:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/reference/sharks/GCA_035084275.1.fa.gz
+    output: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084275.1.1gdb
+    jobid: 5
+    reason: Missing output files: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084275.1.1gdb
+    resources: tmpdir=/tmp
+
+[Thu Apr  3 11:08:18 2025]
+Finished job 5.
+1 of 340 steps (0.3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Apr  3 11:08:18 2025]
+localrule GIXmake_REF:
+    input: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084275.1.1gdb
+    output: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084275.1.gix
+    jobid: 4
+    reason: Missing output files: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084275.1.gix; Input files updated by another job: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084275.1.1gdb
+    resources: tmpdir=/tmp
+
+[Thu Apr  3 11:08:19 2025]
+Finished job 7.
+2 of 340 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Apr  3 11:08:19 2025]
+localrule GIXmake_ALT:
+    input: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084065.1.1gdb
+    output: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084065.1.gix
+    jobid: 6
+    reason: Missing output files: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084065.1.gix; Input files updated by another job: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084065.1.1gdb
+    resources: tmpdir=/tmp
+
+[Thu Apr  3 11:08:31 2025]
+Finished job 170.
+3 of 340 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Apr  3 11:08:31 2025]
+localrule CALC_HET_WHOLE_GENOME:
+    input: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_HydCol_Test2_per_chr_mean_heterozygosity.txt, sharks/HydCol_Test2/20250403_HydCol_Test2_whole_genome_mean_heterozygosity.txt
+    jobid: 293
+    reason: Missing output files: sharks/HydCol_Test2/20250403_HydCol_Test2_whole_genome_mean_heterozygosity.txt, sharks/HydCol_Test2/20250403_HydCol_Test2_per_chr_mean_heterozygosity.txt; Input files updated by another job: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 452:
+Command 'set -euo pipefail;  
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_whole_genome_V3.py sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt sharks HydCol_Test2 20250403 40' returned non-zero exit status 1.
+[Thu Apr  3 11:08:32 2025]
+Error in rule CALC_HET_WHOLE_GENOME:
+    jobid: 293
+    input: sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt
+    output: sharks/HydCol_Test2/20250403_HydCol_Test2_per_chr_mean_heterozygosity.txt, sharks/HydCol_Test2/20250403_HydCol_Test2_whole_genome_mean_heterozygosity.txt
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_whole_genome_V3.py sharks/HydCol_Test2/Reference_HydCol_Test2_Chroms_Lengths.txt sharks HydCol_Test2 20250403 40
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Thu Apr  3 11:08:44 2025]
+Finished job 4.
+4 of 340 steps (1%) done
+[Thu Apr  3 11:08:47 2025]
+Finished job 6.
+5 of 340 steps (1%) done
+[Thu Apr  3 11:15:30 2025]
+Finished job 338.
+6 of 340 steps (2%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-04-03T110812.325627.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

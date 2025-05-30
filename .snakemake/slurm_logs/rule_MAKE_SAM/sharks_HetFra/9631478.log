@@ -1,0 +1,54 @@
+host: cpu-p-247
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=5880, disk_mib=5608
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue May 20 20:00:54 2025]
+rule MAKE_SAM:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_036365495.1.fa.gz, /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/sharks/GCA_036365525.1.fa.gz
+    output: sharks/HetFra/HetFra.sam
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=5880, disk_mib=5608, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=720
+
+host: cpu-p-247
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=5880, disk_mib=5608
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue May 20 20:00:56 2025]
+localrule MAKE_SAM:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_036365495.1.fa.gz, /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/sharks/GCA_036365525.1.fa.gz
+    output: sharks/HetFra/HetFra.sam
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=5880, disk_mib=5608, tmpdir=/tmp, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=720
+
+[M::mm_idx_gen::113.567*1.00] collected minimizers
+[M::mm_idx_gen::154.351*1.00] sorted minimizers
+[M::main::154.361*1.00] loaded/built the index for 1496 target sequence(s)
+[M::mm_mapopt_update::157.829*1.00] mid_occ = 500
+[M::mm_idx_stat] kmer size: 19; skip: 19; is_hpc: 0; #seq: 1496
+[M::mm_idx_stat::160.563*1.00] distinct minimizers: 211807731 (86.98% are singletons); average occurrences: 2.449; average spacing: 10.017; total length: 5196885747
+[M::worker_pipeline::2756.872*1.00] mapped 2 sequences
+[M::worker_pipeline::7107.074*1.00] mapped 3 sequences
+[M::worker_pipeline::11183.931*1.00] mapped 4 sequences
+[M::worker_pipeline::16160.174*1.00] mapped 5 sequences
+[M::worker_pipeline::20674.599*1.00] mapped 5 sequences
+[M::worker_pipeline::24799.699*1.00] mapped 6 sequences
+[M::worker_pipeline::30188.231*1.00] mapped 8 sequences
+[M::worker_pipeline::36678.462*1.00] mapped 12 sequences
+slurmstepd: error: *** JOB 9631478 ON cpu-p-247 CANCELLED AT 2025-05-21T08:00:52 DUE TO TIME LIMIT ***
+srun: Job step aborted: Waiting up to 122 seconds for job step to finish.
+slurmstepd: error: *** STEP 9631478.0 ON cpu-p-247 CANCELLED AT 2025-05-21T08:00:53 DUE TO TIME LIMIT ***
+Will exit after finishing currently running jobs (scheduler).
+Will exit after finishing currently running jobs (scheduler).

@@ -1,0 +1,75 @@
+host: cpu-p-245
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=10000, mem_mib=9537, disk_mb=37341, disk_mib=35612
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue May 27 09:36:02 2025]
+rule MAKE_BAM:
+    input: sharks/HetFra/HetFra.sam
+    output: sharks/HetFra/HetFra.bam
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=37341, disk_mib=35612, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+host: cpu-p-245
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=10000, mem_mib=9537, disk_mb=37341, disk_mib=35612
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue May 27 09:36:06 2025]
+localrule MAKE_BAM:
+    input: sharks/HetFra/HetFra.sam
+    output: sharks/HetFra/HetFra.bam
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=37341, disk_mib=35612, tmpdir=/tmp, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+[E::parse_cigar] CIGAR length too long at position 1 (268907262H)
+[W::sam_read1_sam] Parse error at line 1513
+samtools sort: truncated file. Aborting
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 582:
+Command 'set -euo pipefail;  
+        samtools sort sharks/HetFra/HetFra.sam -o sharks/HetFra/HetFra.bam' returned non-zero exit status 1.
+[Tue May 27 09:36:07 2025]
+Error in rule MAKE_BAM:
+    jobid: 0
+    input: sharks/HetFra/HetFra.sam
+    output: sharks/HetFra/HetFra.bam
+    shell:
+        
+        samtools sort sharks/HetFra/HetFra.sam -o sharks/HetFra/HetFra.bam
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.
+srun: error: cpu-p-245: task 0: Exited with exit code 1
+[Tue May 27 09:36:07 2025]
+Error in rule MAKE_BAM:
+    jobid: 0
+    input: sharks/HetFra/HetFra.sam
+    output: sharks/HetFra/HetFra.bam
+    shell:
+        
+        samtools sort sharks/HetFra/HetFra.sam -o sharks/HetFra/HetFra.bam
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.

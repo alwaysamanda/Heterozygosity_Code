@@ -1,0 +1,663 @@
+host: login-p-3
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count
+---------------------  -------
+CALC_HET_WHOLE_GENOME        1
+COMPILE_HET                  1
+PLOT_HET_PER_CHR            46
+PLOT_WHOLE_HET               1
+all                          1
+total                       50
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu Apr 24 11:21:25 2025]
+localrule COMPILE_HET:
+    input: sharks/HepPer/20250422_CM068637.1_het.txt, sharks/HepPer/20250422_CM068638.1_het.txt, sharks/HepPer/20250422_CM068639.1_het.txt, sharks/HepPer/20250422_CM068640.1_het.txt, sharks/HepPer/20250422_CM068641.1_het.txt, sharks/HepPer/20250422_CM068642.1_het.txt, sharks/HepPer/20250422_CM068643.1_het.txt, sharks/HepPer/20250422_CM068644.1_het.txt, sharks/HepPer/20250422_CM068645.1_het.txt, sharks/HepPer/20250422_CM068646.1_het.txt, sharks/HepPer/20250422_CM068647.1_het.txt, sharks/HepPer/20250422_CM068648.1_het.txt, sharks/HepPer/20250422_CM068649.1_het.txt, sharks/HepPer/20250422_CM068650.1_het.txt, sharks/HepPer/20250422_CM068651.1_het.txt, sharks/HepPer/20250422_CM068652.1_het.txt, sharks/HepPer/20250422_CM068653.1_het.txt, sharks/HepPer/20250422_CM068654.1_het.txt, sharks/HepPer/20250422_CM068655.1_het.txt, sharks/HepPer/20250422_CM068656.1_het.txt, sharks/HepPer/20250422_CM068657.1_het.txt, sharks/HepPer/20250422_CM068658.1_het.txt, sharks/HepPer/20250422_CM068659.1_het.txt, sharks/HepPer/20250422_CM068660.1_het.txt, sharks/HepPer/20250422_CM068661.1_het.txt, sharks/HepPer/20250422_CM068662.1_het.txt, sharks/HepPer/20250422_CM068663.1_het.txt, sharks/HepPer/20250422_CM068664.1_het.txt, sharks/HepPer/20250422_CM068665.1_het.txt, sharks/HepPer/20250422_CM068666.1_het.txt, sharks/HepPer/20250422_CM068667.1_het.txt, sharks/HepPer/20250422_CM068668.1_het.txt, sharks/HepPer/20250422_CM068669.1_het.txt, sharks/HepPer/20250422_CM068670.1_het.txt, sharks/HepPer/20250422_CM068671.1_het.txt, sharks/HepPer/20250422_CM068672.1_het.txt, sharks/HepPer/20250422_CM068673.1_het.txt, sharks/HepPer/20250422_CM068674.1_het.txt, sharks/HepPer/20250422_CM068675.1_het.txt, sharks/HepPer/20250422_CM068676.1_het.txt, sharks/HepPer/20250422_CM068677.1_het.txt, sharks/HepPer/20250422_CM068678.1_het.txt, sharks/HepPer/20250422_CM068679.1_het.txt, sharks/HepPer/20250422_CM068680.1_het.txt, sharks/HepPer/20250422_CM068681.1_het.txt, sharks/HepPer/20250422_CM068682.1_het.txt
+    output: sharks/HepPer/HepPer_Het_Compiled.tsv
+    jobid: 247
+    reason: Missing output files: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:25 2025]
+localrule CALC_HET_WHOLE_GENOME:
+    input: sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/20250422_CM068637.1_het.txt, sharks/HepPer/20250422_CM068638.1_het.txt, sharks/HepPer/20250422_CM068639.1_het.txt, sharks/HepPer/20250422_CM068640.1_het.txt, sharks/HepPer/20250422_CM068641.1_het.txt, sharks/HepPer/20250422_CM068642.1_het.txt, sharks/HepPer/20250422_CM068643.1_het.txt, sharks/HepPer/20250422_CM068644.1_het.txt, sharks/HepPer/20250422_CM068645.1_het.txt, sharks/HepPer/20250422_CM068646.1_het.txt, sharks/HepPer/20250422_CM068647.1_het.txt, sharks/HepPer/20250422_CM068648.1_het.txt, sharks/HepPer/20250422_CM068649.1_het.txt, sharks/HepPer/20250422_CM068650.1_het.txt, sharks/HepPer/20250422_CM068651.1_het.txt, sharks/HepPer/20250422_CM068652.1_het.txt, sharks/HepPer/20250422_CM068653.1_het.txt, sharks/HepPer/20250422_CM068654.1_het.txt, sharks/HepPer/20250422_CM068655.1_het.txt, sharks/HepPer/20250422_CM068656.1_het.txt, sharks/HepPer/20250422_CM068657.1_het.txt, sharks/HepPer/20250422_CM068658.1_het.txt, sharks/HepPer/20250422_CM068659.1_het.txt, sharks/HepPer/20250422_CM068660.1_het.txt, sharks/HepPer/20250422_CM068661.1_het.txt, sharks/HepPer/20250422_CM068662.1_het.txt, sharks/HepPer/20250422_CM068663.1_het.txt, sharks/HepPer/20250422_CM068664.1_het.txt, sharks/HepPer/20250422_CM068665.1_het.txt, sharks/HepPer/20250422_CM068666.1_het.txt, sharks/HepPer/20250422_CM068667.1_het.txt, sharks/HepPer/20250422_CM068668.1_het.txt, sharks/HepPer/20250422_CM068669.1_het.txt, sharks/HepPer/20250422_CM068670.1_het.txt, sharks/HepPer/20250422_CM068671.1_het.txt, sharks/HepPer/20250422_CM068672.1_het.txt, sharks/HepPer/20250422_CM068673.1_het.txt, sharks/HepPer/20250422_CM068674.1_het.txt, sharks/HepPer/20250422_CM068675.1_het.txt, sharks/HepPer/20250422_CM068676.1_het.txt, sharks/HepPer/20250422_CM068677.1_het.txt, sharks/HepPer/20250422_CM068678.1_het.txt, sharks/HepPer/20250422_CM068679.1_het.txt, sharks/HepPer/20250422_CM068680.1_het.txt, sharks/HepPer/20250422_CM068681.1_het.txt, sharks/HepPer/20250422_CM068682.1_het.txt
+    output: sharks/HepPer/20250422_HepPer_per_chr_mean_heterozygosity.txt, sharks/HepPer/20250422_HepPer_whole_genome_mean_heterozygosity.txt
+    jobid: 246
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_whole_genome_mean_heterozygosity.txt, sharks/HepPer/20250422_HepPer_per_chr_mean_heterozygosity.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422
+    resources: tmpdir=/tmp
+
+[Thu Apr 24 11:21:26 2025]
+Finished job 247.
+1 of 50 steps (2%) done
+Select jobs to execute...
+Execute 47 jobs...
+
+[Thu Apr 24 11:21:26 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068656.1_Het_Map.svg
+    jobid: 267
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068656.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068656.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:26 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068649.1_Het_Map.svg
+    jobid: 260
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068649.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068649.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:26 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068642.1_Het_Map.svg
+    jobid: 253
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068642.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068642.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:26 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068678.1_Het_Map.svg
+    jobid: 289
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068678.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068678.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:26 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068671.1_Het_Map.svg
+    jobid: 282
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068671.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068671.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:26 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068664.1_Het_Map.svg
+    jobid: 275
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068664.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068664.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:26 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068657.1_Het_Map.svg
+    jobid: 268
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068657.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068657.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:26 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068650.1_Het_Map.svg
+    jobid: 261
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068650.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068650.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:26 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068643.1_Het_Map.svg
+    jobid: 254
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068643.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068643.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:26 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068637.1_Het_Map.svg
+    jobid: 248
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068637.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068637.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:26 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068679.1_Het_Map.svg
+    jobid: 290
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068679.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068679.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:26 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068672.1_Het_Map.svg
+    jobid: 283
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068672.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068672.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:26 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068665.1_Het_Map.svg
+    jobid: 276
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068665.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068665.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:26 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068658.1_Het_Map.svg
+    jobid: 269
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068658.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068658.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:26 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068651.1_Het_Map.svg
+    jobid: 262
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068651.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068651.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:26 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068644.1_Het_Map.svg
+    jobid: 255
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068644.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068644.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:26 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068638.1_Het_Map.svg
+    jobid: 249
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068638.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068638.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:26 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068680.1_Het_Map.svg
+    jobid: 291
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068680.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068680.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:29 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068673.1_Het_Map.svg
+    jobid: 284
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068673.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068673.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:29 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068666.1_Het_Map.svg
+    jobid: 277
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068666.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068666.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:29 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068659.1_Het_Map.svg
+    jobid: 270
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068659.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068659.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:29 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068652.1_Het_Map.svg
+    jobid: 263
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068652.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068652.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:30 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068645.1_Het_Map.svg
+    jobid: 256
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068645.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068645.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:30 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068639.1_Het_Map.svg
+    jobid: 250
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068639.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068639.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:30 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068681.1_Het_Map.svg
+    jobid: 292
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068681.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068681.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:30 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068674.1_Het_Map.svg
+    jobid: 285
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068674.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068674.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:30 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068667.1_Het_Map.svg
+    jobid: 278
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068667.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068667.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:30 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068660.1_Het_Map.svg
+    jobid: 271
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068660.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068660.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:31 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068653.1_Het_Map.svg
+    jobid: 264
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068653.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068653.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:31 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068646.1_Het_Map.svg
+    jobid: 257
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068646.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068646.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:31 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068640.1_Het_Map.svg
+    jobid: 251
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068640.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068640.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:31 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068682.1_Het_Map.svg
+    jobid: 293
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068682.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068682.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:31 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068675.1_Het_Map.svg
+    jobid: 286
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068675.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068675.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:31 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068668.1_Het_Map.svg
+    jobid: 279
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068668.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068668.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:31 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068661.1_Het_Map.svg
+    jobid: 272
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068661.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068661.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:31 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068654.1_Het_Map.svg
+    jobid: 265
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068654.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068654.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:31 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068647.1_Het_Map.svg
+    jobid: 258
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068647.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068647.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:31 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068641.1_Het_Map.svg
+    jobid: 252
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068641.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068641.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:31 2025]
+localrule PLOT_WHOLE_HET:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_Het_Whole_Genome_Map.svg
+    jobid: 294
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_Het_Whole_Genome_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:31 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068676.1_Het_Map.svg
+    jobid: 287
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068676.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068676.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:35 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068669.1_Het_Map.svg
+    jobid: 280
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068669.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068669.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:35 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068662.1_Het_Map.svg
+    jobid: 273
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068662.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068662.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:35 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068655.1_Het_Map.svg
+    jobid: 266
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068655.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068655.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:36 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068648.1_Het_Map.svg
+    jobid: 259
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068648.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068648.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:36 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068677.1_Het_Map.svg
+    jobid: 288
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068677.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068677.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:36 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068670.1_Het_Map.svg
+    jobid: 281
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068670.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068670.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 11:21:36 2025]
+localrule PLOT_HET_PER_CHR:
+    input: sharks/HepPer/HepPer_Het_Compiled.tsv
+    output: sharks/HepPer/20250422_HepPer_CM068663.1_Het_Map.svg
+    jobid: 274
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_CM068663.1_Het_Map.svg; Input files updated by another job: sharks/HepPer/HepPer_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068663.1
+    resources: tmpdir=/tmp
+
+[Thu Apr 24 11:21:36 2025]
+Finished job 246.
+2 of 50 steps (4%) done
+[Thu Apr 24 11:25:23 2025]
+Finished job 281.
+3 of 50 steps (6%) done
+[Thu Apr 24 11:25:24 2025]
+Finished job 266.
+4 of 50 steps (8%) done
+[Thu Apr 24 11:25:24 2025]
+Finished job 253.
+5 of 50 steps (10%) done
+[Thu Apr 24 11:25:25 2025]
+Finished job 267.
+6 of 50 steps (12%) done
+[Thu Apr 24 11:25:26 2025]
+Finished job 294.
+7 of 50 steps (14%) done
+[Thu Apr 24 11:25:26 2025]
+Finished job 256.
+8 of 50 steps (16%) done
+[Thu Apr 24 11:25:26 2025]
+Finished job 257.
+9 of 50 steps (18%) done
+[Thu Apr 24 11:25:27 2025]
+Finished job 292.
+10 of 50 steps (20%) done
+[Thu Apr 24 11:25:28 2025]
+Finished job 254.
+11 of 50 steps (22%) done
+[Thu Apr 24 11:25:28 2025]
+Finished job 291.
+12 of 50 steps (24%) done
+[Thu Apr 24 11:25:28 2025]
+Finished job 285.
+13 of 50 steps (26%) done
+[Thu Apr 24 11:25:28 2025]
+Finished job 263.
+14 of 50 steps (28%) done
+[Thu Apr 24 11:25:29 2025]
+Finished job 289.
+15 of 50 steps (30%) done
+[Thu Apr 24 11:25:29 2025]
+Finished job 282.
+16 of 50 steps (32%) done
+[Thu Apr 24 11:25:30 2025]
+Finished job 249.
+17 of 50 steps (34%) done
+[Thu Apr 24 11:25:30 2025]
+Finished job 286.
+18 of 50 steps (36%) done
+[Thu Apr 24 11:25:30 2025]
+Finished job 284.
+19 of 50 steps (38%) done
+[Thu Apr 24 11:25:30 2025]
+Finished job 250.
+20 of 50 steps (40%) done
+[Thu Apr 24 11:25:30 2025]
+Finished job 265.
+21 of 50 steps (42%) done
+[Thu Apr 24 11:25:31 2025]
+Finished job 262.
+22 of 50 steps (44%) done
+[Thu Apr 24 11:25:31 2025]
+Finished job 260.
+23 of 50 steps (46%) done
+[Thu Apr 24 11:25:31 2025]
+Finished job 276.
+24 of 50 steps (48%) done
+[Thu Apr 24 11:25:31 2025]
+Finished job 275.
+25 of 50 steps (50%) done
+[Thu Apr 24 11:25:31 2025]
+Finished job 271.
+26 of 50 steps (52%) done
+[Thu Apr 24 11:25:31 2025]
+Finished job 268.
+27 of 50 steps (54%) done
+[Thu Apr 24 11:25:32 2025]
+Finished job 277.
+28 of 50 steps (56%) done
+[Thu Apr 24 11:25:32 2025]
+Finished job 255.
+29 of 50 steps (58%) done
+[Thu Apr 24 11:25:32 2025]
+Finished job 290.
+30 of 50 steps (60%) done
+[Thu Apr 24 11:25:32 2025]
+Finished job 278.
+31 of 50 steps (62%) done
+[Thu Apr 24 11:25:32 2025]
+Finished job 269.
+32 of 50 steps (64%) done
+[Thu Apr 24 11:25:32 2025]
+Finished job 287.
+33 of 50 steps (66%) done
+[Thu Apr 24 11:25:32 2025]
+Finished job 283.
+34 of 50 steps (68%) done
+[Thu Apr 24 11:25:32 2025]
+Finished job 252.
+35 of 50 steps (70%) done
+[Thu Apr 24 11:25:32 2025]
+Finished job 251.
+36 of 50 steps (72%) done
+Waiting at most 5 seconds for missing files:
+sharks/HepPer/20250422_HepPer_CM068682.1_Het_Map.svg (missing locally)
+MissingOutputException in rule PLOT_HET_PER_CHR in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 481:
+Job 293  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+sharks/HepPer/20250422_HepPer_CM068682.1_Het_Map.svg (missing locally, parent dir contents: 20250422_CM068638.1_GCA_035084215.1_FROH.txt, 20250422_HepPer_CM068649.1_Het_Map.svg, 20250422_CM068652.1_ROH_Results.txt, 20250422_CM068665.1_het.txt, 20250422_CM068664.1_ROH_Results.txt, 20250422_CM068642.1_ROH_Results.txt, 20250422_HepPer_CM068670.1_Het_Map.svg, 20250422_HepPer_CM068668.1_Het_Map.svg, 20250422_CM068676.1_GCA_035084215.1_FROH.txt, 20250422_CM068661.1_ROH_Results.txt, 20250422_HepPer_CM068653.1_Het_Map.svg, 20250422_HepPer_CM068638.1_Het_Map.svg, 20250422_CM068669.1_ROH_Results.txt, 20250422_CM068647.1_GCA_035084215.1_FROH.txt, 20250422_CM068652.1_GCA_035084215.1_FROH.txt, 20250422_CM068682.1_ROH_Results.txt, 20250422_CM068672.1_GCA_035084215.1_FROH.txt, 20250422_CM068678.1_GCA_035084215.1_FROH.txt, 20250422_CM068646.1_GCA_035084215.1_FROH.txt, 20250422_HepPer_FROH.txt, 20250422_CM068659.1_het.txt, 20250422_CM068677.1_ROH_Results.txt, 20250422_HepPer_whole_genome_mean_heterozygosity.txt, 20250422_CM068659.1_ROH_Results.txt, 20250422_HepPer_CM068641.1_Het_Map.svg, 20250422_CM068660.1_GCA_035084215.1_FROH.txt, 20250422_HepPer_CM068671.1_Het_Map.svg, 20250422_CM068674.1_het.txt, 20250422_CM068664.1_GCA_035084215.1_FROH.txt, 20250422_CM068657.1_het.txt, 20250422_CM068649.1_het.txt, HepPer_ALN.1aln, 20250422_CM068661.1_het.txt, 20250422_CM068642.1_GCA_035084215.1_FROH.txt, 20250422_HepPer_CM068655.1_Het_Map.svg, 20250422_CM068677.1_het.txt, 20250422_HepPer_CM068681.1_Het_Map.svg, 20250422_CM068651.1_het.txt, 20250422_CM068648.1_GCA_035084215.1_FROH.txt, 20250422_CM068654.1_ROH_Results.txt, 20250422_CM068649.1_GCA_035084215.1_FROH.txt, 20250422_CM068640.1_het.txt, 20250422_CM068664.1_het.txt, temp, 20250422_CM068643.1_GCA_035084215.1_FROH.txt, 20250422_CM068675.1_ROH_Results.txt, 20250422_CM068649.1_ROH_Results.txt, 20250422_CM068637.1_ROH_Results.txt, 20250422_HepPer_CM068643.1_Het_Map.svg, 20250422_CM068666.1_GCA_035084215.1_FROH.txt, 20250422_CM068638.1_ROH_Results.txt, 20250422_CM068641.1_het.txt, 20250422_CM068648.1_ROH_Results.txt, 20250422_CM068647.1_ROH_Results.txt, 20250422_CM068669.1_het.txt, 20250422_CM068645.1_ROH_Results.txt, 20250422_HepPer_CM068650.1_Het_Map.svg, 20250422_HepPer_CM068644.1_Het_Map.svg, 20250422_HepPer_CM068656.1_Het_Map.svg, 20250422_CM068678.1_het.txt, 20250422_CM068681.1_het.txt, 20250422_HepPer_CM068669.1_Het_Map.svg, 20250422_CM068645.1_het.txt, 20250422_CM068651.1_ROH_Results.txt, 20250422_CM068670.1_GCA_035084215.1_FROH.txt, 20250422_CM068682.1_het.txt, 20250422_HepPer_CM068663.1_Het_Map.svg, 20250422_CM068655.1_ROH_Results.txt, HepPer_FASTGA.chain.fltr.paf, 20250422_CM068675.1_GCA_035084215.1_FROH.txt, 20250422_CM068650.1_ROH_Results.txt, 20250422_HepPer_CM068658.1_Het_Map.svg, 20250422_CM068678.1_ROH_Results.txt, 20250422_CM068670.1_ROH_Results.txt, 20250422_CM068640.1_ROH_Results.txt, 20250422_CM068660.1_ROH_Results.txt, HepPer_FASTGA.chain.fltr.srt.paf, 20250422_CM068662.1_het.txt, HepPer_ROH_Results.csv, 20250422_CM068655.1_GCA_035084215.1_FROH.txt, 20250422_CM068660.1_het.txt, 20250422_HepPer_CM068676.1_Het_Map.svg, 20250422_CM068644.1_ROH_Results.txt, 20250422_CM068644.1_GCA_035084215.1_FROH.txt, 20250422_CM068665.1_ROH_Results.txt, 20250422_CM068639.1_ROH_Results.txt, 20250422_CM068645.1_GCA_035084215.1_FROH.txt, 20250422_CM068669.1_GCA_035084215.1_FROH.txt, 20250422_CM068679.1_GCA_035084215.1_FROH.txt, 20250422_CM068646.1_het.txt, 20250422_CM068668.1_ROH_Results.txt, 20250422_HepPer_CM068640.1_Het_Map.svg, 20250422_CM068658.1_het.txt, 20250422_CM068647.1_het.txt, 20250422_CM068680.1_ROH_Results.txt, 20250422_CM068666.1_ROH_Results.txt, 20250422_HepPer_CM068659.1_Het_Map.svg, 20250422_HepPer_CM068645.1_Het_Map.svg, 20250422_CM068680.1_GCA_035084215.1_FROH.txt, 20250422_CM068671.1_GCA_035084215.1_FROH.txt, 20250422_CM068639.1_het.txt, 20250422_CM068643.1_ROH_Results.txt, 20250422_CM068639.1_GCA_035084215.1_FROH.txt, 20250422_CM068648.1_het.txt, 20250422_CM068659.1_GCA_035084215.1_FROH.txt, 20250422_CM068681.1_GCA_035084215.1_FROH.txt, 20250422_CM068673.1_ROH_Results.txt, 20250422_CM068653.1_ROH_Results.txt, 20250422_CM068665.1_GCA_035084215.1_FROH.txt, 20250422_HepPer_CM068646.1_Het_Map.svg, 20250422_CM068661.1_GCA_035084215.1_FROH.txt, 20250422_CM068679.1_het.txt, 20250422_HepPer_CM068651.1_Het_Map.svg, 20250422_CM068674.1_GCA_035084215.1_FROH.txt, 20250422_CM068679.1_ROH_Results.txt, 20250422_CM068668.1_het.txt, 20250422_CM068658.1_GCA_035084215.1_FROH.txt, 20250422_CM068666.1_het.txt, 20250422_HepPer_CM068678.1_Het_Map.svg, 20250422_CM068671.1_het.txt, 20250422_CM068657.1_GCA_035084215.1_FROH.txt, 20250422_CM068663.1_ROH_Results.txt, 20250422_HepPer_CM068657.1_Het_Map.svg, 20250422_HepPer_CM068662.1_Het_Map.svg, 20250422_CM068655.1_het.txt, 20250422_HepPer_CM068647.1_Het_Map.svg, 20250422_CM068662.1_GCA_035084215.1_FROH.txt, 20250422_CM068658.1_ROH_Results.txt, 20250422_CM068667.1_GCA_035084215.1_FROH.txt, 20250422_HepPer_CM068642.1_Het_Map.svg, 20250422_CM068656.1_het.txt, 20250422_CM068680.1_het.txt, 20250422_HepPer_CM068639.1_Het_Map.svg, 20250422_HepPer_CM068666.1_Het_Map.svg, HepPer_Het_Compiled.tsv, 20250422_CM068675.1_het.txt, 20250422_CM068650.1_GCA_035084215.1_FROH.txt, 20250422_CM068656.1_GCA_035084215.1_FROH.txt, 20250422_HepPer_ROH_Map.pdf, 20250422_CM068681.1_ROH_Results.txt, 20250422_CM068656.1_ROH_Results.txt, 20250422_CM068672.1_ROH_Results.txt, 20250422_CM068643.1_het.txt, 20250422_CM068641.1_ROH_Results.txt, 20250422_CM068651.1_GCA_035084215.1_FROH.txt, 20250422_HepPer_per_chr_mean_heterozygosity.txt, 20250422_HepPer_CM068680.1_Het_Map.svg, 20250422_HepPer_CM068665.1_Het_Map.svg, 20250422_CM068637.1_het.txt, HepPer_ALN.chain.1aln, 20250422_CM068650.1_het.txt, 20250422_CM068668.1_GCA_035084215.1_FROH.txt, 20250422_HepPer_CM068667.1_Het_Map.svg, 20250422_CM068674.1_ROH_Results.txt, 20250422_CM068682.1_GCA_035084215.1_FROH.txt, 20250422_CM068670.1_het.txt, 20250422_CM068638.1_het.txt, 20250422_HepPer_CM068652.1_Het_Map.svg, 20250422_HepPer_CM068661.1_Het_Map.svg, 20250422_HepPer_CM068675.1_Het_Map.svg, 20250422_CM068653.1_GCA_035084215.1_FROH.txt, 20250422_CM068654.1_het.txt, 20250422_CM068676.1_het.txt, 20250422_HepPer_CM068677.1_Het_Map.svg, HepPer_FASTGA.chain.paf, 20250422_CM068642.1_het.txt, 20250422_CM068662.1_ROH_Results.txt, 20250422_CM068667.1_het.txt, 20250422_CM068677.1_GCA_035084215.1_FROH.txt, 20250422_CM068646.1_ROH_Results.txt, 20250422_CM068644.1_het.txt, 20250422_CM068653.1_het.txt, 20250422_HepPer_CM068660.1_Het_Map.svg, 20250422_CM068657.1_ROH_Results.txt, Reference_HepPer_Chroms_Lengths.txt, 20250422_CM068667.1_ROH_Results.txt, 20250422_HepPer_CM068648.1_Het_Map.svg, 20250422_CM068640.1_GCA_035084215.1_FROH.txt, 20250422_CM068641.1_GCA_035084215.1_FROH.txt, 20250422_CM068652.1_het.txt, 20250422_CM068637.1_GCA_035084215.1_FROH.txt, 20250422_CM068673.1_GCA_035084215.1_FROH.txt, 20250422_HepPer_CM068672.1_Het_Map.svg, 20250422_HepPer_CM068679.1_Het_Map.svg, 20250422_HepPer_CM068673.1_Het_Map.svg, 20250422_CM068673.1_het.txt, 20250422_HepPer_Het_Whole_Genome_Map.svg, 20250422_HepPer_CM068674.1_Het_Map.svg, 20250422_CM068654.1_GCA_035084215.1_FROH.txt, 20250422_CM068663.1_GCA_035084215.1_FROH.txt, 20250422_CM068676.1_ROH_Results.txt, 20250422_CM068672.1_het.txt, 20250422_HepPer_CM068637.1_Het_Map.svg, 20250422_HepPer_CM068654.1_Het_Map.svg, 20250422_CM068663.1_het.txt, 20250422_CM068671.1_ROH_Results.txt, 20250422_HepPer_CM068664.1_Het_Map.svg)
+[Thu Apr 24 11:25:37 2025]
+Finished job 258.
+37 of 50 steps (74%) done
+[Thu Apr 24 11:25:37 2025]
+Finished job 274.
+38 of 50 steps (76%) done
+[Thu Apr 24 11:25:37 2025]
+Finished job 272.
+39 of 50 steps (78%) done
+[Thu Apr 24 11:25:37 2025]
+Finished job 280.
+40 of 50 steps (80%) done
+[Thu Apr 24 11:25:37 2025]
+Finished job 248.
+41 of 50 steps (82%) done
+[Thu Apr 24 11:25:37 2025]
+Finished job 273.
+42 of 50 steps (84%) done
+[Thu Apr 24 11:25:37 2025]
+Finished job 270.
+43 of 50 steps (86%) done
+[Thu Apr 24 11:25:37 2025]
+Finished job 279.
+44 of 50 steps (88%) done
+[Thu Apr 24 11:25:37 2025]
+Finished job 288.
+45 of 50 steps (90%) done
+[Thu Apr 24 11:25:37 2025]
+Finished job 261.
+46 of 50 steps (92%) done
+[Thu Apr 24 11:25:38 2025]
+Finished job 259.
+47 of 50 steps (94%) done
+[Thu Apr 24 11:25:38 2025]
+Finished job 264.
+48 of 50 steps (96%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-04-24T112125.124016.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -1,0 +1,1406 @@
+host: login-q-4
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 76
+Rules claiming more threads will be scaled down.
+Job stats:
+job                            count
+---------------------------  -------
+BAM_CALLER_BED                    46
+BGZIP_VCF                         46
+BOOTSTRAPPING_MULTIHET_FILE        1
+CALL_PLOIDY                       46
+EXTRACT_CHR_FASTA                 46
+GENERATE_MASK                     46
+GENERATE_MULTIHETSEP              46
+INDEL_MASKER                      46
+MAIN_MULTIHETSEP                  46
+MAKE_BAM                           1
+MAKE_SAM                           1
+PILEUP_VARIANTS                    1
+REMOVE_INDELS                     46
+RESTRUCTURE                       46
+SEPARATE_BAM_BY_CHR               46
+all                                1
+total                            511
+
+Select jobs to execute...
+Execute 47 jobs...
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068655.1.fasta
+    jobid: 317
+    reason: Missing output files: sharks/HepPer/temp/CM068655.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068655.1
+    resources: tmpdir=/tmp
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068648.1.fasta
+    jobid: 310
+    reason: Missing output files: sharks/HepPer/temp/CM068648.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068648.1
+    resources: tmpdir=/tmp
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068641.1.fasta
+    jobid: 303
+    reason: Missing output files: sharks/HepPer/temp/CM068641.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068641.1
+    resources: tmpdir=/tmp
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068677.1.fasta
+    jobid: 339
+    reason: Missing output files: sharks/HepPer/temp/CM068677.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068677.1
+    resources: tmpdir=/tmp
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068670.1.fasta
+    jobid: 332
+    reason: Missing output files: sharks/HepPer/temp/CM068670.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068670.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068677.1 > sharks/HepPer/temp/CM068677.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068677.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 339
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068677.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068677.1 > sharks/HepPer/temp/CM068677.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068677.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068641.1 > sharks/HepPer/temp/CM068641.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068641.1.fasta' returned non-zero exit status 1.
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068648.1 > sharks/HepPer/temp/CM068648.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068648.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+[Mon May 12 10:05:00 2025]
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068655.1 > sharks/HepPer/temp/CM068655.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068655.1.fasta' returned non-zero exit status 1.
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 303
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068641.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068641.1 > sharks/HepPer/temp/CM068641.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068641.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 310
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068648.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068648.1 > sharks/HepPer/temp/CM068648.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068648.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon May 12 10:05:00 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 317
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068655.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068655.1 > sharks/HepPer/temp/CM068655.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068655.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068663.1.fasta
+    jobid: 325
+    reason: Missing output files: sharks/HepPer/temp/CM068663.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068663.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068670.1 > sharks/HepPer/temp/CM068670.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068670.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 332
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068670.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068670.1 > sharks/HepPer/temp/CM068670.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068670.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068656.1.fasta
+    jobid: 318
+    reason: Missing output files: sharks/HepPer/temp/CM068656.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068656.1
+    resources: tmpdir=/tmp
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068649.1.fasta
+    jobid: 311
+    reason: Missing output files: sharks/HepPer/temp/CM068649.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068649.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068663.1 > sharks/HepPer/temp/CM068663.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068663.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 325
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068663.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068663.1 > sharks/HepPer/temp/CM068663.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068663.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068656.1 > sharks/HepPer/temp/CM068656.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068656.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 318
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068656.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068656.1 > sharks/HepPer/temp/CM068656.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068656.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068642.1.fasta
+    jobid: 304
+    reason: Missing output files: sharks/HepPer/temp/CM068642.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068642.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068649.1 > sharks/HepPer/temp/CM068649.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068649.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 311
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068649.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068649.1 > sharks/HepPer/temp/CM068649.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068649.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068678.1.fasta
+    jobid: 340
+    reason: Missing output files: sharks/HepPer/temp/CM068678.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068678.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068642.1 > sharks/HepPer/temp/CM068642.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068642.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 304
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068642.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068642.1 > sharks/HepPer/temp/CM068642.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068642.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068671.1.fasta
+    jobid: 333
+    reason: Missing output files: sharks/HepPer/temp/CM068671.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068671.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068678.1 > sharks/HepPer/temp/CM068678.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068678.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 340
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068678.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068678.1 > sharks/HepPer/temp/CM068678.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068678.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068664.1.fasta
+    jobid: 326
+    reason: Missing output files: sharks/HepPer/temp/CM068664.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068664.1
+    resources: tmpdir=/tmp
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068657.1.fasta
+    jobid: 319
+    reason: Missing output files: sharks/HepPer/temp/CM068657.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068657.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068671.1 > sharks/HepPer/temp/CM068671.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068671.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 333
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068671.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068671.1 > sharks/HepPer/temp/CM068671.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068671.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068664.1 > sharks/HepPer/temp/CM068664.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068664.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 326
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068664.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068664.1 > sharks/HepPer/temp/CM068664.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068664.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068650.1.fasta
+    jobid: 312
+    reason: Missing output files: sharks/HepPer/temp/CM068650.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068650.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068657.1 > sharks/HepPer/temp/CM068657.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068657.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 319
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068657.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068657.1 > sharks/HepPer/temp/CM068657.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068657.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068643.1.fasta
+    jobid: 305
+    reason: Missing output files: sharks/HepPer/temp/CM068643.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068643.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068650.1 > sharks/HepPer/temp/CM068650.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068650.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 312
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068650.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068650.1 > sharks/HepPer/temp/CM068650.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068650.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068637.1.fasta
+    jobid: 299
+    reason: Missing output files: sharks/HepPer/temp/CM068637.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068637.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068643.1 > sharks/HepPer/temp/CM068643.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068643.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 305
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068643.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068643.1 > sharks/HepPer/temp/CM068643.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068643.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068679.1.fasta
+    jobid: 341
+    reason: Missing output files: sharks/HepPer/temp/CM068679.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068679.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068637.1 > sharks/HepPer/temp/CM068637.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068637.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 299
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068637.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068637.1 > sharks/HepPer/temp/CM068637.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068637.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068672.1.fasta
+    jobid: 334
+    reason: Missing output files: sharks/HepPer/temp/CM068672.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068672.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068679.1 > sharks/HepPer/temp/CM068679.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068679.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 341
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068679.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068679.1 > sharks/HepPer/temp/CM068679.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068679.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068665.1.fasta
+    jobid: 327
+    reason: Missing output files: sharks/HepPer/temp/CM068665.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068665.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068672.1 > sharks/HepPer/temp/CM068672.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068672.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 334
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068672.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068672.1 > sharks/HepPer/temp/CM068672.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068672.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068658.1.fasta
+    jobid: 320
+    reason: Missing output files: sharks/HepPer/temp/CM068658.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068658.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068665.1 > sharks/HepPer/temp/CM068665.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068665.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 327
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068665.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068665.1 > sharks/HepPer/temp/CM068665.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068665.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068651.1.fasta
+    jobid: 313
+    reason: Missing output files: sharks/HepPer/temp/CM068651.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068651.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068658.1 > sharks/HepPer/temp/CM068658.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068658.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 320
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068658.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068658.1 > sharks/HepPer/temp/CM068658.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068658.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068651.1 > sharks/HepPer/temp/CM068651.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068651.1.fasta' returned non-zero exit status 1.
+
+[Mon May 12 10:05:00 2025]
+[Mon May 12 10:05:00 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 313
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068651.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068651.1 > sharks/HepPer/temp/CM068651.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068651.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068644.1.fasta
+    jobid: 306
+    reason: Missing output files: sharks/HepPer/temp/CM068644.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068644.1
+    resources: tmpdir=/tmp
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068638.1.fasta
+    jobid: 300
+    reason: Missing output files: sharks/HepPer/temp/CM068638.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068638.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068644.1 > sharks/HepPer/temp/CM068644.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068644.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 306
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068644.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068644.1 > sharks/HepPer/temp/CM068644.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068644.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068638.1 > sharks/HepPer/temp/CM068638.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068638.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 300
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068638.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068638.1 > sharks/HepPer/temp/CM068638.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068638.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068680.1.fasta
+    jobid: 342
+    reason: Missing output files: sharks/HepPer/temp/CM068680.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068680.1
+    resources: tmpdir=/tmp
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068673.1.fasta
+    jobid: 335
+    reason: Missing output files: sharks/HepPer/temp/CM068673.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068673.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068680.1 > sharks/HepPer/temp/CM068680.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068680.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 342
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068680.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068680.1 > sharks/HepPer/temp/CM068680.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068680.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068666.1.fasta
+    jobid: 328
+    reason: Missing output files: sharks/HepPer/temp/CM068666.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068666.1
+    resources: tmpdir=/tmp
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068659.1.fasta
+    jobid: 321
+    reason: Missing output files: sharks/HepPer/temp/CM068659.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068659.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068673.1 > sharks/HepPer/temp/CM068673.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068673.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 335
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068673.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068673.1 > sharks/HepPer/temp/CM068673.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068673.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068652.1.fasta
+    jobid: 314
+    reason: Missing output files: sharks/HepPer/temp/CM068652.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068652.1
+    resources: tmpdir=/tmp
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068645.1.fasta
+    jobid: 307
+    reason: Missing output files: sharks/HepPer/temp/CM068645.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068645.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068659.1 > sharks/HepPer/temp/CM068659.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068659.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068666.1 > sharks/HepPer/temp/CM068666.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068666.1.fasta' returned non-zero exit status 1.
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 321
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068659.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068659.1 > sharks/HepPer/temp/CM068659.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068659.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon May 12 10:05:00 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 328
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068666.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068666.1 > sharks/HepPer/temp/CM068666.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068666.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068652.1 > sharks/HepPer/temp/CM068652.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068652.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 314
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068652.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068652.1 > sharks/HepPer/temp/CM068652.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068652.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068639.1.fasta
+    jobid: 301
+    reason: Missing output files: sharks/HepPer/temp/CM068639.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068639.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068645.1 > sharks/HepPer/temp/CM068645.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068645.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 307
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068645.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068645.1 > sharks/HepPer/temp/CM068645.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068645.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068681.1.fasta
+    jobid: 343
+    reason: Missing output files: sharks/HepPer/temp/CM068681.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068681.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068639.1 > sharks/HepPer/temp/CM068639.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068639.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 301
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068639.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068639.1 > sharks/HepPer/temp/CM068639.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068639.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068674.1.fasta
+    jobid: 336
+    reason: Missing output files: sharks/HepPer/temp/CM068674.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068674.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068681.1 > sharks/HepPer/temp/CM068681.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068681.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 343
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068681.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068681.1 > sharks/HepPer/temp/CM068681.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068681.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon May 12 10:05:00 2025]
+localrule MAKE_SAM:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz, /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/sharks/GCA_035084135.1.fa.gz
+    output: sharks/HepPer/HepPer.sam
+    jobid: 347
+    reason: Missing output files: sharks/HepPer/HepPer.sam
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer
+    resources: tmpdir=/tmp
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068667.1.fasta
+    jobid: 329
+    reason: Missing output files: sharks/HepPer/temp/CM068667.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068667.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068674.1 > sharks/HepPer/temp/CM068674.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068674.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:00 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 336
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068674.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068674.1 > sharks/HepPer/temp/CM068674.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068674.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon May 12 10:05:00 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068660.1.fasta
+    jobid: 322
+    reason: Missing output files: sharks/HepPer/temp/CM068660.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068660.1
+    resources: tmpdir=/tmp
+
+
+[Mon May 12 10:05:01 2025]
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068667.1 > sharks/HepPer/temp/CM068667.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068667.1.fasta' returned non-zero exit status 1.
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068653.1.fasta
+    jobid: 315
+    reason: Missing output files: sharks/HepPer/temp/CM068653.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068653.1
+    resources: tmpdir=/tmp
+[Mon May 12 10:05:01 2025]
+
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 329
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068667.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068667.1 > sharks/HepPer/temp/CM068667.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068667.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon May 12 10:05:01 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068646.1.fasta
+    jobid: 308
+    reason: Missing output files: sharks/HepPer/temp/CM068646.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068646.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068660.1 > sharks/HepPer/temp/CM068660.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068660.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:01 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 322
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068660.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068660.1 > sharks/HepPer/temp/CM068660.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068660.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068653.1 > sharks/HepPer/temp/CM068653.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068653.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:01 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 315
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068653.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068653.1 > sharks/HepPer/temp/CM068653.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068653.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon May 12 10:05:01 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068640.1.fasta
+    jobid: 302
+    reason: Missing output files: sharks/HepPer/temp/CM068640.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068640.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068646.1 > sharks/HepPer/temp/CM068646.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068646.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:01 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 308
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068646.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068646.1 > sharks/HepPer/temp/CM068646.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068646.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon May 12 10:05:01 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068682.1.fasta
+    jobid: 344
+    reason: Missing output files: sharks/HepPer/temp/CM068682.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068682.1
+    resources: tmpdir=/tmp
+
+
+[Mon May 12 10:05:01 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068675.1.fasta
+    jobid: 337
+    reason: Missing output files: sharks/HepPer/temp/CM068675.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068675.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068640.1 > sharks/HepPer/temp/CM068640.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068640.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:01 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 302
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068640.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068640.1 > sharks/HepPer/temp/CM068640.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068640.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068682.1 > sharks/HepPer/temp/CM068682.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068682.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:01 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 344
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068682.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068682.1 > sharks/HepPer/temp/CM068682.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068682.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon May 12 10:05:01 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068668.1.fasta
+    jobid: 330
+    reason: Missing output files: sharks/HepPer/temp/CM068668.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068668.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068675.1 > sharks/HepPer/temp/CM068675.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068675.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:01 2025]
+
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 337
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068675.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068675.1 > sharks/HepPer/temp/CM068675.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068675.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon May 12 10:05:01 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068661.1.fasta
+    jobid: 323
+    reason: Missing output files: sharks/HepPer/temp/CM068661.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068661.1
+    resources: tmpdir=/tmp
+
+
+[Mon May 12 10:05:01 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068654.1.fasta
+    jobid: 316
+    reason: Missing output files: sharks/HepPer/temp/CM068654.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068654.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068668.1 > sharks/HepPer/temp/CM068668.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068668.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:01 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 330
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068668.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068668.1 > sharks/HepPer/temp/CM068668.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068668.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068654.1 > sharks/HepPer/temp/CM068654.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068654.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:01 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 316
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068654.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068654.1 > sharks/HepPer/temp/CM068654.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068654.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068661.1 > sharks/HepPer/temp/CM068661.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068661.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:01 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 323
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068661.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068661.1 > sharks/HepPer/temp/CM068661.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068661.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon May 12 10:05:01 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068647.1.fasta
+    jobid: 309
+    reason: Missing output files: sharks/HepPer/temp/CM068647.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068647.1
+    resources: tmpdir=/tmp
+
+
+[Mon May 12 10:05:01 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068676.1.fasta
+    jobid: 338
+    reason: Missing output files: sharks/HepPer/temp/CM068676.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068676.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068647.1 > sharks/HepPer/temp/CM068647.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068647.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:01 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 309
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068647.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068647.1 > sharks/HepPer/temp/CM068647.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068647.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon May 12 10:05:01 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068669.1.fasta
+    jobid: 331
+    reason: Missing output files: sharks/HepPer/temp/CM068669.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068669.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068676.1 > sharks/HepPer/temp/CM068676.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068676.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:01 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 338
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068676.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068676.1 > sharks/HepPer/temp/CM068676.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068676.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon May 12 10:05:01 2025]
+localrule EXTRACT_CHR_FASTA:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068662.1.fasta
+    jobid: 324
+    reason: Missing output files: sharks/HepPer/temp/CM068662.1.fasta; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068662.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068669.1 > sharks/HepPer/temp/CM068669.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068669.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:01 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 331
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068669.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068669.1 > sharks/HepPer/temp/CM068669.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068669.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 575:
+Command 'set -euo pipefail;  
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068662.1 > sharks/HepPer/temp/CM068662.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068662.1.fasta' returned non-zero exit status 1.
+[Mon May 12 10:05:01 2025]
+Error in rule EXTRACT_CHR_FASTA:
+    jobid: 324
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer/temp/CM068662.1.fasta
+    shell:
+        
+        gunzip /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz > sharks/HepPer/temp/GCA_035084215.1.fa
+        samtools faidx sharks/HepPer/temp/GCA_035084215.1.fa CM068662.1 > sharks/HepPer/temp/CM068662.1.fasta
+        samtools faidx sharks/HepPer/temp/CM068662.1.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 538:
+Command 'set -euo pipefail;  
+        mkdir -p sharks/HepPer/MSMC
+        mkdir -p sharks/HepPer/MSMC/Output_BED_file
+        mkdir -p sharks/HepPer/MSMC/Output_indel_BED_file
+        mkdir -p sharks/HepPer/MSMC/Output_bam_caller_BED_file
+        mkdir -p sharks/HepPer/MSMC/Output_multihet_filtered_95
+        mkdir -p sharks/HepPer/MSMC/Output_Multihet_Bootstrapped
+        minimap2 -t 16 -ax asm5 /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/sharks/GCA_035084135.1.fa.gz > sharks/HepPer/HepPer.sam' returned non-zero exit status 137.
+[Mon May 12 10:06:10 2025]
+Error in rule MAKE_SAM:
+    jobid: 347
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz, /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/sharks/GCA_035084135.1.fa.gz
+    output: sharks/HepPer/HepPer.sam
+    shell:
+        
+        mkdir -p sharks/HepPer/MSMC
+        mkdir -p sharks/HepPer/MSMC/Output_BED_file
+        mkdir -p sharks/HepPer/MSMC/Output_indel_BED_file
+        mkdir -p sharks/HepPer/MSMC/Output_bam_caller_BED_file
+        mkdir -p sharks/HepPer/MSMC/Output_multihet_filtered_95
+        mkdir -p sharks/HepPer/MSMC/Output_Multihet_Bootstrapped
+        minimap2 -t 16 -ax asm5 /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/sharks/GCA_035084135.1.fa.gz > sharks/HepPer/HepPer.sam
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job MAKE_SAM since they might be corrupted:
+sharks/HepPer/HepPer.sam
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-05-12T100454.748806.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

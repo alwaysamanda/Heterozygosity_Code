@@ -1,0 +1,45 @@
+host: cpu-p-252
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 21 22:56:43 2025]
+rule PILEUP_VARIANTS:
+    input: sharks/HemOce/temp/NC_083405.1.fasta, sharks/HemOce/HemOce_NC_083405.1.bam
+    output: sharks/HemOce/temp/NC_083405.1_pileup.vcf.gz
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHROM=NC_083405.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+host: cpu-p-252
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 21 22:56:45 2025]
+localrule PILEUP_VARIANTS:
+    input: sharks/HemOce/temp/NC_083405.1.fasta, sharks/HemOce/HemOce_NC_083405.1.bam
+    output: sharks/HemOce/temp/NC_083405.1_pileup.vcf.gz
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, CHROM=NC_083405.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=/tmp, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+[mpileup] 1 samples in 1 input files
+[mpileup] maximum number of reads per input file set to -d 250
+[Wed May 21 23:01:22 2025]
+Finished job 0.
+1 of 1 steps (100%) done
+Storing output in storage.
+[Wed May 21 23:01:22 2025]
+Finished job 0.
+1 of 1 steps (100%) done
+Storing output in storage.

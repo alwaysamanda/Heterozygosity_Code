@@ -1,0 +1,283 @@
+host: login-p-1
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count
+----------  -------
+FILTER_PAF        6
+all               1
+total             7
+
+Select jobs to execute...
+Execute 6 jobs...
+
+[Wed Mar 26 13:49:54 2025]
+localrule FILTER_PAF:
+    input: amphibians/EleCoq_TEST/EleCoq_TEST_FASTGA.paf
+    output: amphibians/EleCoq_TEST/20250325_CM069423.1_filtered.paf
+    jobid: 12
+    reason: Missing output files: amphibians/EleCoq_TEST/20250325_CM069423.1_filtered.paf
+    wildcards: CLADE=amphibians, SPEC_NAME=EleCoq_TEST, TODAY_DATE=20250325, CHR=CM069423.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 13:49:54 2025]
+localrule FILTER_PAF:
+    input: amphibians/EleCoq_TEST/EleCoq_TEST_FASTGA.paf
+    output: amphibians/EleCoq_TEST/20250325_CM069418.1_filtered.paf
+    jobid: 7
+    reason: Missing output files: amphibians/EleCoq_TEST/20250325_CM069418.1_filtered.paf
+    wildcards: CLADE=amphibians, SPEC_NAME=EleCoq_TEST, TODAY_DATE=20250325, CHR=CM069418.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 13:49:54 2025]
+localrule FILTER_PAF:
+    input: amphibians/EleCoq_TEST/EleCoq_TEST_FASTGA.paf
+    output: amphibians/EleCoq_TEST/20250325_CM069420.1_filtered.paf
+    jobid: 9
+    reason: Missing output files: amphibians/EleCoq_TEST/20250325_CM069420.1_filtered.paf
+    wildcards: CLADE=amphibians, SPEC_NAME=EleCoq_TEST, TODAY_DATE=20250325, CHR=CM069420.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 13:49:54 2025]
+localrule FILTER_PAF:
+    input: amphibians/EleCoq_TEST/EleCoq_TEST_FASTGA.paf
+    output: amphibians/EleCoq_TEST/20250325_CM069419.1_filtered.paf
+    jobid: 8
+    reason: Missing output files: amphibians/EleCoq_TEST/20250325_CM069419.1_filtered.paf
+    wildcards: CLADE=amphibians, SPEC_NAME=EleCoq_TEST, TODAY_DATE=20250325, CHR=CM069419.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 13:49:54 2025]
+localrule FILTER_PAF:
+    input: amphibians/EleCoq_TEST/EleCoq_TEST_FASTGA.paf
+    output: amphibians/EleCoq_TEST/20250325_CM069421.1_filtered.paf
+    jobid: 10
+    reason: Missing output files: amphibians/EleCoq_TEST/20250325_CM069421.1_filtered.paf
+    wildcards: CLADE=amphibians, SPEC_NAME=EleCoq_TEST, TODAY_DATE=20250325, CHR=CM069421.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 13:49:54 2025]
+localrule FILTER_PAF:
+    input: amphibians/EleCoq_TEST/EleCoq_TEST_FASTGA.paf
+    output: amphibians/EleCoq_TEST/20250325_CM069422.1_filtered.paf
+    jobid: 11
+    reason: Missing output files: amphibians/EleCoq_TEST/20250325_CM069422.1_filtered.paf
+    wildcards: CLADE=amphibians, SPEC_NAME=EleCoq_TEST, TODAY_DATE=20250325, CHR=CM069422.1
+    resources: tmpdir=/tmp
+
+Traceback (most recent call last):
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/executors/local.py", line 232, in spawn_job
+    subprocess.check_call(cmd, shell=True)
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/subprocess.py", line 413, in check_call
+    raise CalledProcessError(retcode, cmd)
+
+subprocess.CalledProcessError: Command 'cd /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity && /home/ag2427/.conda/envs/snakemake/bin/python3.1 -m snakemake --snakefile '/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile' --target-jobs 'FILTER_PAF:CLADE=amphibians,SPEC_NAME=EleCoq_TEST,TODAY_DATE=20250325,CHR=CM069423.1' --allowed-rules FILTER_PAF --cores 56 --attempt 1 --force-use-threads  --force --target-files-omit-workdir-adjustment --keep-storage-local-copies --max-inventory-time 0 --nocolor --notemp --no-hooks --nolock --ignore-incomplete --rerun-triggers input software-env params code mtime --conda-frontend 'conda' --shared-fs-usage input-output sources software-deployment storage-local-copies persistence source-cache --wrapper-prefix 'https://github.com/snakemake/snakemake-wrappers/raw/' --latency-wait 5 --scheduler 'ilp' --local-storage-prefix .snakemake/storage --scheduler-solver-path '/home/ag2427/.conda/envs/snakemake/bin' --configfiles /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/config.yml --default-resources base64//dG1wZGlyPXN5c3RlbV90bXBkaXI= --quiet progress rules --mode 'subprocess' --local-groupid 'local'' returned non-zero exit status 1.
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/executors/local.py", line 234, in spawn_job
+    raise SpawnedJobError()
+
+snakemake.exceptions.SpawnedJobError
+
+Traceback (most recent call last):
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/executors/local.py", line 232, in spawn_job
+    subprocess.check_call(cmd, shell=True)
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/subprocess.py", line 413, in check_call
+    raise CalledProcessError(retcode, cmd)
+
+subprocess.CalledProcessError: Command 'cd /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity && /home/ag2427/.conda/envs/snakemake/bin/python3.1 -m snakemake --snakefile '/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile' --target-jobs 'FILTER_PAF:CLADE=amphibians,SPEC_NAME=EleCoq_TEST,TODAY_DATE=20250325,CHR=CM069418.1' --allowed-rules FILTER_PAF --cores 56 --attempt 1 --force-use-threads  --force --target-files-omit-workdir-adjustment --keep-storage-local-copies --max-inventory-time 0 --nocolor --notemp --no-hooks --nolock --ignore-incomplete --rerun-triggers input software-env params code mtime --conda-frontend 'conda' --shared-fs-usage input-output sources software-deployment storage-local-copies persistence source-cache --wrapper-prefix 'https://github.com/snakemake/snakemake-wrappers/raw/' --latency-wait 5 --scheduler 'ilp' --local-storage-prefix .snakemake/storage --scheduler-solver-path '/home/ag2427/.conda/envs/snakemake/bin' --configfiles /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/config.yml --default-resources base64//dG1wZGlyPXN5c3RlbV90bXBkaXI= --quiet progress rules --mode 'subprocess' --local-groupid 'local'' returned non-zero exit status 1.
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/executors/local.py", line 234, in spawn_job
+    raise SpawnedJobError()
+
+snakemake.exceptions.SpawnedJobError
+
+[Wed Mar 26 13:49:55 2025]
+[Wed Mar 26 13:49:55 2025]
+Error in rule FILTER_PAF:
+    jobid: 12
+    input: amphibians/EleCoq_TEST/EleCoq_TEST_FASTGA.paf
+    output: amphibians/EleCoq_TEST/20250325_CM069423.1_filtered.paf
+
+Error in rule FILTER_PAF:
+    jobid: 7
+    input: amphibians/EleCoq_TEST/EleCoq_TEST_FASTGA.paf
+    output: amphibians/EleCoq_TEST/20250325_CM069418.1_filtered.paf
+
+Traceback (most recent call last):
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/executors/local.py", line 232, in spawn_job
+    subprocess.check_call(cmd, shell=True)
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/subprocess.py", line 413, in check_call
+    raise CalledProcessError(retcode, cmd)
+
+subprocess.CalledProcessError: Command 'cd /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity && /home/ag2427/.conda/envs/snakemake/bin/python3.1 -m snakemake --snakefile '/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile' --target-jobs 'FILTER_PAF:CLADE=amphibians,SPEC_NAME=EleCoq_TEST,TODAY_DATE=20250325,CHR=CM069419.1' --allowed-rules FILTER_PAF --cores 56 --attempt 1 --force-use-threads  --force --target-files-omit-workdir-adjustment --keep-storage-local-copies --max-inventory-time 0 --nocolor --notemp --no-hooks --nolock --ignore-incomplete --rerun-triggers input software-env params code mtime --conda-frontend 'conda' --shared-fs-usage input-output sources software-deployment storage-local-copies persistence source-cache --wrapper-prefix 'https://github.com/snakemake/snakemake-wrappers/raw/' --latency-wait 5 --scheduler 'ilp' --local-storage-prefix .snakemake/storage --scheduler-solver-path '/home/ag2427/.conda/envs/snakemake/bin' --configfiles /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/config.yml --default-resources base64//dG1wZGlyPXN5c3RlbV90bXBkaXI= --quiet progress rules --mode 'subprocess' --local-groupid 'local'' returned non-zero exit status 1.
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/executors/local.py", line 234, in spawn_job
+    raise SpawnedJobError()
+
+snakemake.exceptions.SpawnedJobError
+
+[Wed Mar 26 13:49:55 2025]
+Error in rule FILTER_PAF:
+    jobid: 8
+    input: amphibians/EleCoq_TEST/EleCoq_TEST_FASTGA.paf
+    output: amphibians/EleCoq_TEST/20250325_CM069419.1_filtered.paf
+
+Traceback (most recent call last):
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/executors/local.py", line 232, in spawn_job
+    subprocess.check_call(cmd, shell=True)
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/subprocess.py", line 413, in check_call
+    raise CalledProcessError(retcode, cmd)
+
+subprocess.CalledProcessError: Command 'cd /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity && /home/ag2427/.conda/envs/snakemake/bin/python3.1 -m snakemake --snakefile '/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile' --target-jobs 'FILTER_PAF:CLADE=amphibians,SPEC_NAME=EleCoq_TEST,TODAY_DATE=20250325,CHR=CM069421.1' --allowed-rules FILTER_PAF --cores 56 --attempt 1 --force-use-threads  --force --target-files-omit-workdir-adjustment --keep-storage-local-copies --max-inventory-time 0 --nocolor --notemp --no-hooks --nolock --ignore-incomplete --rerun-triggers input software-env params code mtime --conda-frontend 'conda' --shared-fs-usage input-output sources software-deployment storage-local-copies persistence source-cache --wrapper-prefix 'https://github.com/snakemake/snakemake-wrappers/raw/' --latency-wait 5 --scheduler 'ilp' --local-storage-prefix .snakemake/storage --scheduler-solver-path '/home/ag2427/.conda/envs/snakemake/bin' --configfiles /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/config.yml --default-resources base64//dG1wZGlyPXN5c3RlbV90bXBkaXI= --quiet progress rules --mode 'subprocess' --local-groupid 'local'' returned non-zero exit status 1.
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/executors/local.py", line 234, in spawn_job
+    raise SpawnedJobError()
+
+snakemake.exceptions.SpawnedJobError
+
+[Wed Mar 26 13:49:55 2025]
+Error in rule FILTER_PAF:
+    jobid: 10
+    input: amphibians/EleCoq_TEST/EleCoq_TEST_FASTGA.paf
+    output: amphibians/EleCoq_TEST/20250325_CM069421.1_filtered.paf
+
+Traceback (most recent call last):
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/executors/local.py", line 232, in spawn_job
+    subprocess.check_call(cmd, shell=True)
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/subprocess.py", line 413, in check_call
+    raise CalledProcessError(retcode, cmd)
+
+subprocess.CalledProcessError: Command 'cd /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity && /home/ag2427/.conda/envs/snakemake/bin/python3.1 -m snakemake --snakefile '/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile' --target-jobs 'FILTER_PAF:CLADE=amphibians,SPEC_NAME=EleCoq_TEST,TODAY_DATE=20250325,CHR=CM069422.1' --allowed-rules FILTER_PAF --cores 56 --attempt 1 --force-use-threads  --force --target-files-omit-workdir-adjustment --keep-storage-local-copies --max-inventory-time 0 --nocolor --notemp --no-hooks --nolock --ignore-incomplete --rerun-triggers input software-env params code mtime --conda-frontend 'conda' --shared-fs-usage input-output sources software-deployment storage-local-copies persistence source-cache --wrapper-prefix 'https://github.com/snakemake/snakemake-wrappers/raw/' --latency-wait 5 --scheduler 'ilp' --local-storage-prefix .snakemake/storage --scheduler-solver-path '/home/ag2427/.conda/envs/snakemake/bin' --configfiles /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/config.yml --default-resources base64//dG1wZGlyPXN5c3RlbV90bXBkaXI= --quiet progress rules --mode 'subprocess' --local-groupid 'local'' returned non-zero exit status 1.
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/executors/local.py", line 234, in spawn_job
+    raise SpawnedJobError()
+
+snakemake.exceptions.SpawnedJobError
+
+[Wed Mar 26 13:49:55 2025]
+Error in rule FILTER_PAF:
+    jobid: 11
+    input: amphibians/EleCoq_TEST/EleCoq_TEST_FASTGA.paf
+    output: amphibians/EleCoq_TEST/20250325_CM069422.1_filtered.paf
+
+Traceback (most recent call last):
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/executors/local.py", line 232, in spawn_job
+    subprocess.check_call(cmd, shell=True)
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/subprocess.py", line 413, in check_call
+    raise CalledProcessError(retcode, cmd)
+
+subprocess.CalledProcessError: Command 'cd /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity && /home/ag2427/.conda/envs/snakemake/bin/python3.1 -m snakemake --snakefile '/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile' --target-jobs 'FILTER_PAF:CLADE=amphibians,SPEC_NAME=EleCoq_TEST,TODAY_DATE=20250325,CHR=CM069420.1' --allowed-rules FILTER_PAF --cores 56 --attempt 1 --force-use-threads  --force --target-files-omit-workdir-adjustment --keep-storage-local-copies --max-inventory-time 0 --nocolor --notemp --no-hooks --nolock --ignore-incomplete --rerun-triggers input software-env params code mtime --conda-frontend 'conda' --shared-fs-usage input-output sources software-deployment storage-local-copies persistence source-cache --wrapper-prefix 'https://github.com/snakemake/snakemake-wrappers/raw/' --latency-wait 5 --scheduler 'ilp' --local-storage-prefix .snakemake/storage --scheduler-solver-path '/home/ag2427/.conda/envs/snakemake/bin' --configfiles /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/config.yml --default-resources base64//dG1wZGlyPXN5c3RlbV90bXBkaXI= --quiet progress rules --mode 'subprocess' --local-groupid 'local'' returned non-zero exit status 1.
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/executors/local.py", line 234, in spawn_job
+    raise SpawnedJobError()
+
+snakemake.exceptions.SpawnedJobError
+
+[Wed Mar 26 13:49:55 2025]
+Error in rule FILTER_PAF:
+    jobid: 9
+    input: amphibians/EleCoq_TEST/EleCoq_TEST_FASTGA.paf
+    output: amphibians/EleCoq_TEST/20250325_CM069420.1_filtered.paf
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-26T134954.745118.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -1,0 +1,93 @@
+host: login-p-4
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+ALNCHAIN                   1
+ALNtoPAF                   1
+FILTER_PAF_VARIANCE        1
+GET_WHOLE_ALN              1
+GET_WHOLE_VAR              1
+SORT_PAF                   1
+all                        1
+total                      7
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Apr 22 13:29:04 2025]
+localrule ALNCHAIN:
+    input: sharks/HetFra/HetFra_ALN.1aln
+    output: sharks/HetFra/HetFra_ALN.chain.1aln
+    jobid: 4
+    reason: Missing output files: sharks/HetFra/HetFra_ALN.chain.1aln
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 13:29:29 2025]
+Finished job 4.
+1 of 7 steps (14%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Apr 22 13:29:29 2025]
+localrule ALNtoPAF:
+    input: sharks/HetFra/HetFra_ALN.chain.1aln
+    output: sharks/HetFra/HetFra_FASTGA.chain.paf
+    jobid: 3
+    reason: Missing output files: sharks/HetFra/HetFra_FASTGA.chain.paf; Input files updated by another job: sharks/HetFra/HetFra_ALN.chain.1aln
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 13:32:13 2025]
+Finished job 3.
+2 of 7 steps (29%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Apr 22 13:32:13 2025]
+localrule FILTER_PAF_VARIANCE:
+    input: sharks/HetFra/HetFra_FASTGA.chain.paf
+    output: sharks/HetFra/HetFra_FASTGA.chain.fltr.paf
+    jobid: 2
+    reason: Missing output files: sharks/HetFra/HetFra_FASTGA.chain.fltr.paf; Input files updated by another job: sharks/HetFra/HetFra_FASTGA.chain.paf
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 13:32:19 2025]
+Finished job 2.
+3 of 7 steps (43%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Apr 22 13:32:19 2025]
+localrule SORT_PAF:
+    input: sharks/HetFra/HetFra_FASTGA.chain.fltr.paf
+    output: sharks/HetFra/HetFra_FASTGA.chain.fltr.srt.paf
+    jobid: 1
+    reason: Missing output files: sharks/HetFra/HetFra_FASTGA.chain.fltr.srt.paf; Input files updated by another job: sharks/HetFra/HetFra_FASTGA.chain.fltr.paf
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 13:33:21 2025]
+Finished job 1.
+4 of 7 steps (57%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Tue Apr 22 13:33:23 2025]
+localrule GET_WHOLE_VAR:
+    input: sharks/HetFra/HetFra_FASTGA.chain.fltr.srt.paf
+    output: sharks/HetFra/temp/HetFra_Var_Only.txt
+    jobid: 10
+    reason: Missing output files: sharks/HetFra/temp/HetFra_Var_Only.txt; Input files updated by another job: sharks/HetFra/HetFra_FASTGA.chain.fltr.srt.paf
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 13:33:23 2025]
+localrule GET_WHOLE_ALN:
+    input: sharks/HetFra/HetFra_FASTGA.chain.fltr.srt.paf
+    output: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    jobid: 11
+    reason: Missing output files: sharks/HetFra/temp/HetFra_Aln_Only.txt; Input files updated by another job: sharks/HetFra/HetFra_FASTGA.chain.fltr.srt.paf
+    resources: tmpdir=/tmp
+

@@ -1,0 +1,114 @@
+host: login-q-1
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 76
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count
+---------------------  -------
+CALC_HET_PER_CHR             3
+CALC_HET_WHOLE_GENOME        1
+COMPILE_HET                  1
+PLOT_HET_PER_CHR            46
+PLOT_WHOLE_HET               1
+WHOLE_FROH                   1
+all                          1
+total                       54
+
+Select jobs to execute...
+Execute 4 jobs...
+
+[Thu Apr 24 09:21:11 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068654.1_het.txt
+    jobid: 217
+    reason: Missing output files: sharks/HepPer/20250422_CM068654.1_het.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068654.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 09:21:11 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068647.1_het.txt
+    jobid: 210
+    reason: Missing output files: sharks/HepPer/20250422_CM068647.1_het.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068647.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 09:21:11 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068640.1_het.txt
+    jobid: 203
+    reason: Missing output files: sharks/HepPer/20250422_CM068640.1_het.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068640.1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 24 09:21:11 2025]
+localrule WHOLE_FROH:
+    input: sharks/HepPer/HepPer_ROH_Results.csv, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084215.1_chroms.txt, sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/20250422_HepPer_FROH.txt
+    jobid: 199
+    reason: Missing output files: sharks/HepPer/20250422_HepPer_FROH.txt; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 389:
+Command 'set -euo pipefail;  
+        set -e 
+        
+        Laut_autosomal=0
+        Laut=0
+
+        while read -r line; do
+            echo "$line"
+            start="$(head -n 1 sharks/HepPer/temp/20250422_"$line"_Var_Only.txt | awk ' {print $3} ')"
+            end="$(tail -n 1 sharks/HepPer/temp/20250422_"$line"_Var_Only.txt | awk ' {print $4} ')"
+            chrom_length="$((end - start))"
+            Laut_autosomal=$(("$Laut_autosomal" + "$chrom_length"))
+        done < <(head -n 45-1 "sharks/chrom_lists/GCA_035084215.1_chroms.txt") 
+
+        while read -r line; do
+            start="$(head -n 1 sharks/HepPer/temp/20250422_"$line"_Var_Only.txt | awk ' {print $3} ')"
+            end="$(tail -n 1 sharks/HepPer/temp/20250422_"$line"_Var_Only.txt | awk ' {print $4} ')"
+            chrom_length="$((end - start))"
+            Laut=$(("$Laut" + "$chrom_length"))
+        done < "sharks/chrom_lists/GCA_035084215.1_chroms.txt"
+
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250106_FROH_Calc.R sharks/HepPer/HepPer_ROH_Results.csv sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt 20250422 GCA_035084215.1 sharks "$Laut" 45 "$Laut_autosomal" > sharks/HepPer/20250422_HepPer_FROH.txt' returned non-zero exit status 1.
+[Thu Apr 24 09:21:12 2025]
+Error in rule WHOLE_FROH:
+    jobid: 199
+    input: sharks/HepPer/HepPer_ROH_Results.csv, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084215.1_chroms.txt, sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/20250422_HepPer_FROH.txt
+    shell:
+        
+        set -e 
+        
+        Laut_autosomal=0
+        Laut=0
+
+        while read -r line; do
+            echo "$line"
+            start="$(head -n 1 sharks/HepPer/temp/20250422_"$line"_Var_Only.txt | awk ' {print $3} ')"
+            end="$(tail -n 1 sharks/HepPer/temp/20250422_"$line"_Var_Only.txt | awk ' {print $4} ')"
+            chrom_length="$((end - start))"
+            Laut_autosomal=$(("$Laut_autosomal" + "$chrom_length"))
+        done < <(head -n 45-1 "sharks/chrom_lists/GCA_035084215.1_chroms.txt") 
+
+        while read -r line; do
+            start="$(head -n 1 sharks/HepPer/temp/20250422_"$line"_Var_Only.txt | awk ' {print $3} ')"
+            end="$(tail -n 1 sharks/HepPer/temp/20250422_"$line"_Var_Only.txt | awk ' {print $4} ')"
+            chrom_length="$((end - start))"
+            Laut=$(("$Laut" + "$chrom_length"))
+        done < "sharks/chrom_lists/GCA_035084215.1_chroms.txt"
+
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250106_FROH_Calc.R sharks/HepPer/HepPer_ROH_Results.csv sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt 20250422 GCA_035084215.1 sharks "$Laut" 45 "$Laut_autosomal" > sharks/HepPer/20250422_HepPer_FROH.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+

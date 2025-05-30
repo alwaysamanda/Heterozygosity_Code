@@ -1,0 +1,169 @@
+host: login-p-1
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+CHROM_LENGTH_CALC        1
+ROH_CALC                 5
+all                      1
+total                    7
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 15:17:05 2025]
+localrule CHROM_LENGTH_CALC:
+    input: ../241117.UCSC-hubs-VGP-alignment/alignment/reference/sharks/GCA_035084275.1.fa.gz
+    output: sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    jobid: 28
+    reason: Missing output files: sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    resources: tmpdir=/tmp
+
+[Wed Mar 26 15:17:15 2025]
+Finished job 28.
+1 of 7 steps (14%) done
+Select jobs to execute...
+Execute 5 jobs...
+
+[Wed Mar 26 15:17:15 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test/temp/20250326_CM068742.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068742.1_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    output: sharks/HydCol_Test/20250326_CM068742.1_ROH_Results.txt
+    jobid: 27
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068742.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068742.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 15:17:15 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test/temp/20250326_CM068744.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068744.1_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    output: sharks/HydCol_Test/20250326_CM068744.1_ROH_Results.txt
+    jobid: 30
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068744.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068744.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 15:17:15 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test/temp/20250326_CM068746.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068746.1_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    output: sharks/HydCol_Test/20250326_CM068746.1_ROH_Results.txt
+    jobid: 32
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068746.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068746.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 289:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(find_chrom_length(sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, CM068742.1))"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068742.1 "$CHROM_LENGTH" 20250326 GCA_035084275.1 sharks sharks/HydCol_Test/temp/20250326_CM068742.1_Aln_Only.txt sharks/HydCol_Test/temp/20250326_CM068742.1_Var_Only.txt' returned non-zero exit status 2.
+[Wed Mar 26 15:17:15 2025]
+Error in rule ROH_CALC:
+    jobid: 27
+    input: sharks/HydCol_Test/temp/20250326_CM068742.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068742.1_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    output: sharks/HydCol_Test/20250326_CM068742.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(find_chrom_length(sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, CM068742.1))"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068742.1 "$CHROM_LENGTH" 20250326 GCA_035084275.1 sharks sharks/HydCol_Test/temp/20250326_CM068742.1_Aln_Only.txt sharks/HydCol_Test/temp/20250326_CM068742.1_Var_Only.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Wed Mar 26 15:17:15 2025]
+localrule ROH_CALC:
+    input: sharks/HydCol_Test/temp/20250326_CM068743.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068743.1_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    output: sharks/HydCol_Test/20250326_CM068743.1_ROH_Results.txt
+    jobid: 29
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068743.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068743.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 289:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(find_chrom_length(sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, CM068744.1))"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068744.1 "$CHROM_LENGTH" 20250326 GCA_035084275.1 sharks sharks/HydCol_Test/temp/20250326_CM068744.1_Aln_Only.txt sharks/HydCol_Test/temp/20250326_CM068744.1_Var_Only.txt' returned non-zero exit status 2.
+[Wed Mar 26 15:17:15 2025]
+Error in rule ROH_CALC:
+    jobid: 30
+    input: sharks/HydCol_Test/temp/20250326_CM068744.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068744.1_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    output: sharks/HydCol_Test/20250326_CM068744.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(find_chrom_length(sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, CM068744.1))"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068744.1 "$CHROM_LENGTH" 20250326 GCA_035084275.1 sharks sharks/HydCol_Test/temp/20250326_CM068744.1_Aln_Only.txt sharks/HydCol_Test/temp/20250326_CM068744.1_Var_Only.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 289:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(find_chrom_length(sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, CM068746.1))"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068746.1 "$CHROM_LENGTH" 20250326 GCA_035084275.1 sharks sharks/HydCol_Test/temp/20250326_CM068746.1_Aln_Only.txt sharks/HydCol_Test/temp/20250326_CM068746.1_Var_Only.txt' returned non-zero exit status 2.
+
+[Wed Mar 26 15:17:15 2025]
+[Wed Mar 26 15:17:15 2025]
+Error in rule ROH_CALC:
+    jobid: 32
+    input: sharks/HydCol_Test/temp/20250326_CM068746.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068746.1_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    output: sharks/HydCol_Test/20250326_CM068746.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(find_chrom_length(sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, CM068746.1))"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068746.1 "$CHROM_LENGTH" 20250326 GCA_035084275.1 sharks sharks/HydCol_Test/temp/20250326_CM068746.1_Aln_Only.txt sharks/HydCol_Test/temp/20250326_CM068746.1_Var_Only.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+localrule ROH_CALC:
+    input: sharks/HydCol_Test/temp/20250326_CM068745.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068745.1_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    output: sharks/HydCol_Test/20250326_CM068745.1_ROH_Results.txt
+    jobid: 31
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068745.1_ROH_Results.txt; Input files updated by another job: sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068745.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 289:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(find_chrom_length(sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, CM068743.1))"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068743.1 "$CHROM_LENGTH" 20250326 GCA_035084275.1 sharks sharks/HydCol_Test/temp/20250326_CM068743.1_Aln_Only.txt sharks/HydCol_Test/temp/20250326_CM068743.1_Var_Only.txt' returned non-zero exit status 2.
+[Wed Mar 26 15:17:15 2025]
+Error in rule ROH_CALC:
+    jobid: 29
+    input: sharks/HydCol_Test/temp/20250326_CM068743.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068743.1_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    output: sharks/HydCol_Test/20250326_CM068743.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(find_chrom_length(sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, CM068743.1))"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068743.1 "$CHROM_LENGTH" 20250326 GCA_035084275.1 sharks sharks/HydCol_Test/temp/20250326_CM068743.1_Aln_Only.txt sharks/HydCol_Test/temp/20250326_CM068743.1_Var_Only.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 289:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(find_chrom_length(sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, CM068745.1))"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068745.1 "$CHROM_LENGTH" 20250326 GCA_035084275.1 sharks sharks/HydCol_Test/temp/20250326_CM068745.1_Aln_Only.txt sharks/HydCol_Test/temp/20250326_CM068745.1_Var_Only.txt' returned non-zero exit status 2.
+[Wed Mar 26 15:17:15 2025]
+Error in rule ROH_CALC:
+    jobid: 31
+    input: sharks/HydCol_Test/temp/20250326_CM068745.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068745.1_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    output: sharks/HydCol_Test/20250326_CM068745.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(find_chrom_length(sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, CM068745.1))"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068745.1 "$CHROM_LENGTH" 20250326 GCA_035084275.1 sharks sharks/HydCol_Test/temp/20250326_CM068745.1_Aln_Only.txt sharks/HydCol_Test/temp/20250326_CM068745.1_Var_Only.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-26T151705.934840.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

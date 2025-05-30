@@ -1,0 +1,194 @@
+host: login-p-3
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count
+----------------  -------
+FROH_PER_AUT_CHR        5
+all                     1
+total                   6
+
+Select jobs to execute...
+Execute 5 jobs...
+
+[Wed Mar 26 19:03:46 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068744.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068744.1_GCA_035084275.1_FROH.txt
+    jobid: 37
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068744.1_GCA_035084275.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068744.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 19:03:46 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068745.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068745.1_GCA_035084275.1_FROH.txt
+    jobid: 38
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068745.1_GCA_035084275.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068745.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 19:03:46 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068743.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068743.1_GCA_035084275.1_FROH.txt
+    jobid: 36
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068743.1_GCA_035084275.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068743.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 19:03:46 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068746.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068746.1_GCA_035084275.1_FROH.txt
+    jobid: 39
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068746.1_GCA_035084275.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068746.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 19:03:46 2025]
+localrule FROH_PER_AUT_CHR:
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068742.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068742.1_GCA_035084275.1_FROH.txt
+    jobid: 35
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068742.1_GCA_035084275.1_FROH.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068742.1, REF_NAME=GCA_035084275.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 340:
+Command 'set -euo pipefail;  
+        start="$(head -n  1 sharks/HydCol_Test/temp/20250326_CM068745.1_Var_Only.txt | awk ' {print $3} ')"
+        end="$(tail -n  1 sharks/HydCol_Test/temp/20250326_CM068745.1_Var_Only.txt | awk ' {print $4} ')"
+        chrom_length="$((end - start))"
+
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250210_FROH_per_chr_calc.R sharks/HydCol_Test/HydCol_Test_ROH_Results.csv sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt 20250326 GCA_035084275.1 sharks 40 "$chrom_length" CM068745.1 > sharks/HydCol_Test/20250326_CM068745.1_GCA_035084275.1_FROH.txt' returned non-zero exit status 1.
+[Wed Mar 26 19:03:47 2025]
+Error in rule FROH_PER_AUT_CHR:
+    jobid: 38
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068745.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068745.1_GCA_035084275.1_FROH.txt
+    shell:
+        
+        start="$(head -n  1 sharks/HydCol_Test/temp/20250326_CM068745.1_Var_Only.txt | awk ' {print $3} ')"
+        end="$(tail -n  1 sharks/HydCol_Test/temp/20250326_CM068745.1_Var_Only.txt | awk ' {print $4} ')"
+        chrom_length="$((end - start))"
+
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250210_FROH_per_chr_calc.R sharks/HydCol_Test/HydCol_Test_ROH_Results.csv sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt 20250326 GCA_035084275.1 sharks 40 "$chrom_length" CM068745.1 > sharks/HydCol_Test/20250326_CM068745.1_GCA_035084275.1_FROH.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 340:
+Command 'set -euo pipefail;  
+        start="$(head -n  1 sharks/HydCol_Test/temp/20250326_CM068744.1_Var_Only.txt | awk ' {print $3} ')"
+        end="$(tail -n  1 sharks/HydCol_Test/temp/20250326_CM068744.1_Var_Only.txt | awk ' {print $4} ')"
+        chrom_length="$((end - start))"
+
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250210_FROH_per_chr_calc.R sharks/HydCol_Test/HydCol_Test_ROH_Results.csv sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt 20250326 GCA_035084275.1 sharks 40 "$chrom_length" CM068744.1 > sharks/HydCol_Test/20250326_CM068744.1_GCA_035084275.1_FROH.txt' returned non-zero exit status 1.
+[Wed Mar 26 19:03:47 2025]
+Error in rule FROH_PER_AUT_CHR:
+    jobid: 37
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068744.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068744.1_GCA_035084275.1_FROH.txt
+    shell:
+        
+        start="$(head -n  1 sharks/HydCol_Test/temp/20250326_CM068744.1_Var_Only.txt | awk ' {print $3} ')"
+        end="$(tail -n  1 sharks/HydCol_Test/temp/20250326_CM068744.1_Var_Only.txt | awk ' {print $4} ')"
+        chrom_length="$((end - start))"
+
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250210_FROH_per_chr_calc.R sharks/HydCol_Test/HydCol_Test_ROH_Results.csv sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt 20250326 GCA_035084275.1 sharks 40 "$chrom_length" CM068744.1 > sharks/HydCol_Test/20250326_CM068744.1_GCA_035084275.1_FROH.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 340:
+Command 'set -euo pipefail;  
+        start="$(head -n  1 sharks/HydCol_Test/temp/20250326_CM068743.1_Var_Only.txt | awk ' {print $3} ')"
+        end="$(tail -n  1 sharks/HydCol_Test/temp/20250326_CM068743.1_Var_Only.txt | awk ' {print $4} ')"
+        chrom_length="$((end - start))"
+
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250210_FROH_per_chr_calc.R sharks/HydCol_Test/HydCol_Test_ROH_Results.csv sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt 20250326 GCA_035084275.1 sharks 40 "$chrom_length" CM068743.1 > sharks/HydCol_Test/20250326_CM068743.1_GCA_035084275.1_FROH.txt' returned non-zero exit status 1.
+[Wed Mar 26 19:03:47 2025]
+Error in rule FROH_PER_AUT_CHR:
+    jobid: 36
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068743.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068743.1_GCA_035084275.1_FROH.txt
+    shell:
+        
+        start="$(head -n  1 sharks/HydCol_Test/temp/20250326_CM068743.1_Var_Only.txt | awk ' {print $3} ')"
+        end="$(tail -n  1 sharks/HydCol_Test/temp/20250326_CM068743.1_Var_Only.txt | awk ' {print $4} ')"
+        chrom_length="$((end - start))"
+
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250210_FROH_per_chr_calc.R sharks/HydCol_Test/HydCol_Test_ROH_Results.csv sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt 20250326 GCA_035084275.1 sharks 40 "$chrom_length" CM068743.1 > sharks/HydCol_Test/20250326_CM068743.1_GCA_035084275.1_FROH.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 340:
+Command 'set -euo pipefail;  
+        start="$(head -n  1 sharks/HydCol_Test/temp/20250326_CM068742.1_Var_Only.txt | awk ' {print $3} ')"
+        end="$(tail -n  1 sharks/HydCol_Test/temp/20250326_CM068742.1_Var_Only.txt | awk ' {print $4} ')"
+        chrom_length="$((end - start))"
+
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250210_FROH_per_chr_calc.R sharks/HydCol_Test/HydCol_Test_ROH_Results.csv sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt 20250326 GCA_035084275.1 sharks 40 "$chrom_length" CM068742.1 > sharks/HydCol_Test/20250326_CM068742.1_GCA_035084275.1_FROH.txt' returned non-zero exit status 1.
+[Wed Mar 26 19:03:47 2025]
+Error in rule FROH_PER_AUT_CHR:
+    jobid: 35
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068742.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068742.1_GCA_035084275.1_FROH.txt
+    shell:
+        
+        start="$(head -n  1 sharks/HydCol_Test/temp/20250326_CM068742.1_Var_Only.txt | awk ' {print $3} ')"
+        end="$(tail -n  1 sharks/HydCol_Test/temp/20250326_CM068742.1_Var_Only.txt | awk ' {print $4} ')"
+        chrom_length="$((end - start))"
+
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250210_FROH_per_chr_calc.R sharks/HydCol_Test/HydCol_Test_ROH_Results.csv sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt 20250326 GCA_035084275.1 sharks 40 "$chrom_length" CM068742.1 > sharks/HydCol_Test/20250326_CM068742.1_GCA_035084275.1_FROH.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 340:
+Command 'set -euo pipefail;  
+        start="$(head -n  1 sharks/HydCol_Test/temp/20250326_CM068746.1_Var_Only.txt | awk ' {print $3} ')"
+        end="$(tail -n  1 sharks/HydCol_Test/temp/20250326_CM068746.1_Var_Only.txt | awk ' {print $4} ')"
+        chrom_length="$((end - start))"
+
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250210_FROH_per_chr_calc.R sharks/HydCol_Test/HydCol_Test_ROH_Results.csv sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt 20250326 GCA_035084275.1 sharks 40 "$chrom_length" CM068746.1 > sharks/HydCol_Test/20250326_CM068746.1_GCA_035084275.1_FROH.txt' returned non-zero exit status 1.
+[Wed Mar 26 19:03:47 2025]
+Error in rule FROH_PER_AUT_CHR:
+    jobid: 39
+    input: sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084275.1_chroms.txt, sharks/HydCol_Test/temp/20250326_CM068746.1_Var_Only.txt
+    output: sharks/HydCol_Test/20250326_CM068746.1_GCA_035084275.1_FROH.txt
+    shell:
+        
+        start="$(head -n  1 sharks/HydCol_Test/temp/20250326_CM068746.1_Var_Only.txt | awk ' {print $3} ')"
+        end="$(tail -n  1 sharks/HydCol_Test/temp/20250326_CM068746.1_Var_Only.txt | awk ' {print $4} ')"
+        chrom_length="$((end - start))"
+
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250210_FROH_per_chr_calc.R sharks/HydCol_Test/HydCol_Test_ROH_Results.csv sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt 20250326 GCA_035084275.1 sharks 40 "$chrom_length" CM068746.1 > sharks/HydCol_Test/20250326_CM068746.1_GCA_035084275.1_FROH.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job FROH_PER_AUT_CHR since they might be corrupted:
+sharks/HydCol_Test/20250326_CM068745.1_GCA_035084275.1_FROH.txt
+Removing output files of failed job FROH_PER_AUT_CHR since they might be corrupted:
+sharks/HydCol_Test/20250326_CM068744.1_GCA_035084275.1_FROH.txt
+Removing output files of failed job FROH_PER_AUT_CHR since they might be corrupted:
+sharks/HydCol_Test/20250326_CM068743.1_GCA_035084275.1_FROH.txt
+Removing output files of failed job FROH_PER_AUT_CHR since they might be corrupted:
+sharks/HydCol_Test/20250326_CM068742.1_GCA_035084275.1_FROH.txt
+Removing output files of failed job FROH_PER_AUT_CHR since they might be corrupted:
+sharks/HydCol_Test/20250326_CM068746.1_GCA_035084275.1_FROH.txt
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-26T190345.994253.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

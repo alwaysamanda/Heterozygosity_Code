@@ -1,0 +1,1985 @@
+host: login-q-4
+Building DAG of jobs...
+SLURM run ID: 47cf693e-dab7-4994-88de-263243270b89
+Using shell: /usr/bin/bash
+Provided remote nodes: 50
+Job stats:
+job                            count
+---------------------------  -------
+ALNPLOT                            1
+BAM_CALLER_BED                    50
+BGZIP_VCF                         50
+BOOTSTRAPPING_MULTIHET_FILE     1500
+CALL_PLOIDY                       50
+COMPILE_HET                        1
+EXTRACT_CHR_FASTA                 51
+GENERATE_MASK                     50
+GENERATE_MULTIHETSEP              50
+INDEL_MASKER                      50
+MAIN_MULTIHETSEP                  50
+MAKE_BAM                           1
+MAKE_SAM                           1
+PILEUP_VARIANTS                   51
+PLOT_HET_PER_CHR                  50
+PLOT_WHOLE_HET                     1
+Plot_ROH                           1
+REMOVE_INDELS                     50
+RESTRUCTURE                       50
+SEPARATE_BAM_BY_CHR               51
+UNZIP_REFERENCE                    1
+all                                1
+total                           2161
+
+Select jobs to execute...
+Execute 5 jobs...
+
+[Tue May 20 12:24:46 2025]
+rule Plot_ROH:
+    input: sharks/HetFra/HetFra_ROH_Results.csv, sharks/HetFra/Reference_HetFra_Chroms_Lengths.txt
+    output: sharks/HetFra/20250411_HetFra_ROH_Map.pdf
+    jobid: 166
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_ROH_Map.pdf; Code has changed since last execution; Params have changed since last execution: Union of exclusive params before and now across all output: before: <nothing exclusive> now: 51 
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 166 has been submitted with SLURM jobid 9614780 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_Plot_ROH/sharks_HetFra_20250411/9614780.log).
+
+[Tue May 20 12:24:48 2025]
+rule UNZIP_REFERENCE:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_036365495.1.fa.gz
+    output: sharks/HetFra/temp/GCA_036365495.1.fa
+    jobid: 325
+    reason: Missing output files: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, REF_NAME=GCA_036365495.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=2893, disk_mib=2759, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 325 has been submitted with SLURM jobid 9614781 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_UNZIP_REFERENCE/sharks_HetFra_GCA_036365495.1/9614781.log).
+
+[Tue May 20 12:24:48 2025]
+rule MAKE_SAM:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_036365495.1.fa.gz, /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/sharks/GCA_036365525.1.fa.gz
+    output: sharks/HetFra/HetFra.sam
+    jobid: 328
+    reason: Missing output files: sharks/HetFra/HetFra.sam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=5880, disk_mib=5608, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=720
+
+Job 328 has been submitted with SLURM jobid 9614782 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAKE_SAM/sharks_HetFra/9614782.log).
+
+[Tue May 20 12:24:48 2025]
+rule COMPILE_HET:
+    input: sharks/HetFra/20250411_CM070962.1_het.txt, sharks/HetFra/20250411_CM070963.1_het.txt, sharks/HetFra/20250411_CM070964.1_het.txt, sharks/HetFra/20250411_CM070965.1_het.txt, sharks/HetFra/20250411_CM070966.1_het.txt, sharks/HetFra/20250411_CM070967.1_het.txt, sharks/HetFra/20250411_CM070968.1_het.txt, sharks/HetFra/20250411_CM070969.1_het.txt, sharks/HetFra/20250411_CM070970.1_het.txt, sharks/HetFra/20250411_CM070971.1_het.txt, sharks/HetFra/20250411_CM070972.1_het.txt, sharks/HetFra/20250411_CM070973.1_het.txt, sharks/HetFra/20250411_CM070974.1_het.txt, sharks/HetFra/20250411_CM070975.1_het.txt, sharks/HetFra/20250411_CM070976.1_het.txt, sharks/HetFra/20250411_CM070977.1_het.txt, sharks/HetFra/20250411_CM070978.1_het.txt, sharks/HetFra/20250411_CM070979.1_het.txt, sharks/HetFra/20250411_CM070980.1_het.txt, sharks/HetFra/20250411_CM070981.1_het.txt, sharks/HetFra/20250411_CM070982.1_het.txt, sharks/HetFra/20250411_CM070983.1_het.txt, sharks/HetFra/20250411_CM070984.1_het.txt, sharks/HetFra/20250411_CM070985.1_het.txt, sharks/HetFra/20250411_CM070986.1_het.txt, sharks/HetFra/20250411_CM070987.1_het.txt, sharks/HetFra/20250411_CM070988.1_het.txt, sharks/HetFra/20250411_CM070989.1_het.txt, sharks/HetFra/20250411_CM070990.1_het.txt, sharks/HetFra/20250411_CM070991.1_het.txt, sharks/HetFra/20250411_CM070992.1_het.txt, sharks/HetFra/20250411_CM070993.1_het.txt, sharks/HetFra/20250411_CM070994.1_het.txt, sharks/HetFra/20250411_CM070995.1_het.txt, sharks/HetFra/20250411_CM070996.1_het.txt, sharks/HetFra/20250411_CM070997.1_het.txt, sharks/HetFra/20250411_CM070998.1_het.txt, sharks/HetFra/20250411_CM070999.1_het.txt, sharks/HetFra/20250411_CM071000.1_het.txt, sharks/HetFra/20250411_CM071001.1_het.txt, sharks/HetFra/20250411_CM071002.1_het.txt, sharks/HetFra/20250411_CM071003.1_het.txt, sharks/HetFra/20250411_CM071004.1_het.txt, sharks/HetFra/20250411_CM071005.1_het.txt, sharks/HetFra/20250411_CM071006.1_het.txt, sharks/HetFra/20250411_CM071007.1_het.txt, sharks/HetFra/20250411_CM071008.1_het.txt, sharks/HetFra/20250411_CM071009.1_het.txt, sharks/HetFra/20250411_CM071010.1_het.txt, sharks/HetFra/20250411_CM071011.1_het.txt, sharks/HetFra/20250411_CM071012.1_het.txt
+    output: sharks/HetFra/HetFra_Het_Compiled.tsv
+    jobid: 271
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 271 has been submitted with SLURM jobid 9614783 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_COMPILE_HET/sharks_HetFra/9614783.log).
+
+[Tue May 20 12:24:50 2025]
+rule ALNPLOT:
+    input: sharks/HetFra/HetFra_ALN.chain.1aln
+    output: sharks/HetFra/HetFra_ALN.chain.pdf
+    jobid: 9
+    reason: Missing output files: sharks/HetFra/HetFra_ALN.chain.pdf
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 9 has been submitted with SLURM jobid 9614784 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ALNPLOT/sharks_HetFra/9614784.log).
+[Tue May 20 12:25:26 2025]
+Finished job 166.
+1 of 2161 steps (0.0%) done
+[Tue May 20 12:26:06 2025]
+Finished job 325.
+2 of 2161 steps (0.1%) done
+Select jobs to execute...
+Execute 47 jobs...
+
+[Tue May 20 12:26:06 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070963.1.fasta
+    jobid: 330
+    reason: Missing output files: sharks/HetFra/temp/CM070963.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070963.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 330 has been submitted with SLURM jobid 9614811 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070963.1/9614811.log).
+
+[Tue May 20 12:26:06 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070991.1.fasta
+    jobid: 414
+    reason: Missing output files: sharks/HetFra/temp/CM070991.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070991.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 414 has been submitted with SLURM jobid 9614812 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070991.1/9614812.log).
+
+[Tue May 20 12:26:06 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM071009.1.fasta
+    jobid: 468
+    reason: Missing output files: sharks/HetFra/temp/CM071009.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM071009.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 468 has been submitted with SLURM jobid 9614813 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM071009.1/9614813.log).
+
+[Tue May 20 12:26:06 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070974.1.fasta
+    jobid: 363
+    reason: Missing output files: sharks/HetFra/temp/CM070974.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070974.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 363 has been submitted with SLURM jobid 9614814 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070974.1/9614814.log).
+
+[Tue May 20 12:26:07 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM071002.1.fasta
+    jobid: 447
+    reason: Missing output files: sharks/HetFra/temp/CM071002.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM071002.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 447 has been submitted with SLURM jobid 9614815 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM071002.1/9614815.log).
+
+[Tue May 20 12:26:07 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070967.1.fasta
+    jobid: 342
+    reason: Missing output files: sharks/HetFra/temp/CM070967.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070967.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 342 has been submitted with SLURM jobid 9614816 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070967.1/9614816.log).
+
+[Tue May 20 12:26:07 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070995.1.fasta
+    jobid: 426
+    reason: Missing output files: sharks/HetFra/temp/CM070995.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070995.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 426 has been submitted with SLURM jobid 9614817 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070995.1/9614817.log).
+
+[Tue May 20 12:26:07 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070988.1.fasta
+    jobid: 405
+    reason: Missing output files: sharks/HetFra/temp/CM070988.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070988.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 405 has been submitted with SLURM jobid 9614818 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070988.1/9614818.log).
+
+[Tue May 20 12:26:07 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070985.1.fasta
+    jobid: 396
+    reason: Missing output files: sharks/HetFra/temp/CM070985.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070985.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 396 has been submitted with SLURM jobid 9614819 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070985.1/9614819.log).
+
+[Tue May 20 12:26:07 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM071006.1.fasta
+    jobid: 459
+    reason: Missing output files: sharks/HetFra/temp/CM071006.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM071006.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 459 has been submitted with SLURM jobid 9614820 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM071006.1/9614820.log).
+
+[Tue May 20 12:26:07 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070978.1.fasta
+    jobid: 375
+    reason: Missing output files: sharks/HetFra/temp/CM070978.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070978.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 375 has been submitted with SLURM jobid 9614821 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070978.1/9614821.log).
+
+[Tue May 20 12:26:08 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070970.1.fasta
+    jobid: 351
+    reason: Missing output files: sharks/HetFra/temp/CM070970.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070970.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 351 has been submitted with SLURM jobid 9614822 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070970.1/9614822.log).
+
+[Tue May 20 12:26:08 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070999.1.fasta
+    jobid: 438
+    reason: Missing output files: sharks/HetFra/temp/CM070999.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070999.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 438 has been submitted with SLURM jobid 9614823 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070999.1/9614823.log).
+
+[Tue May 20 12:26:08 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070964.1.fasta
+    jobid: 333
+    reason: Missing output files: sharks/HetFra/temp/CM070964.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070964.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 333 has been submitted with SLURM jobid 9614824 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070964.1/9614824.log).
+
+[Tue May 20 12:26:08 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070992.1.fasta
+    jobid: 417
+    reason: Missing output files: sharks/HetFra/temp/CM070992.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070992.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 417 has been submitted with SLURM jobid 9614825 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070992.1/9614825.log).
+
+[Tue May 20 12:26:08 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070962.1.fasta
+    jobid: 324
+    reason: Missing output files: sharks/HetFra/temp/CM070962.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070962.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 324 has been submitted with SLURM jobid 9614826 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070962.1/9614826.log).
+
+[Tue May 20 12:26:08 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070982.1.fasta
+    jobid: 387
+    reason: Missing output files: sharks/HetFra/temp/CM070982.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070982.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 387 has been submitted with SLURM jobid 9614827 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070982.1/9614827.log).
+
+[Tue May 20 12:26:08 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM071010.1.fasta
+    jobid: 471
+    reason: Missing output files: sharks/HetFra/temp/CM071010.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM071010.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 471 has been submitted with SLURM jobid 9614828 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM071010.1/9614828.log).
+
+[Tue May 20 12:26:09 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070975.1.fasta
+    jobid: 366
+    reason: Missing output files: sharks/HetFra/temp/CM070975.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070975.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 366 has been submitted with SLURM jobid 9614829 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070975.1/9614829.log).
+
+[Tue May 20 12:26:09 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM071003.1.fasta
+    jobid: 450
+    reason: Missing output files: sharks/HetFra/temp/CM071003.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM071003.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 450 has been submitted with SLURM jobid 9614830 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM071003.1/9614830.log).
+
+[Tue May 20 12:26:09 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070973.1.fasta
+    jobid: 360
+    reason: Missing output files: sharks/HetFra/temp/CM070973.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070973.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 360 has been submitted with SLURM jobid 9614831 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070973.1/9614831.log).
+
+[Tue May 20 12:26:09 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070996.1.fasta
+    jobid: 429
+    reason: Missing output files: sharks/HetFra/temp/CM070996.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070996.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 429 has been submitted with SLURM jobid 9614832 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070996.1/9614832.log).
+
+[Tue May 20 12:26:09 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070989.1.fasta
+    jobid: 408
+    reason: Missing output files: sharks/HetFra/temp/CM070989.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070989.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 408 has been submitted with SLURM jobid 9614833 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070989.1/9614833.log).
+
+[Tue May 20 12:26:09 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070986.1.fasta
+    jobid: 399
+    reason: Missing output files: sharks/HetFra/temp/CM070986.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070986.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 399 has been submitted with SLURM jobid 9614834 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070986.1/9614834.log).
+
+[Tue May 20 12:26:09 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070979.1.fasta
+    jobid: 378
+    reason: Missing output files: sharks/HetFra/temp/CM070979.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070979.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 378 has been submitted with SLURM jobid 9614835 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070979.1/9614835.log).
+
+[Tue May 20 12:26:10 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM071007.1.fasta
+    jobid: 462
+    reason: Missing output files: sharks/HetFra/temp/CM071007.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM071007.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 462 has been submitted with SLURM jobid 9614836 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM071007.1/9614836.log).
+
+[Tue May 20 12:26:10 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070965.1.fasta
+    jobid: 336
+    reason: Missing output files: sharks/HetFra/temp/CM070965.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070965.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 336 has been submitted with SLURM jobid 9614837 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070965.1/9614837.log).
+
+[Tue May 20 12:26:10 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070993.1.fasta
+    jobid: 420
+    reason: Missing output files: sharks/HetFra/temp/CM070993.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070993.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 420 has been submitted with SLURM jobid 9614838 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070993.1/9614838.log).
+
+[Tue May 20 12:26:10 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM071012.1.fasta
+    jobid: 477
+    reason: Missing output files: sharks/HetFra/temp/CM071012.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM071012.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 477 has been submitted with SLURM jobid 9614839 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM071012.1/9614839.log).
+
+[Tue May 20 12:26:10 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070983.1.fasta
+    jobid: 390
+    reason: Missing output files: sharks/HetFra/temp/CM070983.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070983.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 390 has been submitted with SLURM jobid 9614840 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070983.1/9614840.log).
+
+[Tue May 20 12:26:10 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM071011.1.fasta
+    jobid: 474
+    reason: Missing output files: sharks/HetFra/temp/CM071011.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM071011.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 474 has been submitted with SLURM jobid 9614841 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM071011.1/9614841.log).
+
+[Tue May 20 12:26:10 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070976.1.fasta
+    jobid: 369
+    reason: Missing output files: sharks/HetFra/temp/CM070976.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070976.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 369 has been submitted with SLURM jobid 9614842 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070976.1/9614842.log).
+
+[Tue May 20 12:26:11 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM071004.1.fasta
+    jobid: 453
+    reason: Missing output files: sharks/HetFra/temp/CM071004.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM071004.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 453 has been submitted with SLURM jobid 9614843 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM071004.1/9614843.log).
+
+[Tue May 20 12:26:11 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070968.1.fasta
+    jobid: 345
+    reason: Missing output files: sharks/HetFra/temp/CM070968.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070968.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 345 has been submitted with SLURM jobid 9614844 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070968.1/9614844.log).
+
+[Tue May 20 12:26:11 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070997.1.fasta
+    jobid: 432
+    reason: Missing output files: sharks/HetFra/temp/CM070997.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070997.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 432 has been submitted with SLURM jobid 9614845 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070997.1/9614845.log).
+
+[Tue May 20 12:26:11 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070990.1.fasta
+    jobid: 411
+    reason: Missing output files: sharks/HetFra/temp/CM070990.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070990.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 411 has been submitted with SLURM jobid 9614846 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070990.1/9614846.log).
+
+[Tue May 20 12:26:11 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070987.1.fasta
+    jobid: 402
+    reason: Missing output files: sharks/HetFra/temp/CM070987.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070987.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 402 has been submitted with SLURM jobid 9614847 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070987.1/9614847.log).
+
+[Tue May 20 12:26:11 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070980.1.fasta
+    jobid: 381
+    reason: Missing output files: sharks/HetFra/temp/CM070980.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070980.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 381 has been submitted with SLURM jobid 9614848 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070980.1/9614848.log).
+
+[Tue May 20 12:26:11 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM071008.1.fasta
+    jobid: 465
+    reason: Missing output files: sharks/HetFra/temp/CM071008.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM071008.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 465 has been submitted with SLURM jobid 9614849 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM071008.1/9614849.log).
+
+[Tue May 20 12:26:11 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070998.1.fasta
+    jobid: 435
+    reason: Missing output files: sharks/HetFra/temp/CM070998.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070998.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 435 has been submitted with SLURM jobid 9614850 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070998.1/9614850.log).
+
+[Tue May 20 12:26:12 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070972.1.fasta
+    jobid: 357
+    reason: Missing output files: sharks/HetFra/temp/CM070972.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070972.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 357 has been submitted with SLURM jobid 9614851 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070972.1/9614851.log).
+
+[Tue May 20 12:26:12 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM071001.1.fasta
+    jobid: 444
+    reason: Missing output files: sharks/HetFra/temp/CM071001.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM071001.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 444 has been submitted with SLURM jobid 9614852 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM071001.1/9614852.log).
+
+[Tue May 20 12:26:12 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070966.1.fasta
+    jobid: 339
+    reason: Missing output files: sharks/HetFra/temp/CM070966.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070966.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 339 has been submitted with SLURM jobid 9614854 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070966.1/9614854.log).
+
+[Tue May 20 12:26:12 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070994.1.fasta
+    jobid: 423
+    reason: Missing output files: sharks/HetFra/temp/CM070994.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070994.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 423 has been submitted with SLURM jobid 9614855 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070994.1/9614855.log).
+
+[Tue May 20 12:26:13 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070984.1.fasta
+    jobid: 393
+    reason: Missing output files: sharks/HetFra/temp/CM070984.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070984.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 393 has been submitted with SLURM jobid 9614856 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070984.1/9614856.log).
+
+[Tue May 20 12:26:13 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM071005.1.fasta
+    jobid: 456
+    reason: Missing output files: sharks/HetFra/temp/CM071005.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM071005.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 456 has been submitted with SLURM jobid 9614857 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM071005.1/9614857.log).
+
+[Tue May 20 12:26:13 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070969.1.fasta
+    jobid: 348
+    reason: Missing output files: sharks/HetFra/temp/CM070969.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070969.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 348 has been submitted with SLURM jobid 9614858 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070969.1/9614858.log).
+[Tue May 20 12:26:13 2025]
+Finished job 271.
+3 of 2161 steps (0.1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue May 20 12:26:13 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070981.1.fasta
+    jobid: 384
+    reason: Missing output files: sharks/HetFra/temp/CM070981.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070981.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 384 has been submitted with SLURM jobid 9614859 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070981.1/9614859.log).
+[Tue May 20 12:26:46 2025]
+Finished job 9.
+4 of 2161 steps (0.2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue May 20 12:26:46 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM071000.1.fasta
+    jobid: 441
+    reason: Missing output files: sharks/HetFra/temp/CM071000.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM071000.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 441 has been submitted with SLURM jobid 9614863 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM071000.1/9614863.log).
+[Tue May 20 12:33:17 2025]
+Finished job 414.
+5 of 2161 steps (0.2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue May 20 12:33:17 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070971.1.fasta
+    jobid: 354
+    reason: Missing output files: sharks/HetFra/temp/CM070971.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070971.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 354 has been submitted with SLURM jobid 9615053 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070971.1/9615053.log).
+[Tue May 20 12:33:57 2025]
+Finished job 330.
+6 of 2161 steps (0.3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue May 20 12:33:57 2025]
+rule EXTRACT_CHR_FASTA:
+    input: sharks/HetFra/temp/GCA_036365495.1.fa
+    output: sharks/HetFra/temp/CM070977.1.fasta
+    jobid: 372
+    reason: Missing output files: sharks/HetFra/temp/CM070977.1.fasta; Input files updated by another job: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHR=CM070977.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=10111, disk_mib=9643, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 372 has been submitted with SLURM jobid 9615061 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_EXTRACT_CHR_FASTA/sharks_HetFra_CM070977.1/9615061.log).
+[Tue May 20 12:33:58 2025]
+Finished job 468.
+7 of 2161 steps (0.3%) done
+[Tue May 20 12:33:58 2025]
+Finished job 363.
+8 of 2161 steps (0.4%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Tue May 20 12:33:58 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070990.1_Het_Map.svg
+    jobid: 300
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070990.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 300 has been submitted with SLURM jobid 9615062 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070990.1/9615062.log).
+
+[Tue May 20 12:33:58 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071010.1_Het_Map.svg
+    jobid: 320
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071010.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 320 has been submitted with SLURM jobid 9615063 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM071010.1/9615063.log).
+Select jobs to execute...
+Waiting for more resources.
+[Tue May 20 12:34:38 2025]
+Finished job 447.
+9 of 2161 steps (0.4%) done
+Execute 1 jobs...
+
+[Tue May 20 12:34:38 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070974.1_Het_Map.svg
+    jobid: 284
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070974.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 284 has been submitted with SLURM jobid 9615068 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070974.1/9615068.log).
+[Tue May 20 12:34:38 2025]
+Finished job 342.
+10 of 2161 steps (0.5%) done
+[Tue May 20 12:34:38 2025]
+Finished job 426.
+11 of 2161 steps (1%) done
+[Tue May 20 12:34:38 2025]
+Finished job 405.
+12 of 2161 steps (1%) done
+Select jobs to execute...
+Execute 3 jobs...
+
+[Tue May 20 12:34:38 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070996.1_Het_Map.svg
+    jobid: 306
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070996.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 306 has been submitted with SLURM jobid 9615069 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070996.1/9615069.log).
+
+[Tue May 20 12:34:40 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070983.1_Het_Map.svg
+    jobid: 293
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070983.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 293 has been submitted with SLURM jobid 9615070 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070983.1/9615070.log).
+
+[Tue May 20 12:34:40 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071003.1_Het_Map.svg
+    jobid: 313
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071003.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 313 has been submitted with SLURM jobid 9615071 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM071003.1/9615071.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+[Tue May 20 12:35:18 2025]
+Finished job 396.
+13 of 2161 steps (1%) done
+Execute 1 jobs...
+
+[Tue May 20 12:35:18 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070981.1_Het_Map.svg
+    jobid: 291
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070981.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 291 has been submitted with SLURM jobid 9615077 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070981.1/9615077.log).
+[Tue May 20 12:35:19 2025]
+Finished job 459.
+14 of 2161 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue May 20 12:35:19 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070988.1_Het_Map.svg
+    jobid: 298
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070988.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 298 has been submitted with SLURM jobid 9615078 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070988.1/9615078.log).
+[Tue May 20 12:35:58 2025]
+Finished job 375.
+15 of 2161 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue May 20 12:35:58 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070968.1_Het_Map.svg
+    jobid: 278
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070968.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 278 has been submitted with SLURM jobid 9615094 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070968.1/9615094.log).
+[Tue May 20 12:35:58 2025]
+Finished job 351.
+16 of 2161 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue May 20 12:35:58 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070995.1_Het_Map.svg
+    jobid: 305
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070995.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 305 has been submitted with SLURM jobid 9615095 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070995.1/9615095.log).
+[Tue May 20 12:36:38 2025]
+Finished job 438.
+17 of 2161 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue May 20 12:36:38 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070989.1_Het_Map.svg
+    jobid: 299
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070989.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 299 has been submitted with SLURM jobid 9615123 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070989.1/9615123.log).
+[Tue May 20 12:36:38 2025]
+Finished job 333.
+18 of 2161 steps (1%) done
+[Tue May 20 12:36:38 2025]
+Finished job 417.
+19 of 2161 steps (1%) done
+[Tue May 20 12:36:38 2025]
+Finished job 324.
+20 of 2161 steps (1%) done
+Select jobs to execute...
+Execute 3 jobs...
+
+[Tue May 20 12:36:38 2025]
+rule PLOT_WHOLE_HET:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_Het_Whole_Genome_Map.svg
+    jobid: 322
+    reason: Missing output files: sharks/HetFra/20250411_HetFra_Het_Whole_Genome_Map.svg; Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 322 has been submitted with SLURM jobid 9615124 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_WHOLE_HET/sharks_HetFra_20250411/9615124.log).
+
+[Tue May 20 12:36:39 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070969.1_Het_Map.svg
+    jobid: 279
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070969.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 279 has been submitted with SLURM jobid 9615125 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070969.1/9615125.log).
+
+[Tue May 20 12:36:39 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070975.1_Het_Map.svg
+    jobid: 285
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070975.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 285 has been submitted with SLURM jobid 9615126 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070975.1/9615126.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+[Tue May 20 12:37:18 2025]
+Finished job 387.
+21 of 2161 steps (1%) done
+Execute 1 jobs...
+
+[Tue May 20 12:37:18 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071009.1_Het_Map.svg
+    jobid: 319
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071009.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 319 has been submitted with SLURM jobid 9615138 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM071009.1/9615138.log).
+[Tue May 20 12:37:19 2025]
+Finished job 471.
+22 of 2161 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue May 20 12:37:19 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070967.1_Het_Map.svg
+    jobid: 277
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070967.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 277 has been submitted with SLURM jobid 9615139 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070967.1/9615139.log).
+[Tue May 20 12:37:59 2025]
+Finished job 366.
+23 of 2161 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue May 20 12:37:59 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071002.1_Het_Map.svg
+    jobid: 312
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071002.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 312 has been submitted with SLURM jobid 9615159 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM071002.1/9615159.log).
+[Tue May 20 12:37:59 2025]
+Finished job 450.
+24 of 2161 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue May 20 12:37:59 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070973.1_Het_Map.svg
+    jobid: 283
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070973.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 283 has been submitted with SLURM jobid 9615160 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070973.1/9615160.log).
+[Tue May 20 12:38:39 2025]
+Finished job 360.
+25 of 2161 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue May 20 12:38:39 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070982.1_Het_Map.svg
+    jobid: 292
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070982.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 292 has been submitted with SLURM jobid 9615170 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070982.1/9615170.log).
+[Tue May 20 12:38:41 2025]
+Finished job 429.
+26 of 2161 steps (1%) done
+[Tue May 20 12:38:41 2025]
+Finished job 408.
+27 of 2161 steps (1%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Tue May 20 12:38:41 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070962.1_Het_Map.svg
+    jobid: 272
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070962.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 272 has been submitted with SLURM jobid 9615171 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070962.1/9615171.log).
+
+[Tue May 20 12:38:41 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070971.1_Het_Map.svg
+    jobid: 281
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070971.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 281 has been submitted with SLURM jobid 9615172 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070971.1/9615172.log).
+Select jobs to execute...
+Waiting for more resources.
+[Tue May 20 12:39:19 2025]
+Finished job 399.
+28 of 2161 steps (1%) done
+Execute 1 jobs...
+
+[Tue May 20 12:39:19 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070977.1_Het_Map.svg
+    jobid: 287
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070977.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 287 has been submitted with SLURM jobid 9615254 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070977.1/9615254.log).
+[Tue May 20 12:39:19 2025]
+Finished job 378.
+29 of 2161 steps (1%) done
+[Tue May 20 12:39:19 2025]
+Finished job 462.
+30 of 2161 steps (1%) done
+[Tue May 20 12:39:19 2025]
+Finished job 336.
+31 of 2161 steps (1%) done
+[Tue May 20 12:39:19 2025]
+Finished job 420.
+32 of 2161 steps (1%) done
+[Tue May 20 12:39:19 2025]
+Finished job 477.
+33 of 2161 steps (2%) done
+Select jobs to execute...
+Execute 5 jobs...
+
+[Tue May 20 12:39:19 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071011.1_Het_Map.svg
+    jobid: 321
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071011.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 321 has been submitted with SLURM jobid 9615255 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM071011.1/9615255.log).
+
+[Tue May 20 12:39:21 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070985.1_Het_Map.svg
+    jobid: 295
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070985.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 295 has been submitted with SLURM jobid 9615256 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070985.1/9615256.log).
+
+[Tue May 20 12:39:22 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070978.1_Het_Map.svg
+    jobid: 288
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070978.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 288 has been submitted with SLURM jobid 9615257 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070978.1/9615257.log).
+
+[Tue May 20 12:39:24 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070965.1_Het_Map.svg
+    jobid: 275
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070965.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 275 has been submitted with SLURM jobid 9615258 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070965.1/9615258.log).
+
+[Tue May 20 12:39:24 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071007.1_Het_Map.svg
+    jobid: 317
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071007.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 317 has been submitted with SLURM jobid 9615259 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM071007.1/9615259.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Tue May 20 12:39:59 2025]
+Finished job 390.
+34 of 2161 steps (2%) done
+Execute 1 jobs...
+
+[Tue May 20 12:39:59 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070970.1_Het_Map.svg
+    jobid: 280
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070970.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 280 has been submitted with SLURM jobid 9615263 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070970.1/9615263.log).
+[Tue May 20 12:40:00 2025]
+Finished job 474.
+35 of 2161 steps (2%) done
+[Tue May 20 12:40:00 2025]
+Finished job 369.
+36 of 2161 steps (2%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Tue May 20 12:40:00 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070972.1_Het_Map.svg
+    jobid: 282
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070972.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 282 has been submitted with SLURM jobid 9615264 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070972.1/9615264.log).
+
+[Tue May 20 12:40:00 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070963.1_Het_Map.svg
+    jobid: 273
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070963.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 273 has been submitted with SLURM jobid 9615274 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070963.1/9615274.log).
+Select jobs to execute...
+Waiting for more resources.
+[Tue May 20 12:40:39 2025]
+Finished job 453.
+37 of 2161 steps (2%) done
+Execute 1 jobs...
+
+[Tue May 20 12:40:39 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070964.1_Het_Map.svg
+    jobid: 274
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070964.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 274 has been submitted with SLURM jobid 9615298 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070964.1/9615298.log).
+[Tue May 20 12:40:42 2025]
+Finished job 345.
+38 of 2161 steps (2%) done
+[Tue May 20 12:40:42 2025]
+Finished job 432.
+39 of 2161 steps (2%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Tue May 20 12:40:42 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071008.1_Het_Map.svg
+    jobid: 318
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071008.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 318 has been submitted with SLURM jobid 9615299 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM071008.1/9615299.log).
+
+[Tue May 20 12:40:42 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070998.1_Het_Map.svg
+    jobid: 308
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070998.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 308 has been submitted with SLURM jobid 9615300 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070998.1/9615300.log).
+Select jobs to execute...
+Waiting for more resources.
+[Tue May 20 12:41:20 2025]
+Finished job 411.
+40 of 2161 steps (2%) done
+Execute 1 jobs...
+
+[Tue May 20 12:41:20 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071000.1_Het_Map.svg
+    jobid: 310
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071000.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 310 has been submitted with SLURM jobid 9615321 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM071000.1/9615321.log).
+[Tue May 20 12:41:21 2025]
+Finished job 402.
+41 of 2161 steps (2%) done
+[Tue May 20 12:41:21 2025]
+Finished job 381.
+42 of 2161 steps (2%) done
+[Tue May 20 12:41:21 2025]
+Finished job 465.
+43 of 2161 steps (2%) done
+[Tue May 20 12:41:21 2025]
+Finished job 435.
+44 of 2161 steps (2%) done
+[Tue May 20 12:41:21 2025]
+Finished job 357.
+45 of 2161 steps (2%) done
+Select jobs to execute...
+Execute 5 jobs...
+
+[Tue May 20 12:41:21 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071006.1_Het_Map.svg
+    jobid: 316
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071006.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 316 has been submitted with SLURM jobid 9615324 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM071006.1/9615324.log).
+
+[Tue May 20 12:41:21 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070966.1_Het_Map.svg
+    jobid: 276
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070966.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 276 has been submitted with SLURM jobid 9615326 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070966.1/9615326.log).
+
+[Tue May 20 12:41:23 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070999.1_Het_Map.svg
+    jobid: 309
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070999.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 309 has been submitted with SLURM jobid 9615328 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070999.1/9615328.log).
+
+[Tue May 20 12:41:24 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070992.1_Het_Map.svg
+    jobid: 302
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070992.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 302 has been submitted with SLURM jobid 9615329 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070992.1/9615329.log).
+
+[Tue May 20 12:41:26 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070991.1_Het_Map.svg
+    jobid: 301
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070991.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 301 has been submitted with SLURM jobid 9615331 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070991.1/9615331.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Tue May 20 12:42:00 2025]
+Finished job 444.
+46 of 2161 steps (2%) done
+Execute 1 jobs...
+
+[Tue May 20 12:42:00 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070987.1_Het_Map.svg
+    jobid: 297
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070987.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 297 has been submitted with SLURM jobid 9615369 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070987.1/9615369.log).
+[Tue May 20 12:42:02 2025]
+Finished job 339.
+47 of 2161 steps (2%) done
+[Tue May 20 12:42:02 2025]
+Finished job 423.
+48 of 2161 steps (2%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Tue May 20 12:42:02 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070984.1_Het_Map.svg
+    jobid: 294
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070984.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 294 has been submitted with SLURM jobid 9615371 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070984.1/9615371.log).
+
+[Tue May 20 12:42:02 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070993.1_Het_Map.svg
+    jobid: 303
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070993.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 303 has been submitted with SLURM jobid 9615372 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070993.1/9615372.log).
+Select jobs to execute...
+Waiting for more resources.
+[Tue May 20 12:42:40 2025]
+Finished job 393.
+49 of 2161 steps (2%) done
+Execute 1 jobs...
+
+[Tue May 20 12:42:40 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071005.1_Het_Map.svg
+    jobid: 315
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071005.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 315 has been submitted with SLURM jobid 9615382 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM071005.1/9615382.log).
+[Tue May 20 12:42:40 2025]
+Finished job 456.
+50 of 2161 steps (2%) done
+[Tue May 20 12:42:40 2025]
+Finished job 348.
+51 of 2161 steps (2%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Tue May 20 12:42:40 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070986.1_Het_Map.svg
+    jobid: 296
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070986.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 296 has been submitted with SLURM jobid 9615383 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070986.1/9615383.log).
+
+[Tue May 20 12:42:40 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070979.1_Het_Map.svg
+    jobid: 289
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070979.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 289 has been submitted with SLURM jobid 9615384 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070979.1/9615384.log).
+Select jobs to execute...
+Waiting for more resources.
+[Tue May 20 12:43:20 2025]
+Finished job 384.
+52 of 2161 steps (2%) done
+Execute 1 jobs...
+
+[Tue May 20 12:43:20 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070980.1_Het_Map.svg
+    jobid: 290
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070980.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 290 has been submitted with SLURM jobid 9615395 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070980.1/9615395.log).
+[Tue May 20 12:43:21 2025]
+Finished job 441.
+53 of 2161 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue May 20 12:43:21 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070994.1_Het_Map.svg
+    jobid: 304
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070994.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 304 has been submitted with SLURM jobid 9615396 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070994.1/9615396.log).
+[Tue May 20 12:47:01 2025]
+Finished job 354.
+54 of 2161 steps (2%) done
+Select jobs to execute...
+[Tue May 20 12:47:01 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615062' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 300
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070990.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070990.1/9615062.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615062
+
+[Tue May 20 12:47:01 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615063' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 320
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071010.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM071010.1/9615063.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615063
+
+[Tue May 20 12:47:01 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615068' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 284
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070974.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070974.1/9615068.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615068
+
+[Tue May 20 12:47:01 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615069' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 306
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070996.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070996.1/9615069.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615069
+
+[Tue May 20 12:47:01 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615070' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 293
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070983.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070983.1/9615070.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615070
+
+[Tue May 20 12:47:01 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615071' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 313
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071003.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM071003.1/9615071.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615071
+
+[Tue May 20 12:47:01 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615077' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 291
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070981.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070981.1/9615077.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615077
+
+[Tue May 20 12:47:01 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615078' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 298
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070988.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070988.1/9615078.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615078
+
+Execute 1 jobs...
+
+[Tue May 20 12:47:01 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070997.1_Het_Map.svg
+    jobid: 307
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070997.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 307 has been submitted with SLURM jobid 9615441 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070997.1/9615441.log).
+[Tue May 20 12:47:01 2025]
+Finished job 372.
+55 of 2161 steps (3%) done
+Removing temporary output sharks/HetFra/temp/GCA_036365495.1.fa.
+Select jobs to execute...
+Execute 3 jobs...
+
+[Tue May 20 12:47:02 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071004.1_Het_Map.svg
+    jobid: 314
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071004.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 314 has been submitted with SLURM jobid 9615442 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM071004.1/9615442.log).
+
+[Tue May 20 12:47:02 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071001.1_Het_Map.svg
+    jobid: 311
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM071001.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 311 has been submitted with SLURM jobid 9615443 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM071001.1/9615443.log).
+
+[Tue May 20 12:47:02 2025]
+rule PLOT_HET_PER_CHR:
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070976.1_Het_Map.svg
+    jobid: 286
+    reason: Input files updated by another job: sharks/HetFra/HetFra_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, TODAY_DATE=20250411, CHR=CM070976.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 286 has been submitted with SLURM jobid 9615444 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070976.1/9615444.log).
+[Tue May 20 12:47:41 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615094' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 278
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070968.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070968.1/9615094.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615094
+
+[Tue May 20 12:47:41 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615095' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 305
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070995.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070995.1/9615095.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615095
+
+[Tue May 20 12:50:42 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615123' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 299
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070989.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070989.1/9615123.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615123
+
+[Tue May 20 12:50:42 2025]
+Error in rule PLOT_WHOLE_HET:
+    message: SLURM-job '9615124' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 322
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_Het_Whole_Genome_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_WHOLE_HET/sharks_HetFra_20250411/9615124.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_Plot_het_whole_genome.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 50 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615124
+
+[Tue May 20 12:50:42 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615125' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 279
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070969.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070969.1/9615125.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615125
+
+[Tue May 20 12:52:02 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615126' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 285
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070975.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070975.1/9615126.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615126
+
+[Tue May 20 12:52:02 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615138' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 319
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071009.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM071009.1/9615138.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615138
+
+[Tue May 20 12:52:02 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615139' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 277
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070967.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070967.1/9615139.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615139
+
+[Tue May 20 12:52:02 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615159' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 312
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071002.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM071002.1/9615159.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615159
+
+[Tue May 20 12:52:02 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615160' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 283
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070973.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070973.1/9615160.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615160
+
+[Tue May 20 12:52:03 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615170' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 292
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070982.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070982.1/9615170.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615170
+
+[Tue May 20 12:52:03 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615171' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 272
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070962.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070962.1/9615171.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615171
+
+[Tue May 20 12:52:03 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615172' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 281
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070971.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070971.1/9615172.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615172
+
+[Tue May 20 12:52:03 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615254' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 287
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070977.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070977.1/9615254.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615254
+
+[Tue May 20 12:52:03 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615255' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 321
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071011.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM071011.1/9615255.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615255
+
+[Tue May 20 12:52:03 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615256' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 295
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070985.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070985.1/9615256.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615256
+
+[Tue May 20 12:52:03 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615257' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 288
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070978.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070978.1/9615257.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615257
+
+[Tue May 20 12:52:03 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615258' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 275
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070965.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070965.1/9615258.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615258
+
+[Tue May 20 12:52:03 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615259' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 317
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071007.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM071007.1/9615259.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615259
+
+[Tue May 20 12:52:03 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615263' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 280
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070970.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070970.1/9615263.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615263
+
+[Tue May 20 12:53:33 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615264' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 282
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070972.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070972.1/9615264.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615264
+
+[Tue May 20 12:53:33 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615274' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 273
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070963.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070963.1/9615274.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615274
+
+[Tue May 20 12:55:13 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615298' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 274
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070964.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070964.1/9615298.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615298
+
+[Tue May 20 12:55:13 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615299' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 318
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071008.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM071008.1/9615299.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615299
+
+[Tue May 20 12:55:13 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615300' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 308
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070998.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070998.1/9615300.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615300
+
+[Tue May 20 12:55:13 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615321' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 310
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071000.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM071000.1/9615321.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615321
+
+[Tue May 20 12:55:14 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615324' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 316
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM071006.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM071006.1/9615324.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615324
+
+[Tue May 20 12:55:14 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615326' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 276
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070966.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070966.1/9615326.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615326
+
+[Tue May 20 12:55:14 2025]
+Error in rule PLOT_HET_PER_CHR:
+    message: SLURM-job '9615328' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 309
+    input: sharks/HetFra/HetFra_Het_Compiled.tsv
+    output: sharks/HetFra/20250411_HetFra_CM070999.1_Het_Map.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_HET_PER_CHR/sharks_HetFra_20250411_CM070999.1/9615328.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R sharks/HetFra/HetFra_Het_Compiled.tsv 20250411 GCA_036365495.1 sharks 51 HetFra
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9615328
+

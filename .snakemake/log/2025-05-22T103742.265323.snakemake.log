@@ -1,0 +1,36 @@
+host: login-q-1
+Building DAG of jobs...
+SLURM run ID: d69ac863-764b-45ca-8ab6-5d64ffb1f861
+Using shell: /usr/bin/bash
+Provided remote nodes: 50
+Job stats:
+job                    count
+-------------------  -------
+BAM_CALLER_BED            45
+BGZIP_VCF                 45
+CALL_PLOIDY               45
+INDEL_MASKER              45
+INDEX_BAM_FILE            45
+MAKE_BAM                   1
+MAKE_SAM                   1
+PILEUP_VARIANTS           46
+REMOVE_INDELS             45
+RESTRUCTURE               45
+SEPARATE_BAM_BY_CHR       46
+TABIX                     45
+all                        1
+total                    455
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu May 22 10:38:08 2025]
+rule MAKE_SAM:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084215.1.fa.gz, /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/sharks/GCA_035084135.1.fa.gz
+    output: sharks/HepPer/HepPer.sam
+    jobid: 295
+    reason: Missing output files: sharks/HepPer/HepPer.sam; Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=3672, disk_mib=3502, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake, runtime=720
+
+Job 295 has been submitted with SLURM jobid 9731659 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAKE_SAM/sharks_HepPer/9731659.log).

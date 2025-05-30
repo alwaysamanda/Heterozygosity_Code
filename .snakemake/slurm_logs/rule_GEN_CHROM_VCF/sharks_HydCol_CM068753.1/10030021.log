@@ -1,0 +1,80 @@
+host: cpu-p-200
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 28 13:51:37 2025]
+rule GEN_CHROM_VCF:
+    input: sharks/HydCol/MSMC/paf_files/HydCol_CM068753.1.paf, /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084275.1.fa.gz
+    output: sharks/HydCol/MSMC/vcf_files/HydCol_CM068753.1.vcf.gz
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHROM=CM068753.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+host: cpu-p-200
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 28 13:51:39 2025]
+localrule GEN_CHROM_VCF:
+    input: sharks/HydCol/MSMC/paf_files/HydCol_CM068753.1.paf, /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084275.1.fa.gz
+    output: sharks/HydCol/MSMC/vcf_files/HydCol_CM068753.1.vcf.gz
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHROM=CM068753.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=/tmp, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+ERROR: fail to open file 'paftools'.
+ERROR: failed to read file 'paftools'
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 582:
+Command 'set -euo pipefail;  
+        mkdir -p "sharks/HydCol/MSMC/vcf_files"
+        k8 paftools call -s HydCol -f /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084275.1.fa.gz sharks/HydCol/MSMC/paf_files/HydCol_CM068753.1.paf > sharks/HydCol/MSMC/vcf_files/HydCol_CM068753.1.vcf
+        gzip sharks/HydCol/MSMC/vcf_files/HydCol_CM068753.1.vcf' returned non-zero exit status 1.
+[Wed May 28 13:51:40 2025]
+Error in rule GEN_CHROM_VCF:
+    jobid: 0
+    input: sharks/HydCol/MSMC/paf_files/HydCol_CM068753.1.paf, /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084275.1.fa.gz
+    output: sharks/HydCol/MSMC/vcf_files/HydCol_CM068753.1.vcf.gz
+    shell:
+        
+        mkdir -p "sharks/HydCol/MSMC/vcf_files"
+        k8 paftools call -s HydCol -f /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084275.1.fa.gz sharks/HydCol/MSMC/paf_files/HydCol_CM068753.1.paf > sharks/HydCol/MSMC/vcf_files/HydCol_CM068753.1.vcf
+        gzip sharks/HydCol/MSMC/vcf_files/HydCol_CM068753.1.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.
+srun: error: cpu-p-200: task 0: Exited with exit code 1
+[Wed May 28 13:51:40 2025]
+Error in rule GEN_CHROM_VCF:
+    jobid: 0
+    input: sharks/HydCol/MSMC/paf_files/HydCol_CM068753.1.paf, /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084275.1.fa.gz
+    output: sharks/HydCol/MSMC/vcf_files/HydCol_CM068753.1.vcf.gz
+    shell:
+        
+        mkdir -p "sharks/HydCol/MSMC/vcf_files"
+        k8 paftools call -s HydCol -f /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084275.1.fa.gz sharks/HydCol/MSMC/paf_files/HydCol_CM068753.1.paf > sharks/HydCol/MSMC/vcf_files/HydCol_CM068753.1.vcf
+        gzip sharks/HydCol/MSMC/vcf_files/HydCol_CM068753.1.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.

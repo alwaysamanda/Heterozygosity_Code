@@ -1,0 +1,63 @@
+host: login-p-1
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+FILTER_PAF_VARIANCE        1
+GET_WHOLE_ALN              1
+GET_WHOLE_VAR              1
+SORT_PAF                   1
+all                        1
+total                      5
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sat Apr 12 11:15:20 2025]
+localrule FILTER_PAF_VARIANCE:
+    input: sharks/NarBan/NarBan_FASTGA.paf
+    output: sharks/NarBan/NarBan_FASTGA.fltr.paf
+    jobid: 2
+    reason: Missing output files: sharks/NarBan/NarBan_FASTGA.fltr.paf; Code has changed since last execution
+    resources: tmpdir=/tmp
+
+[Sat Apr 12 11:15:42 2025]
+Finished job 2.
+1 of 5 steps (20%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sat Apr 12 11:15:42 2025]
+localrule SORT_PAF:
+    input: sharks/NarBan/NarBan_FASTGA.fltr.paf
+    output: sharks/NarBan/NarBan_FASTGA.fltr.srt.paf
+    jobid: 1
+    reason: Missing output files: sharks/NarBan/NarBan_FASTGA.fltr.srt.paf; Input files updated by another job: sharks/NarBan/NarBan_FASTGA.fltr.paf
+    resources: tmpdir=/tmp
+
+[Sat Apr 12 11:16:54 2025]
+Finished job 1.
+2 of 5 steps (40%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Sat Apr 12 11:16:55 2025]
+localrule GET_WHOLE_VAR:
+    input: sharks/NarBan/NarBan_FASTGA.fltr.srt.paf
+    output: sharks/NarBan/temp/NarBan_Var_Only.txt
+    jobid: 9
+    reason: Missing output files: sharks/NarBan/temp/NarBan_Var_Only.txt; Input files updated by another job: sharks/NarBan/NarBan_FASTGA.fltr.srt.paf
+    resources: tmpdir=/tmp
+
+
+[Sat Apr 12 11:16:55 2025]
+localrule GET_WHOLE_ALN:
+    input: sharks/NarBan/NarBan_FASTGA.fltr.srt.paf
+    output: sharks/NarBan/temp/NarBan_Aln_Only.txt
+    jobid: 10
+    reason: Missing output files: sharks/NarBan/temp/NarBan_Aln_Only.txt; Input files updated by another job: sharks/NarBan/NarBan_FASTGA.fltr.srt.paf
+    resources: tmpdir=/tmp
+

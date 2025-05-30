@@ -1,0 +1,29 @@
+host: login-p-4
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+FILTER_PAF_CHR_ONLY        1
+PAF_CS                     1
+all                        1
+total                      3
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr  4 11:14:26 2025]
+localrule FILTER_PAF_CHR_ONLY:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA.paf
+    output: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Filtered_Chr_Only.paf
+    jobid: 2
+    reason: Missing output files: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Filtered_Chr_Only.paf
+    resources: tmpdir=/tmp
+
+RuleException in rule FILTER_PAF_CHR_ONLY in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 188:
+ValueError: expected ':' after conversion specifier, when formatting the following:
+
+        awk '{ if ($1 !~ /^JAY/) {print $0}}' {input} > {output}
+        

@@ -1,0 +1,113 @@
+host: cpu-p-250
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 28 16:38:27 2025]
+rule GEN_ROH_NEGATIVE_MASK:
+    input: sharks/HydCol/20250410_CM068778.1_ROH_Results.txt
+    output: sharks/HydCol/MSMC/ROH_Negative_Mask/HydCol_CM068778.1_ROH_Mask.bed.gz
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHROM=CM068778.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+host: cpu-p-250
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 28 16:38:30 2025]
+localrule GEN_ROH_NEGATIVE_MASK:
+    input: sharks/HydCol/20250410_CM068778.1_ROH_Results.txt
+    output: sharks/HydCol/MSMC/ROH_Negative_Mask/HydCol_CM068778.1_ROH_Mask.bed.gz
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHROM=CM068778.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=/tmp, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Traceback (most recent call last):
+  File "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250528_ROH_Masker.py", line 45, in <module>
+    CREATE_BED_FILE(roh_dat, chrom, clade, spec_name)
+  File "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250528_ROH_Masker.py", line 39, in CREATE_BED_FILE
+    dat = dat.loc[:, 0:3]
+          ~~~~~~~^^^^^^^^
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/core/indexing.py", line 1184, in __getitem__
+    return self._getitem_tuple(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/core/indexing.py", line 1377, in _getitem_tuple
+    return self._getitem_tuple_same_dim(tup)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/core/indexing.py", line 1020, in _getitem_tuple_same_dim
+    retval = getattr(retval, self.name)._getitem_axis(key, axis=i)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/core/indexing.py", line 1411, in _getitem_axis
+    return self._get_slice_axis(key, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/core/indexing.py", line 1443, in _get_slice_axis
+    indexer = labels.slice_indexer(slice_obj.start, slice_obj.stop, slice_obj.step)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 6662, in slice_indexer
+    start_slice, end_slice = self.slice_locs(start, end, step=step)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 6879, in slice_locs
+    start_slice = self.get_slice_bound(start, "left")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 6794, in get_slice_bound
+    label = self._maybe_cast_slice_bound(label, side)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 6727, in _maybe_cast_slice_bound
+    self._raise_invalid_indexer("slice", label)
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 4301, in _raise_invalid_indexer
+    raise TypeError(msg)
+TypeError: cannot do slice indexing on Index with these indexers [0] of type int
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 595:
+Command 'set -euo pipefail;  
+        mkdir -p "sharks/HydCol/MSMC/ROH_Negative_Mask"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250528_ROH_Masker.py sharks HydCol CM068778.1 sharks/HydCol/20250410_CM068778.1_ROH_Results.txt
+        gzip sharks/HydCol/MSMC/ROH_Negative_Mask/HydCol_CM068778.1_ROH_Mask.bed' returned non-zero exit status 1.
+[Wed May 28 16:38:32 2025]
+Error in rule GEN_ROH_NEGATIVE_MASK:
+    jobid: 0
+    input: sharks/HydCol/20250410_CM068778.1_ROH_Results.txt
+    output: sharks/HydCol/MSMC/ROH_Negative_Mask/HydCol_CM068778.1_ROH_Mask.bed.gz
+    shell:
+        
+        mkdir -p "sharks/HydCol/MSMC/ROH_Negative_Mask"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250528_ROH_Masker.py sharks HydCol CM068778.1 sharks/HydCol/20250410_CM068778.1_ROH_Results.txt
+        gzip sharks/HydCol/MSMC/ROH_Negative_Mask/HydCol_CM068778.1_ROH_Mask.bed
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.
+srun: error: cpu-p-250: task 0: Exited with exit code 1
+[Wed May 28 16:38:32 2025]
+Error in rule GEN_ROH_NEGATIVE_MASK:
+    jobid: 0
+    input: sharks/HydCol/20250410_CM068778.1_ROH_Results.txt
+    output: sharks/HydCol/MSMC/ROH_Negative_Mask/HydCol_CM068778.1_ROH_Mask.bed.gz
+    shell:
+        
+        mkdir -p "sharks/HydCol/MSMC/ROH_Negative_Mask"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250528_ROH_Masker.py sharks HydCol CM068778.1 sharks/HydCol/20250410_CM068778.1_ROH_Results.txt
+        gzip sharks/HydCol/MSMC/ROH_Negative_Mask/HydCol_CM068778.1_ROH_Mask.bed
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.

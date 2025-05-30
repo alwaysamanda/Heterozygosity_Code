@@ -1,0 +1,43 @@
+host: cpu-p-251
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sun May 25 22:30:15 2025]
+rule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM071008.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM071008.1_indel_bed.txt
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071008.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+host: cpu-p-251
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sun May 25 22:30:17 2025]
+localrule INDEL_MASKER:
+    input: sharks/HetFra/temp/CM071008.1_pileup.vcf.gz
+    output: sharks/HetFra/MSMC/Output_indel_BED_file/CM071008.1_indel_bed.txt
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, CHROM=CM071008.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=/tmp, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+[Sun May 25 22:30:18 2025]
+Finished job 0.
+1 of 1 steps (100%) done
+Storing output in storage.
+[Sun May 25 22:30:18 2025]
+Finished job 0.
+1 of 1 steps (100%) done
+Storing output in storage.

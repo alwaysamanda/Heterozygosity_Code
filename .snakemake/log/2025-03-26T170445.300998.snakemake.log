@@ -1,0 +1,47 @@
+host: login-p-4
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count
+-----------  -------
+COMPILE_ROH        1
+all                1
+total              2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 17:04:47 2025]
+localrule COMPILE_ROH:
+    input: sharks/HydCol_Test/20250326_CM068742.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068743.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068744.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068745.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068746.1_ROH_Results.txt
+    output: sharks/HydCol_Test/GCA_035084275.1_ROH_Results.tsv
+    jobid: 33
+    reason: Code has changed since last execution
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 298:
+Command 'set -euo pipefail;  
+        single_chrom="$sharks/HydCol_Test/20250326_CM068742.1_ROH_Results.txt sharks/HydCol_Test/20250326_CM068743.1_ROH_Results.txt sharks/HydCol_Test/20250326_CM068744.1_ROH_Results.txt sharks/HydCol_Test/20250326_CM068745.1_ROH_Results.txt sharks/HydCol_Test/20250326_CM068746.1_ROH_Results.txt.split()"
+        echo single_chrom
+        awk -v var="CM068742.1 CM068743.1 CM068744.1 CM068745.1 CM068746.1" -F',' '{ print var, $1, $2, $3, $5 }' sharks/HydCol_Test/20250326_CM068742.1_ROH_Results.txt sharks/HydCol_Test/20250326_CM068743.1_ROH_Results.txt sharks/HydCol_Test/20250326_CM068744.1_ROH_Results.txt sharks/HydCol_Test/20250326_CM068745.1_ROH_Results.txt sharks/HydCol_Test/20250326_CM068746.1_ROH_Results.txt >> sharks/HydCol_Test/GCA_035084275.1_ROH_Results.tsv' returned non-zero exit status 1.
+[Wed Mar 26 17:04:47 2025]
+Error in rule COMPILE_ROH:
+    jobid: 33
+    input: sharks/HydCol_Test/20250326_CM068742.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068743.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068744.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068745.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068746.1_ROH_Results.txt
+    output: sharks/HydCol_Test/GCA_035084275.1_ROH_Results.tsv
+    shell:
+        
+        single_chrom="$sharks/HydCol_Test/20250326_CM068742.1_ROH_Results.txt sharks/HydCol_Test/20250326_CM068743.1_ROH_Results.txt sharks/HydCol_Test/20250326_CM068744.1_ROH_Results.txt sharks/HydCol_Test/20250326_CM068745.1_ROH_Results.txt sharks/HydCol_Test/20250326_CM068746.1_ROH_Results.txt.split()"
+        echo single_chrom
+        awk -v var="CM068742.1 CM068743.1 CM068744.1 CM068745.1 CM068746.1" -F',' '{ print var, $1, $2, $3, $5 }' sharks/HydCol_Test/20250326_CM068742.1_ROH_Results.txt sharks/HydCol_Test/20250326_CM068743.1_ROH_Results.txt sharks/HydCol_Test/20250326_CM068744.1_ROH_Results.txt sharks/HydCol_Test/20250326_CM068745.1_ROH_Results.txt sharks/HydCol_Test/20250326_CM068746.1_ROH_Results.txt >> sharks/HydCol_Test/GCA_035084275.1_ROH_Results.tsv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-26T170445.300998.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

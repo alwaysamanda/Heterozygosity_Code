@@ -1,0 +1,995 @@
+host: login-p-4
+Building DAG of jobs...
+SLURM run ID: 56475d82-3331-4297-a6c4-ca2123cfbf6d
+Using shell: /usr/bin/bash
+Provided remote nodes: 10
+Job stats:
+job                       count
+----------------------  -------
+CALC_HET_PER_CHR             54
+CALC_HET_WHOLE_GENOME         1
+CHROM_LENGTH_CALC             1
+COMPILE_HET                   1
+COMPILE_ROH                   1
+FILTER_PAF_CHR_ONLY           1
+FROH_PER_AUT_CHR             54
+GET_ALN_ONLY_PER_CHROM       54
+GET_VAR_ONLY_PER_CHROM       54
+GET_WHOLE_ALN                 1
+GET_WHOLE_VAR                 1
+PLOT_HET_PER_CHR             54
+PLOT_WHOLE_HET                1
+Plot_ROH                      1
+ROH_CALC                     54
+WHOLE_FROH                    1
+all                           1
+total                       335
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon Apr 28 14:19:55 2025]
+rule FILTER_PAF_CHR_ONLY:
+    input: sharks/HemOce/HemOce_FASTGA.chain.fltr.srt.paf, sharks/chrom_lists/GCF_020745735.1_chroms.txt
+    output: sharks/HemOce/HemOce_FASTGA.chain.chr.fltr.srt.paf
+    jobid: 11
+    reason: Missing output files: sharks/HemOce/HemOce_FASTGA.chain.chr.fltr.srt.paf
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=4070, disk_mib=3882, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 11 has been submitted with SLURM jobid 8821148 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FILTER_PAF_CHR_ONLY/8821148.log).
+
+[Mon Apr 28 14:19:57 2025]
+rule CHROM_LENGTH_CALC:
+    input: ../241117.UCSC-hubs-VGP-alignment/alignment/reference/sharks/GCF_020745735.1.fa.gz, sharks/chrom_lists/GCF_020745735.1_chroms.txt
+    output: sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt
+    jobid: 122
+    reason: Missing output files: sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=2395, disk_mib=2285, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 122 has been submitted with SLURM jobid 8821149 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CHROM_LENGTH_CALC/8821149.log).
+[Mon Apr 28 15:09:58 2025]
+Finished job 11.
+1 of 335 steps (0.3%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon Apr 28 15:09:59 2025]
+rule GET_WHOLE_ALN:
+    input: sharks/HemOce/HemOce_FASTGA.chain.chr.fltr.srt.paf
+    output: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    jobid: 12
+    reason: Input files updated by another job: sharks/HemOce/HemOce_FASTGA.chain.chr.fltr.srt.paf; Set of input files has changed since last execution
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1885, disk_mib=1798, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 12 has been submitted with SLURM jobid 8822826 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_WHOLE_ALN/8822826.log).
+
+[Mon Apr 28 15:09:59 2025]
+rule GET_WHOLE_VAR:
+    input: sharks/HemOce/HemOce_FASTGA.chain.chr.fltr.srt.paf
+    output: sharks/HemOce/temp/HemOce_Var_Only.txt
+    jobid: 10
+    reason: Input files updated by another job: sharks/HemOce/HemOce_FASTGA.chain.chr.fltr.srt.paf; Set of input files has changed since last execution
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1885, disk_mib=1798, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 10 has been submitted with SLURM jobid 8822827 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_WHOLE_VAR/8822827.log).
+[Mon Apr 28 15:15:00 2025]
+Finished job 122.
+2 of 335 steps (1%) done
+[Mon Apr 28 16:15:32 2025]
+Finished job 12.
+3 of 335 steps (1%) done
+Select jobs to execute...
+Execute 9 jobs...
+
+[Mon Apr 28 16:15:33 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083409.1_Aln_Only.txt
+    jobid: 21
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083409.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083409.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 21 has been submitted with SLURM jobid 8825855 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083409.1/8825855.log).
+
+[Mon Apr 28 16:15:33 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083438.1_Aln_Only.txt
+    jobid: 50
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083438.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083438.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 50 has been submitted with SLURM jobid 8825856 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083438.1/8825856.log).
+
+[Mon Apr 28 16:15:34 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083407.1_Aln_Only.txt
+    jobid: 19
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083407.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083407.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 19 has been submitted with SLURM jobid 8825857 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083407.1/8825857.log).
+
+[Mon Apr 28 16:15:36 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083402.1_Aln_Only.txt
+    jobid: 14
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083402.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083402.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 14 has been submitted with SLURM jobid 8825858 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083402.1/8825858.log).
+
+[Mon Apr 28 16:15:36 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083451.1_Aln_Only.txt
+    jobid: 63
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083451.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083451.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 63 has been submitted with SLURM jobid 8825859 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083451.1/8825859.log).
+
+[Mon Apr 28 16:15:36 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083444.1_Aln_Only.txt
+    jobid: 56
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083444.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083444.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 56 has been submitted with SLURM jobid 8825860 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083444.1/8825860.log).
+
+[Mon Apr 28 16:15:38 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083437.1_Aln_Only.txt
+    jobid: 49
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083437.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083437.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 49 has been submitted with SLURM jobid 8825861 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083437.1/8825861.log).
+
+[Mon Apr 28 16:15:39 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083430.1_Aln_Only.txt
+    jobid: 42
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083430.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083430.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 42 has been submitted with SLURM jobid 8825862 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083430.1/8825862.log).
+
+[Mon Apr 28 16:15:39 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083423.1_Aln_Only.txt
+    jobid: 35
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083423.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083423.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 35 has been submitted with SLURM jobid 8825863 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083423.1/8825863.log).
+[Mon Apr 28 16:15:41 2025]
+Finished job 10.
+4 of 335 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 16:15:41 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083429.1_Var_Only.txt
+    jobid: 95
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083429.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083429.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 95 has been submitted with SLURM jobid 8825864 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083429.1/8825864.log).
+[Mon Apr 28 16:20:33 2025]
+Finished job 21.
+5 of 335 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 16:20:33 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083402.1_Var_Only.txt
+    jobid: 68
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083402.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083402.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 68 has been submitted with SLURM jobid 8826021 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083402.1/8826021.log).
+[Mon Apr 28 16:20:33 2025]
+Finished job 50.
+6 of 335 steps (2%) done
+[Mon Apr 28 16:20:33 2025]
+Finished job 19.
+7 of 335 steps (2%) done
+[Mon Apr 28 16:20:33 2025]
+Finished job 14.
+8 of 335 steps (2%) done
+[Mon Apr 28 16:20:33 2025]
+Finished job 63.
+9 of 335 steps (3%) done
+[Mon Apr 28 16:20:33 2025]
+Finished job 56.
+10 of 335 steps (3%) done
+[Mon Apr 28 16:20:33 2025]
+Finished job 49.
+11 of 335 steps (3%) done
+Select jobs to execute...
+Execute 6 jobs...
+
+[Mon Apr 28 16:20:33 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083441.1_Var_Only.txt
+    jobid: 107
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083441.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083441.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 107 has been submitted with SLURM jobid 8826022 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083441.1/8826022.log).
+
+[Mon Apr 28 16:20:35 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083414.1_Var_Only.txt
+    jobid: 80
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083414.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083414.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 80 has been submitted with SLURM jobid 8826024 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083414.1/8826024.log).
+
+[Mon Apr 28 16:20:36 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083412.1_Aln_Only.txt
+    jobid: 24
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083412.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083412.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 24 has been submitted with SLURM jobid 8826025 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083412.1/8826025.log).
+
+[Mon Apr 28 16:20:36 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083440.1_Aln_Only.txt
+    jobid: 52
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083440.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083440.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 52 has been submitted with SLURM jobid 8826026 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083440.1/8826026.log).
+
+[Mon Apr 28 16:20:38 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083411.1_Var_Only.txt
+    jobid: 77
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083411.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083411.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 77 has been submitted with SLURM jobid 8826027 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083411.1/8826027.log).
+
+[Mon Apr 28 16:20:38 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083439.1_Aln_Only.txt
+    jobid: 51
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083439.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083439.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 51 has been submitted with SLURM jobid 8826028 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083439.1/8826028.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Mon Apr 28 16:25:34 2025]
+Finished job 42.
+12 of 335 steps (4%) done
+Execute 1 jobs...
+
+[Mon Apr 28 16:25:34 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083401.1_Var_Only.txt
+    jobid: 67
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083401.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083401.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 67 has been submitted with SLURM jobid 8826139 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083401.1/8826139.log).
+[Mon Apr 28 16:25:34 2025]
+Finished job 35.
+13 of 335 steps (4%) done
+[Mon Apr 28 16:25:34 2025]
+Finished job 95.
+14 of 335 steps (4%) done
+[Mon Apr 28 16:25:34 2025]
+Finished job 68.
+15 of 335 steps (4%) done
+[Mon Apr 28 16:25:34 2025]
+Finished job 107.
+16 of 335 steps (5%) done
+Select jobs to execute...
+Execute 4 jobs...
+
+[Mon Apr 28 16:25:34 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083448.1_Aln_Only.txt
+    jobid: 60
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083448.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083448.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 60 has been submitted with SLURM jobid 8826140 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083448.1/8826140.log).
+
+[Mon Apr 28 16:25:35 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083442.1_Var_Only.txt
+    jobid: 108
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083442.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083442.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 108 has been submitted with SLURM jobid 8826141 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083442.1/8826141.log).
+
+[Mon Apr 28 16:25:37 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083413.1_Var_Only.txt
+    jobid: 79
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083413.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083413.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 79 has been submitted with SLURM jobid 8826142 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083413.1/8826142.log).
+
+[Mon Apr 28 16:25:37 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083450.1_Var_Only.txt
+    jobid: 116
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083450.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083450.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 116 has been submitted with SLURM jobid 8826143 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083450.1/8826143.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Mon Apr 28 16:32:05 2025]
+Finished job 80.
+17 of 335 steps (5%) done
+Execute 1 jobs...
+
+[Mon Apr 28 16:32:05 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083447.1_Aln_Only.txt
+    jobid: 59
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083447.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083447.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 59 has been submitted with SLURM jobid 8826387 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083447.1/8826387.log).
+[Mon Apr 28 16:32:05 2025]
+Finished job 24.
+18 of 335 steps (5%) done
+[Mon Apr 28 16:32:05 2025]
+Finished job 52.
+19 of 335 steps (6%) done
+[Mon Apr 28 16:32:05 2025]
+Finished job 77.
+20 of 335 steps (6%) done
+[Mon Apr 28 16:32:05 2025]
+Finished job 51.
+21 of 335 steps (6%) done
+Select jobs to execute...
+Execute 4 jobs...
+
+[Mon Apr 28 16:32:05 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083436.1_Aln_Only.txt
+    jobid: 48
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083436.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083436.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 48 has been submitted with SLURM jobid 8826388 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083436.1/8826388.log).
+
+[Mon Apr 28 16:32:07 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083413.1_Aln_Only.txt
+    jobid: 25
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083413.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083413.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 25 has been submitted with SLURM jobid 8826389 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083413.1/8826389.log).
+
+[Mon Apr 28 16:32:07 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083415.1_Var_Only.txt
+    jobid: 81
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083415.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083415.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 81 has been submitted with SLURM jobid 8826390 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083415.1/8826390.log).
+
+[Mon Apr 28 16:32:07 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083446.1_Aln_Only.txt
+    jobid: 58
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083446.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083446.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 58 has been submitted with SLURM jobid 8826391 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083446.1/8826391.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Mon Apr 28 16:37:05 2025]
+Finished job 67.
+22 of 335 steps (7%) done
+Execute 1 jobs...
+
+[Mon Apr 28 16:37:05 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083428.1_Aln_Only.txt
+    jobid: 40
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083428.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083428.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 40 has been submitted with SLURM jobid 8826627 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083428.1/8826627.log).
+[Mon Apr 28 16:37:07 2025]
+Finished job 60.
+23 of 335 steps (7%) done
+[Mon Apr 28 16:37:07 2025]
+Finished job 108.
+24 of 335 steps (7%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon Apr 28 16:37:07 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083441.1_Aln_Only.txt
+    jobid: 53
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083441.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083441.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 53 has been submitted with SLURM jobid 8826628 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083441.1/8826628.log).
+
+[Mon Apr 28 16:37:07 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083437.1_Var_Only.txt
+    jobid: 103
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083437.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083437.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 103 has been submitted with SLURM jobid 8826629 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083437.1/8826629.log).
+Select jobs to execute...
+Waiting for more resources.
+[Mon Apr 28 16:40:46 2025]
+Finished job 79.
+25 of 335 steps (7%) done
+Execute 1 jobs...
+
+[Mon Apr 28 16:40:46 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083427.1_Aln_Only.txt
+    jobid: 39
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083427.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083427.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 39 has been submitted with SLURM jobid 8826790 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083427.1/8826790.log).
+[Mon Apr 28 16:45:46 2025]
+Finished job 116.
+26 of 335 steps (8%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 16:45:46 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083430.1_Var_Only.txt
+    jobid: 96
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083430.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083430.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 96 has been submitted with SLURM jobid 8826976 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083430.1/8826976.log).
+[Mon Apr 28 16:45:48 2025]
+Finished job 59.
+27 of 335 steps (8%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 16:45:48 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083401.1_Aln_Only.txt
+    jobid: 13
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083401.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083401.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 13 has been submitted with SLURM jobid 8826977 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083401.1/8826977.log).
+[Mon Apr 28 16:50:47 2025]
+Finished job 48.
+28 of 335 steps (8%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 16:50:47 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083409.1_Var_Only.txt
+    jobid: 75
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083409.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083409.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 75 has been submitted with SLURM jobid 8827443 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083409.1/8827443.log).
+[Mon Apr 28 16:50:48 2025]
+Finished job 25.
+29 of 335 steps (9%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 16:50:48 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083449.1_Aln_Only.txt
+    jobid: 61
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083449.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083449.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 61 has been submitted with SLURM jobid 8827444 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083449.1/8827444.log).
+[Mon Apr 28 16:54:27 2025]
+Finished job 81.
+30 of 335 steps (9%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 16:54:27 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083451.1_Var_Only.txt
+    jobid: 117
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083451.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083451.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 117 has been submitted with SLURM jobid 8827689 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083451.1/8827689.log).
+[Mon Apr 28 16:54:28 2025]
+Finished job 58.
+31 of 335 steps (9%) done
+[Mon Apr 28 16:54:28 2025]
+Finished job 40.
+32 of 335 steps (10%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon Apr 28 16:54:28 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083408.1_Aln_Only.txt
+    jobid: 20
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083408.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083408.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 20 has been submitted with SLURM jobid 8827690 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083408.1/8827690.log).
+
+[Mon Apr 28 16:54:28 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083453.1_Var_Only.txt
+    jobid: 119
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083453.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083453.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 119 has been submitted with SLURM jobid 8827691 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083453.1/8827691.log).
+Select jobs to execute...
+Waiting for more resources.
+[Mon Apr 28 16:59:28 2025]
+Finished job 53.
+33 of 335 steps (10%) done
+Execute 1 jobs...
+
+[Mon Apr 28 16:59:28 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083442.1_Aln_Only.txt
+    jobid: 54
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083442.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083442.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 54 has been submitted with SLURM jobid 8827990 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083442.1/8827990.log).
+[Mon Apr 28 16:59:28 2025]
+Finished job 103.
+34 of 335 steps (10%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 16:59:28 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083405.1_Aln_Only.txt
+    jobid: 17
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083405.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083405.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 17 has been submitted with SLURM jobid 8827991 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083405.1/8827991.log).
+[Mon Apr 28 17:03:09 2025]
+Finished job 39.
+35 of 335 steps (10%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 17:03:09 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083416.1_Var_Only.txt
+    jobid: 82
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083416.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083416.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 82 has been submitted with SLURM jobid 8828079 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083416.1/8828079.log).
+[Mon Apr 28 17:03:09 2025]
+Finished job 96.
+36 of 335 steps (11%) done
+[Mon Apr 28 17:03:09 2025]
+Finished job 13.
+37 of 335 steps (11%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon Apr 28 17:03:09 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083418.1_Aln_Only.txt
+    jobid: 30
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083418.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083418.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 30 has been submitted with SLURM jobid 8828080 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083418.1/8828080.log).
+
+[Mon Apr 28 17:03:09 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083412.1_Var_Only.txt
+    jobid: 78
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083412.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083412.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 78 has been submitted with SLURM jobid 8828081 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083412.1/8828081.log).
+Select jobs to execute...
+Waiting for more resources.
+[Mon Apr 28 17:06:49 2025]
+Finished job 61.
+38 of 335 steps (11%) done
+Execute 1 jobs...
+
+[Mon Apr 28 17:06:49 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083444.1_Var_Only.txt
+    jobid: 110
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083444.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083444.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 110 has been submitted with SLURM jobid 8828210 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083444.1/8828210.log).
+[Mon Apr 28 17:06:51 2025]
+Finished job 20.
+39 of 335 steps (12%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 17:06:51 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083435.1_Aln_Only.txt
+    jobid: 47
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083435.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083435.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 47 has been submitted with SLURM jobid 8828211 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083435.1/8828211.log).
+[Mon Apr 28 17:07:29 2025]
+Finished job 75.
+40 of 335 steps (12%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 17:07:29 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083414.1_Aln_Only.txt
+    jobid: 26
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083414.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083414.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 26 has been submitted with SLURM jobid 8828224 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083414.1/8828224.log).
+[Mon Apr 28 17:07:31 2025]
+Finished job 117.
+41 of 335 steps (12%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 17:07:32 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083422.1_Var_Only.txt
+    jobid: 88
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083422.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083422.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 88 has been submitted with SLURM jobid 8828226 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083422.1/8828226.log).
+[Mon Apr 28 17:12:30 2025]
+Finished job 119.
+42 of 335 steps (13%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 17:12:30 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083423.1_Var_Only.txt
+    jobid: 89
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083423.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083423.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 89 has been submitted with SLURM jobid 8828372 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083423.1/8828372.log).
+[Mon Apr 28 17:12:32 2025]
+Finished job 54.
+43 of 335 steps (13%) done
+[Mon Apr 28 17:12:32 2025]
+Finished job 17.
+44 of 335 steps (13%) done
+[Mon Apr 28 17:12:32 2025]
+Finished job 82.
+45 of 335 steps (13%) done
+Select jobs to execute...
+Execute 3 jobs...
+
+[Mon Apr 28 17:12:32 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083452.1_Aln_Only.txt
+    jobid: 64
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083452.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083452.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 64 has been submitted with SLURM jobid 8828374 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083452.1/8828374.log).
+
+[Mon Apr 28 17:12:32 2025]
+rule ROH_CALC:
+    input: sharks/HemOce/temp/20250428_NC_083441.1_Aln_Only.txt, sharks/HemOce/temp/20250428_NC_083441.1_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt
+    output: sharks/HemOce/20250428_NC_083441.1_ROH_Results.txt
+    jobid: 162
+    reason: Missing output files: sharks/HemOce/20250428_NC_083441.1_ROH_Results.txt; Input files updated by another job: sharks/HemOce/temp/20250428_NC_083441.1_Var_Only.txt, sharks/HemOce/temp/20250428_NC_083441.1_Aln_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083441.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 162 has been submitted with SLURM jobid 8828375 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HemOce_20250428_NC_083441.1/8828375.log).
+
+[Mon Apr 28 17:12:33 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083405.1_Var_Only.txt
+    jobid: 71
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083405.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083405.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 71 has been submitted with SLURM jobid 8828376 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083405.1/8828376.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+[Mon Apr 28 17:16:10 2025]
+Finished job 30.
+46 of 335 steps (14%) done
+Execute 1 jobs...
+
+[Mon Apr 28 17:16:11 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083429.1_Aln_Only.txt
+    jobid: 41
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083429.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083429.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 41 has been submitted with SLURM jobid 8828463 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083429.1/8828463.log).
+[Mon Apr 28 17:16:11 2025]
+Finished job 78.
+47 of 335 steps (14%) done
+[Mon Apr 28 17:16:11 2025]
+Finished job 110.
+48 of 335 steps (14%) done
+[Mon Apr 28 17:16:11 2025]
+Finished job 47.
+49 of 335 steps (15%) done
+Select jobs to execute...
+Execute 3 jobs...
+
+[Mon Apr 28 17:16:11 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083419.1_Var_Only.txt
+    jobid: 85
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083419.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083419.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 85 has been submitted with SLURM jobid 8828464 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083419.1/8828464.log).
+
+[Mon Apr 28 17:16:11 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083404.1_Var_Only.txt
+    jobid: 70
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083404.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083404.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 70 has been submitted with SLURM jobid 8828465 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083404.1/8828465.log).
+
+[Mon Apr 28 17:16:11 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083410.1_Aln_Only.txt
+    jobid: 22
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083410.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083410.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 22 has been submitted with SLURM jobid 8828466 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083410.1/8828466.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+[Mon Apr 28 17:21:11 2025]
+Finished job 26.
+50 of 335 steps (15%) done
+Execute 1 jobs...
+
+[Mon Apr 28 17:21:11 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083445.1_Var_Only.txt
+    jobid: 111
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083445.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083445.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 111 has been submitted with SLURM jobid 8828620 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083445.1/8828620.log).
+[Mon Apr 28 17:24:52 2025]
+Finished job 88.
+51 of 335 steps (15%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 17:24:52 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083443.1_Aln_Only.txt
+    jobid: 55
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083443.1_Aln_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083443.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 55 has been submitted with SLURM jobid 8828853 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083443.1/8828853.log).
+[Mon Apr 28 17:28:32 2025]
+Finished job 89.
+52 of 335 steps (16%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 17:28:32 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083438.1_Var_Only.txt
+    jobid: 104
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083438.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083438.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 104 has been submitted with SLURM jobid 8828981 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083438.1/8828981.log).
+[Mon Apr 28 17:32:13 2025]
+Finished job 64.
+53 of 335 steps (16%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 17:32:13 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083431.1_Var_Only.txt
+    jobid: 97
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083431.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083431.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 97 has been submitted with SLURM jobid 8829163 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083431.1/8829163.log).
+[Mon Apr 28 17:37:13 2025]
+Finished job 162.
+54 of 335 steps (16%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 17:37:13 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HemOce/temp/HemOce_Var_Only.txt
+    output: sharks/HemOce/temp/20250428_NC_083452.1_Var_Only.txt
+    jobid: 118
+    reason: Missing output files: sharks/HemOce/temp/20250428_NC_083452.1_Var_Only.txt; Input files updated by another job: sharks/HemOce/temp/HemOce_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083452.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1644, disk_mib=1568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 118 has been submitted with SLURM jobid 8829522 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HemOce_20250428_NC_083452.1/8829522.log).
+[Mon Apr 28 17:40:54 2025]
+Finished job 71.
+55 of 335 steps (16%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 17:40:54 2025]
+rule ROH_CALC:
+    input: sharks/HemOce/temp/20250428_NC_083412.1_Aln_Only.txt, sharks/HemOce/temp/20250428_NC_083412.1_Var_Only.txt, sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt
+    output: sharks/HemOce/20250428_NC_083412.1_ROH_Results.txt
+    jobid: 133
+    reason: Missing output files: sharks/HemOce/20250428_NC_083412.1_ROH_Results.txt; Input files updated by another job: sharks/HemOce/Reference_HemOce_Chroms_Lengths.txt, sharks/HemOce/temp/20250428_NC_083412.1_Var_Only.txt, sharks/HemOce/temp/20250428_NC_083412.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HemOce, TODAY_DATE=20250428, CHR=NC_083412.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 133 has been submitted with SLURM jobid 8829563 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HemOce_20250428_NC_083412.1/8829563.log).

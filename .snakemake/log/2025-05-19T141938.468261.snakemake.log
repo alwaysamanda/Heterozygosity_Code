@@ -1,0 +1,1346 @@
+host: login-q-2
+Building DAG of jobs...
+SLURM run ID: 8ac92695-6aad-4e8c-8b29-15df22e00b5d
+Using shell: /usr/bin/bash
+Provided remote nodes: 25
+Job stats:
+job                            count
+---------------------------  -------
+BAM_CALLER_BED                    45
+BGZIP_VCF                         45
+BOOTSTRAPPING_MULTIHET_FILE     1350
+CALL_PLOIDY                       45
+GENERATE_MASK                     45
+GENERATE_MULTIHETSEP              45
+INDEL_MASKER                      45
+MAIN_MULTIHETSEP                  45
+REMOVE_INDELS                     45
+RESTRUCTURE                       45
+all                                1
+total                           1756
+
+Select jobs to execute...
+Execute 25 jobs...
+
+[Mon May 19 14:19:49 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068662.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068662.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068662.1_only_snps.vcf.bgz
+    jobid: 484
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068662.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068662.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 484 has been submitted with SLURM jobid 9548960 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068662.1/9548960.log).
+
+[Mon May 19 14:19:50 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068673.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068673.1_indel_bed.txt
+    jobid: 694
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068673.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068673.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 694 has been submitted with SLURM jobid 9548962 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068673.1/9548962.log).
+
+[Mon May 19 14:19:53 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068645.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068645.1_indel_bed.txt
+    jobid: 666
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068645.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068645.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 666 has been submitted with SLURM jobid 9548963 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068645.1/9548963.log).
+
+[Mon May 19 14:19:53 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068663.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068663.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068663.1_only_snps.vcf.bgz
+    jobid: 486
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068663.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068663.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 486 has been submitted with SLURM jobid 9548964 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068663.1/9548964.log).
+
+[Mon May 19 14:19:55 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068667.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068667.1_indel_bed.txt
+    jobid: 688
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068667.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068667.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 688 has been submitted with SLURM jobid 9548965 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068667.1/9548965.log).
+
+[Mon May 19 14:19:56 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068642.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068642.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068642.1_only_snps.vcf.bgz
+    jobid: 444
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068642.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068642.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 444 has been submitted with SLURM jobid 9548966 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068642.1/9548966.log).
+
+[Mon May 19 14:19:58 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068653.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068653.1_indel_bed.txt
+    jobid: 674
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068653.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068653.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 674 has been submitted with SLURM jobid 9548967 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068653.1/9548967.log).
+
+[Mon May 19 14:19:58 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068639.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068639.1_indel_bed.txt
+    jobid: 660
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068639.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068639.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 660 has been submitted with SLURM jobid 9548968 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068639.1/9548968.log).
+
+[Mon May 19 14:20:00 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068670.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068670.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068670.1_only_snps.vcf.bgz
+    jobid: 500
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068670.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068670.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 500 has been submitted with SLURM jobid 9548969 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068670.1/9548969.log).
+
+[Mon May 19 14:20:01 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068657.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068657.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068657.1_only_snps.vcf.bgz
+    jobid: 474
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068657.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068657.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 474 has been submitted with SLURM jobid 9548970 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068657.1/9548970.log).
+
+[Mon May 19 14:20:03 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068668.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068668.1_indel_bed.txt
+    jobid: 689
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068668.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068668.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 689 has been submitted with SLURM jobid 9548972 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068668.1/9548972.log).
+
+[Mon May 19 14:20:03 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068640.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068640.1_indel_bed.txt
+    jobid: 661
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068640.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068640.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 661 has been submitted with SLURM jobid 9548973 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068640.1/9548973.log).
+
+[Mon May 19 14:20:03 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068658.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068658.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068658.1_only_snps.vcf.bgz
+    jobid: 476
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068658.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068658.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 476 has been submitted with SLURM jobid 9548974 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068658.1/9548974.log).
+
+[Mon May 19 14:20:05 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068669.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068669.1_indel_bed.txt
+    jobid: 690
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068669.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068669.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 690 has been submitted with SLURM jobid 9548977 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068669.1/9548977.log).
+
+[Mon May 19 14:20:06 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068641.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068641.1_indel_bed.txt
+    jobid: 662
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068641.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068641.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 662 has been submitted with SLURM jobid 9548978 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068641.1/9548978.log).
+
+[Mon May 19 14:20:08 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068666.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068666.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068666.1_only_snps.vcf.bgz
+    jobid: 492
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068666.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068666.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 492 has been submitted with SLURM jobid 9548979 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068666.1/9548979.log).
+
+[Mon May 19 14:20:08 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068659.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068659.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068659.1_only_snps.vcf.bgz
+    jobid: 478
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068659.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068659.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 478 has been submitted with SLURM jobid 9548980 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068659.1/9548980.log).
+
+[Mon May 19 14:20:10 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068670.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068670.1_indel_bed.txt
+    jobid: 691
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068670.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068670.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 691 has been submitted with SLURM jobid 9548982 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068670.1/9548982.log).
+
+[Mon May 19 14:20:13 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068642.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068642.1_indel_bed.txt
+    jobid: 663
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068642.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068642.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 663 has been submitted with SLURM jobid 9548983 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068642.1/9548983.log).
+
+[Mon May 19 14:20:13 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068660.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068660.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068660.1_only_snps.vcf.bgz
+    jobid: 480
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068660.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068660.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 480 has been submitted with SLURM jobid 9548984 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068660.1/9548984.log).
+
+[Mon May 19 14:20:15 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068671.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068671.1_indel_bed.txt
+    jobid: 692
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068671.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068671.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 692 has been submitted with SLURM jobid 9548985 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068671.1/9548985.log).
+
+[Mon May 19 14:20:16 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068643.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068643.1_indel_bed.txt
+    jobid: 664
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068643.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068643.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 664 has been submitted with SLURM jobid 9548986 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068643.1/9548986.log).
+
+[Mon May 19 14:20:18 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068661.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068661.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068661.1_only_snps.vcf.bgz
+    jobid: 482
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068661.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068661.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 482 has been submitted with SLURM jobid 9548988 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068661.1/9548988.log).
+
+[Mon May 19 14:20:18 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068672.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068672.1_indel_bed.txt
+    jobid: 693
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068672.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068672.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 693 has been submitted with SLURM jobid 9548989 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068672.1/9548989.log).
+
+[Mon May 19 14:20:20 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068644.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068644.1_indel_bed.txt
+    jobid: 665
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068644.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068644.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 665 has been submitted with SLURM jobid 9548990 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068644.1/9548990.log).
+[Mon May 19 14:22:00 2025]
+Finished job 694.
+1 of 1756 steps (0.1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 14:22:00 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068679.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068679.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068679.1_only_snps.vcf.bgz
+    jobid: 518
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068679.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068679.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 518 has been submitted with SLURM jobid 9549023 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068679.1/9549023.log).
+[Mon May 19 14:23:30 2025]
+Finished job 666.
+2 of 1756 steps (0.1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 14:23:30 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068648.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068648.1_indel_bed.txt
+    jobid: 669
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068648.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068648.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 669 has been submitted with SLURM jobid 9549060 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068648.1/9549060.log).
+[Mon May 19 14:23:31 2025]
+Finished job 688.
+3 of 1756 steps (0.2%) done
+[Mon May 19 14:23:31 2025]
+Finished job 674.
+4 of 1756 steps (0.2%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon May 19 14:23:31 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068677.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068677.1_indel_bed.txt
+    jobid: 698
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068677.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068677.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 698 has been submitted with SLURM jobid 9549061 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068677.1/9549061.log).
+
+[Mon May 19 14:23:31 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068647.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068647.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068647.1_only_snps.vcf.bgz
+    jobid: 454
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068647.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068647.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 454 has been submitted with SLURM jobid 9549062 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068647.1/9549062.log).
+Select jobs to execute...
+Waiting for more resources.
+[Mon May 19 14:26:01 2025]
+Finished job 484.
+5 of 1756 steps (0.3%) done
+Execute 1 jobs...
+
+[Mon May 19 14:26:01 2025]
+rule RESTRUCTURE:
+    input: sharks/HepPer/temp/CM068662.1_only_snps.vcf.bgz
+    output: sharks/HepPer/temp/CM068662.1_restructured.vcf.gz
+    jobid: 574
+    reason: Input files updated by another job: sharks/HepPer/temp/CM068662.1_only_snps.vcf.bgz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068662.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 574 has been submitted with SLURM jobid 9549169 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_RESTRUCTURE/sharks_HepPer_CM068662.1/9549169.log).
+[Mon May 19 14:26:41 2025]
+Finished job 486.
+6 of 1756 steps (0.3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 14:26:41 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068637.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068637.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068637.1_only_snps.vcf.bgz
+    jobid: 434
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068637.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068637.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1351, disk_mib=1289, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 434 has been submitted with SLURM jobid 9549226 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068637.1/9549226.log).
+[Mon May 19 14:27:21 2025]
+Finished job 660.
+7 of 1756 steps (0.4%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 14:27:21 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068672.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068672.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068672.1_only_snps.vcf.bgz
+    jobid: 504
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068672.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068672.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 504 has been submitted with SLURM jobid 9549229 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068672.1/9549229.log).
+[Mon May 19 14:27:24 2025]
+Finished job 689.
+8 of 1756 steps (0.5%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 14:27:24 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068655.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068655.1_indel_bed.txt
+    jobid: 676
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068655.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068655.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 676 has been submitted with SLURM jobid 9549230 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068655.1/9549230.log).
+[Mon May 19 14:28:01 2025]
+Finished job 500.
+9 of 1756 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 14:28:02 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068652.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068652.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068652.1_only_snps.vcf.bgz
+    jobid: 464
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068652.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068652.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 464 has been submitted with SLURM jobid 9549241 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068652.1/9549241.log).
+[Mon May 19 14:28:42 2025]
+Finished job 690.
+10 of 1756 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 14:28:42 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068644.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068644.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068644.1_only_snps.vcf.bgz
+    jobid: 448
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068644.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068644.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 448 has been submitted with SLURM jobid 9549245 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068644.1/9549245.log).
+[Mon May 19 14:29:22 2025]
+Finished job 474.
+11 of 1756 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 14:29:22 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068663.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068663.1_indel_bed.txt
+    jobid: 684
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068663.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068663.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 684 has been submitted with SLURM jobid 9549251 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068663.1/9549251.log).
+[Mon May 19 14:30:52 2025]
+Finished job 661.
+12 of 1756 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 14:30:52 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068662.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068662.1_indel_bed.txt
+    jobid: 683
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068662.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068662.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 683 has been submitted with SLURM jobid 9549259 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068662.1/9549259.log).
+[Mon May 19 14:31:32 2025]
+Finished job 662.
+13 of 1756 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 14:31:32 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068645.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068645.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068645.1_only_snps.vcf.bgz
+    jobid: 450
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068645.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068645.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 450 has been submitted with SLURM jobid 9549265 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068645.1/9549265.log).
+[Mon May 19 14:31:33 2025]
+Finished job 691.
+14 of 1756 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 14:31:33 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068651.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068651.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068651.1_only_snps.vcf.bgz
+    jobid: 462
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068651.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068651.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 462 has been submitted with SLURM jobid 9549266 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068651.1/9549266.log).
+[Mon May 19 14:33:03 2025]
+Finished job 476.
+15 of 1756 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 14:33:03 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068676.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068676.1_indel_bed.txt
+    jobid: 697
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068676.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068676.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 697 has been submitted with SLURM jobid 9549283 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068676.1/9549283.log).
+[Mon May 19 14:33:05 2025]
+Finished job 492.
+16 of 1756 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 14:33:05 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068671.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068671.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068671.1_only_snps.vcf.bgz
+    jobid: 502
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068671.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068671.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 502 has been submitted with SLURM jobid 9549284 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068671.1/9549284.log).
+[Mon May 19 14:33:43 2025]
+Finished job 444.
+17 of 1756 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 14:33:43 2025]
+rule RESTRUCTURE:
+    input: sharks/HepPer/temp/CM068642.1_only_snps.vcf.bgz
+    output: sharks/HepPer/temp/CM068642.1_restructured.vcf.gz
+    jobid: 534
+    reason: Input files updated by another job: sharks/HepPer/temp/CM068642.1_only_snps.vcf.bgz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068642.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 534 has been submitted with SLURM jobid 9549357 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_RESTRUCTURE/sharks_HepPer_CM068642.1/9549357.log).
+[Mon May 19 14:33:46 2025]
+Finished job 692.
+18 of 1756 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 14:33:46 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068665.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068665.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068665.1_only_snps.vcf.bgz
+    jobid: 490
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068665.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068665.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 490 has been submitted with SLURM jobid 9549358 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068665.1/9549358.log).
+[Mon May 19 14:35:13 2025]
+Finished job 478.
+19 of 1756 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 14:35:14 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068678.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068678.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068678.1_only_snps.vcf.bgz
+    jobid: 516
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068678.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068678.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 516 has been submitted with SLURM jobid 9549376 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068678.1/9549376.log).
+[Mon May 19 14:35:15 2025]
+Finished job 664.
+20 of 1756 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 14:35:15 2025]
+rule BAM_CALLER_BED:
+    input: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068659.1_unmodified_bed.txt.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068659.1_modified_bed.txt.gz
+    jobid: 477
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068659.1_modified_bed.txt.gz; Input files updated by another job: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068659.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068659.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 477 has been submitted with SLURM jobid 9549377 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BAM_CALLER_BED/sharks_HepPer_CM068659.1/9549377.log).
+[Mon May 19 14:35:54 2025]
+Finished job 663.
+21 of 1756 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 14:35:54 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068656.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068656.1_indel_bed.txt
+    jobid: 677
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068656.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068656.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 677 has been submitted with SLURM jobid 9549391 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068656.1/9549391.log).
+[Mon May 19 14:38:24 2025]
+Finished job 480.
+22 of 1756 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 14:38:25 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068647.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068647.1_indel_bed.txt
+    jobid: 668
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068647.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068647.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 668 has been submitted with SLURM jobid 9549466 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068647.1/9549466.log).
+[Mon May 19 14:42:05 2025]
+Finished job 693.
+23 of 1756 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 14:42:05 2025]
+rule BAM_CALLER_BED:
+    input: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068660.1_unmodified_bed.txt.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068660.1_modified_bed.txt.gz
+    jobid: 479
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068660.1_modified_bed.txt.gz; Input files updated by another job: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068660.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068660.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 479 has been submitted with SLURM jobid 9549569 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BAM_CALLER_BED/sharks_HepPer_CM068660.1/9549569.log).
+[Mon May 19 14:43:36 2025]
+Finished job 665.
+24 of 1756 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 14:43:36 2025]
+rule BAM_CALLER_BED:
+    input: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068666.1_unmodified_bed.txt.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068666.1_modified_bed.txt.gz
+    jobid: 491
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068666.1_modified_bed.txt.gz; Input files updated by another job: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068666.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068666.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 491 has been submitted with SLURM jobid 9549645 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BAM_CALLER_BED/sharks_HepPer_CM068666.1/9549645.log).
+[Mon May 19 14:47:17 2025]
+Finished job 482.
+25 of 1756 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 14:47:17 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068638.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068638.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068638.1_only_snps.vcf.bgz
+    jobid: 436
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068638.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068638.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1165, disk_mib=1112, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 436 has been submitted with SLURM jobid 9549725 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068638.1/9549725.log).
+[Mon May 19 15:09:00 2025]
+Finished job 518.
+26 of 1756 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:09:01 2025]
+rule RESTRUCTURE:
+    input: sharks/HepPer/temp/CM068661.1_only_snps.vcf.bgz
+    output: sharks/HepPer/temp/CM068661.1_restructured.vcf.gz
+    jobid: 572
+    reason: Input files updated by another job: sharks/HepPer/temp/CM068661.1_only_snps.vcf.bgz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068661.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 572 has been submitted with SLURM jobid 9550639 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_RESTRUCTURE/sharks_HepPer_CM068661.1/9550639.log).
+[Mon May 19 15:25:33 2025]
+Finished job 574.
+27 of 1756 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:25:33 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068654.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068654.1_indel_bed.txt
+    jobid: 675
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068654.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068654.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 675 has been submitted with SLURM jobid 9551165 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068654.1/9551165.log).
+[Mon May 19 15:26:13 2025]
+Finished job 698.
+28 of 1756 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:26:13 2025]
+rule BAM_CALLER_BED:
+    input: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068670.1_unmodified_bed.txt.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068670.1_modified_bed.txt.gz
+    jobid: 499
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068670.1_modified_bed.txt.gz; Input files updated by another job: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068670.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068670.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 499 has been submitted with SLURM jobid 9551206 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BAM_CALLER_BED/sharks_HepPer_CM068670.1/9551206.log).
+[Mon May 19 15:27:43 2025]
+Finished job 669.
+29 of 1756 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:27:43 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068643.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068643.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068643.1_only_snps.vcf.bgz
+    jobid: 446
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068643.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068643.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 446 has been submitted with SLURM jobid 9551343 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068643.1/9551343.log).
+[Mon May 19 15:34:14 2025]
+Finished job 454.
+30 of 1756 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:34:14 2025]
+rule RESTRUCTURE:
+    input: sharks/HepPer/temp/CM068647.1_only_snps.vcf.bgz
+    output: sharks/HepPer/temp/CM068647.1_restructured.vcf.gz
+    jobid: 544
+    reason: Input files updated by another job: sharks/HepPer/temp/CM068647.1_only_snps.vcf.bgz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068647.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 544 has been submitted with SLURM jobid 9551815 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_RESTRUCTURE/sharks_HepPer_CM068647.1/9551815.log).
+[Mon May 19 15:35:45 2025]
+Finished job 534.
+31 of 1756 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:35:45 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068649.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068649.1_indel_bed.txt
+    jobid: 670
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068649.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068649.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 670 has been submitted with SLURM jobid 9551828 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068649.1/9551828.log).
+[Mon May 19 15:36:25 2025]
+Finished job 697.
+32 of 1756 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:36:25 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068661.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068661.1_indel_bed.txt
+    jobid: 682
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068661.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068661.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 682 has been submitted with SLURM jobid 9551913 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068661.1/9551913.log).
+[Mon May 19 15:37:05 2025]
+Finished job 676.
+33 of 1756 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:37:05 2025]
+rule RESTRUCTURE:
+    input: sharks/HepPer/temp/CM068670.1_only_snps.vcf.bgz
+    output: sharks/HepPer/temp/CM068670.1_restructured.vcf.gz
+    jobid: 590
+    reason: Input files updated by another job: sharks/HepPer/temp/CM068670.1_only_snps.vcf.bgz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068670.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 590 has been submitted with SLURM jobid 9551927 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_RESTRUCTURE/sharks_HepPer_CM068670.1/9551927.log).
+[Mon May 19 15:37:07 2025]
+Finished job 684.
+34 of 1756 steps (2%) done
+[Mon May 19 15:37:07 2025]
+Finished job 683.
+35 of 1756 steps (2%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon May 19 15:37:07 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068658.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068658.1_indel_bed.txt
+    jobid: 679
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068658.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068658.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 679 has been submitted with SLURM jobid 9551928 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068658.1/9551928.log).
+
+[Mon May 19 15:37:07 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068650.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068650.1_indel_bed.txt
+    jobid: 671
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068650.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068650.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 671 has been submitted with SLURM jobid 9551929 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068650.1/9551929.log).
+Select jobs to execute...
+Waiting for more resources.
+[Mon May 19 15:37:45 2025]
+Finished job 502.
+36 of 1756 steps (2%) done
+Execute 1 jobs...
+
+[Mon May 19 15:37:46 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068642.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068642.1.recode.vcf
+    jobid: 533
+    reason: Missing output files: sharks/HepPer/CM068642.1.recode.vcf; Input files updated by another job: sharks/HepPer/temp/CM068642.1_restructured.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068642.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 533 has been submitted with SLURM jobid 9551959 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068642.1/9551959.log).
+[Mon May 19 15:38:25 2025]
+Finished job 504.
+37 of 1756 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:38:26 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068675.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068675.1_indel_bed.txt
+    jobid: 696
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068675.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068675.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 696 has been submitted with SLURM jobid 9551970 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068675.1/9551970.log).
+[Mon May 19 15:39:56 2025]
+Finished job 490.
+38 of 1756 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:39:57 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068664.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068664.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068664.1_only_snps.vcf.bgz
+    jobid: 488
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068664.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068664.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 488 has been submitted with SLURM jobid 9552041 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068664.1/9552041.log).
+[Mon May 19 15:42:26 2025]
+Finished job 464.
+39 of 1756 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:42:26 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068650.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068650.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068650.1_only_snps.vcf.bgz
+    jobid: 460
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068650.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068650.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 460 has been submitted with SLURM jobid 9552051 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068650.1/9552051.log).
+[Mon May 19 15:42:26 2025]
+Finished job 462.
+40 of 1756 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:42:26 2025]
+rule BAM_CALLER_BED:
+    input: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068651.1_unmodified_bed.txt.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068651.1_modified_bed.txt.gz
+    jobid: 461
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068651.1_modified_bed.txt.gz; Input files updated by another job: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068651.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068651.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 461 has been submitted with SLURM jobid 9552052 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BAM_CALLER_BED/sharks_HepPer_CM068651.1/9552052.log).
+[Mon May 19 15:43:06 2025]
+Finished job 477.
+41 of 1756 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:43:06 2025]
+rule INDEL_MASKER:
+    input: sharks/HepPer/temp/CM068681.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068681.1_indel_bed.txt
+    jobid: 702
+    reason: Missing output files: sharks/HepPer/MSMC/Output_indel_BED_file/CM068681.1_indel_bed.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068681.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 702 has been submitted with SLURM jobid 9552124 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068681.1/9552124.log).
+[Mon May 19 15:43:08 2025]
+Finished job 479.
+42 of 1756 steps (2%) done
+[Mon May 19 15:43:08 2025]
+Finished job 491.
+43 of 1756 steps (2%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon May 19 15:43:08 2025]
+rule BAM_CALLER_BED:
+    input: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068661.1_unmodified_bed.txt.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068661.1_modified_bed.txt.gz
+    jobid: 481
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068661.1_modified_bed.txt.gz; Input files updated by another job: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068661.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068661.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 481 has been submitted with SLURM jobid 9552125 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BAM_CALLER_BED/sharks_HepPer_CM068661.1/9552125.log).
+
+[Mon May 19 15:43:10 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068668.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068668.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068668.1_only_snps.vcf.bgz
+    jobid: 496
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068668.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068668.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 496 has been submitted with SLURM jobid 9552126 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068668.1/9552126.log).
+Select jobs to execute...
+Waiting for more resources.
+[Mon May 19 15:44:36 2025]
+Finished job 450.
+44 of 1756 steps (3%) done
+Execute 1 jobs...
+
+[Mon May 19 15:44:36 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068677.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068677.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068677.1_only_snps.vcf.bgz
+    jobid: 514
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068677.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068677.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 514 has been submitted with SLURM jobid 9552223 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068677.1/9552223.log).
+[Mon May 19 15:44:37 2025]
+Finished job 677.
+45 of 1756 steps (3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:44:37 2025]
+rule BAM_CALLER_BED:
+    input: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068652.1_unmodified_bed.txt.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068652.1_modified_bed.txt.gz
+    jobid: 463
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068652.1_modified_bed.txt.gz; Input files updated by another job: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068652.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068652.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 463 has been submitted with SLURM jobid 9552224 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BAM_CALLER_BED/sharks_HepPer_CM068652.1/9552224.log).
+[Mon May 19 15:45:17 2025]
+Finished job 448.
+46 of 1756 steps (3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:45:17 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068662.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068662.1.recode.vcf
+    jobid: 573
+    reason: Missing output files: sharks/HepPer/CM068662.1.recode.vcf; Input files updated by another job: sharks/HepPer/temp/CM068662.1_restructured.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068662.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 573 has been submitted with SLURM jobid 9552226 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068662.1/9552226.log).
+[Mon May 19 15:45:17 2025]
+Finished job 516.
+47 of 1756 steps (3%) done
+[Mon May 19 15:45:17 2025]
+Finished job 668.
+48 of 1756 steps (3%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon May 19 15:45:17 2025]
+rule RESTRUCTURE:
+    input: sharks/HepPer/temp/CM068663.1_only_snps.vcf.bgz
+    output: sharks/HepPer/temp/CM068663.1_restructured.vcf.gz
+    jobid: 576
+    reason: Input files updated by another job: sharks/HepPer/temp/CM068663.1_only_snps.vcf.bgz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068663.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 576 has been submitted with SLURM jobid 9552227 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_RESTRUCTURE/sharks_HepPer_CM068663.1/9552227.log).
+
+[Mon May 19 15:45:17 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068639.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068639.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068639.1_only_snps.vcf.bgz
+    jobid: 438
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068639.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068639.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 438 has been submitted with SLURM jobid 9552228 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068639.1/9552228.log).
+Select jobs to execute...
+Waiting for more resources.
+[Mon May 19 15:48:57 2025]
+Finished job 572.
+49 of 1756 steps (3%) done
+Execute 1 jobs...
+
+[Mon May 19 15:48:57 2025]
+rule BAM_CALLER_BED:
+    input: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068644.1_unmodified_bed.txt.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068644.1_modified_bed.txt.gz
+    jobid: 447
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068644.1_modified_bed.txt.gz; Input files updated by another job: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068644.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068644.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 447 has been submitted with SLURM jobid 9552292 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BAM_CALLER_BED/sharks_HepPer_CM068644.1/9552292.log).
+[Mon May 19 15:58:58 2025]
+Finished job 434.
+50 of 1756 steps (3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:58:58 2025]
+rule BAM_CALLER_BED:
+    input: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068645.1_unmodified_bed.txt.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068645.1_modified_bed.txt.gz
+    jobid: 449
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068645.1_modified_bed.txt.gz; Input files updated by another job: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068645.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068645.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 449 has been submitted with SLURM jobid 9552879 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BAM_CALLER_BED/sharks_HepPer_CM068645.1/9552879.log).
+[Mon May 19 15:59:01 2025]
+Finished job 675.
+51 of 1756 steps (3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 15:59:01 2025]
+rule BAM_CALLER_BED:
+    input: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068637.1_unmodified_bed.txt.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068637.1_modified_bed.txt.gz
+    jobid: 433
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068637.1_modified_bed.txt.gz; Input files updated by another job: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068637.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068637.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 433 has been submitted with SLURM jobid 9552883 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BAM_CALLER_BED/sharks_HepPer_CM068637.1/9552883.log).
+[Mon May 19 16:00:29 2025]
+Finished job 436.
+52 of 1756 steps (3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 16:00:29 2025]
+rule BAM_CALLER_BED:
+    input: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068638.1_unmodified_bed.txt.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068638.1_modified_bed.txt.gz
+    jobid: 435
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068638.1_modified_bed.txt.gz; Input files updated by another job: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068638.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068638.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 435 has been submitted with SLURM jobid 9552956 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BAM_CALLER_BED/sharks_HepPer_CM068638.1/9552956.log).
+[Mon May 19 16:05:29 2025]
+Finished job 499.
+53 of 1756 steps (3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 16:05:29 2025]
+rule RESTRUCTURE:
+    input: sharks/HepPer/temp/CM068660.1_only_snps.vcf.bgz
+    output: sharks/HepPer/temp/CM068660.1_restructured.vcf.gz
+    jobid: 570
+    reason: Input files updated by another job: sharks/HepPer/temp/CM068660.1_only_snps.vcf.bgz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068660.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 570 has been submitted with SLURM jobid 9553086 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_RESTRUCTURE/sharks_HepPer_CM068660.1/9553086.log).
+[Mon May 19 16:05:31 2025]
+Finished job 544.
+54 of 1756 steps (3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 16:05:31 2025]
+rule BAM_CALLER_BED:
+    input: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068658.1_unmodified_bed.txt.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068658.1_modified_bed.txt.gz
+    jobid: 475
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068658.1_modified_bed.txt.gz; Input files updated by another job: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068658.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068658.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 475 has been submitted with SLURM jobid 9553087 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BAM_CALLER_BED/sharks_HepPer_CM068658.1/9553087.log).
+[Mon May 19 16:15:31 2025]
+[Mon May 19 16:15:31 2025]
+Error in rule INDEL_MASKER:
+    message: SLURM-job '9551828' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 670
+    input: sharks/HepPer/temp/CM068649.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068649.1_indel_bed.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068649.1/9551828.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/20241011_jaskaran_script_msmc_fileprep/indel_mask.py --input_gen_vcf sharks/HepPer/temp/CM068649.1_pileup.vcf.gz --Chromosome_name CM068649.1 --output_BED sharks/HepPer/MSMC/Output_indel_BED_file/CM068649.1_indel_bed.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9551828
+
+Finished job 446.
+55 of 1756 steps (3%) done
+Select jobs to execute...
+[Mon May 19 16:15:31 2025]
+Error in rule INDEL_MASKER:
+    message: SLURM-job '9551913' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 682
+    input: sharks/HepPer/temp/CM068661.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068661.1_indel_bed.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068661.1/9551913.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/20241011_jaskaran_script_msmc_fileprep/indel_mask.py --input_gen_vcf sharks/HepPer/temp/CM068661.1_pileup.vcf.gz --Chromosome_name CM068661.1 --output_BED sharks/HepPer/MSMC/Output_indel_BED_file/CM068661.1_indel_bed.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9551913
+
+[Mon May 19 16:15:31 2025]
+Error in rule RESTRUCTURE:
+    message: SLURM-job '9551927' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 590
+    input: sharks/HepPer/temp/CM068670.1_only_snps.vcf.bgz
+    output: sharks/HepPer/temp/CM068670.1_restructured.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_RESTRUCTURE/sharks_HepPer_CM068670.1/9551927.log (check log file(s) for error details)
+    shell:
+        
+        zcat sharks/HepPer/temp/CM068670.1_only_snps.vcf.bgz | sed  's/1\/1/1\/0/g' | bgzip -c > sharks/HepPer/temp/CM068670.1_restructured.vcf.gz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9551927
+
+[Mon May 19 16:15:31 2025]
+Error in rule INDEL_MASKER:
+    message: SLURM-job '9551928' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 679
+    input: sharks/HepPer/temp/CM068658.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068658.1_indel_bed.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068658.1/9551928.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/20241011_jaskaran_script_msmc_fileprep/indel_mask.py --input_gen_vcf sharks/HepPer/temp/CM068658.1_pileup.vcf.gz --Chromosome_name CM068658.1 --output_BED sharks/HepPer/MSMC/Output_indel_BED_file/CM068658.1_indel_bed.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9551928
+
+[Mon May 19 16:15:31 2025]
+Error in rule INDEL_MASKER:
+    message: SLURM-job '9551929' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 671
+    input: sharks/HepPer/temp/CM068650.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068650.1_indel_bed.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068650.1/9551929.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/20241011_jaskaran_script_msmc_fileprep/indel_mask.py --input_gen_vcf sharks/HepPer/temp/CM068650.1_pileup.vcf.gz --Chromosome_name CM068650.1 --output_BED sharks/HepPer/MSMC/Output_indel_BED_file/CM068650.1_indel_bed.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9551929
+
+[Mon May 19 16:15:31 2025]
+Error in rule REMOVE_INDELS:
+    message: SLURM-job '9551959' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 533
+    input: sharks/HepPer/temp/CM068642.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068642.1.recode.vcf
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068642.1/9551959.log (check log file(s) for error details)
+    shell:
+        
+        vcftools --gzvcf sharks/HepPer/temp/CM068642.1_restructured.vcf.gz          --remove-indels          --recode          --out sharks/HepPer/CM068642.1
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9551959
+
+[Mon May 19 16:15:31 2025]
+Error in rule INDEL_MASKER:
+    message: SLURM-job '9551970' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 696
+    input: sharks/HepPer/temp/CM068675.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_indel_BED_file/CM068675.1_indel_bed.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_INDEL_MASKER/sharks_HepPer_CM068675.1/9551970.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/20241011_jaskaran_script_msmc_fileprep/indel_mask.py --input_gen_vcf sharks/HepPer/temp/CM068675.1_pileup.vcf.gz --Chromosome_name CM068675.1 --output_BED sharks/HepPer/MSMC/Output_indel_BED_file/CM068675.1_indel_bed.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9551970
+
+[Mon May 19 16:15:31 2025]
+Error in rule CALL_PLOIDY:
+    message: SLURM-job '9552041' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 488
+    input: sharks/HepPer/temp/CM068664.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068664.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068664.1_only_snps.vcf.bgz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068664.1/9552041.log (check log file(s) for error details)
+    shell:
+        
+        bcftools call --ploidy 2 -c -V indels sharks/HepPer/temp/CM068664.1_pileup.vcf.gz | /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/bamCaller.py 1 sharks/HepPer/MSMC/Output_bam_caller_BED/CM068664.1_unmodified_bed.txt.gz | bgzip -c > sharks/HepPer/temp/CM068664.1_only_snps.vcf.bgz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9552041
+
+Execute 1 jobs...
+
+[Mon May 19 16:15:31 2025]
+rule CALL_PLOIDY:
+    input: sharks/HepPer/temp/CM068680.1_pileup.vcf.gz
+    output: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068680.1_unmodified_bed.txt.gz, sharks/HepPer/temp/CM068680.1_only_snps.vcf.bgz
+    jobid: 520
+    reason: Missing output files: sharks/HepPer/MSMC/Output_bam_caller_BED/CM068680.1_unmodified_bed.txt.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068680.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 520 has been submitted with SLURM jobid 9553671 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALL_PLOIDY/sharks_HepPer_CM068680.1/9553671.log).
+Removing output files of failed job RESTRUCTURE since they might be corrupted:
+sharks/HepPer/temp/CM068670.1_restructured.vcf.gz
+Removing output files of failed job CALL_PLOIDY since they might be corrupted:
+sharks/HepPer/temp/CM068664.1_only_snps.vcf.bgz
+[Mon May 19 16:23:42 2025]
+Finished job 461.
+56 of 1756 steps (3%) done
+[Mon May 19 16:23:42 2025]
+Finished job 702.
+57 of 1756 steps (3%) done
+[Mon May 19 16:23:42 2025]
+Finished job 481.
+58 of 1756 steps (3%) done
+[Mon May 19 16:23:42 2025]
+Finished job 463.
+59 of 1756 steps (3%) done
+[Mon May 19 16:23:42 2025]
+Finished job 573.
+60 of 1756 steps (3%) done
+[Mon May 19 16:23:42 2025]
+Finished job 576.
+61 of 1756 steps (3%) done
+[Mon May 19 16:23:42 2025]
+Finished job 447.
+62 of 1756 steps (4%) done
+[Mon May 19 16:25:12 2025]
+Finished job 514.
+63 of 1756 steps (4%) done
+[Mon May 19 16:26:42 2025]
+Finished job 496.
+64 of 1756 steps (4%) done
+[Mon May 19 16:31:43 2025]
+Finished job 460.
+65 of 1756 steps (4%) done
+[Mon May 19 16:33:13 2025]
+Finished job 449.
+66 of 1756 steps (4%) done
+[Mon May 19 16:33:13 2025]
+Finished job 433.
+67 of 1756 steps (4%) done
+[Mon May 19 16:33:13 2025]
+Finished job 435.
+68 of 1756 steps (4%) done
+[Mon May 19 16:33:13 2025]
+Finished job 570.
+69 of 1756 steps (4%) done
+[Mon May 19 16:33:13 2025]
+Finished job 475.
+70 of 1756 steps (4%) done
+[Mon May 19 16:33:54 2025]
+Finished job 520.
+71 of 1756 steps (4%) done
+[Mon May 19 16:38:54 2025]
+Finished job 438.
+72 of 1756 steps (4%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-05-19T141938.468261.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

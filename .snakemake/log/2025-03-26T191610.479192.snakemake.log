@@ -1,0 +1,108 @@
+host: login-p-3
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count
+----------------  -------
+CALC_HET_PER_CHR        5
+GET_WHOLE_VAR           1
+all                     1
+total                   7
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 19:16:10 2025]
+localrule GET_WHOLE_VAR:
+    input: sharks/HydCol_Test/GCA_035084275.1.mm2.srt.paf
+    output: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt
+    jobid: 41
+    reason: Missing output files: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt; Set of input files has changed since last execution
+    resources: tmpdir=/tmp
+
+[Wed Mar 26 19:16:15 2025]
+Finished job 41.
+1 of 7 steps (14%) done
+Select jobs to execute...
+Execute 5 jobs...
+
+[Wed Mar 26 19:16:15 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068746.1_heterozygosity.txt
+    jobid: 45
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068746.1_heterozygosity.txt; Input files updated by another job: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068746.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 19:16:15 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068743.1_heterozygosity.txt
+    jobid: 42
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068743.1_heterozygosity.txt; Input files updated by another job: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068743.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 19:16:15 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068745.1_heterozygosity.txt
+    jobid: 44
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068745.1_heterozygosity.txt; Input files updated by another job: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068745.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 19:16:15 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068742.1_heterozygosity.txt
+    jobid: 40
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068742.1_heterozygosity.txt; Input files updated by another job: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068742.1
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 19:16:15 2025]
+localrule CALC_HET_PER_CHR:
+    input: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt, sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv
+    output: sharks/HydCol_Test/20250326_CM068744.1_heterozygosity.txt
+    jobid: 43
+    reason: Missing output files: sharks/HydCol_Test/20250326_CM068744.1_heterozygosity.txt; Input files updated by another job: sharks/HydCol_Test/temp/HydCol_Test_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326, CHR=CM068744.1
+    resources: tmpdir=/tmp
+
+[Wed Mar 26 19:17:12 2025]
+Finished job 44.
+2 of 7 steps (29%) done
+[Wed Mar 26 19:17:12 2025]
+Finished job 43.
+3 of 7 steps (43%) done
+[Wed Mar 26 19:17:13 2025]
+Finished job 42.
+4 of 7 steps (57%) done
+[Wed Mar 26 19:17:13 2025]
+Finished job 40.
+5 of 7 steps (71%) done
+[Wed Mar 26 19:17:13 2025]
+Finished job 45.
+6 of 7 steps (86%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 19:17:13 2025]
+localrule all:
+    input: sharks/HydCol_Test/HydCol_Test_FASTGA.paf, sharks/HydCol_Test/20250326_CM068742.1_filtered.paf, sharks/HydCol_Test/20250326_CM068743.1_filtered.paf, sharks/HydCol_Test/20250326_CM068744.1_filtered.paf, sharks/HydCol_Test/20250326_CM068745.1_filtered.paf, sharks/HydCol_Test/20250326_CM068746.1_filtered.paf, sharks/HydCol_Test/temp/20250326_CM068742.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068743.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068744.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068745.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068746.1_Aln_Only.txt, sharks/HydCol_Test/temp/20250326_CM068742.1_Var_Only.txt, sharks/HydCol_Test/temp/20250326_CM068743.1_Var_Only.txt, sharks/HydCol_Test/temp/20250326_CM068744.1_Var_Only.txt, sharks/HydCol_Test/temp/20250326_CM068745.1_Var_Only.txt, sharks/HydCol_Test/temp/20250326_CM068746.1_Var_Only.txt, sharks/HydCol_Test/20250326_CM068742.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068743.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068744.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068745.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068746.1_ROH_Results.txt, sharks/HydCol_Test/HydCol_Test_ROH_Results.csv, sharks/HydCol_Test/20250326_HydCol_Test_ROH_Map.pdf, sharks/HydCol_Test/20250326_CM068742.1_GCA_035084275.1_FROH.txt, sharks/HydCol_Test/20250326_CM068743.1_GCA_035084275.1_FROH.txt, sharks/HydCol_Test/20250326_CM068744.1_GCA_035084275.1_FROH.txt, sharks/HydCol_Test/20250326_CM068745.1_GCA_035084275.1_FROH.txt, sharks/HydCol_Test/20250326_CM068746.1_GCA_035084275.1_FROH.txt, sharks/HydCol_Test/20250326_CM068742.1_heterozygosity.txt, sharks/HydCol_Test/20250326_CM068743.1_heterozygosity.txt, sharks/HydCol_Test/20250326_CM068744.1_heterozygosity.txt, sharks/HydCol_Test/20250326_CM068745.1_heterozygosity.txt, sharks/HydCol_Test/20250326_CM068746.1_heterozygosity.txt
+    jobid: 0
+    reason: Input files updated by another job: sharks/HydCol_Test/20250326_CM068742.1_heterozygosity.txt, sharks/HydCol_Test/20250326_CM068745.1_heterozygosity.txt, sharks/HydCol_Test/20250326_CM068746.1_heterozygosity.txt, sharks/HydCol_Test/20250326_CM068743.1_heterozygosity.txt, sharks/HydCol_Test/20250326_CM068744.1_heterozygosity.txt
+    resources: tmpdir=/tmp
+
+[Wed Mar 26 19:17:13 2025]
+Finished job 0.
+7 of 7 steps (100%) done
+Complete log: .snakemake/log/2025-03-26T191610.479192.snakemake.log

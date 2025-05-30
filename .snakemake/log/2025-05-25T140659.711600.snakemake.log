@@ -1,0 +1,65 @@
+host: login-q-1
+Building DAG of jobs...
+SLURM run ID: d0a3f0b9-3621-44de-b3af-d76816933e99
+Using shell: /usr/bin/bash
+Provided remote nodes: 30
+Job stats:
+job                     count
+--------------------  -------
+BAM_CALLER_BED             50
+BGZIP_VCF                  50
+CALL_PLOIDY                50
+EXTRACT_CHR_FASTA          50
+GENERATE_MASK              50
+GENERATE_MULTIHETSEP       50
+INDEL_MASKER               50
+MAIN_MULTIHETSEP           50
+MAKE_BAM                    1
+PILEUP_VARIANTS            50
+PLOT_MSMC                   1
+REMOVE_INDELS              50
+RESTRUCTURE                50
+RUN_PRIMARY_MSMC            1
+SEPARATE_BAM_BY_CHR        50
+UNZIP_REFERENCE             1
+all                         1
+total                     605
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Sun May 25 14:07:16 2025]
+rule UNZIP_REFERENCE:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_036365495.1.fa.gz
+    output: sharks/HetFra/temp/GCA_036365495.1.fa
+    jobid: 331
+    reason: Missing output files: sharks/HetFra/temp/GCA_036365495.1.fa
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra, REF_NAME=GCA_036365495.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=2893, disk_mib=2759, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 331 has been submitted with SLURM jobid 9933637 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_UNZIP_REFERENCE/sharks_HetFra_GCA_036365495.1/9933637.log).
+
+[Sun May 25 14:07:17 2025]
+rule MAKE_BAM:
+    input: sharks/HetFra/HetFra.sam
+    output: sharks/HetFra/HetFra.bam
+    jobid: 333
+    reason: Missing output files: sharks/HetFra/HetFra.bam
+    wildcards: CLADE=sharks, SPEC_NAME=HetFra
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=2692, disk_mib=2568, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 333 has been submitted with SLURM jobid 9933638 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAKE_BAM/sharks_HetFra/9933638.log).
+[Sun May 25 14:11:16 2025]
+Error in rule MAKE_BAM:
+    message: SLURM-job '9933638' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 333
+    input: sharks/HetFra/HetFra.sam
+    output: sharks/HetFra/HetFra.bam
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAKE_BAM/sharks_HetFra/9933638.log (check log file(s) for error details)
+    shell:
+        
+        samtools sort sharks/HetFra/HetFra.sam -o sharks/HetFra/HetFra.bam
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9933638
+

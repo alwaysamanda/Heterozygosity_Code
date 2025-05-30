@@ -1,0 +1,53 @@
+host: login-p-3
+Building DAG of jobs...
+SLURM run ID: a21d3d7a-841d-40bd-a84a-8e367252202f
+Using shell: /usr/bin/bash
+Provided remote nodes: 10
+Job stats:
+job                      count
+---------------------  -------
+CALC_HET_PER_CHR            46
+CALC_HET_WHOLE_GENOME        1
+CHROM_LENGTH_CALC            1
+COMPILE_HET                  1
+COMPILE_ROH                  1
+FROH_PER_AUT_CHR            46
+PLOT_HET_PER_CHR            46
+PLOT_WHOLE_HET               1
+Plot_ROH                     1
+ROH_CALC                    46
+WHOLE_FROH                   1
+all                          1
+total                      192
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Apr 24 10:33:28 2025]
+rule CHROM_LENGTH_CALC:
+    input: ../241117.UCSC-hubs-VGP-alignment/alignment/reference/sharks/GCA_035084215.1.fa.gz, sharks/chrom_lists/GCA_035084215.1_chroms.txt
+    output: sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    jobid: 105
+    reason: Missing output files: sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt; Updated input files: sharks/chrom_lists/GCA_035084215.1_chroms.txt
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1872, disk_mib=1786, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake, runtime=120
+
+RuleException in rule CHROM_LENGTH_CALC in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 241:
+ValueError: unexpected '{' in field name, when formatting the following:
+
+zcat {input.FASTA} | awk '
+    $0 ~ ">" {
+        if (NR > 1) {
+            print name "	" len;
+        }
+        name = substr($0, 2);
+        len = 0;
+        next;
+    }
+    {
+        len += length($0);
+    }
+    END {
+        print name "	" len;
+    }
+' | grep -F -f {input.ALL_CHROMS} > {output}
+        

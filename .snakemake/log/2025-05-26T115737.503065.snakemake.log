@@ -1,0 +1,102 @@
+host: login-p-1
+Building DAG of jobs...
+SLURM run ID: 3ddd2e16-2a25-408d-8919-63f271365390
+Using shell: /usr/bin/bash
+Provided remote nodes: 30
+Job stats:
+job                       count
+----------------------  -------
+CALC_HET_PER_CHR             45
+CALC_HET_WHOLE_GENOME         1
+COMPILE_HET                   1
+COMPILE_ROH                   1
+FROH_PER_AUT_CHR              1
+GET_ALN_ONLY_PER_CHROM        1
+GET_VAR_ONLY_PER_CHROM        1
+MAKE_SAM                      1
+PLOT_HET_PER_CHR             45
+PLOT_WHOLE_HET                1
+Plot_ROH                      1
+ROH_CALC                      1
+WHOLE_FROH                    1
+all                           1
+total                       102
+
+Select jobs to execute...
+Execute 3 jobs...
+
+[Mon May 26 11:57:37 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_13.5 - CM068637.1 - CM068638.1 - CM068639.1 - CM068640.1 - CM068641.1 - CM068642.1 - CM068643.1 - CM068644.1 - CM068645.1 - CM068646.1 - CM068647.1 - CM068648.1 - CM068649.1 - CM068650.1 - CM068651.1 - CM068652.1 - CM068653.1 - CM068654.1 - CM068655.1 - CM068656.1 - CM068657.1 - CM068658.1 - CM068659.1 - CM068660.1 - CM068661.1 - CM068662.1 - CM068663.1 - CM068664.1 - CM068665.1 - CM068666.1 - CM068667.1 - CM068668.1 - CM068669.1 - CM068670.1 - CM068671.1 - CM068672.1 - CM068673.1 - CM068674.1 - CM068675.1 - CM068676.1 - CM068677.1 - CM068678.1 - CM068679.1 - CM068680.1 - CM068681.1 - CM068682.1_Aln_Only.txt
+    jobid: 12
+    reason: Missing output files: sharks/HepPer/temp/20250422_13.5 - CM068637.1 - CM068638.1 - CM068639.1 - CM068640.1 - CM068641.1 - CM068642.1 - CM068643.1 - CM068644.1 - CM068645.1 - CM068646.1 - CM068647.1 - CM068648.1 - CM068649.1 - CM068650.1 - CM068651.1 - CM068652.1 - CM068653.1 - CM068654.1 - CM068655.1 - CM068656.1 - CM068657.1 - CM068658.1 - CM068659.1 - CM068660.1 - CM068661.1 - CM068662.1 - CM068663.1 - CM068664.1 - CM068665.1 - CM068666.1 - CM068667.1 - CM068668.1 - CM068669.1 - CM068670.1 - CM068671.1 - CM068672.1 - CM068673.1 - CM068674.1 - CM068675.1 - CM068676.1 - CM068677.1 - CM068678.1 - CM068679.1 - CM068680.1 - CM068681.1 - CM068682.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=13.5 - CM068637.1 - CM068638.1 - CM068639.1 - CM068640.1 - CM068641.1 - CM068642.1 - CM068643.1 - CM068644.1 - CM068645.1 - CM068646.1 - CM068647.1 - CM068648.1 - CM068649.1 - CM068650.1 - CM068651.1 - CM068652.1 - CM068653.1 - CM068654.1 - CM068655.1 - CM068656.1 - CM068657.1 - CM068658.1 - CM068659.1 - CM068660.1 - CM068661.1 - CM068662.1 - CM068663.1 - CM068664.1 - CM068665.1 - CM068666.1 - CM068667.1 - CM068668.1 - CM068669.1 - CM068670.1 - CM068671.1 - CM068672.1 - CM068673.1 - CM068674.1 - CM068675.1 - CM068676.1 - CM068677.1 - CM068678.1 - CM068679.1 - CM068680.1 - CM068681.1 - CM068682.1
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Traceback (most recent call last):
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+
+FileNotFoundError: [Errno 2] No such file or directory: '/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_13.5 - CM068637.1 - CM068638.1 - CM068639.1 - CM068640.1 - CM068641.1 - CM068642.1 - CM068643.1 - CM068644.1 - CM068645.1 - CM068646.1 - CM068647.1 - CM068648.1 - CM068649.1 - CM068650.1 - CM068651.1 - CM068652.1 - CM068653.1 - CM068654.1 - CM068655.1 - CM068656.1 - CM068657.1 - CM068658.1 - CM068659.1 - CM068660.1 - CM068661.1 - CM068662.1 - CM068663.1 - CM068664.1 - CM068665.1 - CM068666.1 - CM068667.1 - CM068668.1 - CM068669.1 - CM068670.1 - CM068671.1 - CM068672.1 - CM068673.1 - CM068674.1 - CM068675.1 - CM068676.1 - CM068677.1 - CM068678.1 - CM068679.1 - CM068680.1 - CM068681.1 - CM068682.1'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+
+OSError: [Errno 36] File name too long: '/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_13.5 - CM068637.1 - CM068638.1 - CM068639.1 - CM068640.1 - CM068641.1 - CM068642.1 - CM068643.1 - CM068644.1 - CM068645.1 - CM068646.1 - CM068647.1 - CM068648.1 - CM068649.1 - CM068650.1 - CM068651.1 - CM068652.1 - CM068653.1 - CM068654.1 - CM068655.1 - CM068656.1 - CM068657.1 - CM068658.1 - CM068659.1 - CM068660.1 - CM068661.1 - CM068662.1 - CM068663.1 - CM068664.1 - CM068665.1 - CM068666.1 - CM068667.1 - CM068668.1 - CM068669.1 - CM068670.1 - CM068671.1 - CM068672.1 - CM068673.1 - CM068674.1 - CM068675.1 - CM068676.1 - CM068677.1 - CM068678.1 - CM068679.1 - CM068680.1 - CM068681.1 - CM068682.1'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/cli.py", line 2164, in args_to_api
+    dag_api.execute_workflow(
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/api.py", line 597, in execute_workflow
+    workflow.execute(
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/workflow.py", line 1283, in execute
+    raise e
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/workflow.py", line 1279, in execute
+    success = self.scheduler.schedule()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/scheduler.py", line 319, in schedule
+    self.run(runjobs)
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/scheduler.py", line 419, in run
+    executor.run_jobs(jobs)
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake_interface_executor_plugins/executors/base.py", line 72, in run_jobs
+    self.run_job(job)
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake_executor_plugin_slurm/__init__.py", line 213, in run_job
+    slurm_logfile.parent.mkdir(parents=True, exist_ok=True)
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/pathlib.py", line 1121, in mkdir
+    self.mkdir(mode, parents=False, exist_ok=exist_ok)
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/pathlib.py", line 1125, in mkdir
+    if not exist_ok or not self.is_dir():
+                           ^^^^^^^^^^^^^
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/pathlib.py", line 1250, in is_dir
+    return S_ISDIR(self.stat().st_mode)
+                   ^^^^^^^^^^^
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/pathlib.py", line 1013, in stat
+    return os.stat(self, follow_symlinks=follow_symlinks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+OSError: [Errno 36] File name too long: '/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_13.5 - CM068637.1 - CM068638.1 - CM068639.1 - CM068640.1 - CM068641.1 - CM068642.1 - CM068643.1 - CM068644.1 - CM068645.1 - CM068646.1 - CM068647.1 - CM068648.1 - CM068649.1 - CM068650.1 - CM068651.1 - CM068652.1 - CM068653.1 - CM068654.1 - CM068655.1 - CM068656.1 - CM068657.1 - CM068658.1 - CM068659.1 - CM068660.1 - CM068661.1 - CM068662.1 - CM068663.1 - CM068664.1 - CM068665.1 - CM068666.1 - CM068667.1 - CM068668.1 - CM068669.1 - CM068670.1 - CM068671.1 - CM068672.1 - CM068673.1 - CM068674.1 - CM068675.1 - CM068676.1 - CM068677.1 - CM068678.1 - CM068679.1 - CM068680.1 - CM068681.1 - CM068682.1'
+

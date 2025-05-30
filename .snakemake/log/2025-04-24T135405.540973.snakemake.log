@@ -1,0 +1,84 @@
+host: login-p-3
+Building DAG of jobs...
+SLURM run ID: d2b7177f-67a0-478e-8e49-4a86af0cf835
+Using shell: /usr/bin/bash
+Provided remote nodes: 10
+Job stats:
+job                       count
+----------------------  -------
+CALC_HET_PER_CHR             51
+CALC_HET_WHOLE_GENOME         1
+COMPILE_HET                   1
+COMPILE_ROH                   1
+FROH_PER_AUT_CHR             51
+GET_ALN_ONLY_PER_CHROM       51
+GET_VAR_ONLY_PER_CHROM       51
+GET_WHOLE_ALN                 1
+GET_WHOLE_VAR                 1
+PLOT_HET_PER_CHR             51
+PLOT_WHOLE_HET                1
+Plot_ROH                      1
+ROH_CALC                     51
+WHOLE_FROH                    1
+all                           1
+total                       315
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu Apr 24 13:54:06 2025]
+rule GET_WHOLE_VAR:
+    input: sharks/HetFra/HetFra_FASTGA.chain.fltr.srt.paf
+    output: sharks/HetFra/temp/HetFra_Var_Only.txt
+    jobid: 10
+    reason: Forced execution
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=3573, disk_mib=3408, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake, runtime=120
+
+Job 10 has been submitted with SLURM jobid 8716413 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_WHOLE_VAR/8716413.log).
+
+[Thu Apr 24 13:54:06 2025]
+rule GET_WHOLE_ALN:
+    input: sharks/HetFra/HetFra_FASTGA.chain.fltr.srt.paf
+    output: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    jobid: 11
+    reason: Forced execution
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=3573, disk_mib=3408, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake, runtime=120
+
+Job 11 has been submitted with SLURM jobid 8716414 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_WHOLE_ALN/8716414.log).
+[Thu Apr 24 15:56:13 2025]
+Error in rule GET_WHOLE_VAR:
+    message: SLURM-job '8716413' failed, SLURM status is: 'TIMEOUT'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 10
+    input: sharks/HetFra/HetFra_FASTGA.chain.fltr.srt.paf
+    output: sharks/HetFra/temp/HetFra_Var_Only.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_WHOLE_VAR/8716413.log (check log file(s) for error details)
+    shell:
+        
+        k8 paftools.js call sharks/HetFra/HetFra_FASTGA.chain.fltr.srt.paf | awk '$1 == "V" && $2 !~ /^JA/' > sharks/HetFra/temp/HetFra_Var_Only.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 8716413
+
+[Thu Apr 24 15:56:13 2025]
+Error in rule GET_WHOLE_ALN:
+    message: SLURM-job '8716414' failed, SLURM status is: 'TIMEOUT'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 11
+    input: sharks/HetFra/HetFra_FASTGA.chain.fltr.srt.paf
+    output: sharks/HetFra/temp/HetFra_Aln_Only.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_WHOLE_ALN/8716414.log (check log file(s) for error details)
+    shell:
+        
+        k8 paftools.js call sharks/HetFra/HetFra_FASTGA.chain.fltr.srt.paf | awk '$1 == "R" && $2 !~ /^JA/' > sharks/HetFra/temp/HetFra_Aln_Only.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 8716414
+
+Removing output files of failed job GET_WHOLE_VAR since they might be corrupted:
+sharks/HetFra/temp/HetFra_Var_Only.txt
+Removing output files of failed job GET_WHOLE_ALN since they might be corrupted:
+sharks/HetFra/temp/HetFra_Aln_Only.txt
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-04-24T135405.540973.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

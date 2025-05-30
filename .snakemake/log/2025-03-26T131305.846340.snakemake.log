@@ -1,0 +1,26 @@
+host: login-p-1
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count
+----------  -------
+FILTER_PAF        1
+all               1
+total             2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 13:13:06 2025]
+localrule FILTER_PAF:
+    input: amphibians/EleCoq_TEST/EleCoq_TEST_FASTGA.paf
+    output: amphibians/EleCoq_TEST/20250325_CM069418.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069419.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069420.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069421.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069422.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069423.1_filtered.paf
+    jobid: 7
+    reason: Missing output files: amphibians/EleCoq_TEST/20250325_CM069422.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069418.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069420.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069423.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069421.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069419.1_filtered.paf; Code has changed since last execution
+    resources: tmpdir=/tmp
+
+RuleException in rule FILTER_PAF in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 229:
+NameError: The name "'Chromosomes'" is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}, when formatting the following:
+awk -v var='{config['Chromosomes']}' '{{if ($6 == var && $12 >= 60) {{print $0}}}}' {input} > {output}

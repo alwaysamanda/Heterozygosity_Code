@@ -1,0 +1,26 @@
+host: login-q-3
+Building DAG of jobs...
+Traceback (most recent call last):
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/cli.py", line 2164, in args_to_api
+    dag_api.execute_workflow(
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/api.py", line 597, in execute_workflow
+    workflow.execute(
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/workflow.py", line 1144, in execute
+    with self.persistence.lock():
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/persistence.py", line 207, in lock
+    self._lock(self.all_inputfiles(), "input")
+
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/snakemake/persistence.py", line 696, in _lock
+    with open(lockfile, "w") as lock:
+         ^^^^^^^^^^^^^^^^^^^
+
+FileNotFoundError: [Errno 2] No such file or directory: '/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/locks/0.input.lock'
+

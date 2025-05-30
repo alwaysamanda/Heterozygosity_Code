@@ -1,0 +1,62 @@
+host: cpu-p-160
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 21:39:54 2025]
+rule ALNPLOT:
+    input: sharks/MobBir/MobBir_ALN.chain.1aln
+    output: sharks/MobBir/MobBir_ALN.chain.pdf
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+host: cpu-p-160
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 21:39:55 2025]
+localrule ALNPLOT:
+    input: sharks/MobBir/MobBir_ALN.chain.1aln
+    output: sharks/MobBir/MobBir_ALN.chain.pdf
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=MobBir
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=/tmp, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Waiting at most 60 seconds for missing files:
+sharks/MobBir/MobBir_ALN.chain.pdf (missing locally)
+MissingOutputException in rule ALNPLOT in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 237:
+Job 0 completed successfully, but some output files are missing. Missing files after 60 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+sharks/MobBir/MobBir_ALN.chain.pdf (missing locally, parent dir contents: MobBir_FASTGA.chain.fltr.srt.paf, temp, MobBir_FASTGA.chain.chr.fltr.srt.paf, Reference_MobBir_Chroms_Lengths.txt, MobBir_FASTGA.chain.fltr.paf, MobBir_ALN.1aln, MobBir_ALN.chain.1aln, MobBir_FASTGA.chain.paf)
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.
+srun: error: cpu-p-160: task 0: Exited with exit code 1
+[Mon May 19 21:40:58 2025]
+Error in rule ALNPLOT:
+    jobid: 0
+    input: sharks/MobBir/MobBir_ALN.chain.1aln
+    output: sharks/MobBir/MobBir_ALN.chain.pdf
+    shell:
+        
+        ALNplot -p -H500 sharks/MobBir/MobBir_ALN.chain.1aln
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.

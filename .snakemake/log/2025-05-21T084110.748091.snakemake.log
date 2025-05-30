@@ -1,0 +1,1986 @@
+host: login-q-1
+Building DAG of jobs...
+SLURM run ID: 678d48d7-779c-4637-bbaa-f245ee3d31ea
+Using shell: /usr/bin/bash
+Provided remote nodes: 50
+Job stats:
+job                            count
+---------------------------  -------
+BGZIP_VCF                         45
+BOOTSTRAPPING_MULTIHET_FILE     1350
+CALC_HET_PER_CHR                  46
+CALC_HET_WHOLE_GENOME              1
+COMPILE_HET                        1
+GENERATE_MASK                     45
+GENERATE_MULTIHETSEP              45
+MAIN_MULTIHETSEP                  45
+PLOT_HET_PER_CHR                  45
+PLOT_WHOLE_HET                     1
+REMOVE_INDELS                     45
+all                                1
+total                           1670
+
+Select jobs to execute...
+Execute 50 jobs...
+
+[Wed May 21 08:44:27 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068653.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068653.1.recode.vcf
+    jobid: 557
+    reason: Missing output files: sharks/HepPer/CM068653.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068653.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 557 has been submitted with SLURM jobid 9663108 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068653.1/9663108.log).
+
+[Wed May 21 08:44:29 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068656.1_het.txt
+    jobid: 219
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068656.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 219 has been submitted with SLURM jobid 9663109 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068656.1/9663109.log).
+
+[Wed May 21 08:44:29 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068640.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068640.1.recode.vcf
+    jobid: 531
+    reason: Missing output files: sharks/HepPer/CM068640.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068640.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 531 has been submitted with SLURM jobid 9663110 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068640.1/9663110.log).
+
+[Wed May 21 08:44:29 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068649.1_het.txt
+    jobid: 212
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068649.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 212 has been submitted with SLURM jobid 9663111 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068649.1/9663111.log).
+
+[Wed May 21 08:44:32 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068642.1_het.txt
+    jobid: 205
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068642.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 205 has been submitted with SLURM jobid 9663112 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068642.1/9663112.log).
+
+[Wed May 21 08:44:32 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068668.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068668.1.recode.vcf
+    jobid: 587
+    reason: Missing output files: sharks/HepPer/CM068668.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068668.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 587 has been submitted with SLURM jobid 9663113 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068668.1/9663113.log).
+
+[Wed May 21 08:44:32 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068677.1_het.txt
+    jobid: 240
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068677.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 240 has been submitted with SLURM jobid 9663114 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068677.1/9663114.log).
+
+[Wed May 21 08:44:34 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068661.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068661.1.recode.vcf
+    jobid: 573
+    reason: Missing output files: sharks/HepPer/CM068661.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068661.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 573 has been submitted with SLURM jobid 9663115 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068661.1/9663115.log).
+
+[Wed May 21 08:44:34 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068670.1_het.txt
+    jobid: 233
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068670.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 233 has been submitted with SLURM jobid 9663126 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068670.1/9663126.log).
+
+[Wed May 21 08:44:37 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068657.1_het.txt
+    jobid: 220
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068657.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 220 has been submitted with SLURM jobid 9663127 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068657.1/9663127.log).
+
+[Wed May 21 08:44:37 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068641.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068641.1.recode.vcf
+    jobid: 533
+    reason: Missing output files: sharks/HepPer/CM068641.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068641.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 533 has been submitted with SLURM jobid 9663128 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068641.1/9663128.log).
+
+[Wed May 21 08:44:37 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068650.1_het.txt
+    jobid: 213
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068650.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 213 has been submitted with SLURM jobid 9663129 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068650.1/9663129.log).
+
+[Wed May 21 08:44:39 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068676.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068676.1.recode.vcf
+    jobid: 603
+    reason: Missing output files: sharks/HepPer/CM068676.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068676.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 603 has been submitted with SLURM jobid 9663130 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068676.1/9663130.log).
+
+[Wed May 21 08:44:39 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068669.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068669.1.recode.vcf
+    jobid: 589
+    reason: Missing output files: sharks/HepPer/CM068669.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068669.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 589 has been submitted with SLURM jobid 9663131 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068669.1/9663131.log).
+
+[Wed May 21 08:44:39 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068678.1_het.txt
+    jobid: 241
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068678.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 241 has been submitted with SLURM jobid 9663132 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068678.1/9663132.log).
+
+[Wed May 21 08:44:39 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068662.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068662.1.recode.vcf
+    jobid: 575
+    reason: Missing output files: sharks/HepPer/CM068662.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068662.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 575 has been submitted with SLURM jobid 9663133 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068662.1/9663133.log).
+
+[Wed May 21 08:44:42 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068648.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068648.1.recode.vcf
+    jobid: 547
+    reason: Missing output files: sharks/HepPer/CM068648.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068648.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 547 has been submitted with SLURM jobid 9663134 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068648.1/9663134.log).
+
+[Wed May 21 08:44:42 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068664.1_het.txt
+    jobid: 227
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068664.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 227 has been submitted with SLURM jobid 9663135 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068664.1/9663135.log).
+
+[Wed May 21 08:44:42 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068658.1_het.txt
+    jobid: 221
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068658.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 221 has been submitted with SLURM jobid 9663136 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068658.1/9663136.log).
+
+[Wed May 21 08:44:44 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068642.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068642.1.recode.vcf
+    jobid: 535
+    reason: Missing output files: sharks/HepPer/CM068642.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068642.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 535 has been submitted with SLURM jobid 9663137 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068642.1/9663137.log).
+
+[Wed May 21 08:44:44 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068651.1_het.txt
+    jobid: 214
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068651.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 214 has been submitted with SLURM jobid 9663138 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068651.1/9663138.log).
+
+[Wed May 21 08:44:45 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068677.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068677.1.recode.vcf
+    jobid: 605
+    reason: Missing output files: sharks/HepPer/CM068677.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068677.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 605 has been submitted with SLURM jobid 9663144 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068677.1/9663144.log).
+
+[Wed May 21 08:44:47 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068637.1_het.txt
+    jobid: 200
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068637.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 200 has been submitted with SLURM jobid 9663182 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068637.1/9663182.log).
+
+[Wed May 21 08:44:49 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068670.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068670.1.recode.vcf
+    jobid: 591
+    reason: Missing output files: sharks/HepPer/CM068670.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068670.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 591 has been submitted with SLURM jobid 9663185 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068670.1/9663185.log).
+
+[Wed May 21 08:44:50 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068679.1_het.txt
+    jobid: 242
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068679.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 242 has been submitted with SLURM jobid 9663186 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068679.1/9663186.log).
+
+[Wed May 21 08:44:52 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068663.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068663.1.recode.vcf
+    jobid: 577
+    reason: Missing output files: sharks/HepPer/CM068663.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068663.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 577 has been submitted with SLURM jobid 9663189 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068663.1/9663189.log).
+
+[Wed May 21 08:44:52 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068659.1_het.txt
+    jobid: 222
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068659.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 222 has been submitted with SLURM jobid 9663191 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068659.1/9663191.log).
+
+[Wed May 21 08:44:55 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068643.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068643.1.recode.vcf
+    jobid: 537
+    reason: Missing output files: sharks/HepPer/CM068643.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068643.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 537 has been submitted with SLURM jobid 9663193 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068643.1/9663193.log).
+
+[Wed May 21 08:44:55 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068652.1_het.txt
+    jobid: 215
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068652.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 215 has been submitted with SLURM jobid 9663195 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068652.1/9663195.log).
+
+[Wed May 21 08:44:57 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068671.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068671.1.recode.vcf
+    jobid: 593
+    reason: Missing output files: sharks/HepPer/CM068671.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068671.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 593 has been submitted with SLURM jobid 9663196 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068671.1/9663196.log).
+
+[Wed May 21 08:44:57 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068680.1_het.txt
+    jobid: 243
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068680.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 243 has been submitted with SLURM jobid 9663198 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068680.1/9663198.log).
+
+[Wed May 21 08:45:00 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068664.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068664.1.recode.vcf
+    jobid: 579
+    reason: Missing output files: sharks/HepPer/CM068664.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068664.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 579 has been submitted with SLURM jobid 9663200 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068664.1/9663200.log).
+
+[Wed May 21 08:45:00 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068639.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068639.1.recode.vcf
+    jobid: 529
+    reason: Missing output files: sharks/HepPer/CM068639.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068639.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 529 has been submitted with SLURM jobid 9663203 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068639.1/9663203.log).
+
+[Wed May 21 08:45:02 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068660.1_het.txt
+    jobid: 223
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068660.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 223 has been submitted with SLURM jobid 9663205 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068660.1/9663205.log).
+
+[Wed May 21 08:45:03 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068644.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068644.1.recode.vcf
+    jobid: 539
+    reason: Missing output files: sharks/HepPer/CM068644.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068644.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 539 has been submitted with SLURM jobid 9663207 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068644.1/9663207.log).
+
+[Wed May 21 08:45:05 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068653.1_het.txt
+    jobid: 216
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068653.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 216 has been submitted with SLURM jobid 9663209 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068653.1/9663209.log).
+
+[Wed May 21 08:45:05 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068637.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068637.1.recode.vcf
+    jobid: 525
+    reason: Missing output files: sharks/HepPer/CM068637.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068637.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 525 has been submitted with SLURM jobid 9663215 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068637.1/9663215.log).
+
+[Wed May 21 08:45:07 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068672.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068672.1.recode.vcf
+    jobid: 595
+    reason: Missing output files: sharks/HepPer/CM068672.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068672.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 595 has been submitted with SLURM jobid 9663217 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068672.1/9663217.log).
+
+[Wed May 21 08:45:08 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068681.1_het.txt
+    jobid: 244
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068681.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 244 has been submitted with SLURM jobid 9663219 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068681.1/9663219.log).
+
+[Wed May 21 08:45:10 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068665.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068665.1.recode.vcf
+    jobid: 581
+    reason: Missing output files: sharks/HepPer/CM068665.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068665.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 581 has been submitted with SLURM jobid 9663221 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068665.1/9663221.log).
+
+[Wed May 21 08:45:10 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068651.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068651.1.recode.vcf
+    jobid: 553
+    reason: Missing output files: sharks/HepPer/CM068651.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068651.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 553 has been submitted with SLURM jobid 9663223 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068651.1/9663223.log).
+
+[Wed May 21 08:45:10 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068661.1_het.txt
+    jobid: 224
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068661.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 224 has been submitted with SLURM jobid 9663226 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068661.1/9663226.log).
+
+[Wed May 21 08:45:13 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068645.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068645.1.recode.vcf
+    jobid: 541
+    reason: Missing output files: sharks/HepPer/CM068645.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068645.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 541 has been submitted with SLURM jobid 9663228 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068645.1/9663228.log).
+
+[Wed May 21 08:45:13 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068654.1_het.txt
+    jobid: 217
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068654.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 217 has been submitted with SLURM jobid 9663230 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068654.1/9663230.log).
+
+[Wed May 21 08:45:15 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068638.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068638.1.recode.vcf
+    jobid: 527
+    reason: Missing output files: sharks/HepPer/CM068638.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068638.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 527 has been submitted with SLURM jobid 9663232 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068638.1/9663232.log).
+
+[Wed May 21 08:45:16 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068673.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068673.1.recode.vcf
+    jobid: 597
+    reason: Missing output files: sharks/HepPer/CM068673.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068673.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 597 has been submitted with SLURM jobid 9663237 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068673.1/9663237.log).
+
+[Wed May 21 08:45:18 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068666.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068666.1.recode.vcf
+    jobid: 583
+    reason: Missing output files: sharks/HepPer/CM068666.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068666.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 583 has been submitted with SLURM jobid 9663239 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068666.1/9663239.log).
+
+[Wed May 21 08:45:20 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068655.1_het.txt
+    jobid: 218
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068655.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 218 has been submitted with SLURM jobid 9663240 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068655.1/9663240.log).
+
+[Wed May 21 08:45:21 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068674.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068674.1.recode.vcf
+    jobid: 599
+    reason: Missing output files: sharks/HepPer/CM068674.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068674.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 599 has been submitted with SLURM jobid 9663242 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068674.1/9663242.log).
+
+[Wed May 21 08:45:23 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068667.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068667.1.recode.vcf
+    jobid: 585
+    reason: Missing output files: sharks/HepPer/CM068667.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068667.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 585 has been submitted with SLURM jobid 9663244 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068667.1/9663244.log).
+[Wed May 21 08:50:58 2025]
+Finished job 557.
+1 of 1670 steps (0.1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 21 08:50:58 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068646.1_het.txt
+    jobid: 209
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068646.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 209 has been submitted with SLURM jobid 9663468 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068646.1/9663468.log).
+[Wed May 21 08:50:59 2025]
+Finished job 219.
+2 of 1670 steps (0.1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 21 08:50:59 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068639.1_het.txt
+    jobid: 202
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068639.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 202 has been submitted with SLURM jobid 9663469 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068639.1/9663469.log).
+[Wed May 21 08:59:09 2025]
+Finished job 531.
+3 of 1670 steps (0.2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 21 08:59:09 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068650.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068650.1.recode.vcf
+    jobid: 551
+    reason: Missing output files: sharks/HepPer/CM068650.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068650.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 551 has been submitted with SLURM jobid 9663731 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068650.1/9663731.log).
+[Wed May 21 08:59:10 2025]
+Finished job 212.
+4 of 1670 steps (0.2%) done
+[Wed May 21 08:59:10 2025]
+Finished job 205.
+5 of 1670 steps (0.3%) done
+[Wed May 21 08:59:10 2025]
+Finished job 587.
+6 of 1670 steps (0.4%) done
+[Wed May 21 08:59:10 2025]
+Finished job 240.
+7 of 1670 steps (0.4%) done
+Select jobs to execute...
+Execute 4 jobs...
+
+[Wed May 21 08:59:10 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068674.1_het.txt
+    jobid: 237
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068674.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 237 has been submitted with SLURM jobid 9663732 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068674.1/9663732.log).
+
+[Wed May 21 08:59:10 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068668.1_het.txt
+    jobid: 231
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068668.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 231 has been submitted with SLURM jobid 9663733 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068668.1/9663733.log).
+
+[Wed May 21 08:59:10 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068646.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068646.1.recode.vcf
+    jobid: 543
+    reason: Missing output files: sharks/HepPer/CM068646.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068646.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 543 has been submitted with SLURM jobid 9663750 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068646.1/9663750.log).
+
+[Wed May 21 08:59:13 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068679.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068679.1.recode.vcf
+    jobid: 609
+    reason: Missing output files: sharks/HepPer/CM068679.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068679.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 609 has been submitted with SLURM jobid 9663751 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068679.1/9663751.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Wed May 21 09:05:45 2025]
+Finished job 573.
+8 of 1670 steps (0.5%) done
+Execute 1 jobs...
+
+[Wed May 21 09:05:45 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068666.1_het.txt
+    jobid: 229
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068666.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 229 has been submitted with SLURM jobid 9663906 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068666.1/9663906.log).
+[Wed May 21 09:05:49 2025]
+Finished job 233.
+9 of 1670 steps (1%) done
+[Wed May 21 09:05:49 2025]
+Finished job 220.
+10 of 1670 steps (1%) done
+[Wed May 21 09:05:49 2025]
+Finished job 533.
+11 of 1670 steps (1%) done
+[Wed May 21 09:05:49 2025]
+Finished job 213.
+12 of 1670 steps (1%) done
+Select jobs to execute...
+Execute 4 jobs...
+
+[Wed May 21 09:05:49 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068658.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068658.1.recode.vcf
+    jobid: 567
+    reason: Missing output files: sharks/HepPer/CM068658.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068658.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 567 has been submitted with SLURM jobid 9663908 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068658.1/9663908.log).
+
+[Wed May 21 09:05:51 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068652.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068652.1.recode.vcf
+    jobid: 555
+    reason: Missing output files: sharks/HepPer/CM068652.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068652.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 555 has been submitted with SLURM jobid 9663909 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068652.1/9663909.log).
+
+[Wed May 21 09:05:51 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068641.1.recode.vcf
+    output: sharks/HepPer/CM068641.1.recode.vcf.gz
+    jobid: 619
+    reason: Input files updated by another job: sharks/HepPer/CM068641.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068641.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 619 has been submitted with SLURM jobid 9663910 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068641.1/9663910.log).
+
+[Wed May 21 09:05:51 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068667.1_het.txt
+    jobid: 230
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068667.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 230 has been submitted with SLURM jobid 9663911 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068667.1/9663911.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Wed May 21 09:12:16 2025]
+Finished job 603.
+13 of 1670 steps (1%) done
+Execute 1 jobs...
+
+[Wed May 21 09:12:16 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068657.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068657.1.recode.vcf
+    jobid: 565
+    reason: Missing output files: sharks/HepPer/CM068657.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068657.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 565 has been submitted with SLURM jobid 9664111 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068657.1/9664111.log).
+[Wed May 21 09:12:23 2025]
+Finished job 589.
+14 of 1670 steps (1%) done
+[Wed May 21 09:12:23 2025]
+Finished job 241.
+15 of 1670 steps (1%) done
+[Wed May 21 09:12:24 2025]
+Finished job 575.
+16 of 1670 steps (1%) done
+[Wed May 21 09:12:24 2025]
+Finished job 547.
+17 of 1670 steps (1%) done
+[Wed May 21 09:12:24 2025]
+Finished job 227.
+18 of 1670 steps (1%) done
+[Wed May 21 09:12:24 2025]
+Finished job 221.
+19 of 1670 steps (1%) done
+[Wed May 21 09:12:24 2025]
+Finished job 535.
+20 of 1670 steps (1%) done
+Select jobs to execute...
+Execute 7 jobs...
+
+[Wed May 21 09:12:24 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068662.1_het.txt
+    jobid: 225
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068662.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 225 has been submitted with SLURM jobid 9664112 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068662.1/9664112.log).
+
+[Wed May 21 09:12:24 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068647.1_het.txt
+    jobid: 210
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068647.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 210 has been submitted with SLURM jobid 9664113 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068647.1/9664113.log).
+
+[Wed May 21 09:12:24 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068642.1.recode.vcf
+    output: sharks/HepPer/CM068642.1.recode.vcf.gz
+    jobid: 620
+    reason: Input files updated by another job: sharks/HepPer/CM068642.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068642.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 620 has been submitted with SLURM jobid 9664114 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068642.1/9664114.log).
+
+[Wed May 21 09:12:24 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068659.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068659.1.recode.vcf
+    jobid: 569
+    reason: Missing output files: sharks/HepPer/CM068659.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068659.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 569 has been submitted with SLURM jobid 9664115 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068659.1/9664115.log).
+
+[Wed May 21 09:12:24 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068676.1.recode.vcf
+    output: sharks/HepPer/CM068676.1.recode.vcf.gz
+    jobid: 654
+    reason: Input files updated by another job: sharks/HepPer/CM068676.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068676.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 654 has been submitted with SLURM jobid 9664118 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068676.1/9664118.log).
+
+[Wed May 21 09:12:29 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068669.1.recode.vcf
+    output: sharks/HepPer/CM068669.1.recode.vcf.gz
+    jobid: 647
+    reason: Input files updated by another job: sharks/HepPer/CM068669.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068669.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 647 has been submitted with SLURM jobid 9664119 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068669.1/9664119.log).
+
+[Wed May 21 09:12:29 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068662.1.recode.vcf
+    output: sharks/HepPer/CM068662.1.recode.vcf.gz
+    jobid: 640
+    reason: Input files updated by another job: sharks/HepPer/CM068662.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068662.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 640 has been submitted with SLURM jobid 9664120 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068662.1/9664120.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Wed May 21 09:18:47 2025]
+Finished job 214.
+21 of 1670 steps (1%) done
+Execute 1 jobs...
+
+[Wed May 21 09:18:47 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068660.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068660.1.recode.vcf
+    jobid: 571
+    reason: Missing output files: sharks/HepPer/CM068660.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068660.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 571 has been submitted with SLURM jobid 9664232 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068660.1/9664232.log).
+[Wed May 21 09:18:48 2025]
+Finished job 605.
+22 of 1670 steps (1%) done
+[Wed May 21 09:18:48 2025]
+Finished job 200.
+23 of 1670 steps (1%) done
+[Wed May 21 09:18:48 2025]
+Finished job 591.
+24 of 1670 steps (1%) done
+Select jobs to execute...
+Execute 3 jobs...
+
+[Wed May 21 09:18:48 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068655.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068655.1.recode.vcf
+    jobid: 561
+    reason: Missing output files: sharks/HepPer/CM068655.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068655.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 561 has been submitted with SLURM jobid 9664233 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068655.1/9664233.log).
+
+[Wed May 21 09:18:48 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068661.1.recode.vcf
+    output: sharks/HepPer/CM068661.1.recode.vcf.gz
+    jobid: 639
+    reason: Input files updated by another job: sharks/HepPer/CM068661.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068661.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 639 has been submitted with SLURM jobid 9664234 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068661.1/9664234.log).
+
+[Wed May 21 09:18:48 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068682.1_het.txt
+    jobid: 246
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068682.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 246 has been submitted with SLURM jobid 9664235 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068682.1/9664235.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+[Wed May 21 09:27:04 2025]
+Finished job 242.
+25 of 1670 steps (1%) done
+Execute 1 jobs...
+
+[Wed May 21 09:27:04 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068669.1_het.txt
+    jobid: 232
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068669.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 232 has been submitted with SLURM jobid 9664623 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068669.1/9664623.log).
+[Wed May 21 09:27:05 2025]
+Finished job 577.
+26 of 1670 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 21 09:27:05 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068675.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068675.1.recode.vcf
+    jobid: 601
+    reason: Missing output files: sharks/HepPer/CM068675.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068675.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 601 has been submitted with SLURM jobid 9664624 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068675.1/9664624.log).
+[Wed May 21 09:33:35 2025]
+Finished job 222.
+27 of 1670 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 21 09:33:35 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068654.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068654.1.recode.vcf
+    jobid: 559
+    reason: Missing output files: sharks/HepPer/CM068654.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068654.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 559 has been submitted with SLURM jobid 9664835 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068654.1/9664835.log).
+[Wed May 21 09:33:39 2025]
+Finished job 537.
+28 of 1670 steps (2%) done
+[Wed May 21 09:33:39 2025]
+Finished job 215.
+29 of 1670 steps (2%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Wed May 21 09:33:39 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068672.1_het.txt
+    jobid: 235
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068672.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 235 has been submitted with SLURM jobid 9664838 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068672.1/9664838.log).
+
+[Wed May 21 09:33:41 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068677.1.recode.vcf
+    output: sharks/HepPer/CM068677.1.recode.vcf.gz
+    jobid: 655
+    reason: Input files updated by another job: sharks/HepPer/CM068677.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068677.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 655 has been submitted with SLURM jobid 9664839 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068677.1/9664839.log).
+Select jobs to execute...
+Waiting for more resources.
+[Wed May 21 09:36:06 2025]
+Finished job 593.
+30 of 1670 steps (2%) done
+Execute 1 jobs...
+
+[Wed May 21 09:36:06 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068671.1.recode.vcf
+    output: sharks/HepPer/CM068671.1.recode.vcf.gz
+    jobid: 649
+    reason: Input files updated by another job: sharks/HepPer/CM068671.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068671.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 649 has been submitted with SLURM jobid 9664941 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068671.1/9664941.log).
+[Wed May 21 09:36:07 2025]
+Finished job 243.
+31 of 1670 steps (2%) done
+[Wed May 21 09:36:07 2025]
+Finished job 579.
+32 of 1670 steps (2%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Wed May 21 09:36:07 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068656.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068656.1.recode.vcf
+    jobid: 563
+    reason: Missing output files: sharks/HepPer/CM068656.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068656.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 563 has been submitted with SLURM jobid 9664943 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068656.1/9664943.log).
+
+[Wed May 21 09:36:10 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068680.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068680.1.recode.vcf
+    jobid: 611
+    reason: Missing output files: sharks/HepPer/CM068680.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068680.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 611 has been submitted with SLURM jobid 9664945 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068680.1/9664945.log).
+Select jobs to execute...
+Waiting for more resources.
+[Wed May 21 09:36:46 2025]
+Finished job 529.
+33 of 1670 steps (2%) done
+Execute 1 jobs...
+
+[Wed May 21 09:36:46 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068664.1.recode.vcf
+    output: sharks/HepPer/CM068664.1.recode.vcf.gz
+    jobid: 642
+    reason: Input files updated by another job: sharks/HepPer/CM068664.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068664.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 642 has been submitted with SLURM jobid 9664958 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068664.1/9664958.log).
+[Wed May 21 09:36:46 2025]
+Finished job 223.
+34 of 1670 steps (2%) done
+[Wed May 21 09:36:47 2025]
+Finished job 539.
+35 of 1670 steps (2%) done
+[Wed May 21 09:36:47 2025]
+Finished job 216.
+36 of 1670 steps (2%) done
+[Wed May 21 09:36:47 2025]
+Finished job 525.
+37 of 1670 steps (2%) done
+[Wed May 21 09:36:47 2025]
+Finished job 595.
+38 of 1670 steps (2%) done
+Select jobs to execute...
+Execute 5 jobs...
+
+[Wed May 21 09:36:47 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068671.1_het.txt
+    jobid: 234
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068671.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 234 has been submitted with SLURM jobid 9664959 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068671.1/9664959.log).
+
+[Wed May 21 09:36:47 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068640.1_het.txt
+    jobid: 203
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068640.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 203 has been submitted with SLURM jobid 9664960 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068640.1/9664960.log).
+
+[Wed May 21 09:36:47 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068653.1.recode.vcf
+    output: sharks/HepPer/CM068653.1.recode.vcf.gz
+    jobid: 631
+    reason: Input files updated by another job: sharks/HepPer/CM068653.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068653.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 631 has been submitted with SLURM jobid 9664961 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068653.1/9664961.log).
+
+[Wed May 21 09:36:47 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068644.1_het.txt
+    jobid: 207
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068644.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 207 has been submitted with SLURM jobid 9664962 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068644.1/9664962.log).
+
+[Wed May 21 09:36:47 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068643.1_het.txt
+    jobid: 206
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068643.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 206 has been submitted with SLURM jobid 9664963 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068643.1/9664963.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Wed May 21 09:37:26 2025]
+Finished job 244.
+39 of 1670 steps (2%) done
+Execute 1 jobs...
+
+[Wed May 21 09:37:27 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068644.1.recode.vcf
+    output: sharks/HepPer/CM068644.1.recode.vcf.gz
+    jobid: 622
+    reason: Input files updated by another job: sharks/HepPer/CM068644.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068644.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 622 has been submitted with SLURM jobid 9664974 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068644.1/9664974.log).
+[Wed May 21 09:37:27 2025]
+Finished job 581.
+40 of 1670 steps (2%) done
+[Wed May 21 09:37:27 2025]
+Finished job 553.
+41 of 1670 steps (2%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Wed May 21 09:37:27 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068665.1_het.txt
+    jobid: 228
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068665.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 228 has been submitted with SLURM jobid 9664975 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068665.1/9664975.log).
+
+[Wed May 21 09:37:27 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068637.1.recode.vcf
+    output: sharks/HepPer/CM068637.1.recode.vcf.gz
+    jobid: 615
+    reason: Input files updated by another job: sharks/HepPer/CM068637.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068637.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 615 has been submitted with SLURM jobid 9664976 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068637.1/9664976.log).
+Select jobs to execute...
+Waiting for more resources.
+[Wed May 21 09:38:07 2025]
+Finished job 224.
+42 of 1670 steps (3%) done
+Execute 1 jobs...
+
+[Wed May 21 09:38:07 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068651.1.recode.vcf
+    output: sharks/HepPer/CM068651.1.recode.vcf.gz
+    jobid: 629
+    reason: Input files updated by another job: sharks/HepPer/CM068651.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068651.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 629 has been submitted with SLURM jobid 9664991 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068651.1/9664991.log).
+[Wed May 21 09:38:07 2025]
+Finished job 541.
+43 of 1670 steps (3%) done
+[Wed May 21 09:38:07 2025]
+Finished job 217.
+44 of 1670 steps (3%) done
+[Wed May 21 09:38:07 2025]
+Finished job 597.
+45 of 1670 steps (3%) done
+Select jobs to execute...
+Execute 3 jobs...
+
+[Wed May 21 09:38:07 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068649.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068649.1.recode.vcf
+    jobid: 549
+    reason: Missing output files: sharks/HepPer/CM068649.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068649.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 549 has been submitted with SLURM jobid 9664992 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068649.1/9664992.log).
+
+[Wed May 21 09:38:07 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068641.1_het.txt
+    jobid: 204
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068641.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 204 has been submitted with SLURM jobid 9664993 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068641.1/9664993.log).
+
+[Wed May 21 09:38:07 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068663.1.recode.vcf
+    output: sharks/HepPer/CM068663.1.recode.vcf.gz
+    jobid: 641
+    reason: Input files updated by another job: sharks/HepPer/CM068663.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068663.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 641 has been submitted with SLURM jobid 9664994 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068663.1/9664994.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+[Wed May 21 09:38:47 2025]
+Finished job 527.
+46 of 1670 steps (3%) done
+Execute 1 jobs...
+
+[Wed May 21 09:38:47 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068672.1.recode.vcf
+    output: sharks/HepPer/CM068672.1.recode.vcf.gz
+    jobid: 650
+    reason: Input files updated by another job: sharks/HepPer/CM068672.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068672.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 650 has been submitted with SLURM jobid 9665002 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068672.1/9665002.log).
+[Wed May 21 09:38:47 2025]
+Finished job 583.
+47 of 1670 steps (3%) done
+[Wed May 21 09:38:47 2025]
+Finished job 218.
+48 of 1670 steps (3%) done
+[Wed May 21 09:38:47 2025]
+Finished job 599.
+49 of 1670 steps (3%) done
+[Wed May 21 09:38:47 2025]
+Finished job 585.
+50 of 1670 steps (3%) done
+Select jobs to execute...
+Execute 4 jobs...
+
+[Wed May 21 09:38:47 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068639.1.recode.vcf
+    output: sharks/HepPer/CM068639.1.recode.vcf.gz
+    jobid: 617
+    reason: Input files updated by another job: sharks/HepPer/CM068639.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068639.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 617 has been submitted with SLURM jobid 9665005 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068639.1/9665005.log).
+
+[Wed May 21 09:38:47 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068670.1.recode.vcf
+    output: sharks/HepPer/CM068670.1.recode.vcf.gz
+    jobid: 648
+    reason: Input files updated by another job: sharks/HepPer/CM068670.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068670.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 648 has been submitted with SLURM jobid 9665007 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068670.1/9665007.log).
+
+[Wed May 21 09:38:48 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068674.1.recode.vcf
+    output: sharks/HepPer/CM068674.1.recode.vcf.gz
+    jobid: 652
+    reason: Input files updated by another job: sharks/HepPer/CM068674.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068674.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 652 has been submitted with SLURM jobid 9665008 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068674.1/9665008.log).
+
+[Wed May 21 09:38:48 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068666.1.recode.vcf
+    output: sharks/HepPer/CM068666.1.recode.vcf.gz
+    jobid: 644
+    reason: Input files updated by another job: sharks/HepPer/CM068666.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068666.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 644 has been submitted with SLURM jobid 9665009 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068666.1/9665009.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Wed May 21 09:50:49 2025]
+Finished job 209.
+51 of 1670 steps (3%) done
+Execute 1 jobs...
+
+[Wed May 21 09:50:49 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068665.1.recode.vcf
+    output: sharks/HepPer/CM068665.1.recode.vcf.gz
+    jobid: 643
+    reason: Input files updated by another job: sharks/HepPer/CM068665.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068665.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 643 has been submitted with SLURM jobid 9665601 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068665.1/9665601.log).
+[Wed May 21 09:50:49 2025]
+Finished job 202.
+52 of 1670 steps (3%) done
+[Wed May 21 09:50:49 2025]
+Finished job 551.
+53 of 1670 steps (3%) done
+[Wed May 21 09:50:49 2025]
+Finished job 237.
+54 of 1670 steps (3%) done
+[Wed May 21 09:50:49 2025]
+Finished job 231.
+55 of 1670 steps (3%) done
+Select jobs to execute...
+Execute 4 jobs...
+
+[Wed May 21 09:50:49 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068648.1_het.txt
+    jobid: 211
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068648.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 211 has been submitted with SLURM jobid 9665602 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068648.1/9665602.log).
+
+[Wed May 21 09:50:49 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068645.1_het.txt
+    jobid: 208
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068645.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 208 has been submitted with SLURM jobid 9665603 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068645.1/9665603.log).
+
+[Wed May 21 09:50:54 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068678.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068678.1.recode.vcf
+    jobid: 607
+    reason: Missing output files: sharks/HepPer/CM068678.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068678.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 607 has been submitted with SLURM jobid 9665604 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068678.1/9665604.log).
+
+[Wed May 21 09:50:54 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068640.1.recode.vcf
+    output: sharks/HepPer/CM068640.1.recode.vcf.gz
+    jobid: 618
+    reason: Input files updated by another job: sharks/HepPer/CM068640.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068640.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 618 has been submitted with SLURM jobid 9665605 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068640.1/9665605.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Wed May 21 09:51:29 2025]
+Finished job 543.
+56 of 1670 steps (3%) done
+Execute 1 jobs...
+
+[Wed May 21 09:51:29 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068638.1_het.txt
+    jobid: 201
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068638.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 201 has been submitted with SLURM jobid 9665615 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068638.1/9665615.log).
+[Wed May 21 09:51:31 2025]
+Finished job 609.
+57 of 1670 steps (3%) done
+[Wed May 21 09:51:31 2025]
+Finished job 229.
+58 of 1670 steps (3%) done
+[Wed May 21 09:51:31 2025]
+Finished job 567.
+59 of 1670 steps (4%) done
+[Wed May 21 09:51:31 2025]
+Finished job 555.
+60 of 1670 steps (4%) done
+[Wed May 21 09:51:31 2025]
+Finished job 619.
+61 of 1670 steps (4%) done
+Select jobs to execute...
+Execute 5 jobs...
+
+[Wed May 21 09:51:31 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068673.1.recode.vcf
+    output: sharks/HepPer/CM068673.1.recode.vcf.gz
+    jobid: 651
+    reason: Input files updated by another job: sharks/HepPer/CM068673.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068673.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 651 has been submitted with SLURM jobid 9665616 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068673.1/9665616.log).
+
+[Wed May 21 09:51:33 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068646.1.recode.vcf
+    output: sharks/HepPer/CM068646.1.recode.vcf.gz
+    jobid: 624
+    reason: Input files updated by another job: sharks/HepPer/CM068646.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068646.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 624 has been submitted with SLURM jobid 9665617 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068646.1/9665617.log).
+
+[Wed May 21 09:51:33 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068643.1.recode.vcf
+    output: sharks/HepPer/CM068643.1.recode.vcf.gz
+    jobid: 621
+    reason: Input files updated by another job: sharks/HepPer/CM068643.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068643.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 621 has been submitted with SLURM jobid 9665618 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068643.1/9665618.log).
+
+[Wed May 21 09:51:33 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068645.1.recode.vcf
+    output: sharks/HepPer/CM068645.1.recode.vcf.gz
+    jobid: 623
+    reason: Input files updated by another job: sharks/HepPer/CM068645.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068645.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 623 has been submitted with SLURM jobid 9665619 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068645.1/9665619.log).
+
+[Wed May 21 09:51:33 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068638.1.recode.vcf
+    output: sharks/HepPer/CM068638.1.recode.vcf.gz
+    jobid: 616
+    reason: Input files updated by another job: sharks/HepPer/CM068638.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068638.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 616 has been submitted with SLURM jobid 9665620 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068638.1/9665620.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Wed May 21 09:52:09 2025]
+Finished job 230.
+62 of 1670 steps (4%) done
+Execute 1 jobs...
+
+[Wed May 21 09:52:09 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068663.1_het.txt
+    jobid: 226
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068663.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 226 has been submitted with SLURM jobid 9665625 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068663.1/9665625.log).
+[Wed May 21 09:52:09 2025]
+Finished job 565.
+63 of 1670 steps (4%) done
+[Wed May 21 09:52:09 2025]
+Finished job 225.
+64 of 1670 steps (4%) done
+[Wed May 21 09:52:10 2025]
+Finished job 210.
+65 of 1670 steps (4%) done
+[Wed May 21 09:52:10 2025]
+Finished job 620.
+66 of 1670 steps (4%) done
+[Wed May 21 09:52:10 2025]
+Finished job 569.
+67 of 1670 steps (4%) done
+[Wed May 21 09:52:10 2025]
+Finished job 654.
+68 of 1670 steps (4%) done
+[Wed May 21 09:52:10 2025]
+Finished job 647.
+69 of 1670 steps (4%) done
+[Wed May 21 09:52:10 2025]
+Finished job 640.
+70 of 1670 steps (4%) done
+[Wed May 21 09:52:10 2025]
+Finished job 571.
+71 of 1670 steps (4%) done
+[Wed May 21 09:52:10 2025]
+Finished job 561.
+72 of 1670 steps (4%) done
+[Wed May 21 09:52:10 2025]
+Finished job 639.
+73 of 1670 steps (4%) done
+Select jobs to execute...
+Execute 11 jobs...
+
+[Wed May 21 09:52:10 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068659.1.recode.vcf
+    output: sharks/HepPer/CM068659.1.recode.vcf.gz
+    jobid: 637
+    reason: Input files updated by another job: sharks/HepPer/CM068659.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068659.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 637 has been submitted with SLURM jobid 9665626 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068659.1/9665626.log).
+
+[Wed May 21 09:52:10 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068660.1.recode.vcf
+    output: sharks/HepPer/CM068660.1.recode.vcf.gz
+    jobid: 638
+    reason: Input files updated by another job: sharks/HepPer/CM068660.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068660.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 638 has been submitted with SLURM jobid 9665627 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068660.1/9665627.log).
+
+[Wed May 21 09:52:10 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068650.1.recode.vcf
+    output: sharks/HepPer/CM068650.1.recode.vcf.gz
+    jobid: 628
+    reason: Input files updated by another job: sharks/HepPer/CM068650.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068650.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 628 has been submitted with SLURM jobid 9665628 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068650.1/9665628.log).
+
+[Wed May 21 09:52:10 2025]
+rule GENERATE_MULTIHETSEP:
+    input: sharks/HepPer/CM068642.1.recode.vcf.gz
+    output: sharks/HepPer/MSMC/Output_Multihet/CM068642.1_multihet.txt
+    jobid: 722
+    reason: Input files updated by another job: sharks/HepPer/CM068642.1.recode.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068642.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 722 has been submitted with SLURM jobid 9665629 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GENERATE_MULTIHETSEP/sharks_HepPer_CM068642.1/9665629.log).
+
+[Wed May 21 09:52:10 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068679.1.recode.vcf
+    output: sharks/HepPer/CM068679.1.recode.vcf.gz
+    jobid: 657
+    reason: Input files updated by another job: sharks/HepPer/CM068679.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068679.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 657 has been submitted with SLURM jobid 9665630 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068679.1/9665630.log).
+
+[Wed May 21 09:52:11 2025]
+rule GENERATE_MULTIHETSEP:
+    input: sharks/HepPer/CM068661.1.recode.vcf.gz
+    output: sharks/HepPer/MSMC/Output_Multihet/CM068661.1_multihet.txt
+    jobid: 779
+    reason: Input files updated by another job: sharks/HepPer/CM068661.1.recode.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068661.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 779 has been submitted with SLURM jobid 9665631 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GENERATE_MULTIHETSEP/sharks_HepPer_CM068661.1/9665631.log).
+
+[Wed May 21 09:52:11 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068647.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068647.1.recode.vcf
+    jobid: 545
+    reason: Missing output files: sharks/HepPer/CM068647.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068647.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 545 has been submitted with SLURM jobid 9665632 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068647.1/9665632.log).
+
+[Wed May 21 09:52:11 2025]
+rule REMOVE_INDELS:
+    input: sharks/HepPer/temp/CM068681.1_restructured.vcf.gz
+    output: sharks/HepPer/CM068681.1.recode.vcf
+    jobid: 613
+    reason: Missing output files: sharks/HepPer/CM068681.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068681.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 613 has been submitted with SLURM jobid 9665633 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_REMOVE_INDELS/sharks_HepPer_CM068681.1/9665633.log).
+
+[Wed May 21 09:52:11 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068658.1.recode.vcf
+    output: sharks/HepPer/CM068658.1.recode.vcf.gz
+    jobid: 636
+    reason: Input files updated by another job: sharks/HepPer/CM068658.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068658.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 636 has been submitted with SLURM jobid 9665634 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068658.1/9665634.log).
+
+[Wed May 21 09:52:11 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068667.1.recode.vcf
+    output: sharks/HepPer/CM068667.1.recode.vcf.gz
+    jobid: 645
+    reason: Input files updated by another job: sharks/HepPer/CM068667.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068667.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 645 has been submitted with SLURM jobid 9665635 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068667.1/9665635.log).
+
+[Wed May 21 09:52:11 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068652.1.recode.vcf
+    output: sharks/HepPer/CM068652.1.recode.vcf.gz
+    jobid: 630
+    reason: Input files updated by another job: sharks/HepPer/CM068652.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068652.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 630 has been submitted with SLURM jobid 9665636 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068652.1/9665636.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Wed May 21 09:52:49 2025]
+Finished job 246.
+74 of 1670 steps (4%) done
+Execute 1 jobs...
+
+[Wed May 21 09:52:49 2025]
+rule GENERATE_MULTIHETSEP:
+    input: sharks/HepPer/CM068662.1.recode.vcf.gz
+    output: sharks/HepPer/MSMC/Output_Multihet/CM068662.1_multihet.txt
+    jobid: 782
+    reason: Input files updated by another job: sharks/HepPer/CM068662.1.recode.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068662.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 782 has been submitted with SLURM jobid 9665647 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GENERATE_MULTIHETSEP/sharks_HepPer_CM068662.1/9665647.log).
+[Wed May 21 09:53:30 2025]
+Finished job 232.
+75 of 1670 steps (4%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 21 09:53:30 2025]
+rule GENERATE_MULTIHETSEP:
+    input: sharks/HepPer/CM068676.1.recode.vcf.gz
+    output: sharks/HepPer/MSMC/Output_Multihet/CM068676.1_multihet.txt
+    jobid: 824
+    reason: Input files updated by another job: sharks/HepPer/CM068676.1.recode.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068676.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 824 has been submitted with SLURM jobid 9665653 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GENERATE_MULTIHETSEP/sharks_HepPer_CM068676.1/9665653.log).
+[Wed May 21 09:53:30 2025]
+Finished job 601.
+76 of 1670 steps (5%) done
+[Wed May 21 09:53:30 2025]
+Finished job 559.
+77 of 1670 steps (5%) done
+[Wed May 21 09:53:30 2025]
+Finished job 235.
+78 of 1670 steps (5%) done
+[Wed May 21 09:53:30 2025]
+Finished job 655.
+79 of 1670 steps (5%) done
+[Wed May 21 09:53:30 2025]
+Finished job 649.
+80 of 1670 steps (5%) done
+Select jobs to execute...
+Execute 5 jobs...
+
+[Wed May 21 09:53:30 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068676.1_het.txt
+    jobid: 239
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068676.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 239 has been submitted with SLURM jobid 9665654 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068676.1/9665654.log).
+
+[Wed May 21 09:53:30 2025]
+rule GENERATE_MULTIHETSEP:
+    input: sharks/HepPer/CM068677.1.recode.vcf.gz
+    output: sharks/HepPer/MSMC/Output_Multihet/CM068677.1_multihet.txt
+    jobid: 827
+    reason: Input files updated by another job: sharks/HepPer/CM068677.1.recode.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068677.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 827 has been submitted with SLURM jobid 9665655 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GENERATE_MULTIHETSEP/sharks_HepPer_CM068677.1/9665655.log).
+
+[Wed May 21 09:53:30 2025]
+rule GENERATE_MULTIHETSEP:
+    input: sharks/HepPer/CM068669.1.recode.vcf.gz
+    output: sharks/HepPer/MSMC/Output_Multihet/CM068669.1_multihet.txt
+    jobid: 803
+    reason: Input files updated by another job: sharks/HepPer/CM068669.1.recode.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068669.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 803 has been submitted with SLURM jobid 9665656 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GENERATE_MULTIHETSEP/sharks_HepPer_CM068669.1/9665656.log).
+
+[Wed May 21 09:53:30 2025]
+rule GENERATE_MULTIHETSEP:
+    input: sharks/HepPer/CM068671.1.recode.vcf.gz
+    output: sharks/HepPer/MSMC/Output_Multihet/CM068671.1_multihet.txt
+    jobid: 809
+    reason: Input files updated by another job: sharks/HepPer/CM068671.1.recode.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068671.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 809 has been submitted with SLURM jobid 9665657 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GENERATE_MULTIHETSEP/sharks_HepPer_CM068671.1/9665657.log).
+
+[Wed May 21 09:53:30 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068654.1.recode.vcf
+    output: sharks/HepPer/CM068654.1.recode.vcf.gz
+    jobid: 632
+    reason: Input files updated by another job: sharks/HepPer/CM068654.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068654.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 632 has been submitted with SLURM jobid 9665658 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068654.1/9665658.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Wed May 21 09:54:10 2025]
+Finished job 563.
+81 of 1670 steps (5%) done
+Execute 1 jobs...
+
+[Wed May 21 09:54:10 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068648.1.recode.vcf
+    output: sharks/HepPer/CM068648.1.recode.vcf.gz
+    jobid: 626
+    reason: Input files updated by another job: sharks/HepPer/CM068648.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068648.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 626 has been submitted with SLURM jobid 9665666 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068648.1/9665666.log).
+[Wed May 21 09:54:10 2025]
+Finished job 611.
+82 of 1670 steps (5%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 21 09:54:10 2025]
+rule GENERATE_MULTIHETSEP:
+    input: sharks/HepPer/CM068641.1.recode.vcf.gz
+    output: sharks/HepPer/MSMC/Output_Multihet/CM068641.1_multihet.txt
+    jobid: 719
+    reason: Input files updated by another job: sharks/HepPer/CM068641.1.recode.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068641.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 719 has been submitted with SLURM jobid 9665668 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GENERATE_MULTIHETSEP/sharks_HepPer_CM068641.1/9665668.log).
+[Wed May 21 09:54:50 2025]
+Finished job 642.
+83 of 1670 steps (5%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed May 21 09:54:50 2025]
+rule GENERATE_MULTIHETSEP:
+    input: sharks/HepPer/CM068664.1.recode.vcf.gz
+    output: sharks/HepPer/MSMC/Output_Multihet/CM068664.1_multihet.txt
+    jobid: 788
+    reason: Input files updated by another job: sharks/HepPer/CM068664.1.recode.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068664.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 788 has been submitted with SLURM jobid 9665685 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GENERATE_MULTIHETSEP/sharks_HepPer_CM068664.1/9665685.log).
+[Wed May 21 09:54:50 2025]
+Finished job 234.
+84 of 1670 steps (5%) done
+[Wed May 21 09:54:50 2025]
+Finished job 203.
+85 of 1670 steps (5%) done
+[Wed May 21 09:54:50 2025]
+Finished job 631.
+86 of 1670 steps (5%) done
+[Wed May 21 09:54:50 2025]
+Finished job 207.
+87 of 1670 steps (5%) done
+Select jobs to execute...
+Execute 4 jobs...
+
+[Wed May 21 09:54:50 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068675.1.recode.vcf
+    output: sharks/HepPer/CM068675.1.recode.vcf.gz
+    jobid: 653
+    reason: Input files updated by another job: sharks/HepPer/CM068675.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068675.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 653 has been submitted with SLURM jobid 9665688 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068675.1/9665688.log).
+
+[Wed May 21 09:54:50 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068680.1.recode.vcf
+    output: sharks/HepPer/CM068680.1.recode.vcf.gz
+    jobid: 658
+    reason: Input files updated by another job: sharks/HepPer/CM068680.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068680.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 658 has been submitted with SLURM jobid 9665689 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068680.1/9665689.log).
+
+[Wed May 21 09:54:51 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068657.1.recode.vcf
+    output: sharks/HepPer/CM068657.1.recode.vcf.gz
+    jobid: 635
+    reason: Input files updated by another job: sharks/HepPer/CM068657.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068657.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 635 has been submitted with SLURM jobid 9665690 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068657.1/9665690.log).
+
+[Wed May 21 09:54:53 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068656.1.recode.vcf
+    output: sharks/HepPer/CM068656.1.recode.vcf.gz
+    jobid: 634
+    reason: Input files updated by another job: sharks/HepPer/CM068656.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068656.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 634 has been submitted with SLURM jobid 9665691 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068656.1/9665691.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Wed May 21 09:55:30 2025]
+Finished job 206.
+88 of 1670 steps (5%) done
+[Wed May 21 09:55:30 2025]
+Error in rule BGZIP_VCF:
+    message: SLURM-job '9664976' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 615
+    input: sharks/HepPer/CM068637.1.recode.vcf
+    output: sharks/HepPer/CM068637.1.recode.vcf.gz
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068637.1/9664976.log (check log file(s) for error details)
+    shell:
+        
+        bgzip sharks/HepPer/CM068637.1.recode.vcf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9664976
+
+Execute 1 jobs...
+
+[Wed May 21 09:55:30 2025]
+rule GENERATE_MULTIHETSEP:
+    input: sharks/HepPer/CM068653.1.recode.vcf.gz
+    output: sharks/HepPer/MSMC/Output_Multihet/CM068653.1_multihet.txt
+    jobid: 755
+    reason: Input files updated by another job: sharks/HepPer/CM068653.1.recode.vcf.gz
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068653.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 755 has been submitted with SLURM jobid 9665798 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GENERATE_MULTIHETSEP/sharks_HepPer_CM068653.1/9665798.log).
+[Wed May 21 09:55:32 2025]
+Finished job 622.
+89 of 1670 steps (5%) done
+[Wed May 21 09:55:32 2025]
+Finished job 228.
+90 of 1670 steps (5%) done
+Select jobs to execute...
+Execute 3 jobs...
+
+[Wed May 21 09:55:32 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068673.1_het.txt
+    jobid: 236
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068673.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 236 has been submitted with SLURM jobid 9665800 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068673.1/9665800.log).
+
+[Wed May 21 09:55:32 2025]
+rule BGZIP_VCF:
+    input: sharks/HepPer/CM068668.1.recode.vcf
+    output: sharks/HepPer/CM068668.1.recode.vcf.gz
+    jobid: 646
+    reason: Input files updated by another job: sharks/HepPer/CM068668.1.recode.vcf
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, CHR=CM068668.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+Job 646 has been submitted with SLURM jobid 9665803 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_BGZIP_VCF/sharks_HepPer_CM068668.1/9665803.log).
+
+[Wed May 21 09:55:34 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068675.1_het.txt
+    jobid: 238
+    reason: Code has changed since last execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068675.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+

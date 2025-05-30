@@ -1,0 +1,2107 @@
+host: login-p-2
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+CALC_HET_PER_CHR             46
+CALC_HET_WHOLE_GENOME         1
+COMPILE_HET                   1
+COMPILE_ROH                   1
+FILTER_PAF_CHR_ONLY           1
+FROH_PER_AUT_CHR             46
+GET_ALN_ONLY_PER_CHROM       46
+GET_VAR_ONLY_PER_CHROM       46
+GET_WHOLE_ALN                 1
+GET_WHOLE_VAR                 1
+PLOT_HET_PER_CHR             46
+PLOT_WHOLE_HET                1
+Plot_ROH                      1
+ROH_CALC                     46
+WHOLE_FROH                    1
+all                           1
+total                       286
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri May  2 13:50:28 2025]
+localrule FILTER_PAF_CHR_ONLY:
+    input: sharks/HepPer/HepPer_FASTGA.chain.fltr.srt.paf, sharks/chrom_lists/GCA_035084215.1_chroms.txt
+    output: sharks/HepPer/HepPer_FASTGA.chain.chr.fltr.srt.paf
+    jobid: 9
+    reason: Missing output files: sharks/HepPer/HepPer_FASTGA.chain.chr.fltr.srt.paf; Updated input files: sharks/chrom_lists/GCA_035084215.1_chroms.txt
+    resources: tmpdir=/tmp
+
+[Fri May  2 13:50:29 2025]
+Finished job 9.
+1 of 286 steps (0.3%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Fri May  2 13:50:30 2025]
+localrule GET_WHOLE_ALN:
+    input: sharks/HepPer/HepPer_FASTGA.chain.chr.fltr.srt.paf
+    output: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    jobid: 10
+    reason: Input files updated by another job: sharks/HepPer/HepPer_FASTGA.chain.chr.fltr.srt.paf
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:30 2025]
+localrule GET_WHOLE_VAR:
+    input: sharks/HepPer/HepPer_FASTGA.chain.chr.fltr.srt.paf
+    output: sharks/HepPer/temp/HepPer_Var_Only.txt
+    jobid: 8
+    reason: Input files updated by another job: sharks/HepPer/HepPer_FASTGA.chain.chr.fltr.srt.paf
+    resources: tmpdir=/tmp
+
+[Fri May  2 13:50:49 2025]
+Finished job 10.
+2 of 286 steps (1%) done
+Select jobs to execute...
+Execute 46 jobs...
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068668.1_Aln_Only.txt
+    jobid: 42
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068668.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068661.1_Aln_Only.txt
+    jobid: 35
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068661.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068654.1_Aln_Only.txt
+    jobid: 28
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068654.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068648.1_Aln_Only.txt
+    jobid: 22
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068648.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068645.1_Aln_Only.txt
+    jobid: 19
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068645.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068676.1_Aln_Only.txt
+    jobid: 50
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068676.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068669.1_Aln_Only.txt
+    jobid: 43
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068669.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068662.1_Aln_Only.txt
+    jobid: 36
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068662.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068655.1_Aln_Only.txt
+    jobid: 29
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068655.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068649.1_Aln_Only.txt
+    jobid: 23
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068649.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068640.1_Aln_Only.txt
+    jobid: 14
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068640.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068677.1_Aln_Only.txt
+    jobid: 51
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068677.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068670.1_Aln_Only.txt
+    jobid: 44
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068670.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068663.1_Aln_Only.txt
+    jobid: 37
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068663.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068656.1_Aln_Only.txt
+    jobid: 30
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068656.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068650.1_Aln_Only.txt
+    jobid: 24
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068650.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068641.1_Aln_Only.txt
+    jobid: 15
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068641.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068678.1_Aln_Only.txt
+    jobid: 52
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068678.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068671.1_Aln_Only.txt
+    jobid: 45
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068671.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068664.1_Aln_Only.txt
+    jobid: 38
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068664.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068657.1_Aln_Only.txt
+    jobid: 31
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068657.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068651.1_Aln_Only.txt
+    jobid: 25
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068651.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068642.1_Aln_Only.txt
+    jobid: 16
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068642.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068637.1_Aln_Only.txt
+    jobid: 11
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068637.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068679.1_Aln_Only.txt
+    jobid: 53
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068679.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068672.1_Aln_Only.txt
+    jobid: 46
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068672.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068665.1_Aln_Only.txt
+    jobid: 39
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068665.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068658.1_Aln_Only.txt
+    jobid: 32
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068658.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068652.1_Aln_Only.txt
+    jobid: 26
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068652.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068643.1_Aln_Only.txt
+    jobid: 17
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068643.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068638.1_Aln_Only.txt
+    jobid: 12
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068638.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068680.1_Aln_Only.txt
+    jobid: 54
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068680.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068673.1_Aln_Only.txt
+    jobid: 47
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068673.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068666.1_Aln_Only.txt
+    jobid: 40
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068666.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068659.1_Aln_Only.txt
+    jobid: 33
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068659.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068653.1_Aln_Only.txt
+    jobid: 27
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068653.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068646.1_Aln_Only.txt
+    jobid: 20
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068646.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068644.1_Aln_Only.txt
+    jobid: 18
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068644.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068681.1_Aln_Only.txt
+    jobid: 55
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068681.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068674.1_Aln_Only.txt
+    jobid: 48
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068674.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068667.1_Aln_Only.txt
+    jobid: 41
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068667.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068660.1_Aln_Only.txt
+    jobid: 34
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068660.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068647.1_Aln_Only.txt
+    jobid: 21
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068647.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068639.1_Aln_Only.txt
+    jobid: 13
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068639.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068682.1_Aln_Only.txt
+    jobid: 56
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068682.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:49 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068675.1_Aln_Only.txt
+    jobid: 49
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068675.1
+    resources: tmpdir=/tmp
+
+[Fri May  2 13:50:49 2025]
+Finished job 35.
+3 of 286 steps (1%) done
+[Fri May  2 13:50:49 2025]
+Finished job 42.
+4 of 286 steps (1%) done
+[Fri May  2 13:50:49 2025]
+Finished job 28.
+5 of 286 steps (2%) done
+[Fri May  2 13:50:49 2025]
+Finished job 22.
+6 of 286 steps (2%) done
+[Fri May  2 13:50:49 2025]
+Finished job 19.
+7 of 286 steps (2%) done
+[Fri May  2 13:50:50 2025]
+Finished job 50.
+8 of 286 steps (3%) done
+[Fri May  2 13:50:50 2025]
+Finished job 43.
+9 of 286 steps (3%) done
+[Fri May  2 13:50:50 2025]
+Finished job 36.
+10 of 286 steps (3%) done
+[Fri May  2 13:50:50 2025]
+Finished job 29.
+11 of 286 steps (4%) done
+[Fri May  2 13:50:50 2025]
+Finished job 23.
+12 of 286 steps (4%) done
+[Fri May  2 13:50:50 2025]
+Finished job 14.
+13 of 286 steps (5%) done
+[Fri May  2 13:50:50 2025]
+Finished job 51.
+14 of 286 steps (5%) done
+[Fri May  2 13:50:50 2025]
+Finished job 44.
+15 of 286 steps (5%) done
+[Fri May  2 13:50:50 2025]
+Finished job 37.
+16 of 286 steps (6%) done
+[Fri May  2 13:50:50 2025]
+Finished job 24.
+17 of 286 steps (6%) done
+[Fri May  2 13:50:50 2025]
+Finished job 30.
+18 of 286 steps (6%) done
+[Fri May  2 13:50:50 2025]
+Finished job 15.
+19 of 286 steps (7%) done
+[Fri May  2 13:50:50 2025]
+Finished job 52.
+20 of 286 steps (7%) done
+[Fri May  2 13:50:50 2025]
+Finished job 45.
+21 of 286 steps (7%) done
+[Fri May  2 13:50:50 2025]
+Finished job 38.
+22 of 286 steps (8%) done
+[Fri May  2 13:50:50 2025]
+Finished job 16.
+23 of 286 steps (8%) done
+[Fri May  2 13:50:50 2025]
+Finished job 11.
+24 of 286 steps (8%) done
+[Fri May  2 13:50:50 2025]
+Finished job 25.
+25 of 286 steps (9%) done
+[Fri May  2 13:50:50 2025]
+Finished job 31.
+26 of 286 steps (9%) done
+[Fri May  2 13:50:50 2025]
+Finished job 53.
+27 of 286 steps (9%) done
+[Fri May  2 13:50:50 2025]
+Finished job 46.
+28 of 286 steps (10%) done
+[Fri May  2 13:50:50 2025]
+Finished job 39.
+29 of 286 steps (10%) done
+[Fri May  2 13:50:50 2025]
+Finished job 32.
+30 of 286 steps (10%) done
+[Fri May  2 13:50:50 2025]
+Finished job 26.
+31 of 286 steps (11%) done
+[Fri May  2 13:50:50 2025]
+Finished job 12.
+32 of 286 steps (11%) done
+[Fri May  2 13:50:50 2025]
+Finished job 17.
+33 of 286 steps (12%) done
+[Fri May  2 13:50:50 2025]
+Finished job 54.
+34 of 286 steps (12%) done
+[Fri May  2 13:50:50 2025]
+Finished job 47.
+35 of 286 steps (12%) done
+[Fri May  2 13:50:50 2025]
+Finished job 33.
+36 of 286 steps (13%) done
+[Fri May  2 13:50:50 2025]
+Finished job 40.
+37 of 286 steps (13%) done
+[Fri May  2 13:50:50 2025]
+Finished job 27.
+38 of 286 steps (13%) done
+[Fri May  2 13:50:50 2025]
+Finished job 20.
+39 of 286 steps (14%) done
+[Fri May  2 13:50:50 2025]
+Finished job 18.
+40 of 286 steps (14%) done
+[Fri May  2 13:50:50 2025]
+Finished job 55.
+41 of 286 steps (14%) done
+[Fri May  2 13:50:50 2025]
+Finished job 48.
+42 of 286 steps (15%) done
+[Fri May  2 13:50:50 2025]
+Finished job 34.
+43 of 286 steps (15%) done
+[Fri May  2 13:50:50 2025]
+Finished job 41.
+44 of 286 steps (15%) done
+[Fri May  2 13:50:50 2025]
+Finished job 21.
+45 of 286 steps (16%) done
+[Fri May  2 13:50:50 2025]
+Finished job 13.
+46 of 286 steps (16%) done
+[Fri May  2 13:50:50 2025]
+Finished job 56.
+47 of 286 steps (16%) done
+[Fri May  2 13:50:50 2025]
+Finished job 49.
+48 of 286 steps (17%) done
+[Fri May  2 13:50:50 2025]
+Finished job 8.
+49 of 286 steps (17%) done
+Select jobs to execute...
+Execute 46 jobs...
+
+[Fri May  2 13:50:50 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068678.1_Var_Only.txt
+    jobid: 98
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068678.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:50 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068671.1_Var_Only.txt
+    jobid: 91
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068671.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:50 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068664.1_Var_Only.txt
+    jobid: 84
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068664.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:50 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068658.1_Var_Only.txt
+    jobid: 78
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068658.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:50 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068651.1_Var_Only.txt
+    jobid: 71
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068651.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:50 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068644.1_Var_Only.txt
+    jobid: 64
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068644.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:50 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068637.1_Var_Only.txt
+    jobid: 57
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068637.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:50 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068679.1_Var_Only.txt
+    jobid: 99
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068679.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:50 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068672.1_Var_Only.txt
+    jobid: 92
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068672.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:50 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068665.1_Var_Only.txt
+    jobid: 85
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068665.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:50 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068659.1_Var_Only.txt
+    jobid: 79
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068659.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:50 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068652.1_Var_Only.txt
+    jobid: 72
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068652.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:51 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068645.1_Var_Only.txt
+    jobid: 65
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068645.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:51 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068638.1_Var_Only.txt
+    jobid: 58
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068638.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:51 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068680.1_Var_Only.txt
+    jobid: 100
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068680.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:51 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068673.1_Var_Only.txt
+    jobid: 93
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068673.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:51 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068666.1_Var_Only.txt
+    jobid: 86
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068666.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:51 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068660.1_Var_Only.txt
+    jobid: 80
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068660.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:51 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068653.1_Var_Only.txt
+    jobid: 73
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068653.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:51 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068646.1_Var_Only.txt
+    jobid: 66
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068646.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:51 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068639.1_Var_Only.txt
+    jobid: 59
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068639.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:51 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068681.1_Var_Only.txt
+    jobid: 101
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068681.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:51 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068674.1_Var_Only.txt
+    jobid: 94
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068674.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:51 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068667.1_Var_Only.txt
+    jobid: 87
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068667.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:52 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068661.1_Var_Only.txt
+    jobid: 81
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068661.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:52 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068654.1_Var_Only.txt
+    jobid: 74
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068654.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:52 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068647.1_Var_Only.txt
+    jobid: 67
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068647.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:52 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068640.1_Var_Only.txt
+    jobid: 60
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068640.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:52 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068682.1_Var_Only.txt
+    jobid: 102
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068682.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:52 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068675.1_Var_Only.txt
+    jobid: 95
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068675.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:52 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068668.1_Var_Only.txt
+    jobid: 88
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068668.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:52 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068662.1_Var_Only.txt
+    jobid: 82
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068662.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:53 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068655.1_Var_Only.txt
+    jobid: 75
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068655.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:53 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068648.1_Var_Only.txt
+    jobid: 68
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068648.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:53 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068641.1_Var_Only.txt
+    jobid: 61
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068641.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:53 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068676.1_Var_Only.txt
+    jobid: 96
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068676.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:53 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068669.1_Var_Only.txt
+    jobid: 89
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068669.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:53 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068663.1_Var_Only.txt
+    jobid: 83
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068663.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:53 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068656.1_Var_Only.txt
+    jobid: 76
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068656.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:53 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068649.1_Var_Only.txt
+    jobid: 69
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068649.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:54 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068642.1_Var_Only.txt
+    jobid: 62
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068642.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:54 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068677.1_Var_Only.txt
+    jobid: 97
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068677.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:54 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068670.1_Var_Only.txt
+    jobid: 90
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068670.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:54 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068657.1_Var_Only.txt
+    jobid: 77
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068657.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:54 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068650.1_Var_Only.txt
+    jobid: 70
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068650.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:50:54 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068643.1_Var_Only.txt
+    jobid: 63
+    reason: Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068643.1
+    resources: tmpdir=/tmp
+
+[Fri May  2 13:51:28 2025]
+Finished job 93.
+50 of 286 steps (17%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri May  2 13:51:28 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068673.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068673.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068673.1_ROH_Results.txt
+    jobid: 139
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068673.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068673.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068673.1
+    resources: tmpdir=/tmp
+
+[Fri May  2 13:51:29 2025]
+Finished job 78.
+51 of 286 steps (18%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri May  2 13:51:29 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068658.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068658.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068658.1_ROH_Results.txt
+    jobid: 124
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068658.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068658.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068658.1
+    resources: tmpdir=/tmp
+
+[Fri May  2 13:51:29 2025]
+Finished job 98.
+52 of 286 steps (18%) done
+[Fri May  2 13:51:29 2025]
+Finished job 92.
+53 of 286 steps (19%) done
+[Fri May  2 13:51:29 2025]
+Finished job 71.
+54 of 286 steps (19%) done
+[Fri May  2 13:51:29 2025]
+Finished job 91.
+55 of 286 steps (19%) done
+Select jobs to execute...
+Execute 4 jobs...
+
+[Fri May  2 13:51:30 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068671.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068671.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068671.1_ROH_Results.txt
+    jobid: 137
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068671.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068671.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068671.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:30 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068672.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068672.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068672.1_ROH_Results.txt
+    jobid: 138
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068672.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068672.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068672.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:30 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068678.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068678.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068678.1_ROH_Results.txt
+    jobid: 144
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068678.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068678.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068678.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:30 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068651.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068651.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068651.1_ROH_Results.txt
+    jobid: 117
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068651.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068651.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068651.1
+    resources: tmpdir=/tmp
+
+[Fri May  2 13:51:30 2025]
+Finished job 57.
+56 of 286 steps (20%) done
+[Fri May  2 13:51:30 2025]
+Finished job 84.
+57 of 286 steps (20%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Fri May  2 13:51:31 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068664.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068664.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068664.1_ROH_Results.txt
+    jobid: 130
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068664.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068664.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068664.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:31 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068637.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068637.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068637.1_ROH_Results.txt
+    jobid: 103
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068637.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068637.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068637.1
+    resources: tmpdir=/tmp
+
+[Fri May  2 13:51:31 2025]
+Finished job 73.
+58 of 286 steps (20%) done
+[Fri May  2 13:51:31 2025]
+Finished job 64.
+59 of 286 steps (21%) done
+[Fri May  2 13:51:31 2025]
+Finished job 85.
+60 of 286 steps (21%) done
+[Fri May  2 13:51:31 2025]
+Finished job 79.
+61 of 286 steps (21%) done
+[Fri May  2 13:51:31 2025]
+Finished job 99.
+62 of 286 steps (22%) done
+[Fri May  2 13:51:31 2025]
+Finished job 58.
+63 of 286 steps (22%) done
+Select jobs to execute...
+Execute 6 jobs...
+
+[Fri May  2 13:51:32 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068659.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068659.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068659.1_ROH_Results.txt
+    jobid: 125
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068659.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068659.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068659.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:32 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068638.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068638.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068638.1_ROH_Results.txt
+    jobid: 104
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068638.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068638.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068638.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:32 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068665.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068665.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068665.1_ROH_Results.txt
+    jobid: 131
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068665.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068665.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068665.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:32 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068644.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068644.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068644.1_ROH_Results.txt
+    jobid: 110
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068644.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068644.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068644.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:32 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068653.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068653.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068653.1_ROH_Results.txt
+    jobid: 119
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068653.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068653.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068653.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:32 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068679.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068679.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068679.1_ROH_Results.txt
+    jobid: 145
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068679.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068679.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068679.1
+    resources: tmpdir=/tmp
+
+[Fri May  2 13:51:32 2025]
+Finished job 87.
+64 of 286 steps (22%) done
+[Fri May  2 13:51:33 2025]
+Finished job 59.
+65 of 286 steps (23%) done
+[Fri May  2 13:51:33 2025]
+Finished job 80.
+66 of 286 steps (23%) done
+[Fri May  2 13:51:33 2025]
+Finished job 86.
+67 of 286 steps (23%) done
+[Fri May  2 13:51:33 2025]
+Finished job 101.
+68 of 286 steps (24%) done
+[Fri May  2 13:51:33 2025]
+Finished job 72.
+69 of 286 steps (24%) done
+[Fri May  2 13:51:33 2025]
+Finished job 95.
+70 of 286 steps (24%) done
+[Fri May  2 13:51:33 2025]
+Finished job 65.
+71 of 286 steps (25%) done
+[Fri May  2 13:51:33 2025]
+Finished job 94.
+72 of 286 steps (25%) done
+[Fri May  2 13:51:33 2025]
+Finished job 66.
+73 of 286 steps (26%) done
+[Fri May  2 13:51:33 2025]
+Finished job 81.
+74 of 286 steps (26%) done
+[Fri May  2 13:51:33 2025]
+Finished job 100.
+75 of 286 steps (26%) done
+[Fri May  2 13:51:33 2025]
+Finished job 83.
+76 of 286 steps (27%) done
+Select jobs to execute...
+Execute 13 jobs...
+
+[Fri May  2 13:51:33 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068681.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068681.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068681.1_ROH_Results.txt
+    jobid: 147
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068681.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068681.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068681.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:33 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068666.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068666.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068666.1_ROH_Results.txt
+    jobid: 132
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068666.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068666.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068666.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:34 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068674.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068674.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068674.1_ROH_Results.txt
+    jobid: 140
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068674.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068674.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068674.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:34 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068652.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068652.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068652.1_ROH_Results.txt
+    jobid: 118
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068652.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068652.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068652.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:34 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068645.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068645.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068645.1_ROH_Results.txt
+    jobid: 111
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068645.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068645.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068645.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:34 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068661.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068661.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068661.1_ROH_Results.txt
+    jobid: 127
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068661.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068661.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068661.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:34 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068663.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068663.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068663.1_ROH_Results.txt
+    jobid: 129
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068663.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068663.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068663.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:34 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068680.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068680.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068680.1_ROH_Results.txt
+    jobid: 146
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068680.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068680.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068680.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:34 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068675.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068675.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068675.1_ROH_Results.txt
+    jobid: 141
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068675.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068675.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068675.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:34 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068667.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068667.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068667.1_ROH_Results.txt
+    jobid: 133
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068667.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068667.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068667.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:34 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068660.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068660.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068660.1_ROH_Results.txt
+    jobid: 126
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068660.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068660.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068660.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:34 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068646.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068646.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068646.1_ROH_Results.txt
+    jobid: 112
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068646.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068646.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068646.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:34 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068639.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068639.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068639.1_ROH_Results.txt
+    jobid: 105
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068639.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068639.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068639.1
+    resources: tmpdir=/tmp
+
+[Fri May  2 13:51:34 2025]
+Finished job 89.
+77 of 286 steps (27%) done
+[Fri May  2 13:51:34 2025]
+Finished job 74.
+78 of 286 steps (27%) done
+[Fri May  2 13:51:34 2025]
+Finished job 61.
+79 of 286 steps (28%) done
+[Fri May  2 13:51:35 2025]
+Finished job 75.
+80 of 286 steps (28%) done
+[Fri May  2 13:51:35 2025]
+Finished job 82.
+81 of 286 steps (28%) done
+[Fri May  2 13:51:35 2025]
+Finished job 67.
+82 of 286 steps (29%) done
+[Fri May  2 13:51:35 2025]
+Finished job 69.
+83 of 286 steps (29%) done
+[Fri May  2 13:51:35 2025]
+Finished job 76.
+84 of 286 steps (29%) done
+[Fri May  2 13:51:35 2025]
+Finished job 63.
+85 of 286 steps (30%) done
+[Fri May  2 13:51:35 2025]
+Finished job 68.
+86 of 286 steps (30%) done
+[Fri May  2 13:51:35 2025]
+Finished job 90.
+87 of 286 steps (30%) done
+[Fri May  2 13:51:35 2025]
+Finished job 60.
+88 of 286 steps (31%) done
+[Fri May  2 13:51:35 2025]
+Finished job 88.
+89 of 286 steps (31%) done
+[Fri May  2 13:51:35 2025]
+Finished job 96.
+90 of 286 steps (31%) done
+[Fri May  2 13:51:35 2025]
+Finished job 102.
+91 of 286 steps (32%) done
+[Fri May  2 13:51:35 2025]
+Finished job 62.
+92 of 286 steps (32%) done
+[Fri May  2 13:51:35 2025]
+Finished job 70.
+93 of 286 steps (33%) done
+[Fri May  2 13:51:35 2025]
+Finished job 77.
+94 of 286 steps (33%) done
+[Fri May  2 13:51:35 2025]
+Finished job 97.
+95 of 286 steps (33%) done
+Select jobs to execute...
+Execute 19 jobs...
+
+[Fri May  2 13:51:36 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068668.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068668.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068668.1_ROH_Results.txt
+    jobid: 134
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068668.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068668.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068668.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:36 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068654.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068654.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068654.1_ROH_Results.txt
+    jobid: 120
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068654.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068654.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068654.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:36 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068647.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068647.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068647.1_ROH_Results.txt
+    jobid: 113
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068647.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068647.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068647.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:36 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068640.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068640.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068640.1_ROH_Results.txt
+    jobid: 106
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068640.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068640.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068640.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:36 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068682.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068682.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068682.1_ROH_Results.txt
+    jobid: 148
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068682.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068682.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068682.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:36 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068669.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068669.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068669.1_ROH_Results.txt
+    jobid: 135
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068669.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068669.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068669.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:36 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068662.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068662.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068662.1_ROH_Results.txt
+    jobid: 128
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068662.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068662.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068662.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:36 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068655.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068655.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068655.1_ROH_Results.txt
+    jobid: 121
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068655.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068655.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068655.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:36 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068648.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068648.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068648.1_ROH_Results.txt
+    jobid: 114
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068648.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068648.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068648.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:36 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068641.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068641.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068641.1_ROH_Results.txt
+    jobid: 107
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068641.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068641.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068641.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:36 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068676.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068676.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068676.1_ROH_Results.txt
+    jobid: 142
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068676.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068676.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068676.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:36 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068670.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068670.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068670.1_ROH_Results.txt
+    jobid: 136
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068670.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068670.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068670.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:37 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068656.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068656.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068656.1_ROH_Results.txt
+    jobid: 122
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068656.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068656.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068656.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:37 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068649.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068649.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068649.1_ROH_Results.txt
+    jobid: 115
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068649.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068649.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068649.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:37 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068642.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068642.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068642.1_ROH_Results.txt
+    jobid: 108
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068642.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068642.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068642.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:37 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068677.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068677.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068677.1_ROH_Results.txt
+    jobid: 143
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068677.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068677.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068677.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:37 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068657.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068657.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068657.1_ROH_Results.txt
+    jobid: 123
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068657.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068657.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068657.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:37 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068650.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068650.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068650.1_ROH_Results.txt
+    jobid: 116
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068650.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068650.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068650.1
+    resources: tmpdir=/tmp
+
+
+[Fri May  2 13:51:37 2025]
+localrule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068643.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068643.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068643.1_ROH_Results.txt
+    jobid: 109
+    reason: Input files updated by another job: sharks/HepPer/temp/20250422_CM068643.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068643.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068643.1
+    resources: tmpdir=/tmp
+
+[Fri May  2 13:51:53 2025]
+Finished job 147.
+96 of 286 steps (34%) done
+[Fri May  2 13:51:53 2025]
+Finished job 144.
+97 of 286 steps (34%) done
+[Fri May  2 13:52:50 2025]
+Finished job 145.
+98 of 286 steps (34%) done
+[Fri May  2 13:54:17 2025]
+Finished job 146.
+99 of 286 steps (35%) done
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM068639.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068639.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068639.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068639.1_Var_Only.txt HepPer' died with <Signals.SIGKILL: 9>.
+[Fri May  2 13:58:03 2025]
+Error in rule ROH_CALC:
+    jobid: 105
+    input: sharks/HepPer/temp/20250422_CM068639.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068639.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068639.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM068639.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068639.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068639.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068639.1_Var_Only.txt HepPer
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM068651.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068651.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068651.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068651.1_Var_Only.txt HepPer' died with <Signals.SIGKILL: 9>.
+[Fri May  2 13:59:42 2025]
+Error in rule ROH_CALC:
+    jobid: 117
+    input: sharks/HepPer/temp/20250422_CM068651.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068651.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068651.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM068651.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068651.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068651.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068651.1_Var_Only.txt HepPer
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM068637.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068637.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068637.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068637.1_Var_Only.txt HepPer' died with <Signals.SIGKILL: 9>.
+[Fri May  2 14:00:05 2025]
+Error in rule ROH_CALC:
+    jobid: 103
+    input: sharks/HepPer/temp/20250422_CM068637.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068637.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068637.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM068637.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068637.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068637.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068637.1_Var_Only.txt HepPer
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM068653.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068653.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068653.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068653.1_Var_Only.txt HepPer' died with <Signals.SIGKILL: 9>.
+[Fri May  2 14:00:11 2025]
+Error in rule ROH_CALC:
+    jobid: 119
+    input: sharks/HepPer/temp/20250422_CM068653.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068653.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068653.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM068653.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068653.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068653.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068653.1_Var_Only.txt HepPer
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM068641.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068641.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068641.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068641.1_Var_Only.txt HepPer' died with <Signals.SIGKILL: 9>.
+[Fri May  2 14:01:43 2025]
+Error in rule ROH_CALC:
+    jobid: 107
+    input: sharks/HepPer/temp/20250422_CM068641.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068641.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068641.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM068641.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068641.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068641.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068641.1_Var_Only.txt HepPer
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM068645.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068645.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068645.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068645.1_Var_Only.txt HepPer' died with <Signals.SIGKILL: 9>.
+[Fri May  2 14:01:52 2025]
+Error in rule ROH_CALC:
+    jobid: 111
+    input: sharks/HepPer/temp/20250422_CM068645.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068645.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068645.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM068645.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068645.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068645.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068645.1_Var_Only.txt HepPer
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri May  2 14:02:15 2025]
+Finished job 143.
+100 of 286 steps (35%) done
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM068648.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068648.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068648.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068648.1_Var_Only.txt HepPer' died with <Signals.SIGKILL: 9>.
+[Fri May  2 14:03:31 2025]
+Error in rule ROH_CALC:
+    jobid: 114
+    input: sharks/HepPer/temp/20250422_CM068648.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068648.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068648.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM068648.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068648.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068648.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068648.1_Var_Only.txt HepPer
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM068664.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068664.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068664.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068664.1_Var_Only.txt HepPer' died with <Signals.SIGKILL: 9>.
+[Fri May  2 14:05:10 2025]
+Error in rule ROH_CALC:
+    jobid: 130
+    input: sharks/HepPer/temp/20250422_CM068664.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068664.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068664.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM068664.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068664.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068664.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068664.1_Var_Only.txt HepPer
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM068638.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068638.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068638.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068638.1_Var_Only.txt HepPer' died with <Signals.SIGKILL: 9>.
+[Fri May  2 14:05:19 2025]
+Error in rule ROH_CALC:
+    jobid: 104
+    input: sharks/HepPer/temp/20250422_CM068638.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068638.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068638.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM068638.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068638.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068638.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068638.1_Var_Only.txt HepPer
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM068644.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068644.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068644.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068644.1_Var_Only.txt HepPer' died with <Signals.SIGKILL: 9>.
+[Fri May  2 14:06:58 2025]
+Error in rule ROH_CALC:
+    jobid: 110
+    input: sharks/HepPer/temp/20250422_CM068644.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068644.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068644.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM068644.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068644.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068644.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068644.1_Var_Only.txt HepPer
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM068647.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068647.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068647.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068647.1_Var_Only.txt HepPer' died with <Signals.SIGKILL: 9>.
+[Fri May  2 14:08:29 2025]
+Error in rule ROH_CALC:
+    jobid: 113
+    input: sharks/HepPer/temp/20250422_CM068647.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068647.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068647.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM068647.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068647.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068647.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068647.1_Var_Only.txt HepPer
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM068649.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068649.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068649.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068649.1_Var_Only.txt HepPer' died with <Signals.SIGKILL: 9>.
+[Fri May  2 14:08:34 2025]
+Error in rule ROH_CALC:
+    jobid: 115
+    input: sharks/HepPer/temp/20250422_CM068649.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068649.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068649.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM068649.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068649.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068649.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068649.1_Var_Only.txt HepPer
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM068646.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068646.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068646.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068646.1_Var_Only.txt HepPer' died with <Signals.SIGKILL: 9>.
+[Fri May  2 14:10:42 2025]
+Error in rule ROH_CALC:
+    jobid: 112
+    input: sharks/HepPer/temp/20250422_CM068646.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068646.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068646.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM068646.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068646.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068646.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068646.1_Var_Only.txt HepPer
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM068643.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068643.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068643.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068643.1_Var_Only.txt HepPer' died with <Signals.SIGKILL: 9>.
+[Fri May  2 14:10:49 2025]
+Error in rule ROH_CALC:
+    jobid: 109
+    input: sharks/HepPer/temp/20250422_CM068643.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068643.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068643.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM068643.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068643.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068643.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068643.1_Var_Only.txt HepPer
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri May  2 14:11:46 2025]
+Finished job 139.
+101 of 286 steps (35%) done
+[Fri May  2 14:11:49 2025]
+Finished job 137.
+102 of 286 steps (36%) done
+[Fri May  2 14:11:54 2025]
+Finished job 141.
+103 of 286 steps (36%) done
+[Fri May  2 14:11:57 2025]
+Finished job 142.
+104 of 286 steps (36%) done
+[Fri May  2 14:11:59 2025]
+Finished job 140.
+105 of 286 steps (37%) done
+[Fri May  2 14:12:02 2025]
+Finished job 138.
+106 of 286 steps (37%) done
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM068642.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068642.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068642.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068642.1_Var_Only.txt HepPer' died with <Signals.SIGKILL: 9>.
+[Fri May  2 14:15:52 2025]
+Error in rule ROH_CALC:
+    jobid: 108
+    input: sharks/HepPer/temp/20250422_CM068642.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068642.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068642.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM068642.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068642.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068642.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068642.1_Var_Only.txt HepPer
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri May  2 14:18:06 2025]
+Finished job 148.
+107 of 286 steps (37%) done
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 318:
+Command 'set -euo pipefail;  
+        CHROM_LENGTH="$(awk -v var='CM068650.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068650.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068650.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068650.1_Var_Only.txt HepPer' died with <Signals.SIGKILL: 9>.
+[Fri May  2 14:19:28 2025]
+Error in rule ROH_CALC:
+    jobid: 116
+    input: sharks/HepPer/temp/20250422_CM068650.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068650.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068650.1_ROH_Results.txt
+    shell:
+        
+        CHROM_LENGTH="$(awk -v var='CM068650.1' '$1 == var {print $2; exit}' sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt)"
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py CM068650.1 $CHROM_LENGTH 20250422 GCA_035084215.1 sharks sharks/HepPer/temp/20250422_CM068650.1_Aln_Only.txt sharks/HepPer/temp/20250422_CM068650.1_Var_Only.txt HepPer
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri May  2 14:19:28 2025]
+Finished job 132.
+108 of 286 steps (38%) done
+[Fri May  2 14:19:28 2025]
+Finished job 131.
+109 of 286 steps (38%) done
+[Fri May  2 14:19:35 2025]
+Finished job 134.
+110 of 286 steps (38%) done
+[Fri May  2 14:19:35 2025]
+Finished job 135.
+111 of 286 steps (39%) done
+[Fri May  2 14:19:38 2025]
+Finished job 128.
+112 of 286 steps (39%) done
+[Fri May  2 14:19:53 2025]
+Finished job 136.
+113 of 286 steps (40%) done
+[Fri May  2 14:19:54 2025]
+Finished job 133.
+114 of 286 steps (40%) done
+[Fri May  2 14:19:59 2025]
+Finished job 129.
+115 of 286 steps (40%) done
+[Fri May  2 14:20:00 2025]
+Finished job 125.
+116 of 286 steps (41%) done
+[Fri May  2 14:20:01 2025]
+Finished job 122.
+117 of 286 steps (41%) done
+[Fri May  2 14:20:01 2025]
+Finished job 126.
+118 of 286 steps (41%) done
+[Fri May  2 14:20:02 2025]
+Finished job 127.
+119 of 286 steps (42%) done
+[Fri May  2 14:20:02 2025]
+Finished job 121.
+120 of 286 steps (42%) done
+[Fri May  2 14:20:03 2025]
+Finished job 124.
+121 of 286 steps (42%) done
+[Fri May  2 14:20:03 2025]
+Finished job 120.
+122 of 286 steps (43%) done
+[Fri May  2 14:20:04 2025]
+Finished job 118.
+123 of 286 steps (43%) done
+[Fri May  2 14:20:04 2025]
+Finished job 123.
+124 of 286 steps (43%) done
+[Fri May  2 14:20:12 2025]
+Finished job 106.
+125 of 286 steps (44%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-05-02T135028.357324.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

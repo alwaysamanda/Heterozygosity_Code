@@ -1,0 +1,76 @@
+host: cpu-p-248
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1806, disk_mib=1723
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu May 22 15:08:06 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/NarBan/NarBan.bam
+    output: sharks/NarBan/NarBan_CM072958.1.bam
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072958.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1806, disk_mib=1723, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+host: cpu-p-248
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1806, disk_mib=1723
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu May 22 15:08:08 2025]
+localrule SEPARATE_BAM_BY_CHR:
+    input: sharks/NarBan/NarBan.bam
+    output: sharks/NarBan/NarBan_CM072958.1.bam
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=NarBan, CHROM=CM072958.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1806, disk_mib=1723, tmpdir=/tmp, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+[E::idx_find_and_load] Could not retrieve index file for 'sharks/NarBan/NarBan.bam'
+samtools view: Random alignment retrieval only works for indexed SAM.gz, BAM or CRAM files.
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 596:
+Command 'set -euo pipefail;  
+        samtools view -b sharks/NarBan/NarBan.bam CM072958.1 > sharks/NarBan/NarBan_CM072958.1.bam' returned non-zero exit status 1.
+[Thu May 22 15:08:08 2025]
+Error in rule SEPARATE_BAM_BY_CHR:
+    jobid: 0
+    input: sharks/NarBan/NarBan.bam
+    output: sharks/NarBan/NarBan_CM072958.1.bam
+    shell:
+        
+        samtools view -b sharks/NarBan/NarBan.bam CM072958.1 > sharks/NarBan/NarBan_CM072958.1.bam
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job SEPARATE_BAM_BY_CHR since they might be corrupted:
+sharks/NarBan/NarBan_CM072958.1.bam
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.
+srun: error: cpu-p-248: task 0: Exited with exit code 1
+[Thu May 22 15:08:08 2025]
+Error in rule SEPARATE_BAM_BY_CHR:
+    jobid: 0
+    input: sharks/NarBan/NarBan.bam
+    output: sharks/NarBan/NarBan_CM072958.1.bam
+    shell:
+        
+        samtools view -b sharks/NarBan/NarBan.bam CM072958.1 > sharks/NarBan/NarBan_CM072958.1.bam
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.

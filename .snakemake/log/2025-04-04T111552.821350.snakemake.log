@@ -1,0 +1,55 @@
+host: login-p-4
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+FILTER_PAF_CHR_ONLY        1
+PAF_CS                     1
+all                        1
+total                      3
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr  4 11:15:53 2025]
+localrule FILTER_PAF_CHR_ONLY:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA.paf
+    output: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Filtered_Chr_Only.paf
+    jobid: 2
+    reason: Missing output files: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Filtered_Chr_Only.paf
+    resources: tmpdir=/tmp
+
+[Fri Apr  4 11:15:54 2025]
+Finished job 2.
+1 of 3 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr  4 11:15:54 2025]
+localrule PAF_CS:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Filtered_Chr_Only.paf
+    output: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    jobid: 1
+    reason: Missing output files: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Filtered_Chr_Only.paf; Set of input files has changed since last execution
+    resources: tmpdir=/tmp
+
+[Fri Apr  4 11:17:05 2025]
+Finished job 1.
+2 of 3 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr  4 11:17:05 2025]
+localrule all:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    jobid: 0
+    reason: Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    resources: tmpdir=/tmp
+
+[Fri Apr  4 11:17:05 2025]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2025-04-04T111552.821350.snakemake.log

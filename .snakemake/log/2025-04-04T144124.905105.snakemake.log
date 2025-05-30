@@ -1,0 +1,64 @@
+host: login-q-3
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 76
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+ALNtoPAF                      1
+FASTGA                        1
+FILTER_PAF_CHR_ONLY           1
+GET_ALN_ONLY_PER_CHROM       40
+GET_WHOLE_VAR                 1
+PAF_CS                        1
+all                           1
+total                        46
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr  4 14:41:24 2025]
+localrule FASTGA:
+    input: sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084275.1.gix, sharks/HydCol_Test2/temp/HydCol_Test2_GCA_035084065.1.gix
+    output: sharks/HydCol_Test2/HydCol_Test2_ALN.1aln
+    jobid: 4
+    reason: Missing output files: sharks/HydCol_Test2/HydCol_Test2_ALN.1aln; Code has changed since last execution
+    resources: tmpdir=/tmp
+
+[Fri Apr  4 14:44:45 2025]
+Finished job 4.
+1 of 46 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr  4 14:44:45 2025]
+localrule ALNtoPAF:
+    input: sharks/HydCol_Test2/HydCol_Test2_ALN.1aln
+    output: sharks/HydCol_Test2/HydCol_Test2_FASTGA.paf
+    jobid: 3
+    reason: Missing output files: sharks/HydCol_Test2/HydCol_Test2_FASTGA.paf; Input files updated by another job: sharks/HydCol_Test2/HydCol_Test2_ALN.1aln
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 172:
+Command 'set -euo pipefail;  
+        ALNtoPAF -x sharks/HydCol_Test2/HydCol_Test2_ALN.1aln > sharks/HydCol_Test2/HydCol_Test2_FASTGA.paf' died with <Signals.SIGTERM: 15>.
+[Fri Apr  4 15:53:40 2025]
+Error in rule ALNtoPAF:
+    jobid: 3
+    input: sharks/HydCol_Test2/HydCol_Test2_ALN.1aln
+    output: sharks/HydCol_Test2/HydCol_Test2_FASTGA.paf
+    shell:
+        
+        ALNtoPAF -x sharks/HydCol_Test2/HydCol_Test2_ALN.1aln > sharks/HydCol_Test2/HydCol_Test2_FASTGA.paf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job ALNtoPAF since they might be corrupted:
+sharks/HydCol_Test2/HydCol_Test2_FASTGA.paf
+Will exit after finishing currently running jobs (scheduler).
+Shutting down, this might take some time.
+Complete log: .snakemake/log/2025-04-04T144124.905105.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

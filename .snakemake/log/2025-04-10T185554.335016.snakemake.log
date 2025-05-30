@@ -1,0 +1,131 @@
+host: login-q-3
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 76
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+ALNtoPAF                   1
+FASTGA                     1
+FAtoGDB_ALT                1
+FAtoGDB_REF                1
+FILTER_PAF_VARIANCE        1
+GIXmake_ALT                1
+GIXmake_REF                1
+SORT_PAF                   1
+all                        1
+total                      9
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu Apr 10 18:55:55 2025]
+localrule FAtoGDB_REF:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/reference/sharks/GCA_035084275.1.fa.gz
+    output: sharks/HydCol/temp/HydCol_GCA_035084275.1.1gdb
+    jobid: 6
+    reason: Missing output files: sharks/HydCol/temp/HydCol_GCA_035084275.1.1gdb
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 10 18:55:55 2025]
+localrule FAtoGDB_ALT:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/alternate/sharks/GCA_035084065.1.fa.gz
+    output: sharks/HydCol/temp/HydCol_GCA_035084065.1.1gdb
+    jobid: 8
+    reason: Missing output files: sharks/HydCol/temp/HydCol_GCA_035084065.1.1gdb
+    resources: tmpdir=/tmp
+
+[Thu Apr 10 18:56:01 2025]
+Finished job 6.
+1 of 9 steps (11%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Apr 10 18:56:01 2025]
+localrule GIXmake_REF:
+    input: sharks/HydCol/temp/HydCol_GCA_035084275.1.1gdb
+    output: sharks/HydCol/temp/HydCol_GCA_035084275.1.gix
+    jobid: 5
+    reason: Missing output files: sharks/HydCol/temp/HydCol_GCA_035084275.1.gix; Input files updated by another job: sharks/HydCol/temp/HydCol_GCA_035084275.1.1gdb
+    resources: tmpdir=/tmp
+
+[Thu Apr 10 18:56:02 2025]
+Finished job 8.
+2 of 9 steps (22%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Apr 10 18:56:02 2025]
+localrule GIXmake_ALT:
+    input: sharks/HydCol/temp/HydCol_GCA_035084065.1.1gdb
+    output: sharks/HydCol/temp/HydCol_GCA_035084065.1.gix
+    jobid: 7
+    reason: Missing output files: sharks/HydCol/temp/HydCol_GCA_035084065.1.gix; Input files updated by another job: sharks/HydCol/temp/HydCol_GCA_035084065.1.1gdb
+    resources: tmpdir=/tmp
+
+[Thu Apr 10 18:56:20 2025]
+Finished job 5.
+3 of 9 steps (33%) done
+[Thu Apr 10 18:56:22 2025]
+Finished job 7.
+4 of 9 steps (44%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Apr 10 18:56:22 2025]
+localrule FASTGA:
+    input: sharks/HydCol/temp/HydCol_GCA_035084275.1.gix, sharks/HydCol/temp/HydCol_GCA_035084065.1.gix
+    output: sharks/HydCol/HydCol_ALN.1aln
+    jobid: 4
+    reason: Missing output files: sharks/HydCol/HydCol_ALN.1aln; Input files updated by another job: sharks/HydCol/temp/HydCol_GCA_035084275.1.gix, sharks/HydCol/temp/HydCol_GCA_035084065.1.gix
+    resources: tmpdir=/tmp
+
+[Thu Apr 10 18:59:31 2025]
+Finished job 4.
+5 of 9 steps (56%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Apr 10 18:59:31 2025]
+localrule ALNtoPAF:
+    input: sharks/HydCol/HydCol_ALN.1aln
+    output: sharks/HydCol/HydCol_FASTGA.paf
+    jobid: 3
+    reason: Missing output files: sharks/HydCol/HydCol_FASTGA.paf; Input files updated by another job: sharks/HydCol/HydCol_ALN.1aln
+    resources: tmpdir=/tmp
+
+[Thu Apr 10 18:59:57 2025]
+Finished job 3.
+6 of 9 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Apr 10 18:59:57 2025]
+localrule SORT_PAF:
+    input: sharks/HydCol/HydCol_FASTGA.paf
+    output: sharks/HydCol/HydCol_FASTGA.srt.paf
+    jobid: 2
+    reason: Missing output files: sharks/HydCol/HydCol_FASTGA.srt.paf; Input files updated by another job: sharks/HydCol/HydCol_FASTGA.paf
+    resources: tmpdir=/tmp
+
+[Thu Apr 10 19:00:50 2025]
+Finished job 2.
+7 of 9 steps (78%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Apr 10 19:00:50 2025]
+localrule FILTER_PAF_VARIANCE:
+    input: sharks/HydCol/HydCol_FASTGA.srt.paf
+    output: sharks/HydCol/HydCol_FASTGA.fltr.srt.paf
+    jobid: 1
+    reason: Missing output files: sharks/HydCol/HydCol_FASTGA.fltr.srt.paf; Input files updated by another job: sharks/HydCol/HydCol_FASTGA.srt.paf
+    resources: tmpdir=/tmp
+
+RuleException in rule FILTER_PAF_VARIANCE in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 187:
+NameError: The name 'if(substr($13,6)<=0' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}, when formatting the following:
+
+        awk -v OFS="	" '{if(substr($13,6)<=0.1) print}' {input} > {output}
+        

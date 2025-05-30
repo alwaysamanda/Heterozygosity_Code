@@ -1,0 +1,36 @@
+host: login-q-4
+Building DAG of jobs...
+SLURM run ID: 4519eb30-ab14-4689-9663-dd6644a7ae84
+Using shell: /usr/bin/bash
+Provided remote nodes: 30
+Job stats:
+job                            count
+---------------------------  -------
+BAM_CALLER_BED                    45
+BOOTSTRAPPING_MULTIHET_FILE     1350
+CALL_PLOIDY                       45
+INDEL_MASKER                      45
+INDEX_BAM_FILE                    45
+INDEX_WHOLE_BAM                    1
+MAIN_MULTIHETSEP                  45
+MAKE_BAM                           1
+PILEUP_VARIANTS                   45
+RESTRUCTURE                       45
+SEPARATE_BAM_BY_CHR               45
+TABIX                             45
+all                                1
+total                           1758
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri May 23 10:46:22 2025]
+rule MAKE_BAM:
+    input: sharks/HepPer/HepPer.sam
+    output: sharks/HepPer/HepPer.bam
+    jobid: 293
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=12035, disk_mib=11478, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 293 has been submitted with SLURM jobid 9801117 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_MAKE_BAM/sharks_HepPer/9801117.log).

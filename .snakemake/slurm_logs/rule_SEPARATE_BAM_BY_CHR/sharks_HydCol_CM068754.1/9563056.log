@@ -1,0 +1,79 @@
+host: cpu-p-246
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 18:10:01 2025]
+rule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068754.1.bam
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068754.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+host: cpu-p-246
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May 19 18:10:03 2025]
+localrule SEPARATE_BAM_BY_CHR:
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068754.1.bam
+    jobid: 0
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, CHR=CM068754.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1261, disk_mib=1203, tmpdir=/tmp, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=120
+
+[E::hts_idx_load3] Could not load local index file 'sharks/HydCol/HydCol.bam.bai' : No such file or directory
+samtools view: Random alignment retrieval only works for indexed SAM.gz, BAM or CRAM files.
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 565:
+Command 'set -euo pipefail;  
+        samtools index sharks/HydCol/HydCol.bam
+        samtools view -b sharks/HydCol/HydCol.bam CM068754.1 > sharks/HydCol/HydCol_CM068754.1.bam' returned non-zero exit status 1.
+[Mon May 19 18:10:14 2025]
+Error in rule SEPARATE_BAM_BY_CHR:
+    jobid: 0
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068754.1.bam
+    shell:
+        
+        samtools index sharks/HydCol/HydCol.bam
+        samtools view -b sharks/HydCol/HydCol.bam CM068754.1 > sharks/HydCol/HydCol_CM068754.1.bam
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job SEPARATE_BAM_BY_CHR since they might be corrupted:
+sharks/HydCol/HydCol_CM068754.1.bam
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.
+srun: error: cpu-p-246: task 0: Exited with exit code 1
+[Mon May 19 18:10:14 2025]
+Error in rule SEPARATE_BAM_BY_CHR:
+    jobid: 0
+    input: sharks/HydCol/HydCol.bam
+    output: sharks/HydCol/HydCol_CM068754.1.bam
+    shell:
+        
+        samtools index sharks/HydCol/HydCol.bam
+        samtools view -b sharks/HydCol/HydCol.bam CM068754.1 > sharks/HydCol/HydCol_CM068754.1.bam
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.

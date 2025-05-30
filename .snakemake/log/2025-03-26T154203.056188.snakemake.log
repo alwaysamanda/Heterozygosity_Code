@@ -1,0 +1,28 @@
+host: login-p-1
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count
+-----------  -------
+COMPILE_ROH        1
+all                1
+total              2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar 26 15:42:03 2025]
+localrule COMPILE_ROH:
+    input: sharks/HydCol_Test/20250326_CM068742.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068743.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068744.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068745.1_ROH_Results.txt, sharks/HydCol_Test/20250326_CM068746.1_ROH_Results.txt
+    output: sharks/HydCol_Test/GCA_035084275.1_ROH_Results.tsv
+    jobid: 33
+    reason: Missing output files: sharks/HydCol_Test/GCA_035084275.1_ROH_Results.tsv; Set of input files has changed since last execution; Code has changed since last execution
+    resources: tmpdir=/tmp
+
+RuleException in rule COMPILE_ROH in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 287:
+AttributeError: 'Wildcards' object has no attribute 'CHR', when formatting the following:
+
+        awk -v var="{wildcards.CHR}" -F',' '{{ print var, $1, $2, $3, $5 }}' {input} >> {output}
+        

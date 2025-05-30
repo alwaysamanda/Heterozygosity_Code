@@ -1,0 +1,62 @@
+host: login-p-1
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+ALNCHAIN                      1
+ALNtoPAF                      1
+CALC_HET_PER_CHR             33
+CALC_HET_WHOLE_GENOME         1
+COMPILE_HET                   1
+COMPILE_ROH                   1
+FASTGA                        1
+FILTER_PAF_CHR_ONLY           1
+FILTER_PAF_VARIANCE           1
+FROH_PER_AUT_CHR             33
+GET_ALN_ONLY_PER_CHROM       33
+GET_VAR_ONLY_PER_CHROM       33
+GET_WHOLE_ALN                 1
+GET_WHOLE_VAR                 1
+PLOT_HET_PER_CHR             33
+PLOT_WHOLE_HET                1
+Plot_ROH                      1
+ROH_CALC                     33
+SORT_PAF                      1
+WHOLE_FROH                    1
+all                           1
+total                       213
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 13:03:22 2025]
+localrule FASTGA:
+    input: sharks/MobBir/temp/MobBir_GCA_030028105.1.gix, sharks/MobBir/temp/MobBir_GCA_030035685.1.gix
+    output: sharks/MobBir/MobBir_ALN.1aln
+    jobid: 5
+    reason: Missing output files: sharks/MobBir/MobBir_ALN.1aln
+    resources: tmpdir=/tmp, runtime=720
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 160:
+Command 'set -euo pipefail;  
+        FastGA -v -P. -T8 -1:sharks/MobBir/MobBir_ALN.1aln sharks/MobBir/temp/MobBir_GCA_030035685.1.gix sharks/MobBir/temp/MobBir_GCA_030028105.1.gix' died with <Signals.SIGKILL: 9>.
+[Fri Apr 25 13:27:50 2025]
+Error in rule FASTGA:
+    jobid: 5
+    input: sharks/MobBir/temp/MobBir_GCA_030028105.1.gix, sharks/MobBir/temp/MobBir_GCA_030035685.1.gix
+    output: sharks/MobBir/MobBir_ALN.1aln
+    shell:
+        
+        FastGA -v -P. -T8 -1:sharks/MobBir/MobBir_ALN.1aln sharks/MobBir/temp/MobBir_GCA_030035685.1.gix sharks/MobBir/temp/MobBir_GCA_030028105.1.gix
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-04-25T130322.170230.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -1,0 +1,80 @@
+host: login-p-3
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+ALNtoPAF                   1
+FASTGA                     1
+FILTER_PAF_VARIANCE        1
+SORT_PAF                   1
+all                        1
+total                      5
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 11 14:23:19 2025]
+localrule FASTGA:
+    input: sharks/NarBan/temp/NarBan_GCA_036971175.1.gix, sharks/NarBan/temp/NarBan_GCA_036971445.1.gix
+    output: sharks/NarBan/NarBan_ALN.1aln
+    jobid: 4
+    reason: Missing output files: sharks/NarBan/NarBan_ALN.1aln
+    resources: tmpdir=/tmp
+
+[Fri Apr 11 16:20:00 2025]
+Finished job 4.
+1 of 5 steps (20%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 11 16:20:00 2025]
+localrule ALNtoPAF:
+    input: sharks/NarBan/NarBan_ALN.1aln
+    output: sharks/NarBan/NarBan_FASTGA.paf
+    jobid: 3
+    reason: Missing output files: sharks/NarBan/NarBan_FASTGA.paf; Input files updated by another job: sharks/NarBan/NarBan_ALN.1aln
+    resources: tmpdir=/tmp
+
+Warning: the following output files of rule ALNtoPAF were not present when the DAG was created:
+{'sharks/NarBan/NarBan_FASTGA.paf'}
+[Fri Apr 11 16:33:48 2025]
+Finished job 3.
+2 of 5 steps (40%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 11 16:33:48 2025]
+localrule SORT_PAF:
+    input: sharks/NarBan/NarBan_FASTGA.paf
+    output: sharks/NarBan/NarBan_FASTGA.srt.paf
+    jobid: 2
+    reason: Missing output files: sharks/NarBan/NarBan_FASTGA.srt.paf; Input files updated by another job: sharks/NarBan/NarBan_FASTGA.paf
+    resources: tmpdir=/tmp
+
+Warning: the following output files of rule SORT_PAF were not present when the DAG was created:
+{'sharks/NarBan/NarBan_FASTGA.srt.paf'}
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 183:
+Command 'set -euo pipefail;  
+        sort -k6,6V -k8,8n sharks/NarBan/NarBan_FASTGA.paf > sharks/NarBan/NarBan_FASTGA.srt.paf' returned non-zero exit status 137.
+[Fri Apr 11 16:35:21 2025]
+Error in rule SORT_PAF:
+    jobid: 2
+    input: sharks/NarBan/NarBan_FASTGA.paf
+    output: sharks/NarBan/NarBan_FASTGA.srt.paf
+    shell:
+        
+        sort -k6,6V -k8,8n sharks/NarBan/NarBan_FASTGA.paf > sharks/NarBan/NarBan_FASTGA.srt.paf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job SORT_PAF since they might be corrupted:
+sharks/NarBan/NarBan_FASTGA.srt.paf
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-04-11T142319.390709.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

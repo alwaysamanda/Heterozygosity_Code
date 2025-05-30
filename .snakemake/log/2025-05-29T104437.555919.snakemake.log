@@ -1,0 +1,39 @@
+host: login-p-1
+Building DAG of jobs...
+SLURM run ID: fbd2282f-9c98-4044-a11b-8bf1a19abc9e
+Using shell: /usr/bin/bash
+Provided remote nodes: 30
+Job stats:
+job          count
+---------  -------
+PLOT_MSMC        1
+all              1
+total            2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu May 29 10:44:56 2025]
+rule PLOT_MSMC:
+    input: sharks/HydCol/20250410_HydCol.msmc2.final.txt
+    output: sharks/HydCol/20250410_HydCol_MSMC2_test.svg
+    jobid: 259
+    reason: Missing output files: sharks/HydCol/20250410_HydCol_MSMC2_test.svg
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol, TODAY_DATE=20250410
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake-himem, runtime=60
+
+Job 259 has been submitted with SLURM jobid 10066564 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_MSMC/sharks_HydCol_20250410/10066564.log).
+[Thu May 29 10:54:37 2025]
+Error in rule PLOT_MSMC:
+    message: SLURM-job '10066564' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 259
+    input: sharks/HydCol/20250410_HydCol.msmc2.final.txt
+    output: sharks/HydCol/20250410_HydCol_MSMC2_test.svg
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_PLOT_MSMC/sharks_HydCol_20250410/10066564.log (check log file(s) for error details)
+    shell:
+        
+        Rscript /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250508_Plot_MSMC.R sharks 20250410 HydCol 1.25e-08 18.6 sharks/HydCol/20250410_HydCol_MSMC2_test.svg sharks/HydCol/20250410_HydCol.msmc2.final.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 10066564
+

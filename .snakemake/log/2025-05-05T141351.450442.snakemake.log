@@ -1,0 +1,2365 @@
+host: login-q-2
+Building DAG of jobs...
+SLURM run ID: baaadbdc-f9b5-4466-9b91-4b5393ad62b5
+Using shell: /usr/bin/bash
+Provided remote nodes: 10
+Job stats:
+job                       count
+----------------------  -------
+CALC_HET_PER_CHR             46
+CALC_HET_WHOLE_GENOME         1
+COMPILE_HET                   1
+COMPILE_ROH                   1
+FILTER_PAF_CHR_ONLY           1
+FROH_PER_AUT_CHR             46
+GET_ALN_ONLY_PER_CHROM       46
+GET_VAR_ONLY_PER_CHROM       46
+GET_WHOLE_ALN                 1
+GET_WHOLE_VAR                 1
+PLOT_HET_PER_CHR             46
+PLOT_WHOLE_HET                1
+Plot_ROH                      1
+ROH_CALC                     46
+WHOLE_FROH                    1
+all                           1
+total                       286
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May  5 14:13:52 2025]
+rule FILTER_PAF_CHR_ONLY:
+    input: sharks/HepPer/HepPer_FASTGA.chain.fltr.srt.paf, sharks/chrom_lists/GCA_035084215.1_chroms.txt
+    output: sharks/HepPer/HepPer_FASTGA.chain.chr.fltr.srt.paf
+    jobid: 9
+    reason: Missing output files: sharks/HepPer/HepPer_FASTGA.chain.chr.fltr.srt.paf
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 9 has been submitted with SLURM jobid 9040269 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FILTER_PAF_CHR_ONLY/9040269.log).
+[Mon May  5 14:19:02 2025]
+Finished job 9.
+1 of 286 steps (0.3%) done
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon May  5 14:19:04 2025]
+rule GET_WHOLE_ALN:
+    input: sharks/HepPer/HepPer_FASTGA.chain.chr.fltr.srt.paf
+    output: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    jobid: 10
+    reason: Missing output files: sharks/HepPer/temp/HepPer_Aln_Only.txt; Input files updated by another job: sharks/HepPer/HepPer_FASTGA.chain.chr.fltr.srt.paf
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 10 has been submitted with SLURM jobid 9040584 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_WHOLE_ALN/9040584.log).
+
+[Mon May  5 14:19:04 2025]
+rule GET_WHOLE_VAR:
+    input: sharks/HepPer/HepPer_FASTGA.chain.chr.fltr.srt.paf
+    output: sharks/HepPer/temp/HepPer_Var_Only.txt
+    jobid: 8
+    reason: Missing output files: sharks/HepPer/temp/HepPer_Var_Only.txt; Input files updated by another job: sharks/HepPer/HepPer_FASTGA.chain.chr.fltr.srt.paf
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 8 has been submitted with SLURM jobid 9040585 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_WHOLE_VAR/9040585.log).
+[Mon May  5 14:25:33 2025]
+Finished job 10.
+2 of 286 steps (1%) done
+Select jobs to execute...
+Execute 9 jobs...
+
+[Mon May  5 14:25:34 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068653.1_Aln_Only.txt
+    jobid: 27
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068653.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068653.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 27 has been submitted with SLURM jobid 9040963 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068653.1/9040963.log).
+
+[Mon May  5 14:25:34 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068646.1_Aln_Only.txt
+    jobid: 20
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068646.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068646.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 20 has been submitted with SLURM jobid 9040964 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068646.1/9040964.log).
+
+[Mon May  5 14:25:34 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068644.1_Aln_Only.txt
+    jobid: 18
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068644.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068644.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 18 has been submitted with SLURM jobid 9040965 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068644.1/9040965.log).
+
+[Mon May  5 14:25:36 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068667.1_Aln_Only.txt
+    jobid: 41
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068667.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068667.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 41 has been submitted with SLURM jobid 9040966 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068667.1/9040966.log).
+
+[Mon May  5 14:25:37 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068638.1_Aln_Only.txt
+    jobid: 12
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068638.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068638.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 12 has been submitted with SLURM jobid 9040967 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068638.1/9040967.log).
+
+[Mon May  5 14:25:37 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068680.1_Aln_Only.txt
+    jobid: 54
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068680.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068680.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 54 has been submitted with SLURM jobid 9040968 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068680.1/9040968.log).
+
+[Mon May  5 14:25:39 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068673.1_Aln_Only.txt
+    jobid: 47
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068673.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068673.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 47 has been submitted with SLURM jobid 9040969 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068673.1/9040969.log).
+
+[Mon May  5 14:25:39 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068666.1_Aln_Only.txt
+    jobid: 40
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068666.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068666.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 40 has been submitted with SLURM jobid 9040970 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068666.1/9040970.log).
+
+[Mon May  5 14:25:39 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068659.1_Aln_Only.txt
+    jobid: 33
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068659.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068659.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 33 has been submitted with SLURM jobid 9041007 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068659.1/9041007.log).
+[Mon May  5 14:25:42 2025]
+Finished job 8.
+3 of 286 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May  5 14:25:42 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068664.1_Aln_Only.txt
+    jobid: 38
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068664.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068664.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 38 has been submitted with SLURM jobid 9041008 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068664.1/9041008.log).
+[Mon May  5 14:30:34 2025]
+Finished job 27.
+4 of 286 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May  5 14:30:34 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068674.1_Var_Only.txt
+    jobid: 94
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068674.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068674.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 94 has been submitted with SLURM jobid 9041178 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068674.1/9041178.log).
+[Mon May  5 14:30:35 2025]
+Finished job 20.
+5 of 286 steps (2%) done
+[Mon May  5 14:30:35 2025]
+Finished job 18.
+6 of 286 steps (2%) done
+[Mon May  5 14:30:35 2025]
+Finished job 41.
+7 of 286 steps (2%) done
+[Mon May  5 14:30:35 2025]
+Finished job 12.
+8 of 286 steps (3%) done
+[Mon May  5 14:30:35 2025]
+Finished job 54.
+9 of 286 steps (3%) done
+[Mon May  5 14:30:35 2025]
+Finished job 47.
+10 of 286 steps (3%) done
+[Mon May  5 14:30:35 2025]
+Finished job 40.
+11 of 286 steps (4%) done
+[Mon May  5 14:30:35 2025]
+Finished job 33.
+12 of 286 steps (4%) done
+[Mon May  5 14:30:35 2025]
+Finished job 38.
+13 of 286 steps (5%) done
+Select jobs to execute...
+Execute 9 jobs...
+
+[Mon May  5 14:30:35 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068654.1_Var_Only.txt
+    jobid: 74
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068654.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068654.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 74 has been submitted with SLURM jobid 9041179 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068654.1/9041179.log).
+
+[Mon May  5 14:30:35 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068656.1_Var_Only.txt
+    jobid: 76
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068656.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068656.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 76 has been submitted with SLURM jobid 9041180 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068656.1/9041180.log).
+
+[Mon May  5 14:30:35 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068656.1_Aln_Only.txt
+    jobid: 30
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068656.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068656.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 30 has been submitted with SLURM jobid 9041281 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068656.1/9041281.log).
+
+[Mon May  5 14:30:38 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068674.1_Aln_Only.txt
+    jobid: 48
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068674.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068674.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 48 has been submitted with SLURM jobid 9041282 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068674.1/9041282.log).
+
+[Mon May  5 14:30:38 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068657.1_Var_Only.txt
+    jobid: 77
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068657.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068657.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 77 has been submitted with SLURM jobid 9041283 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068657.1/9041283.log).
+
+[Mon May  5 14:30:38 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068655.1_Var_Only.txt
+    jobid: 75
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068655.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068655.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 75 has been submitted with SLURM jobid 9041284 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068655.1/9041284.log).
+
+[Mon May  5 14:30:40 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068643.1_Aln_Only.txt
+    jobid: 17
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068643.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068643.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 17 has been submitted with SLURM jobid 9041285 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068643.1/9041285.log).
+
+[Mon May  5 14:30:40 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068647.1_Aln_Only.txt
+    jobid: 21
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068647.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068647.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 21 has been submitted with SLURM jobid 9041286 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068647.1/9041286.log).
+
+[Mon May  5 14:30:41 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068675.1_Aln_Only.txt
+    jobid: 49
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068675.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068675.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 49 has been submitted with SLURM jobid 9041287 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068675.1/9041287.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Mon May  5 14:37:05 2025]
+Finished job 94.
+14 of 286 steps (5%) done
+Execute 1 jobs...
+
+[Mon May  5 14:37:05 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068670.1_Aln_Only.txt
+    jobid: 44
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068670.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068670.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 44 has been submitted with SLURM jobid 9041676 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068670.1/9041676.log).
+[Mon May  5 14:37:06 2025]
+Finished job 74.
+15 of 286 steps (5%) done
+[Mon May  5 14:37:06 2025]
+Finished job 76.
+16 of 286 steps (6%) done
+[Mon May  5 14:37:06 2025]
+Finished job 30.
+17 of 286 steps (6%) done
+[Mon May  5 14:37:06 2025]
+Finished job 48.
+18 of 286 steps (6%) done
+[Mon May  5 14:37:06 2025]
+Finished job 77.
+19 of 286 steps (7%) done
+[Mon May  5 14:37:06 2025]
+Finished job 75.
+20 of 286 steps (7%) done
+[Mon May  5 14:37:06 2025]
+Finished job 17.
+21 of 286 steps (7%) done
+[Mon May  5 14:37:06 2025]
+Finished job 21.
+22 of 286 steps (8%) done
+[Mon May  5 14:37:06 2025]
+Finished job 49.
+23 of 286 steps (8%) done
+Select jobs to execute...
+Execute 9 jobs...
+
+[Mon May  5 14:37:06 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068654.1_Aln_Only.txt
+    jobid: 28
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068654.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068654.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 28 has been submitted with SLURM jobid 9041678 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068654.1/9041678.log).
+
+[Mon May  5 14:37:06 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068682.1_Var_Only.txt
+    jobid: 102
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068682.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068682.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 102 has been submitted with SLURM jobid 9041679 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068682.1/9041679.log).
+
+[Mon May  5 14:37:08 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068665.1_Aln_Only.txt
+    jobid: 39
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068665.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068665.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 39 has been submitted with SLURM jobid 9041680 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068665.1/9041680.log).
+
+[Mon May  5 14:37:08 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068675.1_Var_Only.txt
+    jobid: 95
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068675.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068675.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 95 has been submitted with SLURM jobid 9041681 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068675.1/9041681.log).
+
+[Mon May  5 14:37:09 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068658.1_Aln_Only.txt
+    jobid: 32
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068658.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068658.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 32 has been submitted with SLURM jobid 9041682 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068658.1/9041682.log).
+
+[Mon May  5 14:37:09 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068668.1_Var_Only.txt
+    jobid: 88
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068668.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068668.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 88 has been submitted with SLURM jobid 9041683 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068668.1/9041683.log).
+
+[Mon May  5 14:37:11 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068652.1_Aln_Only.txt
+    jobid: 26
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068652.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068652.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 26 has been submitted with SLURM jobid 9041684 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068652.1/9041684.log).
+
+[Mon May  5 14:37:11 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068662.1_Var_Only.txt
+    jobid: 82
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068662.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068662.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 82 has been submitted with SLURM jobid 9041685 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068662.1/9041685.log).
+
+[Mon May  5 14:37:11 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068648.1_Var_Only.txt
+    jobid: 68
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068648.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068648.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 68 has been submitted with SLURM jobid 9041686 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068648.1/9041686.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Mon May  5 14:42:05 2025]
+Finished job 44.
+24 of 286 steps (8%) done
+Execute 1 jobs...
+
+[Mon May  5 14:42:06 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068678.1_Aln_Only.txt
+    jobid: 52
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068678.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068678.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 52 has been submitted with SLURM jobid 9041914 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068678.1/9041914.log).
+[Mon May  5 14:42:06 2025]
+Finished job 28.
+25 of 286 steps (9%) done
+[Mon May  5 14:42:06 2025]
+Finished job 102.
+26 of 286 steps (9%) done
+[Mon May  5 14:42:06 2025]
+Finished job 39.
+27 of 286 steps (9%) done
+[Mon May  5 14:42:06 2025]
+Finished job 95.
+28 of 286 steps (10%) done
+[Mon May  5 14:42:07 2025]
+Finished job 32.
+29 of 286 steps (10%) done
+[Mon May  5 14:42:07 2025]
+Finished job 88.
+30 of 286 steps (10%) done
+[Mon May  5 14:42:07 2025]
+Finished job 26.
+31 of 286 steps (11%) done
+[Mon May  5 14:42:07 2025]
+Finished job 82.
+32 of 286 steps (11%) done
+[Mon May  5 14:42:07 2025]
+Finished job 68.
+33 of 286 steps (12%) done
+Select jobs to execute...
+Execute 9 jobs...
+
+[Mon May  5 14:42:07 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068642.1_Aln_Only.txt
+    jobid: 16
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068642.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068642.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 16 has been submitted with SLURM jobid 9041915 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068642.1/9041915.log).
+
+[Mon May  5 14:42:07 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068637.1_Aln_Only.txt
+    jobid: 11
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068637.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068637.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 11 has been submitted with SLURM jobid 9041921 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068637.1/9041921.log).
+
+[Mon May  5 14:42:09 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068647.1_Var_Only.txt
+    jobid: 67
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068647.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068647.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 67 has been submitted with SLURM jobid 9041922 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068647.1/9041922.log).
+
+[Mon May  5 14:42:09 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068640.1_Var_Only.txt
+    jobid: 60
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068640.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068640.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 60 has been submitted with SLURM jobid 9041923 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068640.1/9041923.log).
+
+[Mon May  5 14:42:09 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068664.1_Var_Only.txt
+    jobid: 84
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068664.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068664.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 84 has been submitted with SLURM jobid 9041924 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068664.1/9041924.log).
+
+[Mon May  5 14:42:11 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068679.1_Aln_Only.txt
+    jobid: 53
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068679.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068679.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 53 has been submitted with SLURM jobid 9041925 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068679.1/9041925.log).
+
+[Mon May  5 14:42:12 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068672.1_Aln_Only.txt
+    jobid: 46
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068672.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068672.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 46 has been submitted with SLURM jobid 9041926 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068672.1/9041926.log).
+
+[Mon May  5 14:42:12 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068641.1_Var_Only.txt
+    jobid: 61
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068641.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068641.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 61 has been submitted with SLURM jobid 9041927 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068641.1/9041927.log).
+
+[Mon May  5 14:42:14 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068676.1_Var_Only.txt
+    jobid: 96
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068676.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068676.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 96 has been submitted with SLURM jobid 9041928 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068676.1/9041928.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Mon May  5 14:47:06 2025]
+Finished job 52.
+34 of 286 steps (12%) done
+Execute 1 jobs...
+
+[Mon May  5 14:47:06 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068641.1_Aln_Only.txt
+    jobid: 15
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068641.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068641.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 15 has been submitted with SLURM jobid 9042229 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068641.1/9042229.log).
+[Mon May  5 14:47:06 2025]
+Finished job 16.
+35 of 286 steps (12%) done
+[Mon May  5 14:47:06 2025]
+Finished job 11.
+36 of 286 steps (13%) done
+[Mon May  5 14:47:06 2025]
+Finished job 67.
+37 of 286 steps (13%) done
+[Mon May  5 14:47:06 2025]
+Finished job 60.
+38 of 286 steps (13%) done
+[Mon May  5 14:47:06 2025]
+Finished job 84.
+39 of 286 steps (14%) done
+[Mon May  5 14:47:06 2025]
+Finished job 53.
+40 of 286 steps (14%) done
+[Mon May  5 14:47:06 2025]
+Finished job 46.
+41 of 286 steps (14%) done
+[Mon May  5 14:47:06 2025]
+Finished job 61.
+42 of 286 steps (15%) done
+[Mon May  5 14:47:06 2025]
+Finished job 96.
+43 of 286 steps (15%) done
+Select jobs to execute...
+Execute 9 jobs...
+
+[Mon May  5 14:47:07 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068674.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068674.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068674.1_ROH_Results.txt
+    jobid: 140
+    reason: Missing output files: sharks/HepPer/20250422_CM068674.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068674.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068674.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068674.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 140 has been submitted with SLURM jobid 9042230 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068674.1/9042230.log).
+
+[Mon May  5 14:47:08 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068657.1_Aln_Only.txt
+    jobid: 31
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068657.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068657.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 31 has been submitted with SLURM jobid 9042232 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068657.1/9042232.log).
+
+[Mon May  5 14:47:09 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068642.1_Var_Only.txt
+    jobid: 62
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068642.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068642.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 62 has been submitted with SLURM jobid 9042233 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068642.1/9042233.log).
+
+[Mon May  5 14:47:09 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068646.1_Var_Only.txt
+    jobid: 66
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068646.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068646.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 66 has been submitted with SLURM jobid 9042234 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068646.1/9042234.log).
+
+[Mon May  5 14:47:11 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068656.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068656.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068656.1_ROH_Results.txt
+    jobid: 122
+    reason: Missing output files: sharks/HepPer/20250422_CM068656.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068656.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068656.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068656.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 122 has been submitted with SLURM jobid 9042235 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068656.1/9042235.log).
+
+[Mon May  5 14:47:11 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068639.1_Var_Only.txt
+    jobid: 59
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068639.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068639.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 59 has been submitted with SLURM jobid 9042236 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068639.1/9042236.log).
+
+[Mon May  5 14:47:11 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068671.1_Aln_Only.txt
+    jobid: 45
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068671.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068671.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 45 has been submitted with SLURM jobid 9042237 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068671.1/9042237.log).
+
+[Mon May  5 14:47:14 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068667.1_Var_Only.txt
+    jobid: 87
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068667.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068667.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 87 has been submitted with SLURM jobid 9042238 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068667.1/9042238.log).
+
+[Mon May  5 14:47:14 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068681.1_Var_Only.txt
+    jobid: 101
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068681.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068681.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 101 has been submitted with SLURM jobid 9042239 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068681.1/9042239.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Mon May  5 14:52:07 2025]
+Finished job 15.
+44 of 286 steps (15%) done
+Execute 1 jobs...
+
+[Mon May  5 14:52:07 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068673.1_Var_Only.txt
+    jobid: 93
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068673.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068673.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 93 has been submitted with SLURM jobid 9042391 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068673.1/9042391.log).
+[Mon May  5 14:52:08 2025]
+Finished job 140.
+45 of 286 steps (16%) done
+[Mon May  5 14:52:08 2025]
+Finished job 31.
+46 of 286 steps (16%) done
+[Mon May  5 14:52:08 2025]
+Finished job 62.
+47 of 286 steps (16%) done
+[Mon May  5 14:52:08 2025]
+Finished job 66.
+48 of 286 steps (17%) done
+[Mon May  5 14:52:08 2025]
+Finished job 122.
+49 of 286 steps (17%) done
+[Mon May  5 14:52:08 2025]
+Finished job 59.
+50 of 286 steps (17%) done
+[Mon May  5 14:52:08 2025]
+Finished job 45.
+51 of 286 steps (18%) done
+[Mon May  5 14:52:08 2025]
+Finished job 87.
+52 of 286 steps (18%) done
+[Mon May  5 14:52:08 2025]
+Finished job 101.
+53 of 286 steps (19%) done
+Select jobs to execute...
+Execute 9 jobs...
+
+[Mon May  5 14:52:08 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068664.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068664.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068664.1_ROH_Results.txt
+    jobid: 130
+    reason: Missing output files: sharks/HepPer/20250422_CM068664.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068664.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068664.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068664.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 130 has been submitted with SLURM jobid 9042393 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068664.1/9042393.log).
+
+[Mon May  5 14:52:10 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068657.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068657.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068657.1_ROH_Results.txt
+    jobid: 123
+    reason: Missing output files: sharks/HepPer/20250422_CM068657.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068657.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068657.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068657.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 123 has been submitted with SLURM jobid 9042394 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068657.1/9042394.log).
+
+[Mon May  5 14:52:10 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068648.1_Aln_Only.txt
+    jobid: 22
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068648.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068648.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 22 has been submitted with SLURM jobid 9042395 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068648.1/9042395.log).
+
+[Mon May  5 14:52:13 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068653.1_Var_Only.txt
+    jobid: 73
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068653.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068653.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 73 has been submitted with SLURM jobid 9042397 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068653.1/9042397.log).
+
+[Mon May  5 14:52:13 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068677.1_Var_Only.txt
+    jobid: 97
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068677.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068677.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 97 has been submitted with SLURM jobid 9042398 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068677.1/9042398.log).
+
+[Mon May  5 14:52:13 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068642.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068642.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068642.1_ROH_Results.txt
+    jobid: 108
+    reason: Missing output files: sharks/HepPer/20250422_CM068642.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068642.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068642.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068642.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 108 has been submitted with SLURM jobid 9042399 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068642.1/9042399.log).
+
+[Mon May  5 14:52:15 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068651.1_Aln_Only.txt
+    jobid: 25
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068651.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068651.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 25 has been submitted with SLURM jobid 9042401 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068651.1/9042401.log).
+
+[Mon May  5 14:52:16 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068682.1_Aln_Only.txt
+    jobid: 56
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068682.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068682.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 56 has been submitted with SLURM jobid 9042402 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068682.1/9042402.log).
+
+[Mon May  5 14:52:18 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068661.1_Var_Only.txt
+    jobid: 81
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068661.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068661.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 81 has been submitted with SLURM jobid 9042404 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068661.1/9042404.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Mon May  5 14:58:38 2025]
+Finished job 93.
+54 of 286 steps (19%) done
+Execute 1 jobs...
+
+[Mon May  5 14:58:38 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068663.1_Aln_Only.txt
+    jobid: 37
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068663.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068663.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 37 has been submitted with SLURM jobid 9042804 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068663.1/9042804.log).
+[Mon May  5 14:58:42 2025]
+Finished job 130.
+55 of 286 steps (19%) done
+[Mon May  5 14:58:42 2025]
+Finished job 123.
+56 of 286 steps (20%) done
+[Mon May  5 14:58:42 2025]
+Finished job 22.
+57 of 286 steps (20%) done
+[Mon May  5 14:58:42 2025]
+Finished job 73.
+58 of 286 steps (20%) done
+[Mon May  5 14:58:42 2025]
+Finished job 97.
+59 of 286 steps (21%) done
+[Mon May  5 14:58:42 2025]
+Finished job 108.
+60 of 286 steps (21%) done
+[Mon May  5 14:58:42 2025]
+Finished job 25.
+61 of 286 steps (21%) done
+[Mon May  5 14:58:42 2025]
+Finished job 56.
+62 of 286 steps (22%) done
+[Mon May  5 14:58:42 2025]
+Finished job 81.
+63 of 286 steps (22%) done
+Select jobs to execute...
+Execute 9 jobs...
+
+[Mon May  5 14:58:42 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068663.1_Var_Only.txt
+    jobid: 83
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068663.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068663.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 83 has been submitted with SLURM jobid 9042807 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068663.1/9042807.log).
+
+[Mon May  5 14:58:42 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068673.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068673.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068673.1_ROH_Results.txt
+    jobid: 139
+    reason: Missing output files: sharks/HepPer/20250422_CM068673.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068673.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068673.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068673.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 139 has been submitted with SLURM jobid 9042808 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068673.1/9042808.log).
+
+[Mon May  5 14:58:42 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068649.1_Var_Only.txt
+    jobid: 69
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068649.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068649.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 69 has been submitted with SLURM jobid 9042809 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068649.1/9042809.log).
+
+[Mon May  5 14:58:44 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068666.1_Var_Only.txt
+    jobid: 86
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068666.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068666.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 86 has been submitted with SLURM jobid 9042810 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068666.1/9042810.log).
+
+[Mon May  5 14:58:45 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068650.1_Aln_Only.txt
+    jobid: 24
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068650.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068650.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 24 has been submitted with SLURM jobid 9042811 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068650.1/9042811.log).
+
+[Mon May  5 14:58:45 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068660.1_Var_Only.txt
+    jobid: 80
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068660.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068660.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 80 has been submitted with SLURM jobid 9042812 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068660.1/9042812.log).
+
+[Mon May  5 14:58:47 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068670.1_Var_Only.txt
+    jobid: 90
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068670.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068670.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 90 has been submitted with SLURM jobid 9042813 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068670.1/9042813.log).
+
+[Mon May  5 14:58:47 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068643.1_Var_Only.txt
+    jobid: 63
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068643.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068643.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 63 has been submitted with SLURM jobid 9042814 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068643.1/9042814.log).
+
+[Mon May  5 14:58:47 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068669.1_Var_Only.txt
+    jobid: 89
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068669.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068669.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 89 has been submitted with SLURM jobid 9042815 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068669.1/9042815.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Mon May  5 15:03:39 2025]
+Finished job 37.
+64 of 286 steps (22%) done
+Execute 1 jobs...
+
+[Mon May  5 15:03:39 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068638.1_Var_Only.txt
+    jobid: 58
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068638.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068638.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 58 has been submitted with SLURM jobid 9043083 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068638.1/9043083.log).
+[Mon May  5 15:03:39 2025]
+Finished job 83.
+65 of 286 steps (23%) done
+[Mon May  5 15:03:39 2025]
+Finished job 139.
+66 of 286 steps (23%) done
+[Mon May  5 15:03:39 2025]
+Finished job 69.
+67 of 286 steps (23%) done
+[Mon May  5 15:03:39 2025]
+Finished job 86.
+68 of 286 steps (24%) done
+[Mon May  5 15:03:39 2025]
+Finished job 24.
+69 of 286 steps (24%) done
+[Mon May  5 15:03:39 2025]
+Finished job 80.
+70 of 286 steps (24%) done
+[Mon May  5 15:03:39 2025]
+Finished job 90.
+71 of 286 steps (25%) done
+[Mon May  5 15:03:39 2025]
+Finished job 63.
+72 of 286 steps (25%) done
+[Mon May  5 15:03:39 2025]
+Finished job 89.
+73 of 286 steps (26%) done
+Select jobs to execute...
+Execute 9 jobs...
+
+[Mon May  5 15:03:39 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068671.1_Var_Only.txt
+    jobid: 91
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068671.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068671.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 91 has been submitted with SLURM jobid 9043084 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068671.1/9043084.log).
+
+[Mon May  5 15:03:42 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068680.1_Var_Only.txt
+    jobid: 100
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068680.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068680.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 100 has been submitted with SLURM jobid 9043085 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068680.1/9043085.log).
+
+[Mon May  5 15:03:42 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068666.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068666.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068666.1_ROH_Results.txt
+    jobid: 132
+    reason: Missing output files: sharks/HepPer/20250422_CM068666.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068666.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068666.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068666.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 132 has been submitted with SLURM jobid 9043086 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068666.1/9043086.log).
+
+[Mon May  5 15:03:42 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068643.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068643.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068643.1_ROH_Results.txt
+    jobid: 109
+    reason: Missing output files: sharks/HepPer/20250422_CM068643.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068643.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068643.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068643.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 109 has been submitted with SLURM jobid 9043087 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068643.1/9043087.log).
+
+[Mon May  5 15:03:44 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068681.1_Aln_Only.txt
+    jobid: 55
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068681.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068681.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 55 has been submitted with SLURM jobid 9043088 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068681.1/9043088.log).
+
+[Mon May  5 15:03:45 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068670.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068670.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068670.1_ROH_Results.txt
+    jobid: 136
+    reason: Missing output files: sharks/HepPer/20250422_CM068670.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068670.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068670.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068670.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 136 has been submitted with SLURM jobid 9043089 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068670.1/9043089.log).
+
+[Mon May  5 15:03:45 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068663.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068663.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068663.1_ROH_Results.txt
+    jobid: 129
+    reason: Missing output files: sharks/HepPer/20250422_CM068663.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068663.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068663.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068663.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 129 has been submitted with SLURM jobid 9043090 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068663.1/9043090.log).
+
+[Mon May  5 15:03:47 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068660.1_Aln_Only.txt
+    jobid: 34
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068660.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068660.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 34 has been submitted with SLURM jobid 9043091 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068660.1/9043091.log).
+
+[Mon May  5 15:03:47 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068667.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068667.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068667.1_ROH_Results.txt
+    jobid: 133
+    reason: Missing output files: sharks/HepPer/20250422_CM068667.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068667.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068667.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068667.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 133 has been submitted with SLURM jobid 9043092 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068667.1/9043092.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Mon May  5 15:08:40 2025]
+Finished job 58.
+74 of 286 steps (26%) done
+Execute 1 jobs...
+
+[Mon May  5 15:08:40 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068678.1_Var_Only.txt
+    jobid: 98
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068678.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068678.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 98 has been submitted with SLURM jobid 9043463 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068678.1/9043463.log).
+[Mon May  5 15:08:44 2025]
+Finished job 91.
+75 of 286 steps (26%) done
+[Mon May  5 15:08:44 2025]
+Finished job 100.
+76 of 286 steps (27%) done
+[Mon May  5 15:08:44 2025]
+Finished job 132.
+77 of 286 steps (27%) done
+[Mon May  5 15:08:44 2025]
+Finished job 109.
+78 of 286 steps (27%) done
+[Mon May  5 15:08:44 2025]
+Finished job 55.
+79 of 286 steps (28%) done
+[Mon May  5 15:08:44 2025]
+Finished job 136.
+80 of 286 steps (28%) done
+[Mon May  5 15:08:44 2025]
+Finished job 129.
+81 of 286 steps (28%) done
+[Mon May  5 15:08:44 2025]
+Finished job 34.
+82 of 286 steps (29%) done
+[Mon May  5 15:08:44 2025]
+Finished job 133.
+83 of 286 steps (29%) done
+Select jobs to execute...
+Execute 9 jobs...
+
+[Mon May  5 15:08:44 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068677.1_Aln_Only.txt
+    jobid: 51
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068677.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068677.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 51 has been submitted with SLURM jobid 9043464 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068677.1/9043464.log).
+
+[Mon May  5 15:08:45 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068641.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068641.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068641.1_ROH_Results.txt
+    jobid: 107
+    reason: Missing output files: sharks/HepPer/20250422_CM068641.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068641.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068641.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068641.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 107 has been submitted with SLURM jobid 9043465 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068641.1/9043465.log).
+
+[Mon May  5 15:08:45 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068658.1_Var_Only.txt
+    jobid: 78
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068658.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068658.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 78 has been submitted with SLURM jobid 9043466 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068658.1/9043466.log).
+
+[Mon May  5 15:08:47 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068638.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068638.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068638.1_ROH_Results.txt
+    jobid: 104
+    reason: Missing output files: sharks/HepPer/20250422_CM068638.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068638.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068638.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068638.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 104 has been submitted with SLURM jobid 9043468 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068638.1/9043468.log).
+
+[Mon May  5 15:08:47 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068680.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068680.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068680.1_ROH_Results.txt
+    jobid: 146
+    reason: Missing output files: sharks/HepPer/20250422_CM068680.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068680.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068680.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068680.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 146 has been submitted with SLURM jobid 9043469 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068680.1/9043469.log).
+
+[Mon May  5 15:08:49 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068660.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068660.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068660.1_ROH_Results.txt
+    jobid: 126
+    reason: Missing output files: sharks/HepPer/20250422_CM068660.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068660.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068660.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068660.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 126 has been submitted with SLURM jobid 9043470 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068660.1/9043470.log).
+
+[Mon May  5 15:08:50 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068650.1_Var_Only.txt
+    jobid: 70
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068650.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068650.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 70 has been submitted with SLURM jobid 9043471 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068650.1/9043471.log).
+
+[Mon May  5 15:08:50 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068639.1_Aln_Only.txt
+    jobid: 13
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068639.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068639.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 13 has been submitted with SLURM jobid 9043472 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068639.1/9043472.log).
+
+[Mon May  5 15:08:52 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068671.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068671.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068671.1_ROH_Results.txt
+    jobid: 137
+    reason: Missing output files: sharks/HepPer/20250422_CM068671.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068671.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068671.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068671.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 137 has been submitted with SLURM jobid 9043473 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068671.1/9043473.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Mon May  5 15:13:40 2025]
+Finished job 98.
+84 of 286 steps (29%) done
+Execute 1 jobs...
+
+[Mon May  5 15:13:40 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068661.1_Aln_Only.txt
+    jobid: 35
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068661.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068661.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 35 has been submitted with SLURM jobid 9043692 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068661.1/9043692.log).
+[Mon May  5 15:13:42 2025]
+Finished job 51.
+85 of 286 steps (30%) done
+[Mon May  5 15:13:42 2025]
+Finished job 107.
+86 of 286 steps (30%) done
+[Mon May  5 15:13:42 2025]
+Finished job 78.
+87 of 286 steps (30%) done
+[Mon May  5 15:13:42 2025]
+Finished job 104.
+88 of 286 steps (31%) done
+[Mon May  5 15:13:42 2025]
+Finished job 126.
+89 of 286 steps (31%) done
+[Mon May  5 15:13:42 2025]
+Finished job 70.
+90 of 286 steps (31%) done
+[Mon May  5 15:13:42 2025]
+Finished job 13.
+91 of 286 steps (32%) done
+[Mon May  5 15:13:42 2025]
+Finished job 137.
+92 of 286 steps (32%) done
+Select jobs to execute...
+Execute 8 jobs...
+
+[Mon May  5 15:13:42 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068648.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068648.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068648.1_ROH_Results.txt
+    jobid: 114
+    reason: Missing output files: sharks/HepPer/20250422_CM068648.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068648.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068648.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068648.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 114 has been submitted with SLURM jobid 9043693 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068648.1/9043693.log).
+
+[Mon May  5 15:13:44 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068651.1_Var_Only.txt
+    jobid: 71
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068651.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068651.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 71 has been submitted with SLURM jobid 9043694 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068651.1/9043694.log).
+
+[Mon May  5 15:13:44 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068644.1_Var_Only.txt
+    jobid: 64
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068644.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068644.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 64 has been submitted with SLURM jobid 9043695 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068644.1/9043695.log).
+
+[Mon May  5 15:13:45 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068654.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068654.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068654.1_ROH_Results.txt
+    jobid: 120
+    reason: Missing output files: sharks/HepPer/20250422_CM068654.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068654.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068654.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068654.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 120 has been submitted with SLURM jobid 9043696 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068654.1/9043696.log).
+
+[Mon May  5 15:13:47 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068637.1_Var_Only.txt
+    jobid: 57
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068637.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068637.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 57 has been submitted with SLURM jobid 9043697 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068637.1/9043697.log).
+
+[Mon May  5 15:13:47 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068647.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068647.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068647.1_ROH_Results.txt
+    jobid: 113
+    reason: Missing output files: sharks/HepPer/20250422_CM068647.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068647.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068647.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068647.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 113 has been submitted with SLURM jobid 9043698 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068647.1/9043698.log).
+
+[Mon May  5 15:13:49 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068676.1_Aln_Only.txt
+    jobid: 50
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068676.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068676.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 50 has been submitted with SLURM jobid 9043699 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068676.1/9043699.log).
+
+[Mon May  5 15:13:50 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068669.1_Aln_Only.txt
+    jobid: 43
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068669.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068669.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 43 has been submitted with SLURM jobid 9043700 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068669.1/9043700.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Mon May  5 15:14:21 2025]
+Finished job 146.
+93 of 286 steps (33%) done
+Execute 1 jobs...
+
+[Mon May  5 15:14:21 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068681.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068681.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068681.1_ROH_Results.txt
+    jobid: 147
+    reason: Missing output files: sharks/HepPer/20250422_CM068681.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068681.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068681.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068681.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 147 has been submitted with SLURM jobid 9043875 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068681.1/9043875.log).
+[Mon May  5 15:19:21 2025]
+Finished job 35.
+94 of 286 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May  5 15:19:22 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068645.1_Aln_Only.txt
+    jobid: 19
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068645.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068645.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 19 has been submitted with SLURM jobid 9044218 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068645.1/9044218.log).
+[Mon May  5 15:19:23 2025]
+Finished job 114.
+95 of 286 steps (33%) done
+[Mon May  5 15:19:23 2025]
+Finished job 71.
+96 of 286 steps (34%) done
+[Mon May  5 15:19:23 2025]
+Finished job 64.
+97 of 286 steps (34%) done
+[Mon May  5 15:19:23 2025]
+Finished job 120.
+98 of 286 steps (34%) done
+[Mon May  5 15:19:23 2025]
+Finished job 57.
+99 of 286 steps (35%) done
+[Mon May  5 15:19:23 2025]
+Finished job 113.
+100 of 286 steps (35%) done
+[Mon May  5 15:19:23 2025]
+Finished job 50.
+101 of 286 steps (35%) done
+[Mon May  5 15:19:23 2025]
+Finished job 43.
+102 of 286 steps (36%) done
+[Mon May  5 15:19:23 2025]
+Finished job 147.
+103 of 286 steps (36%) done
+Select jobs to execute...
+Execute 9 jobs...
+
+[Mon May  5 15:19:23 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068651.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068651.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068651.1_ROH_Results.txt
+    jobid: 117
+    reason: Missing output files: sharks/HepPer/20250422_CM068651.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068651.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068651.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068651.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 117 has been submitted with SLURM jobid 9044219 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068651.1/9044219.log).
+
+[Mon May  5 15:19:25 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068655.1_Aln_Only.txt
+    jobid: 29
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068655.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068655.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 29 has been submitted with SLURM jobid 9044220 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068655.1/9044220.log).
+
+[Mon May  5 15:19:26 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068662.1_Aln_Only.txt
+    jobid: 36
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068662.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068662.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 36 has been submitted with SLURM jobid 9044221 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068662.1/9044221.log).
+
+[Mon May  5 15:19:26 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068672.1_Var_Only.txt
+    jobid: 92
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068672.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068672.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 92 has been submitted with SLURM jobid 9044222 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068672.1/9044222.log).
+
+[Mon May  5 15:19:28 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068675.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068675.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068675.1_ROH_Results.txt
+    jobid: 141
+    reason: Missing output files: sharks/HepPer/20250422_CM068675.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068675.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068675.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068675.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 141 has been submitted with SLURM jobid 9044223 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068675.1/9044223.log).
+
+[Mon May  5 15:19:28 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068665.1_Var_Only.txt
+    jobid: 85
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068665.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068665.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 85 has been submitted with SLURM jobid 9044224 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068665.1/9044224.log).
+
+[Mon May  5 15:19:28 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068682.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068682.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068682.1_ROH_Results.txt
+    jobid: 148
+    reason: Missing output files: sharks/HepPer/20250422_CM068682.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068682.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068682.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068682.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 148 has been submitted with SLURM jobid 9044226 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068682.1/9044226.log).
+
+[Mon May  5 15:19:30 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068649.1_Aln_Only.txt
+    jobid: 23
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068649.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068649.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 23 has been submitted with SLURM jobid 9044227 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068649.1/9044227.log).
+
+[Mon May  5 15:19:31 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068639.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068639.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068639.1_ROH_Results.txt
+    jobid: 105
+    reason: Missing output files: sharks/HepPer/20250422_CM068639.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068639.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068639.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068639.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 105 has been submitted with SLURM jobid 9044228 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068639.1/9044228.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Mon May  5 15:24:22 2025]
+Finished job 19.
+104 of 286 steps (36%) done
+Execute 1 jobs...
+
+[Mon May  5 15:24:22 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068659.1_Var_Only.txt
+    jobid: 79
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068659.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068659.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 79 has been submitted with SLURM jobid 9044417 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068659.1/9044417.log).
+[Mon May  5 15:24:23 2025]
+Finished job 117.
+105 of 286 steps (37%) done
+[Mon May  5 15:24:23 2025]
+Finished job 29.
+106 of 286 steps (37%) done
+[Mon May  5 15:24:23 2025]
+Finished job 36.
+107 of 286 steps (37%) done
+[Mon May  5 15:24:23 2025]
+Finished job 92.
+108 of 286 steps (38%) done
+[Mon May  5 15:24:23 2025]
+Finished job 141.
+109 of 286 steps (38%) done
+[Mon May  5 15:24:23 2025]
+Finished job 85.
+110 of 286 steps (38%) done
+[Mon May  5 15:24:23 2025]
+Finished job 148.
+111 of 286 steps (39%) done
+[Mon May  5 15:24:23 2025]
+Finished job 23.
+112 of 286 steps (39%) done
+[Mon May  5 15:24:23 2025]
+Finished job 105.
+113 of 286 steps (40%) done
+Select jobs to execute...
+Execute 9 jobs...
+
+[Mon May  5 15:24:23 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068646.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068646.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068646.1_ROH_Results.txt
+    jobid: 112
+    reason: Missing output files: sharks/HepPer/20250422_CM068646.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068646.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068646.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068646.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 112 has been submitted with SLURM jobid 9044419 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068646.1/9044419.log).
+
+[Mon May  5 15:24:25 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068676.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068676.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068676.1_ROH_Results.txt
+    jobid: 142
+    reason: Missing output files: sharks/HepPer/20250422_CM068676.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068676.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068676.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068676.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 142 has been submitted with SLURM jobid 9044420 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068676.1/9044420.log).
+
+[Mon May  5 15:24:26 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068640.1_Aln_Only.txt
+    jobid: 14
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068640.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068640.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 14 has been submitted with SLURM jobid 9044421 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068640.1/9044421.log).
+
+[Mon May  5 15:24:26 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068662.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068662.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068662.1_ROH_Results.txt
+    jobid: 128
+    reason: Missing output files: sharks/HepPer/20250422_CM068662.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068662.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068662.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068662.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 128 has been submitted with SLURM jobid 9044451 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068662.1/9044451.log).
+
+[Mon May  5 15:24:28 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068645.1_Var_Only.txt
+    jobid: 65
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068645.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068645.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 65 has been submitted with SLURM jobid 9044452 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068645.1/9044452.log).
+
+[Mon May  5 15:24:28 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068637.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068637.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068637.1_ROH_Results.txt
+    jobid: 103
+    reason: Missing output files: sharks/HepPer/20250422_CM068637.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068637.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068637.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068637.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 103 has been submitted with SLURM jobid 9044453 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068637.1/9044453.log).
+
+[Mon May  5 15:24:31 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068669.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068669.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068669.1_ROH_Results.txt
+    jobid: 135
+    reason: Missing output files: sharks/HepPer/20250422_CM068669.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068669.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068669.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068669.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 135 has been submitted with SLURM jobid 9044454 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068669.1/9044454.log).
+
+[Mon May  5 15:24:33 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068652.1_Var_Only.txt
+    jobid: 72
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068652.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068652.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 72 has been submitted with SLURM jobid 9044455 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068652.1/9044455.log).
+
+[Mon May  5 15:24:33 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068655.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068655.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068655.1_ROH_Results.txt
+    jobid: 121
+    reason: Missing output files: sharks/HepPer/20250422_CM068655.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068655.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068655.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068655.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 121 has been submitted with SLURM jobid 9044456 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068655.1/9044456.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Mon May  5 15:30:53 2025]
+Finished job 79.
+114 of 286 steps (40%) done
+Execute 1 jobs...
+
+[Mon May  5 15:30:54 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068658.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068658.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068658.1_ROH_Results.txt
+    jobid: 124
+    reason: Missing output files: sharks/HepPer/20250422_CM068658.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068658.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068658.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068658.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 124 has been submitted with SLURM jobid 9044704 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068658.1/9044704.log).
+[Mon May  5 15:30:54 2025]
+Finished job 112.
+115 of 286 steps (40%) done
+[Mon May  5 15:30:54 2025]
+Finished job 142.
+116 of 286 steps (41%) done
+[Mon May  5 15:30:54 2025]
+Finished job 14.
+117 of 286 steps (41%) done
+[Mon May  5 15:30:54 2025]
+Finished job 128.
+118 of 286 steps (41%) done
+[Mon May  5 15:30:54 2025]
+Finished job 65.
+119 of 286 steps (42%) done
+[Mon May  5 15:30:54 2025]
+Finished job 103.
+120 of 286 steps (42%) done
+[Mon May  5 15:30:54 2025]
+Finished job 135.
+121 of 286 steps (42%) done
+[Mon May  5 15:30:54 2025]
+Finished job 72.
+122 of 286 steps (43%) done
+[Mon May  5 15:30:54 2025]
+Finished job 121.
+123 of 286 steps (43%) done
+Select jobs to execute...
+Execute 9 jobs...
+
+[Mon May  5 15:30:54 2025]
+rule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068668.1_Aln_Only.txt
+    jobid: 42
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068668.1_Aln_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068668.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 42 has been submitted with SLURM jobid 9044705 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_ALN_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068668.1/9044705.log).
+
+[Mon May  5 15:30:56 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068650.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068650.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068650.1_ROH_Results.txt
+    jobid: 116
+    reason: Missing output files: sharks/HepPer/20250422_CM068650.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068650.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068650.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068650.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 116 has been submitted with SLURM jobid 9044706 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068650.1/9044706.log).
+
+[Mon May  5 15:30:56 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068659.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068659.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068659.1_ROH_Results.txt
+    jobid: 125
+    reason: Missing output files: sharks/HepPer/20250422_CM068659.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068659.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068659.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068659.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 125 has been submitted with SLURM jobid 9044707 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068659.1/9044707.log).
+
+[Mon May  5 15:30:56 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068652.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068652.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068652.1_ROH_Results.txt
+    jobid: 118
+    reason: Missing output files: sharks/HepPer/20250422_CM068652.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068652.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068652.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068652.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 118 has been submitted with SLURM jobid 9044708 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068652.1/9044708.log).
+
+[Mon May  5 15:30:58 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068649.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068649.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068649.1_ROH_Results.txt
+    jobid: 115
+    reason: Missing output files: sharks/HepPer/20250422_CM068649.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068649.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068649.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068649.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 115 has been submitted with SLURM jobid 9044709 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068649.1/9044709.log).
+
+[Mon May  5 15:30:59 2025]
+rule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt
+    output: sharks/HepPer/temp/20250422_CM068679.1_Var_Only.txt
+    jobid: 99
+    reason: Missing output files: sharks/HepPer/temp/20250422_CM068679.1_Var_Only.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068679.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 99 has been submitted with SLURM jobid 9044710 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GET_VAR_ONLY_PER_CHROM/sharks_HepPer_20250422_CM068679.1/9044710.log).
+
+[Mon May  5 15:30:59 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068665.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068665.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068665.1_ROH_Results.txt
+    jobid: 131
+    reason: Missing output files: sharks/HepPer/20250422_CM068665.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068665.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068665.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068665.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 131 has been submitted with SLURM jobid 9044711 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068665.1/9044711.log).
+
+[Mon May  5 15:31:01 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068644.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068644.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068644.1_ROH_Results.txt
+    jobid: 110
+    reason: Missing output files: sharks/HepPer/20250422_CM068644.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068644.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068644.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068644.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 110 has been submitted with SLURM jobid 9044713 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068644.1/9044713.log).
+
+[Mon May  5 15:31:01 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068677.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068677.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068677.1_ROH_Results.txt
+    jobid: 143
+    reason: Missing output files: sharks/HepPer/20250422_CM068677.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068677.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068677.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068677.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 143 has been submitted with SLURM jobid 9044714 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068677.1/9044714.log).
+Select jobs to execute...
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+Waiting for more resources.
+[Mon May  5 15:35:54 2025]
+Finished job 124.
+124 of 286 steps (43%) done
+Execute 1 jobs...
+
+[Mon May  5 15:35:55 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068653.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068653.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068653.1_ROH_Results.txt
+    jobid: 119
+    reason: Missing output files: sharks/HepPer/20250422_CM068653.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068653.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068653.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068653.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 119 has been submitted with SLURM jobid 9044840 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068653.1/9044840.log).
+[Mon May  5 15:35:55 2025]
+Finished job 42.
+125 of 286 steps (44%) done
+[Mon May  5 15:35:55 2025]
+Finished job 116.
+126 of 286 steps (44%) done
+[Mon May  5 15:35:55 2025]
+Finished job 125.
+127 of 286 steps (44%) done
+[Mon May  5 15:35:55 2025]
+Finished job 118.
+128 of 286 steps (45%) done
+[Mon May  5 15:35:55 2025]
+Finished job 115.
+129 of 286 steps (45%) done
+[Mon May  5 15:35:55 2025]
+Finished job 99.
+130 of 286 steps (45%) done
+[Mon May  5 15:35:55 2025]
+Finished job 131.
+131 of 286 steps (46%) done
+[Mon May  5 15:35:55 2025]
+Finished job 110.
+132 of 286 steps (46%) done
+[Mon May  5 15:35:55 2025]
+Finished job 143.
+133 of 286 steps (47%) done
+Select jobs to execute...
+Execute 7 jobs...
+
+[Mon May  5 15:35:55 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068668.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068668.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068668.1_ROH_Results.txt
+    jobid: 134
+    reason: Missing output files: sharks/HepPer/20250422_CM068668.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068668.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068668.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068668.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 134 has been submitted with SLURM jobid 9044842 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068668.1/9044842.log).
+
+[Mon May  5 15:35:57 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068661.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068661.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068661.1_ROH_Results.txt
+    jobid: 127
+    reason: Missing output files: sharks/HepPer/20250422_CM068661.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068661.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068661.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068661.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 127 has been submitted with SLURM jobid 9044843 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068661.1/9044843.log).
+
+[Mon May  5 15:35:57 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068645.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068645.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068645.1_ROH_Results.txt
+    jobid: 111
+    reason: Missing output files: sharks/HepPer/20250422_CM068645.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068645.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068645.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068645.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 111 has been submitted with SLURM jobid 9044844 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068645.1/9044844.log).
+
+[Mon May  5 15:36:00 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068678.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068678.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068678.1_ROH_Results.txt
+    jobid: 144
+    reason: Missing output files: sharks/HepPer/20250422_CM068678.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068678.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068678.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068678.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 144 has been submitted with SLURM jobid 9044847 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068678.1/9044847.log).
+
+[Mon May  5 15:36:00 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068640.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068640.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068640.1_ROH_Results.txt
+    jobid: 106
+    reason: Missing output files: sharks/HepPer/20250422_CM068640.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068640.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068640.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068640.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 106 has been submitted with SLURM jobid 9044850 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068640.1/9044850.log).
+
+[Mon May  5 15:36:00 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068672.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068672.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068672.1_ROH_Results.txt
+    jobid: 138
+    reason: Missing output files: sharks/HepPer/20250422_CM068672.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068672.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068672.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068672.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 138 has been submitted with SLURM jobid 9044852 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068672.1/9044852.log).
+
+[Mon May  5 15:36:02 2025]
+rule ROH_CALC:
+    input: sharks/HepPer/temp/20250422_CM068679.1_Aln_Only.txt, sharks/HepPer/temp/20250422_CM068679.1_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt
+    output: sharks/HepPer/20250422_CM068679.1_ROH_Results.txt
+    jobid: 145
+    reason: Missing output files: sharks/HepPer/20250422_CM068679.1_ROH_Results.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068679.1_Var_Only.txt, sharks/HepPer/temp/20250422_CM068679.1_Aln_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068679.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 145 has been submitted with SLURM jobid 9044855 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_ROH_CALC/sharks_HepPer_20250422_CM068679.1/9044855.log).
+[Mon May  5 15:40:55 2025]
+Finished job 119.
+134 of 286 steps (47%) done
+[Mon May  5 15:40:55 2025]
+Finished job 134.
+135 of 286 steps (47%) done
+[Mon May  5 15:40:55 2025]
+Finished job 127.
+136 of 286 steps (48%) done
+[Mon May  5 15:40:55 2025]
+Finished job 111.
+137 of 286 steps (48%) done
+[Mon May  5 15:40:55 2025]
+Finished job 144.
+138 of 286 steps (48%) done
+[Mon May  5 15:40:55 2025]
+Finished job 106.
+139 of 286 steps (49%) done
+[Mon May  5 15:40:55 2025]
+Finished job 138.
+140 of 286 steps (49%) done
+[Mon May  5 15:40:55 2025]
+Finished job 145.
+141 of 286 steps (49%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon May  5 15:40:56 2025]
+rule COMPILE_ROH:
+    input: sharks/HepPer/20250422_CM068637.1_ROH_Results.txt, sharks/HepPer/20250422_CM068638.1_ROH_Results.txt, sharks/HepPer/20250422_CM068639.1_ROH_Results.txt, sharks/HepPer/20250422_CM068640.1_ROH_Results.txt, sharks/HepPer/20250422_CM068641.1_ROH_Results.txt, sharks/HepPer/20250422_CM068642.1_ROH_Results.txt, sharks/HepPer/20250422_CM068643.1_ROH_Results.txt, sharks/HepPer/20250422_CM068644.1_ROH_Results.txt, sharks/HepPer/20250422_CM068645.1_ROH_Results.txt, sharks/HepPer/20250422_CM068646.1_ROH_Results.txt, sharks/HepPer/20250422_CM068647.1_ROH_Results.txt, sharks/HepPer/20250422_CM068648.1_ROH_Results.txt, sharks/HepPer/20250422_CM068649.1_ROH_Results.txt, sharks/HepPer/20250422_CM068650.1_ROH_Results.txt, sharks/HepPer/20250422_CM068651.1_ROH_Results.txt, sharks/HepPer/20250422_CM068652.1_ROH_Results.txt, sharks/HepPer/20250422_CM068653.1_ROH_Results.txt, sharks/HepPer/20250422_CM068654.1_ROH_Results.txt, sharks/HepPer/20250422_CM068655.1_ROH_Results.txt, sharks/HepPer/20250422_CM068656.1_ROH_Results.txt, sharks/HepPer/20250422_CM068657.1_ROH_Results.txt, sharks/HepPer/20250422_CM068658.1_ROH_Results.txt, sharks/HepPer/20250422_CM068659.1_ROH_Results.txt, sharks/HepPer/20250422_CM068660.1_ROH_Results.txt, sharks/HepPer/20250422_CM068661.1_ROH_Results.txt, sharks/HepPer/20250422_CM068662.1_ROH_Results.txt, sharks/HepPer/20250422_CM068663.1_ROH_Results.txt, sharks/HepPer/20250422_CM068664.1_ROH_Results.txt, sharks/HepPer/20250422_CM068665.1_ROH_Results.txt, sharks/HepPer/20250422_CM068666.1_ROH_Results.txt, sharks/HepPer/20250422_CM068667.1_ROH_Results.txt, sharks/HepPer/20250422_CM068668.1_ROH_Results.txt, sharks/HepPer/20250422_CM068669.1_ROH_Results.txt, sharks/HepPer/20250422_CM068670.1_ROH_Results.txt, sharks/HepPer/20250422_CM068671.1_ROH_Results.txt, sharks/HepPer/20250422_CM068672.1_ROH_Results.txt, sharks/HepPer/20250422_CM068673.1_ROH_Results.txt, sharks/HepPer/20250422_CM068674.1_ROH_Results.txt, sharks/HepPer/20250422_CM068675.1_ROH_Results.txt, sharks/HepPer/20250422_CM068676.1_ROH_Results.txt, sharks/HepPer/20250422_CM068677.1_ROH_Results.txt, sharks/HepPer/20250422_CM068678.1_ROH_Results.txt, sharks/HepPer/20250422_CM068679.1_ROH_Results.txt, sharks/HepPer/20250422_CM068680.1_ROH_Results.txt, sharks/HepPer/20250422_CM068681.1_ROH_Results.txt, sharks/HepPer/20250422_CM068682.1_ROH_Results.txt
+    output: sharks/HepPer/HepPer_ROH_Results.csv
+    jobid: 149
+    reason: Missing output files: sharks/HepPer/HepPer_ROH_Results.csv; Input files updated by another job: sharks/HepPer/20250422_CM068665.1_ROH_Results.txt, sharks/HepPer/20250422_CM068669.1_ROH_Results.txt, sharks/HepPer/20250422_CM068643.1_ROH_Results.txt, sharks/HepPer/20250422_CM068670.1_ROH_Results.txt, sharks/HepPer/20250422_CM068676.1_ROH_Results.txt, sharks/HepPer/20250422_CM068647.1_ROH_Results.txt, sharks/HepPer/20250422_CM068640.1_ROH_Results.txt, sharks/HepPer/20250422_CM068651.1_ROH_Results.txt, sharks/HepPer/20250422_CM068652.1_ROH_Results.txt, sharks/HepPer/20250422_CM068662.1_ROH_Results.txt, sharks/HepPer/20250422_CM068664.1_ROH_Results.txt, sharks/HepPer/20250422_CM068663.1_ROH_Results.txt, sharks/HepPer/20250422_CM068671.1_ROH_Results.txt, sharks/HepPer/20250422_CM068649.1_ROH_Results.txt, sharks/HepPer/20250422_CM068646.1_ROH_Results.txt, sharks/HepPer/20250422_CM068644.1_ROH_Results.txt, sharks/HepPer/20250422_CM068645.1_ROH_Results.txt, sharks/HepPer/20250422_CM068660.1_ROH_Results.txt, sharks/HepPer/20250422_CM068674.1_ROH_Results.txt, sharks/HepPer/20250422_CM068675.1_ROH_Results.txt, sharks/HepPer/20250422_CM068673.1_ROH_Results.txt, sharks/HepPer/20250422_CM068638.1_ROH_Results.txt, sharks/HepPer/20250422_CM068666.1_ROH_Results.txt, sharks/HepPer/20250422_CM068667.1_ROH_Results.txt, sharks/HepPer/20250422_CM068642.1_ROH_Results.txt, sharks/HepPer/20250422_CM068654.1_ROH_Results.txt, sharks/HepPer/20250422_CM068639.1_ROH_Results.txt, sharks/HepPer/20250422_CM068658.1_ROH_Results.txt, sharks/HepPer/20250422_CM068682.1_ROH_Results.txt, sharks/HepPer/20250422_CM068679.1_ROH_Results.txt, sharks/HepPer/20250422_CM068677.1_ROH_Results.txt, sharks/HepPer/20250422_CM068637.1_ROH_Results.txt, sharks/HepPer/20250422_CM068648.1_ROH_Results.txt, sharks/HepPer/20250422_CM068657.1_ROH_Results.txt, sharks/HepPer/20250422_CM068678.1_ROH_Results.txt, sharks/HepPer/20250422_CM068681.1_ROH_Results.txt, sharks/HepPer/20250422_CM068680.1_ROH_Results.txt, sharks/HepPer/20250422_CM068659.1_ROH_Results.txt, sharks/HepPer/20250422_CM068655.1_ROH_Results.txt, sharks/HepPer/20250422_CM068641.1_ROH_Results.txt, sharks/HepPer/20250422_CM068650.1_ROH_Results.txt, sharks/HepPer/20250422_CM068656.1_ROH_Results.txt, sharks/HepPer/20250422_CM068653.1_ROH_Results.txt, sharks/HepPer/20250422_CM068668.1_ROH_Results.txt, sharks/HepPer/20250422_CM068672.1_ROH_Results.txt, sharks/HepPer/20250422_CM068661.1_ROH_Results.txt
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 149 has been submitted with SLURM jobid 9045090 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_COMPILE_ROH/9045090.log).
+[Mon May  5 15:45:56 2025]
+Finished job 149.
+142 of 286 steps (50%) done
+Select jobs to execute...
+Execute 10 jobs...
+
+[Mon May  5 15:45:56 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HepPer/HepPer_ROH_Results.csv, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084215.1_chroms.txt, sharks/HepPer/temp/20250422_CM068672.1_Var_Only.txt
+    output: sharks/HepPer/20250422_CM068672.1_GCA_035084215.1_FROH.txt
+    jobid: 186
+    reason: Missing output files: sharks/HepPer/20250422_CM068672.1_GCA_035084215.1_FROH.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068672.1_Var_Only.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068672.1, REF_NAME=GCA_035084215.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 186 has been submitted with SLURM jobid 9045330 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HepPer_20250422_CM068672.1_GCA_035084215.1/9045330.log).
+
+[Mon May  5 15:45:57 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HepPer/HepPer_ROH_Results.csv, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084215.1_chroms.txt, sharks/HepPer/temp/20250422_CM068674.1_Var_Only.txt
+    output: sharks/HepPer/20250422_CM068674.1_GCA_035084215.1_FROH.txt
+    jobid: 188
+    reason: Missing output files: sharks/HepPer/20250422_CM068674.1_GCA_035084215.1_FROH.txt; Input files updated by another job: sharks/HepPer/HepPer_ROH_Results.csv, sharks/HepPer/temp/20250422_CM068674.1_Var_Only.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068674.1, REF_NAME=GCA_035084215.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 188 has been submitted with SLURM jobid 9045331 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HepPer_20250422_CM068674.1_GCA_035084215.1/9045331.log).
+
+[Mon May  5 15:45:57 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HepPer/HepPer_ROH_Results.csv, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084215.1_chroms.txt, sharks/HepPer/temp/20250422_CM068646.1_Var_Only.txt
+    output: sharks/HepPer/20250422_CM068646.1_GCA_035084215.1_FROH.txt
+    jobid: 160
+    reason: Missing output files: sharks/HepPer/20250422_CM068646.1_GCA_035084215.1_FROH.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068646.1_Var_Only.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068646.1, REF_NAME=GCA_035084215.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 160 has been submitted with SLURM jobid 9045332 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HepPer_20250422_CM068646.1_GCA_035084215.1/9045332.log).
+
+[Mon May  5 15:45:57 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068655.1_het.txt
+    jobid: 216
+    reason: Missing output files: sharks/HepPer/20250422_CM068655.1_het.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068655.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 216 has been submitted with SLURM jobid 9045333 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068655.1/9045333.log).
+
+[Mon May  5 15:45:59 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068654.1_het.txt
+    jobid: 215
+    reason: Missing output files: sharks/HepPer/20250422_CM068654.1_het.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068654.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 215 has been submitted with SLURM jobid 9045334 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068654.1/9045334.log).
+
+[Mon May  5 15:45:59 2025]
+rule CALC_HET_PER_CHR:
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068682.1_het.txt
+    jobid: 243
+    reason: Missing output files: sharks/HepPer/20250422_CM068682.1_het.txt; Input files updated by another job: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068682.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 243 has been submitted with SLURM jobid 9045335 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068682.1/9045335.log).
+
+[Mon May  5 15:46:01 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HepPer/HepPer_ROH_Results.csv, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084215.1_chroms.txt, sharks/HepPer/temp/20250422_CM068657.1_Var_Only.txt
+    output: sharks/HepPer/20250422_CM068657.1_GCA_035084215.1_FROH.txt
+    jobid: 171
+    reason: Missing output files: sharks/HepPer/20250422_CM068657.1_GCA_035084215.1_FROH.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068657.1_Var_Only.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068657.1, REF_NAME=GCA_035084215.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 171 has been submitted with SLURM jobid 9045337 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HepPer_20250422_CM068657.1_GCA_035084215.1/9045337.log).
+
+[Mon May  5 15:46:02 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HepPer/HepPer_ROH_Results.csv, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084215.1_chroms.txt, sharks/HepPer/temp/20250422_CM068673.1_Var_Only.txt
+    output: sharks/HepPer/20250422_CM068673.1_GCA_035084215.1_FROH.txt
+    jobid: 187
+    reason: Missing output files: sharks/HepPer/20250422_CM068673.1_GCA_035084215.1_FROH.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068673.1_Var_Only.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068673.1, REF_NAME=GCA_035084215.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 187 has been submitted with SLURM jobid 9045338 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HepPer_20250422_CM068673.1_GCA_035084215.1/9045338.log).
+
+[Mon May  5 15:46:02 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HepPer/HepPer_ROH_Results.csv, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084215.1_chroms.txt, sharks/HepPer/temp/20250422_CM068675.1_Var_Only.txt
+    output: sharks/HepPer/20250422_CM068675.1_GCA_035084215.1_FROH.txt
+    jobid: 189
+    reason: Missing output files: sharks/HepPer/20250422_CM068675.1_GCA_035084215.1_FROH.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068675.1_Var_Only.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068675.1, REF_NAME=GCA_035084215.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 189 has been submitted with SLURM jobid 9045344 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HepPer_20250422_CM068675.1_GCA_035084215.1/9045344.log).
+
+[Mon May  5 15:46:04 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HepPer/HepPer_ROH_Results.csv, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084215.1_chroms.txt, sharks/HepPer/temp/20250422_CM068645.1_Var_Only.txt
+    output: sharks/HepPer/20250422_CM068645.1_GCA_035084215.1_FROH.txt
+    jobid: 159
+    reason: Missing output files: sharks/HepPer/20250422_CM068645.1_GCA_035084215.1_FROH.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068645.1_Var_Only.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068645.1, REF_NAME=GCA_035084215.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 159 has been submitted with SLURM jobid 9045345 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HepPer_20250422_CM068645.1_GCA_035084215.1/9045345.log).
+[Mon May  5 15:52:27 2025]
+Finished job 186.
+143 of 286 steps (50%) done
+Select jobs to execute...
+[Mon May  5 15:52:27 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9045333' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 216
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068655.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068655.1/9045333.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_per_chr_V3.py sharks/HepPer/temp/HepPer_Var_Only.txt sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt sharks HepPer 20250422 1000000 500000 45 sharks/HepPer/HepPer_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9045333
+
+[Mon May  5 15:52:27 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9045334' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 215
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068654.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068654.1/9045334.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_per_chr_V3.py sharks/HepPer/temp/HepPer_Var_Only.txt sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt sharks HepPer 20250422 1000000 500000 45 sharks/HepPer/HepPer_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9045334
+
+[Mon May  5 15:52:27 2025]
+Error in rule CALC_HET_PER_CHR:
+    message: SLURM-job '9045335' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 243
+    input: sharks/HepPer/temp/HepPer_Var_Only.txt, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    output: sharks/HepPer/20250422_CM068682.1_het.txt
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_CALC_HET_PER_CHR/sharks_HepPer_20250422_CM068682.1/9045335.log (check log file(s) for error details)
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_per_chr_V3.py sharks/HepPer/temp/HepPer_Var_Only.txt sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt sharks HepPer 20250422 1000000 500000 45 sharks/HepPer/HepPer_ROH_Results.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 9045335
+
+Execute 1 jobs...
+
+[Mon May  5 15:52:27 2025]
+rule FROH_PER_AUT_CHR:
+    input: sharks/HepPer/HepPer_ROH_Results.csv, sharks/HepPer/Reference_HepPer_Chroms_Lengths.txt, sharks/chrom_lists/GCA_035084215.1_chroms.txt, sharks/HepPer/temp/20250422_CM068664.1_Var_Only.txt
+    output: sharks/HepPer/20250422_CM068664.1_GCA_035084215.1_FROH.txt
+    jobid: 178
+    reason: Missing output files: sharks/HepPer/20250422_CM068664.1_GCA_035084215.1_FROH.txt; Input files updated by another job: sharks/HepPer/temp/20250422_CM068664.1_Var_Only.txt, sharks/HepPer/HepPer_ROH_Results.csv
+    wildcards: CLADE=sharks, SPEC_NAME=HepPer, TODAY_DATE=20250422, CHR=CM068664.1, REF_NAME=GCA_035084215.1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake-himem, runtime=120
+
+Job 178 has been submitted with SLURM jobid 9045486 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FROH_PER_AUT_CHR/sharks_HepPer_20250422_CM068664.1_GCA_035084215.1/9045486.log).
+[Mon May  5 15:52:28 2025]
+Finished job 188.
+144 of 286 steps (50%) done
+[Mon May  5 15:52:28 2025]
+Finished job 160.
+145 of 286 steps (51%) done
+[Mon May  5 15:52:28 2025]
+Finished job 171.
+146 of 286 steps (51%) done
+[Mon May  5 15:52:28 2025]
+Finished job 187.
+147 of 286 steps (51%) done
+[Mon May  5 15:57:28 2025]
+Finished job 189.
+148 of 286 steps (52%) done
+[Mon May  5 15:57:28 2025]
+Finished job 159.
+149 of 286 steps (52%) done
+[Mon May  5 15:57:28 2025]
+Finished job 178.
+150 of 286 steps (52%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-05-05T141351.450442.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

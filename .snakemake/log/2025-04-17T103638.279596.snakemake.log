@@ -1,0 +1,35 @@
+host: login-p-1
+Building DAG of jobs...
+SLURM run ID: 347b4f42-b0c7-4295-8eb1-32511e87c138
+Using shell: /usr/bin/bash
+Provided remote nodes: 10
+Job stats:
+job                    count
+-------------------  -------
+ALNCHAIN                   1
+ALNtoPAF                   1
+FASTGA                     1
+FILTER_PAF_VARIANCE        1
+GET_WHOLE_ALN              1
+GET_WHOLE_VAR              1
+GIXmake_REF                1
+SORT_PAF                   1
+all                        1
+total                      9
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Apr 17 10:36:38 2025]
+rule GIXmake_REF:
+    input: sharks/HetFra/temp/HetFra_GCA_036365495.1.1gdb
+    output: sharks/HetFra/temp/HetFra_GCA_036365495.1.gix
+    jobid: 6
+    reason: Missing output files: sharks/HetFra/temp/HetFra_GCA_036365495.1.gix
+    resources: tmpdir=<TBD>
+
+No SLURM account given, trying to guess.
+Unable to guess SLURM account. Trying to proceed without.
+No wall time information given. This might or might not work on your cluster. If not, specify the resource runtime in your rule or as a reasonable default via --default-resources.
+No job memory information ('mem_mb' or 'mem_mb_per_cpu') is given - submitting without. This might or might not work on your cluster.
+Job 6 has been submitted with SLURM jobid 8427863 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GIXmake_REF/8427863.log).

@@ -1,0 +1,113 @@
+host: login-q-4
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Job stats:
+job         count
+--------  -------
+ALNtoPAF        1
+FASTGA          1
+FAtoGDB1        1
+FAtoGDB2        1
+GIXmake1        1
+GIXmake2        1
+all             1
+total           7
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Mon Mar 17 14:02:19 2025]
+localrule FAtoGDB1:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/reference/amphibians/GCA_035609145.1.fa.gz
+    output: amphibians/EleCoq/temp/EleCoq_GCA_035609145.1.1gdb
+    jobid: 4
+    reason: Set of input files has changed since last execution; Code has changed since last execution
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 17 14:02:19 2025]
+localrule FAtoGDB2:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/alternate/amphibians/GCA_035609135.1.fa.gz
+    output: amphibians/EleCoq/temp/EleCoq_GCA_035609135.1.1gdb
+    jobid: 6
+    reason: Missing output files: amphibians/EleCoq/temp/EleCoq_GCA_035609135.1.1gdb
+    resources: tmpdir=/tmp
+
+[Mon Mar 17 14:02:41 2025]
+Finished job 6.
+1 of 7 steps (14%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Mar 17 14:02:41 2025]
+localrule GIXmake2:
+    input: amphibians/EleCoq/temp/EleCoq_GCA_035609135.1.1gdb
+    output: amphibians/EleCoq/temp/EleCoq_GCA_035609135.1.gix
+    jobid: 5
+    reason: Missing output files: amphibians/EleCoq/temp/EleCoq_GCA_035609135.1.gix; Input files updated by another job: amphibians/EleCoq/temp/EleCoq_GCA_035609135.1.1gdb
+    resources: tmpdir=/tmp
+
+[Mon Mar 17 14:02:42 2025]
+Finished job 4.
+2 of 7 steps (29%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Mar 17 14:02:42 2025]
+localrule GIXmake1:
+    input: amphibians/EleCoq/temp/EleCoq_GCA_035609145.1.1gdb
+    output: amphibians/EleCoq/temp/EleCoq_GCA_035609145.1.gix
+    jobid: 3
+    reason: Missing output files: amphibians/EleCoq/temp/EleCoq_GCA_035609145.1.gix; Input files updated by another job: amphibians/EleCoq/temp/EleCoq_GCA_035609145.1.1gdb
+    resources: tmpdir=/tmp
+
+[Mon Mar 17 14:03:58 2025]
+Finished job 5.
+3 of 7 steps (43%) done
+[Mon Mar 17 14:03:59 2025]
+Finished job 3.
+4 of 7 steps (57%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Mar 17 14:03:59 2025]
+localrule FASTGA:
+    input: amphibians/EleCoq/temp/EleCoq_GCA_035609145.1.gix, amphibians/EleCoq/temp/EleCoq_GCA_035609135.1.gix
+    output: amphibians/EleCoq/EleCoq_ALN.1aln
+    jobid: 2
+    reason: Missing output files: amphibians/EleCoq/EleCoq_ALN.1aln; Input files updated by another job: amphibians/EleCoq/temp/EleCoq_GCA_035609135.1.gix, amphibians/EleCoq/temp/EleCoq_GCA_035609145.1.gix
+    resources: tmpdir=/tmp
+
+[Mon Mar 17 14:16:30 2025]
+Finished job 2.
+5 of 7 steps (71%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Mar 17 14:16:30 2025]
+localrule ALNtoPAF:
+    input: amphibians/EleCoq/EleCoq_ALN.1aln
+    output: amphibians/EleCoq/EleCoq_FASTGA.paf
+    jobid: 1
+    reason: Missing output files: amphibians/EleCoq/EleCoq_FASTGA.paf; Input files updated by another job: amphibians/EleCoq/EleCoq_ALN.1aln
+    resources: tmpdir=/tmp
+
+[Mon Mar 17 14:17:53 2025]
+Finished job 1.
+6 of 7 steps (86%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Mar 17 14:17:53 2025]
+localrule all:
+    input: amphibians/EleCoq/EleCoq_FASTGA.paf
+    jobid: 0
+    reason: Input files updated by another job: amphibians/EleCoq/EleCoq_FASTGA.paf
+    resources: tmpdir=/tmp
+
+[Mon Mar 17 14:17:53 2025]
+Finished job 0.
+7 of 7 steps (100%) done
+Complete log: .snakemake/log/2025-03-17T140217.488231.snakemake.log

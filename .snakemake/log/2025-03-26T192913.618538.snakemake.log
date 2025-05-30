@@ -1,0 +1,40 @@
+host: login-p-3
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count
+---------------------  -------
+CALC_HET_WHOLE_GENOME        1
+COMPILE_HET                  1
+all                          1
+total                        3
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Wed Mar 26 19:29:13 2025]
+localrule CALC_HET_WHOLE_GENOME:
+    input: sharks/HydCol_Test/Reference_HydCol_Test_Chroms_Lengths.txt
+    output: sharks/HydCol_Test/20250326_HydCol_Test_per_chr_mean_heterozygosity.txt, sharks/HydCol_Test/20250326_HydCol_Test_whole_genome_mean_heterozygosity.txt
+    jobid: 40
+    reason: Missing output files: sharks/HydCol_Test/20250326_HydCol_Test_per_chr_mean_heterozygosity.txt, sharks/HydCol_Test/20250326_HydCol_Test_whole_genome_mean_heterozygosity.txt
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test, TODAY_DATE=20250326
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 19:29:13 2025]
+localrule COMPILE_HET:
+    input: sharks/HydCol_Test/20250326_CM068742.1_heterozygosity.txt, sharks/HydCol_Test/20250326_CM068743.1_heterozygosity.txt, sharks/HydCol_Test/20250326_CM068744.1_heterozygosity.txt, sharks/HydCol_Test/20250326_CM068745.1_heterozygosity.txt, sharks/HydCol_Test/20250326_CM068746.1_heterozygosity.txt
+    output: sharks/HydCol_Test/HydCol_Test_Het_Compiled.tsv
+    jobid: 41
+    reason: Missing output files: sharks/HydCol_Test/HydCol_Test_Het_Compiled.tsv
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test
+    resources: tmpdir=/tmp
+
+RuleException in rule COMPILE_HET in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 423:
+AttributeError: 'Wildcards' object has no attribute 'CHR', when formatting the following:
+
+        awk -v var='{wildcards.CHR}' 'NR>1 {{ print $1, $2, $3, $4, $5, $6, $7, var }}' {input} >> {output}
+        

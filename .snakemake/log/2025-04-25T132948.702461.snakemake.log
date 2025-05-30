@@ -1,0 +1,62 @@
+host: login-p-1
+Building DAG of jobs...
+SLURM run ID: ef9930b8-9953-48d1-8dda-a2b5430def0c
+Using shell: /usr/bin/bash
+Provided remote nodes: 10
+Job stats:
+job                       count
+----------------------  -------
+ALNCHAIN                      1
+ALNtoPAF                      1
+CALC_HET_PER_CHR             33
+CALC_HET_WHOLE_GENOME         1
+COMPILE_HET                   1
+COMPILE_ROH                   1
+FASTGA                        1
+FILTER_PAF_CHR_ONLY           1
+FILTER_PAF_VARIANCE           1
+FROH_PER_AUT_CHR             33
+GET_ALN_ONLY_PER_CHROM       33
+GET_VAR_ONLY_PER_CHROM       33
+GET_WHOLE_ALN                 1
+GET_WHOLE_VAR                 1
+PLOT_HET_PER_CHR             33
+PLOT_WHOLE_HET                1
+Plot_ROH                      1
+ROH_CALC                     33
+SORT_PAF                      1
+WHOLE_FROH                    1
+all                           1
+total                       213
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 13:29:49 2025]
+rule FASTGA:
+    input: sharks/MobBir/temp/MobBir_GCA_030028105.1.gix, sharks/MobBir/temp/MobBir_GCA_030035685.1.gix
+    output: sharks/MobBir/MobBir_ALN.1aln
+    jobid: 5
+    reason: Missing output files: sharks/MobBir/MobBir_ALN.1aln
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=icelake, runtime=720
+
+Job 5 has been submitted with SLURM jobid 8739931 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FASTGA/8739931.log).
+[Fri Apr 25 14:46:54 2025]
+Error in rule FASTGA:
+    message: SLURM-job '8739931' failed, SLURM status is: 'CANCELLED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 5
+    input: sharks/MobBir/temp/MobBir_GCA_030028105.1.gix, sharks/MobBir/temp/MobBir_GCA_030035685.1.gix
+    output: sharks/MobBir/MobBir_ALN.1aln
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FASTGA/8739931.log (check log file(s) for error details)
+    shell:
+        
+        FastGA -v -P. -T8 -1:sharks/MobBir/MobBir_ALN.1aln sharks/MobBir/temp/MobBir_GCA_030035685.1.gix sharks/MobBir/temp/MobBir_GCA_030028105.1.gix
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 8739931
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-04-25T132948.702461.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

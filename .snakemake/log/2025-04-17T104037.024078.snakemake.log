@@ -1,0 +1,67 @@
+host: login-p-1
+Building DAG of jobs...
+SLURM run ID: 63e29d52-9be4-4e90-b80f-15e4fc70fb33
+Using shell: /usr/bin/bash
+Provided remote nodes: 10
+Job stats:
+job                    count
+-------------------  -------
+ALNCHAIN                   1
+ALNtoPAF                   1
+FASTGA                     1
+FILTER_PAF_VARIANCE        1
+GET_WHOLE_ALN              1
+GET_WHOLE_VAR              1
+GIXmake_REF                1
+SORT_PAF                   1
+all                        1
+total                      9
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Apr 17 10:40:37 2025]
+rule GIXmake_REF:
+    input: sharks/HetFra/temp/HetFra_GCA_036365495.1.1gdb
+    output: sharks/HetFra/temp/HetFra_GCA_036365495.1.gix
+    jobid: 6
+    reason: Missing output files: sharks/HetFra/temp/HetFra_GCA_036365495.1.gix
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake, runtime=120
+
+Job 6 has been submitted with SLURM jobid 8427941 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_GIXmake_REF/8427941.log).
+[Thu Apr 17 10:52:08 2025]
+Finished job 6.
+1 of 9 steps (11%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Apr 17 10:52:08 2025]
+rule FASTGA:
+    input: sharks/HetFra/temp/HetFra_GCA_036365495.1.gix, sharks/HetFra/temp/HetFra_GCA_036365525.1.gix
+    output: sharks/HetFra/HetFra_ALN.1aln
+    jobid: 5
+    reason: Missing output files: sharks/HetFra/HetFra_ALN.1aln; Input files updated by another job: sharks/HetFra/temp/HetFra_GCA_036365495.1.gix
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_account=DURBIN-SL2-CPU, slurm_partition=cclake, runtime=360
+
+Job 5 has been submitted with SLURM jobid 8428520 (log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FASTGA/8428520.log).
+[Thu Apr 17 16:55:58 2025]
+Error in rule FASTGA:
+    message: SLURM-job '8428520' failed, SLURM status is: 'TIMEOUT'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 5
+    input: sharks/HetFra/temp/HetFra_GCA_036365495.1.gix, sharks/HetFra/temp/HetFra_GCA_036365525.1.gix
+    output: sharks/HetFra/HetFra_ALN.1aln
+    log: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/.snakemake/slurm_logs/rule_FASTGA/8428520.log (check log file(s) for error details)
+    shell:
+        
+        FastGA -v -P. -T8 -1:sharks/HetFra/HetFra_ALN.1aln sharks/HetFra/temp/HetFra_GCA_036365525.1.gix sharks/HetFra/temp/HetFra_GCA_036365495.1.gix
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 8428520
+
+Removing output files of failed job FASTGA since they might be corrupted:
+sharks/HetFra/HetFra_ALN.1aln
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-04-17T104037.024078.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

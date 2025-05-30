@@ -1,0 +1,96 @@
+host: login-q-3
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 76
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+GET_ALN_ONLY_PER_CHROM        1
+GET_VAR_ONLY_PER_CHROM        1
+GET_WHOLE_VAR                 1
+all                           1
+total                         4
+
+Select jobs to execute...
+Execute 3 jobs...
+
+[Fri Apr  4 13:24:29 2025]
+localrule GET_ALN_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/20250403_CM068756.1_filtered.paf
+    output: sharks/HydCol_Test2/temp/20250403_CM068756.1_Aln_Only.txt
+    jobid: 64
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068756.1
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 13:24:29 2025]
+localrule GET_WHOLE_VAR:
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/HydCol_Test2_Var_Only.txt
+    jobid: 49
+    reason: Forced execution
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  4 13:24:29 2025]
+localrule GET_VAR_ONLY_PER_CHROM:
+    input: sharks/HydCol_Test2/20250403_CM068756.1_filtered.paf
+    output: sharks/HydCol_Test2/temp/20250403_CM068756.1_Var_Only.txt
+    jobid: 104
+    reason: Forced execution
+    wildcards: CLADE=sharks, SPEC_NAME=HydCol_Test2, TODAY_DATE=20250403, CHR=CM068756.1
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 259:
+Command 'set -euo pipefail;  
+        k8 paftools.js call sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf | awk '$1 == "V" && $2 !~ /^JAY/' > sharks/HydCol_Test2/temp/HydCol_Test2_Var_Only.txt' died with <Signals.SIGTERM: 15>.
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 272:
+Command 'set -euo pipefail;  
+        k8 paftools.js call sharks/HydCol_Test2/20250403_CM068756.1_filtered.paf | awk '$1 == "V"' > sharks/HydCol_Test2/temp/20250403_CM068756.1_Var_Only.txt' died with <Signals.SIGTERM: 15>.
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 244:
+Command 'set -euo pipefail;  
+        k8 paftools.js call sharks/HydCol_Test2/20250403_CM068756.1_filtered.paf | awk '$1 == "R"' > sharks/HydCol_Test2/temp/20250403_CM068756.1_Aln_Only.txt' died with <Signals.SIGTERM: 15>.
+[Fri Apr  4 15:53:40 2025]
+[Fri Apr  4 15:53:40 2025]
+[Fri Apr  4 15:53:40 2025]
+Error in rule GET_WHOLE_VAR:
+    jobid: 49
+    input: sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf
+    output: sharks/HydCol_Test2/temp/HydCol_Test2_Var_Only.txt
+    shell:
+        
+        k8 paftools.js call sharks/HydCol_Test2/HydCol_Test2_FASTGA_Updated.paf | awk '$1 == "V" && $2 !~ /^JAY/' > sharks/HydCol_Test2/temp/HydCol_Test2_Var_Only.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error in rule GET_VAR_ONLY_PER_CHROM:
+    jobid: 104
+    input: sharks/HydCol_Test2/20250403_CM068756.1_filtered.paf
+    output: sharks/HydCol_Test2/temp/20250403_CM068756.1_Var_Only.txt
+    shell:
+        
+        k8 paftools.js call sharks/HydCol_Test2/20250403_CM068756.1_filtered.paf | awk '$1 == "V"' > sharks/HydCol_Test2/temp/20250403_CM068756.1_Var_Only.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error in rule GET_ALN_ONLY_PER_CHROM:
+    jobid: 64
+    input: sharks/HydCol_Test2/20250403_CM068756.1_filtered.paf
+    output: sharks/HydCol_Test2/temp/20250403_CM068756.1_Aln_Only.txt
+    shell:
+        
+        k8 paftools.js call sharks/HydCol_Test2/20250403_CM068756.1_filtered.paf | awk '$1 == "R"' > sharks/HydCol_Test2/temp/20250403_CM068756.1_Aln_Only.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Will exit after finishing currently running jobs (scheduler).
+Will exit after finishing currently running jobs (scheduler).
+Shutting down, this might take some time.
+Complete log: .snakemake/log/2025-04-04T132428.630862.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

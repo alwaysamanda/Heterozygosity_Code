@@ -1,0 +1,143 @@
+host: login-p-1
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+ALNtoPAF                   1
+FASTGA                     1
+FAtoGDB_ALT                1
+FAtoGDB_REF                1
+FILTER_PAF_CHR_ONLY        1
+GIXmake_ALT                1
+GIXmake_REF                1
+SORT_PAF                   1
+all                        1
+total                      9
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu Apr 10 11:17:37 2025]
+localrule FAtoGDB_REF:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/reference/sharks/GCA_035084215.1.fa.gz
+    output: sharks/HepPer_Test/temp/HepPer_Test_GCA_035084215.1.1gdb
+    jobid: 6
+    reason: Missing output files: sharks/HepPer_Test/temp/HepPer_Test_GCA_035084215.1.1gdb
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 10 11:17:37 2025]
+localrule FAtoGDB_ALT:
+    input: /rds/project/rds-p67MZilb2eQ/projects/VGP/241117.UCSC-hubs-VGP-alignment/alignment/alternate/sharks/GCA_035084135.1.fa.gz
+    output: sharks/HepPer_Test/temp/HepPer_Test_GCA_035084135.1.1gdb
+    jobid: 8
+    reason: Missing output files: sharks/HepPer_Test/temp/HepPer_Test_GCA_035084135.1.1gdb
+    resources: tmpdir=/tmp
+
+[Thu Apr 10 11:17:52 2025]
+Finished job 8.
+1 of 9 steps (11%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Apr 10 11:17:52 2025]
+localrule GIXmake_ALT:
+    input: sharks/HepPer_Test/temp/HepPer_Test_GCA_035084135.1.1gdb
+    output: sharks/HepPer_Test/temp/HepPer_Test_GCA_035084135.1.gix
+    jobid: 7
+    reason: Missing output files: sharks/HepPer_Test/temp/HepPer_Test_GCA_035084135.1.gix; Input files updated by another job: sharks/HepPer_Test/temp/HepPer_Test_GCA_035084135.1.1gdb
+    resources: tmpdir=/tmp
+
+[Thu Apr 10 11:17:52 2025]
+Finished job 6.
+2 of 9 steps (22%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Apr 10 11:17:52 2025]
+localrule GIXmake_REF:
+    input: sharks/HepPer_Test/temp/HepPer_Test_GCA_035084215.1.1gdb
+    output: sharks/HepPer_Test/temp/HepPer_Test_GCA_035084215.1.gix
+    jobid: 5
+    reason: Missing output files: sharks/HepPer_Test/temp/HepPer_Test_GCA_035084215.1.gix; Input files updated by another job: sharks/HepPer_Test/temp/HepPer_Test_GCA_035084215.1.1gdb
+    resources: tmpdir=/tmp
+
+[Thu Apr 10 11:19:08 2025]
+Finished job 7.
+3 of 9 steps (33%) done
+[Thu Apr 10 11:19:09 2025]
+Finished job 5.
+4 of 9 steps (44%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Apr 10 11:19:09 2025]
+localrule FASTGA:
+    input: sharks/HepPer_Test/temp/HepPer_Test_GCA_035084215.1.gix, sharks/HepPer_Test/temp/HepPer_Test_GCA_035084135.1.gix
+    output: sharks/HepPer_Test/HepPer_Test_ALN.1aln
+    jobid: 4
+    reason: Missing output files: sharks/HepPer_Test/HepPer_Test_ALN.1aln; Input files updated by another job: sharks/HepPer_Test/temp/HepPer_Test_GCA_035084215.1.gix, sharks/HepPer_Test/temp/HepPer_Test_GCA_035084135.1.gix
+    resources: tmpdir=/tmp
+
+[Thu Apr 10 11:46:40 2025]
+Finished job 4.
+5 of 9 steps (56%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Apr 10 11:46:40 2025]
+localrule ALNtoPAF:
+    input: sharks/HepPer_Test/HepPer_Test_ALN.1aln
+    output: sharks/HepPer_Test/HepPer_Test_FASTGA.paf
+    jobid: 3
+    reason: Missing output files: sharks/HepPer_Test/HepPer_Test_FASTGA.paf; Input files updated by another job: sharks/HepPer_Test/HepPer_Test_ALN.1aln
+    resources: tmpdir=/tmp
+
+[Thu Apr 10 11:50:49 2025]
+Finished job 3.
+6 of 9 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Apr 10 11:50:49 2025]
+localrule SORT_PAF:
+    input: sharks/HepPer_Test/HepPer_Test_FASTGA.paf
+    output: sharks/HepPer_Test/HepPer_Test_FASTGA.srt.paf
+    jobid: 2
+    reason: Missing output files: sharks/HepPer_Test/HepPer_Test_FASTGA.srt.paf; Input files updated by another job: sharks/HepPer_Test/HepPer_Test_FASTGA.paf
+    resources: tmpdir=/tmp
+
+[Thu Apr 10 11:56:46 2025]
+Finished job 2.
+7 of 9 steps (78%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Apr 10 11:56:46 2025]
+localrule FILTER_PAF_CHR_ONLY:
+    input: sharks/HepPer_Test/HepPer_Test_FASTGA.srt.paf
+    output: sharks/HepPer_Test/HepPer_Test_FASTGA_Filtered.srt.paf
+    jobid: 1
+    reason: Missing output files: sharks/HepPer_Test/HepPer_Test_FASTGA_Filtered.srt.paf; Input files updated by another job: sharks/HepPer_Test/HepPer_Test_FASTGA.srt.paf
+    resources: tmpdir=/tmp
+
+[Thu Apr 10 11:57:05 2025]
+Finished job 1.
+8 of 9 steps (89%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Apr 10 11:57:05 2025]
+localrule all:
+    input: sharks/HepPer_Test/HepPer_Test_FASTGA_Filtered.srt.paf
+    jobid: 0
+    reason: Input files updated by another job: sharks/HepPer_Test/HepPer_Test_FASTGA_Filtered.srt.paf
+    resources: tmpdir=/tmp
+
+[Thu Apr 10 11:57:05 2025]
+Finished job 0.
+9 of 9 steps (100%) done
+Complete log: .snakemake/log/2025-04-10T111736.864476.snakemake.log

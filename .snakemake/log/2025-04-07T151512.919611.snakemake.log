@@ -1,0 +1,45 @@
+host: login-q-3
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 76
+Rules claiming more threads will be scaled down.
+Job stats:
+job       count
+------  -------
+PAF_CS        1
+all           1
+total         2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr  7 15:15:28 2025]
+localrule PAF_CS:
+    input: sharks/NarBan_Test/NarBan_Test_FASTGA_Filtered_Chr_Only.paf
+    output: sharks/NarBan_Test/NarBan_Test_FASTGA_Updated.paf
+    jobid: 1
+    reason: Missing output files: sharks/NarBan_Test/NarBan_Test_FASTGA_Updated.paf
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 205:
+Command 'set -euo pipefail;  
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250403_cs_string_generator.py sharks/NarBan_Test/NarBan_Test_FASTGA_Filtered_Chr_Only.paf sharks NarBan_Test' returned non-zero exit status 1.
+[Mon Apr  7 15:56:04 2025]
+Error in rule PAF_CS:
+    jobid: 1
+    input: sharks/NarBan_Test/NarBan_Test_FASTGA_Filtered_Chr_Only.paf
+    output: sharks/NarBan_Test/NarBan_Test_FASTGA_Updated.paf
+    shell:
+        
+        python /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250403_cs_string_generator.py sharks/NarBan_Test/NarBan_Test_FASTGA_Filtered_Chr_Only.paf sharks NarBan_Test
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job PAF_CS since they might be corrupted:
+sharks/NarBan_Test/NarBan_Test_FASTGA_Updated.paf
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-04-07T151512.919611.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

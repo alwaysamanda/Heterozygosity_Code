@@ -1,0 +1,58 @@
+host: login-p-1
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 56
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+CHROM_LENGTH_CALC             1
+FILTER_PAF                    1
+GET_ALN_ONLY_PER_CHROM        1
+GET_VAR_ALN_FILE              1
+GET_VAR_ONLY_PER_CHROM        1
+ROH_CALC                      1
+total                         6
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Wed Mar 26 11:57:04 2025]
+localrule FILTER_PAF:
+    input: amphibians/EleCoq_TEST/EleCoq_TEST_FASTGA.paf
+    output: amphibians/EleCoq_TEST/20250325_CM069418.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069419.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069420.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069421.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069422.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069423.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069424.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069425.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069426.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069427.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069428.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069429.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069430.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069431.1_filtered.paf
+    jobid: 3
+    reason: Missing output files: amphibians/EleCoq_TEST/20250325_CM069419.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069428.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069430.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069429.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069421.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069431.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069425.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069423.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069424.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069420.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069422.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069418.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069427.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069426.1_filtered.paf
+    resources: tmpdir=/tmp
+
+
+[Wed Mar 26 11:57:05 2025]
+localrule CHROM_LENGTH_CALC:
+    input: ../241117.UCSC-hubs-VGP-alignment/alignment/reference/amphibians/GCA_035609145.1.fa.gz
+    output: amphibians/EleCoq_TEST/Reference_EleCoq_TEST_Chroms_Lengths.txt
+    jobid: 11
+    reason: Missing output files: amphibians/EleCoq_TEST/Reference_EleCoq_TEST_Chroms_Lengths.txt
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 220:
+Command 'set -euo pipefail;  awk -v var='{wildcards.chrom}' '{if ($6 == var && $12 >= 60) {print $0}}' amphibians/EleCoq_TEST/EleCoq_TEST_FASTGA.paf > amphibians/EleCoq_TEST/20250325_CM069418.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069419.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069420.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069421.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069422.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069423.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069424.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069425.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069426.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069427.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069428.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069429.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069430.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069431.1_filtered.paf' returned non-zero exit status 2.
+[Wed Mar 26 11:57:10 2025]
+Error in rule FILTER_PAF:
+    jobid: 3
+    input: amphibians/EleCoq_TEST/EleCoq_TEST_FASTGA.paf
+    output: amphibians/EleCoq_TEST/20250325_CM069418.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069419.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069420.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069421.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069422.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069423.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069424.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069425.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069426.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069427.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069428.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069429.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069430.1_filtered.paf, amphibians/EleCoq_TEST/20250325_CM069431.1_filtered.paf
+    shell:
+        awk -v var='{wildcards.chrom}' '{if ($6 == var && $12 >= 60) {print $0}}' amphibians/EleCoq_TEST/EleCoq_TEST_FASTGA.paf > amphibians/EleCoq_TEST/20250325_CM069418.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069419.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069420.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069421.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069422.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069423.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069424.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069425.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069426.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069427.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069428.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069429.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069430.1_filtered.paf amphibians/EleCoq_TEST/20250325_CM069431.1_filtered.paf
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job FILTER_PAF since they might be corrupted:
+amphibians/EleCoq_TEST/20250325_CM069418.1_filtered.paf
+[Wed Mar 26 11:57:31 2025]
+Finished job 11.
+1 of 6 steps (17%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-26T115704.372023.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

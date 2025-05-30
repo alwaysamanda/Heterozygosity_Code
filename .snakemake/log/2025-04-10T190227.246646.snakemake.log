@@ -1,0 +1,40 @@
+host: login-q-3
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 76
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count
+-------------------  -------
+FILTER_PAF_VARIANCE        1
+all                        1
+total                      2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Apr 10 19:02:27 2025]
+localrule FILTER_PAF_VARIANCE:
+    input: sharks/HydCol/HydCol_FASTGA.srt.paf
+    output: sharks/HydCol/HydCol_FASTGA.fltr.srt.paf
+    jobid: 1
+    reason: Missing output files: sharks/HydCol/HydCol_FASTGA.fltr.srt.paf
+    resources: tmpdir=/tmp
+
+[Thu Apr 10 19:02:28 2025]
+Finished job 1.
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Apr 10 19:02:28 2025]
+localrule all:
+    input: sharks/HydCol/HydCol_FASTGA.fltr.srt.paf
+    jobid: 0
+    reason: Input files updated by another job: sharks/HydCol/HydCol_FASTGA.fltr.srt.paf
+    resources: tmpdir=/tmp
+
+[Thu Apr 10 19:02:28 2025]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2025-04-10T190227.246646.snakemake.log
