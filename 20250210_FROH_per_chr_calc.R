@@ -20,12 +20,11 @@ ROH_dat <- read.csv(args[6], header=FALSE)
 colnames(ROH_dat) <- c('Chr', 'Start', 'End', 'Length')
 # print(head(ROH_dat))
 
-Today_date <- args[8]
-Ref_name <- args[9] ## Reference genome name
-clade <- args[10]
-num_aut_chr <- as.numeric(args[11]) ## Number of autosomal chromosomes
-chrom_length <- as.numeric(args[12]) ## Length of chromosome from first to last measured variant (will be slightly shorter than total lenth of chromosome)
-chr <- args[13]
+Ref_name <- args[8] ## Reference genome name
+clade <- args[9]
+num_aut_chr <- as.numeric(args[10]) ## Number of autosomal chromosomes
+chrom_length <- as.numeric(args[11]) ## Length of chromosome from first to last measured variant (will be slightly shorter than total lenth of chromosome)
+chr <- args[12]
 
 ## Calculate FROH for whole chromosome, all ROH 
 chr_ROH <- ROH_dat %>% filter(ROH_dat$Chr == chr) ## Select ROH for that chromosome

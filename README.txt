@@ -6512,5 +6512,16 @@ And that means that 'Sex' as a label is duplicated, so I can't use factor
 
 Used interactive session to fix 20250106_Plot_ROH.R script to fix errors in HemOce and HypSab
 
+Pushed changes to github
+Process to push updates:
+    git commit -a -m "INSERT MESSAGE FOR UPDATES HERE"
+    git push
+
+Added in commands for calculating FROH to Snakefile
+Modified them to remove today_date
+
+Submitted for HydCol, HepPer, HemOce, HypSab, NarBan, MobBir, and HetFra
+
+Modified 20250520_find_het_per_chr_V4.py to remove the today_date and make it run for each individual chromosome rather than loop over all autosomal chromsomes
 
 

@@ -106,6 +106,8 @@ rule all:
         f"{CLADE}/chrom_lists/{SPEC_NAME}_chroms.txt", 
         f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_FASTGA.chain.chr.fltr.srt.paf", 
         f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_ALN.chain.pdf", 
+        ### End alignment section
+        ### Start chromosome information section
         f"{CLADE}/chrom_lists/{SPEC_NAME}_chroms.txt", 
         f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_Chroms_Lengths.txt", 
         f"{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_Var_Only.txt", 
@@ -113,10 +115,14 @@ rule all:
         expand("{CLADE}/{SPEC_NAME}/temp/{CHR}_Aln_Only.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHR=CHROMS), 
         expand("{CLADE}/{SPEC_NAME}/temp/{CHR}_Var_Only.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHR=CHROMS), 
         ### End chromosome information section
+        ### Start ROH section
         expand("{CLADE}/{SPEC_NAME}/{CHR}_ROH_Results.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHR=CHROMS), 
         f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_ROH_Results.csv", 
-        f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_ROH_Map.pdf"
+        f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_ROH_Map.pdf", 
+        expand("{CLADE}/{SPEC_NAME}/{CHR}_{SPEC_NAME}_FROH.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHR=CHROMS), 
+        f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_FROH.txt", 
 
+# expand("{CLADE}/{SPEC_NAME}/{CHROM}_het.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS)
 
 ####---------- RULES FOR FASTGA ALINGMENT AND PAF FILE GENERATION ----------####
 rule FAtoGDB_REF:
@@ -372,9 +378,101 @@ rule Plot_ROH:
 ####---------- END ----------####
 
 ####---------- RULES FOR CALCULATING FROH ----------####
+rule FROH_PER_AUT_CHR:
+    input:
+        ROH="{CLADE}/{SPEC_NAME}/{SPEC_NAME}_ROH_Results.csv", 
+        CHROM_LENGTH_FILE="{CLADE}/{SPEC_NAME}/{SPEC_NAME}_Chroms_Lengths.txt", 
+        ALL_CHROMS="{CLADE}/chrom_lists/{SPEC_NAME}_chroms.txt",
+        VAR_FILE="{CLADE}/{SPEC_NAME}/temp/{CHR}_Var_Only.txt"
+    output:
+        outfiles="{CLADE}/{SPEC_NAME}/{CHR}_{SPEC_NAME}_FROH.txt"
+    params:
+        REF_NAME=REF_NAME,
+        CLADE=CLADE,
+        NUM_AUT_CHROMOSOMES=NUM_AUT_CHROMOSOMES, 
+        SPEC_NAME=SPEC_NAME
+    shell:
+        """
+        start="$(head -n  1 {input.VAR_FILE} | awk ' {{print $3}} ')"
+        end="$(tail -n  1 {input.VAR_FILE} | awk ' {{print $4}} ')"
+        chrom_length="$((end - start))"
+
+        Rscript {FROH_CALC_PER_CHR_R} {input.ROH} {input.CHROM_LENGTH_FILE} {params.REF_NAME} {params.CLADE} {params.NUM_AUT_CHROMOSOMES} "$chrom_length" {wildcards.CHR} > {output.outfiles}
+        """
+
+rule WHOLE_FROH:
+    input:
+        ROH="{CLADE}/{SPEC_NAME}/{SPEC_NAME}_ROH_Results.csv", 
+        CHROM_LENGTH_FILE="{CLADE}/{SPEC_NAME}/{SPEC_NAME}_Chroms_Lengths.txt", 
+        ALL_CHROMS=expand("{CLADE}/chrom_lists/{SPEC_NAME}_chroms.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME), 
+        VAR_FILE="{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_Var_Only.txt"
+    output:
+        "{CLADE}/{SPEC_NAME}/{SPEC_NAME}_FROH.txt"
+    params:
+        REF_NAME=REF_NAME,
+        CLADE=CLADE,
+        NUM_AUT_CHROMOSOMES=NUM_AUT_CHROMOSOMES, 
+        SPEC_NAME=SPEC_NAME
+    shell:
+        """
+        set -e 
+        
+        Laut_autosomal=0
+        Laut=0
+
+        while read -r line; do
+            start="$(head -n 1 {params.CLADE}/{params.SPEC_NAME}/temp/"$line"_Var_Only.txt | awk ' {{print $3}} ')"
+            end="$(tail -n 1 {params.CLADE}/{params.SPEC_NAME}/temp/"$line"_Var_Only.txt | awk ' {{print $4}} ')"
+            chrom_length="$((end - start))"
+            Laut_autosomal=$(("$Laut_autosomal" + "$chrom_length"))
+        done < <(head -n {params.NUM_AUT_CHROMOSOMES} "{input.ALL_CHROMS}") 
+
+        while read -r line; do
+            start="$(head -n 1 {params.CLADE}/{params.SPEC_NAME}/temp/"$line"_Var_Only.txt | awk ' {{print $3}} ')"
+            end="$(tail -n 1 {params.CLADE}/{params.SPEC_NAME}/temp/"$line"_Var_Only.txt | awk ' {{print $4}} ')"
+            chrom_length="$((end - start))"
+            Laut=$(("$Laut" + "$chrom_length"))
+        done < "{input.ALL_CHROMS}"
+
+        Rscript {FROH_CALC_R} {input.ROH} {input.CHROM_LENGTH_FILE} {params.REF_NAME} {params.CLADE} "$Laut" {params.NUM_AUT_CHROMOSOMES} "$Laut_autosomal" > {output}
+        """
 ####---------- END ----------####
 
 ####---------- RULES FOR CALCULATING HETEROZYGOSITY ----------####
+rule CALC_HET_PER_CHR:
+    input:
+        VAR_FILE="{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_Var_Only.txt", 
+        CHROM_LENGTH_FILE="{CLADE}/{SPEC_NAME}/{SPEC_NAME}_Chroms_Lengths.txt", 
+        ROH="{CLADE}/{SPEC_NAME}/{SPEC_NAME}_ROH_Results.csv"
+    output:
+        "{CLADE}/{SPEC_NAME}/{CHROM}_het.txt"
+    params:
+        REF_NAME=REF_NAME, 
+        CLADE=CLADE, 
+        NUM_AUT_CHROMOSOMES=NUM_AUT_CHROMOSOMES, 
+        SPEC_NAME=SPEC_NAME, 
+        WINDOW_INTERVAL=WINDOW_INTERVAL,  
+        WINDOW_LENGTH=WINDOW_LENGTH
+    shell:
+        """
+        python {CALC_HET_PER_CHR_PY} {input.VAR_FILE} {input.CHROM_LENGTH_FILE} {params.CLADE} {params.SPEC_NAME} {params.WINDOW_LENGTH} {params.WINDOW_INTERVAL} {wildcards.CHROM} {input.ROH}
+        """
+
+rule CALC_HET_WHOLE_GENOME:
+    input:
+        CHROM_LENGTH_FILE="{CLADE}/{SPEC_NAME}/{SPEC_NAME}_Chroms_Lengths.txt",
+        PER_CHR_FILES="{CLADE}/{SPEC_NAME}/{CHROM}_het.txt"
+    output:
+        WHOLE_PER_CHR="{CLADE}/{SPEC_NAME}/{SPEC_NAME}_per_chr_mean_heterozygosity.txt",
+        WHOLE_GENOME="{CLADE}/{SPEC_NAME}/{SPEC_NAME}_whole_genome_mean_heterozygosity.txt", 
+    params:
+        CLADE=CLADE, 
+        SPEC_NAME=SPEC_NAME,
+        NUM_AUT_CHROMOSOMES=NUM_AUT_CHROMOSOMES
+    shell:
+        """
+        python {CALC_HET_WHOLE_GENOME_PY} {input.CHROM_LENGTH_FILE} {params.CLADE} {params.SPEC_NAME} {params.NUM_AUT_CHROMOSOMES}
+        """
 ####---------- END ----------####
 
 ####---------- RULES FOR PLOTTING HETEROZYGOSITY ----------####

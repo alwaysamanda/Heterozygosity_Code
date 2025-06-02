@@ -21,14 +21,15 @@ import io
 import os
 
 ## Load in variables from shell
-var_file = sys.argv[1]
-chrom_length_file = sys.argv[2]
+dat = sys.argv[1] # File containing variant information
+chr_file = sys.argv[2] # File containing chromosome names and their lengths
 clade = sys.argv[3] # Clade name
 species = sys.argv[4] #Species name/reference genome name -- directory for storing results
-date = sys.argv[5] # Date of running file
-window_length = pd.as_numeric(sys.argv[6])
-window_interval = pd.as_numeric(sys.argv[7])
-chrom = sys.argv[8]
+current_window_length = int(sys.argv[5]) # Window length defined for calculating het
+current_window_interval = int(sys.argv[6]) # How often windows start, defines their level of overlap
+chrom = sys.argv[7] # Number of autosomal chromosomes in the genome
+roh_data = sys.argv[8] # File containing ROH start, end, and length for whole genome
+
 
 
 #### FUNCTIONS ####
@@ -42,81 +43,105 @@ def filter_chr_file_by_chrom(chromosome_file, chromosome):
         dat = [word for line in file if line.split()[0] == chromosome for word in line.split()]
     return dat
 
-def read_chromosome_file(chromosome_file):
-    with open(chromosome_file, 'r') as file:
-        dat = [line.split()[:] for line in file]
-    return pd.DataFrame(dat, columns=["chr_name", "chr_length"])
-
 def filter_roh_by_chrom(roh_data, chromosome):
+    dat=[]
     with open(roh_data, 'r') as file:
-        dat = [line.split() for line in file if line.split()[0] == chromosome]
+        for line in file:
+            splitline = line.split(',')
+            if splitline[0] == chromosome:
+                splitline[3] = splitline[3].replace('\n', '')
+                dat.append(splitline)
     return pd.DataFrame(dat)
 
-def calc_het(chromosome_length_file, clade, species, date, chromosome):
-    ## Read in chromosomes and their lengths
-    chr_df = read_chromosome_file(chromosome_length_file)
-
-    ## Create dataframe to track mean results for each chromosome
-    all_chromosomes = chr_df['chr_name']
-    chr_mean_het = np.zeros(len(all_chromosomes))
-    chr_mean_het_excl_ROH = np.zeros(len(all_chromosomes))
-    mean_het_df = pd.DataFrame({
-        'chr': all_chromosomes, 
-        'mean_het': chr_mean_het, 
-        'mean_het_excl_ROH': chr_mean_het_excl_ROH, 
-    })
-
-    all_het = []
-    all_auto_het = []
-
-    all_het_excl_ROH = []
-    all_auto_het_excl_ROH = []
-
-    ## Find autosomal chromosomes
-    aut_chr = chr_df.iloc[0:num_aut_chr, 0]
-    # print(aut_chr)
-
-    file_path = os.path.join(clade, species, date + '_' + chr_name + '_het.txt')
-    chrom_file = pd.read_csv(file_path, sep=',', header=0)
-
-    ## Calculate mean het per kb for the chromosome and store it in mean_het_df
-    mean_het_df.loc[mean_het_df['chr']==chr_name,'mean_het'] = np.mean(chrom_file['Het_Per_Kb'])
-    mean_het_df.loc[mean_het_df['chr']==chr_name,'mean_het_excl_ROH'] = np.mean(chrom_file['Het_Per_Kb_excl_ROH'])
-
-    ## Calculate mean het per kb window for the whole genome and just autosomal genome
-    all_het.extend(chrom_file['Het_Per_Kb'].tolist())
-    all_het_excl_ROH.extend(chrom_file['Het_Per_Kb_excl_ROH'].tolist())
-    ## Finish for loop
-
-    ## Save file containing mean heterozygosty per kb window per chromosome
-    mean_het_file_name = os.path.join(clade, species, date + '_' + species + '_per_chr_mean_heterozygosity.txt')
-    mean_het_df.to_csv(mean_het_file_name, header=True, index=False)
-    # print(mean_het_df)
-
-    total_mean = np.mean(all_het)
-    total_mean_excl_ROH = np.mean(all_het_excl_ROH)
-
-    for chr_name in aut_chr:
-        file_path = os.path.join(clade, species, date + '_' + chr_name + '_het.txt')
-        chrom_file = pd.read_csv(file_path, sep=',')
-        all_auto_het.extend(chrom_file['Het_Per_Kb'].tolist())
-        all_auto_het_excl_ROH.extend(chrom_file['Het_Per_Kb_excl_ROH'].tolist())
-    ## Finish for loop
-    total_auto_mean = np.mean(all_auto_het)
-    total_auto_mean_excl_ROH = np.mean(all_auto_het_excl_ROH)
-
-    ## Save results
-    results = [
-        'The mean heterozygosity per 1kb over the whole genome: \n', total_mean, '\n', 
-        'The mean heterozygosity per 1kb over the whole autosomal genome: \n', total_auto_mean, '\n', 
-        'The mean heterozygosity per 1kb over the whole genome excluding ROH: \n', total_mean_excl_ROH, '\n',
-        'The mean heterozygosity per 1kb over the whole autosomal genome excluding ROH: \n', total_auto_mean_excl_ROH 
-    ]
-    total_mean_file_name = os.path.join(clade, species, date  + '_' + species + '_whole_genome_mean_heterozygosity.txt')
-
-    result_file = open(total_mean_file_name, 'w')
-    result_file.writelines(str(element) for element in results)
-    result_file.close()
+def calc_het(variant_file, roh_file, chromosome_length_file, window_length, window_interval, chromosome):
+    single_chr_df = filter_var_by_chrom(variant_file, chromosome)
+    chr_info = filter_chr_file_by_chrom(chromosome_length_file, chromosome)
+    chr_length = int(chr_info[1])
+    if chr_length < window_length:
+        window_length_alt = 5000
+        window_interval_alt = window_length_alt/2
+        window_starts = np.arange(0, (chr_length-window_length_alt+1), window_interval_alt)
+        window_ends = window_starts + window_length_alt
+        window_sizes = np.repeat(window_length_alt, len(window_starts))
+    else:
+        window_starts = np.arange(0, (chr_length-window_length+1), window_interval)
+        window_ends = window_starts + window_length 
+        window_sizes = np.repeat(window_length, len(window_starts))
+    ## End if statement
+    het = np.zeros(len(window_starts)) ## Create heterozygosity vector
+    het_wo_roh = np.zeros(len(window_starts)) ## heterozygosity vector excluding ROH
+    single_chr_results = pd.DataFrame({
+        'Start': window_starts, 
+        'End': window_ends, 
+        'Het': het, 
+        'Het_excl_ROH': het_wo_roh, 
+        'Window_Size': window_sizes, 
+        'Window_Size_excl_ROH': window_sizes
+    }) ## Create dataframe to store results for the given chromosome
+    ## Count the number of variants in each window
+    starts = single_chr_results.iloc[:, 0].astype(int)
+    ends = single_chr_results.iloc[:, 1].astype(int)
+    variant_positions = single_chr_df.iloc[:, 2].astype(int)
+    single_chr_results.loc[:,'Het'] = [(variant_positions.between(start, end - 1)).sum() for start, end in zip(starts, ends)] ## Sum all variants in each window, not worrying about ROH
+    ## Count number of variants in each window, excluding those found in ROH
+    ## Get ROH positions
+    roh_dat = filter_roh_by_chrom(roh_file, chromosome)
+    ## If there are ROH present on chromosome -- Calculate het
+    if roh_dat.empty == False:
+        ROH_starts = (roh_dat.iloc[:, 1].values).astype(int) 
+        ROH_ends = (roh_dat.iloc[:, 2].values).astype(int)    
+        variant_positions = (single_chr_df.iloc[:, 2].values).astype(int)  
+        for k in range(len(single_chr_results)):  
+            start, end = single_chr_results.iloc[k, [0, 1]].astype(int) ## Start and end of a given window
+            var_in_win = variant_positions[(variant_positions >= start) & (variant_positions < end)] ## Find all variants within a given window
+            ## Find the first ROH that starts after 'start'
+            # l = int(np.searchsorted(ROH_starts, start, side='right') - 1)
+            l = np.where(ROH_starts > start)[0]
+            if l.size > 0:
+                l = int(l[0])
+            else:
+                l = -1
+            if l < 0 or end < ROH_starts[l]:  
+                ## No ROH overlap, count all variants in the range
+                sum_variants = len(var_in_win)
+                single_chr_results.loc[k,'Het_excl_ROH'] = sum_variants
+            elif start >= ROH_starts[l] and end <= ROH_ends[l]:  
+                ## Window fully inside ROH
+                sum_variants = 0  
+                single_chr_results.loc[k,'Het_excl_ROH'] = sum_variants
+            elif start < ROH_starts[l] and end > ROH_starts[l] and end <= ROH_ends[l]:  
+                ## Window overlaps start of ROH
+                var_in_win_excl_ROH = var_in_win[(var_in_win < ROH_starts[l])]
+                sum_variants = len(var_in_win_excl_ROH)
+                single_chr_results.loc[k,'Het_excl_ROH'] = sum_variants  
+                single_chr_results.loc[k,'Window_Size_excl_ROH'] = ROH_starts[l] - start
+            elif start >= ROH_starts[l] and start <= ROH_ends[l] and end > ROH_ends[l]:  
+                ## Window overlaps end of ROH
+                var_in_win_excl_ROH = var_in_win[(var_in_win > ROH_ends[l])]
+                sum_variants = len(var_in_win_excl_ROH)
+                single_chr_results.loc[k,'Het_excl_ROH'] = sum_variants
+                single_chr_results.loc[k,'Window_Size_excl_ROH'] = end - ROH_ends[l]
+            elif start < ROH_starts[l] and end > ROH_ends[l]:  
+                ## Window Completely contains ROH
+                variants_pre_ROH = var_in_win[(var_in_win >= start) & (var_in_win < ROH_starts[l])]
+                sum_variants_pre_ROH = len(variants_pre_ROH)
+                variants_post_ROH = var_in_win[(var_in_win > ROH_ends[l]) & (var_in_win < end)]
+                sum_variants_post_ROH = len(variants_post_ROH)
+                sum_variants = sum_variants_pre_ROH + sum_variants_post_ROH
+                single_chr_results.loc[k,'Het_excl_ROH'] = sum_variants
+                single_chr_results.loc[k,'Window_Size_excl_ROH'] = (ROH_starts[l] - start) + (end - ROH_ends[l])
+        ## Finish for loop
+    elif roh_dat.empty == True: ## Calculate het if there are NO ROH on chr
+        single_chr_results.loc[:,'Het_excl_ROH'] = single_chr_results.loc[:,'Het'] ## Het_excl_ROH is same as het given that there are no ROH on chromosome
+    ## Calculate heterozygosity per kb
+    single_chr_results['Het_Per_Kb'] = (single_chr_results['Het']/single_chr_results['Window_Size'])*1000
+    single_chr_results['Het_Per_Kb_excl_ROH'] = (single_chr_results['Het_excl_ROH']/single_chr_results['Window_Size_excl_ROH'])*1000
+    ## Add chromosome column
+    chrom_list=[chromosome]*single_chr_results.shape[0]
+    single_chr_results.insert(loc = 0, column = 'chrom', value=chrom_list)
+    ## Save results for chromosome
+    chr_file_name = os.path.join(clade, species, chromosome + '_het.txt')
+    single_chr_results.to_csv(chr_file_name, index=False, header=True)
 ## End function
 
-run_het_calculations = calc_het(chr_file, clade, species, date, chrom)
+run_het_calculations = calc_het(dat, roh_data, chr_file, current_window_length, current_window_interval, chrom)

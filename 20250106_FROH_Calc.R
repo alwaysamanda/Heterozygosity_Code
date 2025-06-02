@@ -8,10 +8,10 @@
 library(dplyr)
 args <- commandArgs()
 
-num_aut_chr <- args[12]
+num_aut_chr <- args[11]
 
-Ref_name <- args[9]
-clade <- args[10]
+Ref_name <- args[8]
+clade <- args[9]
 vcf_name <- paste(clade, "/", Ref_name, "/", Ref_name, '_aligned.mm2.vcf', sep='')
 vcf <- read.table(vcf_name, header=TRUE)
 
@@ -40,7 +40,7 @@ print(paste((FROH_trad_all*100), "%"))
 print(" ")
 
 ## Calculate FROHaut (Froh, aut = LROH/Laut, where Laut = length of genome from first to last variant detected on each chromosome summed over all chr)
-Laut <- as.numeric(args[11])
+Laut <- as.numeric(args[10])
 FROH_aut_all <- L_ROH/Laut
 
 print("Froh_aut value for all ROH (short, med, long) is:")
@@ -51,7 +51,7 @@ print(paste((FROH_aut_all*100), "%"))
 
 ## Solely autosomal FROH from here on out
 ## FROHaut autosomal
-Laut_autosomal <- as.numeric(args[13])
+Laut_autosomal <- as.numeric(args[12])
 FROH_aut_autosomal_all <- L_ROH/Laut_autosomal
 
 print("Froh_aut value for all autosomal ROH (short, med, long) is:")
