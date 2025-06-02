@@ -6397,12 +6397,120 @@ This will contain the config.yaml file which specifies the slurm parameters:
 Moved MobBir_config.yml to config_files
 Recreated config files for the other 6 test elasmobranch species
 Worked on adding all files to github to make sure that data loss doesn't occur again
+
+Resubmitted FASTGA for all 7 elasmobranch species
+
+Went through old snakemake file and realized that the chrom list files were not required for any rules
+Deleted them from the current config files
+
 Looking at bony fish species to see what species have both reference and alternate haplotypes available
-    Lycodopsis pacificus (blackbelly eelpout)
+    Lycodes pacificus (blackbelly eelpout) -- LycPac
         Reference = GCA_028022725.1.fa.gz
         Alternate = GCA_028021495.1.fa.gz
     Acipenser ruthenus (sterlet)
         Reference = GCF_902713425.1.fa.gz
         Alternate = GCA_902713435.2.fa.gz
-    
-cut -f16,17 VGPPhase1-freeze-1.0.tsv | grep -c GCF | awk -v var='Fishes' 'if ($2=var) print'
+    Hoplias malabaricus (trahira)
+        Reference = GCA_029633875.1.fa.gz
+        Alternate = GCA_029633855.1.fa.gz
+    Salminus brasiliensis (dorado)
+        Reference = GCA_030463535.1.fa.gz
+        Alternate - GCA_030448965.1.fa.gz
+    Amia calva (bowfin)
+        Reference = GCA_036373705.1.fa.gz
+        Alternate - GCA_036365475.1.fa.gz
+    Fundulus diaphanus (banded killifish)
+        Reference = GCA_037039145.1.fa.gz
+        Alternate = GCA_037038625.1.fa.gz
+    Cyprinella venusta (blacktail shiner)
+        Reference = GCA_038024135.1.fa.gz
+        Alternate - GCA_038021265.1.fa.gz
+
+Added in ALNCHAIN and ALNtoPAF and submitted for HydCol
+
+Created LycPac_config.yml 
+    Couldn't find generation time anywhere, so estimated it to be 2yrs based on estimation of lifespan of 5 years from fishbase
+Submitted for LycPac
+
+FILTER_PAF_CHR_ONLY failed for HepPer due to error:
+    /usr/bin/bash: -c: line 1: syntax error near unexpected token `('
+
+
+#### UPDATE ####
+20250531 (May 31st, 2025)
+
+Switched partition to cclake-himem from cclake
+Submitting files to finish filtering/sorting the paf file, getting the ALN plot, and getting ALN and VAR files
+Submitting HydCol, HepPer, LycPac, MobBir
+
+FASTGA failed for LycPac and MobBir due to error:
+    FATAL ERROR: failed to write temporary file /tmp/OneTextSchema-710457.schema errno 28
+After looking into error, I resubmitted for LycPac and it appears to be running without error (at least 9min in)
+Resubmitted for MobBir
+
+Getting ALN and VAR files failed for HepPer and HydCol due to not finding paftools
+Need to re-download script
+Re-downloaded paftools.js from minimap2/misc on github
+Resubmitted for HydCol and HepPer
+Jobs completed apparently without error
+
+Added in rules for ROH calculation and plotting
+Took out Today_date variable in rules, and made respective modifications to remove today_date as a variable in 20250106_Plot_ROH.R and the ROH calculation python script
+Submitted for HydCol and HepPer
+
+Submitted for NarBan, HetFra, and HypSab
+
+the rule for PLOT_ROH failed for HepPer due to the following error:
+    Error in `geom_bar()`:
+     48 ! Problem while computing aesthetics.
+     49 ℹ Error occurred in the 1st layer.
+     50 Caused by error in `check_aesthetics()`:
+     51 ! Aesthetics must be either length 1 or the same as the data (47).
+     52 ✖ Fix the following mappings: `x`.
+     53 Backtrace:
+Problem is because mt genome was also sequenced and recorded as a chromosome -- have to alter script ot make sure it is excluded
+Modified line 40 in 20250106_Plot_ROH.R script to:
+    Chrom <- as.data.frame(Chrom[1:num_all_chr,])
+This way it will exclude at mtDNA
+Resubmitted for HepPer
+
+HydCol, LycPac, and NarBan finished successfully
+HepPer finished successfully
+Checked maps and realize they have issue of ROH plotting separately to chromosomes and not on top of them
+
+Removed HepPer ROH Map pdf and resubmitted with corrections to 20250106_Plot_ROH.R to see if error is fixed
+Fixed
+
+Removed ROH maps for HydCol and NarBan
+Resubmitted for both
+
+Submitted for LycPac to run ROH codes
+
+Submitted for MobBir and HemOce
+HemOce failed with error:
+    FATAL ERROR: failed to write temporary file /tmp/OneTextSchema-1122153.schema errno 28
+Resubmitted
+
+PLOT_ROH for HemOce failed with this error:
+    47 Error in `levels<-`(`*tmp*`, value = as.character(levels)) : 
+     48   factor level [54] is duplicated
+     49 Calls: factor
+     50 Execution halted
+
+HypSab failed in PLOT_ROH with this error:
+    Error in `levels<-`(`*tmp*`, value = as.character(levels)) : 
+     48   factor level [34] is duplicated
+     49 Calls: factor
+     50 Execution halted
+
+These two errors are because there are multiple sex chromosomes for these species
+And that means that 'Sex' as a label is duplicated, so I can't use factor
+
+
+#### UPDATE ####
+20250602 (June 2nd, 2025)
+
+Used interactive session to fix 20250106_Plot_ROH.R script to fix errors in HemOce and HypSab
+
+
+

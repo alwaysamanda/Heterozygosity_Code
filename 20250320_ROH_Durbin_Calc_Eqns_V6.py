@@ -29,18 +29,16 @@ import os
 chrom = sys.argv[1] ## Chromosome ROH is being calculated for
 chrom_length = int(sys.argv[2]) ## Chromosome length in bases
 
-today_dat = sys.argv[3] ## Today's date
-
-ref_name = sys.argv[4] ## Reference fasta sequence name 
-clade = sys.argv[5] ## Clade that species belongs to
+ref_name = sys.argv[3] ## Reference fasta sequence name 
+clade = sys.argv[4] ## Clade that species belongs to
 
 # Aln_file = open(sys.argv[6], 'r')
-Aln_file = sys.argv[6]
+Aln_file = sys.argv[5]
 
 # Var_file = open(sys.argv[7], 'r')
-Var_file = sys.argv[7]
+Var_file = sys.argv[6]
 
-spec_name = sys.argv[8]
+spec_name = sys.argv[7]
 
 #### FUNCTIONS ####
 ## Define function to read the alignment file and store it in an array
@@ -129,7 +127,7 @@ ROH_report = calculate_ROH(var_pos, base_aln_map, chrom)
 if ROH_report.empty == True:
     print('No ROH detected in', chrom)
 
-output_name = os.path.join(clade, spec_name, today_dat + "_" + chrom + "_ROH_Results.txt")
+output_name = os.path.join(clade, spec_name, chrom + "_ROH_Results.txt")
 ROH_report.to_csv(output_name, index=False, header=True)
 
 
