@@ -28,11 +28,10 @@ dat <- read.table(args[6], header=FALSE) ## dat will be a table of all het for w
 colnames(dat) <- c('Chr', 'Start', 'End', 'Het', 'Het_excl_ROH', 'Window_Size', 'Window_Size_excl_ROH', 'Het_Per_KB', 'Het_Per_KB_excl_ROH')
 dat$Midpoint <- as.numeric(dat$Start) + (dat$Window_Size/2)
 
-date <- args[7]
-ref_name <- args[8]
-clade <- args[9]
-num_aut_chr <- args[10]
-spec_name <- args[11]
+ref_name <- args[7]
+clade <- args[8]
+num_aut_chr <- args[9]
+spec_name <- args[10]
 
 ## Get all chromosomes
 all_chr <- unique(dat$Chr)
@@ -101,9 +100,9 @@ num_plots <- length(plot_list)
 
 all_plots <- wrap_plots(plot_list, nrow=1)
 
-all_plot_file_name <- paste(clade, "/", spec_name, "/", date, "_", spec_name, "_Het_Whole_Genome_Map.svg", sep = "")
+all_plot_file_name <- paste(clade, "/", spec_name, "/", spec_name, "_Het_Whole_Genome_Map.png", sep = "")
 
-ggsave(all_plot_file_name, all_plots, width = num_plots, units = 'in', device = 'svg', limitsize = FALSE)
+ggsave(all_plot_file_name, all_plots, width = num_plots, units = 'in', device = 'png', limitsize = FALSE)
 
 
 

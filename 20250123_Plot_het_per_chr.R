@@ -26,11 +26,10 @@ dat <- read.table(args[6], header=FALSE) ## dat will be a table of all het for w
 colnames(dat) <- c('Chr', 'Start', 'End', 'Het', 'Het_excl_ROH', 'Window_Size', 'Window_Size_excl_ROH', 'Het_Per_KB', 'Het_Per_KB_excl_ROH')
 dat$Midpoint <- as.numeric(dat$Start) + 500000
 
-date <- args[7]
-ref_name <- args[8]
-clade <- args[9]
-num_chr <- args[10]
-spec_name <- args[11]
+ref_name <- args[7]
+clade <- args[8]
+num_chr <- args[9]
+spec_name <- args[10]
 
 ## Get all chromosomes
 all_chr <- unique(dat$Chr)
@@ -42,7 +41,7 @@ for (i in 1:num_chr) {
         single_chr <- all_chr[i] ## Select Chromosome 
         single_chr_dat <- dat %>% filter(dat$Chr == single_chr) ## Filter data for only heterozygosity on that chromosome
 
-        single_chr_plot_file_name <- paste(clade, "/", spec_name, "/", date, "_", spec_name, "_" , single_chr, "_Het_Map.svg", sep = "") 
+        single_chr_plot_file_name <- paste(clade, "/", spec_name, "/", spec_name, "_" , single_chr, "_Het_Map.svg", sep = "") 
         if (i == 1) {
                 single_chr_map = ggplot() + 
                         geom_area(data = single_chr_dat, 
@@ -88,7 +87,7 @@ for (i in 1:num_chr) {
                         scale_x_continuous(labels = label_scientific(digits=2))
         }
         
-        ggsave(single_chr_plot_file_name, single_chr_map, device = 'svg')
+        ggsave(single_chr_plot_file_name, single_chr_map, device = 'png')
 
         # plot_list[[i]] <- single_chr_map
 

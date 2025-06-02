@@ -6523,5 +6523,12 @@ Modified them to remove today_date
 Submitted for HydCol, HepPer, HemOce, HypSab, NarBan, MobBir, and HetFra
 
 Modified 20250520_find_het_per_chr_V4.py to remove the today_date and make it run for each individual chromosome rather than loop over all autosomal chromsomes
+Modified 20250325_find_het_whole_genome_V3.py to remove today_date
 
+Modified 20250123_Plot_het_per_chr.R to remove today_date from it, and to save outputs in png formation
+Modified 20250325_Plot_het_whole_genome.R to remove today_date from it, and save output in png format
+
+Added all outputs from heterozygosity rules to rule all
+Submitted for HydCol, HepPer, HemOce, HypSab, MobBir, NarBan, and HetFra
+Submitted for LycPac
 

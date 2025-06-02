@@ -121,8 +121,12 @@ rule all:
         f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_ROH_Map.pdf", 
         expand("{CLADE}/{SPEC_NAME}/{CHR}_{SPEC_NAME}_FROH.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHR=CHROMS), 
         f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_FROH.txt", 
-
-# expand("{CLADE}/{SPEC_NAME}/{CHROM}_het.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS)
+        expand("{CLADE}/{SPEC_NAME}/{CHROM}_het.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
+        f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_per_chr_mean_heterozygosity.txt", 
+        f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_whole_genome_mean_heterozygosity.txt", 
+        f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_Het_Compiled.tsv", 
+        expand("{CLADE}/{SPEC_NAME}/{SPEC_NAME}_{CHROM}_Het_Map.png", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
+        f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_Het_Whole_Genome_Map.png"
 
 ####---------- RULES FOR FASTGA ALINGMENT AND PAF FILE GENERATION ----------####
 rule FAtoGDB_REF:
@@ -461,7 +465,7 @@ rule CALC_HET_PER_CHR:
 rule CALC_HET_WHOLE_GENOME:
     input:
         CHROM_LENGTH_FILE="{CLADE}/{SPEC_NAME}/{SPEC_NAME}_Chroms_Lengths.txt",
-        PER_CHR_FILES="{CLADE}/{SPEC_NAME}/{CHROM}_het.txt"
+        PER_CHR_FILES=expand("{CLADE}/{SPEC_NAME}/{CHROM}_het.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS)
     output:
         WHOLE_PER_CHR="{CLADE}/{SPEC_NAME}/{SPEC_NAME}_per_chr_mean_heterozygosity.txt",
         WHOLE_GENOME="{CLADE}/{SPEC_NAME}/{SPEC_NAME}_whole_genome_mean_heterozygosity.txt", 
@@ -473,9 +477,48 @@ rule CALC_HET_WHOLE_GENOME:
         """
         python {CALC_HET_WHOLE_GENOME_PY} {input.CHROM_LENGTH_FILE} {params.CLADE} {params.SPEC_NAME} {params.NUM_AUT_CHROMOSOMES}
         """
+
+rule COMPILE_HET:
+    input:
+        expand("{CLADE}/{SPEC_NAME}/{CHROM}_het.txt", CHROM=AUTO_CHROMS, CLADE=CLADE, SPEC_NAME=SPEC_NAME)
+    output:
+        "{CLADE}/{SPEC_NAME}/{SPEC_NAME}_Het_Compiled.tsv"
+    shell:
+        """
+        awk -v var='chrom' -F',' '{{if ($1!=var) {{ print $1, $2, $3, $4, $5, $6, $7, $8, $9 }}}}' {input} >> {output}
+        """
 ####---------- END ----------####
 
 ####---------- RULES FOR PLOTTING HETEROZYGOSITY ----------####
+rule PLOT_HET_PER_CHR:
+    input:
+        "{CLADE}/{SPEC_NAME}/{SPEC_NAME}_Het_Compiled.tsv"
+    output:
+        "{CLADE}/{SPEC_NAME}/{SPEC_NAME}_{CHROM}_Het_Map.png"
+    params:
+        REF_NAME=REF_NAME, 
+        CLADE=CLADE, 
+        SPEC_NAME=SPEC_NAME, 
+        NUM_ALL_CHR=NUM_ALL_CHR
+    shell:
+        """
+        Rscript {PLOT_HET_PER_CHR_R} {input} {params.REF_NAME} {params.CLADE} {params.NUM_ALL_CHR} {params.SPEC_NAME}
+        """
+
+rule PLOT_WHOLE_HET:
+    input:
+        "{CLADE}/{SPEC_NAME}/{SPEC_NAME}_Het_Compiled.tsv"
+    output:
+        "{CLADE}/{SPEC_NAME}/{SPEC_NAME}_Het_Whole_Genome_Map.png"
+    params:
+        REF_NAME=REF_NAME, 
+        CLADE=CLADE, 
+        NUM_AUT_CHROMOSOMES=NUM_AUT_CHROMOSOMES, 
+        SPEC_NAME=SPEC_NAME, 
+    shell:
+        """
+        Rscript {PLOT_WHOLE_HET_R} {input} {params.REF_NAME} {params.CLADE} {params.NUM_AUT_CHROMOSOMES} {params.SPEC_NAME}
+        """
 ####---------- END ----------####
 
 ####---------- RULES FOR MSMC DATA PREP ----------####
