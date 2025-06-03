@@ -6532,3 +6532,101 @@ Added all outputs from heterozygosity rules to rule all
 Submitted for HydCol, HepPer, HemOce, HypSab, MobBir, NarBan, and HetFra
 Submitted for LycPac
 
+Updated 20250529_Mask_Maker.py script and added rules for MSMC data prep, including masking, into snakefile
+Updated RUN_PRIMARY_MSMC and PLOT_MSMC to get rid of today_date
+
+Created input files for 
+    Acipenser ruthenus (AciRut)
+    Hoplias malabaricus (HopMal)
+    Salminus brasiliensis (SalBra)
+    Amia calva (AmiCal)
+    Fundulus diaphanus (FunDia)
+    Cyprinella venusta (CypVen)
+
+Couldn't find any information for generation time for HopMal or any other species in its GEN_INPUT_MASK_VCF
+Looked into the literature and found a paper by José Luís Costa Novaes & Edmir Daniel Carvalho
+States most often HopMal is caught between 2.5-4.5yrs, but can live up to 9yrs
+Estimating for now that their generation time is ~1.5 years
+
+
+#### UPDATE ####
+20250603 (June 3rd, 2025)
+
+All jobs from yesterday finished
+However whole genome FROH has not been generated for any species
+PLOT_HET_PER_CHR also hasn't worked
+Will re-run for HydCol to see what's going on
+
+PLOT_HET_PER_CHR failed with error:
+    sharks/HydCol/HydCol_CM068768.1_Het_Map.png (missing locally)
+
+The whole genome map is being saved as a png, but the individual chromosome maps are being saved as svg
+This is why png files per chr cannot be found
+Due to syntax error in the 20250123_Plot_het_per_chr.R code
+Fixed and resubmitted
+
+Failed for whole genome FROH with error:
+    Error in file(file, "rt") : cannot open the connection
+     48 Calls: read.table -> file
+     49 In addition: Warning message:
+     50 In file(file, "rt") :
+     51   cannot open file 'sharks/GCA_035084275.1/GCA_035084275.1_aligned.mm2.vcf': No such file or directory
+Created 20250603_FROH_Calc_Whole_Genome_V2.R to clean up FROH code and remove unnecessary lines with vcf and some other lines
+Modified WHOLE_FROH rule to use new script
+Resubmitted
+It worked!
+
+Added all outputs for MSMC data prep to rule all
+Submitted for HydCol
+error on GEN_ROH_NEGATIVE_MASK
+      38 ValueError: Unable to parse string "sharks/HydCol/CM068744.1_ROH_Results.txt"
+     39 
+     40 During handling of the above exception, another exception occurred:
+     41 
+     42 Traceback (most recent call last):
+     43   File "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250528_ROH_Masker.py", line 27, in <module>
+     44     chrom_length = pd.to_numeric(sys.argv[4])
+     45                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+     46   File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/core/tools/numeric.py", line 232, in to_numeric
+     47     values, new_mask = lib.maybe_convert_numeric(  # type: ignore[call-overload]
+     48                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     49   File "lib.pyx", line 2433, in pandas._libs.lib.maybe_convert_numeric
+     50 ValueError: Unable to parse string "sharks/HydCol/CM068744.1_ROH_Results.txt" at position 0
+Syntax error in 20250528_ROH_Masker.py
+Fixed
+
+Error in MAKE_MASK:
+     /usr/bin/bash: line 2: /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250529_Mask_Maker.py: Permission denied
+Realized this error was because I forgot to put 'python' before the script. Fixed
+
+Resubmitted with both errors fixed
+Error on GEN_ROH_NEGATIVE_MASK:
+    Traceback (most recent call last):
+     37   File "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250528_ROH_Masker.py", line 45, in <module>
+     38     CREATE_NEGATIVE_BED_FILE(roh_dat, chrom, clade, spec_name)
+     39   File "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250528_ROH_Masker.py", line 40, in CREATE_NEGATIVE_BED_FILE
+     40     dat.iloc[:, 1] = int(dat.iloc[:, 1])
+     41                      ^^^^^^^^^^^^^^^^^^^
+     42   File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/core/series.py", line 248, in wrapper
+     43     raise TypeError(f"cannot convert the series to {converter}")
+     44 TypeError: cannot convert the series to <class 'int'>
+Changed int() to pd.to_numeric()
+Resubmitted
+
+Appears to be working for HydCol, so also submitting for HepPer, HypSab, HemOce, HetFra, NarBan, MobBir
+Also submitted for LycPac, AciRut, and HopMal
+
+WHOLE_FROH failed for HepPer with error:
+    head: cannot open 'sharks/HepPer/temp/CM068729.1_Var_Only.txt' for reading: No such file or directory
+CM068729.1 is the mtDNA -- shouldn't have been recorded. Need to find a way to make sure this can be ignored
+Manually removed CM068729.1 from the chrom_lists/HepPer_chroms.txt
+For other species, modified GET_CHROM_LISTS:
+    zcat < {input} | grep '>{params.CHROM_START_CHR}' | head -n {params.NUM_ALL_CHR} | sed 's/^>//' > {output}
+
+For SalBra generation time, found paper by Tos et al. estimating age of sexual maturity at 1.82years
+Estimated generation time as 2yrs
+Submitted for SalBra, AmiCal, and CypVen
+
+
+
+

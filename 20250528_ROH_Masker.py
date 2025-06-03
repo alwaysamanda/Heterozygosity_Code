@@ -24,8 +24,7 @@ import os
 clade = sys.argv[1]
 spec_name = sys.argv[2]
 chrom = sys.argv[3]
-chrom_length = pd.to_numeric(sys.argv[4])
-roh_dat = sys.argv[5]
+roh_dat = sys.argv[4]
 
 ## FUNCTIONS ##
 def READ_ROH_FILE(roh_file): 
@@ -36,7 +35,7 @@ def READ_ROH_FILE(roh_file):
 
 def CREATE_NEGATIVE_BED_FILE(roh_file, chromosome, clade, species):
     dat = READ_ROH_FILE(roh_file)
-    output_file_name = os.path.join(clade, spec_name, 'MSMC', 'ROH_Negative_Mask', spec_name + '_' + chromosome + '_ROH_Mask.bed')
+    output_file_name = os.path.join(clade, species, 'MSMC', 'ROH_Negative_Mask', species + '_' + chromosome + '_ROH_Mask.bed')
     dat = dat.iloc[:, 0:3]
     dat.iloc[:, 1] = pd.to_numeric(dat.iloc[:, 1])
     dat.iloc[:, 2] = pd.to_numeric(dat.iloc[:, 2])

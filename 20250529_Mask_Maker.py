@@ -22,20 +22,23 @@ import os
 
 #### Load in necessary data ####
 chrom = sys.argv[1]
-chrom_length = sys.argv[2]
+chrom_length_file = sys.argv[2]
 clade = sys.argv[3]
 Aln_file = sys.argv[4]
 output_file_name = sys.argv[5]
 
 #### Define Functions ####
+## Function to read the txt file with chromosome lengths
+def filter_chr_file_by_chrom(chromosome_file, chromosome):
+    with open(chromosome_file, 'r') as file:
+        dat = [word for line in file if line.split()[0] == chromosome for word in line.split()]
+    return dat
+
 ## Define function to read the alignment file and store it in an array
 def read_aln_file(Alignment_file, chromosome):
     with open(Alignment_file, 'r') as file:
         dat = [line.split() for line in file if line.split()[1] == chromosome]
     return dat
-
-aln_list = read_aln_file(Aln_file, chrom)
-# print(aln_list)
 
 ## Define function to parse through whole chromosome and map each individual base and whether it is aligned or not
 def aln_map(Alignment_list, chrom_length):
@@ -46,8 +49,6 @@ def aln_map(Alignment_list, chrom_length):
     aln_sums = np.cumsum(base_gross_cov) ## Get alingment sum at each given base
     return np.vstack((np.arange(1, chrom_length + 1), base_sums, aln_sums.astype(int)))
 ## Finish function
-
-base_aln_map = aln_map(aln_list, chrom_length)
 
 ## Define function to make the mask for the chromosome
 def make_mask(aln_array, chromosome, output_file):
@@ -75,6 +76,15 @@ def make_mask(aln_array, chromosome, output_file):
             f.write(f"{chromosome}\t{start}\t{end}\n")
     print(f"Saved {len(result)} ranges to {output_file}")
 ## Finish function
+#### All Functions Defined####
+
+chr_info = filter_chr_file_by_chrom(chrom_length_file, chrom)
+chrom_length = int(chr_info[1])
+
+aln_list = read_aln_file(Aln_file, chrom)
+# print(aln_list)
+
+base_aln_map = aln_map(aln_list, chrom_length)
 
 make_mask(base_aln_map, chrom, output_file_name)
 

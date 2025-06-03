@@ -54,14 +54,15 @@ GEN_TIME=config['GENERATION_TIME']
 ROH_CALC_PY = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py"
 ROH_PLOT_R = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250106_Plot_ROH.R"
 FROH_CALC_PER_CHR_R = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250210_FROH_per_chr_calc.R"
-FROH_CALC_R = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250106_FROH_Calc.R"
+FROH_CALC_R = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250603_FROH_Calc_Whole_Genome_V2.R"
 CALC_HET_PER_CHR_PY = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250520_find_het_per_chr_V4.py"
 CALC_HET_WHOLE_GENOME_PY = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_whole_genome_V3.py"
 PLOT_HET_PER_CHR_R = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250123_Plot_het_per_chr.R"
 PLOT_WHOLE_HET_R = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_Plot_het_whole_genome.R"
 PLOT_MSMC_R = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250508_Plot_MSMC.R"
 PLOT_MSMC_BOOSTRAP_R = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250529_Plot_MSMC_Bootstrap.R"
-ROH_MASKER="/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250528_ROH_Masker.py"
+ROH_MASKER = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250528_ROH_Masker.py"
+ALN_MASK_MAKER_PY = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250529_Mask_Maker.py"
 GENERATE_MULTIHETSEP="/rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/generate_multihetsep.py" ##change path, the script can be found in "MSMC-tools"
 MASK_FILE_GENERATOR="/rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/20241011_jaskaran_script_msmc_fileprep/mask_file.py" ##In this directory
 BOOTSTRAPPING_GENERATOR="/rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/20241011_jaskaran_script_msmc_fileprep/block_bootstrap_mhs.py" ## From "Cobraa-Trevor Cousins" also in this github directory
@@ -126,7 +127,17 @@ rule all:
         f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_whole_genome_mean_heterozygosity.txt", 
         f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_Het_Compiled.tsv", 
         expand("{CLADE}/{SPEC_NAME}/{SPEC_NAME}_{CHROM}_Het_Map.png", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
-        f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_Het_Whole_Genome_Map.png"
+        f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_Het_Whole_Genome_Map.png", 
+        expand("{CLADE}/{SPEC_NAME}/MSMC/paf_files/{SPEC_NAME}_{CHROM}.paf", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
+        expand("{CLADE}/{SPEC_NAME}/MSMC/vcf_files/{SPEC_NAME}_{CHROM}.vcf.gz", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
+        expand("{CLADE}/{SPEC_NAME}/MSMC/ROH_Negative_Mask/{SPEC_NAME}_{CHROM}_ROH_Mask.bed.gz", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
+        expand("{CLADE}/{SPEC_NAME}/MSMC/Aln_Mask/{CHROM}_Aln_Mask.bed", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
+        expand("{CLADE}/{SPEC_NAME}/MSMC/Output_primary_multihetsep/{CHROM}_multihet.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
+
+## Outputs for running primary MSMC
+#  f"{CLADE}/{SPEC_NAME}/MSMC/Primary_Results/{SPEC_NAME}.msmc2.loop.txt", 
+#  f"{CLADE}/{SPEC_NAME}/MSMC/Primary_Results/{SPEC_NAME}.msmc2.log", 
+#  f"{CLADE}/{SPEC_NAME}/MSMC/Primary_Results/{SPEC_NAME}.msmc2.final.txt"
 
 ####---------- RULES FOR FASTGA ALINGMENT AND PAF FILE GENERATION ----------####
 rule FAtoGDB_REF:
@@ -231,11 +242,12 @@ rule GET_CHROM_LISTS:
     output:
         "{CLADE}/chrom_lists/{SPEC_NAME}_chroms.txt"
     params:
-        CHROM_START_CHR=CHROM_START_CHR
+        CHROM_START_CHR=CHROM_START_CHR,
+        NUM_ALL_CHR=NUM_ALL_CHR
     shell:
         """
         mkdir -p {wildcards.CLADE}/chrom_lists
-        zcat < {input} | grep '>{params.CHROM_START_CHR}' | sed 's/^>//' > {output}
+        zcat < {input} | grep '>{params.CHROM_START_CHR}' | head -n {params.NUM_ALL_CHR} | sed 's/^>//' > {output}
         """
 
 rule FILTER_PAF_CHR_ONLY:
@@ -413,7 +425,6 @@ rule WHOLE_FROH:
     output:
         "{CLADE}/{SPEC_NAME}/{SPEC_NAME}_FROH.txt"
     params:
-        REF_NAME=REF_NAME,
         CLADE=CLADE,
         NUM_AUT_CHROMOSOMES=NUM_AUT_CHROMOSOMES, 
         SPEC_NAME=SPEC_NAME
@@ -438,7 +449,7 @@ rule WHOLE_FROH:
             Laut=$(("$Laut" + "$chrom_length"))
         done < "{input.ALL_CHROMS}"
 
-        Rscript {FROH_CALC_R} {input.ROH} {input.CHROM_LENGTH_FILE} {params.REF_NAME} {params.CLADE} "$Laut" {params.NUM_AUT_CHROMOSOMES} "$Laut_autosomal" > {output}
+        Rscript {FROH_CALC_R} {params.NUM_AUT_CHROMOSOMES} {input.CHROM_LENGTH_FILE} {input.ROH} "$Laut" "$Laut_autosomal" > {output}
         """
 ####---------- END ----------####
 
@@ -522,7 +533,93 @@ rule PLOT_WHOLE_HET:
 ####---------- END ----------####
 
 ####---------- RULES FOR MSMC DATA PREP ----------####
+rule SEP_PAF_BY_CHR:
+    input:
+        "{CLADE}/{SPEC_NAME}/{SPEC_NAME}_FASTGA.chain.chr.fltr.srt.paf"
+    output:
+        "{CLADE}/{SPEC_NAME}/MSMC/paf_files/{SPEC_NAME}_{CHROM}.paf"
+    shell:
+        """
+        mkdir -p "{CLADE}/{SPEC_NAME}/MSMC/paf_files"
+        awk -v var={wildcards.CHROM} '{{if($6 == var) print}}' {input} > {output}
+        """
+
+rule GEN_CHROM_VCF:
+    input:
+        paf="{CLADE}/{SPEC_NAME}/MSMC/paf_files/{SPEC_NAME}_{CHROM}.paf",
+        refseq=expand("/rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/{CLADE}/{REF_NAME}.fa.gz", CLADE=CLADE, REF_NAME=REF_NAME)
+    output:
+        "{CLADE}/{SPEC_NAME}/MSMC/vcf_files/{SPEC_NAME}_{CHROM}.vcf.gz"
+    shell:
+        """
+        mkdir -p "{wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/vcf_files"
+        k8 paftools.js call -s {wildcards.SPEC_NAME} -f {input.refseq} {input.paf} > {wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/vcf_files/{wildcards.SPEC_NAME}_{wildcards.CHROM}.vcf
+        gzip {wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/vcf_files/{wildcards.SPEC_NAME}_{wildcards.CHROM}.vcf
+        """
+
+rule GEN_ROH_NEGATIVE_MASK:
+    input:
+        "{CLADE}/{SPEC_NAME}/{CHROM}_ROH_Results.txt"
+    output:
+        "{CLADE}/{SPEC_NAME}/MSMC/ROH_Negative_Mask/{SPEC_NAME}_{CHROM}_ROH_Mask.bed.gz"
+    shell:
+        """
+        mkdir -p "{wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/ROH_Negative_Mask"
+        python {ROH_MASKER} {wildcards.CLADE} {wildcards.SPEC_NAME} {wildcards.CHROM} {input}
+        gzip {wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/ROH_Negative_Mask/{wildcards.SPEC_NAME}_{wildcards.CHROM}_ROH_Mask.bed
+        """
+
+rule MAKE_MASK:
+    input:
+        ALN_FILE="{CLADE}/{SPEC_NAME}/temp/{CHROM}_Aln_Only.txt", 
+        CHROM_LENGTHS="{CLADE}/{SPEC_NAME}/{SPEC_NAME}_Chroms_Lengths.txt"
+    output:
+        "{CLADE}/{SPEC_NAME}/MSMC/Aln_Mask/{CHROM}_Aln_Mask.bed"
+    shell:
+        """
+        mkdir -p "{wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/Aln_Mask"
+        python {ALN_MASK_MAKER_PY} {wildcards.CHROM} {input.CHROM_LENGTHS} {wildcards.CLADE} {input.ALN_FILE} {output}
+        """
+
+rule MAIN_MULTIHETSEP:
+    input:
+        VCF="{CLADE}/{SPEC_NAME}/MSMC/vcf_files/{SPEC_NAME}_{CHROM}.vcf.gz", 
+        ROH_negative_mask="{CLADE}/{SPEC_NAME}/MSMC/ROH_Negative_Mask/{SPEC_NAME}_{CHROM}_ROH_Mask.bed.gz"
+    output:
+        "{CLADE}/{SPEC_NAME}/MSMC/Output_primary_multihetsep/{CHROM}_multihet.txt"
+    shell:
+        """
+        mkdir -p "{CLADE}/{SPEC_NAME}/MSMC/Output_primary_multihetsep"
+        python {GENERATE_MULTIHETSEP} {input.VCF} --negative_mask={input.ROH_negative_mask} > {output}
+        """
 ####---------- END ----------####
 
 ####---------- RULES FOR RUNNING AND PLOTTING MSMC ----------####
+rule RUN_PRIMARY_MSMC:
+    input:
+        expand("{CLADE}/{SPEC_NAME}/MSMC/Output_multihet_filtered_95/{CHROM}_multihet.txt", CHROM=AUTO_CHROMS, CLADE=CLADE, SPEC_NAME=SPEC_NAME)
+    output:
+        loop="{CLADE}/{SPEC_NAME}/MSMC/Primary_Results/{SPEC_NAME}.msmc2.loop.txt", 
+        log="{CLADE}/{SPEC_NAME}/MSMC/Primary_Results/{SPEC_NAME}.msmc2.log", 
+        final="{CLADE}/{SPEC_NAME}/MSMC/Primary_Results/{SPEC_NAME}.msmc2.final.txt"
+    shell:
+        """
+        mkdir -p "{CLADE}/{SPEC_NAME}/MSMC/Primary_Results"
+        build/release/msmc2 -t 12 --fixedRecombination -o {CLADE}/{SPEC_NAME}/{SPEC_NAME}.msmc2 {input}
+        """
+
+rule PLOT_MSMC:
+    input:
+        "{CLADE}/{SPEC_NAME}/{SPEC_NAME}.msmc2.final.txt"
+    output:
+        "{CLADE}/{SPEC_NAME}/{SPEC_NAME}_MSMC2_test.png"
+    params:
+        CLADE=CLADE, 
+        SPEC_NAME=SPEC_NAME, 
+        MU=MU, 
+        GEN_TIME=GEN_TIME
+    shell:
+        """
+        Rscript {PLOT_MSMC_R} {CLADE} {SPEC_NAME} {MU} {GEN_TIME} {output} {input}
+        """
 ####---------- END ----------####

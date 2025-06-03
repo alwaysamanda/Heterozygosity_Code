@@ -41,7 +41,7 @@ for (i in 1:num_chr) {
         single_chr <- all_chr[i] ## Select Chromosome 
         single_chr_dat <- dat %>% filter(dat$Chr == single_chr) ## Filter data for only heterozygosity on that chromosome
 
-        single_chr_plot_file_name <- paste(clade, "/", spec_name, "/", spec_name, "_" , single_chr, "_Het_Map.svg", sep = "") 
+        single_chr_plot_file_name <- paste(clade, "/", spec_name, "/", spec_name, "_" , single_chr, "_Het_Map.png", sep = "") 
         if (i == 1) {
                 single_chr_map = ggplot() + 
                         geom_area(data = single_chr_dat, 

@@ -10,10 +10,10 @@ args <- commandArgs()
 
 num_aut_chr <- args[11]
 
-Ref_name <- args[8]
+Species <- args[8]
 clade <- args[9]
-vcf_name <- paste(clade, "/", Ref_name, "/", Ref_name, '_aligned.mm2.vcf', sep='')
-vcf <- read.table(vcf_name, header=TRUE)
+# vcf_name <- paste(clade, "/", Ref_name, "/", Ref_name, '_aligned.mm2.vcf', sep='')
+# vcf <- read.table(vcf_name, header=TRUE)
 
 # Load in file with chromosomes and their lengths
 Chrom <- read.table(args[7], header=FALSE)

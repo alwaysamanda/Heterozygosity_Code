@@ -13,17 +13,16 @@ args <- commandArgs()
 
 ## Load in variables and data
 clade <- args[6]
-today_date <- args[7]
-spec_name <- args[8]
-mu <- args[9] ## Mutation rate
-gen_time <- args[10] ## Generation time
-output_file_name <- args[11]
+spec_name <- args[7]
+mu <- args[8] ## Mutation rate
+gen_time <- args[9] ## Generation time
+output_file_name <- args[10]
 
-msmc_dat <- args[12]
+msmc_dat <- args[11]
 dat <- read.table(msmc_dat, header=TRUE)
 
-## Create svg for plot results
-svg(file = output_file_name)
+## Create png for plot results
+png(file = output_file_name)
 
 ### Plot population change ###
 ## Intial plot
