@@ -14,8 +14,8 @@ args <- commandArgs()
 ## Load in variables and data
 clade <- args[6]
 spec_name <- args[7]
-mu <- args[8] ## Mutation rate
-gen_time <- args[9] ## Generation time
+mu <- as.numeric(args[8]) ## Mutation rate
+gen_time <- as.numeric(args[9]) ## Generation time
 output_file_name <- args[10]
 
 msmc_dat <- args[11]

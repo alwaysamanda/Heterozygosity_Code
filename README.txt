@@ -6628,5 +6628,108 @@ Estimated generation time as 2yrs
 Submitted for SalBra, AmiCal, and CypVen
 
 
+#### UPDATE ####
+20250604 (June 4th, 2025)
+
+Submitted for HydCol
+Job finished, and was hypothetically successful, but the majority of multihet files came out empty
+Chromosome paf files appear to have been generated succesfully
+ROH negative mask files appear to have been made succesfully
+Aln mask files appear to have been made succesfully
+Multihet files were made for 17/40 chromosomes
+Realized I hadn't modified the MAIN_MULTIHETSEP rule to include the Aln mask - it was only using the ROH negative mask
+Updated rule
+    python {GENERATE_MULTIHETSEP} {input.VCF} --mask={input.MASK} --negative_mask={input.ROH_negative_mask} > {output}
+Resubmitted
+First job ran for Chrom CM068768.1 -- multihet file still came out empty
+Canceled rest of jobs
+
+Possible that the problem is due to the VCF files listing all variants as homozygous (1/1)
+Will change to 1/0
+Modified GEN_CHROM_VCF, but will first see if this works on just Chrom CM068768.1
+    k8 ../../../../paftools.js call -s HydCol -f /rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/sharks/GCA_035084275.1.fa.gz ../paf_files/HydCol_CM068768.1.paf > HydCol_CM068768.1.vcf
+    gzip HydCol_CM068768.1.vcf
+    zcat HydCol_CM068768.1.vcf.gz | sed  's/1\/1/0\/1/g' | bgzip -c > HydCol_CM068768.1_restructured.vcf.gz
+    python /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/generate_multihetsep.py sharks/HydCol/MSMC/vcf_files/HydCol_CM068768.1_restructured.vcf.gz --mask=sharks/HydCol/MSMC/Aln_Mask/CM068768.1_Aln_Mask.bed --negative_mask=sharks/HydCol/MSMC/ROH_Negative_Mask/HydCol_CM068768.1_ROH_Mask.bed.gz > test_multihet.txt
+test_multihet.txt still comes out empty
+
+Wondering if it is coming out empty because the ROH negative mask script is empty
+Will remove that and see if that fixes the issue
+    python /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/generate_multihetsep.py sharks/HydCol/MSMC/vcf_files/HydCol_CM068768.1_restructured.vcf.gz --mask=sharks/HydCol/MSMC/Aln_Mask/CM068768.1_Aln_Mask.bed > test_multihet.txt
+Success!
+Modified MAIN_MULTIHETSEP rule
+        if [ stat -c %c {input.ROH_negative_mask} -eq 51 ]; then
+            python {GENERATE_MULTIHETSEP} {input.VCF} --mask={input.MASK} > {output}
+        else
+            python {GENERATE_MULTIHETSEP} {input.VCF} --mask={input.MASK} --negative_mask={input.ROH_negative_mask} > {output}
+        fi
+Resubmitted for HydCol
+One job was successful, three put out empty files
+Canceled job
+The empty files were again with empty ROH_negative_mask files
+Altered if statement
+    if [ "$(stat -c %s {input.ROH_negative_mask})" -eq 51 ]; then
+Resubmitted
+It's working!
+Submitted for HepPer, NarBan, MobBir, HetFra, HypSab, and HemOce
+
+Downloaded msmc-tools from github using git clone
+Pulled msmc2 software using cp
+    cp -R /rds/project/rd109/rds-rd109-durbin-group/software/msmc2 msmc2
+Getting error message when attempting to run primary MSMC2 on NarBan
+    core.exception.ArrayIndexError@model/data.d(188): index [4] exceeds array of length 4
+    ----------------
+    ??:? _d_arraybounds_indexp [0x62efc5]
+    ??:? bool model.data.has_missing_data(in char[][], ulong[2]) [0x5b63fe]
+    ??:? model.data.SegSite_t[][] model.data.readSegSites(immutable(char)[], ulong[2][], bool) [0x5b5cf8]
+    ??:? model.data.SegSite_t[][] msmc2.readDataFromFiles(immutable(char)[][], ulong[2][], bool) [0x5da79a]
+    ??:? void msmc2.parseCommandLine(immutable(char)[][]) [0x5d8c9a]
+    ??:? _Dmain [0x5d85b3]
+Possible that this issue is due to indels being present instead of just SNPs
+Testing this:
+    bcftools view -V indels HydCol_CM068742.1.vcf.gz -Oz -o CM068742.1_no_indels.vcf.gz
+    python /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/generate_multihetsep.py sharks/HydCol/MSMC/vcf_files/CM068742.1_no_indels.vcf.gz --mask=sharks/HydCol/MSMC/Aln_Mask/CM068742.1_Aln_Mask.bed --negative_mask=sharks/HydCol/MSMC/ROH_Negative_Mask/HydCol_CM068742.1_ROH_Mask.bed.gz > test.txt
+test.txt came out empty
+Tried this same command with the vcf file containing indels, using standard output, and it came out with results and was not empty
+Not sure why this is the case, I checked both the mask and negative ROH mask, and the mask includes the positions of the first handful of SNPs while the ROH mask does not remove them
+Will try to change 1/1 to 0/1 to see if this is the issue
+    zcat CM068742.1_no_indels.vcf.gz | sed  's/1\/1/0\/1/g' | bgzip -c > HydCol_CM068742.1_restructured.vcf.gz
+    python /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/generate_multihetsep.py sharks/HydCol/MSMC/vcf_files/HydCol_CM068742.1_restructured.vcf.gz --mask=sharks/HydCol/MSMC/Aln_Mask/CM068742.1_Aln_Mask.bed --negative_mask=sharks/HydCol/MSMC/ROH_Negative_Mask/HydCol_CM068742.1_ROH_Mask.bed.gz > test.txt
+This appears to have worked! Now to test if it will work in MSMC
+    msmc2/build/release/msmc2 -t 12 --fixedRecombination -o sharks/HydCol/MSMC/Primary_Results/HydCol.msmc2 test.txt
+It worked!
+Implementing the changes as a rule in snakemake, to then run on HydCol as a test
+    rule FILTER_VCF:
+    input:
+        "{CLADE}/{SPEC_NAME}/MSMC/vcf_files/{SPEC_NAME}_{CHROM}.vcf.gz"
+    output:
+        "{CLADE}/{SPEC_NAME}/MSMC/filtered_vcf_files/{SPEC_NAME}_{CHROM}_filtered.vcf.gz"
+    shell:
+        """
+        mkdir -p {wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/filtered_vcf_files
+        bcftools view -V indels {input} -Oz -o {wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/{wildcards.CHROM}_no_indels.vcf.gz
+        zcat {wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/{wildcards.CHROM}_no_indels.vcf.gz | sed  's/1\/1/0\/1/g' | bgzip -c > {output}
+        """
+Submitted with updated rules for HydCol
+Appears to have finished without issue
+Will plot to look at results
+    Rscript 20250508_Plot_MSMC.R sharks HydCol 1.25e-8 18.6 sharks/HydCol/HydCol_MSMC2.png sharks/HydCol/MSMC/Primary_Results/HydCol.msmc2.final.txt
+It worked!
+Submitted for all of HydCol
+It worked!
+
+Submitted for HepPer, HetFra, HemOce, NarBan, MobBir, and HypSab
+
+Filter_vcf rule failed for HepPer with error:
+    gzip: sharks/HepPer/MSMC/CM068643.1_no_indels.vcf.gz: No such file or directory
+     37 RuleException:
+     38 CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 574:
+Fixed syntax error
+
+
+#### UPDATE ####
+20250605 (June 5th, 2025)
+
+Resubmitted for HepPer, HetFra, HemOce
 
 

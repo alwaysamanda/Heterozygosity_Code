@@ -33,7 +33,7 @@ lines(dat$left_time_boundary/mu*gen_time, (1/dat$lambda)/(2*mu), type="s", col="
 
 ## Plot bootstrapped data
 for (i in 0:29) {
-    file_name <- paste0(clade, "/", spec_name, "/", today_date, "_", spec_name, "_Bootstrapping_", i, ".msmc2.final.txt")
+    file_name <- paste0(clade, "/", spec_name, "/", spec_name, "_Bootstrapping_", i, ".msmc2.final.txt")
     bootstrap_dat <- read.table(file_name, header=TRUE)
     lines(bootstrap_dat$left_time_boundary/mu*gen_time, (1/bootstrap_dat$lambda)/(2*mu), type="s", col="#6A8BDC", lty=2)
 }

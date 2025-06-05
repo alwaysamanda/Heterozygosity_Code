@@ -130,14 +130,22 @@ rule all:
         f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_Het_Whole_Genome_Map.png", 
         expand("{CLADE}/{SPEC_NAME}/MSMC/paf_files/{SPEC_NAME}_{CHROM}.paf", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
         expand("{CLADE}/{SPEC_NAME}/MSMC/vcf_files/{SPEC_NAME}_{CHROM}.vcf.gz", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
+        expand("{CLADE}/{SPEC_NAME}/MSMC/filtered_vcf_files/{SPEC_NAME}_{CHROM}_filtered.vcf.gz", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
         expand("{CLADE}/{SPEC_NAME}/MSMC/ROH_Negative_Mask/{SPEC_NAME}_{CHROM}_ROH_Mask.bed.gz", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
         expand("{CLADE}/{SPEC_NAME}/MSMC/Aln_Mask/{CHROM}_Aln_Mask.bed", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
-        expand("{CLADE}/{SPEC_NAME}/MSMC/Output_primary_multihetsep/{CHROM}_multihet.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
+        expand("{CLADE}/{SPEC_NAME}/MSMC/Output_primary_multihetsep/{CHROM}_multihet_new.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
+        ### Outputs for running primary MSMC
+        f"{CLADE}/{SPEC_NAME}/MSMC/Primary_Results/{SPEC_NAME}.msmc2.loop.txt", 
+        f"{CLADE}/{SPEC_NAME}/MSMC/Primary_Results/{SPEC_NAME}.msmc2.log", 
+        f"{CLADE}/{SPEC_NAME}/MSMC/Primary_Results/{SPEC_NAME}.msmc2.final.txt", 
+        f"{CLADE}/{SPEC_NAME}/MSMC/{SPEC_NAME}_MSMC2.png"
 
-## Outputs for running primary MSMC
-#  f"{CLADE}/{SPEC_NAME}/MSMC/Primary_Results/{SPEC_NAME}.msmc2.loop.txt", 
-#  f"{CLADE}/{SPEC_NAME}/MSMC/Primary_Results/{SPEC_NAME}.msmc2.log", 
-#  f"{CLADE}/{SPEC_NAME}/MSMC/Primary_Results/{SPEC_NAME}.msmc2.final.txt"
+## Outputs for bootstrapped MSMC
+# expand("{CLADE}/{SPEC_NAME}/MSMC/Output_Multihet_Bootstrapped/{BOOT}/{CHROM}_multihet.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, BOOT=BOOTSTRAPS, CHROM=AUTO_CHROMS)
+# expand("{CLADE}/{SPEC_NAME}/MSMC/Bootstrap_results/{SPEC_NAME}_Bootstrapping_{BOOT}.msmc2.loop.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, BOOT=BOOTSTRAPS), 
+# expand("{CLADE}/{SPEC_NAME}/MSMC/Bootstrap_results/{SPEC_NAME}_Bootstrapping_{BOOT}.msmc2.log", CLADE=CLADE, SPEC_NAME=SPEC_NAME, BOOT=BOOTSTRAPS),
+# expand("{CLADE}/{SPEC_NAME}/MSMC/Bootstrap_results/{SPEC_NAME}_Bootstrapping_{BOOT}.msmc2.final.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, BOOT=BOOTSTRAPS), 
+# f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_MSMC2_Bootstrapped.png"
 
 ####---------- RULES FOR FASTGA ALINGMENT AND PAF FILE GENERATION ----------####
 rule FAtoGDB_REF:
@@ -557,6 +565,18 @@ rule GEN_CHROM_VCF:
         gzip {wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/vcf_files/{wildcards.SPEC_NAME}_{wildcards.CHROM}.vcf
         """
 
+rule FILTER_VCF:
+    input:
+        "{CLADE}/{SPEC_NAME}/MSMC/vcf_files/{SPEC_NAME}_{CHROM}.vcf.gz"
+    output:
+        "{CLADE}/{SPEC_NAME}/MSMC/filtered_vcf_files/{SPEC_NAME}_{CHROM}_filtered.vcf.gz"
+    shell:
+        """
+        mkdir -p {wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/filtered_vcf_files
+        bcftools view -V indels {input} -Oz -o {wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/vcf_files/{wildcards.CHROM}_no_indels.vcf.gz
+        zcat {wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/vcf_files/{wildcards.CHROM}_no_indels.vcf.gz | sed  's/1\/1/0\/1/g' | bgzip -c > {output}
+        """
+
 rule GEN_ROH_NEGATIVE_MASK:
     input:
         "{CLADE}/{SPEC_NAME}/{CHROM}_ROH_Results.txt"
@@ -583,36 +603,41 @@ rule MAKE_MASK:
 
 rule MAIN_MULTIHETSEP:
     input:
-        VCF="{CLADE}/{SPEC_NAME}/MSMC/vcf_files/{SPEC_NAME}_{CHROM}.vcf.gz", 
-        ROH_negative_mask="{CLADE}/{SPEC_NAME}/MSMC/ROH_Negative_Mask/{SPEC_NAME}_{CHROM}_ROH_Mask.bed.gz"
+        VCF="{CLADE}/{SPEC_NAME}/MSMC/filtered_vcf_files/{SPEC_NAME}_{CHROM}_filtered.vcf.gz", 
+        ROH_negative_mask="{CLADE}/{SPEC_NAME}/MSMC/ROH_Negative_Mask/{SPEC_NAME}_{CHROM}_ROH_Mask.bed.gz", 
+        MASK="{CLADE}/{SPEC_NAME}/MSMC/Aln_Mask/{CHROM}_Aln_Mask.bed"
     output:
-        "{CLADE}/{SPEC_NAME}/MSMC/Output_primary_multihetsep/{CHROM}_multihet.txt"
+        "{CLADE}/{SPEC_NAME}/MSMC/Output_primary_multihetsep/{CHROM}_multihet_new.txt"
     shell:
         """
         mkdir -p "{CLADE}/{SPEC_NAME}/MSMC/Output_primary_multihetsep"
-        python {GENERATE_MULTIHETSEP} {input.VCF} --negative_mask={input.ROH_negative_mask} > {output}
+        if [ "$(stat -c %s {input.ROH_negative_mask})" -eq 51 ]; then
+            python {GENERATE_MULTIHETSEP} {input.VCF} --mask={input.MASK} > {output}
+        else
+            python {GENERATE_MULTIHETSEP} {input.VCF} --mask={input.MASK} --negative_mask={input.ROH_negative_mask} > {output}
+        fi
         """
 ####---------- END ----------####
 
 ####---------- RULES FOR RUNNING AND PLOTTING MSMC ----------####
 rule RUN_PRIMARY_MSMC:
     input:
-        expand("{CLADE}/{SPEC_NAME}/MSMC/Output_multihet_filtered_95/{CHROM}_multihet.txt", CHROM=AUTO_CHROMS, CLADE=CLADE, SPEC_NAME=SPEC_NAME)
+        expand("{CLADE}/{SPEC_NAME}/MSMC/Output_primary_multihetsep/{CHROM}_multihet_new.txt", CHROM=AUTO_CHROMS, CLADE=CLADE, SPEC_NAME=SPEC_NAME)
     output:
         loop="{CLADE}/{SPEC_NAME}/MSMC/Primary_Results/{SPEC_NAME}.msmc2.loop.txt", 
         log="{CLADE}/{SPEC_NAME}/MSMC/Primary_Results/{SPEC_NAME}.msmc2.log", 
         final="{CLADE}/{SPEC_NAME}/MSMC/Primary_Results/{SPEC_NAME}.msmc2.final.txt"
     shell:
         """
-        mkdir -p "{CLADE}/{SPEC_NAME}/MSMC/Primary_Results"
-        build/release/msmc2 -t 12 --fixedRecombination -o {CLADE}/{SPEC_NAME}/{SPEC_NAME}.msmc2 {input}
+        mkdir -p {wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/Primary_Results
+        msmc2/build/release/msmc2 -t 12 --fixedRecombination -o {wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/Primary_Results/{wildcards.SPEC_NAME}.msmc2 {input}
         """
 
 rule PLOT_MSMC:
     input:
-        "{CLADE}/{SPEC_NAME}/{SPEC_NAME}.msmc2.final.txt"
+        "{CLADE}/{SPEC_NAME}/MSMC/Primary_Results/{SPEC_NAME}.msmc2.final.txt"
     output:
-        "{CLADE}/{SPEC_NAME}/{SPEC_NAME}_MSMC2_test.png"
+        "{CLADE}/{SPEC_NAME}/MSMC/{SPEC_NAME}_MSMC2.png"
     params:
         CLADE=CLADE, 
         SPEC_NAME=SPEC_NAME, 
@@ -620,6 +645,52 @@ rule PLOT_MSMC:
         GEN_TIME=GEN_TIME
     shell:
         """
-        Rscript {PLOT_MSMC_R} {CLADE} {SPEC_NAME} {MU} {GEN_TIME} {output} {input}
+        Rscript {PLOT_MSMC_R} {params.CLADE} {params.SPEC_NAME} {params.MU} {params.GEN_TIME} {output} {input}
+        """
+####---------- END ----------####
+
+####---------- RULES FOR BOOTSTRAPPING MSMC ----------####
+rule BOOTSTRAPPING_MULTIHET_FILE:
+    input:
+        "{CLADE}/{SPEC_NAME}/MSMC/Output_primary_multihetsep/{CHROM}_multihet.txt"
+    output:
+        "{CLADE}/{SPEC_NAME}/MSMC/Output_Multihet_Bootstrapped/{BOOT}/{CHROM}_multihet.txt"
+    shell:
+        """
+        mkdir -p {wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/Output_Multihet_Bootstrapped/{wildcards.BOOT}
+        python {BOOTSTRAPPING_GENERATOR} --inmhs {input} --windowsize 5e+05 --outmhs {wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/Output_Multihet_Bootstrapped/{wildcards.BOOT}/{wildcards.CHROM}_multihet.txt
+        """
+####---------- END ----------####
+
+####---------- RULES FOR RUNNING AND PLOTTING BOOTSTRAPPED MSMC ----------####
+rule RUN_BOOTSTRAPPING_MSMC:
+    input:
+        expand("{CLADE}/{SPEC_NAME}/MSMC/Output_Multihet_Bootstrapped/{BOOT}/{CHROM}_multihet.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, BOOT=BOOTSTRAPS, CHROM=AUTO_CHROMS)
+    output:
+        loop="{CLADE}/{SPEC_NAME}/MSMC/Bootstrap_results/{SPEC_NAME}_Bootstrapping_{BOOT}.msmc2.loop.txt", 
+        log="{CLADE}/{SPEC_NAME}/MSMC/Bootstrap_results/{SPEC_NAME}_Bootstrapping_{BOOT}.msmc2.log",
+        final="{CLADE}/{SPEC_NAME}/MSMC/Bootstrap_results/{SPEC_NAME}_Bootstrapping_{BOOT}.msmc2.final.txt"
+    resources:
+        runtime="6h", 
+        mem_mb=200000
+    shell:
+        """
+        mkdir -p {wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/Bootstrap_results
+        build/release/msmc2 -t 12 --fixedRecombination -o {wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/Bootstrap_results/{wildcards.SPEC_NAME}_Bootstrapping_{wildcards.BOOT}.msmc2 {input}
+        """
+
+rule PLOT_MSMC_BOOSTRAP:
+    input:
+        "{CLADE}/{SPEC_NAME}/{SPEC_NAME}.msmc2.final.txt"
+    output:
+        "{CLADE}/{SPEC_NAME}/{SPEC_NAME}_MSMC2_Bootstrapped.png"
+    params:
+        CLADE=CLADE, 
+        SPEC_NAME=SPEC_NAME, 
+        MU=MU, 
+        GEN_TIME=GEN_TIME
+    shell:
+        """
+        Rscript {PLOT_MSMC_BOOSTRAP_R} {params.CLADE} {params.SPEC_NAME} {params.MU} {params.GEN_TIME} {output} {input}
         """
 ####---------- END ----------####
