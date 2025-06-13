@@ -87,27 +87,23 @@ ggplot(prim_sum_df, aes(fill = superorder, y = sum, x = lineage)) +
   geom_text(
     aes(label = superorder),
     position = position_stack(vjust = 0.5),
-    size = 8,  # Adjust this for legibility in your SVG units
+    size = 20,  # Adjust this for legibility in your SVG units
     color = "black"
   ) +
   theme_minimal() +
   theme(
-    legend.position = "bottom",
-    legend.text = element_text(size = 80),
+    legend.position = "none",
     axis.text = element_text(size = 80),
     axis.title = element_blank()
   ) +
   scale_fill_manual(values = c(
-    "Actinopterygii (Ray-finned Fishes)" = "#d0d1e6", "Chondrichthyes (Cartilaginous Fishes)" = "#a6bddb",
-    "Agnatha (Jawless Fishes)" = "#74a9cf", "Sarcopterygii (Lobe-finned Fishes)" = "#3690c0",
-    "Laurasiatheria" = "#ccece6", "Marsupials" = "#99d8c9", "Monotremes" = "#66c2a4",
-    "Supraprimates (Euarchontoglires)" = "#41ae76", "Afrotheria" = "#238b45", "Xenarthra" = "#005824", 
-    "Squamata" = "#fdd49e", "Testudines (Cryptodira)" = "#fdbb84", "Testudines (Pleurodira)" = "#fc8d59",
-    "Crocodylia" = "#ef6548", "Caprimulgimorphae" = "#fcc5c0", "Palaeognathae" = "#fa9fb5",
-    "Core landbirds" = "#f768a1", "Core waterbirds" = "#dd3497", "Columbea" = "#ae017e",
-    "GalloAnserformes" = "#7a0177", "Otidimorphae" = "#feebe2", "Caudata" = "#dadaeb",
-    "Gymnophiona" = "#bcbddc", "Anura" = "#9e9ac8", "Tunicata" = "#d9d9d9",
-    "Echinodermata" = "#bdbdbd", "Cephalochordata" = "#969696"
+    "Actinopterygii (Ray-finned Fishes)" = "#d0d1e6", "Chondrichthyes (Cartilaginous Fishes)" = "#a6bddb", "Agnatha (Jawless Fishes)" = "#74a9cf", "Sarcopterygii (Lobe-finned fishes)" = "#3690c0",
+    "Laurasiatheria" = "#e5f5e0", "Marsupials" = "#a1d99b", "Monotremes" = "#238b45", "Supraprimates (Euarchontoglires)" = "#c7e9c0", "Afrotheria" = "#74c476", "Xenarthra" = "#41ab5d", 
+    "Squamata" = "#fdd0a2", "Testudines (Cryptodira)" = "#fdae6b", "Testudines (Pleurodira)" = "#fd8d3c", "Crocodylia" = "#f16913", 
+    "Core landbirds" = "#fee0d2", "Core waterbirds" = "#fcbba1", "Columbea" = "#ef3b2c", "GalloAnserformes" = "#fc9272", "Otidimorphae" = "#a50f15", "Caprimulgimorphae" = "#fb6a4a", "Palaeognathae" = "#cb181d",
+    "Anura" = "#bcbddc", "Caudata" = "#9e9ac8", "Gymnophiona" = "#807dba", 
+    "Tunicata" = "#d9d9d9", "Echinodermata" = "#737373", "Cephalochordata" = "#bdbdbd", "Hemichordata" = "#969696"
   ))
 
 dev.off()
+
