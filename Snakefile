@@ -9,9 +9,11 @@ check how many jobs are required AT EACH STAGE, this command also shows the shel
 - snakemake -n --printshellcmds -p
 
 to run locally use:
-    snakemake --configfile config.yml
+    snakemake --configfile config_files/fish/{SPEC_NAME}_config.yml
+    --touch
+    --keep-going
 to run on slurm use:
-    snakemake --executor slurm --jobs 30 --workflow-profile profiles --latency-wait 60 --keep-going --configfile config_files/{SPEC_NAME}_config.yml
+    snakemake --executor slurm --jobs 30 --workflow-profile profiles --latency-wait 60 --keep-going --configfile config_files/sharks/{SPEC_NAME}_config.yml
 Add in the command --touch for when I want to make sure it doesn't regenerate previously made files
 For changing input parameters, change in the config.yml file
 
@@ -27,7 +29,7 @@ AUTHORS and UPDATES:
 Amanda Gardiner, 20250313
 
 UPDATES: 20250530 -- Redoing pipeline to streamline it
-
+UPDATES: 20250617 -- Redoing pipeline to use fastga alingments which Pio created, and put output files in the VGP/groups/CLADE/SPECIES directories
 """
 
 ###############################################################################
@@ -53,7 +55,7 @@ GEN_TIME=config['GENERATION_TIME']
 ### paths to dependent scripts
 ROH_CALC_PY = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250320_ROH_Durbin_Calc_Eqns_V6.py"
 ROH_PLOT_R = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250106_Plot_ROH.R"
-FROH_CALC_PER_CHR_R = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250210_FROH_per_chr_calc.R"
+FROH_CALC_PER_CHR = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250617_FROH_per_chr_calc.py"
 FROH_CALC_R = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250603_FROH_Calc_Whole_Genome_V2.R"
 CALC_HET_PER_CHR_PY = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250520_find_het_per_chr_V4.py"
 CALC_HET_WHOLE_GENOME_PY = "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_whole_genome_V3.py"
@@ -98,11 +100,11 @@ wildcard_constraints:
 
 rule all: 
     input:
-        expand("{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_{REF_NAME}.1gdb", CLADE=CLADE, SPEC_NAME=SPEC_NAME, REF_NAME=REF_NAME),
-        expand("{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_{ALT_NAME}.1gdb", CLADE=CLADE, SPEC_NAME=SPEC_NAME, ALT_NAME=ALT_NAME),
-        expand("{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_{REF_NAME}.gix", CLADE=CLADE, SPEC_NAME=SPEC_NAME, REF_NAME=REF_NAME), 
-        expand("{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_{ALT_NAME}.gix", CLADE=CLADE, SPEC_NAME=SPEC_NAME, ALT_NAME=ALT_NAME),
-        expand("{CLADE}/{SPEC_NAME}/{SPEC_NAME}_ALN.1aln", CLADE=CLADE, SPEC_NAME=SPEC_NAME), 
+        # expand("{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_{REF_NAME}.1gdb", CLADE=CLADE, SPEC_NAME=SPEC_NAME, REF_NAME=REF_NAME),
+        # expand("{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_{ALT_NAME}.1gdb", CLADE=CLADE, SPEC_NAME=SPEC_NAME, ALT_NAME=ALT_NAME),
+        # expand("{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_{REF_NAME}.gix", CLADE=CLADE, SPEC_NAME=SPEC_NAME, REF_NAME=REF_NAME), 
+        # expand("{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_{ALT_NAME}.gix", CLADE=CLADE, SPEC_NAME=SPEC_NAME, ALT_NAME=ALT_NAME),
+        # expand("{CLADE}/{SPEC_NAME}/{SPEC_NAME}_ALN.1aln", CLADE=CLADE, SPEC_NAME=SPEC_NAME), 
         f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_FASTGA.chain.paf", 
         f"{CLADE}/chrom_lists/{SPEC_NAME}_chroms.txt", 
         f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_FASTGA.chain.chr.fltr.srt.paf", 
@@ -120,7 +122,8 @@ rule all:
         expand("{CLADE}/{SPEC_NAME}/{CHR}_ROH_Results.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHR=CHROMS), 
         f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_ROH_Results.csv", 
         f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_ROH_Map.pdf", 
-        expand("{CLADE}/{SPEC_NAME}/{CHR}_{SPEC_NAME}_FROH.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHR=CHROMS), 
+        # expand("{CLADE}/{SPEC_NAME}/{CHR}_{SPEC_NAME}_FROH.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHR=CHROMS), 
+        expand("{CLADE}/{SPEC_NAME}/{CHROM}_FROH_results.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=CHROM), 
         f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_FROH.txt", 
         expand("{CLADE}/{SPEC_NAME}/{CHROM}_het.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, CHROM=AUTO_CHROMS), 
         f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_per_chr_mean_heterozygosity.txt", 
@@ -138,71 +141,70 @@ rule all:
         f"{CLADE}/{SPEC_NAME}/MSMC/Primary_Results/{SPEC_NAME}.msmc2.loop.txt", 
         f"{CLADE}/{SPEC_NAME}/MSMC/Primary_Results/{SPEC_NAME}.msmc2.log", 
         f"{CLADE}/{SPEC_NAME}/MSMC/Primary_Results/{SPEC_NAME}.msmc2.final.txt", 
-        f"{CLADE}/{SPEC_NAME}/MSMC/{SPEC_NAME}_MSMC2.png"
-
-## Outputs for bootstrapped MSMC
-# expand("{CLADE}/{SPEC_NAME}/MSMC/Output_Multihet_Bootstrapped/{BOOT}/{CHROM}_multihet.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, BOOT=BOOTSTRAPS, CHROM=AUTO_CHROMS)
-# expand("{CLADE}/{SPEC_NAME}/MSMC/Bootstrap_results/{SPEC_NAME}_Bootstrapping_{BOOT}.msmc2.loop.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, BOOT=BOOTSTRAPS), 
-# expand("{CLADE}/{SPEC_NAME}/MSMC/Bootstrap_results/{SPEC_NAME}_Bootstrapping_{BOOT}.msmc2.log", CLADE=CLADE, SPEC_NAME=SPEC_NAME, BOOT=BOOTSTRAPS),
-# expand("{CLADE}/{SPEC_NAME}/MSMC/Bootstrap_results/{SPEC_NAME}_Bootstrapping_{BOOT}.msmc2.final.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, BOOT=BOOTSTRAPS), 
-# f"{CLADE}/{SPEC_NAME}/{SPEC_NAME}_MSMC2_Bootstrapped.png"
+        f"{CLADE}/{SPEC_NAME}/MSMC/{SPEC_NAME}_MSMC2.png", 
+        ### Outputs for bootstrapped MSMC
+        expand("{CLADE}/{SPEC_NAME}/MSMC/Output_Multihet_Bootstrapped/{BOOT}/{CHROM}_multihet.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, BOOT=BOOTSTRAPS, CHROM=AUTO_CHROMS), 
+        expand("{CLADE}/{SPEC_NAME}/MSMC/Bootstrap_results/{SPEC_NAME}_Bootstrapping_{BOOT}.msmc2.loop.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, BOOT=BOOTSTRAPS), 
+        expand("{CLADE}/{SPEC_NAME}/MSMC/Bootstrap_results/{SPEC_NAME}_Bootstrapping_{BOOT}.msmc2.log", CLADE=CLADE, SPEC_NAME=SPEC_NAME, BOOT=BOOTSTRAPS),
+        expand("{CLADE}/{SPEC_NAME}/MSMC/Bootstrap_results/{SPEC_NAME}_Bootstrapping_{BOOT}.msmc2.final.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, BOOT=BOOTSTRAPS), 
+        f"{CLADE}/{SPEC_NAME}/MSMC/{SPEC_NAME}_MSMC2_Bootstrapped.png"
 
 ####---------- RULES FOR FASTGA ALINGMENT AND PAF FILE GENERATION ----------####
-rule FAtoGDB_REF:
-    input: 
-        "/rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/{CLADE}/{REF_NAME}.fa.gz"
-    output:
-        "{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_{REF_NAME}.1gdb",
-    shell:
-        """
-        mkdir -p {wildcards.CLADE}
-        mkdir -p {wildcards.CLADE}/{wildcards.SPEC_NAME}
-        mkdir -p {wildcards.CLADE}/{wildcards.SPEC_NAME}/temp
-        FAtoGDB -v {input} {output}
-        """
+# rule FAtoGDB_REF:
+#     input: 
+#         "/rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/primary/{CLADE}/{REF_NAME}.fa.gz"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_{REF_NAME}.1gdb",
+#     shell:
+#         """
+#         mkdir -p {wildcards.CLADE}
+#         mkdir -p {wildcards.CLADE}/{wildcards.SPEC_NAME}
+#         mkdir -p {wildcards.CLADE}/{wildcards.SPEC_NAME}/temp
+#         FAtoGDB -v {input} {output}
+#         """
 
-rule FAtoGDB_ALT:
-    input: 
-        "/rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/alternate/{CLADE}/{ALT_NAME}.fa.gz"
-    output:
-        "{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_{ALT_NAME}.1gdb",
-    shell:
-        """
-        FAtoGDB -v {input} {output}
-        """
+# rule FAtoGDB_ALT:
+#     input: 
+#         "/rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/secondary/{CLADE}/{ALT_NAME}.fa.gz"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_{ALT_NAME}.1gdb",
+#     shell:
+#         """
+#         FAtoGDB -v {input} {output}
+#         """
 
-rule GIXmake_REF:
-    input: 
-        "{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_{REF_NAME}.1gdb"
-    output:
-        "{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_{REF_NAME}.gix"
-    shell:
-        """
-        GIXmake -v -P. -T8 {input}
-        """
+# rule GIXmake_REF:
+#     input: 
+#         "{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_{REF_NAME}.1gdb"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_{REF_NAME}.gix"
+#     shell:
+#         """
+#         GIXmake -v -P. -T8 {input}
+#         """
 
-rule GIXmake_ALT:
-    input: 
-        "{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_{ALT_NAME}.1gdb"
-    output:
-        "{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_{ALT_NAME}.gix"
-    shell:
-        """
-        GIXmake -v -P. -T8 {input}
-        """
+# rule GIXmake_ALT:
+#     input: 
+#         "{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_{ALT_NAME}.1gdb"
+#     output:
+#         "{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_{ALT_NAME}.gix"
+#     shell:
+#         """
+#         GIXmake -v -P. -T8 {input}
+#         """
 
-rule FASTGA:
-    input:
-        REF=expand("{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_{REF_NAME}.gix", CLADE=CLADE, SPEC_NAME=SPEC_NAME, REF_NAME=REF_NAME),
-        ALT=expand("{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_{ALT_NAME}.gix", CLADE=CLADE, SPEC_NAME=SPEC_NAME, ALT_NAME=ALT_NAME)
-    output:
-        "{CLADE}/{SPEC_NAME}/{SPEC_NAME}_ALN.1aln"
-    resources:
-        runtime="12h"
-    shell:
-        """
-        FastGA -v -P. -T8 -1:{output} {input.ALT} {input.REF}
-        """
+# rule FASTGA:
+#     input:
+#         REF=expand("{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_{REF_NAME}.gix", CLADE=CLADE, SPEC_NAME=SPEC_NAME, REF_NAME=REF_NAME),
+#         ALT=expand("{CLADE}/{SPEC_NAME}/temp/{SPEC_NAME}_{ALT_NAME}.gix", CLADE=CLADE, SPEC_NAME=SPEC_NAME, ALT_NAME=ALT_NAME)
+#     output:
+#         "{CLADE}/{SPEC_NAME}/{SPEC_NAME}_ALN.1aln"
+#     resources:
+#         runtime="12h"
+#     shell:
+#         """
+#         FastGA -v -P. -T8 -1:{output} {input.ALT} {input.REF}
+#         """
     
 rule ALNCHAIN:
     input:
@@ -246,7 +248,7 @@ rule SORT_PAF:
 
 rule GET_CHROM_LISTS:
     input:
-        expand("../250430.VGP-Phase1/alignment/reference/{CLADE}/{REF_NAME}.fa.gz", CLADE=CLADE, REF_NAME=REF_NAME)
+        expand("../250430.VGP-Phase1/alignment/primary/{CLADE}/{REF_NAME}.fa.gz", CLADE=CLADE, REF_NAME=REF_NAME)
     output:
         "{CLADE}/chrom_lists/{SPEC_NAME}_chroms.txt"
     params:
@@ -284,7 +286,7 @@ rule ALNPLOT:
 ####---------- RULES TO GET CHROMOSOME INFORMATION ----------####
 rule CHROM_LENGTH_CALC:
     input:
-        FASTA=expand("../250430.VGP-Phase1/alignment/reference/{CLADE}/{REF_NAME}.fa.gz", CLADE=CLADE, REF_NAME=REF_NAME), 
+        FASTA=expand("../250430.VGP-Phase1/alignment/primary/{CLADE}/{REF_NAME}.fa.gz", CLADE=CLADE, REF_NAME=REF_NAME), 
         ALL_CHROMS="{CLADE}/chrom_lists/{SPEC_NAME}_chroms.txt",
     output:
         "{CLADE}/{SPEC_NAME}/{SPEC_NAME}_Chroms_Lengths.txt"
@@ -404,25 +406,42 @@ rule Plot_ROH:
 ####---------- RULES FOR CALCULATING FROH ----------####
 rule FROH_PER_AUT_CHR:
     input:
-        ROH="{CLADE}/{SPEC_NAME}/{SPEC_NAME}_ROH_Results.csv", 
-        CHROM_LENGTH_FILE="{CLADE}/{SPEC_NAME}/{SPEC_NAME}_Chroms_Lengths.txt", 
-        ALL_CHROMS="{CLADE}/chrom_lists/{SPEC_NAME}_chroms.txt",
-        VAR_FILE="{CLADE}/{SPEC_NAME}/temp/{CHR}_Var_Only.txt"
+        ALN_FILE="{CLADE}/{SPEC_NAME}/temp/{CHROM}_Aln_Only.txt",
+        ROH="{CLADE}/{SPEC_NAME}/{SPEC_NAME}_ROH_Results.csv",
+        CHROM_LENGTH_FILE="{CLADE}/{SPEC_NAME}/{SPEC_NAME}_Chroms_Lengths.txt",
     output:
-        outfiles="{CLADE}/{SPEC_NAME}/{CHR}_{SPEC_NAME}_FROH.txt"
+        "{CLADE}/{SPEC_NAME}/{CHROM}_FROH_results.txt"
     params:
-        REF_NAME=REF_NAME,
-        CLADE=CLADE,
-        NUM_AUT_CHROMOSOMES=NUM_AUT_CHROMOSOMES, 
-        SPEC_NAME=SPEC_NAME
+        CLADE=CLADE, 
+        SPEC_NAME=SPEC_NAME, 
     shell:
         """
-        start="$(head -n  1 {input.VAR_FILE} | awk ' {{print $3}} ')"
-        end="$(tail -n  1 {input.VAR_FILE} | awk ' {{print $4}} ')"
-        chrom_length="$((end - start))"
-
-        Rscript {FROH_CALC_PER_CHR_R} {input.ROH} {input.CHROM_LENGTH_FILE} {params.REF_NAME} {params.CLADE} {params.NUM_AUT_CHROMOSOMES} "$chrom_length" {wildcards.CHR} > {output.outfiles}
+        CHROM_LENGTH="$(awk -v var='{wildcards.CHROM}' '$1 == var {{print $2; exit}}' {input.CHROM_LENGTH_FILE})"
+        python {FROH_CALC_PER_CHR} {input.ALN_FILE} {input.ROH} {params.CLADE} {params.SPEC_NAME} {wildcards.CHROM} "$chrom_length"
         """
+
+
+# rule FROH_PER_AUT_CHR:
+#     input:
+#         ROH="{CLADE}/{SPEC_NAME}/{SPEC_NAME}_ROH_Results.csv", 
+#         CHROM_LENGTH_FILE="{CLADE}/{SPEC_NAME}/{SPEC_NAME}_Chroms_Lengths.txt", 
+#         ALL_CHROMS="{CLADE}/chrom_lists/{SPEC_NAME}_chroms.txt",
+#         VAR_FILE="{CLADE}/{SPEC_NAME}/temp/{CHR}_Var_Only.txt"
+#     output:
+#         outfiles="{CLADE}/{SPEC_NAME}/{CHR}_{SPEC_NAME}_FROH.txt"
+#     params:
+#         REF_NAME=REF_NAME,
+#         CLADE=CLADE,
+#         NUM_AUT_CHROMOSOMES=NUM_AUT_CHROMOSOMES, 
+#         SPEC_NAME=SPEC_NAME
+#     shell:
+#         """
+#         start="$(head -n  1 {input.VAR_FILE} | awk ' {{print $3}} ')"
+#         end="$(tail -n  1 {input.VAR_FILE} | awk ' {{print $4}} ')"
+#         chrom_length="$((end - start))"
+
+#         Rscript {FROH_CALC_PER_CHR_R} {input.ROH} {input.CHROM_LENGTH_FILE} {params.REF_NAME} {params.CLADE} {params.NUM_AUT_CHROMOSOMES} "$chrom_length" {wildcards.CHR} > {output.outfiles}
+#         """
 
 rule WHOLE_FROH:
     input:
@@ -555,7 +574,7 @@ rule SEP_PAF_BY_CHR:
 rule GEN_CHROM_VCF:
     input:
         paf="{CLADE}/{SPEC_NAME}/MSMC/paf_files/{SPEC_NAME}_{CHROM}.paf",
-        refseq=expand("/rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/reference/{CLADE}/{REF_NAME}.fa.gz", CLADE=CLADE, REF_NAME=REF_NAME)
+        refseq=expand("/rds/project/rds-p67MZilb2eQ/projects/VGP/250430.VGP-Phase1/alignment/primary/{CLADE}/{REF_NAME}.fa.gz", CLADE=CLADE, REF_NAME=REF_NAME)
     output:
         "{CLADE}/{SPEC_NAME}/MSMC/vcf_files/{SPEC_NAME}_{CHROM}.vcf.gz"
     shell:
@@ -611,7 +630,7 @@ rule MAIN_MULTIHETSEP:
     shell:
         """
         mkdir -p "{CLADE}/{SPEC_NAME}/MSMC/Output_primary_multihetsep"
-        if [ "$(stat -c %s {input.ROH_negative_mask})" -eq 51 ]; then
+        if [ "$(stat -c %s {input.ROH_negative_mask})" -eq 51 ] || [ "$(stat -c %s {input.ROH_negative_mask})" -eq 52 ]; then
             python {GENERATE_MULTIHETSEP} {input.VCF} --mask={input.MASK} > {output}
         else
             python {GENERATE_MULTIHETSEP} {input.VCF} --mask={input.MASK} --negative_mask={input.ROH_negative_mask} > {output}
@@ -652,7 +671,7 @@ rule PLOT_MSMC:
 ####---------- RULES FOR BOOTSTRAPPING MSMC ----------####
 rule BOOTSTRAPPING_MULTIHET_FILE:
     input:
-        "{CLADE}/{SPEC_NAME}/MSMC/Output_primary_multihetsep/{CHROM}_multihet.txt"
+        "{CLADE}/{SPEC_NAME}/MSMC/Output_primary_multihetsep/{CHROM}_multihet_new.txt"
     output:
         "{CLADE}/{SPEC_NAME}/MSMC/Output_Multihet_Bootstrapped/{BOOT}/{CHROM}_multihet.txt"
     shell:
@@ -665,7 +684,13 @@ rule BOOTSTRAPPING_MULTIHET_FILE:
 ####---------- RULES FOR RUNNING AND PLOTTING BOOTSTRAPPED MSMC ----------####
 rule RUN_BOOTSTRAPPING_MSMC:
     input:
-        expand("{CLADE}/{SPEC_NAME}/MSMC/Output_Multihet_Bootstrapped/{BOOT}/{CHROM}_multihet.txt", CLADE=CLADE, SPEC_NAME=SPEC_NAME, BOOT=BOOTSTRAPS, CHROM=AUTO_CHROMS)
+        lambda wildcards: expand(
+            "{CLADE}/{SPEC_NAME}/MSMC/Output_Multihet_Bootstrapped/{BOOT}/{CHROM}_multihet.txt",
+            CLADE=wildcards.CLADE,
+            SPEC_NAME=wildcards.SPEC_NAME,
+            BOOT=wildcards.BOOT,
+            CHROM=AUTO_CHROMS
+        )
     output:
         loop="{CLADE}/{SPEC_NAME}/MSMC/Bootstrap_results/{SPEC_NAME}_Bootstrapping_{BOOT}.msmc2.loop.txt", 
         log="{CLADE}/{SPEC_NAME}/MSMC/Bootstrap_results/{SPEC_NAME}_Bootstrapping_{BOOT}.msmc2.log",
@@ -676,14 +701,14 @@ rule RUN_BOOTSTRAPPING_MSMC:
     shell:
         """
         mkdir -p {wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/Bootstrap_results
-        build/release/msmc2 -t 12 --fixedRecombination -o {wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/Bootstrap_results/{wildcards.SPEC_NAME}_Bootstrapping_{wildcards.BOOT}.msmc2 {input}
+        msmc2/build/release/msmc2 -t 12 --fixedRecombination -o {wildcards.CLADE}/{wildcards.SPEC_NAME}/MSMC/Bootstrap_results/{wildcards.SPEC_NAME}_Bootstrapping_{wildcards.BOOT}.msmc2 {input}
         """
 
 rule PLOT_MSMC_BOOSTRAP:
     input:
-        "{CLADE}/{SPEC_NAME}/{SPEC_NAME}.msmc2.final.txt"
+        "{CLADE}/{SPEC_NAME}/MSMC/Primary_Results/{SPEC_NAME}.msmc2.final.txt"
     output:
-        "{CLADE}/{SPEC_NAME}/{SPEC_NAME}_MSMC2_Bootstrapped.png"
+        "{CLADE}/{SPEC_NAME}/MSMC/{SPEC_NAME}_MSMC2_Bootstrapped.png"
     params:
         CLADE=CLADE, 
         SPEC_NAME=SPEC_NAME, 
