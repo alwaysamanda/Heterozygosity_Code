@@ -6732,4 +6732,2404 @@ Fixed syntax error
 
 Resubmitted for HepPer, HetFra, HemOce
 
+Ran HypSab locally to see if there was an issue with CALC_HET_WHOLE_GENOME, as that hadn't been done for any species
+Got thie error:
+    Traceback (most recent call last):
+    File "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_whole_genome_V3.py", line 117, in <module>
+        run_het_calculations = calc_het(chr_file, clade, species, num_aut_chr)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250325_find_het_whole_genome_V3.py", line 75, in calc_het
+        chrom_file = pd.read_csv(file_path, sep=',', header=0)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+        return _read(filepath_or_buffer, kwds)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+        parser = TextFileReader(filepath_or_buffer, **kwds)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+        self._engine = self._make_engine(f, self.engine)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+        self.handles = get_handle(
+                    ^^^^^^^^^^^
+    File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/io/common.py", line 873, in get_handle
+        handle = open(
+                ^^^^^
+    FileNotFoundError: [Errno 2] No such file or directory: 'sharks/HypSab/NC_082738.1_het.txt'
+This is one of the X chromosomes -- issue is that it's trying to look for sex chromosomes
+Add this line into line 55 of 20250325_find_het_whole_genome_V3.py to filter only for autosomal chromosomes
+    all_chromosomes = all_chromosomes.iloc[0:num_aut_chr,]
+Modified line 74 in file as well to look for only autosomal chromosomes instead of all
+    for chr_name in aut_chr.iloc[:,0]:
+Resubmitted for HypSab
+Got error:
+    raise IndexingError("Too many indexers")
+    pandas.errors.IndexingError: Too many indexers
+Altered line 74 to:
+    for chr_name in aut_chr: 
+Resubmitted and it worked!
+
+Submitted HypSab
+
+Added output of BOOTSTRAPPING_MULTIHET_FILE to rule all
+Testing how it works on HydCol -- submitted to run locally
+Some were generated, others failed with error:
+    Traceback (most recent call last):
+    File "/rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/20241011_jaskaran_script_msmc_fileprep/block_bootstrap_mhs.py", line 55, in <module>
+    heterozygosity of sharks/HydCol/MSMC/Output_Multihet_Bootstrapped/25/CM068749.1_multihet.txt = 0.0018199396409172407
+        block_indices_to_use = np.random.randint(1,num_windows,num_windows)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "numpy/random/mtrand.pyx", line 782, in numpy.random.mtrand.RandomState.randint
+    File "numpy/random/_bounded_integers.pyx", line 1334, in numpy.random._bounded_integers._rand_int64
+    ValueError: low >= high
+Or error:
+    File "/rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/20241011_jaskaran_script_msmc_fileprep/block_bootstrap_mhs.py", line 87, in <module>
+        if np.min([newmhs_np[i+1,0]-newmhs_np[i,0] for i in range(0,len(newmhs_np[:,0])-1)])<1:
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/numpy/core/fromnumeric.py", line 2953, in min
+        return _wrapreduction(a, np.minimum, 'min', axis, None, out,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/numpy/core/fromnumeric.py", line 88, in _wrapreduction
+        return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ValueError: zero-size array to reduction operation minimum which has no identity
+The first error is when there is only 1 window over the whole genome
+Running an interactive session to see if I can track down the error
+    MSMC/Output_primary_multihetsep/CM068749.1_multihet_new.txt
+Decreasing the window size helps with some issues -- from 5e+05 to 1e+05
+
+Some failed with error (I think chr CM068773.1):
+        return _wrapreduction(a, np.minimum, 'min', axis, None, out,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/numpy/core/fromnumeric.py", line 88, in _wrapreduction
+        return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ValueError: zero-size array to reduction operation minimum which has no identity
+
+However, after running all jobs to see which chromosomes were causing the errors, all jobs completed succesfully
+Will attempt to run MSMC on bootstrapped files
+Failed
+Didn't have correct path to msmc2 code
+Fixed and resubmitted locally
+
+Checked on results for jobs submitted this morning
+HemOce had a few empty multihet files
+HepPer appears to have been successful -- needs a few more jobs to run to finish
+HetFra also appears to have been successful
+Hyp sab has a few empty multihet files
+
+Will comment out results for bootstrapped code and submit to get primary MSMC for HepPer
+
+
+Will have to recreate the script to plot the introduction figure on the number of species in the clades and orders for my report
+
+Error in WHOLE_FROH for HepPer:
+         36 head: cannot open 'sharks/HepPer/temp/_Var_Only.txt' for reading: No such file or directory
+     37 RuleException:
+     38 CalledProcessError in file /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/Snakefile, line 440:
+
+
+#### UPDATE ####
+20250606 (June 6th, 2025)
+
+Fixed syntax error in WHOLE_FROH
+Resubmittedfor HepPer
+Job failed with error:
+    head: cannot open 'sharks/HepPer/temp/HepPer_CM068637.1_Var_Only.txt' for reading: No such file or directory
+     37 RuleException:
+Edited syntax in rule and resubmitted locally
+Issue was due to a trailing empty line in the Hep Per chrom list scripts
+Fixed and resubmitted -- appears to now be working?
+
+Submitted AciRut, AmiCal, CypVen, FunDia, HopMal
+Submitted for LycPac, and SalBra
+
+Re-running 20250508_Plot_MSMC.R to get better axes limits for:
+NarBan -- ylim=c(0,100000), xlim=c(0,1000000)
+    Rscript 20250508_Plot_MSMC.R sharks NarBan 1.25e-8 8.7 sharks/NarBan/MSMC/NarBan_MSMC2_yaxis.png sharks/NarBan/MSMC/Primary_Results/NarBan.msmc2.final.txt
+MobBir -- ylim=c(0,100000), xlim=c(0,10000000)
+    Rscript 20250508_Plot_MSMC.R sharks MobBir 1.25e-8 29 sharks/MobBir/MSMC/MobBir_MSMC2_yaxis.png sharks/MobBir/MSMC/Primary_Results/MobBir.msmc2.final.txt
+HydCol -- ylim=c(0,300000), xlim=c(0,15000000)
+    Rscript 20250508_Plot_MSMC.R sharks HydCol 1.25e-8 18.6 sharks/HydCol/MSMC/HydCol_MSMC2_yaxis.png sharks/HydCol/MSMC/Primary_Results/HydCol.msmc2.final.txt
+HepPer -- ylim=c(0,250000), xlim=c(0,8000000)
+    Rscript 20250508_Plot_MSMC.R sharks HepPer 1.25e-8 13.5 sharks/HepPer/MSMC/HepPer_MSMC2_yaxis.png sharks/HepPer/MSMC/Primary_Results/HepPer.msmc2.final.txt
+
+Submitted for HemOce, HetFra, and HypSab to get primary MSMC results
+
+HydCol appears to have all files for bootstrapping made and run, and ready for plotting
+Got error in Rscript -- Names for bootstrapped files was inproperly written
+Fixed and resubmitted
+It worked!
+Ran R script to alter axis limits
+    Rscript 20250529_Plot_MSMC_Bootstrap.R sharks HydCol 1.25e-8 18.6 sharks/HydCol/MSMC/HydCol_MSMC2_Bootstrapped_yaxis.png sharks/HydCol/MSMC/Primary_Results/HydCol.msmc2.final.txt
+
+submitted for HemOce and HypSab
+
+Submitted for HepPer, HetFra, MobBir, and NarBan
+
+
+#### UPDATE ####
+20250607 (June 7th, 2025)
+
+Submitted for HepPer, HetFra, MobBir, NarBan, HypSab, and HemOce
+All these species primarily need to have Bootstrapping done, or finish up running primary MSMC
+HetFra had primary MSMC run yesterday!
+Re-running 20250508_Plot_MSMC.R to get better axes limits
+HetFra -- ylim=c(0,100000), xlim=c(0,8000000)
+    Rscript 20250508_Plot_MSMC.R sharks HetFra 1.25e-8 22.5 sharks/HetFra/MSMC/HetFra_MSMC2_yaxis.png sharks/HetFra/MSMC/Primary_Results/HetFra.msmc2.final.txt
+It worked!
+Generic for 20250508_Plot_MSMC.R -- c(0,500000), xlim=c(0,20000000)
+
+Error for some bootstrapping multihet files for HemOce:
+         40 Traceback (most recent call last):
+     41   File "/rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/20241011_jaskaran_script_msmc_fileprep/block_bootstrap_mhs.py", line 44, in <module>
+     42     data = pd.read_csv(inmhs, header = None,sep='\t') # load data
+     43            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     44   File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+     45     return _read(filepath_or_buffer, kwds)
+     46            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     47   File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+     48     parser = TextFileReader(filepath_or_buffer, **kwds)
+     49              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     50   File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+     51     self._engine = self._make_engine(f, self.engine)
+     52                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     53   File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1898, in _make_engine
+     54     return mapping[engine](f, **self.options)
+     55            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     56   File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 93, in __init__
+     57     self._reader = parsers.TextReader(src, **kwds)
+     58                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     59   File "parsers.pyx", line 581, in pandas._libs.parsers.TextReader.__cinit__
+     60 pandas.errors.EmptyDataError: No columns to parse from file
+     61 RuleException:
+
+
+#### UPDATE ####
+20250608 (June 8th, 2025)
+
+Submitted for HepPer, HemOce, HetFra, HypSab
+HypSab name -- 161f009b
+HetFra name -- 3dc94bea
+HepPer name -- acafddd3
+HemOce name -- 4972f9ee
+MobBir name -- e49833dc
+Jobs currently running are for NarBan -- which has bootstrapping running
+Will instead submit for fish
+
+Submitted for HopMal
+HopMal name -- 132d9714
+
+Sumitted  again for HepPer
+HepPer name -- 660a50c0
+
+
+#### UPDATE ####
+20250609 (June 9th, 2025)
+
+Commented out bootstrapping code to make sure that all other code is done for species
+Submitted for HepPer, HemOce, HetFra, HypSab, NarBan, MobBir
+HetFra, NarBan, and MobBir are done
+Submitted for HopMal, AciRut, AmiCal, CypVen, FunDia, LycPac, and SalBra
+LycPac is done
+
+HepPer name -- 287aab27
+HemOce name -- 620ffacc
+HypSab name -- f5855c6d
+HopMal name -- ab6a3dc0
+AciRut name -- 6b2b580c
+AmiCal name -- 0c2ce218
+CypVen name -- 301267e2
+FunDia name -- 624c813f
+SalBra name -- 5347f497
+
+WHOLE_FROH failed for HepPer:
+     49 Error in read.table(args[7], header = FALSE) : 
+     50   no lines available in input
+     51 Execution halted
+This error is saying that there is nothing to read in sharks/HepPer/HepPer_Chroms_Lengths.txt
+Opening the file - it appears empty
+Will remove file so it can be regenerated
+Canceled HepPer snakemake and resubmitted to get file
+
+Primary MSMC analysis failed for HemOce and HypSab
+Failed due to this error:
+    109 ??:? _d_arraybounds_indexp [0x62efc5]
+    110 ??:? void model.psmc_hmm.PSMC_hmm.runForward() [0x5a2e35]
+    111 ??:? std.typecons.Tuple!(double[][], double[][2], double).Tuple expectation_step.singleChromosomeExpectation(in model.data.SegSite_t[, ulong, in model.propagation_core.PropagationCore) [0x5d854b]
+    112 ??:? int expectation_step.getExpectation(in model.data.SegSite_t[][], model.psmc_model.PSMCmodel, ulong, ulong).__foreachbody13(ulong, ref const(model.data.SegSite_t[])) [0x5d8368]
+    113 ??:? void std.parallelism.ParallelForeach!(const(model.data.SegSite_t[])[]).ParallelForeach.opApply(scope int delegate(ulong, ref const(model.data.SegSite_t[]))).doIt() [0x583fa6]
+    114 ??:? void std.parallelism.run!(void delegate()).run(void delegate()) [0x63cdeb]
+    115 ??:? void std.parallelism.Task!(std.parallelism.run, void delegate()).Task.impl(void*) [0x63c8cf]
+    116 ??:? void std.parallelism.AbstractTask.job() [0x66e6b2]
+    117 ??:? void std.parallelism.TaskPool.doJob(std.parallelism.AbstractTask*) [0x63b3c7]
+    118 ??:? void std.parallelism.TaskPool.executeWorkLoop() [0x63b536]
+    119 ??:? void std.parallelism.TaskPool.startWorkLoop() [0x63b4df]
+    120 ??:? void core.thread.context.Callable.opCall() [0x65da58]
+    121 ??:? thread_entryPoint [0x65d536]
+    122 ??:? [0x147990c531c9]
+    123 ??:? clone [0x1479901208d2]
+    124 RuleException:
+This error is from trying to access an array with an out-of-bounds index
+I think this could possibly be due to some of the primary multihet files being empty
+HydCol and HepPer, both of which have had successful results, don't have any empty files
+HemOce chr with empty files
+    NC_083427.1_multihet_new.txt
+    NC_083438.1_multihet_new.txt
+    NC_083441.1_multihet_new.txt
+    NC_083442.1_multihet_new.txt  
+    NC_083444.1_multihet_new.txt  
+    NC_083447.1_multihet_new.txt
+    NC_083448.1_multihet_new.txt
+    NC_083450.1_multihet_new.txt
+    NC_083452.1_multihet_new.txt
+HypSab chr with empty files
+    NC_082723.1_multihet_new.txt -- no ROH present, fairly high het
+    NC_082737.1_multihet_new.txt -- no ROH present, also fairly high het
+I think error has to do with the ROH -- All these chromosomes in both species are the only ones with no ROH
+Problem has to do with if statement in MAIN_MULTIHETSEP -- they are not getting filtered properly because ROH negative mask files are 52bytes, not 51bytes
+Updated it to fix this:
+        if [ "$(stat -c %s {input.ROH_negative_mask})" -eq 51 ] || [ "$(stat -c %s {input.ROH_negative_mask})" -eq 52 ]; then
+            python {GENERATE_MULTIHETSEP} {input.VCF} --mask={input.MASK} > {output}
+        else
+            python {GENERATE_MULTIHETSEP} {input.VCF} --mask={input.MASK} --negative_mask={input.ROH_negative_mask} > {output}
+        fi
+Removed empty files
+Resubmitted for both
+HemOce name -- 90c53ca3
+HypSab name -- ed4b0816
+HepPer name -- 3d41e8e4
+
+HopMal finished succesfully
+
+
+#### UPDATE ####
+20250610 (June 10th, 2025)
+
+Still had 163 jobs waiting to run by midday which had not run all night or morning
+Canceled them to check on what was needed
+
+Submitted locally for HypSab, HemOce
+Both only need results plotted
+Will run code to generate plots with updated axes
+HypSab -- ylim=c(0,100000), xlim=c(0,5000000)
+    Rscript 20250508_Plot_MSMC.R sharks HypSab 1.25e-8 18.8 sharks/HypSab/MSMC/HypSab_MSMC2_yaxis.png sharks/HypSab/MSMC/Primary_Results/HypSab.msmc2.final.txt
+HemOce -- ylim=c(0,100000), xlim=c(0,3000000)
+    Rscript 20250508_Plot_MSMC.R sharks HemOce 1.25e-8 18.8 sharks/HemOce/MSMC/HemOce_MSMC2_yaxis.png sharks/HemOce/MSMC/Primary_Results/HemOce.msmc2.final.txt
+
+Submitted for AciRut, AmiCal, CypVen, FunDia, LycPac, and SalBra
+LycPac is done!
+
+AciRut name -- ac14b49e
+AmiCal name -- 71a4c2c8
+CypVen name -- ef28368a
+FunDia name -- db7d565f
+SalBra name -- 3b9a09dd
+
+Downloaded primary and secondary VGP data freeze files from github
+    wget -O primary.taxon.metaData.tsv  https://raw.githubusercontent.com/VGP/vgp-phase1/refs/heads/main/primary.taxon.metaData.tsv
+    wget -O secondary.taxon.metaData.tsv https://raw.githubusercontent.com/VGP/vgp-phase1/refs/heads/main/secondary.taxon.metaData.tsv
+
+Created 20250610_Plot_VGP_dat.R to plot primary and secondary haplotypes from data in introductory figure
+
+
+#### UPDATE ####
+20250611 (June 11th, 2025)
+
+All jobs submitted in queue yesterday ran
+
+Submitted for AciRut, AmiCal, CypVen, FunDia, and SalBra
+AciRut name -- be5ebbfe
+AmiCal name -- 677e2292
+CypVen name -- 63ecc777
+FunDia name -- 39815eb2
+SalBra name -- 9270b904
+
+Uncommented in rule all the output multihet files for bootstrapping, to submit those for the Chondrichthyes
+Submitted for HemOce, HepPer, HetFra, HypSab, NarBan
+HemOce name -- d55cb0a9
+HepPer name -- fcbc254f
+HetFra name -- ccc9833e
+HypSab name -- 46353c75
+All NarBan Bootstrap prep files have been generated
+NarBan Bootstrap results directory has been made before but it only contains the loop and log, not the final.txt
+Will remove the previously generated results from this directory and first run one locally to make sure that it is working okay
+    rm *loop.txt
+    rm *.log
+    msmc2/build/release/msmc2 -t 12 --fixedRecombination -o sharks/NarBan/MSMC/Bootstrap_results/NarBan_Bootstrapping_0.msmc2 sharks/NarBan/MSMC/Output_Multihet_Bootstrapped/0/CM072956.1_multihet.txt sharks/NarBan/MSMC/Output_Multihet_Bootstrapped/0/CM072957.1_multihet.txt sharks/NarBan/MSMC/Output_Multihet_Bootstrapped/0/CM072958.1_multihet.txt sharks/NarBan/MSMC/Output_Multihet_Bootstrapped/0/CM072959.1_multihet.txt sharks/NarBan/MSMC/Output_Multihet_Bootstrapped/0/CM072960.1_multihet.txt sharks/NarBan/MSMC/Output_Multihet_Bootstrapped/0/CM072961.1_multihet.txt sharks/NarBan/MSMC/Output_Multihet_Bootstrapped/0/CM072962.1_multihet.txt sharks/NarBan/MSMC/Output_Multihet_Bootstrapped/0/CM072963.1_multihet.txt sharks/NarBan/MSMC/Output_Multihet_Bootstrapped/0/CM072964.1_multihet.txt sharks/NarBan/MSMC/Output_Multihet_Bootstrapped/0/CM072965.1_multihet.txt sharks/NarBan/MSMC/Output_Multihet_Bootstrapped/0/CM072966.1_multihet.txt sharks/NarBan/MSMC/Output_Multihet_Bootstrapped/0/CM072967.1_multihet.txt sharks/NarBan/MSMC/Output_Multihet_Bootstrapped/0/CM072968.1_multihet.txt sharks/NarBan/MSMC/Output_Multihet_Bootstrapped/0/CM072969.1_multihet.txt
+It worked!
+Will try to submit NarBan locally to get the rest of them done
+Job finished for NarBan
+Uncommented the Bootstrapped plot and will run it locally for NarBan
+Successfully made! Will re-run locally to get better axes limits
+NarBan -- ylim=c(0,60000), xlim=c(0,1000000)
+    Rscript 20250529_Plot_MSMC_Bootstrap.R sharks NarBan 1.25e-8 8.7 sharks/NarBan/MSMC/NarBan_MSMC2_Bootstrapped_yaxis.png sharks/NarBan/MSMC/Primary_Results/NarBan.msmc2.final.txt
+
+Downloaded all VGP data
+    wget -O VGPPhase1-freeze-1.0.tsv https://raw.githubusercontent.com/VGP/vgp-phase1/refs/heads/main/VGPPhase1-freeze-1.0.tsv
+
+Jobs from this morning finished running
+Resubmitted for HemOce, HepPer, HetFra, HypSab, MobBir, AciRut, AmiCal, CypVen, FunDia, and SalBra
+CypVen name -- 1ca109a5
+HypSab name -- 642662b7
+HepPer name -- 78f79c33
+HemOce name -- f8486e7f
+HetFra name -- 77414b61
+MobBir name -- 28eb0171
+AmiCal name -- 9b605983
+FunDia name -- 7dddb9b1
+SalBra name -- 2802aab4
+AciRut name -- fa43119e
+
+
+#### UPDATE ####
+20250612 (June 12th, 2025)
+
+Codes from yesterday are still running
+Continued working on 20250610_Plot_VGP_dat.R to make sure that I got plot for intro figure of first year report done
+Created 20250612_Start_Config_files.py -- will use this to extract base info from 20250611_Prim_Sec_table.tsv
+    python 20250612_Start_Config_files.py 20250611_Prim_Sec_table.tsv
+
+All jobs submitted yesterday finished by 10PM tonight
+Submitted HepPEr, HetFra, HemOce, HypSab, and MobBir
+HepPer name -- 266073a8
+MobBir name -- 04f8c706
+HemOce name -- 5e62874c
+HypSab name -- fe428751
+HetFra name -- 31c27f62
+
+
+#### UPDATE ####
+20250613 (June 13th, 2025)
+
+Jobs from last night are still running
+Lost data due to error while trying to backup to github
+
+Recovered shark config files and code files which I had backed up (everything from last week)
+Resubmitted for HemOce, HepPer, HetFra, HydCol, HypSab, MobBir, and NarBan
+
+Rewriting 20250612_Start_Config_files.py to create config files
+
+Redownloaded the VGP data using wget commands from above, but this time put them in a separate directory for organization
+    wget -O VGPPhase1-freeze-1.0.tsv https://raw.githubusercontent.com/VGP/vgp-phase1/refs/heads/main/VGPPhase1-freeze-1.0.tsv
+    wget -O primary.taxon.metaData.tsv  https://raw.githubusercontent.com/VGP/vgp-phase1/refs/heads/main/primary.taxon.metaData.tsv
+    wget -O secondary.taxon.metaData.tsv https://raw.githubusercontent.com/VGP/vgp-phase1/refs/heads/main/secondary.taxon.metaData.tsv
+
+Rewrote 20250612_Start_Config_files.py
+Created subdirectories within config_files directory to store config files
+
+Resubmitted for HepPer, HydCol HemOce, HetFra, HypSab, MobBir, and NarBan
+Finished config file for LycPac and resubmitted locally
+    CLADE : fish 
+    SPEC_NAME : LycPac 
+    REF_NAME : GCA_028022725.1 
+    ALT_NAME : GCA_028021495.1 
+    CHROM_START_CHR : CM
+    WINDOW_INTERVAL : 500000 
+    WINDOW_LENGTH : 1000000 
+    NUM_AUT_CHROMOSOMES : 24
+    NUM_ALL_CHR: 24
+    MUTATION_RATE: 1.25e-8 
+    GENERATION_TIME: 2
+    ALL_CHROMOSOMES : 
+        - CM051688.1
+        - CM051689.1
+        - CM051690.1
+        - CM051691.1
+        - CM051692.1
+        - CM051693.1
+        - CM051694.1
+        - CM051695.1
+        - CM051696.1
+        - CM051697.1
+        - CM051698.1
+        - CM051699.1
+        - CM051700.1
+        - CM051701.1
+        - CM051702.1
+        - CM051703.1
+        - CM051704.1
+        - CM051705.1
+        - CM051706.1
+        - CM051707.1
+        - CM051708.1
+        - CM051709.1
+        - CM051710.1
+        - CM051711.1
+    AUTOSOMAL_CHROMOSOMES: 
+        - CM051688.1
+        - CM051689.1
+        - CM051690.1
+        - CM051691.1
+        - CM051692.1
+        - CM051693.1
+        - CM051694.1
+        - CM051695.1
+        - CM051696.1
+        - CM051697.1
+        - CM051698.1
+        - CM051699.1
+        - CM051700.1
+        - CM051701.1
+        - CM051702.1
+        - CM051703.1
+        - CM051704.1
+        - CM051705.1
+        - CM051706.1
+        - CM051707.1
+        - CM051708.1
+        - CM051709.1
+        - CM051710.1
+        - CM051711.1
+    BOOTSTRAPPING_VALUES: 
+        - 0 
+        - 1 
+        - 2 
+        - 3 
+        - 4 
+        - 5 
+        - 6 
+        - 7 
+        - 8 
+        - 9 
+        - 10 
+        - 11 
+        - 12 
+        - 13 
+        - 14 
+        - 15 
+        - 16 
+        - 17 
+        - 18 
+        - 19 
+        - 20 
+        - 21 
+        - 22 
+        - 23 
+        - 24 
+        - 25 
+        - 26 
+        - 27 
+        - 28 
+        - 29 
+
+Finished AciRut config file and submitted
+    CLADE : fish 
+    SPEC_NAME : AciRut 
+    REF_NAME : GCF_902713425.1 
+    ALT_NAME : GCA_902713435.2 
+    CHROM_START_CHR : NC
+    WINDOW_INTERVAL : 500000 
+    WINDOW_LENGTH : 1000000 
+    NUM_AUT_CHROMOSOMES : 60
+    NUM_ALL_CHR: 60
+    MUTATION_RATE: 1.25e-8 
+    GENERATION_TIME: 22 ## Between 17.6-26 years -- using 22yrs as a midpoint
+    ALL_CHROMOSOMES : 
+        - NC_081189.1
+        - NC_081190.1
+        - NC_081191.1
+        - NC_081192.1
+        - NC_081193.1
+        - NC_081194.1
+        - NC_081195.1
+        - NC_081196.1
+        - NC_081197.1
+        - NC_081198.1
+        - NC_081199.1
+        - NC_081200.1
+        - NC_081201.1
+        - NC_081202.1
+        - NC_081203.1
+        - NC_081204.1
+        - NC_081205.1
+        - NC_081206.1
+        - NC_081207.1
+        - NC_081208.1
+        - NC_081209.1
+        - NC_081210.1
+        - NC_081211.1
+        - NC_081212.1
+        - NC_081213.1
+        - NC_081214.1
+        - NC_081215.1
+        - NC_081216.1
+        - NC_081217.1
+        - NC_081218.1
+        - NC_081219.1
+        - NC_081220.1
+        - NC_081221.1
+        - NC_081222.1
+        - NC_081223.1
+        - NC_081224.1
+        - NC_081225.1
+        - NC_081226.1
+        - NC_081227.1
+        - NC_081228.1
+        - NC_081229.1
+        - NC_081230.1
+        - NC_081231.1
+        - NC_081232.1
+        - NC_081233.1
+        - NC_081234.1
+        - NC_081235.1
+        - NC_081236.1
+        - NC_081237.1
+        - NC_081238.1
+        - NC_081239.1
+        - NC_081240.1
+        - NC_081241.1
+        - NC_081242.1
+        - NC_081243.1
+        - NC_081244.1
+        - NC_081245.1
+        - NC_081246.1
+        - NC_081247.1
+        - NC_081248.1
+    AUTOSOMAL_CHROMOSOMES: 
+        - NC_081189.1
+        - NC_081190.1
+        - NC_081191.1
+        - NC_081192.1
+        - NC_081193.1
+        - NC_081194.1
+        - NC_081195.1
+        - NC_081196.1
+        - NC_081197.1
+        - NC_081198.1
+        - NC_081199.1
+        - NC_081200.1
+        - NC_081201.1
+        - NC_081202.1
+        - NC_081203.1
+        - NC_081204.1
+        - NC_081205.1
+        - NC_081206.1
+        - NC_081207.1
+        - NC_081208.1
+        - NC_081209.1
+        - NC_081210.1
+        - NC_081211.1
+        - NC_081212.1
+        - NC_081213.1
+        - NC_081214.1
+        - NC_081215.1
+        - NC_081216.1
+        - NC_081217.1
+        - NC_081218.1
+        - NC_081219.1
+        - NC_081220.1
+        - NC_081221.1
+        - NC_081222.1
+        - NC_081223.1
+        - NC_081224.1
+        - NC_081225.1
+        - NC_081226.1
+        - NC_081227.1
+        - NC_081228.1
+        - NC_081229.1
+        - NC_081230.1
+        - NC_081231.1
+        - NC_081232.1
+        - NC_081233.1
+        - NC_081234.1
+        - NC_081235.1
+        - NC_081236.1
+        - NC_081237.1
+        - NC_081238.1
+        - NC_081239.1
+        - NC_081240.1
+        - NC_081241.1
+        - NC_081242.1
+        - NC_081243.1
+        - NC_081244.1
+        - NC_081245.1
+        - NC_081246.1
+        - NC_081247.1
+        - NC_081248.1
+    BOOTSTRAPPING_VALUES: 
+        - 0 
+        - 1 
+        - 2 
+        - 3 
+        - 4 
+        - 5 
+        - 6 
+        - 7 
+        - 8 
+        - 9 
+        - 10 
+        - 11 
+        - 12 
+        - 13 
+        - 14 
+        - 15 
+        - 16 
+        - 17 
+        - 18 
+        - 19 
+        - 20 
+        - 21 
+        - 22 
+        - 23 
+        - 24 
+        - 25 
+        - 26 
+        - 27 
+        - 28 
+        - 29 
+
+Finished config file for AmiCal -- AmiCal_config.ym.
+    CLADE : fish 
+    SPEC_NAME : AmiCal 
+    REF_NAME : GCF_036373705.1 
+    ALT_NAME : GCA_036365475.1 
+    CHROM_START_CHR : NC
+    WINDOW_INTERVAL : 500000 
+    WINDOW_LENGTH : 1000000 
+    NUM_AUT_CHROMOSOMES : 23
+    NUM_ALL_CHR: 23
+    MUTATION_RATE: 1.25e-8 
+    GENERATION_TIME: 3
+    ALL_CHROMOSOMES : 
+        - NC_089850.1
+        - NC_089851.1
+        - NC_089852.1
+        - NC_089853.1
+        - NC_089854.1
+        - NC_089855.1
+        - NC_089856.1
+        - NC_089857.1
+        - NC_089858.1
+        - NC_089859.1
+        - NC_089860.1
+        - NC_089861.1
+        - NC_089862.1
+        - NC_089863.1
+        - NC_089864.1
+        - NC_089865.1
+        - NC_089866.1
+        - NC_089867.1
+        - NC_089868.1
+        - NC_089869.1
+        - NC_089870.1
+        - NC_089871.1
+        - NC_089872.1
+    AUTOSOMAL_CHROMOSOMES: 
+        - NC_089850.1
+        - NC_089851.1
+        - NC_089852.1
+        - NC_089853.1
+        - NC_089854.1
+        - NC_089855.1
+        - NC_089856.1
+        - NC_089857.1
+        - NC_089858.1
+        - NC_089859.1
+        - NC_089860.1
+        - NC_089861.1
+        - NC_089862.1
+        - NC_089863.1
+        - NC_089864.1
+        - NC_089865.1
+        - NC_089866.1
+        - NC_089867.1
+        - NC_089868.1
+        - NC_089869.1
+        - NC_089870.1
+        - NC_089871.1
+        - NC_089872.1
+    BOOTSTRAPPING_VALUES: 
+        - 0 
+        - 1 
+        - 2 
+        - 3 
+        - 4 
+        - 5 
+        - 6 
+        - 7 
+        - 8 
+        - 9 
+        - 10 
+        - 11 
+        - 12 
+        - 13 
+        - 14 
+        - 15 
+        - 16 
+        - 17 
+        - 18 
+        - 19 
+        - 20 
+        - 21 
+        - 22 
+        - 23 
+        - 24 
+        - 25 
+        - 26 
+        - 27 
+        - 28 
+        - 29 
+
+Rewrote CypVen_config.yml
+    CLADE : fish 
+    SPEC_NAME : CypVen 
+    REF_NAME : GCA_038024135.1 
+    ALT_NAME : GCA_038021265.1 
+    CHROM_START_CHR : CM
+    WINDOW_INTERVAL : 500000 
+    WINDOW_LENGTH : 1000000 
+    NUM_AUT_CHROMOSOMES : 25
+    NUM_ALL_CHR: 25
+    MUTATION_RATE: 1.25e-8 
+    GENERATION_TIME: 1
+    ALL_CHROMOSOMES : 
+        - CM075888.1
+        - CM075889.1
+        - CM075890.1
+        - CM075891.1
+        - CM075892.1
+        - CM075893.1
+        - CM075894.1
+        - CM075895.1
+        - CM075896.1
+        - CM075897.1
+        - CM075898.1
+        - CM075899.1
+        - CM075900.1
+        - CM075901.1
+        - CM075902.1
+        - CM075903.1
+        - CM075904.1
+        - CM075905.1
+        - CM075906.1
+        - CM075907.1
+        - CM075908.1
+        - CM075909.1
+        - CM075910.1
+        - CM075911.1
+        - CM075912.1
+    AUTOSOMAL_CHROMOSOMES: 
+        - CM075888.1
+        - CM075889.1
+        - CM075890.1
+        - CM075891.1
+        - CM075892.1
+        - CM075893.1
+        - CM075894.1
+        - CM075895.1
+        - CM075896.1
+        - CM075897.1
+        - CM075898.1
+        - CM075899.1
+        - CM075900.1
+        - CM075901.1
+        - CM075902.1
+        - CM075903.1
+        - CM075904.1
+        - CM075905.1
+        - CM075906.1
+        - CM075907.1
+        - CM075908.1
+        - CM075909.1
+        - CM075910.1
+        - CM075911.1
+        - CM075912.1
+    BOOTSTRAPPING_VALUES: 
+        - 0 
+        - 1 
+        - 2 
+        - 3 
+        - 4 
+        - 5 
+        - 6 
+        - 7 
+        - 8 
+        - 9 
+        - 10 
+        - 11 
+        - 12 
+        - 13 
+        - 14 
+        - 15 
+        - 16 
+        - 17 
+        - 18 
+        - 19 
+        - 20 
+        - 21 
+        - 22 
+        - 23 
+        - 24 
+        - 25 
+        - 26 
+        - 27 
+        - 28 
+        - 29 
+
+Rewrote SalBra_config.yml
+    CLADE : fish 
+    SPEC_NAME : SalBra 
+    REF_NAME : GCF_030463535.1 
+    ALT_NAME : GCA_030448965.1 
+    CHROM_START_CHR : NC
+    WINDOW_INTERVAL : 500000 
+    WINDOW_LENGTH : 1000000 
+    NUM_AUT_CHROMOSOMES : 25
+    NUM_ALL_CHR: 25
+    MUTATION_RATE: 1.25e-8 
+    GENERATION_TIME: 1
+    ALL_CHROMOSOMES : 
+        - NC_132878.1
+        - NC_132879.1
+        - NC_132880.1
+        - NC_132881.1
+        - NC_132882.1
+        - NC_132883.1
+        - NC_132884.1
+        - NC_132885.1
+        - NC_132886.1
+        - NC_132887.1
+        - NC_132888.1
+        - NC_132889.1
+        - NC_132890.1
+        - NC_132891.1
+        - NC_132892.1
+        - NC_132893.1
+        - NC_132894.1
+        - NC_132895.1
+        - NC_132896.1
+        - NC_132897.1
+        - NC_132898.1
+        - NC_132899.1
+        - NC_132900.1
+        - NC_132901.1
+        - NC_132902.1
+    AUTOSOMAL_CHROMOSOMES: 
+        - NC_132878.1
+        - NC_132879.1
+        - NC_132880.1
+        - NC_132881.1
+        - NC_132882.1
+        - NC_132883.1
+        - NC_132884.1
+        - NC_132885.1
+        - NC_132886.1
+        - NC_132887.1
+        - NC_132888.1
+        - NC_132889.1
+        - NC_132890.1
+        - NC_132891.1
+        - NC_132892.1
+        - NC_132893.1
+        - NC_132894.1
+        - NC_132895.1
+        - NC_132896.1
+        - NC_132897.1
+        - NC_132898.1
+        - NC_132899.1
+        - NC_132900.1
+        - NC_132901.1
+        - NC_132902.1
+    BOOTSTRAPPING_VALUES: 
+        - 0 
+        - 1 
+        - 2 
+        - 3 
+        - 4 
+        - 5 
+        - 6 
+        - 7 
+        - 8 
+        - 9 
+        - 10 
+        - 11 
+        - 12 
+        - 13 
+        - 14 
+        - 15 
+        - 16 
+        - 17 
+        - 18 
+        - 19 
+        - 20 
+        - 21 
+        - 22 
+        - 23 
+        - 24 
+        - 25 
+        - 26 
+        - 27 
+        - 28 
+        - 29 
+
+Rewrote FunDia_config.yml
+    CLADE : fish 
+    SPEC_NAME : FunDia 
+    REF_NAME : GCA_037039145.1 
+    ALT_NAME : GCA_037038625.1 
+    CHROM_START_CHR : CM
+    WINDOW_INTERVAL : 500000 
+    WINDOW_LENGTH : 1000000 
+    NUM_AUT_CHROMOSOMES : 24
+    NUM_ALL_CHR: 24
+    MUTATION_RATE: 1.25e-8 
+    GENERATION_TIME: 1.5
+    ALL_CHROMOSOMES : 
+        - CM073121.1
+        - CM073122.1
+        - CM073123.1
+        - CM073124.1
+        - CM073125.1
+        - CM073126.1
+        - CM073127.1
+        - CM073128.1
+        - CM073129.1
+        - CM073130.1
+        - CM073131.1
+        - CM073132.1
+        - CM073133.1
+        - CM073134.1
+        - CM073135.1
+        - CM073136.1
+        - CM073137.1
+        - CM073138.1
+        - CM073139.1
+        - CM073140.1
+        - CM073141.1
+        - CM073142.1
+        - CM073143.1
+        - CM073144.1
+    AUTOSOMAL_CHROMOSOMES: 
+        - CM073121.1
+        - CM073122.1
+        - CM073123.1
+        - CM073124.1
+        - CM073125.1
+        - CM073126.1
+        - CM073127.1
+        - CM073128.1
+        - CM073129.1
+        - CM073130.1
+        - CM073131.1
+        - CM073132.1
+        - CM073133.1
+        - CM073134.1
+        - CM073135.1
+        - CM073136.1
+        - CM073137.1
+        - CM073138.1
+        - CM073139.1
+        - CM073140.1
+        - CM073141.1
+        - CM073142.1
+        - CM073143.1
+        - CM073144.1
+    BOOTSTRAPPING_VALUES: 
+        - 0 
+        - 1 
+        - 2 
+        - 3 
+        - 4 
+        - 5 
+        - 6 
+        - 7 
+        - 8 
+        - 9 
+        - 10 
+        - 11 
+        - 12 
+        - 13 
+        - 14 
+        - 15 
+        - 16 
+        - 17 
+        - 18 
+        - 19 
+        - 20 
+        - 21 
+        - 22 
+        - 23 
+        - 24 
+        - 25 
+        - 26 
+        - 27 
+        - 28 
+        - 29 
+
+zcat < ../250430.VGP-Phase1/alignment/primary/fish/GCA_037039145.1.fa.gz | grep '>'
+zcat < ../250430.VGP-Phase1/alignment/primary/fish/GCA_964374335.1.fa.gz | grep '>'
+
+Submitted LycPac, CypVen, SalBra, FunDia, AciRum, and AmiCal to run locally
+LycPac, AmiCal, FunDia, and CypVen finished everything through primary MSMC
+
+Error in calculating heterozygosity for AciRut
+    Traceback (most recent call last):
+  File "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250520_find_het_per_chr_V4.py", line 147, in <module>
+    run_het_calculations = calc_het(dat, roh_data, chr_file, current_window_length, current_window_interval, chrom)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250520_find_het_per_chr_V4.py", line 84, in calc_het
+    variant_positions = single_chr_df.iloc[:, 2].astype(int)
+                        ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/core/indexing.py", line 1184, in __getitem__
+    return self._getitem_tuple(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/core/indexing.py", line 1690, in _getitem_tuple
+    tup = self._validate_tuple_indexer(tup)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/core/indexing.py", line 966, in _validate_tuple_indexer
+    self._validate_key(k, i)
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/core/indexing.py", line 1592, in _validate_key
+    self._validate_integer(key, axis)
+  File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/core/indexing.py", line 1685, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+    IndexError: single positional indexer is out-of-bounds
+This is because there is a chromosome with no variants detected
+
+Submitted HydCol, HepPer, HemOce, HetFra, NarBan, MobBir, and HypSab locally
+
+Wrote AmbSpe_config.yml
+    CLADE : fish 
+    SPEC_NAME : AmbSpe 
+    REF_NAME : GCA_046255685.1 
+    ALT_NAME : GCA_046255725.1 
+    CHROM_START_CHR : CM
+    WINDOW_INTERVAL : 500000 
+    WINDOW_LENGTH : 1000000 
+    NUM_AUT_CHROMOSOMES : 23 
+    NUM_ALL_CHR: 23
+    MUTATION_RATE: 1.25e-8 
+    GENERATION_TIME: 1
+    ALL_CHROMOSOMES : 
+        - CM101371.1
+        - CM101372.1
+        - CM101373.1
+        - CM101374.1
+        - CM101375.1
+        - CM101376.1
+        - CM101377.1
+        - CM101378.1
+        - CM101379.1
+        - CM101380.1
+        - CM101381.1
+        - CM101382.1
+        - CM101383.1
+        - CM101384.1
+        - CM101385.1
+        - CM101386.1
+        - CM101387.1
+        - CM101388.1
+        - CM101389.1
+        - CM101390.1
+        - CM101391.1
+        - CM101392.1
+        - CM101393.1
+    AUTOSOMAL_CHROMOSOMES: 
+        - CM101371.1
+        - CM101372.1
+        - CM101373.1
+        - CM101374.1
+        - CM101375.1
+        - CM101376.1
+        - CM101377.1
+        - CM101378.1
+        - CM101379.1
+        - CM101380.1
+        - CM101381.1
+        - CM101382.1
+        - CM101383.1
+        - CM101384.1
+        - CM101385.1
+        - CM101386.1
+        - CM101387.1
+        - CM101388.1
+        - CM101389.1
+        - CM101390.1
+        - CM101391.1
+        - CM101392.1
+        - CM101393.1
+    BOOTSTRAPPING_VALUES: 
+        - 0 
+        - 1 
+        - 2 
+        - 3 
+        - 4 
+        - 5 
+        - 6 
+        - 7 
+        - 8 
+        - 9 
+        - 10 
+        - 11 
+        - 12 
+        - 13 
+        - 14 
+        - 15 
+        - 16 
+        - 17 
+        - 18 
+        - 19 
+        - 20 
+        - 21 
+        - 22 
+        - 23 
+        - 24 
+        - 25 
+        - 26 
+        - 27 
+        - 28 
+        - 29 
+
+Submitted locally
+
+Finished config file for ArrGeo -- ArrGeo_config.yml
+    CLADE : fish 
+    SPEC_NAME : ArrGeo 
+    REF_NAME : GCA_042242135.1 
+    ALT_NAME : GCA_042242115.1 
+    CHROM_START_CHR : CM
+    WINDOW_INTERVAL : 500000 
+    WINDOW_LENGTH : 1000000 
+    NUM_AUT_CHROMOSOMES : 24
+    NUM_ALL_CHR: 24
+    MUTATION_RATE: 1.25e-8 
+    GENERATION_TIME: 2
+    ALL_CHROMOSOMES : 
+        - CM090191.1
+        - CM090192.1
+        - CM090193.1
+        - CM090194.1
+        - CM090195.1
+        - CM090196.1
+        - CM090197.1
+        - CM090198.1
+        - CM090199.1
+        - CM090200.1
+        - CM090201.1
+        - CM090202.1
+        - CM090203.1
+        - CM090204.1
+        - CM090205.1
+        - CM090206.1
+        - CM090207.1
+        - CM090208.1
+        - CM090209.1
+        - CM090210.1
+        - CM090211.1
+        - CM090212.1
+        - CM090213.1
+        - CM090214.1
+    AUTOSOMAL_CHROMOSOMES: 
+        - CM090191.1
+        - CM090192.1
+        - CM090193.1
+        - CM090194.1
+        - CM090195.1
+        - CM090196.1
+        - CM090197.1
+        - CM090198.1
+        - CM090199.1
+        - CM090200.1
+        - CM090201.1
+        - CM090202.1
+        - CM090203.1
+        - CM090204.1
+        - CM090205.1
+        - CM090206.1
+        - CM090207.1
+        - CM090208.1
+        - CM090209.1
+        - CM090210.1
+        - CM090211.1
+        - CM090212.1
+        - CM090213.1
+        - CM090214.1
+    BOOTSTRAPPING_VALUES: 
+        - 0 
+        - 1 
+        - 2 
+        - 3 
+        - 4 
+        - 5 
+        - 6 
+        - 7 
+        - 8 
+        - 9 
+        - 10 
+        - 11 
+        - 12 
+        - 13 
+        - 14 
+        - 15 
+        - 16 
+        - 17 
+        - 18 
+        - 19 
+        - 20 
+        - 21 
+        - 22 
+        - 23 
+        - 24 
+        - 25 
+        - 26 
+        - 27 
+        - 28 
+        - 29 
+Submitted locally
+
+Finished AstaCal_config.yml
+    CLADE : fish 
+    SPEC_NAME : AstCal 
+    REF_NAME : GCA_964374335.1 
+    ALT_NAME : GCA_900246225.5 
+    CHROM_START_CHR : OZ
+    WINDOW_INTERVAL : 500000 
+    WINDOW_LENGTH : 1000000 
+    NUM_AUT_CHROMOSOMES : 23
+    NUM_ALL_CHR: 23
+    MUTATION_RATE: 1.25e-8 
+    GENERATION_TIME: 
+    ALL_CHROMOSOMES : 
+        - OZ206492.1
+        - OZ206493.1
+        - OZ206494.1
+        - OZ206495.1
+        - OZ206496.1
+        - OZ206497.1
+        - OZ206498.1
+        - OZ206499.1
+        - OZ206500.1
+        - OZ206501.1
+        - OZ206502.1
+        - OZ206503.1
+        - OZ206504.1
+        - OZ206505.1
+        - OZ206506.1
+        - OZ206507.1
+        - OZ206508.1
+        - OZ206509.1
+        - OZ206510.1
+        - OZ206511.1
+        - OZ206512.1
+        - OZ206513.1
+    AUTOSOMAL_CHROMOSOMES: 
+        - OZ206492.1
+        - OZ206493.1
+        - OZ206494.1
+        - OZ206495.1
+        - OZ206496.1
+        - OZ206497.1
+        - OZ206498.1
+        - OZ206499.1
+        - OZ206500.1
+        - OZ206501.1
+        - OZ206502.1
+        - OZ206503.1
+        - OZ206504.1
+        - OZ206505.1
+        - OZ206506.1
+        - OZ206507.1
+        - OZ206508.1
+        - OZ206509.1
+        - OZ206510.1
+        - OZ206511.1
+        - OZ206512.1
+        - OZ206513.1
+    BOOTSTRAPPING_VALUES: 
+        - 0 
+        - 1 
+        - 2 
+        - 3 
+        - 4 
+        - 5 
+        - 6 
+        - 7 
+        - 8 
+        - 9 
+        - 10 
+        - 11 
+        - 12 
+        - 13 
+        - 14 
+        - 15 
+        - 16 
+        - 17 
+        - 18 
+        - 19 
+        - 20 
+        - 21 
+        - 22 
+        - 23 
+        - 24 
+        - 25 
+        - 26 
+        - 27 
+        - 28 
+        - 29 
+
+Submitted locally
+
+Finished AulMac_config.yml
+    CLADE : fish 
+    SPEC_NAME : AulMac 
+    REF_NAME : GCA_048301465.1 
+    ALT_NAME : GCA_048301475.1 
+    CHROM_START_CHR : CM
+    WINDOW_INTERVAL : 500000 
+    WINDOW_LENGTH : 1000000 
+    NUM_AUT_CHROMOSOMES : 24
+    NUM_ALL_CHR: 24
+    MUTATION_RATE: 1.25e-8 
+    GENERATION_TIME: 1.5
+    ALL_CHROMOSOMES : 
+        - CM107617.1
+        - CM107618.1
+        - CM107619.1
+        - CM107620.1
+        - CM107621.1
+        - CM107622.1
+        - CM107623.1
+        - CM107624.1
+        - CM107625.1
+        - CM107626.1
+        - CM107627.1
+        - CM107628.1
+        - CM107629.1
+        - CM107630.1
+        - CM107631.1
+        - CM107632.1
+        - CM107633.1
+        - CM107634.1
+        - CM107635.1
+        - CM107636.1
+        - CM107637.1
+        - CM107638.1
+        - CM107639.1
+        - CM107640.1
+    AUTOSOMAL_CHROMOSOMES: 
+        - CM107617.1
+        - CM107618.1
+        - CM107619.1
+        - CM107620.1
+        - CM107621.1
+        - CM107622.1
+        - CM107623.1
+        - CM107624.1
+        - CM107625.1
+        - CM107626.1
+        - CM107627.1
+        - CM107628.1
+        - CM107629.1
+        - CM107630.1
+        - CM107631.1
+        - CM107632.1
+        - CM107633.1
+        - CM107634.1
+        - CM107635.1
+        - CM107636.1
+        - CM107637.1
+        - CM107638.1
+        - CM107639.1
+        - CM107640.1
+    BOOTSTRAPPING_VALUES: 
+        - 0 
+        - 1 
+        - 2 
+        - 3 
+        - 4 
+        - 5 
+        - 6 
+        - 7 
+        - 8 
+        - 9 
+        - 10 
+        - 11 
+        - 12 
+        - 13 
+        - 14 
+        - 15 
+        - 16 
+        - 17 
+        - 18 
+        - 19 
+        - 20 
+        - 21 
+        - 22 
+        - 23 
+        - 24 
+        - 25 
+        - 26 
+        - 27 
+        - 28 
+        - 29 
+Submitted locally
+
+Created CaeTer_config.yml 
+    CLADE : fish 
+    SPEC_NAME : CaeTer 
+    REF_NAME : GCA_048129055.1 
+    ALT_NAME : GCA_048129025.1 
+    CHROM_START_CHR : CM
+    WINDOW_INTERVAL : 500000 
+    WINDOW_LENGTH : 1000000 
+    NUM_AUT_CHROMOSOMES : 23
+    NUM_ALL_CHR: 23
+    MUTATION_RATE: 1.25e-8 
+    GENERATION_TIME: 1
+    ALL_CHROMOSOMES : 
+        - CM107435.1
+        - CM107436.1
+        - CM107437.1
+        - CM107438.1
+        - CM107439.1
+        - CM107440.1
+        - CM107441.1
+        - CM107442.1
+        - CM107443.1
+        - CM107444.1
+        - CM107445.1
+        - CM107446.1
+        - CM107447.1
+        - CM107448.1
+        - CM107449.1
+        - CM107450.1
+        - CM107451.1
+        - CM107452.1
+        - CM107453.1
+        - CM107454.1
+        - CM107455.1
+        - CM107456.1
+        - CM107457.1
+    AUTOSOMAL_CHROMOSOMES: 
+        - CM107435.1
+        - CM107436.1
+        - CM107437.1
+        - CM107438.1
+        - CM107439.1
+        - CM107440.1
+        - CM107441.1
+        - CM107442.1
+        - CM107443.1
+        - CM107444.1
+        - CM107445.1
+        - CM107446.1
+        - CM107447.1
+        - CM107448.1
+        - CM107449.1
+        - CM107450.1
+        - CM107451.1
+        - CM107452.1
+        - CM107453.1
+        - CM107454.1
+        - CM107455.1
+        - CM107456.1
+        - CM107457.1
+    BOOTSTRAPPING_VALUES: 
+        - 0 
+        - 1 
+        - 2 
+        - 3 
+        - 4 
+        - 5 
+        - 6 
+        - 7 
+        - 8 
+        - 9 
+        - 10 
+        - 11 
+        - 12 
+        - 13 
+        - 14 
+        - 15 
+        - 16 
+        - 17 
+        - 18 
+        - 19 
+        - 20 
+        - 21 
+        - 22 
+        - 23 
+        - 24 
+        - 25 
+        - 26 
+        - 27 
+        - 28 
+        - 29 
+Submitted locally
+
+Finished CenGer_config.yml
+    CLADE : fish 
+    SPEC_NAME : CenGer 
+    REF_NAME : GCA_048128805.1 
+    ALT_NAME : GCA_048129085.1 
+    CHROM_START_CHR : CM
+    WINDOW_INTERVAL : 500000 
+    WINDOW_LENGTH : 1000000 
+    NUM_AUT_CHROMOSOMES : 24
+    NUM_ALL_CHR: 24
+    MUTATION_RATE: 1.25e-8 
+    GENERATION_TIME: 25
+    ALL_CHROMOSOMES : 
+        - CM107505.1
+        - CM107506.1
+        - CM107507.1
+        - CM107508.1
+        - CM107509.1
+        - CM107510.1
+        - CM107511.1
+        - CM107512.1
+        - CM107513.1
+        - CM107514.1
+        - CM107515.1
+        - CM107516.1
+        - CM107517.1
+        - CM107518.1
+        - CM107519.1
+        - CM107520.1
+        - CM107521.1
+        - CM107522.1
+        - CM107523.1
+        - CM107524.1
+        - CM107525.1
+        - CM107526.1
+        - CM107527.1
+        - CM107528.1
+    AUTOSOMAL_CHROMOSOMES: 
+        - CM107505.1
+        - CM107506.1
+        - CM107507.1
+        - CM107508.1
+        - CM107509.1
+        - CM107510.1
+        - CM107511.1
+        - CM107512.1
+        - CM107513.1
+        - CM107514.1
+        - CM107515.1
+        - CM107516.1
+        - CM107517.1
+        - CM107518.1
+        - CM107519.1
+        - CM107520.1
+        - CM107521.1
+        - CM107522.1
+        - CM107523.1
+        - CM107524.1
+        - CM107525.1
+        - CM107526.1
+        - CM107527.1
+        - CM107528.1
+    BOOTSTRAPPING_VALUES: 
+        - 0 
+        - 1 
+        - 2 
+        - 3 
+        - 4 
+        - 5 
+        - 6 
+        - 7 
+        - 8 
+        - 9 
+        - 10 
+        - 11 
+        - 12 
+        - 13 
+        - 14 
+        - 15 
+        - 16 
+        - 17 
+        - 18 
+        - 19 
+        - 20 
+        - 21 
+        - 22 
+        - 23 
+        - 24 
+        - 25 
+        - 26 
+        - 27 
+        - 28 
+        - 29 
+Submitted locally
+
+
+#### UPDATE ####
+20250616 (June 16th, 2025)
+
+Submitted for HemOce, HepPer, HetFra, HydCol, HypSab, MobBir, and NarBan on HPC
+
+HydCol is done through primary MSMC
+Submitted on HPC for bootstrapping
+
+Finished ChaTri_config.yml
+    CLADE : fish 
+    SPEC_NAME : ChaTri 
+    REF_NAME : GCF_039877785.1 
+    ALT_NAME : GCA_039877575.1 
+    CHROM_START_CHR : NC
+    WINDOW_INTERVAL : 500000 
+    WINDOW_LENGTH : 1000000 
+    NUM_AUT_CHROMOSOMES : 24
+    NUM_ALL_CHR: 24
+    MUTATION_RATE: 1.25e-8 
+    GENERATION_TIME: 6
+    ALL_CHROMOSOMES : 
+        - NC_092056.1
+        - NC_092057.1
+        - NC_092058.1
+        - NC_092059.1
+        - NC_092060.1
+        - NC_092061.1
+        - NC_092062.1
+        - NC_092063.1
+        - NC_092064.1
+        - NC_092065.1
+        - NC_092066.1
+        - NC_092067.1
+        - NC_092068.1
+        - NC_092069.1
+        - NC_092070.1
+        - NC_092071.1
+        - NC_092072.1
+        - NC_092073.1
+        - NC_092074.1
+        - NC_092075.1
+        - NC_092076.1
+        - NC_092077.1
+        - NC_092078.1
+        - NC_092079.1 
+    AUTOSOMAL_CHROMOSOMES: 
+        - NC_092056.1
+        - NC_092057.1
+        - NC_092058.1
+        - NC_092059.1
+        - NC_092060.1
+        - NC_092061.1
+        - NC_092062.1
+        - NC_092063.1
+        - NC_092064.1
+        - NC_092065.1
+        - NC_092066.1
+        - NC_092067.1
+        - NC_092068.1
+        - NC_092069.1
+        - NC_092070.1
+        - NC_092071.1
+        - NC_092072.1
+        - NC_092073.1
+        - NC_092074.1
+        - NC_092075.1
+        - NC_092076.1
+        - NC_092077.1
+        - NC_092078.1
+        - NC_092079.1 
+    BOOTSTRAPPING_VALUES: 
+        - 0 
+        - 1 
+        - 2 
+        - 3 
+        - 4 
+        - 5 
+        - 6 
+        - 7 
+        - 8 
+        - 9 
+        - 10 
+        - 11 
+        - 12 
+        - 13 
+        - 14 
+        - 15 
+        - 16 
+        - 17 
+        - 18 
+        - 19 
+        - 20 
+        - 21 
+        - 22 
+        - 23 
+        - 24 
+        - 25 
+        - 26 
+        - 27 
+        - 28 
+        - 29 
+Submitted locally
+
+Finished ClaGar_config.yml locally
+    CLADE : fish 
+    SPEC_NAME : ClaGar 
+    REF_NAME : GCA_024256435.1 
+    ALT_NAME : GCA_024256465.1 
+    CHROM_START_CHR : CM
+    WINDOW_INTERVAL : 500000 
+    WINDOW_LENGTH : 1000000 
+    NUM_AUT_CHROMOSOMES : 28
+    NUM_ALL_CHR: 28
+    MUTATION_RATE: 1.25e-8 
+    GENERATION_TIME: 1
+    ALL_CHROMOSOMES : 
+        - CM044204.1
+        - CM044205.1
+        - CM044206.1
+        - CM044207.1
+        - CM044208.1
+        - CM044209.1
+        - CM044210.1
+        - CM044211.1
+        - CM044212.1
+        - CM044213.1
+        - CM044214.1
+        - CM044215.1
+        - CM044216.1
+        - CM044217.1
+        - CM044218.1
+        - CM044219.1
+        - CM044220.1
+        - CM044221.1
+        - CM044222.1
+        - CM044223.1
+        - CM044224.1
+        - CM044225.1
+        - CM044226.1
+        - CM044227.1
+        - CM044228.1
+        - CM044229.1
+        - CM044230.1
+        - CM044231.1
+    AUTOSOMAL_CHROMOSOMES: 
+        - CM044204.1
+        - CM044205.1
+        - CM044206.1
+        - CM044207.1
+        - CM044208.1
+        - CM044209.1
+        - CM044210.1
+        - CM044211.1
+        - CM044212.1
+        - CM044213.1
+        - CM044214.1
+        - CM044215.1
+        - CM044216.1
+        - CM044217.1
+        - CM044218.1
+        - CM044219.1
+        - CM044220.1
+        - CM044221.1
+        - CM044222.1
+        - CM044223.1
+        - CM044224.1
+        - CM044225.1
+        - CM044226.1
+        - CM044227.1
+        - CM044228.1
+        - CM044229.1
+        - CM044230.1
+        - CM044231.1 
+    BOOTSTRAPPING_VALUES: 
+        - 0 
+        - 1 
+        - 2 
+        - 3 
+        - 4 
+        - 5 
+        - 6 
+        - 7 
+        - 8 
+        - 9 
+        - 10 
+        - 11 
+        - 12 
+        - 13 
+        - 14 
+        - 15 
+        - 16 
+        - 17 
+        - 18 
+        - 19 
+        - 20 
+        - 21 
+        - 22 
+        - 23 
+        - 24 
+        - 25 
+        - 26 
+        - 27 
+        - 28 
+        - 29 
+Submitted locally
+
+Finished CoiMys_config.yml
+    CLADE : fish 
+    SPEC_NAME : CoiMys 
+    REF_NAME : GCA_048544225.1 
+    ALT_NAME : GCA_048544215.1 
+    CHROM_START_CHR : CM
+    WINDOW_INTERVAL : 500000 
+    WINDOW_LENGTH : 1000000 
+    NUM_AUT_CHROMOSOMES : 23
+    NUM_ALL_CHR: 24
+    MUTATION_RATE: 1.25e-8 
+    GENERATION_TIME: 3
+    ALL_CHROMOSOMES : 
+        - CM108836.1
+        - CM108837.1
+        - CM108838.1
+        - CM108839.1
+        - CM108840.1
+        - CM108841.1
+        - CM108842.1
+        - CM108843.1
+        - CM108844.1
+        - CM108845.1
+        - CM108846.1
+        - CM108847.1
+        - CM108848.1
+        - CM108849.1
+        - CM108850.1
+        - CM108851.1
+        - CM108852.1
+        - CM108853.1
+        - CM108854.1
+        - CM108855.1
+        - CM108856.1
+        - CM108857.1
+        - CM108858.1
+        - CM108859.1
+    AUTOSOMAL_CHROMOSOMES: 
+        - CM108836.1
+        - CM108837.1
+        - CM108838.1
+        - CM108839.1
+        - CM108840.1
+        - CM108841.1
+        - CM108842.1
+        - CM108843.1
+        - CM108844.1
+        - CM108845.1
+        - CM108846.1
+        - CM108847.1
+        - CM108848.1
+        - CM108849.1
+        - CM108850.1
+        - CM108851.1
+        - CM108852.1
+        - CM108853.1
+        - CM108854.1
+        - CM108855.1
+        - CM108856.1
+        - CM108857.1
+        - CM108858.1
+    BOOTSTRAPPING_VALUES: 
+        - 0 
+        - 1 
+        - 2 
+        - 3 
+        - 4 
+        - 5 
+        - 6 
+        - 7 
+        - 8 
+        - 9 
+        - 10 
+        - 11 
+        - 12 
+        - 13 
+        - 14 
+        - 15 
+        - 16 
+        - 17 
+        - 18 
+        - 19 
+        - 20 
+        - 21 
+        - 22 
+        - 23 
+        - 24 
+        - 25 
+        - 26 
+        - 27 
+        - 28 
+        - 29 
+Submitted locally
+
+Finished CorLav_config.yml
+    CLADE : fish 
+    SPEC_NAME : CorLav 
+    REF_NAME : GCA_964263955.1 
+    ALT_NAME : GCA_964263835.1 
+    CHROM_START_CHR : OZ
+    WINDOW_INTERVAL : 500000 
+    WINDOW_LENGTH : 1000000 
+    NUM_AUT_CHROMOSOMES : 40
+    NUM_ALL_CHR: 40
+    MUTATION_RATE: 1.25e-8 
+    GENERATION_TIME: 5
+    ALL_CHROMOSOMES : 
+        - OZ182164.1
+        - OZ182165.1
+        - OZ182166.1
+        - OZ182167.1
+        - OZ182168.1
+        - OZ182169.1
+        - OZ182170.1
+        - OZ182171.1
+        - OZ182172.1
+        - OZ182173.1
+        - OZ182174.1
+        - OZ182175.1
+        - OZ182176.1
+        - OZ182177.1
+        - OZ182178.1
+        - OZ182179.1
+        - OZ182180.1
+        - OZ182181.1
+        - OZ182182.1
+        - OZ182183.1
+        - OZ182184.1
+        - OZ182185.1
+        - OZ182186.1
+        - OZ182187.1
+        - OZ182188.1
+        - OZ182189.1
+        - OZ182190.1
+        - OZ182191.1
+        - OZ182192.1
+        - OZ182193.1
+        - OZ182194.1
+        - OZ182195.1
+        - OZ182196.1
+        - OZ182197.1
+        - OZ182198.1
+        - OZ182199.1
+        - OZ182200.1
+        - OZ182201.1
+        - OZ182202.1
+        - OZ182203.1
+    AUTOSOMAL_CHROMOSOMES: 
+        - OZ182164.1
+        - OZ182165.1
+        - OZ182166.1
+        - OZ182167.1
+        - OZ182168.1
+        - OZ182169.1
+        - OZ182170.1
+        - OZ182171.1
+        - OZ182172.1
+        - OZ182173.1
+        - OZ182174.1
+        - OZ182175.1
+        - OZ182176.1
+        - OZ182177.1
+        - OZ182178.1
+        - OZ182179.1
+        - OZ182180.1
+        - OZ182181.1
+        - OZ182182.1
+        - OZ182183.1
+        - OZ182184.1
+        - OZ182185.1
+        - OZ182186.1
+        - OZ182187.1
+        - OZ182188.1
+        - OZ182189.1
+        - OZ182190.1
+        - OZ182191.1
+        - OZ182192.1
+        - OZ182193.1
+        - OZ182194.1
+        - OZ182195.1
+        - OZ182196.1
+        - OZ182197.1
+        - OZ182198.1
+        - OZ182199.1
+        - OZ182200.1
+        - OZ182201.1
+        - OZ182202.1
+        - OZ182203.1
+    BOOTSTRAPPING_VALUES: 
+        - 0 
+        - 1 
+        - 2 
+        - 3 
+        - 4 
+        - 5 
+        - 6 
+        - 7 
+        - 8 
+        - 9 
+        - 10 
+        - 11 
+        - 12 
+        - 13 
+        - 14 
+        - 15 
+        - 16 
+        - 17 
+        - 18 
+        - 19 
+        - 20 
+        - 21 
+        - 22 
+        - 23 
+        - 24 
+        - 25 
+        - 26 
+        - 27 
+        - 28 
+        - 29 
+Submitted locally
+
+Had error in plotting MSMC bootstrapped data for ChaTri
+  Error in dat$left_time_boundary/mu : 
+  non-numeric argument to binary operator
+Had to add as.numeric() argument to mu and gen_time when loading them into the R script
+Resubmitted
+Had another error
+    Warning message:
+    In xy.coords(x, y, xlabel, ylabel, log) :
+    1 x value <= 0 omitted from logarithmic plot
+Removed logarithmic scale from MSMC and MSMC_bootstrapping plotting R codes
+
+Finished CriAus_config.yml
+    CLADE : fish 
+    SPEC_NAME : CriAus 
+    REF_NAME : GCA_049082185.1 
+    ALT_NAME : GCA_049082045.1 
+    CHROM_START_CHR : CM
+    WINDOW_INTERVAL : 500000 
+    WINDOW_LENGTH : 1000000 
+    NUM_AUT_CHROMOSOMES : 24
+    NUM_ALL_CHR: 24
+    MUTATION_RATE: 1.25e-8 
+    GENERATION_TIME: 2
+    ALL_CHROMOSOMES : 
+        - CM110696.1
+        - CM110697.1
+        - CM110698.1
+        - CM110699.1
+        - CM110700.1
+        - CM110701.1
+        - CM110702.1
+        - CM110703.1
+        - CM110704.1
+        - CM110705.1
+        - CM110706.1
+        - CM110707.1
+        - CM110708.1
+        - CM110709.1
+        - CM110710.1
+        - CM110711.1
+        - CM110712.1
+        - CM110713.1
+        - CM110714.1
+        - CM110715.1
+        - CM110716.1
+        - CM110717.1
+        - CM110718.1
+        - CM110719.1
+    AUTOSOMAL_CHROMOSOMES: 
+        - CM110696.1
+        - CM110697.1
+        - CM110698.1
+        - CM110699.1
+        - CM110700.1
+        - CM110701.1
+        - CM110702.1
+        - CM110703.1
+        - CM110704.1
+        - CM110705.1
+        - CM110706.1
+        - CM110707.1
+        - CM110708.1
+        - CM110709.1
+        - CM110710.1
+        - CM110711.1
+        - CM110712.1
+        - CM110713.1
+        - CM110714.1
+        - CM110715.1
+        - CM110716.1
+        - CM110717.1
+        - CM110718.1
+        - CM110719.1
+    BOOTSTRAPPING_VALUES: 
+        - 0 
+        - 1 
+        - 2 
+        - 3 
+        - 4 
+        - 5 
+        - 6 
+        - 7 
+        - 8 
+        - 9 
+        - 10 
+        - 11 
+        - 12 
+        - 13 
+        - 14 
+        - 15 
+        - 16 
+        - 17 
+        - 18 
+        - 19 
+        - 20 
+        - 21 
+        - 22 
+        - 23 
+        - 24 
+        - 25 
+        - 26 
+        - 27 
+        - 28 
+        - 29 
+
+Finished CycLum_config.yml
+    CLADE : fish 
+    SPEC_NAME : CycLum 
+    REF_NAME : GCF_009769545.1 
+    ALT_NAME : GCA_963457625.1 
+    CHROM_START_CHR : NC
+    WINDOW_INTERVAL : 500000 
+    WINDOW_LENGTH : 1000000 
+    NUM_AUT_CHROMOSOMES : 25
+    NUM_ALL_CHR: 25
+    MUTATION_RATE: 1.25e-8 
+    GENERATION_TIME: 5
+    ALL_CHROMOSOMES : 
+        - NC_046966.1
+        - NC_046967.1
+        - NC_046968.1
+        - NC_046969.1
+        - NC_046970.1
+        - NC_046971.1
+        - NC_046972.1
+        - NC_046973.1
+        - NC_046974.1
+        - NC_046975.1
+        - NC_046976.1
+        - NC_046977.1
+        - NC_046978.1
+        - NC_046979.1
+        - NC_046980.1
+        - NC_046981.1
+        - NC_046982.1
+        - NC_046983.1
+        - NC_046984.1
+        - NC_046985.1
+        - NC_046986.1
+        - NC_046987.1
+        - NC_046988.1
+        - NC_046989.1
+        - NC_046990.1
+    AUTOSOMAL_CHROMOSOMES: 
+        - NC_046966.1
+        - NC_046967.1
+        - NC_046968.1
+        - NC_046969.1
+        - NC_046970.1
+        - NC_046971.1
+        - NC_046972.1
+        - NC_046973.1
+        - NC_046974.1
+        - NC_046975.1
+        - NC_046976.1
+        - NC_046977.1
+        - NC_046978.1
+        - NC_046979.1
+        - NC_046980.1
+        - NC_046981.1
+        - NC_046982.1
+        - NC_046983.1
+        - NC_046984.1
+        - NC_046985.1
+        - NC_046986.1
+        - NC_046987.1
+        - NC_046988.1
+        - NC_046989.1
+        - NC_046990.1
+    BOOTSTRAPPING_VALUES: 
+        - 0 
+        - 1 
+        - 2 
+        - 3 
+        - 4 
+        - 5 
+        - 6 
+        - 7 
+        - 8 
+        - 9 
+        - 10 
+        - 11 
+        - 12 
+        - 13 
+        - 14 
+        - 15 
+        - 16 
+        - 17 
+        - 18 
+        - 19 
+        - 20 
+        - 21 
+        - 22 
+        - 23 
+        - 24 
+        - 25 
+        - 26 
+        - 27 
+        - 28 
+        - 29 
+Submitted locally
+
+Finished Ele_Ele_config.yml
+    CLADE : fish 
+    SPEC_NAME : EleEle 
+    REF_NAME : GCA_041902795.1 
+    ALT_NAME : GCA_013358815.1 
+    CHROM_START_CHR : CM
+    WINDOW_INTERVAL : 500000 
+    WINDOW_LENGTH : 1000000 
+    NUM_AUT_CHROMOSOMES : 26
+    NUM_ALL_CHR: 26
+    MUTATION_RATE: 1.25e-8 
+    GENERATION_TIME: 3.5
+    ALL_CHROMOSOMES : 
+        - CM085978.1
+        - CM085979.1
+        - CM085980.1
+        - CM085981.1
+        - CM085982.1
+        - CM085983.1
+        - CM085984.1
+        - CM085985.1
+        - CM085986.1
+        - CM085987.1
+        - CM085988.1
+        - CM085989.1
+        - CM085990.1
+        - CM085991.1
+        - CM085992.1
+        - CM085993.1
+        - CM085994.1
+        - CM085995.1
+        - CM085996.1
+        - CM085997.1
+        - CM085998.1
+        - CM085999.1
+        - CM086000.1
+        - CM086001.1
+        - CM086002.1
+        - CM086003.1
+    AUTOSOMAL_CHROMOSOMES: 
+        - CM085978.1
+        - CM085979.1
+        - CM085980.1
+        - CM085981.1
+        - CM085982.1
+        - CM085983.1
+        - CM085984.1
+        - CM085985.1
+        - CM085986.1
+        - CM085987.1
+        - CM085988.1
+        - CM085989.1
+        - CM085990.1
+        - CM085991.1
+        - CM085992.1
+        - CM085993.1
+        - CM085994.1
+        - CM085995.1
+        - CM085996.1
+        - CM085997.1
+        - CM085998.1
+        - CM085999.1
+        - CM086000.1
+        - CM086001.1
+        - CM086002.1
+        - CM086003.1
+    BOOTSTRAPPING_VALUES: 
+        - 0 
+        - 1 
+        - 2 
+        - 3 
+        - 4 
+        - 5 
+        - 6 
+        - 7 
+        - 8 
+        - 9 
+        - 10 
+        - 11 
+        - 12 
+        - 13 
+        - 14 
+        - 15 
+        - 16 
+        - 17 
+        - 18 
+        - 19 
+        - 20 
+        - 21 
+        - 22 
+        - 23 
+        - 24 
+        - 25 
+        - 26 
+        - 27 
+        - 28 
+        - 29 
+Submitted locally
+
+Submitted locally for bootstrapping: AciRut, AmbSpe, AmiCal, ArrGeo, AstCal, AulMac
+
+Filled in most of DirArg_config.yml, but cannot find a generation time or even age/sexual maturity to estimate it from
+
+
+ALNtoPAF command for CorLav failed with error:
+    ALNtoPAF: Subrange 58001,59433 out of bounds (Get_Contig_Piece)
+
+
+
+
+zcat < ../250430.VGP-Phase1/alignment/primary/fish/GCF_043641665.1.fa.gz | grep '>'
+
+
+#### UPDATE ####
+20250617 (June 17th, 2025)
+
+Submitted locally for bootstrapping: CaeTer, CenGer, ChaTri, CoiMys, CorLav, CriAus, CycLum, CypVen, FunDia, LycPac
+ChaTri is already done
+ClaGar already has MSMC with bootstrapping done
+CriAus, CaeTer, CypVen, FunDia, SalBra finished
+
+Errors with CenGer and CoiMys bootstrapping
+Errors with CycLum
+    pandas.errors.EmptyDataError: No columns to parse from file
+Errors with EleEle
+    Error in read.table(file = file, header = header, sep = sep, quote = quote,  : 
+    no lines available in input
+    Calls: read.csv -> read.table
+    Execution halted
+CorLav didn't work due to error with failed ALNtoPAF
+
+Going to test if I can change ALNplot parameters to get the scaling for x and y axes identical
+    ALNplot -S -p:test.pdf -H500 -W500 HydCol_ALN.chain.1aln
+
+Wrote new script 20250617_FROH_per_chr_calc.py
+Using this to calculate FROH using alingment array to have chromosome length be only aligned bases
+    python 20250617_FROH_per_chr_calc.py sharks/HydCol/temp/CM068742.1_Aln_Only.txt sharks/HydCol/CM068742.1_ROH_Results.txt sharks HydCol CM068742.1 156096171
+
+Wrote new script 20250617_FROH_Calc_Whole_Genome_V3.py
+Modified FROH snakemake rules for both scripts
+
+#### UPDATE ####
+20250618 (June 18th 2025)
+
+Tested whole FROH script on HydCol
+    python ../../20250617_FROH_Calc_Whole_Genome_V3.py temp/HydCol_Aln_Only.txt 40 HydCol_Chroms_Lengths.txt HydCol_ROH_Results.csv HydCol_test_whole_FROH.txt
+it worked!
+
+
 
