@@ -14,8 +14,8 @@ args <- commandArgs()
 ## Load in variables and data
 clade <- args[6]
 spec_name <- args[7]
-mu <- args[8] ## Mutation rate
-gen_time <- args[9] ## Generation time
+mu <- as.numeric(args[8]) ## Mutation rate
+gen_time <- as.numeric(args[9]) ## Generation time
 output_file_name <- args[10]
 
 msmc_dat <- args[11]
@@ -26,16 +26,18 @@ png(file = output_file_name)
 
 ### Plot population change ###
 ## Intial plot
-plot(dat$left_time_boundary/mu*gen_time, (1/dat$lambda)/(2*mu), log="x", 
-ylim=c(0,800000), type="n", xlab="Years before present", ylab="Effective Population Size")
+plot(dat$left_time_boundary/mu*gen_time, (1/dat$lambda)/(2*mu), 
+ylim=c(0,1250000), xlim=c(0,1200000), type="n", xlab="Years before present", ylab="Effective Population Size")
 
 lines(dat$left_time_boundary/mu*gen_time, (1/dat$lambda)/(2*mu), type="s", col="#2734A3", lwd=1.5)
 
 ## Plot bootstrapped data
 for (i in 0:29) {
-    file_name <- paste0(clade, "/", spec_name, "/", spec_name, "_Bootstrapping_", i, ".msmc2.final.txt")
+    file_name <- paste0(clade, "/", spec_name, "/MSMC/Bootstrap_results/", spec_name, "_Bootstrapping_", i, ".msmc2.final.txt")
     bootstrap_dat <- read.table(file_name, header=TRUE)
-    lines(bootstrap_dat$left_time_boundary/mu*gen_time, (1/bootstrap_dat$lambda)/(2*mu), type="s", col="#6A8BDC", lty=2)
+    lines(bootstrap_dat$left_time_boundary/mu*gen_time, 
+    ylim=c(0,1250000), xlim=c(0,1200000), 
+    (1/bootstrap_dat$lambda)/(2*mu), type="s", col="#6A8BDC", lty=2)
 }
 
 
