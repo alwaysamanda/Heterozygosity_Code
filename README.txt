@@ -9130,6 +9130,3719 @@ Modified FROH snakemake rules for both scripts
 Tested whole FROH script on HydCol
     python ../../20250617_FROH_Calc_Whole_Genome_V3.py temp/HydCol_Aln_Only.txt 40 HydCol_Chroms_Lengths.txt HydCol_ROH_Results.csv HydCol_test_whole_FROH.txt
 it worked!
+HPC submitted jobs for HydCol submitted yesterday finally finished
+
+Changed windowsize for bootstrapping from 5e+05 to 1e+05
+Submitted locally: HypSab, HepPer, HydCol, HemOce, MobBir
+Submitted locally: AciRut
+
+Submitted 
+    python ../../20250617_FROH_Calc_Whole_Genome_V3.py temp/HepPer_Aln_Only.txt 45 HepPer_Chroms_Lengths.txt HepPer_ROH_Results.csv HepPer_new_whole_FROH.txt
+
+Created 20250618_find_het_per_chr_V4.py
+Doing this to add in criteria which will filter all chromosomes that are less than 100kb in length
+        if chr_length < 100000:
+            continue 
+        
+        window_length_alt = 100000
+Also modified scripts to plot heterozygosity to not look for chromosomes where no calculation is done
+Added this into the for loops:
+        if (nrow(single_chr_dat) == 0){
+                next
+        }
+
+Copied snakefile into 20250618_Snakefile
+Will update Snakefile to use the FastGA alingments which Pio has made in the ../groups directory
+
+
+#### UPDATE ####
+20250619 (June 19th, 2025)
+
+Will test new snakefile and results using ALNCHAIN rule on HydCol
+Added two new parameters to the config_file:
+    FULL_SPEC_NAME: "Hydrolagus_colliei"
+    ALN_NAME: "sHydCol-12"
+
+It works!
+Issue with FILTER_PAF_CHR_ONLY -- file coming out empty
+    awk 'BEGIN {{ while (getline < "HydCol_chroms.txt") list[$0] }} $6 in list' sHydCol.chain.paf
+This also comes out empty
+The issue is because the FASTGA alingment was done with the reference first and alternate second, e.g:
+    FastGA -v -P. -T8 -1:<output> <reference>.gix <alternate>.gix
+So the alternate chromosomes are in column 6 of the paf while the reference are in column 1 - when it should be swapped
+I'll ask Richard about this since it could cause issues for me
+
+Instead will focus on getting results for species within heterozygosity directory
+Ran HydCol locally to get bootstrap results -- finished
+Ran HepPer locally to get bootstrap results -- finished
+Submitted HemOce, HetFra, HypSab, and MobBir over slurm
+
+Submitted AciRut locally
+Failed on some MSMC -- I think it's due to two chromosomes having empty Aln mask files
+Running interactive python session to see if I can find the issue
+    NC_081237.1
+    NC_081245.1
+    NC_081226.1
+It appears to have worked for NC_081237.1 -- potentially an error when running locally?
+Will remove empty files and attempt to re-run them
+    rm NC_081245.1_Aln_Mask.bed
+    rm NC_081226.1_Aln_Mask.bed
+
+
+#### UPDATE ####
+20250620 (June 20th, 2025)
+
+Focus is on getting all results for all fish in the report
+
+Commenting out snakemake rules for MSMC and bootstrapping -- focus on base results 
+Need ROH for ArrGeo, AstCal, CorLav, EleEle
+
+Submit ArrGeo locally
+Error for FROH_PER_AUT_CHR:
+    /usr/bin/bash: line 2: chrom_length: unbound variable
+I think it was a syntax error in the rule:
+    Changed "$chrom_length" to "$CHROM_LENGTH"
+Resubmitted
+
+Another error with FROH_PER_AUT_CHR
+    Traceback (most recent call last):
+    File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 3805, in get_loc
+        return self._engine.get_loc(casted_key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+    File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+    File "pandas/_libs/hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+    File "pandas/_libs/hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+    KeyError: 'length'
+
+    The above exception was the direct cause of the following exception:
+
+    Traceback (most recent call last):
+    File "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250617_FROH_per_chr_calc.py", line 65, in <module>
+        roh_dat = read_ROH_dat(Roh_file)
+                ^^^^^^^^^^^^^^^^^^^^^^
+    File "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250617_FROH_per_chr_calc.py", line 62, in read_ROH_dat
+        raw_data['length'] = pd.to_numeric(raw_data['length'], errors='coerce').astype('Int64')
+                                        ~~~~~~~~^^^^^^^^^^
+    File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/core/frame.py", line 4102, in __getitem__
+        indexer = self.columns.get_loc(key)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+        raise KeyError(key) from err
+    KeyError: 'length'
+Fixed errors in script with reading roh data function and resubmitted
+It worked!
+Finished non-MSMC analysis for ArrGeo
+
+Submitted locally for AstCal
+Errors calculating FROH -- It appears to be because not a single ROH was found over the whole chromosomes
+Removed heterozygosity plots and results to re-run with new windows
+Removed ROH results to recalculate to see if this was an error
+Redid -- no ROH detected
+This appears to be legitimate
+Modified functions in 20250617_FROH_per_chr_calc.py and 20250617_FROH_Calc_Whole_Genome_V3.py to account for if no ROH are detected
+
+Wrote 20250620_Plot_ROH.R
+Clean up ROH plotting script and add in section to account for if no ROH are detected
+Also want to add in section eventually which will show the alignment of each chromosome alongside/superimposed on each Chr
+
+AstCal completed for ROH, submitted for het
+Error for whole het -- CHROM_LENGTH_CALC also reported mtDNA and CALC_HET_WHOLE_GENOME wants that
+The error causing this has been fixed on GET_CHROM_LISTS - must have been done after getting AstCal chrom_list
+Manually removed
+Resubmitted for het
+
+Finished AstCal, and EleEle
+Got an error with CorLav
+    ALNtoPAF: Subrange 58001,59433 out of bounds (Get_Contig_Piece)
+
+Ran AciRut locally
+FROH_PER_AUT_CHR failed
+    ValueError: Unable to coerce to Series, length must be 4: given 1
+Fixed
+Error in CALC_HET_PER_CHR for one specific chromosome on AciRut -- NC_081226.1
+    Traceback (most recent call last):
+    File "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250520_find_het_per_chr_V4.py", line 147, in <module>
+        run_het_calculations = calc_het(dat, roh_data, chr_file, current_window_length, current_window_interval, chrom)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250520_find_het_per_chr_V4.py", line 84, in calc_het
+        variant_positions = single_chr_df.iloc[:, 2].astype(int)
+    IndexError: single positional indexer is out-of-bounds
+No alingments or variants are found for this specific chromosome
+    awk '$6 == "NC_081226.1" ' AciRut_FASTGA.chain.fltr.srt.paf
+There are alingments found in the paf file -- now to see if paftools output contains them
+    k8 ../../paftools.js call AciRut_FASTGA.chain.fltr.srt.paf | awk '$1 == "R" && $2 == "NC_081226.1" '
+    awk '$6 == "NC_081226.1" ' temp/AciRut_Aln_Only.txt
+It appears that no alingments or variants come out of this -- why?
+    awk '$6 == "NC_081226.1" ' AciRut_FASTGA.chain.fltr.srt.paf > test.paf
+     k8 ../../paftools.js call test.paf
+        0 reference bases covered by exactly one contig
+        0 substitutions; ts/tv = NaN
+        0 1bp deletions
+        0 1bp insertions
+        0 2bp deletions
+        0 2bp insertions
+        0 [3,50) deletions
+        0 [3,50) insertions
+        0 [50,1000) deletions
+        0 [50,1000) insertions
+        0 >=1000 deletions
+        0 >=1000 insertions
+
+Will have to work on later
+Submitting ArrGeo, AstCal, CoiMys, CycLum locally for MSMC
+ArrGeo run primary msmc failed
+Likely due to empty multihet file for CM090193.1
+    rm CM090193.1_multihet_new.txt
+Removed and resubmitted
+It came out empty again
+The filtered vcf, aln mask, and ROH negative mask all look okay
+
+Same issue for CycLum with chromosome NC_046976.1
+
+CALC_HET_WHOLE_GENOME failed for CoiMys because there is no heterozygosity script for the Z chromosome
+
+
+#### UPDATE ####
+20250621 (June 21st, 2025)
+
+Got CoiMys working for CALC_HET_WHOLE_GENOME, but failed on RUN_PRIMARY_MSMC
+Failed due to having one empty multihet file -- CM108836.1_multihet_new.txt
+Same issue as with ArrGeo above
+Will attempt to run manually to see if issue is in python code or in snakemake rule
+    python /rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/msmc-tools/generate_multihetsep.py filtered_vcf_files/CoiMys_CM108836.1_filtered.vcf.gz --mask=Aln_Mask/CM108836.1_Aln_Mask.bed --negative_mask=ROH_Negative_Mask/CoiMys_CM108836.1_ROH_Mask.bed.gz > Output_primary_multihetsep/CM108836.1_test.txt
+it still came out empty -- problem is in the python file I think
+Looked at python file and couldn't find an immediate reason why it wouldn't work -- will need to ask on Monday
+
+Submitted AciRut locally
+Same issue running primary MSMC
+Commented out primary MSMC results and resubmitted
+Can't get heterozygosity because the variant and alignment file for one chromosome is empty -- NC_081226.1
+
+Submitted AstCal for plotting MSMC - but failed due to error
+    Error in plot.window(...) : need finite 'xlim' values
+    Calls: plot -> plot.default -> localWindow -> plot.window
+    In addition: Warning messages:
+    1: In min(x) : no non-missing arguments to min; returning Inf
+    2: In max(x) : no non-missing arguments to max; returning -Inf
+    Execution halted
+I think error is because AstCal has no generation time listed
+Added generation time of 1.7 years
+
+Total number of fish species with at least one empty primary multihepsep file:
+    AciRut
+    ArrGeo
+    CoiMys
+    CorLav
+    CycLum
+
+
+#### ---- UPDATE ---- ####
+20250622 (June 22nd, 2025)
+
+Wrote a script 20250622_Discussion_Figures.R to plot figures for discussion section of first year report
+
+zcat < ../250430.VGP-Phase1/alignment/primary/fish/GCF_043641665.1.fa.gz | grep '>'
+Finished config file for EnoArm -- could not find any estimate of lifespan or generation so set it to 1 year
+
+
+#### ---- UPDATE ---- ####
+20250623 (June 23rd, 2025)
+
+Will look at HydCol sHydCol-12.chain.1aln to see if it affects alingment having been done backwards
+It appears to work -- only issue is that chromosome names are those of the alternate instead of the reference
+Will attempt to continue analysis with this
+    awk '$1 == "R" && $2 == "CM068782.1"' HydCol_Aln_Only.txt > CM068782.1_Aln_Only.txt
+    awk '$1 == "V" && $2 == "CM068782.1"' HydCol_Var_Only.txt > CM068782.1_Var_Only.txt
+These work - But it's done in comparison to the alternate chromosome and not the reference chromosome
+Column 9 of the Var_Only files shows the reference chromosome -- Can I work with those?
+    Could potentially work with that
+
+Continued working on 20250622_Discussion_Figures.R
+
+Submitted NarBan locally
+Finished through primary MSMC
+
+Submitted MobBir locally
+Finished through primary MSMC
+
+Submitted HypSab locally
+Finished through primary MSMC
+
+Issues with calculating FROH
+Many species getting inf
+Chromosome level FROH appears to be working -- it's the whole_genome calculation
+Got these warnings when calculating for HypSab
+    /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250617_FROH_Calc_Whole_Genome_V3.py:83: RuntimeWarning: divide by zero encountered in scalar divide
+    Froh_all = sum_roh_lengths[0]/sum_aln_length
+    /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250617_FROH_Calc_Whole_Genome_V3.py:85: RuntimeWarning: divide by zero encountered in scalar divide
+    Froh_med_long = sum_roh_lengths[1]/sum_aln_length
+    /rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250617_FROH_Calc_Whole_Genome_V3.py:87: RuntimeWarning: invalid value encountered in scalar divide
+    Froh_long = sum_roh_lengths[2]/
+Testing fix with NarBan interactively
+
+for row in range(len(chrom_dat)):
+    chrom = chrom_dat.iloc[row,0]
+    chrom_length = chrom_dat.iloc[row,1]
+    aln_list = read_aln_file(Aln_file, chrom)
+    base_aln_map = aln_map(aln_list, chrom_length)
+    aln_length = base_aln_map[2,-1]
+    all_aln_length.append(aln_length)
+It appears issue is in the Aln_file --> when I re-ran it for NarBan it came back empty
+I believe this is the issue with HypSab as well --> also has empty alingment files for specific chromosomes
+
+
+Will re-do whole FROH calculations for species manually
+    python ../../20250617_FROH_Calc_Whole_Genome_V3.py temp/NarBan_Aln_Only.txt 14 NarBan_Chroms_Lengths.txt NarBan_ROH_Results.csv NarBan_FROH.txt
+    python ../../20250617_FROH_Calc_Whole_Genome_V3.py temp/MobBir_Aln_Only.txt 32 MobBir_Chroms_Lengths.txt MobBir_ROH_Results.csv MobBir_FROH.txt
+Both worked manually
+Manually removed HypSab_FROH.txt
+Will resubmit on snakemake to see if calculation is successful
+
+Chenxi told me problem with CorLav is fixed with updated version of FASTGA
+Will have to update fastga and recompile it
+Ran these commands in my home directory
+    git clone https://github.com/thegenemyers/FASTGA.git
+    mv FASTGA src/FASTGA
+    cd src/FASTGA
+    make && make install
+
+Testing in CorLav directory
+    ALNtoPAF -s -T8 CorLav_ALN.chain.1aln > CorLav_ALN.chain.paf
+Got the same error as before
+Worked with Chenxi and we determined it was a bug in FASTGA when trying to get a cigar or CS string in this species
+Worked with no -s, -S, or -m command, but adding any of them results in the same error
+
+Locally reran HypSab
+Finished locally for everything through primary MSMC
+
+Locally reran HydCol FROH for whole chromosome
+Finished
+
+Locally reran HetFra
+
+Locally reran HemOce
+
+
+#### ---- UPDATE ---- ####
+20250624 (June 24th, 2025)
+
+Continued working on 20250622_Discussion_Figures.R
+    Will update figures so that they are color coded by lineage/group
+Finished discussion figures for the report
+
+Will re-do alingment plots for report, wiht a fixed width but not height
+e.g.    ALNplot -p -W500 HydCol_ALN.chain.1aln
+Re-did for species analysed so far
+
+Will manually fix MSMC2 plot axes for report
+    Rscript 20250508_Plot_MSMC.R sharks HemOce 1.25e-8 6 sharks/HemOce/MSMC/HemOce_MSMC2_axes.png sharks/HemOce/MSMC/Primary_Results/HemOce.msmc2.final.txt
+    Rscript 20250529_Plot_MSMC_Bootstrap.R sharks HydCol 1.25e-8 18.6 sharks/HydCol/MSMC/HydCol_MSMC2_bootstrapped_axes.png sharks/HydCol/MSMC/Primary_Results/HydCol.msmc2.final.txt
+HydCol -- ylim=c(0,300000), xlim=c(0,15000000)
+    Rscript 20250529_Plot_MSMC_Bootstrap.R sharks HydCol 1.25e-8 18.6 sharks/HydCol/MSMC/HydCol_MSMC2_bootstrapped_axes.png sharks/HydCol/MSMC/Primary_Results/HydCol.msmc2.final.txt
+HemOce -- ylim=c(0,100000), xlim=c(0,3000000)
+    Rscript 20250508_Plot_MSMC.R sharks HemOce 1.25e-8 6 sharks/HemOce/MSMC/HemOce_MSMC2_axes.png sharks/HemOce/MSMC/Primary_Results/HemOce.msmc2.final.txt
+HepPer -- ylim=c(0,250000), xlim=c(0,8000000)
+    Rscript 20250529_Plot_MSMC_Bootstrap.R sharks HepPer 1.25e-8 13.5 sharks/HepPer/MSMC/HepPer_MSMC2_bootstrapped_axes.png sharks/HepPer/MSMC/Primary_Results/HepPer.msmc2.final.txt
+HypSab -- ylim=c(0,100000), xlim=c(0,5000000)
+    Rscript 20250508_Plot_MSMC.R sharks HypSab 1.25e-8 18.8 sharks/HypSab/MSMC/HypSab_MSMC2_axes.png sharks/HypSab/MSMC/Primary_Results/HypSab.msmc2.final.txt
+MobBir -- ylim=c(0,100000), xlim=c(0,10000000)
+    Rscript 20250508_Plot_MSMC.R sharks MobBir 1.25e-8 29 sharks/MobBir/MSMC/MobBir_MSMC2_yaxis.png sharks/MobBir/MSMC/Primary_Results/MobBir.msmc2.final.txt
+NarBan -- ylim=c(0,100000), xlim=c(0,1000000)
+    Rscript 20250508_Plot_MSMC.R sharks NarBan 1.25e-8 8.7 sharks/NarBan/MSMC/NarBan_MSMC2_axes.png sharks/NarBan/MSMC/Primary_Results/NarBan.msmc2.final.txt
+AmbSpe -- ylim=c(0,200000), xlim=c(0,500000)
+    Rscript 20250508_Plot_MSMC.R fish AmbSpe 1.25e-8 1 fish/AmbSpe/MSMC/AmbSpe_MSMC2_axes.png fish/AmbSpe/MSMC/Primary_Results/AmbSpe.msmc2.final.txt
+AmiCal -- ylim=c(0,200000), xlim=c(0,1000000)
+    Rscript 20250508_Plot_MSMC.R fish AmiCal 1.25e-8 3 fish/AmiCal/MSMC/AmiCal_MSMC2_axes.png fish/AmiCal/MSMC/Primary_Results/AmiCal.msmc2.final.txt
+AstCal -- ylim=c(0,200000), xlim=c(0,1000000)
+    Rscript 20250508_Plot_MSMC.R fish AstCal 1.25e-8 1.7 fish/AstCal/MSMC/AstCal_MSMC2_axes.png fish/AstCal/MSMC/Primary_Results/AstCal.msmc2.final.txt
+AulMac -- ylim=c(0,600000), xlim=c(0,900000)
+    Rscript 20250508_Plot_MSMC.R fish AulMac 1.25e-8 1.5 fish/AulMac/MSMC/AulMac_MSMC2_axes.png fish/AulMac/MSMC/Primary_Results/AulMac.msmc2.final.txt
+CaeTer -- ylim=c(0,700000), xlim=c(0,2600000)
+    Rscript 20250529_Plot_MSMC_Bootstrap.R fish CaeTer 1.25e-8 1 fish/CaeTer/MSMC/CaeTer_MSMC2_Bootstrap_axes.png fish/CaeTer/MSMC/Primary_Results/CaeTer.msmc2.final.txt
+CenGer -- ylim=c(0,400000), xlim=c(0,20000000)
+    Rscript 20250508_Plot_MSMC.R fish CenGer 1.25e-8 25 fish/CenGer/MSMC/CenGer_MSMC2_axes.png fish/CenGer/MSMC/Primary_Results/CenGer.msmc2.final.txt
+ChaTri -- ylim=c(0,500000), xlim=c(0,4500000)
+    Rscript 20250529_Plot_MSMC_Bootstrap.R fish ChaTri 1.25e-8 6 fish/ChaTri/MSMC/ChaTri_MSMC2_Bootstrap_axes.png fish/ChaTri/MSMC/Primary_Results/ChaTri.msmc2.final.txt
+ClaGar -- ylim=c(0,300000), xlim=c(0,700000)
+    Rscript 20250529_Plot_MSMC_Bootstrap.R fish ClaGar 1.25e-8 1 fish/ClaGar/MSMC/ClaGar_MSMC2_Bootstrap_axes.png fish/ClaGar/MSMC/Primary_Results/ClaGar.msmc2.final.txt
+CriAus -- ylim=c(0,700000), xlim=c(0,2500000)
+    Rscript 20250529_Plot_MSMC_Bootstrap.R fish CriAus 1.25e-8 2 fish/CriAus/MSMC/CriAus_MSMC2_Bootstrap_axes.png fish/CriAus/MSMC/Primary_Results/CriAus.msmc2.final.txt
+CypVen -- ylim=c(0,700000), xlim=c(0,2500000)
+    Rscript 20250529_Plot_MSMC_Bootstrap.R fish CypVen 1.25e-8 1 fish/CypVen/MSMC/CypVen_MSMC2_Bootstrap_axes.png fish/CypVen/MSMC/Primary_Results/CypVen.msmc2.final.txt
+EleEle -- ylim=c(0,900000), xlim=c(0,1600000)
+    Rscript 20250529_Plot_MSMC_Bootstrap.R fish EleEle 1.25e-8 3.5 fish/EleEle/MSMC/EleEle_MSMC2_Bootstrap_axes.png fish/EleEle/MSMC/Primary_Results/EleEle.msmc2.final.txt
+FunDia -- ylim=c(0,900000), xlim=c(0,130000)
+    Rscript 20250529_Plot_MSMC_Bootstrap.R fish FunDia 1.25e-8 1.5 fish/FunDia/MSMC/FunDia_MSMC2_Bootstrap_axes.png fish/FunDia/MSMC/Primary_Results/FunDia.msmc2.final.txt
+LycPac -- ylim=c(0,800000), xlim=c(0,2000000)
+    Rscript 20250508_Plot_MSMC.R fish LycPac 1.25e-8 2 fish/LycPac/MSMC/LycPac_MSMC2_axes.png fish/LycPac/MSMC/Primary_Results/LycPac.msmc2.final.txt
+
+
+SalBra -- ylim=c(0,900000), xlim=c(0,130000)
+    Rscript 20250529_Plot_MSMC_Bootstrap.R fish SalBra 1.25e-8 1 fish/SalBra/MSMC/SalBra_MSMC2_Bootstrap_axes.png fish/SalBra/MSMC/Primary_Results/SalBra.msmc2.final.txt
+
+
+
+HetFra -- ylim=c(0,100000), xlim=c(0,8000000)
+    Rscript 20250508_Plot_MSMC.R sharks HetFra 1.25e-8 22.5 sharks/HetFra/MSMC/HetFra_MSMC2_axes.png sharks/HetFra/MSMC/Primary_Results/HetFra.msmc2.final.txt
+NarBan -- ylim=c(0,100000), xlim=c(0,1000000)
+    Rscript 20250508_Plot_MSMC.R sharks NarBan 1.25e-8 8.7 sharks/NarBan/MSMC/NarBan_MSMC2_yaxis.png sharks/NarBan/MSMC/Primary_Results/NarBan.msmc2.final.txt
+
+
+#### ---- UPDATE ---- ####
+20250626 (June 26th, 2025)
+
+Renamed current Snakefile to 20250626_Snakefile
+Created new Snakefile
+Starting from scratch to add in checkpoints like Bettina has and use FASTGA alignments which Richard has created
+
+Updated config.yaml to have runtime of 30m (30minutes)
+Updated config.yaml to have mem_mb of 10000
+Updated slurm partition to cclake
+
+Will submit test job getting Chromosome var files for HydCol
+Finished and appeared to work
+
+Attempting to get the Aln files with alternate available --
+given that 'alternate' is actually reference chromosomes
+
+Modified my copy of paftools.js to include ref chr in the output file for alingments
+    if (!is_vcf) print('R', c1_ctg, c1_start, x, t[0]);
+k8 ../../../../heterozygosity/paftools.js call sHydCol.chain.chr.fltr.srt.paf | awk '$1 == "R"
+It works!
+
+Resubmitting for groups/sharks/HydCol to see if it works
+The whole ALN file was succesfully generated but the chromosome specific ones failed
+Syntax error in rule
+Corrected
+
+Created 20250626_ROH_Durbin_Calc_Eqns_V7.py to update what columns from Aln and Var files that it is pulling from
+
+Started looking at screen command at Bettina's reccommendation - to continously run Snakemake
+Start a shell with:
+    screen -S <filename>
+See active and detached screens with:
+    screen -ls
+Detach from a screen with:
+control+a+d (LOWERCASE)
+    screen -d <screenID>
+Reattach with:
+    screen -r <screenID>
+Kill a shell with:
+    exit
+    screen -XS <screen.id> quit
+
+Submitted HydCol for Aln files and testing ROH calculations
+Started screen
+    screen -S 20250626_HydCol
+    conda activate snakemake
+    snakemake --executor slurm --jobs 30 --workflow-profile profiles --latency-wait 60 --configfile config_files/sharks/HydCol_config.yml --touch
+    snakemake --executor slurm --jobs 30 --workflow-profile profiles --latency-wait 60 --configfile config_files/sharks/HydCol_config.yml
+Screen ID: 101859.4036724.20250626_HydCol
+Detached from screen
+
+
+#### ---- UPDATE ---- ####
+20250627 (June 27th, 2025)
+
+Attemped to reattach to screen, but session had finished
+Checked results, and Aln_Only files had been created, but no ROH
+
+Started screen
+    screen -S 20250627_HydCol
+    conda activate snakemake
+    snakemake --executor slurm --jobs 30 --workflow-profile profiles --latency-wait 60 --configfile config_files/sharks/HydCol_config.yml --touch
+    snakemake --executor slurm --jobs 30 --workflow-profile profiles --latency-wait 60 --configfile config_files/sharks/HydCol_config.yml
+ROH_CALC failed due to slurm status failing
+Failed due to variable $CHROM_LENGTH not being properly passed as a variable to the python script
+Tweaked syntax of rule and resubmitted
+    CHROM_LENGTH="$(awk -v var='{wildcards.CHR}' '$1 == var {{print $2; exit}}' {input.CHROM_LENGTH_FILE})"
+    $CHROM_LENGTH
+Still didn't work
+Ended up modifying 20250626_ROH_Durbin_Calc_Eqns_V7.py to read the chromosome length in the code instead of as an external variable
+
+Editing snakefile to add in checkpoints based on bettina's snakefile
+
+HydCol screen = 101859.4036724.20250626_HydCol
+
+Resubmitted for HydCol and it still failed with failed slurm status
+I think I need to run an interactive session to see what the error is
+    chrom = 'CM068757.1'
+Problem was due to output file name being incorrect
+Fixed that in rule by providing output file name as a parameter to be passed into the script
+
+Submitted for HepPer
+Syntax error in ALNPLOT for HepPer
+Fixed and resubmitted
+
+It's working for both HepPer and HydCol!
+
+Started for HemOce
+
+screens
+        2827719.20250627_HetFra (Detached)
+        2823340.20250627_HypSab (Detached)
+        2818761.20250627_NarBan (Detached)
+        2812914.20250627_MobBir (Detached)
+        2783935.20250627_HepPer (Detached)
+        2778283.20250627_HemOce (Detached)
+        2774639.20250627_HydCol (Detached)
+
+Modified 20250520_find_het_per_chr_V4.py to make output file name one of the variables passed into the system
+Modified 20250325_find_het_whole_genome_V3.py for the same change
+
+FROH results for HydCol coming out with nan and inf, but it appears ROH detection is successful
+Will run interactive session
+    CM068742.1_ROH_Results.txt
+Fixed issue -- trying to read incorrect column in Aln file for chromosome filtering
+Made same change in 20250617_FROH_Calc_Whole_Genome_V3.py
+    def read_aln_file(Alignment_file, chromosome):
+    with open(Alignment_file, 'r') as file:
+        dat = [line.split() for line in file if line.split()[4] == chromosome]
+    return dat
+
+Had error in getting chrom list rule for HetFra
+Issue was due to chromsome names being wrong
+Richard had ref and alt haplotypes swapped from what I had
+I switched mine to match his and got new chromosome start and names and resubmitted
+        CLADE : "sharks"
+    SPEC_NAME : "HetFra"
+    FULL_SPEC_NAME: "Heterodontus_francisci"
+    ALN_NAME: "sHetFra"
+    REF_NAME : "GCA_036365525.1" 
+    ALT_NAME : "GCA_036365495.1"
+    CHROM_START_CHR : "NC"
+    WINDOW_INTERVAL : 500000
+    WINDOW_LENGTH : 1000000
+    NUM_AUT_CHROMOSOMES : 50
+    NUM_ALL_CHR: 51
+    MUTATION_RATE: 1.25e-8
+    GENERATION_TIME: 22.5
+    ALL_CHROMOSOMES: 
+        - NC_090371.1
+        - NC_090372.1
+        - NC_090373.1
+        - NC_090374.1
+        - NC_090375.1
+        - NC_090376.1
+        - NC_090377.1
+        - NC_090378.1
+        - NC_090379.1
+        - NC_090380.1
+        - NC_090381.1
+        - NC_090382.1
+        - NC_090383.1
+        - NC_090384.1
+        - NC_090385.1
+        - NC_090386.1
+        - NC_090387.1
+        - NC_090388.1
+        - NC_090389.1
+        - NC_090390.1
+        - NC_090391.1
+        - NC_090392.1
+        - NC_090393.1
+        - NC_090394.1
+        - NC_090395.1
+        - NC_090396.1
+        - NC_090397.1
+        - NC_090398.1
+        - NC_090399.1
+        - NC_090400.1
+        - NC_090401.1
+        - NC_090402.1
+        - NC_090403.1
+        - NC_090404.1
+        - NC_090405.1
+        - NC_090406.1
+        - NC_090407.1
+        - NC_090408.1
+        - NC_090409.1
+        - NC_090410.1
+        - NC_090411.1
+        - NC_090412.1
+        - NC_090413.1
+        - NC_090414.1
+        - NC_090415.1
+        - NC_090416.1
+        - NC_090417.1
+        - NC_090418.1
+        - NC_090419.1
+        - NC_090420.1
+        - NC_090421.1
+    AUTOSOMAL_CHROMOSOMES:
+        - NC_090371.1
+        - NC_090372.1
+        - NC_090373.1
+        - NC_090374.1
+        - NC_090375.1
+        - NC_090376.1
+        - NC_090377.1
+        - NC_090378.1
+        - NC_090379.1
+        - NC_090380.1
+        - NC_090381.1
+        - NC_090382.1
+        - NC_090383.1
+        - NC_090384.1
+        - NC_090385.1
+        - NC_090386.1
+        - NC_090387.1
+        - NC_090388.1
+        - NC_090389.1
+        - NC_090390.1
+        - NC_090391.1
+        - NC_090392.1
+        - NC_090393.1
+        - NC_090394.1
+        - NC_090395.1
+        - NC_090396.1
+        - NC_090397.1
+        - NC_090398.1
+        - NC_090399.1
+        - NC_090400.1
+        - NC_090401.1
+        - NC_090402.1
+        - NC_090403.1
+        - NC_090404.1
+        - NC_090405.1
+        - NC_090406.1
+        - NC_090407.1
+        - NC_090408.1
+        - NC_090409.1
+        - NC_090410.1
+        - NC_090411.1
+        - NC_090412.1
+        - NC_090413.1
+        - NC_090414.1
+        - NC_090415.1
+        - NC_090416.1
+        - NC_090417.1
+        - NC_090418.1
+        - NC_090419.1
+        - NC_090420.1
+    BOOTSTRAPPING_VALUES:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+        - 10
+        - 11
+        - 12
+        - 13
+        - 14
+        - 15
+        - 16
+        - 17
+        - 18
+        - 19
+        - 20
+        - 21
+        - 22
+        - 23
+        - 24
+        - 25
+        - 26
+        - 27
+        - 28
+        - 29
+
+Plot_ROH for HydCol failed with error:
+     Error in 1:num_all_chr : NA/NaN argument
+Error was syntax error in Plot_ROH rule -- fixed and resubmitted
+
+Screens
+        3619424.20250627_AciRut (Detached)
+        2827719.20250627_HetFra (Detached)
+        2823340.20250627_HypSab (Detached)
+        2818761.20250627_NarBan (Detached)
+        2812914.20250627_MobBir (Detached)
+        2783935.20250627_HepPer (Detached)
+        2778283.20250627_HemOce (Detached)
+        2774639.20250627_HydCol (Attached)
+        3642587.20250627_AmbSpe
+        3649813.20250627_AmiCal
+
+Out of memory error for whole_froh for HydCol and ROH_CALC for HepPEr
+Added to both rules:
+    resources:
+       mem_mb=100000
+
+
+#### ---- UPDATE ---- ####
+20250628 (June 28th, 2025)
+
+Resubmitted for HemOce and HydCol
+
+Submitted for all species which have screens below
+screens
+        3948690.20250628_LeuLeu (Attached)
+        3916961.20250628_LetNeb (Detached)
+        3892001.20250628_LepSal (Detached)
+        3806855.20250628_LamInc (Detached)
+        3786571.20250628_HopMal (Detached)
+        3701217.20250628_GasAcu (Detached)
+        3650624.20250628_EpiRan (Detached)
+        3559311.20250628_EnoArm (Detached)
+        3539912.20250628_DirArg (Detached)
+        3539523.20250628_CypVen (Detached)
+        3537144.20250628_CycLum (Detached)
+        3533177.20250628_CriAus (Detached)
+        3529761.20250628_CorLav (Detached)
+        3517167.20250628_CoiMys (Detached)
+        3503517.20250628_ClaGar (Detached)
+        3501625.20250628_ChaTri (Detached)
+        3472528.20250628_CenGer (Detached)
+        3470389.20250628_CaeTer (Detached)
+        3463474.20250628_AulMac (Detached)
+        3448498.20250628_EleEle (Detached)
+        3442865.20250628_AstCal (Detached)
+        3430173.20250628_ArrGeo (Detached)
+        3411229.20250628_FunDia (Detached)
+        3386943.20250628_LycPac (Detached)
+        3343286.20250628_SalBra (Detached)
+        3328255.20250628_AmiCal (Detached)
+        3309297.20250628_AmbSpe (Detached)
+        3283417.20250628_HepPer (Detached)
+        3280399.20250628_MobBir (Detached)
+        3278568.20250628_NarBan (Detached)
+        3275842.20250628_HypSab (Detached)
+        3270935.20250628_AciRut (Detached)
+        3253998.20250628_HetFra (Detached)
+        1380934.20250627_HemOce (Detached)
+        101859.4036724.20250626_HydCol  (Detached)
+
+HydCol finished for ROH
+Submitted for heterozygosity
+Submitted HemOce for heterozygosity
+
+Whole FROH failed for HetFra due to oom error -- added in resources for rule
+
+Modified 20250620_Plot_ROH.R to get output file name correct and as an input variable
+
+
+#### ---- UPDATE ---- ####
+20250629 (June 29th, 2025)
+
+All screens from yesterday finished
+
+Screens for jobs submitted today for heterozygosity
+        515078.20250629_LeuLeu  (Detached)
+        513337.20250629_LetNeb  (Detached)
+        508950.20250629_LepSal  (Detached)
+        505232.20250629_LamInc  (Detached)
+        503404.20250629_HopMal  (Detached)
+        503140.20250629_GasAcu  (Detached)
+        502750.20250629_EpiRan  (Detached)
+        502561.20250629_EnoArm  (Detached)
+        502211.20250629_DirArg  (Detached)
+        501943.20250629_CypVen  (Detached)
+        501551.20250629_CycLum  (Detached)
+        497995.20250629_CriAus  (Detached)
+        491488.20250629_CorLav  (Detached)
+        489526.20250629_CoiMys  (Detached)
+        489165.20250629_ClaGar  (Detached)
+        3706363.20250629_ChaTri (Detached)
+        3703739.20250629_CenGer (Detached)
+        3702922.20250629_CaeTer (Detached)
+        3702152.20250629_AulMac (Detached)
+        3700565.20250629_EleEle (Detached)
+        3694717.20250629_AstCal (Detached)
+        3689270.20250629_ArrGeo (Detached)
+        3687954.20250629_FunDia (Detached)
+        3687216.20250629_LycPac (Detached)
+        3686620.20250629_SalBra (Detached)
+        3682724.20250629_AmiCal (Detached)
+        3677883.20250629_AmbSpe (Detached)
+        3670839.20250629_AciRut (Detached)
+        3654717.20250629_HepPer (Detached)
+        3653521.20250629_MobBir (Detached)
+        3641321.20250629_NarBan (Detached)
+        3640423.20250629_HypSab (Detached)
+        3638970.20250629_HetFra (Detached)
+        3604101.20250629_HemOce (Detached)
+        3587559.20250630_HydCol (Detached)
+
+
+
+#### ---- UPDATE ---- ####
+20250630 (June 30th, 2025)
+
+Finished writing rules for getting primary MSMC in new snakemake file
+
+Screens from yesterday still there
+Reconnected to HydCol
+
+Testing to see if primary MSMC rules work
+Failing on generating ROH negative mask files
+will run an interative session
+I think the issue was the output name
+Fixed and resubmitted
+
+Had an error in GEN_CHROM_VCF 
+    paftools.js:425: Error: sequence "CM068794.1" is absent from the reference FASTA
+     37                         if (fa[o[0]] == null) throw Error('sequence "' + o[0] + '" is absent from the reference FASTA');
+     38                          ^
+     39 Error: sequence "CM068794.1" is absent from the reference FASTA
+Ran this command:
+    zcat sHydCol.fa.gz | grep "CM068794.1"
+Came back with nothing
+    zcat sHydCol.fa.gz | grep ">"
+The problem is that paftools is looking for a chromosome name on the alternate chromosome, not one of the reference chromosome names
+
+For now, commenting out rules for vcf, primary_multihetsep, and running primary msmc
+Submitting for other jobs -- getting paf files, and mask/negative mask files
+
+It appears to be working!
+Will submit for other species
+
+HydCol finished successfully!
+
+Starting to find a way to find all species analysed and save their names so that I can get a NCBI tree file
+    find ../groups/ -name "*chain.chr.fltr.srt.paf" | awk -F'/' '{print $(NF-2)}' | sed 's/_/ /g' > 20250630_analysed_taxa.txt
+Download this file, and upload it to https://www.ncbi.nlm.nih.gov/Taxonomy/CommonTree/wwwcmt.cgi
+Download resulting phylip tree and upload it to HPC
+    find ../groups/ -name "*chain.chr.fltr.srt.paf" | sed 's|/[^/]*$||' > 20250630_path_analysed_taxa.txt
+
+Need to get species analysed for report in for poster figures
+     find ./ -name "*chain.chr.fltr.srt.paf" | awk -F'/' '{print $(NF-1)}' | sed 's/_/ /g' > OLD_20250630_analysed_taxa.txt
+
+
+Re-doing HepPer ROH map for the poster:
+    Rscript 20250620_Plot_ROH.R sharks/HepPer/HepPer_ROH_Results.csv sharks/HepPer/HepPer_Chroms_Lengths.txt sharks 45 HepPer 46 20250630_HepPer_ROH.png
+
+
+#### ---- UPDATE ---- ####
+20250701 (July 1st, 2025)
+
+Updated 20250622_Discussion_Figures.R script to create script to plot multiple MSMC figures all at once
+
+Re-doing HepPer ROH map for the alingment in groups/... to see if it matches expectation_step
+    Rscript 20250620_Plot_ROH.R ../groups/sharks/Heptranchias_perlo/heterozygosity/ROH/HepPer_ROH_Results.csv ../groups/sharks/Heptranchias_perlo/heterozygosity/HepPer_Chroms_Lengths.txt sharks 45 HepPer 46 ../groups/sharks/Heptranchias_perlo/heterozygosity/20250701_HepPer_ROH.png
+This fails --> the job runs correctly but I cannot open the PDF, it says it is invalid or corrupted
+
+Given that I am having issues with FROH and ROH calculation using current formatting, will focus on getting PAF files and aln .pdf files for as many species as possible
+
+Created 20250701_Config_Files_V2.py
+Will create config files for all species which Richard had done an alignment for
+    find ../groups/ -name "*-12.1aln" | wc -l
+386
+    find ../groups/ -name "*-12.1aln" > 20250701_aligned_species.txt
+
+Ran
+    python 20250701_Config_Files_V2.py 20250701_aligned_species.txt
+It worked!
+
+Finished config files and submitted for:
+        2751085.ArgSil  (Detached)
+        2722499.ApiTae  (Detached)
+        2716073.AntMac  (Detached)
+        2686820.AngAng  (Detached)
+        2681110.AnaTes  (Detached)
+        2656313.AnaAna  (Detached)
+        2641230.AmmMar  (Detached)
+        2632475.AloSap  (Detached)
+        2608227.AcaLat  (Detached)
+        2580463.AbrBra  (Detached)
+
+Redid ClaGar ROH file for FSBI poster
+    Rscript 20250620_Plot_ROH.R fish/ClaGar/ClaGar_ROH_Results.csv fish/ClaGar/ClaGar_Chroms_Lengths.txt fish 28 ClaGar 28 fish/ClaGar/20250701_ClaGar_ROH.png
+
+
+#### ---- UPDATE ---- ####
+20250705 (July 5th, 2025)
+
+Recompiled FastGA with the updated ALNtoPAF script which Chenxi created
+Includes command to swap order of reference and alternate in PAF file to make it correct formatting for me
+    make && make install
+Updated ALNtoPAF rule in Snakefile
+    ALNtoPAF -s -w -T8 {input} > {output}
+
+Submitted in screen for HydCol
+    1066303.20250627_HydCol
+
+Modified 20250626_ROH_Durbin_Calc_Eqns_V7.py to read the Aln and Var files with new formatting
+Modified 20250627_FROH_per_chr_calc_V3.py to read the Aln file in the new formatting
+
+Had to modify command in FILTER_PAF_CHR_ONLY
+    awk 'BEGIN {{ while (getline < "{input.ALL_CHROMS}") list[$0] }} $6 in list' {input.PAF} > {output}
+
+#### ---- UPDATE ---- ####
+20250707 (July 7th, 2025)
+
+Created 20250707_Plot_ROH_V3.r
+    Updated it to plot the regions of alingment alongside each chromosome
+
+
+#### ---- UPDATE ---- ####
+20250708 (July 8th, 2025)
+
+Updated 20250708_Plot_ROH_V3.R
+
+Rscript 20250707_Plot_ROH_V3.R sharks/HydCol/HydCol_ROH_Results.csv sharks/HydCol/HydCol_Chroms_Lengths.txt sharks/HydCol/temp/HydCol_Aln_Only.txt sharks 40 HydCol 40 20250708_test.png
+
+Realized issue with screens - I have to login to the same node every time to get them
+
+
+#### ---- UPDATE ---- ####
+20250709 (July 9th, 2025)
+
+Login node 1 has screens from 0629 and 0630
+
+Modified 20250618_find_het_per_chr_V4.py to read variant file now in different format
+
+Submitted for HydCol to calculate heterozgyosity
+It worked!
+Submitted for generating files for primary MSMC -- getting all input files but not running primary multihetsep yet
+
+Finished updating 20250708_Plot_ROH_V3.R, and added it to Snakefile
+
+Modified SEP_PAF_BY_CHR rule to work with updated paf file formatting
+Modified 20250529_Mask_Maker.py to work with updated Aln file formatting
+
+
+#### ---- UPDATE ---- ####
+20250710 (July 10th, 2025)
+
+Login-p-4
+
+Created screen HydCol
+Running primary multihetsep generation
+Finished all prep steps successfully but failed in multihepsep
+    .snakemake/slurm_logs/rule_MAIN_MULTIHETSEP/sharks_Hydrolagus_colliei_CM068760.1/11995902.log
+I think the issue is due to the files and how they are being entered
+Fixed and resubmitted
+It worked!
+
+Resubmitted for running primary MSMC
+It worked
+
+Ran for beggin bootstrapping files - it failed
+Failed due to output name mismtach -- fixed and resubmitted
+
+Some jobs worked, others failed
+Error:
+         43 Traceback (most recent call last):
+     44   File "/rds/project/rds-8b3VcZwY7rY/users/ag2427/hpc-work/20241011_jaskaran_script_msm>
+     45     if np.min([newmhs_np[i+1,0]-newmhs_np[i,0] for i in range(0,len(newmhs_np[:,0])-1)]>
+     46        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     47   File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/numpy/core/from>
+     48     return _wrapreduction(a, np.minimum, 'min', axis, None, out,
+     49            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     50   File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/numpy/core/from>
+     51     return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+     52            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     53 ValueError: zero-size array to reduction operation minimum which has no identity
+Error with this chromosome -- CM068773.1
+
+
+#### ---- UPDATE ---- ####
+20250711 (July 11th, 2025)
+
+Resubmitted to continue bootstrapping for HydCol
+
+
+#### ---- UPDATE ---- ####
+20250712 (July 12th 2025)
+
+Resubmitted to continue bootstrapping for hydcol
+Finished and it worked!
+Will now start submitting for other species
+Setting all checkpoints to no
+        143821.ChaTri   (Detached)
+        142108.CenGer   (Detached)
+        111856.CaeTer   (Detached)
+        90706.AstMex    (Detached)
+        60362.AulMac    (Detached)
+        50488.AstCal    (Detached)
+        49644.ArrGeo    (Detached)
+        49071.ArgSil    (Detached)
+        48659.AplTae    (Detached)
+        46872.AntMac    (Detached)
+        44493.AngAng    (Detached)
+        42882.AnaTes    (Detached)
+        41086.AnaAna    (Detached)
+        39133.AmmMar    (Detached)
+        37895.AmiCal    (Detached)
+        36266.AmbSpe    (Detached)
+        35488.AloSap    (Detached)
+        34893.AciRut    (Detached)
+        34554.AcaLat    (Detached)
+        34118.AbrBra    (Detached)
+        33376.NarBan    (Detached)
+        32581.MobBir    (Detached)
+        31002.HypSab    (Detached)
+        30414.HydCol    (Detached)
+        27048.HetFra    (Detached)
+        25474.HepPer    (Detached)
+        23235.HemOce    (Detached)
+        21923.CarCar    (Detached)
+        9402.AmbRad     (Detached)
+
+
+#### ---- UPDATE ---- ####
+20250713 (July 13th, 2025)
+
+Resubmitted after approving first checkpoint
+    pass_aln_paf = "yes"
+        3673391.BleOce  (Detached)
+        3666724.BetSpl  (Detached)
+        3652790.BarBar  (Detached)
+        3647142.AulStu  (Detached)
+        3523504.ChaTri  (Detached)
+        3517936.CenGer  (Detached)
+        3514895.CaeTer  (Detached)
+        3512426.AstMex  (Detached)
+        3511379.AulMac  (Detached)
+        3510231.AstCal  (Detached)
+        3509116.ArrGeo  (Detached)
+        3508723.ArgSil  (Detached)
+        3508411.AplTae  (Detached)
+        3507329.AntMac  (Detached)
+        3506032.AngAng  (Detached)
+        3504208.AnaTes  (Detached)
+        3503001.AnaAna  (Detached)
+        3501261.AmmMar  (Detached)
+        3497267.AmiCal  (Detached)
+        3495888.AmbSpe  (Detached)
+        3493948.AloSap  (Detached)
+        3493454.AciRut  (Detached)
+        3488639.AcaLat  (Detached)
+        3482403.AbrBra  (Detached)
+        3479495.NarBan  (Detached)
+        3479086.MobBir  (Detached)
+        3478841.HypSab  (Detached)
+        3478567.HydCol  (Detached)
+        3477466.HetFra  (Detached)
+        3474195.HepPer  (Detached)
+        3465840.HemOce  (Detached)
+        3391975.CarCar  (Detached)
+        3374808.AmbRad  (Detached)
+
+
+#### ---- UPDATE ---- ####
+20250714 (July 14th, 2025)
+
+No jobs running or in the queue 
+
+Updated checkpoints
+    pass_var = "yes"
+Resubmitted jobs for next step
+        977236.ChaCha   (Detached)
+        971469.fish_CarCar      (Detached)
+        953574.BorAnt   (Detached)
+        944310.BleOce   (Detached)
+        941081.BetSpl   (Detached)
+        935833.BarBar   (Detached)
+        932610.AulStu   (Detached)
+        929574.ChaTri   (Detached)
+        928343.CenGer   (Detached)
+        927822.CaeTer   (Detached)
+        927080.AstMex   (Detached)
+        926774.AulMac   (Detached)
+        926176.AstCal   (Detached)
+        925814.ArrGeo   (Detached)
+        925096.ArrGeo   (Detached)
+        923910.ArgSil   (Detached)
+        921752.AplTae   (Detached)
+        920495.AntMac   (Detached)
+        918226.AngAng   (Detached)
+        915988.AnaTes   (Detached)
+        914381.AnaAna   (Detached)
+        912948.AmmMar   (Detached)
+        908892.AmiCal   (Detached)
+        904508.AmbSpe   (Detached)
+        903480.AloSap   (Detached)
+        902342.AciRut   (Detached)
+        893223.AcaLat   (Detached)
+        885591.AbrBra   (Detached)
+        855765.NarBan   (Detached)
+        848640.MobBir   (Detached)
+        843555.HypSab   (Detached)
+        837257.HetFra   (Detached)
+        831230.HepPer   (Detached)
+        821476.HemOce   (Detached)
+        810776.CarCar   (Detached)
+        783273.AmbRad   (Detached)
+
+Finished the config files for the fishes
+
+
+#### ---- UPDATE ---- ####
+20250715 (July 15th, 2025)
+
+~20 jobs have run by this morning, the others are sitting in the queue
+Will continue making config files for species
+
+
+#### ---- UPDATE ---- ####
+20250716 (July 16th, 2025)
+
+723 jobs still sitting in queue (I think ~12 have run since yesterday)
+Continuing to make config files for species -- working my way through the birds
+
+
+#### ---- UPDATE ---- ####
+20250720 (July 20th, 2025)
+
+205 jobs in queue 
+HPC watchdog canceled the snakemake profiles - will wait for jobs to finish and then restart for all species
+
+Continuing to make config files for birds
+
+All jobs finished
+Will submit again just for CarCar
+
+
+#### ---- UPDATE ---- ####
+20250726 (July 26th, 2025)
+
+HPC back online
+Logged into p3 for submitting jobs
+
+Resubmitted for clades listed below
+	2093419.HypSab	(Detached)
+	2092713.HetFra	(Detached)
+	2092297.HepPer	(Detached)
+	2091767.HemOce	(Detached)
+	2087938.CarCar	(Detached)
+	2086195.AmbRad	(Detached)
+
+Plot_ROH failed for all listed species with the following error
+    Error in 1:num_all_chr : NA/NaN argument
+    Calls: plot_ROH ... read_chrom_dat -> as.data.frame -> [ -> [.data.frame
+
+Error was coming from the fact that I had not included the ALN file as an input for Plot ROH after modifying the script to plot alingments alongside the ROH
+fixed
+Updated pass_roh to yes
+Resubmitted for clades listed below
+	2916352.ChaCha	(Detached)
+	2914136.fCarCar	(Detached)
+	2913209.BorAnt	(Detached)
+	2911079.BleOce	(Detached)
+	2907512.BetSpl	(Detached)
+	2905080.BarBar	(Detached)
+	2903585.AulStu	(Detached)
+	2902574.ChaTri	(Detached)
+	2901406.CenGer	(Detached)
+	2899965.CaeTer	(Detached)
+	2898223.AstMex	(Detached)
+	2897090.AulMac	(Detached)
+	2894302.AstCal	(Detached)
+	2889879.ArrGeo	(Detached)
+	2887821.ArgSil	(Detached)
+	2886947.AplTae	(Detached)
+	2885886.AntMac	(Detached)
+	2884759.AngAng	(Detached)
+	2883029.AnaTes	(Detached)
+	2880810.AnaAna	(Detached)
+	2872510.AmmMar	(Detached)
+	2871416.AmiCal	(Detached)
+	2870697.AmbSpe	(Detached)
+	2866483.AloSap	(Detached)
+	2855883.AciRut	(Detached)
+	2854898.AcaLat	(Detached)
+	2853797.AbrBra	(Detached)
+	2852104.NarBan	(Detached)
+	2846899.MobBir	(Detached)
+	2093419.HypSab	(Detached)
+	2092713.HetFra	(Detached)
+	2092297.HepPer	(Detached)
+	2091767.HemOce	(Detached)
+	2087938.CarCar	(Detached)
+	2086195.AmbRad	(Detached)
+
+
+CALC_HET_PER_CHR failed for AmbRad
+    File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/core/indexing.py", line 1592, in _validate_key
+     52     self._validate_integer(key, axis)
+     53   File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/core/indexing.py", line 1685, in _validate_integer
+     54     raise IndexError("single positional indexer is out-of-bounds")
+    IndexError: single positional indexer is out-of-bounds
+
+
+#### ---- UPDATE ---- ####
+20250728 (July 28th, 2025)
+
+Issue with AmbRad seems to be because some of the ALN and VAR files are empty
+    less AmbRad_Aln_Only.txt | awk '$2 == "NC_045997.1"'
+Returns empty
+Looked at file and confirmed that the chromosome names are in the second column as they should be
+
+CarCar failed at CALC_HET_WHOLE_GENOME
+Due to path for reading in het files not being updated for the groups alignments directory
+Fixed
+    file_path = os.path.join("../groups", clade, full_species_name, "heterozygosity/Het", chr_name + '_het.txt')
+Resubmitted for
+	2916352.ChaCha	(Detached)
+	2914136.fCarCar	(Detached)
+	2913209.BorAnt	(Detached)
+	2911079.BleOce	(Detached)
+	2907512.BetSpl	(Detached)
+	2905080.BarBar	(Detached)
+	2903585.AulStu	(Detached)
+	2902574.ChaTri	(Detached)
+	2901406.CenGer	(Detached)
+	2899965.CaeTer	(Detached)
+	2898223.AstMex	(Detached)
+	2897090.AulMac	(Detached)
+	2894302.AstCal	(Detached)
+	2889879.ArrGeo	(Detached)
+	2887821.ArgSil	(Detached)
+	2886947.AplTae	(Detached)
+	2885886.AntMac	(Detached)
+	2884759.AngAng	(Detached)
+	2883029.AnaTes	(Detached)
+	2880810.AnaAna	(Detached)
+	2872510.AmmMar	(Detached)
+	2871416.AmiCal	(Detached)
+	2870697.AmbSpe	(Detached)
+	2866483.AloSap	(Detached)
+	2855883.AciRut	(Detached)
+	2854898.AcaLat	(Detached)
+	2853797.AbrBra	(Detached)
+	2852104.NarBan	(Detached)
+	2846899.MobBir	(Detached)
+	2093419.HypSab	(Detached)
+	2092713.HetFra	(Detached)
+	2092297.HepPer	(Detached)
+	2091767.HemOce	(Detached)
+	2087938.CarCar
+
+CALC_HET_WHOLE_GENOME completing succesfully!
+
+Submitted for
+    3782429.FunDia	(Detached)
+	3776456.EpiRan	(Detached)
+	3773789.EnoArm	(Detached)
+	3772418.EleEle	(Detached)
+	3770698.EleAnt	(Detached)
+	3769080.EchVip	(Detached)
+	3767416.EchNau	(Detached)
+	3764824.DirArg	(Detached)
+	3762317.DenClu	(Detached)
+	3759589.DanRer	(Detached)
+	3757265.CypVen	(Detached)
+	3755916.CycLum	(Detached)
+	3754938.CriAus	(Detached)
+	3754001.CotGob	(Detached)
+	3752544.CorLav	(Detached)
+	3751635.ConCon	(Detached)
+	3749230.CoiMys	(Detached)
+	3743160.ClaGar	(Detached)
+	3741575.CheRos	(Detached)
+	3739758.CheLab	(Detached)
+
+Total of 55 species submitted
+
+Changed pass_het
+    pass_het = "yes"
+Resubmitted species whose Het codes had finished
+
+CALC_HET_PER_CHR failed for AciRut
+    Traceback (most recent call last):
+     37   File "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250618_find_het_per_chr_V4.py", line 149, in <module>
+     38     run_het_calculations = calc_het(dat, roh_data, chr_file, current_window_length, current_window_interval, chrom, output)
+     39                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     40   File "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250618_find_het_per_chr_V4.py", line 87, in calc_het
+     41     variant_positions = single_chr_df.iloc[:, 9].astype(int)
+
+     53   File "/home/ag2427/.conda/envs/snakemake/lib/python3.11/site-packages/pandas/core/indexing.py", line 1685, in _validate_integer
+     54     raise IndexError("single positional indexer is out-of-bounds")
+     55 IndexError: single positional indexer is out-of-bounds
+Similar issue to AmbRad -- no alingment or var detected for this chromosome
+
+Submitted for more species -- 129 total --> all sharks, fishes, and amphibians
+	250022.XenPet	(Detached)
+	249096.RhiDor	(Detached)
+	246840.PseCor	(Detached)
+	243316.PelLes	(Detached)
+	241738.MixFle	(Detached)
+	237867.MicUni	(Detached)
+	235789.ManAur	(Detached)
+	235494.LisHel	(Detached)
+	235073.LepFus	(Detached)
+	234738.HylSar	(Detached)
+	233632.GeoSer	(Detached)
+	230193.GasCard	(Detached)
+	222168.EngPus	(Detached)
+	221839.EleCoq	(Detached)
+	221304.DisPic	(Detached)
+	220893.DenEbr	(Detached)
+	220524.BufBuf	(Detached)
+	219980.BomBom	(Detached)
+	217561.AscTru	(Detached)
+	215422.AnoBae	(Detached)
+	212998.AmbMex	(Detached)
+	207066.TriRos	(Detached)
+	206705.SynTyp	(Detached)
+	206448.SynPic	(Detached)
+	205982.SynAcu	(Detached)
+	203839.SymNem	(Detached)
+	201065.SpiSpi	(Detached)
+	199283.ScaEry	(Detached)
+	196891.SalBra	(Detached)
+	110350.ProPar	(Detached)
+	110072.PriTyp	(Detached)
+	109798.PorCra	(Detached)
+	109362.PolLow	(Detached)
+	109095.PolHol	(Detached)
+	108826.PemKlu	(Detached)
+	107130.PagPag	(Detached)
+	105158.OdoBon	(Detached)
+	102753.NeoOce	(Detached)
+	56815.MyrMur	(Detached)
+	55384.MicVar	(Detached)
+	44721.MicSal	(Detached)
+	42545.MicPou	(Detached)
+	40089.MicKit	(Detached)
+	33818.MenMen	(Detached)
+	33496.MelGel	(Detached)
+	33145.MelBoe	(Detached)
+	32859.MegCyp	(Detached)
+	31050.MasArm	(Detached)
+	4123564.LycPac	(Detached)
+	4121599.LipPho	(Detached)
+	4119535.LimLim	(Detached)
+	4114022.LeuLeu	(Detached)
+	4108960.LetNeb	(Detached)
+	4106732.LepSal	(Detached)
+	4105175.LepOcu	(Detached)
+	4103923.LatMac	(Detached)
+	4103653.LamInc	(Detached)
+	4103262.LabMix	(Detached)
+	4102633.LabBer	(Detached)
+	4102206.HypImm	(Detached)
+	4101614.HopMal	(Detached)
+	4101013.HipHip	(Detached)
+    4008733.GymMic	(Detached)
+	4008555.GymBra	(Detached)
+	4007728.GouWil	(Detached)
+	4005987.GobNig	(Detached)
+	4004323.GobGob	(Detached)
+	4002839.GirMul	(Detached)
+	4001108.GasAcu	(Detached)
+	4000241.GadMor	(Detached)
+	4000030.EutGur	(Detached)
+	3999566.EsoLuc	(Detached)
+	3972840.ErpCal	(Detached)
+	3968513.EpiLan	(Detached)
+	3782429.FunDia	(Detached)
+	3776456.EpiRan	(Detached)
+	3773789.EnoArm	(Detached)
+	3772418.EleEle	(Detached)
+	3770698.EleAnt	(Detached)
+	3769080.EchVip	(Detached)
+	3767416.EchNau	(Detached)
+	3764824.DirArg	(Detached)
+	3762317.DenClu	(Detached)
+	3759589.DanRer	(Detached)
+	3757265.CypVen	(Detached)
+	3755916.CycLum	(Detached)
+	3754938.CriAus	(Detached)
+	3754001.CotGob	(Detached)
+	3752544.CorLav	(Detached)
+	3751635.ConCon	(Detached)
+	3749230.CoiMys	(Detached)
+	3743160.ClaGar	(Detached)
+	3741575.CheRos	(Detached)
+	3739758.CheLab	(Detached)
+	2916352.ChaCha	(Detached)
+	2914136.fCarCar	(Detached)
+	2913209.BorAnt	(Detached)
+	2911079.BleOce	(Detached)
+	2907512.BetSpl	(Detached)
+	2905080.BarBar	(Detached)
+	2903585.AulStu	(Detached)
+	2902574.ChaTri	(Detached)
+	2901406.CenGer	(Detached)
+	2899965.CaeTer	(Detached)
+	2898223.AstMex	(Detached)
+	2897090.AulMac	(Detached)
+	2894302.AstCal	(Detached)
+	2889879.ArrGeo	(Detached)
+	2887821.ArgSil	(Detached)
+	2886947.AplTae	(Detached)
+	2885886.AntMac	(Detached)
+	2884759.AngAng	(Detached)
+	2883029.AnaTes	(Detached)
+	2880810.AnaAna	(Detached)
+	2872510.AmmMar	(Detached)
+	2871416.AmiCal	(Detached)
+	2870697.AmbSpe	(Detached)
+	2866483.AloSap	(Detached)
+	2855883.AciRut	(Detached)
+	2854898.AcaLat	(Detached)
+	2853797.AbrBra	(Detached)
+	2852104.NarBan	(Detached)
+	2846899.MobBir	(Detached)
+	2093419.HypSab	(Detached)
+	2092713.HetFra	(Detached)
+	2092297.HepPer	(Detached)
+	2091767.HemOce	(Detached)
+	2087938.CarCar	(Detached)
+	2086195.AmbRad	(Detached)
+
+CALC_HET_WHOLE_GENOME failed for AnaTes
+    FileNotFoundError: [Errno 2] No such file or directory: '../groups/fishes/Anabas_testudineus/heterozygosity/Het/NC_024752.1_het.txt'
+CALC_HET_WHOLE_GENOME failed for ArgSil
+    FileNotFoundError: [Errno 2] No such file or directory: '../groups/fishes/Argentina_silus/heterozygosity/Het/OX637366.1_het.txt'
+CALC_HET_WHOLE_GENOME failed for AstCal
+     FileNotFoundError: [Errno 2] No such file or directory: '../groups/fishes/Astatotilapia_calliptera/heterozygosity/Het/OZ206514.1_het.txt'
+CALC_HET_WHOLE_GENOME failed for AulStu
+    FileNotFoundError: [Errno 2] No such file or directory: '../groups/fishes/Aulonocara_stuartgranti/heterozygosity/Het/OZ245602.1_het.txt'
+CALC_HET_WHOLE_GENOME fialed for BetSpl
+    FileNotFoundError: [Errno 2] No such file or directory: '../groups/fishes/Betta_splendens/heterozygosity/Het/NC_026581.1_het.txt'
+
+Species with no Aln/Var detected on at least one chromosome
+    sAmbRad
+    fAciRut
+    fAmmMar
+    fBorAnt
+
+
+#### ---- UPDATE ---- ####
+20250729 (July 29th, 2025)
+
+MAKE_MASK rule failed for sCarCar due to OOM error
+Upped memory for rule by 5x and resubmitted
+    resources:
+        mem_mb=50000
+Same OOM error with HepPer, HetFra, HypSab, MobBir, NarBan -- resubmitted
+
+GEN_CHROM_VCF failed for aAmbMex, aBomBom due to OOM error
+Will likely happen a lot with amphibians due to large genome sizes
+
+
+Error with fDanRer, fDenClu, fEchNau, fHopMal, fOdoBonq, aMicUni chromosome names in config files - fixed and resubmitted
+
+Species that finished Primary MSMC
+    fAbrBra
+    fAloSap
+    fAmbSpe
+    fAmiCal
+    fAnaAna
+    fAngAng
+    fAntMac
+    fAplTae
+    fAulMac
+    fCaeTer
+    fChaTri
+    fBarBar
+    fChaCha
+    fCheLab
+    fCheRos
+    fClaGar
+    fCoiMys
+    fConCon
+    fCotGob
+    fCriAus
+    fCycLum
+    fCypVen
+    fDirArg
+    fEleEle
+    fEnoArm
+    fEpiRan
+    fFunDia
+
+Species with errors:
+    sAmbRad (No Aln/Var detected on at least one chromosome)
+    fAcaLat (in RUN_PRIMARY_MSMC)
+    fAciRut (No Aln/Var detected on at least one chromosome)
+    fAmmMar (No Aln/Var detected on at least one chromosome)
+    fBorAnt (No Aln/Var detected on at least one chromosome)
+    fAnaTes (Het_whole_genome -- FileNotFoundError: [Errno 2] No such file or directory: '../groups/fishes/Anabas_testudineus/heterozygosity/Het/NC_024752.1_het.txt')
+    fArgSil (Het_whole_genome --  FileNotFoundError: [Errno 2] No such file or directory: '../groups/fishes/Argentina_silus/heterozygosity/Het/OX637366.1_het.txt')
+    fArrGeo (RUN_PRIMARY_MSMC)
+    fAstCal (Het_whole_genome)
+    fAulStu (Het_whole_genome)
+    fBetSpl (Het_whole_genome)
+    fBorAnt (No Aln/Var detected on at least one chromosome)
+    fEchVip (Het_whole_genome)
+    fEleAnt (No Aln/Var detected on at least one chromosome)
+    fGasAcu (find_ROH -- Traceback (most recent call last):
+     37   File "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250626_ROH_Durbin_Calc_Eqns_V7.py", line 47, in <module>
+     38     chrom_length = read_length_file(chrom_length_file, chrom)
+     39                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     40   File "/rds/project/rds-p67MZilb2eQ/projects/VGP/heterozygosity/20250626_ROH_Durbin_Calc_Eqns_V7.py", line 44, in read_length_file
+     41     dat = int(dat[0]))
+    fGymMic (.1aln file is empty -- contact Richard)
+    aLisHel (.1aln file is empty -- contact Richard)
+
+All other species not listed that were submitted yesterday are still running
+
+Continued writing config files for birds
+Finished writing config files for birds (except for bLycPyr)
+
+Starting config files for chordates
+Finished config files for chordates
+
+Can't find the one invertebrate listed within Richard's alingments (SacSp.) -- will leave for now and potentially come back to if necessary
+
+Finished one config file for Other (eAstRub)
+
+Started troubleshooting for fAnaTes
+    failed with Het_whole_genome -- FileNotFoundError: [Errno 2] No such file or directory: '../groups/fishes/Anabas_testudineus/heterozygosity/Het/NC_024752.1_het.txt'
+    Confused by this error because this chromosome name doesn't exist in the config file
+    Error is in the chromosome list file -- the chromosome name is present at the name, likely the mtDNA
+    Manually removed in nano command and resubmitted
+    nano AnaTes_chroms.txt
+fArgSil
+    Same error in fArgSil, but they are the sex chromosomes
+    Moved them to the end of the chromosome list using nano and resubmitted list
+    nano ArgSil_chroms.txt
+fAstCal
+    Same error in fAstCal -- missing chromosome file was for mtDNA name
+    Manually removed name in chroms.txt file using nano and resubmitted
+    nano AstCal_chroms.txt
+fAulStu
+    missing file is for name of mtDNA -- removed from chrom list and resubmitted
+    nano AulStu_chroms.txt
+fBetSpl
+    NC_026581.1
+    This chromosome was not listed on NCBI - I'm guessing it was a placeholder for unplaced scaffolds
+    Removed from txt file and resubmitted
+    nano BetSpl_chroms.txt
+fEchVip
+    Sex chromosomes listed not at the end but in the middle of hte chromosome list
+    Moved them manually using nano and resubmitted
+    nano EchVip_chroms.txt
+
+fGasAcu
+    Y chromosome was in the middle of the chrom list txt file and not at the end
+    Moved it to the end in the txt file and config file
+    OZ193854.1 was also not present in the chroms txt list -- manually added using nano
+    nano GasAcu_chroms.txt
+    Will have to resubmit once snakemake wraps up - has not finished yet
+
+Will start looking into sAmbRad, to see problem of empty Var and Aln files
+    awk -v var=NC_045997.1 '{if ($6=var) print $0}' sAmbRad.chain.paf | wc -l 
+    366407
+Confirmed that they are present in the paf file
+Chromosome present in chrom txt file and config file
+    awk -v var=NC_045997.1 '{if ($6=var) print $0}' sAmbRad.chain.fltr.paf | wc -l 
+    343326
+    awk -v var=NC_045997.1 '{if ($6=var) print $0}' sAmbRad.chain.chr.fltr.srt.paf | wc -l
+    275808
+Confirmed that the chromosome is present through all filtering of par files
+    k8 paftools.js call ../groups/sharks/Amblyraja_radiata/heterozygosity/sAmbRad.chain.paf | awk -v var=NC_045997.1 '$2 == var'
+    1394 reference bases covered by exactly one contig
+    159 substitutions; ts/tv = 0.574
+    23 1bp deletions
+    17 1bp insertions
+    7 2bp deletions
+    7 2bp insertions
+    9 [3,50) deletions
+    9 [3,50) insertions
+    0 [50,1000) deletions
+    0 [50,1000) insertions
+    0 >=1000 deletions
+    0 >=1000 insertions
+Why is the output this summary and not the output that I put to txt files?
+    k8 paftools.js call ../groups/sharks/Amblyraja_radiata/heterozygosity/sAmbRad.chain.paf | awk '$1 == "V"'
+This call puts out a normal expectation
+    awk -v var="NC_045997.1" '$2 == var'  AmbRad_Var_Only.txt
+This comes back empty
+    awk -v var="NC_045997.1" '$2 == var'  ../groups/sharks/Amblyraja_radiata/heterozygosity/temp/AmbRad_Var_Only.txt
+This also comes back empty
+    k8 paftools.js call ../groups/sharks/Amblyraja_radiata/heterozygosity/sAmbRad.chain.paf > ../groups/sharks/Amblyraja_radiata/heterozygosity/temp/test_paftools.txt
+    awk -v var="NC_045997.1" '$2 == var' test_paftools.txt
+Comes back with nothing
+    awk '{print $6}' sAmbRad.chain.chr.fltr.srt.paf | sort | uniq
+    Chromosome is present
+Trying to change filtering criteria for paftools.js
+    k8 paftools.js call -L1000 -I100 -q0 ../groups/sharks/Amblyraja_radiata/heterozygosity/sAmbRad.chain.chr.fltr.srt.paf > ../groups/sharks/Amblyraja_radiata/heterozygosity/temp/test_paftools.txt
+    awk -v var="NC_045997.1" '$2 == var' test_paftools.txt
+It works!
+    awk -v var="NC_045997.1" '$2 == var && $1="V"' test_paftools.txt | wc -l
+    11134
+    awk -v var="NC_045997.1" '$2 == var && $1="R"' test_paftools.txt | wc -l
+    11134
+-L1000 -I100 -q0 
+    -L1000 = min alingment length to call variants is 1kb
+    -q0 = min mapping quality is 0
+    -I is not a real option - erroneous tip found online
+Will test if changing it to -L5000 (default) is what causes the issue
+    k8 paftools.js call -L50000 ../groups/sharks/Amblyraja_radiata/heterozygosity/sAmbRad.chain.chr.fltr.srt.paf | awk -v var="NC_045997.1" '$2 == var' | wc -l
+Comes back empty -- 0
+    k8 paftools.js call -L10000 ../groups/sharks/Amblyraja_radiata/heterozygosity/sAmbRad.chain.chr.fltr.srt.paf | awk -v var="NC_045997.1" '$2 == var' | wc -l
+Comes back with 11134 lines
+Potential fix is to input an if statement into the Aln and Var per chrom rules
+    if [ "$(stat -c %s {output})" -eq 0 ]; then
+        k8 paftools.js call -L10000 {input} | awk '$1 == "R"' > {output}
+
+Modified rules for paftools to include the if statements
+rule GET_VAR_ONLY_PER_CHROM:
+    input:
+        var_file=f"../groups/{CLADE}/{FULL_SPEC_NAME}/heterozygosity/temp/{SPEC_NAME}_Var_Only.txt", 
+        paf_file=f"../groups/{CLADE}/{FULL_SPEC_NAME}/heterozygosity/{ALN_NAME}.chain.chr.fltr.srt.paf"
+    output:
+        "../groups/{CLADE}/{FULL_SPEC_NAME}/heterozygosity/temp/{CHR}_Var_Only.txt"
+    shell:
+        """
+        awk '$1 == "V" && $2 == "{wildcards.CHR}"' {input.var_file} > {output}
+        if [ "$(stat -c %s {output})" -eq 0 ]; then
+            k8 paftools.js call -L10000 {input.paf_file} | awk '$1 == "V" && $2 == "{wildcards.CHR}' > {output}
+        """
+
+rule GET_ALN_ONLY_PER_CHROM:
+    input:
+        aln_file=f"../groups/{CLADE}/{FULL_SPEC_NAME}/heterozygosity/temp/{SPEC_NAME}_Aln_Only.txt", 
+        paf_file=f"../groups/{CLADE}/{FULL_SPEC_NAME}/heterozygosity/{ALN_NAME}.chain.chr.fltr.srt.paf"
+    output:
+        "../groups/{CLADE}/{FULL_SPEC_NAME}/heterozygosity/temp/{CHR}_Aln_Only.txt"
+    shell:
+        """
+        awk '$1 == "R" && $2 == "{wildcards.CHR}"' {input} > {output}
+        if [ "$(stat -c %s {output})" -eq 0 ]; then
+            k8 paftools.js call -L10000 {input.paf_file} | awk '$1 == "R" && $2 == "{wildcards.CHR}' > {output}
+        """
+
+Started the finishing of config files for reptiles
+
+
+RUN_PRIMARY_MSMC errors for fArrGeo and fAcaLat are due to an array index being out of bounds
+
+Want to update PLOT_MSMC to plot by generation rather than time, so that I don't need generation time
+
+
+#### ---- UPDATE ---- ####
+20250730 (June 30th, 2025)
+
+411 jobs are still running
+I will go through to determine what has finished/failed/still running
+
+Finished:
+    sHemOce
+    fAbrBra
+    fAloSap
+    fAmbSpe
+    fAmiCal
+    fAnaAna
+    fAngAng
+    fAntMac
+    fAplTae
+    fAulMac
+    fAstMex
+    fCaeTer
+    fCenGer
+    fChaTri
+    fBarBar
+    fBleOce
+    fChaCha
+    fCheLab
+    fCheRos
+    fClaGar
+    fCoiMys
+    fConCon
+    fCorLav
+    fCotGob
+    fCriAus
+    fCycLum
+    fCypVen
+    fDirArg
+    fEleEle
+    fEnoArm
+    fEpiRan
+    fFunDia
+
+Errors:
+    fAcaLat
+    fAciRut
+    fAmmMar
+    fArrGeo
+    fBorAnt
+    fEleAnt
+    fEpiLan - /usr/bin/bash: -c: line 4: syntax error: unexpected end of file for GET_ALN_ONLY_PER_CHROM
+    fGymMic -- .1aln file is empty
+    fNeoOce -- MAKE_MASK for CM094603.1. Due to chromosome syntax issue in config file. Fixed and resubmitted
+    aAmbMex -- OOM error for GEN_CHROM_VCF. Upped memory using resources for rule and resubmitted
+    aAnoBae -- OOM error for MAKE_MASK. Upped memory in resources for rule and resubmitted
+    aAscTru -- Same as aAnoBae. Resubmitted
+    aBufBuf -- Same as aAnoBae. Resubmitted
+    aEloCoq -- Same as aAnoBae. Resubmitted
+    aGasCar -- Same as aAnoBae. Resubmitted
+    aHylSar -- Same as aAnoBae. Resubmitted
+    aLepFus -- Error in with empty Var/Aln files done before rule revision. Resubmitted
+    aMixFle -- Same as aAnoBae. Resubmitted
+    aPelLes -- Same as aAnoBae. Resubmitted
+    aPseCor -- Same as aAnoBae. Resubmitted
+    aRhiDor -- Same as aAnoBae. Resubmitted
+
+
+fEpiLan was due to a syntax error in the rule - an incomplete quotation marker
+Fixed and resubmitted
+Same for 
+    fErpCal 
+    fEsoLuc
+    fEutGur
+    fGadMor
+    fGasAcu
+    fGirMul
+    fGobGob
+    fGobNig
+    fGouWil
+    fGymBra
+    fHipHip
+    fHypImm
+    fLabBer
+    fLatMac
+    fLepOcu
+    fLepSal
+    fLimLim
+    fLipPho
+    fMelBoe
+    fMelGel
+    fMicKit
+    fMicPou
+    fMicSal
+    fPolLow
+    fPriTyp
+    fProPar
+    fScaEry
+    fSpiSpi
+    fSynAcu
+    fSynPic
+    fSynTyp
+    aBomBom
+    aDenEbr
+    aDisPic
+    aGeoSer
+    aXenPet
+
+Submitted all birds with screens on p-3
+
+Error with fEleAnt is due to empty Var/Aln files, similar to other species yesterday
+Removed empty files with rm and resubmitted
+
+Error with fAcaLat in MSMC is due to two empty primary multihet txt files for chr NC_051060.1 and NC_051041.1
+The files are empty because all the variants found in the filtered VCF file are contained within ROH, and are masked out
+
+Hadn't yet resubmitted for fAciRut, fAmmMar, and fBorAnt after fixing rules
+Resubmitted
+
+Finished off config files for reptiles
+
+Started the finishing of mammal config files
+
+
+#### ---- UPDATE ---- ####
+20250731 (July 31st, 2025)
+
+Checked on sAmbRad - it appears that change with if statement for Aln/Var files is working!
+
+Finished:
+    sHydCol
+    sHemOce
+    fAbrBra
+    fAloSap
+    fAmbSpe
+    fAmiCal
+    fAnaAna
+    fAngAng
+    fAntMac
+    fAplTae
+    fAulMac
+    fAstMex
+    fCaeTer
+    fCenGer
+    fChaTri
+    fBarBar
+    fBleOce
+    fChaCha
+    fCheLab
+    fCheRos
+    fClaGar
+    fCoiMys
+    fConCon
+    fCorLav
+    fCotGob
+    fCriAus
+    fCycLum
+    fCypVen
+    fDirArg
+    fEleEle
+    fEnoArm
+    fEpiRan
+    fFunDia
+34 species currently done
+
+Running:
+    sAmbRad
+    sCarCar
+    sHepPer
+    sHetFra
+    sHypSab
+    sMobBir
+    sNarBan
+    bZosLat
+	bWilVid
+	bStrDec
+	bStrCam
+	bSarPap
+	bRisTri
+	bPsePip
+	bPorHoc
+	bPoeAtr
+	bPlaLeu
+	bPhaAet
+	bPatFas
+    bPasDom	
+    bMorGui	
+	bMorBas	
+	bMerOct	
+	bMerNub	
+	bMelUnd	
+	bMelMel	
+	bMelGeo	
+    bLonStr	
+	bLepDis	
+	bLatDis	
+	bLarFus	
+	bLarArg	
+	bLagMut	
+	bHirRus	
+	bHemCom	
+	bHelExo	
+	bHarHar	
+	bHalAlb	
+	bGuaGua	
+	bGruGru	
+	bGruAme	
+	bGeoTri	
+	bGavSte	
+	bGalGal	
+	bGalChl	
+	bFriCoe	
+	bFalRus	
+	bFalPun	
+	bFalPer	
+	bFalNau	
+	bFalChe	
+	bFalBia	
+    bEudEle	
+	bEriRub	
+	bDryPub	
+	bDroNov	
+	bCygOlo	
+	bCygCol	
+	bCyaCri	
+	bCucCan	
+	bCorMon	
+	bCorHaw	
+	bColStr	
+	bColMon	
+	bColLiv	
+	bClaHye	
+	bCinCin	
+    bCicMag	
+	bChrRid	
+	bChiLan	
+	bCatUst	
+	bCapEur	
+	bCalNic	
+	bBucCla	
+	bBucAby	
+	bBraCan	
+	bBalReg	
+	bAytMar	
+	bAytFul	
+	bAytFer	
+	bAraAra	
+	bAptMan	
+    bAnsCyg	
+	bAnsAns	
+	bAnaPla	
+	bAnaAcu	
+	bAmmNel	
+	bAmmMar	
+	bAmmCau	
+	bAmaOch	
+	bAgePho	
+	bAegAlb	
+	bAcrTri	
+	bAcaChl	
+    aXenPet	
+	aRhiDor	
+	aPseCor	
+	aPelLes	
+	aMixFle	
+	aMicUni	
+	aHylSar	
+	aGeoSer	
+	aGasCard	
+	aEleCoq	
+	aDisPic	
+	aDenEbr	
+	aBufBuf	
+	aBomBom	
+	aAscTru	
+	aAnoBae	
+	fSynTyp	
+	fSynPic	
+	fSynAcu	
+	fSpiSpi	
+	fScaEry	
+	fProPar	
+	fPriTyp	
+	fPolLow	
+	fOdoBon	
+	fNeoOce
+	fMicSal	
+	fMicPou	
+	fMicKit	
+	fMelBoe	
+	fLipPho	
+	fLimLim	
+	fLepSal	
+	fLepOcu	
+	fLatMac	
+	fLabBer	
+	fHypImm	
+	fHopMal	
+	fHipHip	
+	fGymBra	
+	fGouWil	
+	fGobNig	
+	fGobGob	
+	fGirMul	
+	fGasAcu	
+	fGadMor	
+	fEutGur	
+	fEsoLuc	
+	fErpCal	
+	fEpiLan	
+	fEleAnt	
+	fEchVip	
+	fEchNau	
+	fDenClu	
+	fDanRer	
+	fCarCar	
+	fBorAnt	
+	fBetSpl	
+	fAulStu	
+	fAstCal
+	fArgSil	
+	fAnaTes	
+	fAmmMar	
+	fAciRut
+
+Errors:
+    sNarBan -- Time Limit for Primary MSMC. Uped runtime for RUN_PRIMARY_MSMC to 1hr and resubmitted
+    fAcaLat -- (From yesterday, need to fix)
+    fArrGeo -- (From yesterday, need to fix)
+    bZonAlb -- Chrom_list error. Fixed and resubmitted
+    bTaeGut -- Chrom_list error. Fixed and resubmitted
+    bStrAlu -- Chrom_list error. Fixed and resubmitted
+    bOpiHoa -- Chrom_list error. Fixed and resubmitted
+    bNumArq -- Chrom_list error. Fixed and resubmitted
+    bLycPyr -- Scaffold level assembly
+    bLarMic -- Chrom_list error. Fixed and resubmitted
+    bExcChi -- Chrom_list error. Fixed and resubmitted
+    bChlMac -- Chrom_list error. Fixed and resubmitted
+    bCarCri -- Chrom_list error. Fixed and resubmitted
+    bCalBor -- Chrom_list error. Fixed and resubmitted
+    bCalAnn -- Chrom_list error. Fixed and resubmitted
+    bButBut -- Chrom_list error. Fixed and resubmitted
+    bAthNoc -- Chrom_list error. Fixed and resubmitted
+    aManAur
+    aLisHel
+    aLepFus
+    aEngPus
+    aAmbMex
+    fTriRos -- Started running before syntax fix to Var and Aln Chrom rules. Resubmitted
+    fSymNem -- Started running before syntax fix to Var and Aln Chrom rules. Resubmitted
+    fSalBra -- Started running before syntax fix to Var and Aln Chrom rules. Resubmitted
+    fPorCra -- Started running before syntax fix to Var and Aln Chrom rules. Resubmitted
+    fPolHol -- Started running before syntax fix to Var and Aln Chrom rules. Resubmitted
+    fPemKlu -- Started running before syntax fix to Var and Aln Chrom rules. Resubmitted
+    fPagPag -- Started running before syntax fix to Var and Aln Chrom rules. Resubmitted
+    fMyrMur -- Started running before syntax fix to Var and Aln Chrom rules. Resubmitted
+    fMicVar -- Started running before syntax fix to Var and Aln Chrom rules. Resubmitted
+    fMenMen -- Started running before syntax fix to Var and Aln Chrom rules. Resubmitted
+    fMelGel
+    fMegCyp -- Started running before syntax fix to Var and Aln Chrom rules. Resubmitted
+    fMasArm -- Started running before syntax fix to Var and Aln Chrom rules. Resubmitted
+    fLycPac -- Started running before syntax fix to Var and Aln Chrom rules. Resubmitted
+    fLeuLeu -- Started running before syntax fix to Var and Aln Chrom rules. Resubmitted
+    fLetNeb -- Started running before syntax fix to Var and Aln Chrom rules. Resubmitted
+    fLamInc -- Started running before syntax fix to Var and Aln Chrom rules. Resubmitted
+    fLabMix -- Started running before syntax fix to Var and Aln Chrom rules. Resubmitted
+    fGymMic (Had't fixed -- empty .1aln file)
+
+Looking into fAcaLat, with the empty multihepsep files
+    91% FROH value for long ROH, and little heterozgyosity (0.04508638948142395)
+Looking into fArrGeo with the empty multihepsep file
+    0.24% all FROH and 0% for just long, and high heterozygosity, 5.46/kb
+
+Continuing to work on finishing mammal config files
+
+Species with scaffold level assemblies:
+    bLycPyr
+    rAnnSte
+    mCorTow
+
+
+#### ---- UPDATES ---- ####
+20250801 (August 1st, 2025)
+
+Finished:
+    sHydCol
+    sHemOce
+    fAbrBra
+    fAloSap
+    fAmbSpe
+    fAmiCal
+    fAnaAna
+    fAngAng
+    fAntMac
+    fAplTae
+    fAulMac
+    fAstMex
+    fCaeTer
+    fCenGer
+    fChaTri
+    fBarBar
+    fBleOce
+    fChaCha
+    fCheLab
+    fCheRos
+    fClaGar
+    fCoiMys
+    fConCon
+    fCorLav
+    fCotGob
+    fCriAus
+    fCycLum
+    fCypVen
+    fDirArg
+    fEleEle
+    fEnoArm
+    fEpiRan
+    fFunDia
+34 species currently done
+
+Running:
+    sAmbRad
+    sCarCar
+    sHepPer
+    sHetFra
+    sHypSab
+    sMobBir
+    sNarBan
+    bZosLat
+	bWilVid
+	bStrDec
+	bStrCam
+	bSarPap
+	bRisTri
+	bPsePip
+	bPorHoc
+	bPoeAtr
+	bPlaLeu
+	bPhaAet
+	bPatFas
+    bPasDom	
+    bMorGui	
+	bMorBas	
+	bMerOct	
+	bMerNub	
+	bMelUnd	
+	bMelMel	
+	bMelGeo	
+    bLonStr	
+	bLepDis	
+	bLatDis	
+	bLarFus	
+	bLarArg	
+	bLagMut	
+	bHirRus	
+	bHemCom	
+	bHelExo	
+	bHarHar	
+	bHalAlb	
+	bGuaGua	
+	bGruGru	
+	bGruAme	
+	bGeoTri	
+	bGavSte	
+	bGalGal	
+	bGalChl	
+	bFriCoe	
+	bFalRus	
+	bFalPun	
+	bFalPer	
+	bFalNau	
+	bFalChe	
+	bFalBia	
+    bEudEle	
+	bEriRub	
+	bDryPub	
+	bDroNov	
+	bCygOlo	
+	bCygCol	
+	bCyaCri	
+	bCucCan	
+	bCorMon	
+	bCorHaw	
+	bColStr	
+	bColMon	
+	bColLiv	
+	bClaHye	
+	bCinCin	
+    bCicMag	
+	bChrRid	
+	bChiLan	
+	bCatUst	
+	bCapEur	
+	bCalNic	
+	bBucCla	
+	bBucAby	
+	bBraCan	
+	bBalReg	
+	bAytMar	
+	bAytFul	
+	bAytFer	
+	bAraAra	
+	bAptMan	
+    bAnsCyg	
+	bAnsAns	
+	bAnaPla	
+	bAnaAcu	
+	bAmmNel	
+	bAmmMar	
+	bAmmCau	
+	bAmaOch	
+	bAgePho	
+	bAegAlb	
+	bAcrTri	
+	bAcaChl	
+    aXenPet	
+	aRhiDor	
+	aPseCor	
+	aPelLes	
+	aMixFle	
+	aMicUni	
+	aHylSar	
+	aGeoSer	
+	aGasCard	
+	aEleCoq	
+	aDisPic	
+	aDenEbr	
+	aBufBuf	
+	aBomBom	
+	aAscTru	
+	aAnoBae	
+	fSynTyp	
+	fSynPic	
+	fSynAcu	
+	fSpiSpi	
+	fScaEry	
+	fProPar	
+	fPriTyp	
+	fPolLow	
+	fOdoBon	
+	fNeoOce
+	fMicSal	
+	fMicPou	
+	fMicKit	
+	fMelBoe	
+	fLipPho	
+	fLimLim	
+	fLepSal	
+	fLepOcu	
+	fLatMac	
+	fLabBer	
+	fHypImm	
+	fHopMal	
+	fHipHip	
+	fGymBra	
+	fGouWil	
+	fGobNig	
+	fGobGob	
+	fGirMul	
+	fGasAcu	
+	fGadMor	
+	fEutGur	
+	fEsoLuc	
+	fErpCal	
+	fEpiLan	
+	fEleAnt	
+	fEchVip	
+	fEchNau	
+	fDenClu	
+	fDanRer	
+	fCarCar	
+	fBorAnt	
+	fBetSpl	
+	fAulStu	
+	fAstCal
+	fArgSil	
+	fAnaTes	
+	fAmmMar	
+	fAciRut
+    fTriRos
+    fSymNem
+    fSalBra
+    fPorCra
+    fPolHol
+    fPemKlu
+    fPagPag
+    fMyrMur
+    fMicVar
+    fMenMen
+    fMelGel
+    fMegCyp
+    fMasArm
+    fLycPac
+    fLeuLeu
+    bZonAlb
+    bTaeGut
+    bStrAlu
+    bOpiHoa
+    bNumArq
+    bLarMic
+    bExcChi
+    bChlMac
+    bCarCri
+    bCalBor
+    bCalAnn
+    bButBut
+    bAthNoc
+    fLetNeb
+    fLamInc
+    fLabMix
+
+
+
+squeue -u ag2427 | grep 4386db9f | awk '{print $1}'
+squeue -u ag2427 | grep <jobname> | awk '{print $1}' | xargs scancel
+
+3059 jobs running as of 1:11PM
+
+For running seqstat in the heterozgyosity directory
+    ../bin/seqstat
+
+For checking empty multihetsep files with no variants
+Added function into snakemake which will only include chromosomes with 1k+ variants in MSMC analysis
+
+Species with scaffold level assemblies:
+    bLycPyr
+    rAnnSte
+    mCorTow
+    mMonMon
+
+ 88 species have scaffold level assemblies   
+    less -SN vgp.alignment.set.metaData.txt | grep Scaffold | wc -l
+
+
+#### ---- UPDATE ---- ####
+20250802 (August 2nd, 2025)
+
+Checked codes were still running
+Started working on 20250801_scaffold_assingments.sh for filtering scaffold only assemblies
+
+
+#### ---- UPDATE ---- ####
+20250803 (August 3rd, 2025)
+
+Species with WildcardError No values given for wildcard 'CLADE'.
+    sCarCar
+    fLamInc
+    fLetNeb
+    fLeuLeu
+    fBorAnt
+    fHipHip
+    fLatMac
+Error seemed odd and in a mix of rules (MAKE_MASK, ROH_CALC, GET_ALN_ONLY_PER_CHROM, GET_VAR_ONLY_PER_CHROM), while the rules had previuosly worked fine.
+Resubmitted all species to see if the error reappears
+
+Resubmitted fBetSpl after it stopped due to a node fail
+
+fCarCar finished up through primary MSMC
+
+Finished:
+    sHydCol
+    sHemOce
+    fAbrBra
+    fAloSap
+    fAmbSpe
+    fAmiCal
+    fAnaAna
+    fAngAng
+    fAntMac
+    fAplTae
+    fAulMac
+    fAstMex
+    fCaeTer
+    fCenGer
+    fChaTri
+    fBarBar
+    fBleOce
+    fChaCha
+    fCheLab
+    fCheRos
+    fClaGar
+    fCoiMys
+    fConCon
+    fCorLav
+    fCotGob
+    fCriAus
+    fCycLum
+    fCypVen
+    fDirArg
+    fEleEle
+    fEnoArm
+    fEpiRan
+    fFunDia
+    fCarCar
+35 species currently done
+
+Running:
+    sAmbRad
+    sCarCar
+    sHepPer
+    sHetFra
+    sHypSab
+    sMobBir
+    sNarBan
+    bZosLat
+	bWilVid
+	bStrDec
+	bStrCam
+	bSarPap
+	bRisTri
+	bPsePip
+	bPorHoc
+	bPoeAtr
+	bPlaLeu
+	bPhaAet
+	bPatFas
+    bPasDom	
+    bMorGui	
+	bMorBas	
+	bMerOct	
+	bMerNub	
+	bMelUnd	
+	bMelMel	
+	bMelGeo	
+    bLonStr	
+	bLepDis	
+	bLatDis	
+	bLarFus	
+	bLarArg	
+	bLagMut	
+	bHirRus	
+	bHemCom	
+	bHelExo	
+	bHarHar	
+	bHalAlb	
+	bGuaGua	
+	bGruGru	
+	bGruAme	
+	bGeoTri	
+	bGavSte	
+	bGalGal	
+	bGalChl	
+	bFriCoe	
+	bFalRus	
+	bFalPun	
+	bFalPer	
+	bFalNau	
+	bFalChe	
+	bFalBia	
+    bEudEle	
+	bEriRub	
+	bDryPub	
+	bDroNov	
+	bCygOlo	
+	bCygCol	
+	bCyaCri	
+	bCucCan	
+	bCorMon	
+	bCorHaw	
+	bColStr	
+	bColMon	
+	bColLiv	
+	bClaHye	
+	bCinCin	
+    bCicMag	
+	bChrRid	
+	bChiLan	
+	bCatUst	
+	bCapEur	
+	bCalNic	
+	bBucCla	
+	bBucAby	
+	bBraCan	
+	bBalReg	
+	bAytMar	
+	bAytFul	
+	bAytFer	
+	bAraAra	
+	bAptMan	
+    bAnsCyg	
+	bAnsAns	
+	bAnaPla	
+	bAnaAcu	
+	bAmmNel	
+	bAmmMar	
+	bAmmCau	
+	bAmaOch	
+	bAgePho	
+	bAegAlb	
+	bAcrTri	
+	bAcaChl	
+    aXenPet	
+	aRhiDor	
+	aPseCor	
+	aPelLes	
+	aMixFle	
+	aMicUni	
+	aHylSar	
+	aGeoSer	
+	aGasCard	
+	aEleCoq	
+	aDisPic	
+	aDenEbr	
+	aBufBuf	
+	aBomBom	
+	aAscTru	
+	aAnoBae	
+	fSynTyp	
+	fSynPic	
+	fSynAcu	
+	fSpiSpi	
+	fScaEry	
+	fProPar	
+	fPriTyp	
+	fPolLow	
+	fOdoBon	
+	fNeoOce
+	fMicSal	
+	fMicPou	
+	fMicKit	
+	fMelBoe	
+	fLipPho	
+	fLimLim	
+	fLepSal	
+	fLepOcu	
+	fLatMac	
+	fLabBer	
+	fHypImm	
+	fHopMal	
+	fHipHip	
+	fGymBra	
+	fGouWil	
+	fGobNig	
+	fGobGob	
+	fGirMul	
+	fGasAcu	
+	fGadMor	
+	fEutGur	
+	fEsoLuc	
+	fErpCal	
+	fEpiLan	
+	fEleAnt	
+	fEchVip	
+	fEchNau	
+	fDenClu	
+	fDanRer	
+	fBorAnt	
+	fBetSpl	
+	fAulStu	
+	fAstCal
+	fArgSil	
+	fAnaTes	
+	fAmmMar	
+	fAciRut
+    fTriRos
+    fSymNem
+    fSalBra
+    fPorCra
+    fPolHol
+    fPemKlu
+    fPagPag
+    fMyrMur
+    fMicVar
+    fMenMen
+    fMelGel
+    fMegCyp
+    fMasArm
+    fLycPac
+    fLeuLeu
+    bZonAlb
+    bTaeGut
+    bStrAlu
+    bOpiHoa
+    bNumArq
+    bLarMic
+    bExcChi
+    bChlMac
+    bCarCri
+    bCalBor
+    bCalAnn
+    bButBut
+    bAthNoc
+    fLetNeb
+    fLamInc
+    fLabMix
+
+fEutGur stopped due to a node fail -- resubmitted
+fGirMul stopped due to a node fail -- resubmitted
+
+bAraAra failed GET_WHOLE_ALN due to time limit
+    Need to fix and resubmit once other jobs finish
+
+fErpCal failed primary MSMC due to time out error
+Upped runtime for RUN_PRIMARY_MSMC to 1.25hr from 1hr
+Other jobs haven't finished yet - need to resubmit when it finishes
+
+
+#### ---- UPDATE ---- ####
+20250804 (August 4th, 2025)
+
+Finished:
+    sHydCol
+    sHemOce
+    fAbrBra
+    fAloSap
+    fAmbSpe
+    fAmiCal
+    fAnaAna
+    fAngAng
+    fAntMac
+    fAplTae
+    fAulMac
+    fAstMex
+    fCaeTer
+    fCenGer
+    fChaTri
+    fBarBar
+    fBleOce
+    fChaCha
+    fCheLab
+    fCheRos
+    fClaGar
+    fCoiMys
+    fConCon
+    fCorLav
+    fCotGob
+    fCriAus
+    fCycLum
+    fCypVen
+    fDirArg
+    fEleEle
+    fEnoArm
+    fEpiRan
+    fFunDia
+    fCarCar
+35 species currently done
+
+Running:
+    sAmbRad
+    sCarCar
+    sHepPer
+    sHetFra
+    sHypSab
+    sMobBir
+    sNarBan
+    bZosLat
+	bWilVid
+	bStrDec
+	bStrCam
+	bRisTri
+	bPsePip
+	bPorHoc
+	bPoeAtr
+	bPlaLeu
+	bPhaAet
+	bPatFas
+    bPasDom	
+    bMorGui	
+	bMorBas	
+	bMerOct	
+	bMerNub	
+	bMelUnd	
+	bMelMel	
+	bMelGeo	
+	bLepDis	
+	bLatDis	
+	bLarFus	
+	bLarArg	
+	bLagMut	
+	bHirRus	
+	bHemCom	
+	bHelExo	
+	bHarHar	
+	bHalAlb	
+	bGruGru	
+	bGruAme	
+	bGeoTri	
+	bGavSte	
+	bGalGal	
+	bGalChl	
+	bFriCoe	
+	bFalRus	
+	bFalPun	
+	bFalPer	
+	bFalNau	
+	bFalChe	
+	bFalBia	
+    bEudEle	
+	bEriRub	
+	bDryPub	
+	bDroNov	
+	bCygOlo	
+	bCygCol	
+	bCyaCri	
+	bCucCan	
+	bCorMon	
+	bCorHaw	
+	bColStr	
+	bColMon	
+	bColLiv	
+	bClaHye	
+	bCinCin	
+    bCicMag	
+	bChrRid	
+	bChiLan	
+	bCatUst	
+	bCapEur	
+	bCalNic	
+	bBucCla	
+	bBucAby	
+	bBraCan	
+	bBalReg	
+	bAytMar	
+	bAytFul	
+	bAytFer	
+	bAptMan	
+    bAnsCyg	
+	bAnsAns	
+	bAnaPla	
+	bAnaAcu	
+	bAmmNel	
+	bAmmMar	
+	bAmmCau	
+	bAmaOch	
+	bAgePho	
+	bAegAlb	
+	bAcrTri	
+	bAcaChl	
+	fSynTyp	
+	fSynPic	
+	fSynAcu	
+	fSpiSpi	
+	fScaEry	
+	fProPar	
+	fPriTyp	
+	fPolLow	
+	fOdoBon	
+	fNeoOce
+	fMicSal	
+	fMicPou	
+	fMicKit	
+	fMelBoe	
+	fLipPho	
+	fLimLim	
+	fLepSal	
+	fLepOcu	
+	fLatMac	
+	fLabBer	
+	fHypImm	
+	fHopMal	
+	fHipHip	
+	fGymBra	
+	fGouWil	
+	fGobNig	
+	fGobGob	
+	fGirMul	
+	fGasAcu	
+	fGadMor	
+	fEutGur	
+	fEsoLuc	
+	fErpCal	
+	fEpiLan	
+	fEleAnt	
+	fEchVip	
+	fEchNau	
+	fDenClu	
+	fDanRer	
+	fBorAnt	
+	fBetSpl	
+	fAulStu	
+	fAstCal
+	fArgSil	
+	fAnaTes	
+	fAmmMar	
+	fAciRut
+    fTriRos
+    fSymNem
+    fSalBra
+    fPorCra
+    fPolHol
+    fPemKlu
+    fPagPag
+    fMyrMur
+    fMicVar
+    fMenMen
+    fMelGel
+    fMegCyp
+    fMasArm
+    fLycPac
+    fLeuLeu
+    bZonAlb
+    bTaeGut
+    bStrAlu
+    bOpiHoa
+    bNumArq
+    bLarMic
+    bExcChi
+    bChlMac
+    bCarCri
+    bCalBor
+    bCalAnn
+    bButBut
+    bAthNoc
+    fLetNeb
+    fLamInc
+    fLabMix
+
+sCarCar appears to still be running after odd error yesterday
+fAulStu failed in the morning of Sunday August 3rd 2025 (20250803) due to same erorr -- will resubmit
+
+fErpCal finished run after timeout during RUN_PRIMARY_MSMC -- resubmitted
+
+fGymBra failed a CALC_HET_PER_CHR rule -- need to wait for all other jobs to wrap up and then resubmit after checking error
+fMicPou failed a CALC_HET_PER_CHR rule 
+    Chr = OZ034960.1
+    IndexError: single positional indexer is out-of-bounds
+    Manually ran through 20250618_find_het_per_chr_V4.py functions with var file from this chromosome and got no error
+    Will resubmit and see if error persists
+
+bAraAra failed GEN_CHROM_VCF due to time out -- will wait to resubmit this to not have higher time for other birds etc.
+    Same for bGuaGua
+
+sHetFra failed primary MSMC due to timeout - resubmitted with the longer run-time for RUN_PRIMARY_MSMC
+
+Waiting to submit until fish and birds are done: (due to time and memory contstraints)
+    aXenPet	
+	aRhiDor	
+	aPseCor	
+	aPelLes	
+	aMixFle	
+	aMicUni	
+	aHylSar	
+	aGeoSer	
+	aGasCard	
+	aEleCoq	
+	aDisPic	
+	aDenEbr	
+	aBufBuf	
+	aBomBom	
+	aAscTru	
+	aAnoBae	
+    bAraAra
+    bGuaGua	
+    bLonStr
+    bSarPap
+
+Finished writing 20250801_scaffold_assingments (both .py and .sh)
+Successfully ran it for bLyrPyr, mMonMon, rAnnSte, and mCorTow
+
+Have noticed looking at outputs that the ROH maps are not showing properly
+Will troubleshoot and fix using sHemOce
+Opened up 20250707_Plot_ROH_V3.R and will manually go through
+        ROH= ROH/HemOce_ROH_Results.csv
+        CHROM_LENGTH_FILE= HemOce_Chroms_Lengths.txt 
+        ALN_FILE= temp/HemOce_Aln_Only.txt
+The issue is coming from the output file being saved using the png command but the output file name still being in pdf
+Fixed output file name in snakemake rule, and output_files list
+Will have to re-run for all species once done
+
+Created 20250804_Scatterplot_Figures.R to plot Het, FROH, and compare them to each other, IUCN status, and life history traits
+
+Need to update the number of config files
+    find ../groups/ -name "*-12.1aln"
+    520
+Created 20250804_Config_Files_V3.py
+Will attempt to get more information into the files to increase automation
+
+
+#### ---- UPDATE ---- ####
+20250805 (August 5th, 2025)
+
+To cancel all jobs from a specific species
+    squeue -u ag2427 | grep d66bed35 | awk '{print $1}' | xargs -r scancel
+
+All species running yesterday are still running today
+
+Working on the 20250804_Config_Files_V3 scripts to increase automation
+Looking at automating the scaffold config files
+All species up to this point which have been scaffold only have had 100+ scaffolds
+
+Testing MSMC plotting to see if I can plot it per generation
+    sharks/HydCol/MSMC/Primary_Results/HydCol.msmc2.final.txt
+Rscript 20250508_Plot_MSMC.R sharks HydCol 1.25e-8 30 test_gen_msmc.png sharks/HydCol/MSMC/Primary_Results/HydCol.msmc2.final.txt
+
+Removing gen_time from the MSMC plot does indeed turn it into generation time instead of years
+Will keep this for plotting
+
+
+#### ---- UPDATE ---- ####
+20250806 (August 6th, 2025)
+
+Finished:
+    sHydCol
+    sHemOce
+    fAbrBra
+    fAloSap
+    fAmbSpe
+    fAmiCal
+    fAnaAna
+    fAngAng
+    fAntMac
+    fAplTae
+    fAulMac
+    fAstMex
+    fCaeTer
+    fCenGer
+    fChaTri
+    fBarBar
+    fBleOce
+    fChaCha
+    fCheLab
+    fCheRos
+    fClaGar
+    fCoiMys
+    fConCon
+    fCorLav
+    fCotGob
+    fCriAus
+    fCycLum
+    fCypVen
+    fDirArg
+    fEleEle
+    fEnoArm
+    fEpiRan
+    fFunDia
+    fCarCar
+    fGouWil
+36 species currently done
+
+Running:
+    sAmbRad
+    sCarCar
+    sHepPer
+    sHetFra
+    sHypSab
+    sMobBir
+    sNarBan
+    bZosLat
+	bWilVid
+	bStrDec
+	bStrCam
+	bRisTri
+	bPsePip
+	bPorHoc
+	bPoeAtr
+	bPlaLeu
+	bPhaAet
+	bPatFas
+    bPasDom	
+    bMorGui	
+	bMorBas	
+	bMerOct	
+	bMerNub	
+	bMelUnd	
+	bMelMel	
+	bMelGeo	
+	bLepDis	
+	bLatDis	
+	bLarFus	
+	bLarArg	
+	bLagMut	
+	bHirRus	
+	bHemCom	
+	bHelExo	
+	bHarHar	
+	bHalAlb	
+	bGruGru	
+	bGruAme	
+	bGeoTri	
+	bGavSte	
+	bGalGal	
+	bGalChl	
+	bFriCoe	
+	bFalRus	
+	bFalPun	
+	bFalPer	
+	bFalNau	
+	bFalChe	
+	bFalBia	
+    bEudEle	
+	bEriRub	
+	bDryPub	
+	bDroNov	
+	bCygOlo	
+	bCygCol	
+	bCyaCri	
+	bCucCan	
+	bCorMon	
+	bCorHaw	
+	bColStr	
+	bColMon	
+	bColLiv	
+	bClaHye	
+	bCinCin	
+    bCicMag	
+	bChrRid	
+	bChiLan	
+	bCatUst	
+	bCapEur	
+	bCalNic	
+	bBucCla	
+	bBucAby	
+	bBraCan	
+	bBalReg	
+	bAytMar	
+	bAytFul	
+	bAytFer	
+	bAptMan	
+    bAnsCyg	
+	bAnsAns	
+	bAnaPla	
+	bAnaAcu	
+	bAmmNel	
+	bAmmMar	
+	bAmmCau	
+	bAmaOch	
+	bAgePho	
+	bAegAlb	
+	bAcrTri	
+	bAcaChl	
+	fSynTyp	
+	fSynPic	
+	fSynAcu	
+	fSpiSpi	
+	fScaEry	
+	fProPar	
+	fPriTyp	
+	fPolLow	
+	fOdoBon	
+	fNeoOce
+	fMicSal	
+	fMicPou	
+	fMicKit	
+	fMelBoe	
+	fLipPho	
+	fLimLim	
+	fLepSal	
+	fLepOcu	
+	fLatMac	
+	fLabBer	
+	fHypImm	
+	fHopMal	
+	fHipHip	
+	fGymBra		
+	fGobNig	
+	fGobGob	
+	fGirMul	
+	fGasAcu	
+	fGadMor	
+	fEutGur	
+	fEsoLuc	
+	fErpCal	
+	fEpiLan	
+	fEleAnt	
+	fEchVip	
+	fEchNau	
+	fDenClu	
+	fDanRer	
+	fBorAnt	
+	fBetSpl	
+	fAulStu	
+	fAstCal
+	fArgSil	
+	fAnaTes	
+	fAmmMar	
+	fAciRut
+    fTriRos
+    fSymNem
+    fSalBra
+    fPorCra
+    fPolHol
+    fPemKlu
+    fPagPag
+    fMyrMur
+    fMicVar
+    fMenMen
+    fMelGel
+    fMegCyp
+    fMasArm
+    fLycPac
+    fLeuLeu
+    bZonAlb
+    bTaeGut
+    bStrAlu
+    bOpiHoa
+    bNumArq
+    bLarMic
+    bExcChi
+    bChlMac
+    bCarCri
+    bCalBor
+    bCalAnn
+    bButBut
+    bAthNoc
+    fLetNeb
+    fLamInc
+    fLabMix
+
+fGymBra had error in CALC_HET_PER_CHR for chr OY725513.1
+    IndexError: single positional indexer is out-of-bounds
+Var and Aln files for this chromosome look good
+I think this error is because the position was based on the position within the scaffold, not within the chromosome
+    variant_positions = single_chr_df.iloc[:, 2].astype(int)
+    Changed from ....iloc[:,9]
+Resubmitted
+
+Continuing to work on 20250803_Config_Files_V3.sh
+    Generated all new config_files
+find config_files / -name "sharks/PriPec_config.yml" 
+
+
+#### ---- UPDATE ---- ####
+20250826 (August 26th, 2025)
+
+Came back from vacation to find that all my jobs in the queue had either finished or cancelled
+There were HPC problems over vacation so it's possible some were cancelled
+Will go through and check
+
+All screens were submitted on login p-3 but no screens are listed anymore
+Must have gotten canceled during HPC maintenance
+Will re-create sockets for all running species
+
+Finished:
+    sHydCol
+    sHemOce
+    sHetFra
+    sHepPer
+    sCarCar
+    bHelExo	
+    fAbrBra
+    fAloSap
+    fAmbSpe
+    fAmiCal
+    fAnaAna
+    fAnaTes	
+    fAngAng
+    fAntMac
+    fAplTae
+    fAulMac
+    fAstMex
+    fCaeTer
+    fCenGer
+    fChaTri
+    fBarBar
+    fBleOce
+    fChaCha
+    fCheLab
+    fCheRos
+    fClaGar
+    fCoiMys
+    fConCon
+    fCorLav
+    fCotGob
+    fCriAus
+    fCycLum
+    fCypVen
+    fDirArg
+    fEleEle
+    fEnoArm
+    fEpiRan
+    fFunDia
+    fCarCar
+    fGouWil
+    fSpiSpi	
+    fLatMac
+    fLeuLeu
+    fLetNeb
+    fLamInc
+
+Running:
+    sAmbRad
+    sHypSab
+    sMobBir
+    sNarBan
+    bZosLat
+	bWilVid
+	bStrDec
+	bStrCam
+	bRisTri
+	bPsePip
+	bPorHoc
+	bPoeAtr
+	bPlaLeu
+	bPhaAet
+	bPatFas
+    bPasDom	
+    bMorGui	
+	bMorBas	
+	bMerOct	
+	bMerNub	
+	bMelUnd	
+	bMelMel	
+	bMelGeo	
+	bLepDis	
+	bLatDis	
+	bLarFus	
+	bLarArg	
+	bLagMut	
+	bHirRus	
+	bHemCom	
+	bHarHar	
+	bHalAlb	
+	bGruGru	
+	bGruAme	
+	bGeoTri	
+	bGavSte	
+	bGalGal	
+	bGalChl	
+	bFriCoe	
+	bFalRus	
+	bFalPun	
+	bFalPer	
+	bFalNau	
+	bFalChe	
+	bFalBia	
+    bEudEle	
+	bEriRub	
+	bDryPub	
+	bDroNov	
+	bCygOlo	
+	bCygCol	
+	bCyaCri	
+	bCucCan	
+	bCorMon	
+	bCorHaw	
+	bColStr	
+	bColMon	
+	bColLiv	
+	bClaHye	
+	bCinCin	
+    bCicMag	
+	bChrRid	
+	bChiLan	
+	bCatUst	
+	bCapEur	
+	bCalNic	
+	bBucCla	
+	bBucAby	
+	bBraCan	
+	bBalReg	
+	bAytMar	
+	bAytFul	
+	bAytFer	
+	bAptMan	
+    bAnsCyg	
+	bAnsAns	
+	bAnaPla	
+	bAnaAcu	
+	bAmmNel	
+	bAmmMar	
+	bAmmCau	
+	bAmaOch	
+	bAgePho	
+	bAegAlb	
+	bAcrTri	
+	bAcaChl	
+	fSynTyp	
+	fSynPic	
+	fSynAcu	
+	fScaEry	
+	fProPar	
+	fPriTyp	
+	fPolLow	
+	fOdoBon	
+	fNeoOce
+	fMicSal	
+	fMicPou	
+	fMicKit	
+	fMelBoe	
+	fLipPho	
+	fLimLim	
+	fLepSal	
+	fLepOcu	
+	fLabBer	
+	fHypImm	
+	fHopMal	
+	fHipHip	
+	fGymBra		
+	fGobNig	
+	fGobGob	
+	fGirMul	
+	fGasAcu	
+	fGadMor	
+	fEutGur	
+	fEsoLuc	
+	fErpCal	
+	fEpiLan	
+	fEleAnt	
+	fEchVip	
+	fEchNau	
+	fDenClu	
+	fDanRer	
+	fBorAnt	
+	fBetSpl	
+	fAulStu	
+	fAstCal
+	fArgSil	
+	fAmmMar	
+	fAciRut
+    fTriRos
+    fSymNem
+    fSalBra
+    fPorCra
+    fPolHol
+    fPemKlu
+    fPagPag
+    fMyrMur
+    fMicVar
+    fMenMen
+    fMelGel
+    fMegCyp
+    fMasArm
+    fLycPac
+    bZonAlb
+    bTaeGut
+    bStrAlu
+    bOpiHoa
+    bNumArq
+    bLarMic
+    bExcChi
+    bChlMac
+    bCarCri
+
+RUNNING on screens in login q-3
+    bCalBor
+    bCalAnn
+    bButBut
+    bAthNoc
+    fLamInc -- DONE
+    fLetNeb -- DONE
+    fLabMix
+    aLepFus
+
+One of the CALC_HET_PER_CHR rules failed for AmbRad -- I think due to an empty aln/var file pair for a chromosome
+Will check later 
+
+
+#### ---- UPDATE ---- ####
+20250827 (August 27th, 2025)
+
+Finished:
+    sHydCol
+    sHypSab
+    sHemOce
+    sHetFra
+    sHepPer
+    sCarCar
+    sMobBir
+    sNarBan
+    bHelExo	
+    fAbrBra
+    fAloSap
+    fAmbSpe
+    fAmiCal
+    fAnaAna
+    fAnaTes	
+    fAngAng
+    fAntMac
+    fAplTae
+    fAulMac
+    fAstMex
+    fCaeTer
+    fCenGer
+    fChaTri
+    fBarBar
+    fBleOce
+    fChaCha
+    fCheLab
+    fCheRos
+    fClaGar
+    fCoiMys
+    fConCon
+    fCorLav
+    fCotGob
+    fCriAus
+    fCycLum
+    fCypVen
+    fDirArg
+    fEleEle
+    fEnoArm
+    fEpiRan
+    fFunDia
+    fCarCar
+    fGouWil
+    fSpiSpi	
+    fLatMac
+    fLeuLeu
+    fLetNeb (login q-3)
+    fLamInc (login q-3)
+48 species
+
+Running:
+    sAmbRad
+    bZosLat (Failed but hadn't closed out yet - waiting for that to rerun)
+	bWilVid
+	bStrDec (Same problem as bWilVid)
+	bStrCam (Same problem as bWilVid)
+	bRisTri (Same problem as bWilVid)
+	bPsePip (Same problem as bWilVid)
+	bPorHoc
+	bPoeAtr
+	bPlaLeu
+	bPhaAet
+	bPatFas  (Failed but hadn't closed out yet - waiting for that to rerun)
+    bPasDom	
+    bMorGui	
+	bMorBas	
+	bMerOct	
+	bMerNub	
+	bMelUnd	(Same problem as bWilVid)
+	bMelMel	
+	bMelGeo	(Same problem as bWilVid)	
+	bLepDis	
+	bLatDis	
+	bLarFus	(Same problem as bWilVid)	
+	bLarArg	(Same problem as bWilVid)		
+	bLagMut	(Same problem as bWilVid)	
+	bHirRus	
+	bHemCom	
+	bHarHar	
+	bHalAlb	
+	bGruGru	
+	bGruAme	
+	bGeoTri	
+	bGavSte	
+	bGalGal	
+	bGalChl	
+	bFriCoe	
+	bFalRus	
+	bFalPun	
+	bFalPer	
+	bFalNau	
+	bFalChe	
+	bFalBia	
+    bEudEle	
+	bEriRub	
+	bDryPub	
+	bDroNov	
+	bCygOlo	
+	bCygCol	
+	bCyaCri	
+	bCucCan	
+	bCorMon	
+	bCorHaw	
+	bColStr	
+	bColMon	
+	bColLiv	
+	bClaHye	
+	bCinCin	
+    bCicMag	
+	bChrRid	
+	bChiLan	
+	bCatUst	
+	bCapEur	
+	bCalNic	
+	bBucCla	
+	bBucAby	
+	bBraCan	
+	bBalReg	
+	bAytMar	
+	bAytFul	
+	bAytFer	
+	bAptMan	
+    bAnsCyg	
+	bAnsAns	
+	bAnaPla	
+	bAnaAcu	
+	bAmmNel	
+	bAmmMar	
+	bAmmCau	
+	bAmaOch	
+	bAgePho	
+	bAegAlb	
+	bAcrTri	
+	bAcaChl	
+	fSynTyp	
+	fSynPic	
+	fSynAcu	
+	fScaEry	
+	fProPar	
+	fPriTyp	
+	fPolLow	
+	fOdoBon	
+	fNeoOce
+	fMicSal	
+	fMicPou	
+	fMicKit	
+	fMelBoe	
+	fLipPho	
+	fLimLim	
+	fLepSal	
+	fLepOcu	
+	fLabBer	
+	fHypImm	
+	fHopMal	
+	fHipHip	
+	fGymBra		
+	fGobNig	
+	fGobGob	
+	fGirMul	
+	fGasAcu	
+	fGadMor	
+	fEutGur	
+	fEsoLuc	
+	fErpCal	
+	fEpiLan	
+	fEleAnt	
+	fEchVip	
+	fEchNau	
+	fDenClu	
+	fDanRer	
+	fBorAnt	
+	fBetSpl	
+	fAulStu	
+	fAstCal
+	fArgSil	
+	fAmmMar	
+	fAciRut
+    fTriRos
+    fSymNem
+    fSalBra
+    fPorCra
+    fPolHol
+    fPemKlu
+    fPagPag
+    fMyrMur
+    fMicVar
+    fMenMen
+    fMelGel
+    fMegCyp
+    fMasArm
+    fLycPac
+    bZonAlb
+    bTaeGut
+    bStrAlu
+    bOpiHoa
+    bNumArq
+    bLarMic
+    bExcChi
+    bChlMac
+    bCarCri
+
+RUNNING on screens in login q-3
+    bCalBor
+    bCalAnn
+    bButBut
+    bAthNoc
+    fLabMix
+    aLepFus
+
+Troubleshooting sAmbRad
+The Var and Aln file are not size 0
+    variant_positions = single_chr_df.iloc[:, 2].astype(int)
+    IndexError: single positional indexer is out-of-bounds
+Problem is because the whole genome aln and var files are old - will need to regenerate
+    rm AmbRad_Aln_Only.txt
+    rm AmbRad_Var_Only.txt
+Resubmitted in screen
+
+bZosLat failed due to having empty chromosome specific Var and Aln files
+Checked whole genome Var and Aln files and they have information for each chromosome
+Deleted empty files
+Will need to wait for snakemake to close out to resubmit bZosLat
+
+bPatFas failed due to the chromosome names in the chroms.txt file not matching those config file, so all the chromosome specific var and aln files are empty
+Need to confirm chromosome names but must wait until NCBI page can be loaded
+
+bWilVid failed for the same reason as sAmbRad
+I don't think the whole genome files are old anymore
+    It's because the chromosome specific files were generated using the modified paftools command, but the whole genome files were not
+Several others species failed with the same issue
+I will modify the CALC_HET_PER_CHR rule to use the chromosome specific var files instead of the whole genome file
+Created 20250827_find_het_per_chr_V5.py
+Running test of file on bWilVid
+It appears to work, at least on a single chromosome
+Will submit
+
+Resubmitted for bWilVid, bStrDec, bRisTri, bPsePip
+Others with same issue haven't closed out yet, so I cannot resubmit
+
+Continuing to work on 20250804_Scatterplot_Figures code
+Did a test run
+    bash 20250804_scatterplots.sh
+Is working but will need to finetune
+Sorted adding the IUCN API to the ./.Renviron in the VGP/heterozygosity directory
+Now can run rredlist
+Planning on using rfishbase package to get traits for fish/sharks, will need another database for traits for tetrapods
+
+Looking into sra toolkit to download reads for sHepPer to compare short-read results to the long-read data and see if we get them again
+github website: https://github.com/ncbi/sra-tools/wiki/02.-Installing-SRA-Toolkit
+    module load sra-tools/2.10.9
+Test that toolkit is functional
+    fastq-dump --stdout -X 2 SRR390728
+It's functional within the heterozgyosity directory!
+Heptranchias perlo SRA: SRS20951933
+    SRR Run: SRR28576691
+Created 20250827_retrieve_Hep_Per.sh
+    Submitted batch job 13824921
+Job failed due to error 
+    SRS20951933 is not a run accession.
+Updated to include SRR number
+Modified 20250827_retrieve_Hep_Per.sh and resubmitted
+    Submitted batch job 13826097
+
+Ideas for ROH plots
+    Compare number of ROH in each individual to sum of ROH lengths in a 20250804_Scatterplot_Figures
+    Violin plot showing the length of all ROH and where they are clustered by length in each species
+
+
+#### ---- UPDATE ---- ####
+20250828 (August 28th, 2025)
+
+Switched to submitting jobs on cclake-himem due to queue time on cclake
+
+Resubmitted bMelGeo, bLarFus
+
+bHarHar failed due to syntax error in reformatted 20250827_find_het_per_chr_V5.py file
+Fixed syntax error and resubmitted
+Same with bHalAlb, bGruGru, bGruAme, bGeoTri, bGavGav, bGalChl, bFriCoe, bFalRus, bFalPun, bFalPer, bFalNau, 
+    bFalChe, bFalBia
+
+bGalGal failed due to having emty aln and var files -- need to troubleshoot
+
+bHirRus failed due to still having soe empty var and aln files, despite having been redone with the new filters
+Need to troubleshoot
+
+Finished:
+    sHydCol
+    sHypSab
+    sHemOce
+    sHetFra
+    sHepPer
+    sCarCar
+    sMobBir
+    sNarBan
+    bHelExo	
+    bPorHoc
+    fAbrBra
+    fAloSap
+    fAmbSpe
+    fAmiCal
+    fAnaAna
+    fAnaTes	
+    fAngAng
+    fAntMac
+    fAplTae
+    fAulMac
+    fAstMex
+    fCaeTer
+    fCenGer
+    fChaTri
+    fBarBar
+    fBleOce
+    fChaCha
+    fCheLab
+    fCheRos
+    fClaGar
+    fCoiMys
+    fConCon
+    fCorLav
+    fCotGob
+    fCriAus
+    fCycLum
+    fCypVen
+    fDirArg
+    fEleEle
+    fEnoArm
+    fEpiRan
+    fFunDia
+    fCarCar
+    fGouWil
+    fSpiSpi	
+    fLatMac
+    fLeuLeu
+    fLetNeb (login q-3)
+    fLamInc (login q-3)
+48 species
+
+Running:
+    sAmbRad
+    bZosLat (Failed but hadn't closed out yet - waiting for that to rerun)
+	bWilVid
+	bStrDec (Same problem as bWilVid)
+	bStrCam (Same problem as bWilVid)
+	bRisTri (Same problem as bWilVid)
+	bPsePip (Same problem as bWilVid)
+	bPoeAtr
+	bPlaLeu
+	bPhaAet
+	bPatFas  (Failed but hadn't closed out yet - waiting for that to rerun)
+    bPasDom	
+    bMorGui	
+	bMorBas	
+	bMerOct	
+	bMerNub	
+	bMelUnd	(Same problem as bWilVid)
+	bMelMel	
+	bMelGeo	(Same problem as bWilVid)	
+	bLepDis	
+	bLatDis	
+	bLarFus	(Same problem as bWilVid)	
+	bLarArg	(Same problem as bWilVid)		
+	bLagMut	(Same problem as bWilVid)	
+	bHirRus	(Need to troubleshoot)
+	bHemCom	
+	bHarHar	
+	bHalAlb	
+	bGruGru	
+	bGruAme	
+	bGeoTri	
+	bGavSte	
+	bGalGal	
+	bGalChl	
+	bFriCoe	
+	bFalRus	
+	bFalPun	
+	bFalPer	
+	bFalNau	
+	bFalChe	
+	bFalBia	
+    bEudEle	(Need to resubmit once it closes out -- syntax error now fixed)
+	bEriRub	
+	bDryPub	(Need to resubmit once it closes out -- syntax error now fixed)
+	bDroNov	(Need to resubmit once it closes out -- syntax error now fixed)	
+    bCygOlo	
+	bCygCol	(Need to resubmit once it closes out -- syntax error now fixed)	
+	bCyaCri	
+	bCucCan	(Need to resubmit once it closes out -- syntax error now fixed)	
+	bCorMon	(Need to resubmit once it closes out -- syntax error now fixed)	
+	bCorHaw	
+	bColStr	
+	bColMon	
+	bColLiv	
+	bClaHye	
+	bCinCin	
+    bCicMag	
+	bChrRid	
+	bChiLan	
+	bCatUst	
+	bCapEur	
+	bCalNic	
+	bBucCla	
+	bBucAby	
+	bBraCan	
+	bBalReg	
+	bAytMar	
+	bAytFul	
+	bAytFer	
+	bAptMan	
+    bAnsCyg	
+	bAnsAns	
+	bAnaPla	
+	bAnaAcu	
+	bAmmNel	
+	bAmmMar	
+	bAmmCau	
+	bAmaOch	
+	bAgePho	
+	bAegAlb	
+	bAcrTri	
+	bAcaChl	
+	fSynTyp	
+	fSynPic	
+	fSynAcu	
+	fScaEry	
+	fProPar	
+	fPriTyp	
+	fPolLow	
+	fOdoBon	
+	fNeoOce
+	fMicSal	
+	fMicPou	
+	fMicKit	
+	fMelBoe	
+	fLipPho	
+	fLimLim	
+	fLepSal	
+	fLepOcu	
+	fLabBer	
+	fHypImm	
+	fHopMal	
+	fHipHip	
+	fGymBra		
+	fGobNig	
+	fGobGob	
+	fGirMul	
+	fGasAcu	
+	fGadMor	
+	fEutGur	
+	fEsoLuc	
+	fErpCal	
+	fEpiLan	
+	fEleAnt	
+	fEchVip	
+	fEchNau	
+	fDenClu	
+	fDanRer	
+	fBorAnt	
+	fBetSpl	
+	fAulStu	
+	fAstCal
+	fArgSil	
+	fAmmMar	
+	fAciRut
+    fTriRos
+    fSymNem
+    fSalBra
+    fPorCra
+    fPolHol
+    fPemKlu
+    fPagPag
+    fMyrMur
+    fMicVar
+    fMenMen
+    fMelGel
+    fMegCyp
+    fMasArm
+    fLycPac
+    bZonAlb
+    bTaeGut
+    bStrAlu
+    bOpiHoa
+    bNumArq
+    bLarMic
+    bExcChi
+    bChlMac
+    bCarCri
+
+RUNNING on screens in login q-3
+    bCalBor
+    bCalAnn
+    bButBut
+    bAthNoc
+    fLabMix
+    aLepFus
 
 
 
