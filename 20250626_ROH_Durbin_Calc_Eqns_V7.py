@@ -29,22 +29,27 @@ import os
 
 #### ----  Load in variables from the shell script ---- ####
 chrom = sys.argv[1] ## Chromosome ROH is being calculated for
-chrom_length = int(sys.argv[2]) ## Chromosome length in bases
-
-ref_name = sys.argv[3] ## Reference fasta sequence name 
-clade = sys.argv[4] ## Clade that species belongs to
-
-Aln_file = sys.argv[5]
-
-Var_file = sys.argv[6]
-
-spec_name = sys.argv[7]
+chrom_length_file = sys.argv[2] ## Chromosome length file
+clade = sys.argv[3] ## Clade that species belongs to
+Aln_file = sys.argv[4] ## File containing alignment of alternate to reference
+Var_file = sys.argv[5] ## File containing variants
+spec_name = sys.argv[6] ## Species name
+output_name = sys.argv[7] ## Name of output file
 
 #### ----  FUNCTIONS ---- ####
+## Define function to read the chromosome length file and get length
+def read_length_file(chromosome_length_file, chromosome):
+    with open(chromosome_length_file, 'r') as file:
+        dat = [line.split()[1] for line in file if line.split()[0] == chromosome]
+        dat = int(dat[0])
+    return dat
+
+chrom_length = read_length_file(chrom_length_file, chrom)
+
 ## Define function to read the alignment file and store it in an array
 def read_aln_file(Alignment_file, chromosome):
     with open(Alignment_file, 'r') as file:
-        dat = [line.split() for line in file if line.split()[4] == chromosome]
+        dat = [line.split() for line in file if line.split()[1] == chromosome]
     return dat
 
 aln_list = read_aln_file(Aln_file, chrom)
@@ -65,7 +70,7 @@ base_aln_map = aln_map(aln_list, chrom_length)
 ## Define function to read the variant file and store it in an array
 def read_var_file(variant_file, chromosome):
     with open(variant_file, 'r') as file:
-        var_lines = [line.split() for line in file if line.split()[8] == chromosome]
+        var_lines = [line.split() for line in file if line.split()[1] == chromosome]
     var_pos = [int(line[2]) for line in var_lines]
     return var_lines, var_pos
 
@@ -115,5 +120,4 @@ ROH_report = calculate_ROH(var_pos, base_aln_map, chrom)
 if ROH_report.empty == True:
     print('No ROH detected in', chrom)
 
-output_name = os.path.join(clade, spec_name, chrom + "_ROH_Results.txt")
 ROH_report.to_csv(output_name, index=False, header=True)
