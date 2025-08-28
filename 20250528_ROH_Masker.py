@@ -25,6 +25,7 @@ clade = sys.argv[1]
 spec_name = sys.argv[2]
 chrom = sys.argv[3]
 roh_dat = sys.argv[4]
+output_file = sys.argv[5]
 
 ## FUNCTIONS ##
 def READ_ROH_FILE(roh_file): 
@@ -33,16 +34,15 @@ def READ_ROH_FILE(roh_file):
         dat = [line.strip().split(',') for line in file if line.strip()]
     return pd.DataFrame(dat, columns=header) if dat else pd.DataFrame(columns=header)
 
-def CREATE_NEGATIVE_BED_FILE(roh_file, chromosome, clade, species):
+def CREATE_NEGATIVE_BED_FILE(roh_file, output):
     dat = READ_ROH_FILE(roh_file)
-    output_file_name = os.path.join(clade, species, 'MSMC', 'ROH_Negative_Mask', species + '_' + chromosome + '_ROH_Mask.bed')
     dat = dat.iloc[:, 0:3]
     dat.iloc[:, 1] = pd.to_numeric(dat.iloc[:, 1])
     dat.iloc[:, 2] = pd.to_numeric(dat.iloc[:, 2])
     dat.iloc[:, 2] = dat.iloc[:, 2] + 1 ## Adding 1 to each value since the end value is not included in mask
-    dat.to_csv(output_file_name, sep='\t', index=False, header=False)
+    dat.to_csv(output, sep='\t', index=False, header=False)
 
-CREATE_NEGATIVE_BED_FILE(roh_dat, chrom, clade, spec_name)
+CREATE_NEGATIVE_BED_FILE(roh_dat, output_file)
 
 
 
