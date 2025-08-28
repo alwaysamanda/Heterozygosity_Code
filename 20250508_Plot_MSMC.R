@@ -25,11 +25,17 @@ dat <- read.table(msmc_dat, header=TRUE)
 png(file = output_file_name)
 
 ### Plot population change ###
-## Intial plot
-plot(dat$left_time_boundary/mu*gen_time, (1/dat$lambda)/(2*mu), log="x", 
-ylim=c(0,800000), type="n", xlab="Years before present", ylab="Effective Population Size")
+## Intial plot by years
+# plot(dat$left_time_boundary/mu*gen_time, (1/dat$lambda)/(2*mu), 
+# ylim=c(0,200000), xlim=c(0,4000000), type="n", xlab="Years before present", ylab="Effective Population Size")
 
-lines(dat$left_time_boundary/mu*gen_time, (1/dat$lambda)/(2*mu), type="s", col="#2734A3", lwd=1.5)
+## Intiial plot by number of generations
+plot(dat$left_time_boundary/mu, (1/dat$lambda)/(2*mu), 
+ylim=c(0,300000), xlim=c(0,800000), type="n", xlab="Generations", ylab="Effective Population Size")
+
+lines(dat$left_time_boundary/mu, (1/dat$lambda)/(2*mu), type="s", col="#2734A3", lwd=1.5)
 
 dev.off()
+
+
 
